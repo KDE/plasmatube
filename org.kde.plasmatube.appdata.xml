@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.plasmatube</id>
+  <name>PlasmaTube</name>
+  <summary>Watch YouTube videos</summary>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>GPL-3+</project_license>
+  <developer_name>KDE</developer_name>
+</component>

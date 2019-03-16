@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PlasmaTube
+Comment=Watch (YouTube) videos
+Version=1.0
+Exec=plasmatube
+MimeType=application/x-PlasmaTube;
+Icon=applications-development
+Type=Application
+Terminal=false
+Categories=Qt;KDE;
