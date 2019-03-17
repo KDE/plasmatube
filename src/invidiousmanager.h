@@ -18,43 +18,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MPVRENDERER_H_
-#define MPVRENDERER_H_
+#ifndef INVIDIOUSMANAGER_H
+#define INVIDIOUSMANAGER_H
 
-#include <QQuickFramebufferObject>
+#include <QObject>
+#include "videobasicinfo.h"
 
-#include <mpv/client.h>
-#include <mpv/render_gl.h>
-#include <mpv/qthelper.hpp>
+class QNetworkReply;
+class QNetworkAccessManager;
 
-class MpvRenderer;
-
-class MpvObject : public QQuickFramebufferObject
+class InvidiousManager : public QObject
 {
     Q_OBJECT
-
-    mpv_handle *mpv;
-    mpv_render_context *mpv_gl;
-
-    friend class MpvRenderer;
-
 public:
-    static void on_update(void *ctx);
-
-    MpvObject(QQuickItem * parent = 0);
-    virtual ~MpvObject();
-    virtual Renderer *createRenderer() const;
-
-public slots:
-    void command(const QVariant& params);
-    void setProperty(const QString& name, const QVariant& value);
-    QVariant getProperty(const QString& name);
+    explicit InvidiousManager(QString invidiousInstance = "https://invidio.us",
+                              QObject *parent = nullptr);
 
 signals:
-    void onUpdate();
+    void searchResults(const QList<VideoBasicInfo>&);
+    void searchFailed();
 
-private slots:
-    void doUpdate();
+public slots:
+    QNetworkReply* search(const QString& searchQuery, qint32 page = 0);
+
+private:
+    QString m_instance;
+
+    QNetworkAccessManager* m_netManager;
 };
 
-#endif
+#endif // INVIDIOUSMANAGER_H

@@ -1,6 +1,9 @@
 set(plasmatube_SRCS
     main.cpp
     mpvobject.cpp
+    searchmodel.cpp
+    videobasicinfo.cpp
+    invidiousmanager.cpp
     )
 
 qt5_add_resources(RESOURCES resources.qrc)
