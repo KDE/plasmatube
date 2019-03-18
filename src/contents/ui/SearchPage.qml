@@ -21,7 +21,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.7 as Kirigami
 import org.kde.plasmatube 1.0
 
 Kirigami.Page {
@@ -31,27 +31,28 @@ Kirigami.Page {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+
     header: RowLayout {
         Rectangle {
             anchors.fill: parent
             color: Kirigami.Theme.backgroundColor
         }
 
-        Controls.TextField {
+        Kirigami.ActionTextField {
             id: searchField
             selectByMouse: true
             placeholderText: "Search"
             Layout.fillWidth: true
-        }
-        Controls.Button {
-            Kirigami.Icon {
-                anchors.fill: parent
-                source: "search"
-            }
+            rightActions:  [
+                Kirigami.Action {
+                    iconName: "search"
+                    onTriggered: {
+                        searchModel.searchQuery = searchField.text
+                    }
 
-            onPressed: {
-                searchModel.searchQuery = searchField.text
-            }
+                }
+            ]
         }
     }
 
