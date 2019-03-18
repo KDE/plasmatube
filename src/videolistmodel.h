@@ -27,15 +27,18 @@
 class InvidiousManager;
 class QNetworkReply;
 
-class SearchModel : public QAbstractListModel
+class VideoListModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString searchQuery READ searchQuery WRITE setSearchQuery
-               NOTIFY searchQueryChanged)
+                                   NOTIFY searchQueryChanged)
+    Q_PROPERTY(bool trending READ trending WRITE setTrending NOTIFY trendingChanged)
+    Q_PROPERTY(QString trendingCategory READ trendingCategory WRITE setTrendingCategory
+                                        NOTIFY trendingCategoryChanged)
 
 public:
-    enum SearchResultRoles {
+    enum Roles {
         IdRole = Qt::UserRole + 1,
         TitleRole,
         ThumbnailRole,
@@ -53,11 +56,12 @@ public:
         PremiumRole
     };
 
-    explicit SearchModel(QObject *parent = nullptr);
+    explicit VideoListModel(QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    Q_INVOKABLE void fetch();
     Q_INVOKABLE virtual void fetchMore(const QModelIndex &parent) override;
     Q_INVOKABLE virtual bool canFetchMore(const QModelIndex &parent) const override;
 
@@ -66,9 +70,17 @@ public:
     QString searchQuery() const;
     void setSearchQuery(const QString&);
 
+    bool trending() const;
+    void setTrending(bool);
+
+    QString trendingCategory() const;
+    void setTrendingCategory(const QString&);
+
 signals:
     void isLoadingChanged();
     void searchQueryChanged();
+    void trendingChanged();
+    void trendingCategoryChanged();
 
 private slots:
     void handleSearchResults(const QList<VideoBasicInfo>&);
@@ -80,6 +92,8 @@ private:
 
     bool m_loading = false;
     QString m_searchQuery;
+    bool m_trending = false;
+    QString m_trendingCategory;
     qint32 m_nextPage = 0;
 
     QList<VideoBasicInfo> m_results;

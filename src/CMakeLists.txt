@@ -1,7 +1,7 @@
 set(plasmatube_SRCS
     main.cpp
     mpvobject.cpp
-    searchmodel.cpp
+    videolistmodel.cpp
     videobasicinfo.cpp
     invidiousmanager.cpp
     )

@@ -19,7 +19,7 @@
  */
 
 #include "mpvobject.h"
-#include "searchmodel.h"
+#include "videolistmodel.h"
 
 #include <clocale>
 
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     std::setlocale(LC_NUMERIC, "C");
 
     qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
-    qmlRegisterType<SearchModel>("org.kde.plasmatube", 1, 0, "SearchModel");
+    qmlRegisterType<VideoListModel>("org.kde.plasmatube", 1, 0, "VideoListModel");
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

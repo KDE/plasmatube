@@ -34,15 +34,24 @@ public:
     explicit InvidiousManager(QString invidiousInstance = "https://invidio.us",
                               QObject *parent = nullptr);
 
+    QString region() const;
+    void setRegion(const QString&);
+
 signals:
-    void searchResults(const QList<VideoBasicInfo>&);
-    void searchFailed();
+    void videoQueryResults(const QList<VideoBasicInfo>&);
+    void videoQueryFailed();
 
 public slots:
-    QNetworkReply* search(const QString& searchQuery, qint32 page = 0);
+    QNetworkReply* search(const QString& searchQuery, qint32 page);
+    QNetworkReply* trending(const QString& trendingCategory);
+
+private slots:
+    QNetworkReply* videoQuery(const QString& searchQuery, qint32 page,
+                              bool trending, const QString& trendingCategory);
 
 private:
     QString m_instance;
+    QString m_region;
 
     QNetworkAccessManager* m_netManager;
 };

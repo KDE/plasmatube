@@ -27,18 +27,50 @@
 #include <QJsonArray>
 
 InvidiousManager::InvidiousManager(QString invidiousInstance, QObject *parent)
-    : QObject(parent), m_instance(invidiousInstance),
+    : QObject(parent), m_instance(invidiousInstance), m_region("US"),
       m_netManager(new QNetworkAccessManager(this))
 {
 }
 
-QNetworkReply* InvidiousManager::search(const QString &searchQuery, qint32 page)
+QString InvidiousManager::region() const
 {
-    // TODO: Also support other parameters
-    QUrl url(m_instance + "/api/v1/search");
+    return m_region;
+}
+
+void InvidiousManager::setRegion(const QString &region)
+{
+    m_region = region;
+}
+
+QNetworkReply *InvidiousManager::search(const QString &searchQuery, qint32 page)
+{
+    return videoQuery(searchQuery, page, false, "");
+}
+
+QNetworkReply *InvidiousManager::trending(const QString &trendingCategory)
+{
+    return videoQuery("", 0, true, trendingCategory);
+}
+
+QNetworkReply* InvidiousManager::videoQuery(const QString& searchQuery,
+                                            qint32 page, bool trending,
+                                            const QString& trendingCategory)
+{
+    QUrl url;
+    if (trending)
+        url.setUrl(m_instance + "/api/v1/trending");
+    else
+        url.setUrl(m_instance + "/api/v1/search");
+
     QUrlQuery query;
-    query.addQueryItem("q", searchQuery);
-    query.addQueryItem("page", QString::number(page));
+    if (trending) {
+        if (!trendingCategory.isEmpty())
+            query.addQueryItem("type", trendingCategory);
+    } else {
+        query.addQueryItem("q", searchQuery);
+        query.addQueryItem("page", QString::number(page));
+    }
+    query.addQueryItem("region", m_region);
     url.setQuery(query);
 
     QNetworkReply* reply = m_netManager->get(QNetworkRequest(url));
@@ -47,7 +79,7 @@ QNetworkReply* InvidiousManager::search(const QString &searchQuery, qint32 page)
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
         if (doc.isNull()) {
-            emit searchFailed();
+            emit videoQueryFailed();
             return;
         }
 
@@ -58,13 +90,13 @@ QNetworkReply* InvidiousManager::search(const QString &searchQuery, qint32 page)
             results.append(video);
         }
 
-        emit searchResults(results);
+        emit videoQueryResults(results);
     });
 
     // failure
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
             this, [this](QNetworkReply::NetworkError) {
-        emit searchFailed();
+        emit videoQueryFailed();
     });
 
     return reply;

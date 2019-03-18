@@ -18,21 +18,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "searchmodel.h"
+#include "videolistmodel.h"
 #include "invidiousmanager.h"
 #include <QNetworkReply>
 
-SearchModel::SearchModel(QObject *parent)
+VideoListModel::VideoListModel(QObject *parent)
     : QAbstractListModel(parent),
       invidious(new InvidiousManager("https://invidio.us", this))
 {
-    connect(invidious, &InvidiousManager::searchResults,
-            this, &SearchModel::handleSearchResults);
-    connect(invidious, &InvidiousManager::searchFailed,
-            this, &SearchModel::handleSearchFailure);
+    connect(invidious, &InvidiousManager::videoQueryResults,
+            this, &VideoListModel::handleSearchResults);
+    connect(invidious, &InvidiousManager::videoQueryFailed,
+            this, &VideoListModel::handleSearchFailure);
+
+    invidious->setRegion(QLocale::system().name().split("_").first());
 }
 
-QHash<int, QByteArray> SearchModel::roleNames() const
+QHash<int, QByteArray> VideoListModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
     roles[IdRole] = "id";
@@ -53,14 +55,14 @@ QHash<int, QByteArray> SearchModel::roleNames() const
     return roles;
 }
 
-int SearchModel::rowCount(const QModelIndex &parent) const
+int VideoListModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid())
         return 0;
     return m_results.length();
 }
 
-QVariant SearchModel::data(const QModelIndex &index, int role) const
+QVariant VideoListModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid())
         return QVariant();
@@ -101,34 +103,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void SearchModel::fetchMore(const QModelIndex&)
+void VideoListModel::fetch()
 {
-    if (!canFetchMore(QModelIndex()))
-        return;
-    setIsLoading(true);
-    lastRequest = invidious->search(m_searchQuery, m_nextPage);
-}
-
-bool SearchModel::canFetchMore(const QModelIndex&) const
-{
-    return true;
-}
-
-bool SearchModel::isLoading() const
-{
-    return m_loading;
-}
-
-QString SearchModel::searchQuery() const
-{
-    return m_searchQuery;
-}
-
-void SearchModel::setSearchQuery(const QString &searchQuery)
-{
-    m_searchQuery = searchQuery;
-    emit searchQueryChanged();
-
     // if currently loading, abort
     if (m_loading) {
         lastRequest->abort();
@@ -141,12 +117,71 @@ void SearchModel::setSearchQuery(const QString &searchQuery)
     clearAll();
 
     setIsLoading(true);
-    lastRequest = invidious->search(searchQuery, m_nextPage);
+    if (m_trending) {
+        lastRequest = invidious->trending(m_trendingCategory);
+    } else {
+        lastRequest = invidious->search(m_searchQuery, m_nextPage);
+    }
 }
 
-void SearchModel::handleSearchResults(const QList<VideoBasicInfo>& results)
+void VideoListModel::fetchMore(const QModelIndex&)
 {
-    m_nextPage++;
+    if (!canFetchMore(QModelIndex()))
+        return;
+
+    setIsLoading(true);
+    // only searches canFetchMore()
+    lastRequest = invidious->search(m_searchQuery, m_nextPage);
+}
+
+bool VideoListModel::canFetchMore(const QModelIndex&) const
+{
+    return !m_loading && !m_trending;
+}
+
+bool VideoListModel::isLoading() const
+{
+    return m_loading;
+}
+
+QString VideoListModel::searchQuery() const
+{
+    return m_searchQuery;
+}
+
+void VideoListModel::setSearchQuery(const QString &searchQuery)
+{
+    m_searchQuery = searchQuery;
+    emit searchQueryChanged();
+    setTrending(false);
+}
+
+bool VideoListModel::trending() const
+{
+    return m_trending;
+}
+
+void VideoListModel::setTrending(bool trending)
+{
+    m_trending = trending;
+    emit trendingChanged();
+}
+
+QString VideoListModel::trendingCategory() const
+{
+    return m_trendingCategory;
+}
+
+void VideoListModel::setTrendingCategory(const QString &trendingCategory)
+{
+    m_trendingCategory = trendingCategory;
+    emit trendingCategoryChanged();
+}
+
+void VideoListModel::handleSearchResults(const QList<VideoBasicInfo>& results)
+{
+    if (!m_trending)
+        m_nextPage++;
     setIsLoading(false);
     int rows = rowCount();
     beginInsertRows(QModelIndex(), rows, rows + results.length() - 1);
@@ -154,18 +189,18 @@ void SearchModel::handleSearchResults(const QList<VideoBasicInfo>& results)
     endInsertRows();
 }
 
-void SearchModel::handleSearchFailure()
+void VideoListModel::handleSearchFailure()
 {
     setIsLoading(false);
 }
 
-void SearchModel::setIsLoading(bool loading)
+void VideoListModel::setIsLoading(bool loading)
 {
     m_loading = loading;
     emit isLoadingChanged();
 }
 
-void SearchModel::clearAll()
+void VideoListModel::clearAll()
 {
     beginRemoveRows(QModelIndex(), 0, rowCount() - 1);
     m_results.clear();

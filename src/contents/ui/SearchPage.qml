@@ -26,7 +26,7 @@ import org.kde.plasmatube 1.0
 
 Kirigami.Page {
     id: root
-    title: "PlasmaTube"
+    title: videoModel.trending ? "Trending" : "Search"
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -48,9 +48,9 @@ Kirigami.Page {
                 Kirigami.Action {
                     iconName: "search"
                     onTriggered: {
-                        searchModel.searchQuery = searchField.text
+                        videoModel.searchQuery = searchField.text
+                        videoModel.fetch()
                     }
-
                 }
             ]
         }
@@ -63,8 +63,8 @@ Kirigami.Page {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            model: SearchModel {
-                id: searchModel
+            model: VideoListModel {
+                id: videoModel
             }
             delegate: Kirigami.AbstractListItem {
                 onClicked: {
@@ -154,7 +154,7 @@ Kirigami.Page {
 
         Controls.BusyIndicator {
             Layout.alignment: Qt.AlignCenter
-            visible: searchModel.isLoading
+            visible: videoModel.isLoading
         }
     }
 
@@ -175,5 +175,10 @@ Kirigami.Page {
             return Qt.formatTime(time, "h:mm:ss")
         else
             return Qt.formatTime(time, "hh:mm:ss")
+    }
+
+    Component.onCompleted: {
+        videoModel.trending = true
+        videoModel.fetch()
     }
 }
