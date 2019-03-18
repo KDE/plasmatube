@@ -81,6 +81,27 @@ Kirigami.Page {
                         Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
                         source: model.thumbnail
                         fillMode: Image.PreserveAspectFit
+
+                        Text {
+                            text: formatTime(model.length)
+                            color: "white"
+
+                            anchors.right: parent.right
+                            anchors.bottom: parent.bottom
+                            anchors.rightMargin: 10
+                            anchors.bottomMargin: 3
+
+                            Rectangle {
+                                anchors.fill: parent
+                                anchors.leftMargin: -2
+                                anchors.rightMargin: -2
+                                z: -1
+                                color: "#90000000"
+                                radius: 2
+                                width: 60
+                                height: 15
+                            }
+                        }
                     }
 
                     ColumnLayout {
@@ -145,5 +166,14 @@ Kirigami.Page {
            sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'],
            i = Math.floor(Math.log(count) / Math.log(k));
        return parseFloat((count / Math.pow(k, i)).toFixed(dm)) + sizes[i];
+    }
+
+    function formatTime(time) {
+        if (Qt.formatTime(time, "hh") === "00")
+            return Qt.formatTime(time, "mm:ss")
+        else if (Qt.formatTime(model.length, "hh") < 10)
+            return Qt.formatTime(time, "h:mm:ss")
+        else
+            return Qt.formatTime(time, "hh:mm:ss")
     }
 }

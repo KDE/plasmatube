@@ -73,7 +73,7 @@ void VideoBasicInfo::parseFromJson(const QJsonObject &obj)
 {
     m_videoId = obj.value("videoId").toString();
     m_title = obj.value("title").toString();
-    m_length = QTime().addSecs(obj.value("lengthSeconds").toInt());
+    m_length = QTime(0, 0).addSecs(obj.value("lengthSeconds").toInt());
     m_viewCount = obj.value("viewCount").toInt();
     m_author = obj.value("author").toString();
     m_authorId = obj.value("authorId").toString();
