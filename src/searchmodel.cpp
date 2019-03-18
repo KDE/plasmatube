@@ -101,6 +101,19 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
+void SearchModel::fetchMore(const QModelIndex&)
+{
+    if (!canFetchMore(QModelIndex()))
+        return;
+    setIsLoading(true);
+    lastRequest = invidious->search(m_searchQuery, m_nextPage);
+}
+
+bool SearchModel::canFetchMore(const QModelIndex&) const
+{
+    return true;
+}
+
 bool SearchModel::isLoading() const
 {
     return m_loading;

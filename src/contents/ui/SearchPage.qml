@@ -25,13 +25,24 @@ import org.kde.kirigami 2.4 as Kirigami
 import org.kde.plasmatube 1.0
 
 Kirigami.Page {
-    title: "Search"
+    title: "PlasmaTube"
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
     header: RowLayout {
+        Rectangle {
+            anchors.fill: parent
+            color: Kirigami.Theme.backgroundColor
+        }
+
         Controls.TextField {
             id: searchField
+            selectByMouse: true
+            placeholderText: "Search"
             Layout.fillWidth: true
         }
-        Controls.ToolButton {
+        Controls.Button {
             Kirigami.Icon {
                 anchors.fill: parent
                 source: "search"
@@ -45,10 +56,6 @@ Kirigami.Page {
 
     ColumnLayout {
         anchors.fill: parent
-
-        Controls.BusyIndicator {
-            visible: searchModel.isLoading
-        }
 
         ListView {
             Layout.fillWidth: true
@@ -85,6 +92,11 @@ Kirigami.Page {
                     }
                 }
             }
+        }
+
+        Controls.BusyIndicator {
+            Layout.alignment: Qt.AlignCenter
+            visible: searchModel.isLoading
         }
     }
 }

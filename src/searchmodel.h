@@ -58,6 +58,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    Q_INVOKABLE virtual void fetchMore(const QModelIndex &parent) override;
+    Q_INVOKABLE virtual bool canFetchMore(const QModelIndex &parent) const override;
 
     bool isLoading() const;
 
