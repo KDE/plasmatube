@@ -83,7 +83,7 @@ Kirigami.Page {
                         fillMode: Image.PreserveAspectFit
 
                         Text {
-                            text: formatTime(model.length)
+                            text: model.liveNow ? "live" : formatTime(model.length)
                             color: "white"
 
                             anchors.right: parent.right
