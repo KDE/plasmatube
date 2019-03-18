@@ -3,7 +3,7 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "5.12",
     "sdk": "org.kde.Sdk",
-    "command": "PlasmaTube",
+    "command": "plasmatube",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
@@ -186,7 +186,7 @@
             ]
         },
         {
-            "name": "PlasmaTube",
+            "name": "plasmatube",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
