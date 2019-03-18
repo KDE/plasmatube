@@ -171,7 +171,7 @@ Kirigami.Page {
     function formatTime(time) {
         if (Qt.formatTime(time, "hh") === "00")
             return Qt.formatTime(time, "mm:ss")
-        else if (Qt.formatTime(model.length, "hh") < 10)
+        else if (Qt.formatTime(time, "hh") < 10)
             return Qt.formatTime(time, "h:mm:ss")
         else
             return Qt.formatTime(time, "hh:mm:ss")
