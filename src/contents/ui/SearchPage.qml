@@ -25,6 +25,7 @@ import org.kde.kirigami 2.4 as Kirigami
 import org.kde.plasmatube 1.0
 
 Kirigami.Page {
+    id: root
     title: "PlasmaTube"
     leftPadding: 0
     rightPadding: 0
@@ -64,30 +65,65 @@ Kirigami.Page {
             model: SearchModel {
                 id: searchModel
             }
-            delegate: Kirigami.BasicListItem {
+            delegate: Kirigami.AbstractListItem {
                 onClicked: {
                     pageStack.push(videoPageComponent, {"url": "ytdl://" + model.id})
                 }
 
                 RowLayout {
                     Image {
-                        Layout.preferredWidth: 224
-                        Layout.preferredHeight: 120
+                        id: thumb
+                        Layout.fillHeight: true
+                        Layout.preferredWidth: 208
+                        Layout.preferredHeight: 111
+                        Layout.maximumWidth: root.width * 0.3
+                        Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
                         source: model.thumbnail
                         fillMode: Image.PreserveAspectFit
                     }
 
                     ColumnLayout {
+                        id: videoInfo
+                        Layout.preferredHeight: thumb.height
+                        Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
+                        Layout.minimumHeight: 70
+                        spacing: 0
                         Kirigami.Heading {
+                            Layout.alignment: Qt.AlignTop
                             Layout.fillWidth: true
+
                             text: model.title
-                            level: 3
+                            level: 4
+                            maximumLineCount: 1
+                            elide: Text.ElideRight
                         }
-                        Kirigami.Heading {
+                        Controls.Label {
+                            Layout.alignment: Qt.AlignTop
                             Layout.fillWidth: true
+
+                            text: model.author
+                            font.pointSize: 9
+                            font.italic: true
+                            maximumLineCount: 1
+                            elide: Text.ElideRight
+                        }
+                        Controls.Label {
+                            visible: root.width > 580
+                            enabled: root.width > 580
+                            Layout.alignment: Qt.AlignTop
+                            Layout.fillWidth: true
+
                             text: model.description
-                            level: 6
+                            font.pointSize: 8
+                            maximumLineCount: 2
                             wrapMode: Text.Wrap
+                            elide: Text.ElideRight
+                        }
+                        Controls.Label {
+                            Layout.alignment: Qt.AlignBottom
+                            text: formatViewCount(model.viewCount) +
+                                  " views \u2022 " + model.publishedText
+                            font.pointSize: 9
                         }
                     }
                 }
@@ -98,5 +134,15 @@ Kirigami.Page {
             Layout.alignment: Qt.AlignCenter
             visible: searchModel.isLoading
         }
+    }
+
+    function formatViewCount(count, decimals) {
+       if (count === 0)
+           return '0';
+       var k = 1000,
+           dm = decimals <= 0 ? 0 : decimals || 0,
+           sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'],
+           i = Math.floor(Math.log(count) / Math.log(k));
+       return parseFloat((count / Math.pow(k, i)).toFixed(dm)) + sizes[i];
     }
 }
