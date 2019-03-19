@@ -57,6 +57,7 @@ public:
     };
 
     explicit VideoListModel(QObject *parent = nullptr);
+    VideoListModel(const QList<VideoBasicInfo>&, QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -90,6 +91,7 @@ private:
     void setIsLoading(bool);
     void clearAll();
 
+    bool m_constant = false;
     bool m_loading = false;
     QString m_searchQuery;
     bool m_trending = false;

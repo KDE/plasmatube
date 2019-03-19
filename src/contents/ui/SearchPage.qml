@@ -23,10 +23,11 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.7 as Kirigami
 import org.kde.plasmatube 1.0
+import "utils.js" as Utils
 
 Kirigami.Page {
     id: root
-    title: videoModel.trending ? trendingToString(videoModel.trendingCategory)
+    title: videoModel.trending ? Utils.trendingToString(videoModel.trendingCategory)
                                : "Search"
     leftPadding: 0
     rightPadding: 0
@@ -116,7 +117,7 @@ Kirigami.Page {
             }
             delegate: Kirigami.AbstractListItem {
                 onClicked: {
-                    pageStack.push(videoPageComponent, {"url": "ytdl://" + model.id})
+                    pageStack.push(videoPageComponent, {"vid": model.id})
                 }
 
                 RowLayout {
@@ -131,7 +132,7 @@ Kirigami.Page {
                         fillMode: Image.PreserveAspectFit
 
                         Text {
-                            text: model.liveNow ? "live" : formatTime(model.length)
+                            text: model.liveNow ? "live" : Utils.formatTime(model.length)
                             color: "white"
 
                             anchors.right: parent.right
@@ -191,7 +192,7 @@ Kirigami.Page {
                         }
                         Controls.Label {
                             Layout.alignment: Qt.AlignBottom
-                            text: formatViewCount(model.viewCount) +
+                            text: Utils.formatCount(model.viewCount) +
                                   " views \u2022 " + model.publishedText
                             font.pointSize: 9
                         }
@@ -203,40 +204,6 @@ Kirigami.Page {
         Controls.BusyIndicator {
             Layout.alignment: Qt.AlignCenter
             visible: videoModel.isLoading
-        }
-    }
-
-    function formatViewCount(count, decimals) {
-       if (count === 0)
-           return '0';
-       var k = 1000,
-           dm = decimals <= 0 ? 0 : decimals || 0,
-           sizes = ['', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'],
-           i = Math.floor(Math.log(count) / Math.log(k));
-       return parseFloat((count / Math.pow(k, i)).toFixed(dm)) + sizes[i];
-    }
-
-    function formatTime(time) {
-        if (Qt.formatTime(time, "hh") === "00")
-            return Qt.formatTime(time, "mm:ss")
-        else if (Qt.formatTime(time, "hh") < 10)
-            return Qt.formatTime(time, "h:mm:ss")
-        else
-            return Qt.formatTime(time, "hh:mm:ss")
-    }
-
-    function trendingToString(category) {
-        switch (category) {
-        case "music":
-            return "Trending Music"
-        case "gaming":
-            return "Trending Gaming"
-        case "news":
-            return "Trending News"
-        case "movies":
-            return "Trending Movies"
-        default:
-            return "Trending"
         }
     }
 

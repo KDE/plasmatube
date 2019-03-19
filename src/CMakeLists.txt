@@ -1,8 +1,10 @@
 set(plasmatube_SRCS
     main.cpp
     mpvobject.cpp
+    videomodel.cpp
     videolistmodel.cpp
     videobasicinfo.cpp
+    video.cpp
     invidiousmanager.cpp
     )
 

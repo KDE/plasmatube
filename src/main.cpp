@@ -20,6 +20,7 @@
 
 #include "mpvobject.h"
 #include "videolistmodel.h"
+#include "videomodel.h"
 
 #include <clocale>
 
@@ -41,6 +42,7 @@ int main(int argc, char **argv)
 
     qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
     qmlRegisterType<VideoListModel>("org.kde.plasmatube", 1, 0, "VideoListModel");
+    qmlRegisterType<VideoModel>("org.kde.plasmatube", 1, 0, "VideoModel");
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

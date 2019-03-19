@@ -30,8 +30,12 @@ VideoListModel::VideoListModel(QObject *parent)
             this, &VideoListModel::handleSearchResults);
     connect(invidious, &InvidiousManager::videoQueryFailed,
             this, &VideoListModel::handleSearchFailure);
+}
 
-    invidious->setRegion(QLocale::system().name().split("_").first());
+VideoListModel::VideoListModel(const QList<VideoBasicInfo> &list,
+                               QObject *parent)
+    : QAbstractListModel(parent), m_constant(true), m_results(list)
+{
 }
 
 QHash<int, QByteArray> VideoListModel::roleNames() const
@@ -136,7 +140,7 @@ void VideoListModel::fetchMore(const QModelIndex&)
 
 bool VideoListModel::canFetchMore(const QModelIndex&) const
 {
-    return !m_loading && !m_trending;
+    return !m_loading && !m_trending && !m_constant;
 }
 
 bool VideoListModel::isLoading() const

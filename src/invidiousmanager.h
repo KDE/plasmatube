@@ -22,7 +22,7 @@
 #define INVIDIOUSMANAGER_H
 
 #include <QObject>
-#include "videobasicinfo.h"
+#include "video.h"
 
 class QNetworkReply;
 class QNetworkAccessManager;
@@ -41,9 +41,14 @@ signals:
     void videoQueryResults(const QList<VideoBasicInfo>&);
     void videoQueryFailed();
 
+    void videoReceived(const QJsonObject&);
+    void videoRequestFailed();
+
 public slots:
     QNetworkReply* search(const QString& searchQuery, qint32 page);
     QNetworkReply* trending(const QString& trendingCategory);
+
+    QNetworkReply* requestVideo(const QString& videoId);
 
 private slots:
     QNetworkReply* videoQuery(const QString& searchQuery, qint32 page,

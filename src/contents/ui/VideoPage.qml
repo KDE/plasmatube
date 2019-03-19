@@ -19,36 +19,125 @@
  */
 
 import QtQuick 2.1
+import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
 
 import org.kde.plasmatube 1.0
+import "utils.js" as Utils
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
+    property string vid
 
-    property string url
-
-    title: renderer.getProperty("media-title")
+    title: model.video.title
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    MpvObject {
-        id: renderer
-        anchors.fill: parent
+    VideoModel {
+        id: model
+        videoId: vid
+        onVideoIdChanged: {
+            // is also executed in initial set
+            model.fetch()
+        }
+    }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                renderer.command(["cycle", "pause"])
+    ColumnLayout {
+        MpvObject {
+            id: renderer
+            Layout.preferredWidth: root.width
+            Layout.preferredHeight: root.width / 16.0 * 9.0
+            Layout.maximumHeight: root.height
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: renderer.command(["cycle", "pause"])
             }
+        }
+
+        // extra layout to make all details invisible while loading
+        ColumnLayout {
+            Layout.leftMargin: 12
+            Layout.rightMargin: 12
+            Layout.fillWidth: true
+            visible: !model.isLoading
+            enabled: !model.isLoading
+
+            // title
+            Kirigami.Heading {
+                Layout.fillWidth: true
+                text: model.video.title
+                wrapMode: Text.WordWrap
+            }
+
+            // author info and like statistics
+            RowLayout {
+                Layout.fillWidth: true
+                //
+                Image {
+                    Layout.preferredHeight: 50
+                    Layout.preferredWidth: 50
+                    fillMode: Image.PreserveAspectFit
+                    source: model.video.authorThumbnail(100)
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+
+                ColumnLayout {
+                    spacing: 0
+                    Controls.ProgressBar {
+                        Layout.preferredWidth: 150
+                        value: model.video.rating / 5.0
+                    }
+                    RowLayout {
+                        Layout.alignment: Qt.AlignHCenter
+                        Kirigami.Icon {
+                            source: "draw-arrow-up"
+                            width: 22
+                            height: 22
+                        }
+                        Controls.Label {
+                            text: Utils.formatCount(model.video.likeCount)
+                        }
+
+                        // placeholder
+                        Item {
+                            width: 5
+                        }
+
+                        Kirigami.Icon {
+                            source: "draw-arrow-down"
+                            width: 22
+                            height: 22
+                        }
+                        Controls.Label {
+                            text: Utils.formatCount(model.video.dislikeCount)
+                        }
+                    }
+                }
+            }
+
+            // video description
+            Controls.Label {
+                Layout.fillWidth: true
+                text: model.video.description
+                wrapMode: Text.WordWrap
+            }
+        }
+
+        Controls.BusyIndicator {
+            Layout.alignment: Qt.AlignCenter
+            visible: model.isLoading
         }
     }
 
     Component.onCompleted: {
-        renderer.command(["loadfile", url])
-        root.title = renderer.getProperty("media-title")
+        renderer.command(["loadfile", "ytdl://" + vid])
     }
 }
