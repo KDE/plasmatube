@@ -26,6 +26,7 @@ import org.kde.kirigami 2.4 as Kirigami
 Kirigami.ApplicationWindow {
     id: root
     pageStack.initialPage: searchPageComponent
+    contextDrawer: Kirigami.ContextDrawer {}
 
     Component {
         id: searchPageComponent

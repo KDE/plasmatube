@@ -26,12 +26,60 @@ import org.kde.plasmatube 1.0
 
 Kirigami.Page {
     id: root
-    title: videoModel.trending ? "Trending" : "Search"
+    title: videoModel.trending ? trendingToString(videoModel.trendingCategory)
+                               : "Search"
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
     Kirigami.Theme.colorSet: Kirigami.Theme.View
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: "Trending"
+            iconName: "favorite" // should actually be "user-trash-full-symbolic"
+            onTriggered: {
+                videoModel.trending = true
+                videoModel.trendingCategory = ""
+                videoModel.fetch()
+            }
+        },
+        Kirigami.Action {
+            text: "Trending Music"
+            iconName: "folder-music-symbolic"
+            onTriggered: {
+                videoModel.trending = true
+                videoModel.trendingCategory = "music"
+                videoModel.fetch()
+            }
+        },
+        Kirigami.Action {
+            text: "Trending Gaming"
+            iconName: "folder-games-symbolic"
+            onTriggered: {
+                videoModel.trending = true
+                videoModel.trendingCategory = "gaming"
+                videoModel.fetch()
+            }
+        },
+        Kirigami.Action {
+            text: "Trending News"
+            iconName: "message-news"
+            onTriggered: {
+                videoModel.trending = true
+                videoModel.trendingCategory = "news"
+                videoModel.fetch()
+            }
+        },
+        Kirigami.Action {
+            text: "Trending Movies"
+            iconName: "folder-videos-symbolic"
+            onTriggered: {
+                videoModel.trending = true
+                videoModel.trendingCategory = "movies"
+                videoModel.fetch()
+            }
+        }
+    ]
 
     header: RowLayout {
         Rectangle {
@@ -175,6 +223,21 @@ Kirigami.Page {
             return Qt.formatTime(time, "h:mm:ss")
         else
             return Qt.formatTime(time, "hh:mm:ss")
+    }
+
+    function trendingToString(category) {
+        switch (category) {
+        case "music":
+            return "Trending Music"
+        case "gaming":
+            return "Trending Gaming"
+        case "news":
+            return "Trending News"
+        case "movies":
+            return "Trending Movies"
+        default:
+            return "Trending"
+        }
     }
 
     Component.onCompleted: {
