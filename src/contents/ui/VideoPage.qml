@@ -77,12 +77,23 @@ Kirigami.ScrollablePage {
             // author info and like statistics
             RowLayout {
                 Layout.fillWidth: true
-                //
                 Image {
                     Layout.preferredHeight: 50
                     Layout.preferredWidth: 50
                     fillMode: Image.PreserveAspectFit
                     source: model.video.authorThumbnail(100)
+                }
+
+                ColumnLayout {
+                    Controls.Label {
+                        text: model.video.author
+                    }
+                    Controls.Button {
+                        text: "Subscribe (" + model.video.subCountText + ")"
+                        Kirigami.Theme.backgroundColor: "red"
+                        Kirigami.Theme.textColor: "white"
+                        onClicked: showPassiveNotification("Invidious accounts/subscriptions are not implemented yet.")
+                    }
                 }
 
                 Item {
@@ -91,6 +102,10 @@ Kirigami.ScrollablePage {
 
                 ColumnLayout {
                     spacing: 0
+                    Controls.Label {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: Utils.formatCount(model.video.viewCount) + " views"
+                    }
                     Controls.ProgressBar {
                         Layout.preferredWidth: 150
                         value: model.video.rating / 5.0
