@@ -132,12 +132,13 @@ Kirigami.Page {
                         fillMode: Image.PreserveAspectFit
 
                         Text {
-                            text: model.liveNow ? "live" : Utils.formatTime(model.length)
+                            visible: !model.liveNow
+                            text: Utils.formatTime(model.length)
                             color: "white"
 
                             anchors.right: parent.right
                             anchors.bottom: parent.bottom
-                            anchors.rightMargin: 10
+                            anchors.rightMargin: 7
                             anchors.bottomMargin: 3
 
                             Rectangle {
@@ -192,8 +193,8 @@ Kirigami.Page {
                         }
                         Controls.Label {
                             Layout.alignment: Qt.AlignBottom
-                            text: Utils.formatCount(model.viewCount) +
-                                  " views \u2022 " + model.publishedText
+                            text: Utils.formatCount(model.viewCount) + " views \u2022 " +
+                                  (model.liveNow ? "<i>live now</i>" : model.publishedText)
                             font.pointSize: 9
                         }
                     }
