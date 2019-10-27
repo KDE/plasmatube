@@ -104,7 +104,7 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
     case PremiumRole:
         return video.premium();
     }
-    return QVariant();
+    return {};
 }
 
 void VideoListModel::fetch()
@@ -121,11 +121,7 @@ void VideoListModel::fetch()
     clearAll();
 
     setIsLoading(true);
-    if (m_trending) {
-        lastRequest = invidious->trending(m_trendingCategory);
-    } else {
-        lastRequest = invidious->search(m_searchQuery, m_nextPage);
-    }
+    lastRequest = invidious->videoQuery(m_queryType, m_query, m_nextPage);
 }
 
 void VideoListModel::fetchMore(const QModelIndex&)
@@ -135,12 +131,14 @@ void VideoListModel::fetchMore(const QModelIndex&)
 
     setIsLoading(true);
     // only searches canFetchMore()
-    lastRequest = invidious->search(m_searchQuery, m_nextPage);
+    lastRequest = invidious->videoQuery(m_queryType, m_query, m_nextPage);
 }
 
 bool VideoListModel::canFetchMore(const QModelIndex&) const
 {
-    return !m_loading && !m_trending && !m_constant;
+    return !m_loading &&
+            m_queryType != InvidiousManager::Trending &&
+           !m_constant;
 }
 
 bool VideoListModel::isLoading() const
@@ -148,44 +146,31 @@ bool VideoListModel::isLoading() const
     return m_loading;
 }
 
-QString VideoListModel::searchQuery() const
+InvidiousManager::VideoListType VideoListModel::queryType() const
 {
-    return m_searchQuery;
+    return m_queryType;
 }
 
-void VideoListModel::setSearchQuery(const QString &searchQuery)
+void VideoListModel::setQueryType(InvidiousManager::VideoListType queryType)
 {
-    m_searchQuery = searchQuery;
-    emit searchQueryChanged();
-    setTrending(false);
+    m_queryType = queryType;
 }
 
-bool VideoListModel::trending() const
+QString VideoListModel::query() const
 {
-    return m_trending;
+    return m_query;
 }
 
-void VideoListModel::setTrending(bool trending)
+void VideoListModel::setQuery(const QString &query)
 {
-    m_trending = trending;
-    emit trendingChanged();
+    m_query = query;
 }
 
-QString VideoListModel::trendingCategory() const
+void VideoListModel::handleSearchResults(const QList<VideoBasicInfo> &results)
 {
-    return m_trendingCategory;
-}
-
-void VideoListModel::setTrendingCategory(const QString &trendingCategory)
-{
-    m_trendingCategory = trendingCategory;
-    emit trendingCategoryChanged();
-}
-
-void VideoListModel::handleSearchResults(const QList<VideoBasicInfo>& results)
-{
-    if (!m_trending)
+    if (m_queryType != InvidiousManager::Trending)
         m_nextPage++;
+
     setIsLoading(false);
     int rows = rowCount();
     beginInsertRows(QModelIndex(), rows, rows + results.length() - 1);

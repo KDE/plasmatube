@@ -21,26 +21,46 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.7 as Kirigami
-import org.kde.plasmatube 1.0
+import org.kde.kirigami 2.8 as Kirigami
+
+import org.kde.plasmatube.accountmanager 1.0
+import org.kde.plasmatube.models 1.0
+import org.kde.plasmatube.invidious 1.0
 import "utils.js" as Utils
 
 Kirigami.Page {
     id: root
-    title: videoModel.trending ? Utils.trendingToString(videoModel.trendingCategory)
-                               : "Search"
+    title: {
+        if (videoModel.queryType === InvidiousManager.Trending)
+            return Utils.trendingToString(videoModel.trendingCategory);
+        else if (videoModel.queryType === InvidiousManager.Feed)
+            return "Subscriptions";
+        else
+            return "Search";
+    }
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
     Kirigami.Theme.colorSet: Kirigami.Theme.View
+
     actions.contextualActions: [
+        Kirigami.Action {
+            visible: AccountManager.username.length > 0
+            text: "Subscription Feed"
+            icon.name: ""
+            onTriggered: {
+                videoModel.queryType = InvidiousManager.Feed;
+                videoModel.query = "";
+                videoModel.fetch();
+            }
+        },
         Kirigami.Action {
             text: "Trending"
             iconName: "favorite" // should actually be "user-trash-full-symbolic"
             onTriggered: {
-                videoModel.trending = true
-                videoModel.trendingCategory = ""
+                videoModel.queryType = InvidiousManager.Trending
+                videoModel.query = ""
                 videoModel.fetch()
             }
         },
@@ -48,8 +68,8 @@ Kirigami.Page {
             text: "Trending Music"
             iconName: "folder-music-symbolic"
             onTriggered: {
-                videoModel.trending = true
-                videoModel.trendingCategory = "music"
+                videoModel.queryType = InvidiousManager.Trending
+                videoModel.query = "music"
                 videoModel.fetch()
             }
         },
@@ -57,8 +77,8 @@ Kirigami.Page {
             text: "Trending Gaming"
             iconName: "folder-games-symbolic"
             onTriggered: {
-                videoModel.trending = true
-                videoModel.trendingCategory = "gaming"
+                videoModel.queryType = InvidiousManager.Trending
+                videoModel.query = "gaming"
                 videoModel.fetch()
             }
         },
@@ -66,8 +86,8 @@ Kirigami.Page {
             text: "Trending News"
             iconName: "message-news"
             onTriggered: {
-                videoModel.trending = true
-                videoModel.trendingCategory = "news"
+                videoModel.queryType = InvidiousManager.Trending
+                videoModel.query = "news"
                 videoModel.fetch()
             }
         },
@@ -75,8 +95,8 @@ Kirigami.Page {
             text: "Trending Movies"
             iconName: "folder-videos-symbolic"
             onTriggered: {
-                videoModel.trending = true
-                videoModel.trendingCategory = "movies"
+                videoModel.queryType = InvidiousManager.Trending
+                videoModel.query = "movies"
                 videoModel.fetch()
             }
         }
@@ -88,16 +108,17 @@ Kirigami.Page {
             color: Kirigami.Theme.backgroundColor
         }
 
-        Kirigami.ActionTextField {
+        Kirigami.SearchField {
             id: searchField
             selectByMouse: true
-            placeholderText: "Search"
             Layout.fillWidth: true
-            rightActions:  [
+
+            rightActions: [
                 Kirigami.Action {
                     iconName: "search"
                     onTriggered: {
-                        videoModel.searchQuery = searchField.text
+                        videoModel.queryType = InvidiousManager.Search
+                        videoModel.query = searchField.text
                         videoModel.fetch()
                     }
                 }
@@ -135,7 +156,10 @@ Kirigami.Page {
     }
 
     Component.onCompleted: {
-        videoModel.trending = true
-        videoModel.fetch()
+        if (AccountManager.username.length > 0)
+            videoModel.queryType = InvidiousManager.Feed;
+        else
+            videoModel.queryType = InvidiousManager.Trending;
+        videoModel.fetch();
     }
 }

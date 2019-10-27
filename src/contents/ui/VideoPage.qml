@@ -23,7 +23,8 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
 
-import org.kde.plasmatube 1.0
+import org.kde.plasmatube.mpv 1.0
+import org.kde.plasmatube.models 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {

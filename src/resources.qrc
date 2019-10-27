@@ -1,9 +1,11 @@
 <RCC>
     <qresource prefix="/">
+        <file alias="LoginPage.qml">contents/ui/LoginPage.qml</file>
         <file alias="main.qml">contents/ui/main.qml</file>
-        <file alias="VideoPage.qml">contents/ui/VideoPage.qml</file>
         <file alias="SearchPage.qml">contents/ui/SearchPage.qml</file>
-        <file alias="utils.js">contents/ui/utils.js</file>
         <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
+        <file alias="VideoPage.qml">contents/ui/VideoPage.qml</file>
+
+        <file alias="utils.js">contents/ui/utils.js</file>
     </qresource>
 </RCC>

@@ -6,7 +6,8 @@ set(plasmatube_SRCS
     videobasicinfo.cpp
     video.cpp
     invidiousmanager.cpp
-    )
+    accountmanager.cpp
+)
 
 qt5_add_resources(RESOURCES resources.qrc)
 add_executable(plasmatube ${plasmatube_SRCS} ${RESOURCES})

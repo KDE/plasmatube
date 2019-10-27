@@ -19,6 +19,7 @@
  */
 
 #include "invidiousmanager.h"
+// Qt
 #include <QUrlQuery>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
@@ -26,8 +27,11 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 
+#include "accountmanager.h"
+
 InvidiousManager::InvidiousManager(QString invidiousInstance, QObject *parent)
-    : QObject(parent), m_instance(invidiousInstance),
+    : QObject(parent),
+      m_instance(invidiousInstance),
       m_region(QLocale::system().name().split("_").first()),
       m_netManager(new QNetworkAccessManager(this))
 {
@@ -41,16 +45,6 @@ QString InvidiousManager::region() const
 void InvidiousManager::setRegion(const QString &region)
 {
     m_region = region;
-}
-
-QNetworkReply *InvidiousManager::search(const QString &searchQuery, qint32 page)
-{
-    return videoQuery(searchQuery, page, false, "");
-}
-
-QNetworkReply *InvidiousManager::trending(const QString &trendingCategory)
-{
-    return videoQuery("", 0, true, trendingCategory);
 }
 
 QNetworkReply *InvidiousManager::requestVideo(const QString &videoId)
@@ -80,31 +74,49 @@ QNetworkReply *InvidiousManager::requestVideo(const QString &videoId)
     return reply;
 }
 
-QNetworkReply* InvidiousManager::videoQuery(const QString& searchQuery,
-                                            qint32 page, bool trending,
-                                            const QString& trendingCategory)
+QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
+                                            const QString &queryValue,
+                                            qint32 page)
 {
-    QUrl url;
-    if (trending)
-        url.setUrl(m_instance + "/api/v1/trending");
-    else
-        url.setUrl(m_instance + "/api/v1/search");
+    QString urlString = AccountManager::instance()->invidiousInstance();
 
     QUrlQuery query;
-    if (trending) {
-        if (!trendingCategory.isEmpty())
-            query.addQueryItem("type", trendingCategory);
-    } else {
-        query.addQueryItem("q", searchQuery);
-        query.addQueryItem("page", QString::number(page));
-    }
     query.addQueryItem("region", m_region);
+
+    switch (queryType) {
+    case Search:
+        urlString.append("/api/v1/search");
+
+        query.addQueryItem("q", QUrl::toPercentEncoding(queryValue));
+        query.addQueryItem("page", QString::number(page));
+        break;
+    case Trending:
+        urlString.append("/api/v1/trending");
+
+        if (!queryValue.isEmpty())
+            query.addQueryItem("type", queryValue);
+        break;
+    case Feed:
+        urlString.append("/api/v1/auth/feed");
+
+        query.addQueryItem("page", QString::number(page));
+        break;
+    }
+
+    QUrl url(urlString);
     url.setQuery(query);
 
-    QNetworkReply* reply = m_netManager->get(QNetworkRequest(url));
+    QNetworkRequest request(urlString);
+    if (!AccountManager::instance()->username().isEmpty())
+        request.setHeader(
+            QNetworkRequest::CookieHeader,
+            QVariant::fromValue(QList<QNetworkCookie>() << AccountManager::instance()->cookie())
+        );
+
+    QNetworkReply *reply = m_netManager->get(request);
 
     // success
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+    connect(reply, &QNetworkReply::finished, this, [=] () {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
         if (doc.isNull()) {
             emit videoQueryFailed();
@@ -112,10 +124,30 @@ QNetworkReply* InvidiousManager::videoQuery(const QString& searchQuery,
         }
 
         QList<VideoBasicInfo> results;
-        foreach (const QJsonValue &val, doc.array()) {
-            VideoBasicInfo video;
-            video.parseFromJson(val.toObject());
-            results.append(video);
+
+        if (queryType == Feed) {
+            const QJsonObject obj = doc.object();
+
+            const QJsonArray notifications = obj.value("notifications").toArray();
+            for (const QJsonValue &val : notifications) {
+                VideoBasicInfo video;
+                video.parseFromJson(val.toObject());
+                video.setIsNotification(true);
+                results.append(video);
+            }
+
+            const QJsonArray videos = obj.value("videos").toArray();
+            for (const QJsonValue &val : notifications) {
+                VideoBasicInfo video;
+                video.parseFromJson(val.toObject());
+                results.append(video);
+            }
+        } else {
+            for (const QJsonValue &val : doc.array()) {
+                VideoBasicInfo video;
+                video.parseFromJson(val.toObject());
+                results.append(video);
+            }
         }
 
         emit videoQueryResults(results);
@@ -123,7 +155,7 @@ QNetworkReply* InvidiousManager::videoQuery(const QString& searchQuery,
 
     // failure
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [this](QNetworkReply::NetworkError) {
+            this, [=] (QNetworkReply::NetworkError) {
         emit videoQueryFailed();
     });
 

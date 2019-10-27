@@ -21,6 +21,8 @@
 #include "mpvobject.h"
 #include "videolistmodel.h"
 #include "videomodel.h"
+#include "accountmanager.h"
+#include "invidiousmanager.h"
 
 #include <clocale>
 
@@ -40,9 +42,13 @@ int main(int argc, char **argv)
     // requires the LC_NUMERIC category to be set to "C", so change it back.
     std::setlocale(LC_NUMERIC, "C");
 
-    qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
-    qmlRegisterType<VideoListModel>("org.kde.plasmatube", 1, 0, "VideoListModel");
-    qmlRegisterType<VideoModel>("org.kde.plasmatube", 1, 0, "VideoModel");
+    qmlRegisterType<MpvObject>("org.kde.plasmatube.mpv", 1, 0, "MpvObject");
+    qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
+    qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
+    qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
+    qmlRegisterSingletonType<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", [] (QQmlEngine *qmlEngine, QJSEngine *) {
+        return static_cast<QObject*>(AccountManager::instance());
+    });
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

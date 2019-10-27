@@ -98,6 +98,16 @@ void VideoBasicInfo::parseFromJson(const QJsonObject &obj)
     setVideoThumbnails(thumbs);
 }
 
+bool VideoBasicInfo::isNotification() const
+{
+    return m_isNotification;
+}
+
+void VideoBasicInfo::setIsNotification(bool isNotification)
+{
+    m_isNotification = isNotification;
+}
+
 QString VideoBasicInfo::videoId() const
 {
     return m_videoId;

@@ -18,50 +18,50 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef INVIDIOUSMANAGER_H
-#define INVIDIOUSMANAGER_H
+#ifndef ACCOUNTMANAGER_H
+#define ACCOUNTMANAGER_H
 
 #include <QObject>
-#include "video.h"
+#include <QNetworkCookie>
 
-class QNetworkReply;
 class QNetworkAccessManager;
 
-class InvidiousManager : public QObject
+class AccountManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
+    Q_PROPERTY(QString invidiousId READ invidiousId NOTIFY invidiousIdChanged)
 
 public:
-    enum VideoListType {
-        Search,
-        Trending,
-        Feed
-    };
-    Q_ENUM(VideoListType)
+    AccountManager(QObject *parent = nullptr);
+    ~AccountManager();
 
-    explicit InvidiousManager(QString invidiousInstance = "https://invidio.us",
-                              QObject *parent = nullptr);
+    static AccountManager *instance();
 
-    QString region() const;
-    void setRegion(const QString&);
+    Q_INVOKABLE void logIn(const QString &username, const QString &password);
+    Q_INVOKABLE void logOut();
+
+    QString username() const;
+    QString invidiousId() const;
+    QString invidiousInstance() const;
+    QNetworkCookie cookie() const;
 
 signals:
-    void videoQueryResults(const QList<VideoBasicInfo>&);
-    void videoQueryFailed();
+    void loggedIn();
+    void loggingInFailed(const QString &errorText);
 
-    void videoReceived(const QJsonObject&);
-    void videoRequestFailed();
+    void loggedOut();
 
-public slots:
-    QNetworkReply* videoQuery(VideoListType queryType, const QString &queryValue = QString(), qint32 page = 0);
-
-    QNetworkReply* requestVideo(const QString& videoId);
+    void usernameChanged();
+    void invidiousIdChanged();
 
 private:
+    void saveCredentials();
+    
+    QNetworkAccessManager *m_netManager;
+    QString m_username;
     QString m_instance;
-    QString m_region;
-
-    QNetworkAccessManager* m_netManager;
+    QNetworkCookie m_cookie;
 };
 
-#endif // INVIDIOUSMANAGER_H
+#endif // ACCOUNTMANAGER_H

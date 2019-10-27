@@ -55,6 +55,9 @@ class VideoBasicInfo
 public:
     void parseFromJson(const QJsonObject&);
 
+    bool isNotification() const;
+    void setIsNotification(bool);
+
     QString videoId() const;
     void setVideoId(const QString&);
 
@@ -103,6 +106,7 @@ public:
     void setPremium(bool);
 
 private:
+    bool m_isNotification = false;
     QString m_videoId;
     QString m_title;
     QList<VideoThumbnail> m_videoThumbnails;

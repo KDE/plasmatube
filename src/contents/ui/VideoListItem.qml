@@ -22,7 +22,7 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.7 as Kirigami
-import org.kde.plasmatube 1.0
+
 import "utils.js" as Utils
 
 Kirigami.AbstractListItem {
@@ -80,6 +80,7 @@ Kirigami.AbstractListItem {
             Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
             Layout.minimumHeight: 70
             spacing: 0
+
             Kirigami.Heading {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
