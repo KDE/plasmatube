@@ -115,90 +115,16 @@ Kirigami.Page {
             model: VideoListModel {
                 id: videoModel
             }
-            delegate: Kirigami.AbstractListItem {
-                onClicked: {
-                    pageStack.push(videoPageComponent, {"vid": model.id})
-                }
-
-                RowLayout {
-                    Image {
-                        id: thumb
-                        Layout.fillHeight: true
-                        Layout.preferredWidth: 208
-                        Layout.preferredHeight: 111
-                        Layout.maximumWidth: root.width * 0.3
-                        Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
-                        source: model.thumbnail
-                        fillMode: Image.PreserveAspectFit
-
-                        Text {
-                            visible: !model.liveNow
-                            text: Utils.formatTime(model.length)
-                            color: "white"
-
-                            anchors.right: parent.right
-                            anchors.bottom: parent.bottom
-                            anchors.rightMargin: 7
-                            anchors.bottomMargin: 3
-
-                            Rectangle {
-                                anchors.fill: parent
-                                anchors.leftMargin: -2
-                                anchors.rightMargin: -2
-                                z: -1
-                                color: "#90000000"
-                                radius: 2
-                                width: 60
-                                height: 15
-                            }
-                        }
-                    }
-
-                    ColumnLayout {
-                        id: videoInfo
-                        Layout.preferredHeight: thumb.height
-                        Layout.maximumHeight: root.width * 0.3 / 16.0 * 9.0
-                        Layout.minimumHeight: 70
-                        spacing: 0
-                        Kirigami.Heading {
-                            Layout.alignment: Qt.AlignTop
-                            Layout.fillWidth: true
-
-                            text: model.title
-                            level: 4
-                            maximumLineCount: 1
-                            elide: Text.ElideRight
-                        }
-                        Controls.Label {
-                            Layout.alignment: Qt.AlignTop
-                            Layout.fillWidth: true
-
-                            text: model.author
-                            font.pointSize: 9
-                            font.italic: true
-                            maximumLineCount: 1
-                            elide: Text.ElideRight
-                        }
-                        Controls.Label {
-                            visible: root.width > 580
-                            enabled: root.width > 580
-                            Layout.alignment: Qt.AlignTop
-                            Layout.fillWidth: true
-
-                            text: model.description
-                            font.pointSize: 8
-                            maximumLineCount: 2
-                            wrapMode: Text.Wrap
-                            elide: Text.ElideRight
-                        }
-                        Controls.Label {
-                            Layout.alignment: Qt.AlignBottom
-                            text: Utils.formatCount(model.viewCount) + " views \u2022 " +
-                                  (model.liveNow ? "<i>live now</i>" : model.publishedText)
-                            font.pointSize: 9
-                        }
-                    }
-                }
+            delegate: VideoListItem {
+                vid: model.id
+                thumbnail: model.thumbnail
+                liveNow: model.liveNow
+                length: model.length
+                title: model.title
+                author: model.author
+                description: model.description
+                viewCount: model.viewCount
+                publishedText: model.publishedText
             }
         }
 

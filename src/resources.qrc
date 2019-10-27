@@ -4,5 +4,6 @@
         <file alias="VideoPage.qml">contents/ui/VideoPage.qml</file>
         <file alias="SearchPage.qml">contents/ui/SearchPage.qml</file>
         <file alias="utils.js">contents/ui/utils.js</file>
+        <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
     </qresource>
 </RCC>
