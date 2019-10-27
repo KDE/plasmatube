@@ -1,0 +1,5 @@
+.flatpak-builder/
+.kdev4/
+build/
+flatpak-build-*/
+plasmatube.kdev4
