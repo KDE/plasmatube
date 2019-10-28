@@ -28,7 +28,7 @@ import org.kde.plasmatube.models 1.0
 import org.kde.plasmatube.invidious 1.0
 import "utils.js" as Utils
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
     title: {
         if (videoModel.queryType === InvidiousManager.Trending)
@@ -102,55 +102,53 @@ Kirigami.Page {
         }
     ]
 
-    header: RowLayout {
-        Rectangle {
-            anchors.fill: parent
-            color: Kirigami.Theme.backgroundColor
-        }
+    header: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+        height: searchField.implicitHeight + 2 * Kirigami.Units.largeSpacing
+        width: root.width
 
         Kirigami.SearchField {
             id: searchField
             selectByMouse: true
-            Layout.fillWidth: true
+            anchors.centerIn: parent
+            anchors.margins: Kirigami.Units.largeSpacing
+            width: parent.width - 2 * Kirigami.Units.largeSpacing
+
+            onAccepted: {
+                videoModel.queryType = InvidiousManager.Search;
+                videoModel.query = text;
+                videoModel.fetch();
+            }
 
             rightActions: [
                 Kirigami.Action {
                     iconName: "search"
-                    onTriggered: {
-                        videoModel.queryType = InvidiousManager.Search
-                        videoModel.query = searchField.text
-                        videoModel.fetch()
-                    }
+                    onTriggered: searchField.accepted()
                 }
             ]
         }
     }
 
-    ColumnLayout {
-        anchors.fill: parent
-
-        ListView {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-
-            model: VideoListModel {
-                id: videoModel
-            }
-            delegate: VideoListItem {
-                vid: model.id
-                thumbnail: model.thumbnail
-                liveNow: model.liveNow
-                length: model.length
-                title: model.title
-                author: model.author
-                description: model.description
-                viewCount: model.viewCount
-                publishedText: model.publishedText
-            }
+    ListView {
+        clip: true
+        model: VideoListModel {
+            id: videoModel
+        }
+        delegate: VideoListItem {
+            vid: model.id
+            thumbnail: model.thumbnail
+            liveNow: model.liveNow
+            length: model.length
+            title: model.title
+            author: model.author
+            description: model.description
+            viewCount: model.viewCount
+            publishedText: model.publishedText
         }
 
         Controls.BusyIndicator {
-            Layout.alignment: Qt.AlignCenter
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
             visible: videoModel.isLoading
         }
     }
