@@ -98,15 +98,13 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
         break;
     case Feed:
         urlString.append("/api/v1/auth/feed");
-
-        query.addQueryItem("page", QString::number(page));
         break;
     }
 
     QUrl url(urlString);
     url.setQuery(query);
 
-    QNetworkRequest request(urlString);
+    QNetworkRequest request(url.toString());
     if (!AccountManager::instance()->username().isEmpty())
         request.setHeader(
             QNetworkRequest::CookieHeader,
@@ -155,7 +153,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
 
     // failure
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [=] (QNetworkReply::NetworkError) {
+            this, [=] (QNetworkReply::NetworkError error) {
         emit videoQueryFailed();
     });
 

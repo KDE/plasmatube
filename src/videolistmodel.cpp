@@ -137,7 +137,7 @@ void VideoListModel::fetchMore(const QModelIndex&)
 bool VideoListModel::canFetchMore(const QModelIndex&) const
 {
     return !m_loading &&
-            m_queryType != InvidiousManager::Trending &&
+            m_queryType == InvidiousManager::Search &&
            !m_constant;
 }
 
