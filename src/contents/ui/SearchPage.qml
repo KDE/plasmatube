@@ -35,6 +35,13 @@ Kirigami.ScrollablePage {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+
+    supportsRefreshing: true
+    onRefreshingChanged: {
+        if (refreshing)
+            videoModel.fetch();
+    }
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     actions.contextualActions: [
@@ -45,7 +52,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Feed;
                 videoModel.query = "";
-                videoModel.fetch();
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -54,7 +61,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Top
                 videoModel.query = ""
-                videoModel.fetch()
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -63,7 +70,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
                 videoModel.query = ""
-                videoModel.fetch()
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -72,7 +79,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
                 videoModel.query = "music"
-                videoModel.fetch()
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -81,7 +88,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
                 videoModel.query = "gaming"
-                videoModel.fetch()
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -90,7 +97,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
                 videoModel.query = "news"
-                videoModel.fetch()
+                root.refreshing = true;
             }
         },
         Kirigami.Action {
@@ -99,7 +106,7 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
                 videoModel.query = "movies"
-                videoModel.fetch()
+                root.refreshing = true;
             }
         }
     ]
@@ -119,7 +126,7 @@ Kirigami.ScrollablePage {
             onAccepted: {
                 videoModel.queryType = InvidiousManager.Search;
                 videoModel.query = text;
-                videoModel.fetch();
+                root.refreshing = true;
             }
 
             rightActions: [
@@ -135,6 +142,10 @@ Kirigami.ScrollablePage {
         clip: true
         model: VideoListModel {
             id: videoModel
+            onIsLoadingChanged: {
+                if (!isLoading)
+                    root.refreshing = false;
+            }
         }
         delegate: VideoListItem {
             vid: model.id
@@ -147,12 +158,6 @@ Kirigami.ScrollablePage {
             viewCount: model.viewCount
             publishedText: model.publishedText
         }
-
-        Controls.BusyIndicator {
-            anchors.bottom: parent.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            visible: videoModel.isLoading
-        }
     }
 
     Component.onCompleted: {
@@ -160,7 +165,7 @@ Kirigami.ScrollablePage {
             videoModel.queryType = InvidiousManager.Feed;
         else
             videoModel.queryType = InvidiousManager.Trending;
-        videoModel.fetch();
+        root.refreshing = true;
     }
 
     function videoListTypeToString(videoListType, query) {
