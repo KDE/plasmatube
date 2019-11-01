@@ -26,9 +26,10 @@
 
 #define INVIDIOUS_API_SEARCH "/api/v1/search"
 #define INVIDIOUS_API_TRENDING "/api/v1/trending"
-#define INVIDIOUS_API_FEED "/api/v1/auth/feed"
+#define INVIDIOUS_API_TOP "/api/v1/top"
 #define INVIDIOUS_API_VIDEOS_ "/api/v1/videos/"
 
 #define INVIDIOUS_API_LOGIN "/login"
 #define INVIDIOUS_API_SUBSCRIPTIONS "/api/v1/auth/subscriptions"
 #define INVIDIOUS_API_SUBSCRIPTIONS_ "/api/v1/auth/subscriptions/"
+#define INVIDIOUS_API_FEED "/api/v1/auth/feed"

@@ -96,6 +96,9 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
         if (!queryValue.isEmpty())
             query.addQueryItem("type", queryValue);
         break;
+    case Top:
+        urlString.append(INVIDIOUS_API_TOP);
+        break;
     case Feed:
         urlString.append(INVIDIOUS_API_FEED);
         break;

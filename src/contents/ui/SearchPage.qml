@@ -30,16 +30,7 @@ import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
     id: root
-    title: {
-        switch (videoModel.queryType) {
-        case InvidiousManager.Feed:
-            return qsTr("Subscriptions");
-        case InvidiousManager.Trending:
-            return Utils.trendingToString(videoModel.query);
-        case InvidiousManager.Search:
-            return qsTr("Search");
-        }
-    }
+    title: videoListTypeToString(videoModel.queryType, videoModel.query)
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -49,12 +40,21 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             visible: AccountManager.username.length > 0
-            text: qsTr("Subscriptions")
+            text: videoListTypeToString(InvidiousManager.Feed)
             icon.name: "feed-subscribe"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Feed;
                 videoModel.query = "";
                 videoModel.fetch();
+            }
+        },
+        Kirigami.Action {
+            text: videoListTypeToString(InvidiousManager.Top)
+            iconName: "arrow-up-double"
+            onTriggered: {
+                videoModel.queryType = InvidiousManager.Top
+                videoModel.query = ""
+                videoModel.fetch()
             }
         },
         Kirigami.Action {
@@ -161,5 +161,18 @@ Kirigami.ScrollablePage {
         else
             videoModel.queryType = InvidiousManager.Trending;
         videoModel.fetch();
+    }
+
+    function videoListTypeToString(videoListType, query) {
+        switch (videoListType) {
+        case InvidiousManager.Feed:
+            return qsTr("Subscriptions");
+        case InvidiousManager.Trending:
+            return Utils.trendingToString(query);
+        case InvidiousManager.Top:
+            return qsTr("Invidious Top");
+        case InvidiousManager.Search:
+            return qsTr("Search");
+        }
     }
 }

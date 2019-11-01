@@ -35,6 +35,7 @@ public:
     enum VideoListType {
         Search,
         Trending,
+        Top,
         Feed
     };
     Q_ENUM(VideoListType)
