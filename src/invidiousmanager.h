@@ -39,8 +39,7 @@ public:
     };
     Q_ENUM(VideoListType)
 
-    explicit InvidiousManager(QString invidiousInstance = "https://invidio.us",
-                              QObject *parent = nullptr);
+    explicit InvidiousManager(QObject *parent = nullptr);
 
     QString region() const;
     void setRegion(const QString&);
@@ -58,9 +57,9 @@ public slots:
     QNetworkReply* requestVideo(const QString& videoId);
 
 private:
+    QString invidiousInstance();
     QNetworkAccessManager *netManager();
 
-    QString m_instance;
     QString m_region;
 };
 

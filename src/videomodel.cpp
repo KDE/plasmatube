@@ -25,7 +25,7 @@
 
 VideoModel::VideoModel(QObject *parent)
     : QObject(parent), m_video(new VideoItem(this)),
-      invidious(new InvidiousManager("https://invidio.us", this))
+      invidious(new InvidiousManager(this))
 {
     connect(invidious, &InvidiousManager::videoReceived,
             this, &VideoModel::handleVideoReceived);
@@ -88,7 +88,7 @@ QUrl VideoItem::authorThumbnail(qint32 size) const
     }
     if (!authorThumbnails().isEmpty())
         return authorThumbnails().last().url();
-    return QUrl();
+    return {};
 }
 
 VideoListModel *VideoItem::recommendedVideosModel() const

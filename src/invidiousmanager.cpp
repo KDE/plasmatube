@@ -29,10 +29,10 @@
 #include <QJsonArray>
 
 #include "accountmanager.h"
+#include "constants.h"
 
-InvidiousManager::InvidiousManager(QString invidiousInstance, QObject *parent)
+InvidiousManager::InvidiousManager(QObject *parent)
     : QObject(parent),
-      m_instance(invidiousInstance),
       m_region(QLocale::system().name().split("_").first())
 {
 }
@@ -49,7 +49,7 @@ void InvidiousManager::setRegion(const QString &region)
 
 QNetworkReply *InvidiousManager::requestVideo(const QString &videoId)
 {
-    QUrl url(m_instance + "/api/v1/videos/" + videoId);
+    QUrl url(invidiousInstance() + INVIDIOUS_API_VIDEOS_ + videoId);
     QUrlQuery query;
     query.addQueryItem("region", m_region);
     url.setQuery(query);
@@ -85,19 +85,19 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
 
     switch (queryType) {
     case Search:
-        urlString.append("/api/v1/search");
+        urlString.append(INVIDIOUS_API_SEARCH);
 
         query.addQueryItem("q", QUrl::toPercentEncoding(queryValue));
         query.addQueryItem("page", QString::number(page));
         break;
     case Trending:
-        urlString.append("/api/v1/trending");
+        urlString.append(INVIDIOUS_API_TRENDING);
 
         if (!queryValue.isEmpty())
             query.addQueryItem("type", queryValue);
         break;
     case Feed:
-        urlString.append("/api/v1/auth/feed");
+        urlString.append(INVIDIOUS_API_FEED);
         break;
     }
 
@@ -158,6 +158,11 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     });
 
     return reply;
+}
+
+QString InvidiousManager::invidiousInstance()
+{
+    return AccountManager::instance()->invidiousInstance();
 }
 
 QNetworkAccessManager *InvidiousManager::netManager()

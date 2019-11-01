@@ -21,7 +21,6 @@
 #include "accountmanager.h"
 
 #include <QDebug>
-#include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -34,9 +33,7 @@
 #include <QUrl>
 #include <QUrlQuery>
 
-#define DEFAULT_INSTANCE "https://invidio.us"
-#define INVIDIOUS_API_SUBSCRIPTIONS "/api/v1/auth/subscriptions"
-#define INVIDIOUS_API_SUBSCRIPTIONS_ "/api/v1/auth/subscriptions/"
+#include "constants.h"
 
 static AccountManager *s_instance;
 
@@ -48,11 +45,11 @@ AccountManager::AccountManager(QObject *parent)
     s_instance = this;
 
     QSettings settings;
-    m_instance = settings.value("auth/instance", QStringLiteral(DEFAULT_INSTANCE)).toString();
-    m_username = settings.value("auth/username").toString();
+    m_instance = settings.value(SETTINGS_INSTANCE, QStringLiteral(DEFAULT_INSTANCE)).toString();
+    m_username = settings.value(SETTINGS_USERNAME).toString();
 
     QList<QNetworkCookie> cookies = QNetworkCookie::parseCookies(
-        settings.value("auth/cookie").toByteArray()
+        settings.value(SETTINGS_COOKIE).toByteArray()
     );
     if (!cookies.isEmpty())
         m_cookie = cookies.first();
@@ -77,7 +74,7 @@ AccountManager * AccountManager::instance()
 
 void AccountManager::logIn(const QString &username, const QString &password)
 {
-    QUrl url(m_instance + "/login");
+    QUrl url(m_instance + INVIDIOUS_API_LOGIN);
     QUrlQuery urlQuery;
     urlQuery.addQueryItem("referer", QUrl::toPercentEncoding("/"));
     urlQuery.addQueryItem("type", "invidious");
@@ -301,7 +298,7 @@ void AccountManager::setSubscribedChannelIds(const QVector<QString> &subs)
 void AccountManager::saveCredentials()
 {
     QSettings settings;
-    settings.setValue("auth/instance", m_instance);
-    settings.setValue("auth/username", m_username);
-    settings.setValue("auth/cookie", m_cookie.toRawForm());
+    settings.setValue(SETTINGS_INSTANCE, m_instance);
+    settings.setValue(SETTINGS_USERNAME, m_username);
+    settings.setValue(SETTINGS_COOKIE, m_cookie.toRawForm());
 }

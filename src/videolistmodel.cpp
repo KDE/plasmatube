@@ -20,11 +20,12 @@
 
 #include "videolistmodel.h"
 #include "invidiousmanager.h"
+
 #include <QNetworkReply>
 
 VideoListModel::VideoListModel(QObject *parent)
     : QAbstractListModel(parent),
-      invidious(new InvidiousManager("https://invidio.us", this))
+      invidious(new InvidiousManager(this))
 {
     connect(invidious, &InvidiousManager::videoQueryResults,
             this, &VideoListModel::handleSearchResults);
