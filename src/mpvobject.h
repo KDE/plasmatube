@@ -43,7 +43,7 @@ public:
 
     MpvObject(QQuickItem * parent = 0);
     virtual ~MpvObject();
-    virtual Renderer *createRenderer() const;
+    Renderer *createRenderer() const override;
 
 public slots:
     void command(const QVariant& params);

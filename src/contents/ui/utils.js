@@ -42,14 +42,14 @@ function formatTime(time) {
 function trendingToString(category) {
     switch (category) {
     case "music":
-        return "Trending Music"
+        return qsTr("Trending Music")
     case "gaming":
-        return "Trending Gaming"
+        return qsTr("Trending Gaming")
     case "news":
-        return "Trending News"
+        return qsTr("Trending News")
     case "movies":
-        return "Trending Movies"
+        return qsTr("Trending Movies")
     default:
-        return "Trending"
+        return qsTr("Trending")
     }
 }

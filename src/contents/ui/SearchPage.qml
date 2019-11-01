@@ -31,12 +31,14 @@ import "utils.js" as Utils
 Kirigami.ScrollablePage {
     id: root
     title: {
-        if (videoModel.queryType === InvidiousManager.Trending)
-            return Utils.trendingToString(videoModel.trendingCategory);
-        else if (videoModel.queryType === InvidiousManager.Feed)
-            return "Subscriptions";
-        else
-            return "Search";
+        switch (videoModel.queryType) {
+        case InvidiousManager.Feed:
+            return qsTr("Subscriptions");
+        case InvidiousManager.Trending:
+            return Utils.trendingToString(videoModel.query);
+        case InvidiousManager.Search:
+            return qsTr("Search");
+        }
     }
     leftPadding: 0
     rightPadding: 0
@@ -47,8 +49,8 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             visible: AccountManager.username.length > 0
-            text: "Subscription Feed"
-            icon.name: ""
+            text: qsTr("Subscriptions")
+            icon.name: "feed-subscribe"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Feed;
                 videoModel.query = "";
@@ -56,7 +58,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: "Trending"
+            text: Utils.trendingToString()
             iconName: "favorite" // should actually be "user-trash-full-symbolic"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
@@ -65,7 +67,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: "Trending Music"
+            text: Utils.trendingToString("music")
             iconName: "folder-music-symbolic"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
@@ -74,7 +76,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: "Trending Gaming"
+            text: Utils.trendingToString("gaming")
             iconName: "folder-games-symbolic"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
@@ -83,7 +85,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: "Trending News"
+            text: Utils.trendingToString("news")
             iconName: "message-news"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending
@@ -92,7 +94,7 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            text: "Trending Movies"
+            text: Utils.trendingToString("movies")
             iconName: "folder-videos-symbolic"
             onTriggered: {
                 videoModel.queryType = InvidiousManager.Trending

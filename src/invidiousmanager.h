@@ -47,7 +47,7 @@ public:
 
 signals:
     void videoQueryResults(const QList<VideoBasicInfo>&);
-    void videoQueryFailed();
+    void videoQueryFailed(const QString &errorText);
 
     void videoReceived(const QJsonObject&);
     void videoRequestFailed();

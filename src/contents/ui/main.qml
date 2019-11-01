@@ -32,15 +32,15 @@ Kirigami.ApplicationWindow {
         title: "PlasmaTube"
         actions: [
             Kirigami.Action {
-                icon.source: "add"
                 text: qsTr("Log in")
+                icon.name: "arrow-right"
                 onTriggered: pageStack.layers.push(loginPageComponent)
                 enabled: pageStack.layers.depth < 2
                 visible: !AccountManager.username.length
             },
             Kirigami.Action {
-                icon.source: "minus"
                 text: qsTr("Log out")
+                icon.name: "system-log-out"
                 visible: AccountManager.username.length > 0
                 onTriggered: AccountManager.logOut()
             }

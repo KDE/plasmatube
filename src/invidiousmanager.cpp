@@ -24,6 +24,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QMetaEnum>
 #include <QJsonDocument>
 #include <QJsonArray>
 
@@ -116,7 +117,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     connect(reply, &QNetworkReply::finished, this, [=] () {
         QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
         if (doc.isNull()) {
-            emit videoQueryFailed();
+            emit videoQueryFailed(reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toString());
             return;
         }
 
@@ -134,7 +135,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
             }
 
             const QJsonArray videos = obj.value("videos").toArray();
-            for (const QJsonValue &val : notifications) {
+            for (const QJsonValue &val : videos) {
                 VideoBasicInfo video;
                 video.parseFromJson(val.toObject());
                 results.append(video);
@@ -153,7 +154,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     // failure
     connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
             this, [=] (QNetworkReply::NetworkError error) {
-        emit videoQueryFailed();
+        emit videoQueryFailed(QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error));
     });
 
     return reply;

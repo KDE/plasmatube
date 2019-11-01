@@ -67,7 +67,7 @@ public:
 
     // This function is called when a new FBO is needed.
     // This happens on the initial frame.
-    QOpenGLFramebufferObject * createFramebufferObject(const QSize &size)
+    QOpenGLFramebufferObject *createFramebufferObject(const QSize &size) override
     {
         // init mpv_gl:
         if (!obj->mpv_gl)
@@ -87,7 +87,7 @@ public:
         return QQuickFramebufferObject::Renderer::createFramebufferObject(size);
     }
 
-    void render()
+    void render() override
     {
         obj->window()->resetOpenGLState();
 

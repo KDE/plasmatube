@@ -134,7 +134,7 @@ void VideoListModel::fetchMore(const QModelIndex&)
     lastRequest = invidious->videoQuery(m_queryType, m_query, m_nextPage);
 }
 
-bool VideoListModel::canFetchMore(const QModelIndex&) const
+bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
     return !m_loading &&
             m_queryType == InvidiousManager::Search &&
@@ -154,6 +154,7 @@ InvidiousManager::VideoListType VideoListModel::queryType() const
 void VideoListModel::setQueryType(InvidiousManager::VideoListType queryType)
 {
     m_queryType = queryType;
+    emit queryTypeChanged();
 }
 
 QString VideoListModel::query() const
@@ -164,6 +165,7 @@ QString VideoListModel::query() const
 void VideoListModel::setQuery(const QString &query)
 {
     m_query = query;
+    emit queryChanged();
 }
 
 void VideoListModel::handleSearchResults(const QList<VideoBasicInfo> &results)
