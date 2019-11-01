@@ -32,8 +32,7 @@
 InvidiousManager::InvidiousManager(QString invidiousInstance, QObject *parent)
     : QObject(parent),
       m_instance(invidiousInstance),
-      m_region(QLocale::system().name().split("_").first()),
-      m_netManager(new QNetworkAccessManager(this))
+      m_region(QLocale::system().name().split("_").first())
 {
 }
 
@@ -54,7 +53,7 @@ QNetworkReply *InvidiousManager::requestVideo(const QString &videoId)
     query.addQueryItem("region", m_region);
     url.setQuery(query);
 
-    QNetworkReply* reply = m_netManager->get(QNetworkRequest(url));
+    QNetworkReply* reply = netManager()->get(QNetworkRequest(url));
 
     // success
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
@@ -111,7 +110,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
             QVariant::fromValue(QList<QNetworkCookie>() << AccountManager::instance()->cookie())
         );
 
-    QNetworkReply *reply = m_netManager->get(request);
+    QNetworkReply *reply = netManager()->get(request);
 
     // success
     connect(reply, &QNetworkReply::finished, this, [=] () {
@@ -158,4 +157,9 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     });
 
     return reply;
+}
+
+QNetworkAccessManager *InvidiousManager::netManager()
+{
+    return AccountManager::instance()->netManager();
 }

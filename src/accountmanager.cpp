@@ -22,6 +22,9 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QNetworkCookie>
 #include <QNetworkReply>
@@ -32,6 +35,8 @@
 #include <QUrlQuery>
 
 #define DEFAULT_INSTANCE "https://invidio.us"
+#define INVIDIOUS_API_SUBSCRIPTIONS "/api/v1/auth/subscriptions"
+#define INVIDIOUS_API_SUBSCRIPTIONS_ "/api/v1/auth/subscriptions/"
 
 static AccountManager *s_instance;
 
@@ -51,6 +56,10 @@ AccountManager::AccountManager(QObject *parent)
     );
     if (!cookies.isEmpty())
         m_cookie = cookies.first();
+
+    // fetch subscribed channels
+    if (!m_username.isEmpty())
+        fetchSubscriptions();
 }
 
 AccountManager::~AccountManager()
@@ -99,6 +108,8 @@ void AccountManager::logIn(const QString &username, const QString &password)
             emit loggedIn();
 
             saveCredentials();
+
+            fetchSubscriptions();
         } else {
             emit loggingInFailed(tr("Username or password is invalid."));
         }
@@ -127,6 +138,117 @@ void AccountManager::logOut()
     saveCredentials();
 
     emit loggedOut();
+
+    // reset cache
+    setSubscribedChannelIds({});
+}
+
+void AccountManager::fetchSubscriptions()
+{
+    QUrl url(m_instance + QStringLiteral(INVIDIOUS_API_SUBSCRIPTIONS));
+
+    QUrlQuery query;
+    query.addQueryItem("fields", "authorId");
+    url.setQuery(query);
+
+    QNetworkReply *reply = m_netManager->get(networkRequestWithCookie(url.toString()));
+
+    // success
+    connect(reply, &QNetworkReply::finished, this, [=] () {
+        QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.isNull())
+            return;
+
+        QJsonArray array = doc.array();
+
+        QVector<QString> subscriptions;
+        subscriptions.reserve(array.size());
+
+        for (const auto &item : qAsConst(array))
+            subscriptions << item.toObject().value(QStringLiteral("authorId")).toString();
+
+        setSubscribedChannelIds(subscriptions);
+
+        reply->deleteLater();
+    });
+
+    // failure
+    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+            this, [=] (QNetworkReply::NetworkError) {
+        reply->deleteLater();
+    });
+}
+
+void AccountManager::subscribeToChannel(const QString &channelId)
+{
+    QUrl url(m_instance + QStringLiteral(INVIDIOUS_API_SUBSCRIPTIONS_) + channelId);
+
+    QNetworkReply *reply = m_netManager->post(
+        networkRequestWithCookie(url.toString()),
+        QByteArray()
+    );
+
+    // success
+    connect(reply, &QNetworkReply::finished, this, [=] () {
+        int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (statusCode >= 200 && statusCode < 300) {
+            emit subscribedToChannel(channelId);
+
+            if (!m_subscribedChannelIds.contains(channelId)) {
+                m_subscribedChannelIds.append(channelId);
+                emit subscribedChannelIdsChanged();
+            }
+        } else {
+            emit subscribingFailed(channelId, QString::fromUtf8(reply->readAll()));
+        }
+
+        reply->deleteLater();
+    });
+
+    // failure
+    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+            this, [=] (QNetworkReply::NetworkError error) {
+        emit subscribingFailed(
+            channelId,
+            QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error)
+        );
+
+        reply->deleteLater();
+    });
+}
+
+void AccountManager::unsubscribeFromChannel(const QString &channelId)
+{
+    QUrl url(m_instance + QStringLiteral(INVIDIOUS_API_SUBSCRIPTIONS_) + channelId);
+    QNetworkReply *reply = m_netManager->deleteResource(networkRequestWithCookie(url.toString()));
+
+    // success
+    connect(reply, &QNetworkReply::finished, this, [=] () {
+        int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (statusCode >= 200 && statusCode < 300) {
+            emit unsubscribedFromChannel(channelId);
+
+            if (m_subscribedChannelIds.contains(channelId)) {
+                m_subscribedChannelIds.removeAll(channelId);
+                emit subscribedChannelIdsChanged();
+            }
+        } else {
+            emit unsubscribingFailed(channelId, QString::fromUtf8(reply->readAll()));
+        }
+
+        reply->deleteLater();
+    });
+
+    // failure
+    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+            this, [=] (QNetworkReply::NetworkError error) {
+        emit unsubscribingFailed(
+            channelId,
+            QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error)
+        );
+
+        reply->deleteLater();
+    });
 }
 
 QString AccountManager::username() const
@@ -147,6 +269,33 @@ QString AccountManager::invidiousInstance() const
 QNetworkCookie AccountManager::cookie() const
 {
     return m_cookie;
+}
+
+QVector<QString> AccountManager::subscribedChanneldIds() const
+{
+    return m_subscribedChannelIds;
+}
+
+QNetworkAccessManager *AccountManager::netManager()
+{
+    return m_netManager;
+}
+
+QNetworkRequest AccountManager::networkRequestWithCookie(const QString &url)
+{
+    QNetworkRequest request(url);
+    if (!AccountManager::instance()->username().isEmpty())
+        request.setHeader(
+            QNetworkRequest::CookieHeader,
+            QVariant::fromValue(QList<QNetworkCookie>() << AccountManager::instance()->cookie())
+        );
+    return request;
+}
+
+void AccountManager::setSubscribedChannelIds(const QVector<QString> &subs)
+{
+    m_subscribedChannelIds = subs;
+    emit subscribedChannelIdsChanged();
 }
 
 void AccountManager::saveCredentials()

@@ -25,6 +25,7 @@ import org.kde.kirigami 2.4 as Kirigami
 
 import org.kde.plasmatube.mpv 1.0
 import org.kde.plasmatube.models 1.0
+import org.kde.plasmatube.accountmanager 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
@@ -86,14 +87,66 @@ Kirigami.ScrollablePage {
                 }
 
                 ColumnLayout {
+                    id: authorView
+
+                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(model.video.authorId) != -1
+
                     Controls.Label {
                         text: model.video.author
                     }
                     Controls.Button {
-                        text: "Subscribe (" + model.video.subCountText + ")"
-                        Kirigami.Theme.backgroundColor: "red"
-                        Kirigami.Theme.textColor: "white"
-                        onClicked: showPassiveNotification("Invidious accounts/subscriptions are not implemented yet.")
+                        Layout.preferredWidth: subscribeButtonContent.width + Kirigami.Units.largeSpacing * 2
+                        Kirigami.Theme.backgroundColor: authorView.isSubscribed ? undefined : "red"
+                        Kirigami.Theme.textColor: authorView.isSubscribed ? undefined : "white"
+
+                        RowLayout {
+                            id: subscribeButtonContent
+                            anchors.centerIn: parent
+                            spacing: 0
+
+                            Controls.BusyIndicator {
+                                id: subscribingIndicator
+                                visible: false
+                                Layout.preferredHeight: 34
+                                Layout.preferredWidth: 34
+                            }
+
+                            Controls.Label {
+                                text: {
+                                    if (authorView.isSubscribed)
+                                        return "Unsubscribe (" + model.video.subCountText + ")";
+                                    return "Subscribe (" + model.video.subCountText + ")";
+                                }
+                            }
+                        }
+
+                        onClicked: {
+                            if (AccountManager.username.length > 0) {
+                                if (authorView.isSubscribed)
+                                    AccountManager.unsubscribeFromChannel(model.video.authorId);
+                                else
+                                    AccountManager.subscribeToChannel(model.video.authorId);
+                                subscribingIndicator.visible = true;
+                            } else {
+                                showPassiveNotification(qsTr("Please log in to subscribe to channels."));
+                                pageStack.layers.push(loginPageComponent);
+                            }
+                        }
+
+                        Connections {
+                            target: AccountManager
+
+                            onSubscribedToChannel: subscribingIndicator.visible = false;
+                            onSubscribingFailed: {
+                                subscribingIndicator.visible = false;
+                                showPassiveNotification(qsTr("Could not subscribe to channel."));
+                            }
+                            onUnsubscribedFromChannel: subscribingIndicator.visible = false;
+                            onUnsubscribingFailed: {
+                                subscribingIndicator.visible = false;
+                                showPassiveNotification(qsTr("Could not unsubscribe from channel."));
+                            }
+                        }
                     }
                 }
 

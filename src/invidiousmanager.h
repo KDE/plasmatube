@@ -58,10 +58,10 @@ public slots:
     QNetworkReply* requestVideo(const QString& videoId);
 
 private:
+    QNetworkAccessManager *netManager();
+
     QString m_instance;
     QString m_region;
-
-    QNetworkAccessManager* m_netManager;
 };
 
 #endif // INVIDIOUSMANAGER_H
