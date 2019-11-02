@@ -23,6 +23,7 @@
 #include "videomodel.h"
 #include "accountmanager.h"
 #include "invidiousmanager.h"
+#include "youtubemusicmanager.h"
 
 #include <clocale>
 
@@ -45,6 +46,7 @@ int main(int argc, char **argv)
     qmlRegisterType<MpvObject>("org.kde.plasmatube.mpv", 1, 0, "MpvObject");
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
+    qmlRegisterType<YouTubeMusicManager>("org.kde.plasmatube.youtubemusic", 1, 0, "YouTubeMusicManager");
     qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
     qmlRegisterSingletonType<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", [] (QQmlEngine *, QJSEngine *) {
         return static_cast<QObject*>(AccountManager::instance());

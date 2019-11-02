@@ -7,6 +7,7 @@ set(plasmatube_SRCS
     video.cpp
     invidiousmanager.cpp
     accountmanager.cpp
+    youtubemusicmanager.cpp
 )
 
 qt5_add_resources(RESOURCES resources.qrc)

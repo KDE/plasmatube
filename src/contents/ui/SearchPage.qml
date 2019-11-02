@@ -26,6 +26,7 @@ import org.kde.kirigami 2.8 as Kirigami
 import org.kde.plasmatube.accountmanager 1.0
 import org.kde.plasmatube.models 1.0
 import org.kde.plasmatube.invidious 1.0
+import org.kde.plasmatube.youtubemusic 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
@@ -38,11 +39,17 @@ Kirigami.ScrollablePage {
 
     supportsRefreshing: true
     onRefreshingChanged: {
-        if (refreshing)
-            videoModel.fetch();
+        if (refreshing) {
+//             videoModel.fetch();
+            ytmusic.musicInfo("Lindemann");
+        }
     }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
+
+    YouTubeMusicManager {
+        id: ytmusic
+    }
 
     actions.contextualActions: [
         Kirigami.Action {
