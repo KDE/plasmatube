@@ -36,10 +36,6 @@ Kirigami.AbstractListItem {
     property int viewCount
     property string publishedText
 
-    onClicked: {
-        pageStack.push(videoPageComponent, {"vid": vid})
-    }
-
     RowLayout {
         Image {
             id: thumb

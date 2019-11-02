@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
     id: root
     property string vid
 
-    title: model.video.title
+    title: videoModel.video.title
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -40,11 +40,11 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     VideoModel {
-        id: model
+        id: videoModel
         videoId: vid
         onVideoIdChanged: {
             // is also executed in initial set
-            model.fetch()
+            videoModel.fetch()
         }
     }
 
@@ -66,13 +66,13 @@ Kirigami.ScrollablePage {
             Layout.leftMargin: 12
             Layout.rightMargin: 12
             Layout.fillWidth: true
-            visible: !model.isLoading
-            enabled: !model.isLoading
+            visible: !videoModel.isLoading
+            enabled: !videoModel.isLoading
 
             // title
             Kirigami.Heading {
                 Layout.fillWidth: true
-                text: model.video.title
+                text: videoModel.video.title
                 wrapMode: Text.WordWrap
             }
 
@@ -83,16 +83,16 @@ Kirigami.ScrollablePage {
                     Layout.preferredHeight: 50
                     Layout.preferredWidth: 50
                     fillMode: Image.PreserveAspectFit
-                    source: model.video.authorThumbnail(100)
+                    source: videoModel.video.authorThumbnail(100)
                 }
 
                 ColumnLayout {
                     id: authorView
 
-                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(model.video.authorId) != -1
+                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(videoModel.video.authorId) != -1
 
                     Controls.Label {
-                        text: model.video.author
+                        text: videoModel.video.author
                     }
                     Controls.Button {
                         Layout.preferredWidth: subscribeButtonContent.width + Kirigami.Units.largeSpacing * 2
@@ -114,8 +114,8 @@ Kirigami.ScrollablePage {
                             Controls.Label {
                                 text: {
                                     if (authorView.isSubscribed)
-                                        return "Unsubscribe (" + model.video.subCountText + ")";
-                                    return "Subscribe (" + model.video.subCountText + ")";
+                                        return "Unsubscribe (" + videoModel.video.subCountText + ")";
+                                    return "Subscribe (" + videoModel.video.subCountText + ")";
                                 }
                             }
                         }
@@ -123,9 +123,9 @@ Kirigami.ScrollablePage {
                         onClicked: {
                             if (AccountManager.username.length > 0) {
                                 if (authorView.isSubscribed)
-                                    AccountManager.unsubscribeFromChannel(model.video.authorId);
+                                    AccountManager.unsubscribeFromChannel(videoModel.video.authorId);
                                 else
-                                    AccountManager.subscribeToChannel(model.video.authorId);
+                                    AccountManager.subscribeToChannel(videoModel.video.authorId);
                                 subscribingIndicator.visible = true;
                             } else {
                                 showPassiveNotification(qsTr("Please log in to subscribe to channels."));
@@ -158,11 +158,11 @@ Kirigami.ScrollablePage {
                     spacing: 0
                     Controls.Label {
                         Layout.alignment: Qt.AlignHCenter
-                        text: Utils.formatCount(model.video.viewCount) + " views"
+                        text: Utils.formatCount(videoModel.video.viewCount) + " views"
                     }
                     Controls.ProgressBar {
                         Layout.preferredWidth: 150
-                        value: model.video.rating / 5.0
+                        value: videoModel.video.rating / 5.0
                     }
                     RowLayout {
                         Layout.alignment: Qt.AlignHCenter
@@ -172,7 +172,7 @@ Kirigami.ScrollablePage {
                             height: 22
                         }
                         Controls.Label {
-                            text: Utils.formatCount(model.video.likeCount)
+                            text: Utils.formatCount(videoModel.video.likeCount)
                         }
 
                         // placeholder
@@ -186,7 +186,7 @@ Kirigami.ScrollablePage {
                             height: 22
                         }
                         Controls.Label {
-                            text: Utils.formatCount(model.video.dislikeCount)
+                            text: Utils.formatCount(videoModel.video.dislikeCount)
                         }
                     }
                 }
@@ -195,14 +195,39 @@ Kirigami.ScrollablePage {
             // video description
             Controls.Label {
                 Layout.fillWidth: true
-                text: model.video.description
+                text: videoModel.video.description
                 wrapMode: Text.WordWrap
             }
         }
 
         Controls.BusyIndicator {
             Layout.alignment: Qt.AlignCenter
-            visible: model.isLoading
+            visible: videoModel.isLoading
+        }
+
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: 0
+
+            Repeater {
+                model: videoModel.video.recommendedVideosModel()
+                delegate: VideoListItem {
+                    width: parent.width
+                    vid: model.id
+                    thumbnail: model.thumbnail
+                    liveNow: model.liveNow
+                    length: model.length
+                    title: model.title
+                    author: model.author
+                    description: model.description
+                    viewCount: model.viewCount
+                    publishedText: model.publishedText
+
+                    onClicked: {
+                        root.vid = model.id;
+                    }
+                }
+            }
         }
     }
 

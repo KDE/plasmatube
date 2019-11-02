@@ -157,6 +157,10 @@ Kirigami.ScrollablePage {
             description: model.description
             viewCount: model.viewCount
             publishedText: model.publishedText
+
+            onClicked: {
+                pageStack.push(videoPageComponent, {"vid": vid})
+            }
         }
     }
 
