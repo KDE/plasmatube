@@ -162,6 +162,21 @@ Kirigami.ScrollablePage {
                 pageStack.push(videoPageComponent, {"vid": vid})
             }
         }
+
+        Connections {
+            target: AccountManager
+            onLoggedIn: {
+                videoModel.queryType = InvidiousManager.Feed;
+                videoModel.query = "";
+                root.refreshing = true;
+            }
+            onLoggedOut: {
+                if (videoModel.queryType === InvidiousManager.Feed) {
+                    videoModel.queryType = InvidiousManager.Trending;
+                    root.refreshing = true;
+                }
+            }
+        }
     }
 
     Component.onCompleted: {
