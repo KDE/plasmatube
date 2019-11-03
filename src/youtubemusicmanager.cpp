@@ -10,6 +10,49 @@
 #include <QUrl>
 #include <QUrlQuery>
 
+#define YTMUSIC_URL "https://music.youtube.com"
+#define YTMUSIC_API_SEARCH "/youtubei/v1/search"
+#define YTMUSIC_SUPPORTED_USER_AGENT "Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0"
+
+#define HTTP_USER_AGENT "User-Agent"
+#define CONTENTTYPE_JSON "application/json"
+
+#define API_KEY_SEARCH_TERM R"("INNERTUBE_API_KEY":")"
+#define API_KEY_END_SEARCH_TEAM '"'
+
+// extract INNERTUBE_API_KEY from HTML/JS
+static const QString extractApiKeyFromHtml(const QByteArray &html)
+{
+    const auto searchString = QByteArrayLiteral(API_KEY_SEARCH_TERM);
+    int apiKeyIndex = html.indexOf(searchString);
+    if (apiKeyIndex < 0) {
+        qWarning() << "Could not extract YouTube Music API key: website does not contain"
+                   << QLatin1String(API_KEY_SEARCH_TERM);
+        return {};
+    }
+
+    apiKeyIndex += searchString.size();
+    int apiKeyEndIndex = html.indexOf(API_KEY_END_SEARCH_TEAM, apiKeyIndex);
+    if (apiKeyEndIndex < 0) {
+        qWarning() << "Could not extract YouTube Music API key: recognized key has no end marked with an '\"'";
+        return {};
+    }
+
+    const QString apiKey = QString::fromUtf8(html.mid(apiKeyIndex, apiKeyEndIndex - apiKeyIndex));
+
+    // the API key should usually have a length of 39 bytes
+    // if the key is much longer than this, the result is probably wrong
+    if (apiKey.size() < 25 || apiKey.size() > 100) {
+        qWarning() << "Could not extract YouTube Music API key from HTML!\n"
+                   << "The extracted result has a length of"
+                   << apiKey.size()
+                   << "characters - This is probably not the API key.";
+        return {};
+    }
+
+    return apiKey;
+}
+
 class SearchRequest
 {
 public:
@@ -62,19 +105,40 @@ YouTubeMusicManager::~YouTubeMusicManager()
 {
 }
 
+void YouTubeMusicManager::fetchApiKey()
+{
+    QNetworkRequest request(QStringLiteral(YTMUSIC_URL));
+    request.setRawHeader(HTTP_USER_AGENT, YTMUSIC_SUPPORTED_USER_AGENT);
+
+    QNetworkReply *reply = m_netManager->get(request);
+
+    // success
+    connect(reply, &QNetworkReply::finished, this, [=] () {
+        m_apiKey = extractApiKeyFromHtml(reply->readAll());
+
+        emit apiKeyFetched(!m_apiKey.isEmpty());
+
+        reply->deleteLater();
+    });
+
+    // failure
+    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+            this, [=] (QNetworkReply::NetworkError) {
+        reply->deleteLater();
+    });
+}
+
 void YouTubeMusicManager::searchForArtists(const QString &searchQuery)
 {
-    QUrl url("https://music.youtube.com/youtubei/v1/search");
+    QUrl url(QStringLiteral(YTMUSIC_URL YTMUSIC_API_SEARCH));
     QUrlQuery query;
     query.addQueryItem("alt", "json");
-//     query.addQueryItem("key", "AIzaSyC9XL3ZjWddXya6X74dJoCTL-WEYFDNX30");
-    query.addQueryItem("key", "");
+    query.addQueryItem("key", m_apiKey);
     url.setQuery(query);
 
     QNetworkRequest request(url);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    request.setRawHeader("Referer", "https://music.youtube.com");
-
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral(CONTENTTYPE_JSON));
+    request.setRawHeader("Referer", QByteArrayLiteral(YTMUSIC_URL));
 
     QNetworkReply *reply = m_netManager->post(request, SearchRequest().toData(searchQuery));
 
@@ -98,6 +162,7 @@ void YouTubeMusicManager::searchForArtists(const QString &searchQuery)
             this, [=] (QNetworkReply::NetworkError) {
         reply->deleteLater();
     });
+}
 
 /*
 {
@@ -139,7 +204,6 @@ void YouTubeMusicManager::searchForArtists(const QString &searchQuery)
 	"params": "Eg-KAQwIABAAGAAgASgAMABqChAEEAMQCRAFEAo%3D"
 }
 */
-}
 
 void YouTubeMusicManager::musicInfo()
 {

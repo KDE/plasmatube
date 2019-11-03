@@ -41,7 +41,7 @@ Kirigami.ScrollablePage {
     onRefreshingChanged: {
         if (refreshing) {
 //             videoModel.fetch();
-            ytmusic.musicInfo("Lindemann");
+            ytmusic.fetchApiKey();
         }
     }
 
@@ -49,6 +49,9 @@ Kirigami.ScrollablePage {
 
     YouTubeMusicManager {
         id: ytmusic
+        onApiKeyFetched: {
+            ytmusic.searchForArtists("Lindemann");
+        }
     }
 
     actions.contextualActions: [
