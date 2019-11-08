@@ -23,25 +23,61 @@
 
 #include <QVector>
 
+#include "YTMThumbnailSet.h"
+
+class QJsonObject;
+
 class YTMSearchResult
 {
 public:
-    class ShelfItem
+    class Item
     {
+    public:
+        static Item fromJson(const QJsonObject &json);
+
+        QString title() const;
+        void setTitle(const QString &);
+
+        QVector<QString> attributes() const;
+        void setAttributes(const QVector<QString> &attributes);
+
+        YTMThumbnailSet thumbnails() const;
+        void setThumbnails(const YTMThumbnailSet &thumbs);
+
     private:
-        QVector<QString> m_tags;
+        static QString attributeFromJson(const QJsonObject &json);
+
+        QString m_title;
+        QVector<QString> m_attributes;
+        YTMThumbnailSet m_thumbnails;
     };
 
     class Shelf
     {
+    public:
+        static Shelf fromJson(const QJsonObject &json);
+
+        QString title() const;
+        void setTitle(const QString &);
+
+        QVector<Item> contents() const;
+        QVector<Item> &contents();
+        void setContents(const QVector<YTMSearchResult::Item> &);
+
     private:
         QString m_title;
+        QVector<Item> m_contents;
+        // TODO: bottomText/bottomEndpoint ('More' action)
     };
 
-    static YTMSearchResult &fromJson(const QByteArray &json);
+    static YTMSearchResult fromJson(const QJsonObject &json);
+
+    QVector<Shelf> contents() const;
+    QVector<Shelf> &contents();
+    void setContents(const QVector<Shelf> &);
 
 private:
-    QVector<Shelf> m_shelves;
+    QVector<Shelf> m_contents;
 };
 
 #endif // YTMSEARCHRESULT_H

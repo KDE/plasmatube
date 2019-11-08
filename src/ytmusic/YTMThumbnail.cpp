@@ -22,6 +22,14 @@
 
 #include <QJsonObject>
 
+YTMThumbnail::YTMThumbnail() = default;
+
+YTMThumbnail::YTMThumbnail(const YTMThumbnail &other) = default;
+
+YTMThumbnail::~YTMThumbnail() = default;
+
+YTMThumbnail &YTMThumbnail::operator=(const YTMThumbnail& other) = default;
+
 YTMThumbnail YTMThumbnail::fromJson(const QJsonObject &json)
 {
     YTMThumbnail thumb;
@@ -65,4 +73,20 @@ QUrl YTMThumbnail::url() const
 void YTMThumbnail::setUrl(const QUrl &url)
 {
     m_url = url;
+}
+
+bool YTMThumbnail::isNull() const
+{
+    return m_url.isEmpty() && m_size.isNull();
+}
+
+bool YTMThumbnail::operator==(const YTMThumbnail& other) const
+{
+    return m_size == other.size() &&
+           m_url == other.url();
+}
+
+uint qHash(const YTMThumbnail &thumb)
+{
+    return qHash(thumb.url()) ^ qHash(thumb.size().width());
 }

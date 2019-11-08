@@ -18,42 +18,41 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef YTMTHUMBNAIL_H
-#define YTMTHUMBNAIL_H
+#ifndef YTMTHUMBNAILSET_H
+#define YTMTHUMBNAILSET_H
 
-#include <QSize>
-#include <QUrl>
+#include <QSet>
 
-class QJsonObject;
+#include "YTMThumbnail.h"
 
-class YTMThumbnail
+class YTMThumbnailSet
 {
 public:
-    YTMThumbnail();
-    YTMThumbnail(const YTMThumbnail &other);
-    ~YTMThumbnail();
-
-    YTMThumbnail &operator=(const YTMThumbnail &other);
-
-    static YTMThumbnail fromJson(const QJsonObject &json);
+    static YTMThumbnailSet fromJson(const QJsonObject &);
     QJsonObject toJson() const;
 
-    QSize size() const;
-    QSize &size();
-    void setSize(const QSize &size);
+    QSet<YTMThumbnail> thumbnails() const;
+    QSet<YTMThumbnail> &thumbnails();
+    void setThumbnails(const QSet<YTMThumbnail> &);
 
-    QUrl url() const;
-    void setUrl(const QUrl &url);
+    void insert(const YTMThumbnail &);
 
-    bool isNull() const;
+    YTMThumbnailSet &operator+=(const YTMThumbnail &thumb)
+    {
+        insert(thumb);
+        return *this;
+    }
 
-    bool operator==(const YTMThumbnail &other) const;
+    YTMThumbnailSet &operator<<(const YTMThumbnail &thumb)
+    {
+        insert(thumb);
+        return *this;
+    }
+
+    YTMThumbnail bestThumbnailForResolution(qint32 width) const;
 
 private:
-    QSize m_size;
-    QUrl m_url;
+    QSet<YTMThumbnail> m_thumbnails;
 };
 
-extern uint qHash(const YTMThumbnail &thumb);
-
-#endif // YTMTHUMBNAIL_H
+#endif // YTMTHUMBNAILSET_H

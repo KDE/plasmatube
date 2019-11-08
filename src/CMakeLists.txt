@@ -11,6 +11,7 @@ set(plasmatube_SRCS
 
     ytmusic/YTMSearchResult.cpp
     ytmusic/YTMThumbnail.cpp
+    ytmusic/YTMThumbnailSet.cpp
 )
 
 qt5_add_resources(RESOURCES resources.qrc)
