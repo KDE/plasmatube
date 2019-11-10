@@ -7,11 +7,15 @@ set(plasmatube_SRCS
     video.cpp
     invidiousmanager.cpp
     accountmanager.cpp
-    youtubemusicmanager.cpp
 
+    ytmusic/YTMApiRequest.cpp
+    ytmusic/YTMSearchRequest.cpp
     ytmusic/YTMSearchResult.cpp
     ytmusic/YTMThumbnail.cpp
     ytmusic/YTMThumbnailSet.cpp
+
+    ytmusic/YTMClient.cpp
+    ytmusic/YTMSearchModel.cpp
 )
 
 qt5_add_resources(RESOURCES resources.qrc)

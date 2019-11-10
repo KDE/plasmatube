@@ -35,7 +35,7 @@ YTMSearchResult::Item YTMSearchResult::Item::fromJson(const QJsonObject &json)
 
         // other attributes
         if (flexColumns.size() > 1) {
-            QVector<QString> attributes;
+            QStringList attributes;
             attributes.reserve(flexColumns.size() - 1);
 
             std::for_each(flexColumns.begin() + 1, flexColumns.end(), [&] (const QJsonValue &value) {
@@ -74,12 +74,12 @@ void YTMSearchResult::Item::setTitle(const QString &title)
     m_title = title;
 }
 
-QVector<QString> YTMSearchResult::Item::attributes() const
+QStringList YTMSearchResult::Item::attributes() const
 {
     return m_attributes;
 }
 
-void YTMSearchResult::Item::setAttributes(const QVector<QString> &attributes)
+void YTMSearchResult::Item::setAttributes(const QStringList &attributes)
 {
     m_attributes = attributes;
 }

@@ -38,8 +38,8 @@ public:
         QString title() const;
         void setTitle(const QString &);
 
-        QVector<QString> attributes() const;
-        void setAttributes(const QVector<QString> &attributes);
+        QStringList attributes() const;
+        void setAttributes(const QStringList &attributes);
 
         YTMThumbnailSet thumbnails() const;
         void setThumbnails(const YTMThumbnailSet &thumbs);
@@ -48,7 +48,7 @@ public:
         static QString attributeFromJson(const QJsonObject &json);
 
         QString m_title;
-        QVector<QString> m_attributes;
+        QStringList m_attributes;
         YTMThumbnailSet m_thumbnails;
     };
 

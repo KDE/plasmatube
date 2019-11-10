@@ -6,6 +6,8 @@
         <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
         <file alias="VideoPage.qml">contents/ui/VideoPage.qml</file>
 
+        <file alias="YTMSearchPage.qml">contents/ui/YTMSearchPage.qml</file>
+
         <file alias="utils.js">contents/ui/utils.js</file>
     </qresource>
 </RCC>

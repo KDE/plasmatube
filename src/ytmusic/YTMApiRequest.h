@@ -18,31 +18,24 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef YOUTUBEMUSICMANAGER_H
-#define YOUTUBEMUSICMANAGER_H
+#ifndef YTMAPIREQUEST_H
+#define YTMAPIREQUEST_H
 
-#include <QObject>
+class QByteArray;
+class QJsonObject;
+class QNetworkRequest;
+class QString;
 
-class QNetworkAccessManager;
-
-class YouTubeMusicManager : public QObject
+class YTMApiRequest
 {
-    Q_OBJECT
-
 public:
-    YouTubeMusicManager(QObject *parent = nullptr);
-    ~YouTubeMusicManager();
+    virtual ~YTMApiRequest() = default;
 
-    Q_INVOKABLE void fetchApiKey();
-    Q_INVOKABLE void searchForArtists(const QString &searchQuery);
-    Q_INVOKABLE void musicInfo();
+    virtual QJsonObject toJson() const = 0;
+    QByteArray toByteArray() const;
 
-signals:
-    void apiKeyFetched(bool success);
-
-private:
-    QNetworkAccessManager *m_netManager;
-    QString m_apiKey;
+    virtual QString urlPath(const QString &apiKey) const;
+    virtual void setHeaders(QNetworkRequest &request) const;
 };
 
-#endif // YOUTUBEMUSICMANAGER_H
+#endif // YTMAPIREQUEST_H

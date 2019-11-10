@@ -23,7 +23,8 @@
 #include "videomodel.h"
 #include "accountmanager.h"
 #include "invidiousmanager.h"
-#include "youtubemusicmanager.h"
+#include "YTMClient.h"
+#include "YTMSearchModel.h"
 
 #include <clocale>
 
@@ -42,12 +43,19 @@ int main(int argc, char **argv)
     // Qt sets the locale in the QGuiApplication constructor, but libmpv
     // requires the LC_NUMERIC category to be set to "C", so change it back.
     std::setlocale(LC_NUMERIC, "C");
-
+    
     qmlRegisterType<MpvObject>("org.kde.plasmatube.mpv", 1, 0, "MpvObject");
+
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
-    qmlRegisterType<YouTubeMusicManager>("org.kde.plasmatube.youtubemusic", 1, 0, "YouTubeMusicManager");
+
+    qmlRegisterType<YTMSearchModel>("org.kde.plasmatube.ytmusic", 1, 0, "SearchModel");
+    qmlRegisterSingletonType<YTMClient>("org.kde.plasmatube.ytmusic", 1, 0, "Client", [] (QQmlEngine *, QJSEngine *) {
+        return static_cast<QObject*>(YTMClient::instance());
+    });
+
     qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
+
     qmlRegisterSingletonType<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", [] (QQmlEngine *, QJSEngine *) {
         return static_cast<QObject*>(AccountManager::instance());
     });

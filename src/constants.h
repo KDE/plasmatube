@@ -33,3 +33,17 @@
 #define INVIDIOUS_API_SUBSCRIPTIONS "/api/v1/auth/subscriptions"
 #define INVIDIOUS_API_SUBSCRIPTIONS_ "/api/v1/auth/subscriptions/"
 #define INVIDIOUS_API_FEED "/api/v1/auth/feed"
+
+#define YTMUSIC_URL "https://music.youtube.com"
+#define YTMUSIC_API_SEARCH "/youtubei/v1/search"
+
+#define CREATE_GETTER_AND_SETTER(className, type, memberName, getterName, setterName) \
+type className::getterName() const \
+{ \
+    return memberName; \
+} \
+\
+void className::setterName(const type &getterName) \
+{ \
+    memberName = getterName; \
+}

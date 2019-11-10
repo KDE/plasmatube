@@ -43,6 +43,15 @@ Kirigami.ApplicationWindow {
                 icon.name: "system-log-out"
                 visible: AccountManager.username.length > 0
                 onTriggered: AccountManager.logOut()
+            },
+            Kirigami.Action {
+                text: qsTr("YouTube Music")
+                icon.name: "music"
+                onTriggered: {
+                    while (pageStack.depth > 0)
+                        pageStack.pop();
+                    pageStack.push(ytmSearchPageComponent);
+                }
             }
         ]
     }
@@ -59,5 +68,9 @@ Kirigami.ApplicationWindow {
     Component {
         id: loginPageComponent
         LoginPage {}
+    }
+    Component {
+        id: ytmSearchPageComponent
+        YTMSearchPage {}
     }
 }
