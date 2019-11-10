@@ -48,6 +48,7 @@ YTMSearchModel::YTMSearchModel(QObject *parent)
 QHash<int, QByteArray> YTMSearchModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
+    roles[TypeRole] = QByteArrayLiteral("type");
     roles[ShelfTitleRole] = QByteArrayLiteral("shelfTitle");
     roles[TitleRole] = QByteArrayLiteral("title");
     roles[AttributesRole] = QByteArrayLiteral("attributes");
@@ -59,31 +60,30 @@ int YTMSearchModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid())
         return 0;
-
-    int count = 0;
-
-    const QVector<YTMSearchResult::Shelf> &shelves = m_result.contents();
-    for (const auto &shelf : shelves)
-        count += shelf.contents().length();
-
-    return count;
+    return m_items.length();
 }
 
 QVariant YTMSearchModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, QAbstractItemModel::CheckIndexOption::IndexIsValid | QAbstractItemModel::CheckIndexOption::ParentIsInvalid));
 
-    if (role == ShelfTitleRole)
-        return shelfAtIndex(index.row()).title();
-
-    const auto &item = itemAtIndex(index.row());
     switch (role) {
+    case TypeRole:
+        if (at(index).canConvert<YTMSearchResult::Item>())
+            return Item;
+        if (at(index).canConvert<YTMSearchResult::Shelf>())
+            return Shelf;
+        if (at(index).canConvert<YTMSearchRequest>())
+            return SearchEndpoint;
+        break;
+    case ShelfTitleRole:
+        return shelfAt(index).title();
     case TitleRole:
-        return item.title();
+        return itemAt(index).title();
     case AttributesRole:
-        return item.attributes();
+        return itemAt(index).attributes();
     case ThumbnailUrlRole:
-        return item.thumbnails().bestThumbnailForResolution(120).url();
+        return itemAt(index).thumbnails().bestThumbnailForResolution(60).url();
     default:
         return {};
     }
@@ -102,17 +102,15 @@ void YTMSearchModel::setIsLoading(bool isLoading)
     emit isLoadingChanged();
 }
 
-QString YTMSearchModel::query() const
+void YTMSearchModel::search(const YTMSearchRequest &request)
 {
-    return m_query;
-}
-
-void YTMSearchModel::setQuery(const QString &query)
-{
-    m_query = query;
-    emit queryChanged();
+    m_request = request;
 
     setIsLoading(true);
+
+    beginResetModel();
+    m_items.clear();
+    endResetModel();
 
     if (YTMClient::instance()->hasFetchedApiKey()) {
         fetchResults();
@@ -120,20 +118,38 @@ void YTMSearchModel::setQuery(const QString &query)
     }
 }
 
-void YTMSearchModel::setResult(YTMSearchResult result)
+void YTMSearchModel::search(const QString &query, const QString &params)
 {
-    beginResetModel();
-    m_result = result;
-    endResetModel();
+    search(YTMSearchRequest(query, params));
+}
+
+void YTMSearchModel::searchByEndpointIndex(int index)
+{
+    search(m_items.at(index).value<YTMSearchRequest>());
 }
 
 void YTMSearchModel::fetchResults()
 {
-    QNetworkReply *reply = YTMClient::instance()->sendRequest(YTMSearchRequest(m_query));
+    QNetworkReply *reply = YTMClient::instance()->sendRequest(m_request);
 
     // success
     connect(reply, &QNetworkReply::finished, this, [=] () {
-        setResult(YTMSearchResult::fromJson(QJsonDocument::fromJson(reply->readAll()).object()));
+        const auto result = YTMSearchResult::fromJson(QJsonDocument::fromJson(reply->readAll()).object());
+
+        beginResetModel();
+        m_items.clear();
+
+        for (const auto &shelf : result.contents()) {
+            m_items << QVariant::fromValue(shelf);
+
+            for (const auto &item : shelf.contents())
+                m_items << QVariant::fromValue(item);
+
+            if (!shelf.bottomEndpoint().isNull())
+                m_items << QVariant::fromValue(shelf.bottomEndpoint());
+        }
+        endResetModel();
+
         setIsLoading(false);
 
         reply->deleteLater();
@@ -149,28 +165,17 @@ void YTMSearchModel::fetchResults()
     });
 }
 
-YTMSearchResult::Shelf YTMSearchModel::shelfAtIndex(int index) const
+QVariant YTMSearchModel::at(const QModelIndex &index) const
 {
-    const QVector<YTMSearchResult::Shelf> &shelves = m_result.contents();
-    for (const auto &shelf : shelves) {
-        if (shelf.contents().length() > index)
-            return shelf;
-
-        index -= shelf.contents().length();
-    }
-
-    return {};
+    return m_items.at(index.row());
 }
 
-YTMSearchResult::Item YTMSearchModel::itemAtIndex(int index) const
+YTMSearchResult::Item YTMSearchModel::itemAt(const QModelIndex &index) const
 {
-    const QVector<YTMSearchResult::Shelf> &shelves = m_result.contents();
-    for (const auto &shelf : shelves) {
-        if (shelf.contents().length() > index)
-            return shelf.contents().at(index);
+    return at(index).value<YTMSearchResult::Item>();
+}
 
-        index -= shelf.contents().length();
-    }
-
-    return {};
+YTMSearchResult::Shelf YTMSearchModel::shelfAt(const QModelIndex &index) const
+{
+    return at(index).value<YTMSearchResult::Shelf>();
 }

@@ -22,16 +22,24 @@
 #ifndef YTMSEARCHREQUEST_H
 #define YTMSEARCHREQUEST_H
 
+#include <QMetaType>
 #include <QString>
+#include <QSharedDataPointer>
 
 #include "YTMApiRequest.h"
+
+class YTMSearchRequestPrivate;
 
 class YTMSearchRequest : public YTMApiRequest
 {
 public:
     YTMSearchRequest(const QString &query = {}, const QString &params = {});
+    YTMSearchRequest(const YTMSearchRequest &other);
     ~YTMSearchRequest() override;
 
+    YTMSearchRequest &operator=(const YTMSearchRequest &other);
+
+    static YTMSearchRequest fromJson(const QJsonObject &json);
     QJsonObject toJson() const override;
 
     QString urlPath(const QString &apiKey) const override;
@@ -42,9 +50,12 @@ public:
     QString params() const;
     void setParams(const QString &params);
 
+    bool isNull() const;
+
 private:
-    QString m_query;
-    QString m_params;
+    QSharedDataPointer<YTMSearchRequestPrivate> d;
 };
+
+Q_DECLARE_METATYPE(YTMSearchRequest);
 
 #endif // YTMSEARCHREQUEST_H

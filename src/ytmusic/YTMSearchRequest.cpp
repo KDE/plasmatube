@@ -24,17 +24,38 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QUrlQuery>
+#include <QSharedData>
 
 #include "constants.h"
 
-YTMSearchRequest::YTMSearchRequest(const QString& query, const QString& params)
-    : YTMApiRequest(),
-      m_query(query),
-      m_params(params)
+class YTMSearchRequestPrivate : public QSharedData
 {
+public:
+    QString query;
+    QString params;
+};
+
+YTMSearchRequest::YTMSearchRequest(const QString &query, const QString &params)
+    : YTMApiRequest(),
+      d(new YTMSearchRequestPrivate)
+{
+    d->query = query;
+    d->params = params;
 }
 
+YTMSearchRequest::YTMSearchRequest(const YTMSearchRequest &other) = default;
+
 YTMSearchRequest::~YTMSearchRequest() = default;
+
+YTMSearchRequest &YTMSearchRequest::operator=(const YTMSearchRequest &other) = default;
+
+YTMSearchRequest YTMSearchRequest::fromJson(const QJsonObject &json)
+{
+    return YTMSearchRequest(
+        json.value(QStringLiteral("query")).toString(),
+        json.value(QStringLiteral("params")).toString()
+    );
+}
 
 QJsonObject YTMSearchRequest::toJson() const
 {
@@ -62,8 +83,8 @@ QJsonObject YTMSearchRequest::toJson() const
 
     QJsonObject json;
     json.insert("context", contextObj);
-    json.insert("query", m_query);
-    json.insert("params", m_params);
+    json.insert("query", d->query);
+    json.insert("params", d->params);
 
     return json;
 }
@@ -77,5 +98,10 @@ QString YTMSearchRequest::urlPath(const QString& apiKey) const
     return QStringLiteral(YTMUSIC_API_SEARCH "?").append(query.toString(QUrl::FullyEncoded));
 }
 
-CREATE_GETTER_AND_SETTER(YTMSearchRequest, QString, m_query, query, setQuery)
-CREATE_GETTER_AND_SETTER(YTMSearchRequest, QString, m_params, params, setParams)
+bool YTMSearchRequest::isNull() const
+{
+    return d->query.isEmpty() && d->params.isEmpty();
+}
+
+CREATE_GETTER_AND_SETTER(YTMSearchRequest, QString, d->query, query, setQuery)
+CREATE_GETTER_AND_SETTER(YTMSearchRequest, QString, d->params, params, setParams)

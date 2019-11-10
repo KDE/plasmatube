@@ -21,11 +21,18 @@
 #ifndef YTMSEARCHRESULT_H
 #define YTMSEARCHRESULT_H
 
+#include <QMetaType>
 #include <QVector>
+#include <QSharedDataPointer>
 
 #include "YTMThumbnailSet.h"
+#include "YTMSearchRequest.h"
 
 class QJsonObject;
+
+class YTMSearchResultPrivate;
+class YTMSearchResultItemPrivate;
+class YTMSearchResultShelfPrivate;
 
 class YTMSearchResult
 {
@@ -34,6 +41,12 @@ public:
     {
     public:
         static Item fromJson(const QJsonObject &json);
+
+        Item();
+        Item(const Item &other);
+        ~Item();
+
+        Item &operator=(const Item &other);
 
         QString title() const;
         void setTitle(const QString &);
@@ -47,15 +60,19 @@ public:
     private:
         static QString attributeFromJson(const QJsonObject &json);
 
-        QString m_title;
-        QStringList m_attributes;
-        YTMThumbnailSet m_thumbnails;
+        QSharedDataPointer<YTMSearchResultItemPrivate> d;
     };
 
     class Shelf
     {
     public:
         static Shelf fromJson(const QJsonObject &json);
+
+        Shelf();
+        Shelf(const Shelf &other);
+        ~Shelf();
+
+        Shelf &operator=(const Shelf &other);
 
         QString title() const;
         void setTitle(const QString &);
@@ -64,20 +81,31 @@ public:
         QVector<Item> &contents();
         void setContents(const QVector<YTMSearchResult::Item> &);
 
+        YTMSearchRequest bottomEndpoint() const;
+        void setBottomEndpoint(const YTMSearchRequest &endpoint);
+
     private:
-        QString m_title;
-        QVector<Item> m_contents;
-        // TODO: bottomText/bottomEndpoint ('More' action)
+        QSharedDataPointer<YTMSearchResultShelfPrivate> d;
     };
 
     static YTMSearchResult fromJson(const QJsonObject &json);
+
+    YTMSearchResult();
+    YTMSearchResult(const YTMSearchResult &other);
+    ~YTMSearchResult();
+
+    YTMSearchResult &operator=(const YTMSearchResult &other);
 
     QVector<Shelf> contents() const;
     QVector<Shelf> &contents();
     void setContents(const QVector<Shelf> &);
 
 private:
-    QVector<Shelf> m_contents;
+    QSharedDataPointer<YTMSearchResultPrivate> d;
 };
+
+Q_DECLARE_METATYPE(YTMSearchResult);
+Q_DECLARE_METATYPE(YTMSearchResult::Item);
+Q_DECLARE_METATYPE(YTMSearchResult::Shelf);
 
 #endif // YTMSEARCHRESULT_H

@@ -22,6 +22,17 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QSharedData>
+
+#include "constants.h"
+
+class YTMSearchResultItemPrivate : public QSharedData
+{
+public:
+    QString title;
+    QStringList attributes;
+    YTMThumbnailSet thumbnails;
+};
 
 YTMSearchResult::Item YTMSearchResult::Item::fromJson(const QJsonObject &json)
 {
@@ -55,6 +66,14 @@ YTMSearchResult::Item YTMSearchResult::Item::fromJson(const QJsonObject &json)
     return item;
 }
 
+YTMSearchResult::Item::Item()
+    : d(new YTMSearchResultItemPrivate)
+{
+}
+
+YTMSearchResult::Item::Item(const Item &other) = default;
+YTMSearchResult::Item::~Item() = default;
+
 QString YTMSearchResult::Item::attributeFromJson(const QJsonObject &json)
 {
     return json.value(QStringLiteral("musicResponsiveListItemFlexColumnRenderer")).toObject()
@@ -64,35 +83,17 @@ QString YTMSearchResult::Item::attributeFromJson(const QJsonObject &json)
                .value(QStringLiteral("text")).toString();
 }
 
-QString YTMSearchResult::Item::title() const
-{
-    return m_title;
-}
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, QString, d->title, title, setTitle)
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, QStringList, d->attributes, attributes, setAttributes)
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, YTMThumbnailSet, d->thumbnails, thumbnails, setThumbnails)
 
-void YTMSearchResult::Item::setTitle(const QString &title)
+class YTMSearchResultShelfPrivate : public QSharedData
 {
-    m_title = title;
-}
-
-QStringList YTMSearchResult::Item::attributes() const
-{
-    return m_attributes;
-}
-
-void YTMSearchResult::Item::setAttributes(const QStringList &attributes)
-{
-    m_attributes = attributes;
-}
-
-YTMThumbnailSet YTMSearchResult::Item::thumbnails() const
-{
-    return m_thumbnails;
-}
-
-void YTMSearchResult::Item::setThumbnails(const YTMThumbnailSet &thumbs)
-{
-    m_thumbnails = thumbs;
-}
+public:
+    QString title;
+    QVector<YTMSearchResult::Item> contents;
+    YTMSearchRequest bottomEndpoint;
+};
 
 YTMSearchResult::Shelf YTMSearchResult::Shelf::fromJson(const QJsonObject &json)
 {
@@ -110,34 +111,38 @@ YTMSearchResult::Shelf YTMSearchResult::Shelf::fromJson(const QJsonObject &json)
             item.toObject().value(QStringLiteral("musicResponsiveListItemRenderer")).toObject()
         );
     }
-    
+
+    shelf.setBottomEndpoint(YTMSearchRequest::fromJson(
+        json.value(QStringLiteral("bottomEndpoint")).toObject().value(QStringLiteral("searchEndpoint")).toObject()
+    ));
+
     return shelf;
 }
 
-QString YTMSearchResult::Shelf::title() const
+YTMSearchResult::Shelf::Shelf()
+    : d(new YTMSearchResultShelfPrivate)
 {
-    return m_title;
 }
 
-void YTMSearchResult::Shelf::setTitle(const QString &title)
-{
-    m_title = title;
-}
+YTMSearchResult::Shelf::Shelf(const Shelf &other) = default;
+YTMSearchResult::Shelf::~Shelf() = default;
 
-QVector<YTMSearchResult::Item> YTMSearchResult::Shelf::contents() const
-{
-    return m_contents;
-}
+YTMSearchResult::Shelf &YTMSearchResult::Shelf::operator=(const Shelf &other) = default;
+
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Shelf, QString, d->title, title, setTitle)
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Shelf, QVector<YTMSearchResult::Item>, d->contents, contents, setContents)
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Shelf, YTMSearchRequest, d->bottomEndpoint, bottomEndpoint, setBottomEndpoint)
 
 QVector<YTMSearchResult::Item> & YTMSearchResult::Shelf::contents()
 {
-    return m_contents;
+    return d->contents;
 }
 
-void YTMSearchResult::Shelf::setContents(const QVector<YTMSearchResult::Item> &contents)
+class YTMSearchResultPrivate : public QSharedData
 {
-    m_contents = contents;
-}
+public:
+    QVector<YTMSearchResult::Shelf> contents;
+};
 
 YTMSearchResult YTMSearchResult::fromJson(const QJsonObject &json)
 {
@@ -149,7 +154,7 @@ YTMSearchResult YTMSearchResult::fromJson(const QJsonObject &json)
             .value(QStringLiteral("contents")).toArray();
     
     for (const auto &value : contents) {
-        result.m_contents << Shelf::fromJson(
+        result.d->contents << Shelf::fromJson(
             value.toObject().value(QStringLiteral("musicShelfRenderer")).toObject()
         );
     }
@@ -157,17 +162,19 @@ YTMSearchResult YTMSearchResult::fromJson(const QJsonObject &json)
     return result;
 }
 
-QVector<YTMSearchResult::Shelf> YTMSearchResult::contents() const
+YTMSearchResult::YTMSearchResult()
+    : d(new YTMSearchResultPrivate)
 {
-    return m_contents;
 }
 
-QVector<YTMSearchResult::Shelf> & YTMSearchResult::contents()
-{
-    return m_contents;
-}
+YTMSearchResult::YTMSearchResult(const YTMSearchResult &other) = default;
+YTMSearchResult::~YTMSearchResult() = default;
 
-void YTMSearchResult::setContents(const QVector<YTMSearchResult::Shelf> &contents)
+YTMSearchResult &YTMSearchResult::operator=(const YTMSearchResult &other) = default;
+
+CREATE_GETTER_AND_SETTER(YTMSearchResult, QVector<YTMSearchResult::Shelf>, d->contents, contents, setContents)
+
+QVector<YTMSearchResult::Shelf> &YTMSearchResult::contents()
 {
-    m_contents = contents;
+    return d->contents;
 }

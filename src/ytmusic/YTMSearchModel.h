@@ -24,16 +24,24 @@
 #include <QAbstractListModel>
 
 #include "YTMSearchResult.h"
+#include "YTMSearchRequest.h"
 
 class YTMSearchModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
-    Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
 
 public:
+    enum ItemType {
+        Shelf,
+        Item,
+        SearchEndpoint // e.g. 'show all' button
+    };
+    Q_ENUM(ItemType)
+
     enum Role {
-        ShelfTitleRole = Qt::UserRole + 1,
+        TypeRole = Qt::UserRole + 1,
+        ShelfTitleRole,
         TitleRole,
         AttributesRole,
         ThumbnailUrlRole
@@ -47,12 +55,12 @@ public:
 
     bool isLoading() const;
 
-    QString query() const;
-    void setQuery(const QString &);
+    void search(const YTMSearchRequest &request);
+    Q_INVOKABLE void search(const QString &query, const QString &params);
+    Q_INVOKABLE void searchByEndpointIndex(int index);
 
 signals:
     void isLoadingChanged();
-    void queryChanged();
 
 private:
     void fetchResults();
@@ -60,12 +68,14 @@ private:
     void setResult(YTMSearchResult result);
     void setIsLoading(bool);
 
-    YTMSearchResult::Shelf shelfAtIndex(int index) const;
-    YTMSearchResult::Item itemAtIndex(int index) const;
+    QVariant at(const QModelIndex &index) const;
+    YTMSearchResult::Item itemAt(const QModelIndex &index) const;
+    YTMSearchResult::Shelf shelfAt(const QModelIndex &index) const;
 
     bool m_isLoading;
-    QString m_query;
-    YTMSearchResult m_result;
+    YTMSearchRequest m_request;
+
+    QVector<QVariant> m_items;
 };
 
 #endif // YTMSEARCHMODEL_H

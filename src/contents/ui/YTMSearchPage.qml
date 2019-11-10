@@ -23,11 +23,7 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12 as Controls
 import org.kde.kirigami 2.10 as Kirigami
 
-import org.kde.plasmatube.accountmanager 1.0
-import org.kde.plasmatube.models 1.0
-import org.kde.plasmatube.invidious 1.0
 import org.kde.plasmatube.ytmusic 1.0 as YTM
-import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
     id: root
@@ -35,7 +31,7 @@ Kirigami.ScrollablePage {
     supportsRefreshing: true
     onRefreshingChanged: {
         if (refreshing)
-            searchModel.query = searchField.text;
+            searchModel.search(searchField.text, "");
     }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -72,37 +68,75 @@ Kirigami.ScrollablePage {
                     root.refreshing = false;
             }
         }
-`
-        section.property: "shelfTitle"
-        section.delegate: Kirigami.ListSectionHeader {
-            text: section
+
+        delegate: Component {
+            Loader {
+                property int currentIndex: index
+                property var modelData: model
+
+                width: root.width
+                height: item ? item.height : undefined
+
+                sourceComponent: {
+                    switch (model.type) {
+                    case YTM.SearchModel.Item:
+                        return musicItemComponent;
+                    case YTM.SearchModel.Shelf:
+                        return shelfComponent;
+                    case YTM.SearchModel.SearchEndpoint:
+                        return showAllComponent;
+                    }
+                }
+            }
         }
 
-        delegate: Kirigami.BasicListItem {
-            reserveSpaceForIcon: false
-            reserveSpaceForLabel: false
+        Component {
+            id: shelfComponent
 
-            RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+            Kirigami.ListSectionHeader {
+                text: modelData.shelfTitle
+            }
+        }
 
-                Image {
-                    Layout.preferredWidth: 42
-                    Layout.preferredHeight: 42
+        Component {
+            id: musicItemComponent
 
-                    source: thumbnailUrl
-                    fillMode: Image.PreserveAspectCrop
-                    mipmap: true
-                }
+            Kirigami.BasicListItem {
+                reserveSpaceForIcon: false
+                reserveSpaceForLabel: false
 
-                ColumnLayout {
-                    Controls.Label {
-                        text: model.title
+                RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Image {
+                        Layout.preferredWidth: 42
+                        Layout.preferredHeight: 42
+
+                        source: modelData.thumbnailUrl
+                        fillMode: Image.PreserveAspectCrop
+                        mipmap: true
                     }
 
-                    Controls.Label {
-                        text: model.attributes.join(" \u2022 ")
+                    ColumnLayout {
+                        Controls.Label {
+                            text: modelData.title
+                        }
+
+                        Controls.Label {
+                            text: modelData.attributes.join(" \u2022 ")
+                        }
                     }
                 }
+            }
+        }
+
+        Component {
+            id: showAllComponent
+
+            Controls.Button {
+                text: qsTr("Show all")
+                onClicked: searchModel.searchByEndpointIndex(currentIndex)
+                flat: true
             }
         }
     }
