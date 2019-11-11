@@ -31,7 +31,29 @@ Kirigami.ScrollablePage {
     supportsRefreshing: true
     onRefreshingChanged: {
         if (refreshing)
-            searchModel.search(searchField.text, "");
+            searchModel.tryStartFetching();
+    }
+
+    leftAction: Kirigami.Action {
+        visible: searchModel.canGoBack
+        enabled: !searchModel.isLoading
+        text: qsTr("Go back")
+        icon.name: "arrow-left"
+        onTriggered: {
+            searchModel.goBack();
+            root.refreshing = true;
+        }
+    }
+
+    rightAction: Kirigami.Action {
+        visible: searchModel.canGoForward
+        enabled: !searchModel.isLoading
+        text: qsTr("Go forward")
+        icon.name: "arrow-right"
+        onTriggered: {
+            searchModel.goForward();
+            root.refreshing = true;
+        }
     }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -50,12 +72,15 @@ Kirigami.ScrollablePage {
             selectByMouse: true
             rightActions: [
                 Kirigami.Action {
-                    iconName: "search"
+                    icon.name: "search"
                     onTriggered: searchField.accepted()
                 }
             ]
 
-            onAccepted: root.refreshing = true
+            onAccepted: {
+                searchModel.search(searchField.text, "");
+                root.refreshing = true;
+            }
         }
     }
 
@@ -94,6 +119,7 @@ Kirigami.ScrollablePage {
             id: shelfComponent
 
             Kirigami.ListSectionHeader {
+                visible: modelData.shelfTitle.length > 0
                 text: modelData.shelfTitle
             }
         }
@@ -106,7 +132,7 @@ Kirigami.ScrollablePage {
                 reserveSpaceForLabel: false
 
                 RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
+                    spacing: Kirigami.Units.largeSpacing
 
                     Image {
                         Layout.preferredWidth: 42
@@ -135,7 +161,10 @@ Kirigami.ScrollablePage {
 
             Controls.Button {
                 text: qsTr("Show all")
-                onClicked: searchModel.searchByEndpointIndex(currentIndex)
+                onClicked: {
+                    searchModel.searchByEndpointIndex(currentIndex);
+                    root.refreshing = true;
+                }
                 flat: true
             }
         }

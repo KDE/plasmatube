@@ -23,6 +23,9 @@
 
 #include <QAbstractListModel>
 
+#include <QStack>
+
+#include "YTMApiRequest.h"
 #include "YTMSearchResult.h"
 #include "YTMSearchRequest.h"
 
@@ -30,6 +33,8 @@ class YTMSearchModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
+    Q_PROPERTY(bool canGoBack READ canGoBack NOTIFY canGoBackChanged)
+    Q_PROPERTY(bool canGoForward READ canGoForward NOTIFY canGoForwardChanged)
 
 public:
     enum ItemType {
@@ -54,13 +59,22 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
     bool isLoading() const;
+    bool canGoBack() const;
+    bool canGoForward() const;
+
+    Q_INVOKABLE void tryStartFetching();
 
     void search(const YTMSearchRequest &request);
     Q_INVOKABLE void search(const QString &query, const QString &params);
     Q_INVOKABLE void searchByEndpointIndex(int index);
 
+    Q_INVOKABLE void goBack();
+    Q_INVOKABLE void goForward();
+
 signals:
     void isLoadingChanged();
+    void canGoBackChanged();
+    void canGoForwardChanged();
 
 private:
     void fetchResults();
@@ -73,9 +87,10 @@ private:
     YTMSearchResult::Shelf shelfAt(const QModelIndex &index) const;
 
     bool m_isLoading;
-    YTMSearchRequest m_request;
 
     QVector<QVariant> m_items;
+    QStack<YTMSearchRequest> m_requestCache;
+    int m_currentRequestIndex = -1;
 };
 
 #endif // YTMSEARCHMODEL_H

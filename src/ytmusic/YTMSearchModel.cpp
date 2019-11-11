@@ -102,20 +102,22 @@ void YTMSearchModel::setIsLoading(bool isLoading)
     emit isLoadingChanged();
 }
 
+bool YTMSearchModel::canGoBack() const
+{
+    return m_currentRequestIndex > 0;
+}
+
+bool YTMSearchModel::canGoForward() const
+{
+    return (m_currentRequestIndex + 1) < m_requestCache.length();
+}
+
 void YTMSearchModel::search(const YTMSearchRequest &request)
 {
-    m_request = request;
-
-    setIsLoading(true);
-
-    beginResetModel();
-    m_items.clear();
-    endResetModel();
-
-    if (YTMClient::instance()->hasFetchedApiKey()) {
-        fetchResults();
-        return;
-    }
+    // remove requests after current index
+    m_requestCache.resize(m_currentRequestIndex + 1);
+    m_requestCache << request;
+    m_currentRequestIndex++;
 }
 
 void YTMSearchModel::search(const QString &query, const QString &params)
@@ -128,9 +130,34 @@ void YTMSearchModel::searchByEndpointIndex(int index)
     search(m_items.at(index).value<YTMSearchRequest>());
 }
 
+void YTMSearchModel::goBack()
+{
+    m_currentRequestIndex--;
+}
+
+void YTMSearchModel::goForward()
+{
+    m_currentRequestIndex++;
+}
+
+void YTMSearchModel::tryStartFetching()
+{
+    emit canGoBackChanged();
+    emit canGoForwardChanged();
+
+    setIsLoading(true);
+
+    beginResetModel();
+    m_items.clear();
+    endResetModel();
+
+    if (YTMClient::instance()->hasFetchedApiKey())
+        fetchResults();
+}
+
 void YTMSearchModel::fetchResults()
 {
-    QNetworkReply *reply = YTMClient::instance()->sendRequest(m_request);
+    QNetworkReply *reply = YTMClient::instance()->sendRequest(m_requestCache.at(m_currentRequestIndex));
 
     // success
     connect(reply, &QNetworkReply::finished, this, [=] () {
