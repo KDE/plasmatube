@@ -32,6 +32,7 @@ public:
     QString title;
     QStringList attributes;
     YTMThumbnailSet thumbnails;
+    QString videoId;
 };
 
 YTMSearchResult::Item YTMSearchResult::Item::fromJson(const QJsonObject &json)
@@ -63,6 +64,12 @@ YTMSearchResult::Item YTMSearchResult::Item::fromJson(const QJsonObject &json)
             .value(QStringLiteral("thumbnail")).toObject()
     ));
 
+    item.setVideoId(
+        json.value(QStringLiteral("doubleTapCommand")).toObject()
+            .value(QStringLiteral("watchEndpoint")).toObject()
+            .value(QStringLiteral("videoId")).toString()
+    );
+
     return item;
 }
 
@@ -86,6 +93,7 @@ QString YTMSearchResult::Item::attributeFromJson(const QJsonObject &json)
 CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, QString, d->title, title, setTitle)
 CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, QStringList, d->attributes, attributes, setAttributes)
 CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, YTMThumbnailSet, d->thumbnails, thumbnails, setThumbnails)
+CREATE_GETTER_AND_SETTER(YTMSearchResult::Item, QString, d->videoId, videoId, setVideoId)
 
 class YTMSearchResultShelfPrivate : public QSharedData
 {

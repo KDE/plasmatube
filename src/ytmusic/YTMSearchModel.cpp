@@ -53,6 +53,7 @@ QHash<int, QByteArray> YTMSearchModel::roleNames() const
     roles[TitleRole] = QByteArrayLiteral("title");
     roles[AttributesRole] = QByteArrayLiteral("attributes");
     roles[ThumbnailUrlRole] = QByteArrayLiteral("thumbnailUrl");
+    roles[VideoIdRole] = QByteArrayLiteral("videoId");
     return roles;
 }
 
@@ -84,6 +85,8 @@ QVariant YTMSearchModel::data(const QModelIndex &index, int role) const
         return itemAt(index).attributes();
     case ThumbnailUrlRole:
         return itemAt(index).thumbnails().bestThumbnailForResolution(60).url();
+    case VideoIdRole:
+        return itemAt(index).videoId();
     default:
         return {};
     }

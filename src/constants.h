@@ -47,3 +47,22 @@ void className::setterName(const type &getterName) \
 { \
     memberName = getterName; \
 }
+
+#define CREATE_GETTER_AND_SETTER_HEADER(type, getterName, setterName) \
+type getterName() const; \
+void setterName(const type &getterName);
+
+#define CREATE_GETTER_AND_SETTER_BASETYPE(className, type, memberName, getterName, setterName) \
+type className::getterName() const \
+{ \
+    return memberName; \
+} \
+\
+void className::setterName(type getterName) \
+{ \
+    memberName = getterName; \
+}
+
+#define CREATE_GETTER_AND_SETTER_BASETYPE_HEADER(type, getterName, setterName) \
+type getterName() const; \
+void setterName(type getterName);

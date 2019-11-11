@@ -57,6 +57,9 @@ public:
         YTMThumbnailSet thumbnails() const;
         void setThumbnails(const YTMThumbnailSet &thumbs);
 
+        QString videoId() const;
+        void setVideoId(const QString &videoId);
+
     private:
         static QString attributeFromJson(const QJsonObject &json);
 

@@ -19,27 +19,31 @@
  */
 
 #include "video.h"
+
 #include <QJsonArray>
+#include <QVector>
+
+#include "MediaFormat.h"
 
 void Video::parseFromJson(const QJsonObject &obj)
 {
     VideoBasicInfo::parseFromJson(obj);
 
     QStringList keywords;
-    foreach(QJsonValue val, obj.value("keywords").toArray())
+    for (const auto &val : obj.value("keywords").toArray())
         keywords << val.toString();
     setKeywords(keywords);
     setLikeCount(obj.value("likeCount").toInt());
     setDislikeCount(obj.value("dislikeCount").toInt());
     setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
     QStringList allowedRegions;
-    foreach(const QJsonValue &val, obj.value("allowedRegions").toArray())
+    for (const auto &val : obj.value("allowedRegions").toArray())
         allowedRegions << val.toString();
     setAllowedRegions(allowedRegions);
     setGenre(obj.value("genre").toString());
     setGenreUrl(obj.value("genreUrl").toString());
     QList<VideoThumbnail> authorThumbnails;
-    foreach (const QJsonValue &val, obj.value("authorThumbnails").toArray()) {
+    for (const auto &val : obj.value("authorThumbnails").toArray()) {
         VideoThumbnail thumb;
         thumb.parseFromJson(val.toObject());
         authorThumbnails << thumb;
@@ -50,12 +54,18 @@ void Video::parseFromJson(const QJsonObject &obj)
     setRating(obj.value("rating").toDouble(5.0));
     setIsListed(obj.value("isListed").toBool(true));
     QList<VideoBasicInfo> recommendedVideos;
-    foreach (const QJsonValue &val, obj.value("recommendedVideos").toArray()) {
+    for (const auto &val : obj.value("recommendedVideos").toArray()) {
         VideoBasicInfo vid;
         vid.parseFromJson(val.toObject());
         recommendedVideos << vid;
     }
     setRecommendedVideos(recommendedVideos);
+
+    const QJsonArray &jsonAdaptiveFormats = obj.value(QStringLiteral("adaptiveFormats")).toArray();
+    QVector<MediaFormat> adaptiveFormats;
+    for (const auto &val : jsonAdaptiveFormats)
+        adaptiveFormats << MediaFormat::fromJson(val.toObject());
+    setAdaptiveFormats(adaptiveFormats);
 }
 
 QStringList Video::keywords() const
@@ -186,4 +196,14 @@ QList<VideoBasicInfo> Video::recommendedVideos() const
 void Video::setRecommendedVideos(const QList<VideoBasicInfo> &recommendedVideos)
 {
     m_recommendedVideos = recommendedVideos;
+}
+
+QVector<MediaFormat> Video::adaptiveFormats() const
+{
+    return m_adaptiveFormats;
+}
+
+void Video::setAdaptiveFormats(const QVector<MediaFormat> &adaptiveFormats)
+{
+    m_adaptiveFormats = adaptiveFormats;
 }

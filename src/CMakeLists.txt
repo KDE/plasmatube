@@ -5,6 +5,7 @@ set(plasmatube_SRCS
     videolistmodel.cpp
     videobasicinfo.cpp
     video.cpp
+    MediaFormat.cpp
     invidiousmanager.cpp
     accountmanager.cpp
 

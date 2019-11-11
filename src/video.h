@@ -21,7 +21,10 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
+#include <QVector>
+
 #include "videobasicinfo.h"
+#include "MediaFormat.h"
 
 class Video : public VideoBasicInfo
 {
@@ -68,6 +71,9 @@ public:
     QList<VideoBasicInfo> recommendedVideos() const;
     void setRecommendedVideos(const QList<VideoBasicInfo>&);
 
+    QVector<MediaFormat> adaptiveFormats() const;
+    void setAdaptiveFormats(const QVector<MediaFormat> &adaptiveFormats);
+
 private:
     QStringList m_keywords;
     qint32 m_likeCount;
@@ -82,6 +88,7 @@ private:
     double m_rating;
     bool m_isListed;
     QList<VideoBasicInfo> m_recommendedVideos;
+    QVector<MediaFormat> m_adaptiveFormats;
 };
 
 #endif // VIDEO_H

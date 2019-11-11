@@ -49,7 +49,8 @@ public:
         ShelfTitleRole,
         TitleRole,
         AttributesRole,
-        ThumbnailUrlRole
+        ThumbnailUrlRole,
+        VideoIdRole
     };
 
     YTMSearchModel(QObject *parent = nullptr);

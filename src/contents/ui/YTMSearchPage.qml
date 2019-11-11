@@ -21,8 +21,12 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12 as Controls
+import QtGraphicalEffects 1.12
+import QtMultimedia 5.12
+
 import org.kde.kirigami 2.10 as Kirigami
 
+import org.kde.plasmatube.models 1.0
 import org.kde.plasmatube.ytmusic 1.0 as YTM
 
 Kirigami.ScrollablePage {
@@ -84,6 +88,127 @@ Kirigami.ScrollablePage {
         }
     }
 
+    footer: Controls.Pane {
+        height: 75
+        
+        layer.enabled: true
+        layer.effect: DropShadow {
+            verticalOffset: 1
+            color: Kirigami.Theme.disabledTextColor
+            samples: 20
+            spread: 0.3
+            cached: true
+        }
+        padding: 0
+        wheelEnabled: true
+        background: Rectangle {
+            color: Kirigami.Theme.backgroundColor
+        }
+
+        VideoModel {
+            id: currentTrack
+            onVideoIdChanged: {
+                // is also executed in initial set
+                currentTrack.fetch()
+            }
+        }
+
+        Audio {
+            id: player
+            source: currentTrack.video.audioUrl()
+            audioRole: Audio.MusicRole
+            autoPlay: true
+        }
+
+        Rectangle {
+            width: root.width
+            height: 4
+            color: Qt.darker(Kirigami.Theme.disabledTextColor, 1.2)
+        }
+
+        Rectangle {
+            width: root.width * player.bufferProgress
+            height: 4
+            color: Qt.lighter(Kirigami.Theme.disabledTextColor, 1.1)
+        }
+        
+        Rectangle {
+            width: root.width * (player.position / player.duration)
+            height: 4
+            color: Kirigami.Theme.highlightColor
+        }
+
+        RowLayout {
+            anchors.fill: parent
+            spacing: Kirigami.Units.largeSpacing * 2
+
+            Kirigami.Icon {
+                height: parent.height
+                width: height
+                source: player.metaData.coverArtUrlLarge ? player.metaData.coverArtUrlLarge : "media-default-album"
+            }
+
+            ColumnLayout {
+                Layout.fillWidth: true
+
+                Controls.Label {
+//                     text: "<b>Enjoy The Silence</b>"
+                    text: "<b>" + currentTrack.video.title + "</b>"
+                }
+
+                Controls.Label {
+//                     text: "Depeche Mode"
+                    text: currentTrack.video.author
+//                     text: player.metaData.author
+                    color: Kirigami.Theme.disabledTextColor
+                }
+
+                Item {
+                    Layout.fillWidth: true
+                }
+            }
+
+            Kirigami.Icon {
+                height: parent.height * 0.3
+                width: height
+                source: "media-skip-backward"
+            }
+
+            Controls.ToolButton {
+                height: parent.height * 0.8
+                width: height
+                onClicked: {
+                    if (player.playbackState === Audio.PlayingState)
+                        player.pause();
+                    else
+                        player.play();
+                }
+
+                Kirigami.Icon {
+                    anchors.centerIn: parent
+                    height: parent.parent.height * 0.5
+                    width: height
+                    source: {
+                        if (player.playbackState === Audio.PlayingState)
+                            return "media-playback-pause";
+                        else
+                            return "media-playback-start";
+                    }
+                }
+            }
+
+            Kirigami.Icon {
+                height: parent.height * 0.3
+                width: height
+                source: "media-skip-forward"
+            }
+
+            Item {
+                height: parent.height
+            }
+        }
+    }
+
     ListView {
         clip: true
         model: YTM.SearchModel {
@@ -130,6 +255,12 @@ Kirigami.ScrollablePage {
             Kirigami.BasicListItem {
                 reserveSpaceForIcon: false
                 reserveSpaceForLabel: false
+
+                onClicked: {
+                    showPassiveNotification("VIDEO ID: " + modelData.videoId)
+                    if (modelData.videoId)
+                        currentTrack.videoId = modelData.videoId;
+                }
 
                 RowLayout {
                     spacing: Kirigami.Units.largeSpacing

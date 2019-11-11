@@ -19,9 +19,12 @@
  */
 
 #include "videomodel.h"
+
+#include <QNetworkReply>
+
 #include "videolistmodel.h"
 #include "invidiousmanager.h"
-#include <QNetworkReply>
+#include "MediaFormat.h"
 
 VideoModel::VideoModel(QObject *parent)
     : QObject(parent), m_video(new VideoItem(this)),
@@ -95,4 +98,17 @@ VideoListModel *VideoItem::recommendedVideosModel() const
 {
     VideoListModel *videoModel = new VideoListModel(recommendedVideos(), (QObject*) this);
     return videoModel;
+}
+
+QUrl VideoItem::audioUrl() const
+{
+    MediaFormat bestFormat;
+
+    const QVector<MediaFormat> &formats = adaptiveFormats();
+    for (const auto &format : formats) {
+        if (format.type().contains(QStringLiteral("audio/")) && format.size() >= bestFormat.size())
+            bestFormat = format;
+    }
+
+    return bestFormat.url();
 }

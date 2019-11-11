@@ -63,6 +63,7 @@ public:
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;
     Q_INVOKABLE QUrl authorThumbnail(qint32 size) const;
     Q_INVOKABLE VideoListModel *recommendedVideosModel() const;
+    Q_INVOKABLE QUrl audioUrl() const;
 };
 
 class VideoModel : public QObject
