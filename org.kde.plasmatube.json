@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasmatube",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.12",
+    "runtime-version": "5.13",
     "sdk": "org.kde.Sdk",
     "command": "plasmatube",
     "tags": ["nightly"],
@@ -36,61 +36,6 @@
             ]
         },
         {
-            "name": "udev",
-            "rm-configure": true,
-            "config-opts": [
-                "--disable-hwdb",
-                "--disable-logging",
-                "--disable-introspection",
-                "--disable-keymap",
-                "--disable-mtd_probe",
-                "--with-systemdsystemunitdir=/app/lib/systemd/"
-            ],
-            "cleanup": [
-                "/include",
-                "/etc",
-                "/libexec",
-                "/sbin",
-                "/lib/pkgconfig",
-                "/lib/systemd",
-                "/man",
-                "/share/aclocal",
-                "/share/doc",
-                "/share/gtk-doc",
-                "/share/man",
-                "/share/pkgconfig",
-                "*.la",
-                "*.a"
-            ],
-            "sources": [
-                {
-                "type": "archive",
-                "url": "http://kernel.org/pub/linux/utils/kernel/hotplug/udev-175.tar.bz2",
-                "sha256": "4c7937fe5a1521316ea571188745b9a00a9fdf314228cffc53a7ba9e5968b7ab"
-                },
-                {
-                "type": "script",
-                "dest-filename": "autogen.sh",
-                "commands": [
-                    "autoreconf -vfi"
-                ]
-                }
-            ],
-            "post-install": [
-                "sed -i 's|${exec_prefix}|/app|g' /app/share/pkgconfig/udev.pc"
-            ]
-        },
-        {
-            "name": "libv4l2",
-            "cleanup": [ "/include", "/lib/*.la", "/lib/*/*.la", "/lib*/*/*/*.la", "/lib/pkgconfig", "/share/man" ],
-            "config-opts": [ "--disable-static", "--disable-bpf" ],
-            "sources": [{
-                "type": "archive",
-                "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.16.2.tar.bz2",
-                "sha256": "6c3208c9a1c73455d30bae83096d161e57bec5008594f270a2a67df8c86d8e47"
-            }]
-        },
-        {
             "name": "ffmpeg",
             "cleanup": [ "/include", "/lib/pkgconfig", "/share/ffmpeg/examples" ],
             "config-opts": [
@@ -102,7 +47,7 @@
                 "--disable-encoders",
                 "--disable-muxers",
                 "--enable-encoder=png",
-                "--enable-libv4l2"
+                "--disable-libv4l2"
             ],
             "sources": [{
                 "type": "archive",
