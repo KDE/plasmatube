@@ -3,3 +3,4 @@
 build/
 flatpak-build-*/
 plasmatube.kdev4
+CMakeLists.txt.user
