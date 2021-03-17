@@ -22,6 +22,9 @@
 #include "videolistmodel.h"
 #include "invidiousmanager.h"
 #include <QNetworkReply>
+#include <QProcess>
+#include <QJsonDocument>
+#include <QJsonArray>
 
 VideoModel::VideoModel(QObject *parent)
     : QObject(parent), m_video(new VideoItem(this)),
@@ -31,6 +34,11 @@ VideoModel::VideoModel(QObject *parent)
             this, &VideoModel::handleVideoReceived);
     connect(invidious, &InvidiousManager::videoRequestFailed,
             this, &VideoModel::handleRequestFailed);
+    connect(this, &VideoModel::videoIdChanged,
+            this, [this] {
+                m_remoteUrl = QString();
+                Q_EMIT remoteUrlChanged();
+            });
 }
 
 void VideoModel::fetch()
@@ -95,4 +103,64 @@ VideoListModel *VideoItem::recommendedVideosModel() const
 {
     VideoListModel *videoModel = new VideoListModel(recommendedVideos(), (QObject*) this);
     return videoModel;
+}
+
+QString VideoModel::remoteUrl()
+{
+    if (!m_formatUrl.isEmpty()) {
+        if (m_formatUrl.contains(m_selectedFormat)) {
+            return m_formatUrl[m_selectedFormat];
+        }
+        return "";
+    }
+    QString youtubeDl = QStringLiteral("youtube-dl");
+    QStringList arguments;
+    arguments << QLatin1String("--dump-json")
+              << m_videoId;
+    QProcess *process = new QProcess();
+    process->setReadChannel(QProcess::StandardOutput);
+    process->start(youtubeDl, arguments);
+
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+             [=](int exitCode, QProcess::ExitStatus exitStatus) {
+                 const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
+                 for (const auto value : doc.object()[QLatin1String("formats")].toArray()) {
+                    const auto format = value.toObject();
+                    const auto formatNote = format["format_note"].toString();
+                    qDebug() << "jroiejo";
+                    if (formatNote == "tiny") {
+                        m_audioUrl = format["url"].toString();
+                    } else {
+                        m_formatUrl[formatNote] = format["url"].toString();
+                    }
+                 }
+                 Q_EMIT remoteUrlChanged();
+                 process->deleteLater();
+             });
+    return QString();
+}
+
+QString VideoModel::audioUrl() const
+{
+    return m_audioUrl;
+}
+
+QStringList VideoModel::formatList() const
+{
+    return m_formatUrl.keys();
+}
+
+QString VideoModel::selectedFormat() const
+{
+    return m_selectedFormat;
+}
+
+void VideoModel::setSelectedFormat(const QString &selectedFormat)
+{
+    if (m_selectedFormat == selectedFormat) {
+        return;
+    }
+    m_selectedFormat = selectedFormat;
+    Q_EMIT remoteUrlChanged();
+    Q_EMIT selectedFormatChanged();
 }

@@ -18,7 +18,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "mpvobject.h"
 #include "videolistmodel.h"
 #include "videomodel.h"
 #include "accountmanager.h"
@@ -42,7 +41,6 @@ int main(int argc, char **argv)
     // requires the LC_NUMERIC category to be set to "C", so change it back.
     std::setlocale(LC_NUMERIC, "C");
 
-    qmlRegisterType<MpvObject>("org.kde.plasmatube.mpv", 1, 0, "MpvObject");
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
     qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
