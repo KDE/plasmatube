@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define DEFAULT_INSTANCE "https://invidio.us"
+#define DEFAULT_INSTANCE "https://invidiou.site"
 
 #define SETTINGS_INSTANCE "auth/instance"
 #define SETTINGS_USERNAME "auth/username"

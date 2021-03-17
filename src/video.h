@@ -28,7 +28,8 @@ class Video : public VideoBasicInfo
 public:
     void parseFromJson(const QJsonObject&);
 
-public:
+    QString videoUrl() const;
+
     QStringList keywords() const;
     void setKeywords(const QStringList&);
 

@@ -22,8 +22,8 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
+import QtMultimedia 5.15
 
-import org.kde.plasmatube.mpv 1.0
 import org.kde.plasmatube.models 1.0
 import org.kde.plasmatube.accountmanager 1.0
 import "utils.js" as Utils
@@ -39,27 +39,57 @@ Kirigami.ScrollablePage {
     bottomPadding: 0
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    VideoModel {
-        id: videoModel
-        videoId: vid
-        onVideoIdChanged: {
-            // is also executed in initial set
-            videoModel.fetch()
-        }
-    }
-
     ColumnLayout {
-        MpvObject {
-            id: renderer
-            Layout.preferredWidth: root.width
-            Layout.preferredHeight: root.width / 16.0 * 9.0
-            Layout.maximumHeight: root.height
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: renderer.command(["cycle", "pause"])
+        VideoModel {
+            id: videoModel
+            videoId: vid
+            onVideoIdChanged: {
+                // is also executed in initial set
+                videoModel.fetch()
             }
         }
+        Video {
+            id: renderer
+            Layout.fillWidth: true
+            Layout.preferredHeight: width / 16.0 * 9.0
+            Layout.maximumHeight: root.height
+            source: videoModel.remoteUrl
+            muted: true
+
+            Image {
+                anchors.fill: parent
+                visible: renderer.playbackState === MediaPlayer.StoppedState
+                source: videoModel.video.thumbnailUrl("high")
+            }
+
+            VideoData {
+                title: videoModel.video.title
+            }
+
+            VideoControls {
+                audio: playMusic
+                video: renderer
+            }
+
+            /*MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    if (renderer.playbackState !== MediaPlayer.PlayingState) {
+                        renderer.play()
+                        playMusic.play();
+                    } else {
+                        renderer.pause()
+                        playMusic.pause()
+                    }
+                }
+            }*/
+
+            Audio {
+                id: playMusic
+                source: videoModel.audioUrl
+            }
+        }
+
 
         // extra layout to make all details invisible while loading
         ColumnLayout {
@@ -229,9 +259,5 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-    }
-
-    Component.onCompleted: {
-        renderer.command(["loadfile", "ytdl://" + vid])
     }
 }

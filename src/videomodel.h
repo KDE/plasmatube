@@ -70,7 +70,11 @@ class VideoModel : public QObject
     Q_OBJECT
     Q_PROPERTY(bool isLoading MEMBER m_isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString videoId MEMBER m_videoId NOTIFY videoIdChanged)
+    Q_PROPERTY(QString remoteUrl READ remoteUrl NOTIFY remoteUrlChanged)
+    Q_PROPERTY(QString audioUrl READ audioUrl NOTIFY remoteUrlChanged)
     Q_PROPERTY(VideoItem* video MEMBER m_video NOTIFY videoChanged)
+    Q_PROPERTY(QStringList formatList READ formatList NOTIFY formatListChanged)
+    Q_PROPERTY(QString selectedFormat READ selectedFormat WRITE setSelectedFormat NOTIFY selectedFormatChanged)
 
 public:
     explicit VideoModel(QObject *parent = nullptr);
@@ -78,10 +82,19 @@ public:
     Q_INVOKABLE void fetch();
     void setIsLoading(bool);
 
+    QString remoteUrl();
+    QString audioUrl() const;
+    QStringList formatList() const;
+    QString selectedFormat() const;
+    void setSelectedFormat(const QString &selectedFormat);
+
 signals:
     void isLoadingChanged();
     void videoIdChanged();
     void videoChanged();
+    void remoteUrlChanged();
+    void formatListChanged();
+    void selectedFormatChanged();
 
 private slots:
     void handleVideoReceived(const QJsonObject&);
@@ -90,6 +103,10 @@ private slots:
 private:
     bool m_isLoading = false;
     QString m_videoId;
+    QString m_remoteUrl;
+    QHash<QString, QString> m_formatUrl;
+    QString m_selectedFormat = "720p";
+    QString m_audioUrl;
     VideoItem* m_video;
     QNetworkReply *lastRequest = nullptr;
     InvidiousManager *invidious;
