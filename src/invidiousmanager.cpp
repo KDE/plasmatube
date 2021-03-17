@@ -67,7 +67,7 @@ QNetworkReply *InvidiousManager::requestVideo(const QString &videoId)
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+    connect(reply, &QNetworkReply::errorOccurred,
             this, [this](QNetworkReply::NetworkError) {
         emit videoRequestFailed();
     });
@@ -108,11 +108,12 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     url.setQuery(query);
 
     QNetworkRequest request(url.toString());
-    if (!AccountManager::instance()->username().isEmpty())
+    if (!AccountManager::instance()->username().isEmpty()) {
         request.setHeader(
             QNetworkRequest::CookieHeader,
-            QVariant::fromValue(QList<QNetworkCookie>() << AccountManager::instance()->cookie())
+            QVariant::fromValue(QList<QNetworkCookie> { AccountManager::instance()->cookie() })
         );
+    }
 
     QNetworkReply *reply = netManager()->get(request);
 
@@ -144,7 +145,8 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
                 results.append(video);
             }
         } else {
-            for (const QJsonValue &val : doc.array()) {
+            const auto videoArray = doc.array();
+            for (const QJsonValue &val : videoArray) {
                 VideoBasicInfo video;
                 video.parseFromJson(val.toObject());
                 results.append(video);
@@ -155,7 +157,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
+    connect(reply, &QNetworkReply::errorOccurred,
             this, [=] (QNetworkReply::NetworkError error) {
         emit videoQueryFailed(QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error));
     });

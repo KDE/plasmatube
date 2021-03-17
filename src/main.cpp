@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
     qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
     qmlRegisterSingletonType<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", [] (QQmlEngine *, QJSEngine *) {
-        return static_cast<QObject*>(AccountManager::instance());
+        return AccountManager::instance();
     });
 
     QQmlApplicationEngine engine;

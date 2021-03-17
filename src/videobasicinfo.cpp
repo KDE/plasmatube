@@ -89,13 +89,13 @@ void VideoBasicInfo::parseFromJson(const QJsonObject &obj)
     setPaid(obj.value("paid").toBool(false));
     setPremium(obj.value("premium").toBool(false));
 
-    QList<VideoThumbnail> thumbs;
-    foreach (const QJsonValue &val, obj.value("videoThumbnails").toArray()) {
+    const auto thumbs = obj.value("videoThumbnails").toArray();
+    std::transform(thumbs.cbegin(), thumbs.cend(), std::back_inserter(m_videoThumbnails),
+                   [](const QJsonValue &val) {
         VideoThumbnail thumb;
         thumb.parseFromJson(val.toObject());
-        thumbs << thumb;
-    }
-    setVideoThumbnails(thumbs);
+        return thumb;
+    });
 }
 
 bool VideoBasicInfo::isNotification() const

@@ -41,23 +41,23 @@ VideoListModel::VideoListModel(const QList<VideoBasicInfo> &list,
 
 QHash<int, QByteArray> VideoListModel::roleNames() const
 {
-    QHash<int, QByteArray> roles;
-    roles[IdRole] = "id";
-    roles[TitleRole] = "title";
-    roles[ThumbnailRole] = "thumbnail";
-    roles[LengthRole] = "length";
-    roles[ViewCountRole] = "viewCount";
-    roles[AuthorRole] = "author";
-    roles[AuthorIdRole] = "authorId";
-    roles[AuthorUrlRole] = "authorUrl";
-    roles[PublishedRole] = "published";
-    roles[PublishedTextRole] = "publishedText";
-    roles[DescriptionRole] = "description";
-    roles[DescriptionHtmlRole] = "descriptionHtml";
-    roles[LiveNowRole] = "liveNow";
-    roles[PaidRole] = "paid";
-    roles[PremiumRole] = "premium";
-    return roles;
+    return {
+        {IdRole, "id"},
+        {TitleRole, "title"},
+        {ThumbnailRole, "thumbnail"},
+        {LengthRole, "length"},
+        {ViewCountRole, "viewCount"},
+        {AuthorRole, "author"},
+        {AuthorIdRole, "authorId"},
+        {AuthorUrlRole, "authorUrl"},
+        {PublishedRole, "published"},
+        {PublishedTextRole, "publishedText"},
+        {DescriptionRole, "description"},
+        {DescriptionHtmlRole, "descriptionHtml"},
+        {LiveNowRole, "liveNow"},
+        {PaidRole, "paid"},
+        {PremiumRole, "premium"}
+    };
 }
 
 int VideoListModel::rowCount(const QModelIndex &parent) const
@@ -194,7 +194,7 @@ void VideoListModel::setIsLoading(bool loading)
 
 void VideoListModel::clearAll()
 {
-    beginRemoveRows(QModelIndex(), 0, rowCount() - 1);
+    beginResetModel();
     m_results.clear();
-    endRemoveRows();
+    endResetModel();
 }

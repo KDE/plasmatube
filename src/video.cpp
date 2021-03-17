@@ -25,37 +25,43 @@ void Video::parseFromJson(const QJsonObject &obj)
 {
     VideoBasicInfo::parseFromJson(obj);
 
-    QStringList keywords;
-    foreach(QJsonValue val, obj.value("keywords").toArray())
-        keywords << val.toString();
-    setKeywords(keywords);
+    auto jsonValueToString = [](const QJsonValue &val) {
+        return val.toString();
+    };
+
+    const auto keywords = obj.value("keywords").toArray();
+    std::transform(keywords.cbegin(), keywords.cend(), std::back_inserter(m_keywords), jsonValueToString);
+
     setLikeCount(obj.value("likeCount").toInt());
     setDislikeCount(obj.value("dislikeCount").toInt());
     setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
-    QStringList allowedRegions;
-    foreach(const QJsonValue &val, obj.value("allowedRegions").toArray())
-        allowedRegions << val.toString();
-    setAllowedRegions(allowedRegions);
+
+    const auto allowedRegions = obj.value("allowedRegions").toArray();
+    std::transform(allowedRegions.cbegin(), allowedRegions.cend(), std::back_inserter(m_allowedRegions), jsonValueToString);
+
     setGenre(obj.value("genre").toString());
     setGenreUrl(obj.value("genreUrl").toString());
-    QList<VideoThumbnail> authorThumbnails;
-    foreach (const QJsonValue &val, obj.value("authorThumbnails").toArray()) {
+
+    const auto authorThumbnails = obj.value("authorThumbnails").toArray();
+    std::transform(authorThumbnails.cbegin(), authorThumbnails.cend(), std::back_inserter(m_authorThumbnails),
+                   [](const QJsonValue &val) {
         VideoThumbnail thumb;
         thumb.parseFromJson(val.toObject());
-        authorThumbnails << thumb;
-    }
-    setAuthorThumbnails(authorThumbnails);
+        return thumb;
+    });
+
     setSubCountText(obj.value("subCountText").toString());
     setAllowRatings(obj.value("allowRatings").toBool(true));
     setRating(obj.value("rating").toDouble(5.0));
     setIsListed(obj.value("isListed").toBool(true));
-    QList<VideoBasicInfo> recommendedVideos;
-    foreach (const QJsonValue &val, obj.value("recommendedVideos").toArray()) {
+
+    const auto recommendedVideos = obj.value("recommendedVideos").toArray();
+    std::transform(recommendedVideos.cbegin(), recommendedVideos.cend(), std::back_inserter(m_recommendedVideos),
+                   [](const QJsonValue &val) {
         VideoBasicInfo vid;
         vid.parseFromJson(val.toObject());
-        recommendedVideos << vid;
-    }
-    setRecommendedVideos(recommendedVideos);
+        return vid;
+    });
 }
 
 QStringList Video::keywords() const

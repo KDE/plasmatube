@@ -36,7 +36,7 @@ VideoModel::VideoModel(QObject *parent)
             this, &VideoModel::handleRequestFailed);
     connect(this, &VideoModel::videoIdChanged,
             this, [this] {
-                m_remoteUrl = QString();
+                m_remoteUrl.clear();
                 Q_EMIT remoteUrlChanged();
             });
 }
@@ -90,12 +90,13 @@ QUrl VideoItem::thumbnailUrl(const QString &quality) const
 QUrl VideoItem::authorThumbnail(qint32 size) const
 {
     // thumbnails are sorted by size
-    for (const VideoThumbnail &thumb : authorThumbnails()) {
+    const auto authorThumbs = authorThumbnails();
+    for (const auto &thumb : authorThumbs) {
         if (thumb.width() >= size)
             return thumb.url();
     }
     if (!authorThumbnails().isEmpty())
-        return authorThumbnails().last().url();
+        return authorThumbnails().constEnd()->url();
     return {};
 }
 
@@ -111,8 +112,9 @@ QString VideoModel::remoteUrl()
         if (m_formatUrl.contains(m_selectedFormat)) {
             return m_formatUrl[m_selectedFormat];
         }
-        return "";
+        return {};
     }
+
     QString youtubeDl = QStringLiteral("youtube-dl");
     QStringList arguments;
     arguments << QLatin1String("--dump-json")
@@ -122,12 +124,12 @@ QString VideoModel::remoteUrl()
     process->start(youtubeDl, arguments);
 
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-             [=](int exitCode, QProcess::ExitStatus exitStatus) {
+             [=](int, QProcess::ExitStatus) {
                  const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
-                 for (const auto value : doc.object()[QLatin1String("formats")].toArray()) {
+                 const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
+                 for (const auto value : formatsArray) {
                     const auto format = value.toObject();
                     const auto formatNote = format["format_note"].toString();
-                    qDebug() << "jroiejo";
                     if (formatNote == "tiny") {
                         m_audioUrl = format["url"].toString();
                     } else {

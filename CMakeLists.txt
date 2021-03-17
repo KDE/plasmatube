@@ -1,8 +1,8 @@
 project(plasmatube)
 
 cmake_minimum_required(VERSION 2.8.12)
-set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.5.0")
+set(KF5_MIN_VERSION "5.70.0")
+set(QT_MIN_VERSION "5.15.0")
 
 ################# Disallow in-source build #################
 
@@ -29,8 +29,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 ################# Find dependencies #################
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
-find_package(KF5Kirigami2 ${KF5_MIN_VERSION})
-find_package(PkgConfig REQUIRED)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2)
 
 ################# Enable C++11 features for clang and gcc #################
 

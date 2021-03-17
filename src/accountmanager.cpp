@@ -92,9 +92,7 @@ void AccountManager::logIn(const QString &username, const QString &password)
 
     // success
     connect(reply, &QNetworkReply::finished, this, [=] () {
-        const auto cookies = qvariant_cast<QList<QNetworkCookie>>(
-            reply->header(QNetworkRequest::SetCookieHeader)
-        );
+        const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
 
         if (!cookies.isEmpty()) {
             m_username = username;
@@ -115,8 +113,8 @@ void AccountManager::logIn(const QString &username, const QString &password)
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [=] (QNetworkReply::NetworkError error) {
+    connect(reply, &QNetworkReply::errorOccurred,
+            this, [=](QNetworkReply::NetworkError error) {
         emit loggingInFailed(
             QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error)
         );
@@ -170,8 +168,8 @@ void AccountManager::fetchSubscriptions()
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [=] (QNetworkReply::NetworkError) {
+    connect(reply, &QNetworkReply::errorOccurred,
+            this, [=](QNetworkReply::NetworkError) {
         reply->deleteLater();
     });
 }
@@ -203,8 +201,8 @@ void AccountManager::subscribeToChannel(const QString &channelId)
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [=] (QNetworkReply::NetworkError error) {
+    connect(reply, &QNetworkReply::errorOccurred,
+            this, [=](QNetworkReply::NetworkError error) {
         emit subscribingFailed(
             channelId,
             QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error)
@@ -237,8 +235,8 @@ void AccountManager::unsubscribeFromChannel(const QString &channelId)
     });
 
     // failure
-    connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
-            this, [=] (QNetworkReply::NetworkError error) {
+    connect(reply, &QNetworkReply::errorOccurred,
+            this, [=](QNetworkReply::NetworkError error) {
         emit unsubscribingFailed(
             channelId,
             QMetaEnum::fromType<QNetworkReply::NetworkError>().valueToKey(error)
@@ -281,11 +279,12 @@ QNetworkAccessManager *AccountManager::netManager()
 QNetworkRequest AccountManager::networkRequestWithCookie(const QString &url)
 {
     QNetworkRequest request(url);
-    if (!AccountManager::instance()->username().isEmpty())
+    if (!AccountManager::instance()->username().isEmpty()) {
         request.setHeader(
             QNetworkRequest::CookieHeader,
-            QVariant::fromValue(QList<QNetworkCookie>() << AccountManager::instance()->cookie())
+            QVariant::fromValue(QList<QNetworkCookie>{AccountManager::instance()->cookie()})
         );
+    }
     return request;
 }
 

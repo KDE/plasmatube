@@ -21,7 +21,6 @@
 #ifndef VIDEOMODEL_H
 #define VIDEOMODEL_H
 
-#include <QAbstractItemModel>
 #include "video.h"
 
 class InvidiousManager;
