@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 project(plasmatube)
 
 cmake_minimum_required(VERSION 2.8.12)

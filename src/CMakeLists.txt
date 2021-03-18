@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 set(plasmatube_SRCS
     main.cpp
     videomodel.cpp
