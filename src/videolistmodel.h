@@ -6,7 +6,7 @@
 #define SEARCHMODEL_H
 
 #include <QAbstractListModel>
-#include "videobasicinfo.h"
+#include "qinvidious/videobasicinfo.h"
 #include "invidiousmanager.h"
 
 class InvidiousManager;
@@ -39,7 +39,7 @@ public:
     };
 
     VideoListModel(QObject *parent = nullptr);
-    VideoListModel(const QList<VideoBasicInfo>&, QObject *parent = nullptr);
+    VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -62,7 +62,7 @@ signals:
     void queryChanged();
 
 private slots:
-    void handleSearchResults(const QList<VideoBasicInfo>&);
+    void handleSearchResults(const QList<QInvidious::VideoBasicInfo>&);
     void handleSearchFailure();
 
 private:
@@ -75,7 +75,7 @@ private:
     InvidiousManager::VideoListType m_queryType;
     qint32 m_nextPage = 0;
 
-    QList<VideoBasicInfo> m_results;
+    QList<QInvidious::VideoBasicInfo> m_results;
     InvidiousManager *m_invidious;
     QNetworkReply *m_lastRequest = nullptr;
 };

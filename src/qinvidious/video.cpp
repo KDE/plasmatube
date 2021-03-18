@@ -5,47 +5,57 @@
 #include "video.h"
 #include <QJsonArray>
 
-void Video::parseFromJson(const QJsonObject &obj)
+using namespace QInvidious;
+
+Video Video::fromJson(const QJsonObject &obj, Video &video)
 {
-    VideoBasicInfo::parseFromJson(obj);
+    VideoBasicInfo::fromJson(obj, video);
 
     auto jsonValueToString = [](const QJsonValue &val) {
         return val.toString();
     };
 
     const auto keywords = obj.value("keywords").toArray();
-    std::transform(keywords.cbegin(), keywords.cend(), std::back_inserter(m_keywords), jsonValueToString);
+    std::transform(keywords.cbegin(), keywords.cend(), std::back_inserter(video.m_keywords), jsonValueToString);
 
-    setLikeCount(obj.value("likeCount").toInt());
-    setDislikeCount(obj.value("dislikeCount").toInt());
-    setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
+    video.setLikeCount(obj.value("likeCount").toInt());
+    video.setDislikeCount(obj.value("dislikeCount").toInt());
+    video.setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
 
     const auto allowedRegions = obj.value("allowedRegions").toArray();
-    std::transform(allowedRegions.cbegin(), allowedRegions.cend(), std::back_inserter(m_allowedRegions), jsonValueToString);
+    std::transform(allowedRegions.cbegin(), allowedRegions.cend(), std::back_inserter(video.m_allowedRegions), jsonValueToString);
 
-    setGenre(obj.value("genre").toString());
-    setGenreUrl(obj.value("genreUrl").toString());
+    video.setGenre(obj.value("genre").toString());
+    video.setGenreUrl(obj.value("genreUrl").toString());
 
     const auto authorThumbnails = obj.value("authorThumbnails").toArray();
-    std::transform(authorThumbnails.cbegin(), authorThumbnails.cend(), std::back_inserter(m_authorThumbnails),
+    std::transform(authorThumbnails.cbegin(), authorThumbnails.cend(), std::back_inserter(video.m_authorThumbnails),
                    [](const QJsonValue &val) {
-        VideoThumbnail thumb;
-        thumb.parseFromJson(val.toObject());
-        return thumb;
+        return VideoThumbnail::fromJson(val);
     });
 
-    setSubCountText(obj.value("subCountText").toString());
-    setAllowRatings(obj.value("allowRatings").toBool(true));
-    setRating(obj.value("rating").toDouble(5.0));
-    setIsListed(obj.value("isListed").toBool(true));
+    video.setSubCountText(obj.value("subCountText").toString());
+    video.setAllowRatings(obj.value("allowRatings").toBool(true));
+    video.setRating(obj.value("rating").toDouble(5.0));
+    video.setIsListed(obj.value("isListed").toBool(true));
 
     const auto recommendedVideos = obj.value("recommendedVideos").toArray();
-    std::transform(recommendedVideos.cbegin(), recommendedVideos.cend(), std::back_inserter(m_recommendedVideos),
+    std::transform(recommendedVideos.cbegin(), recommendedVideos.cend(), std::back_inserter(video.m_recommendedVideos),
                    [](const QJsonValue &val) {
-        VideoBasicInfo vid;
-        vid.parseFromJson(val.toObject());
-        return vid;
+        return VideoBasicInfo::fromJson(val);
     });
+
+    return video;
+}
+
+Video::Video()
+    : m_likeCount(0),
+      m_dislikeCount(0),
+      m_isFamilyFriendly(true),
+      m_allowRatings(true),
+      m_rating(1.0),
+      m_isListed(true)
+{
 }
 
 QStringList Video::keywords() const

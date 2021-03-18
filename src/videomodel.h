@@ -5,13 +5,13 @@
 #ifndef VIDEOMODEL_H
 #define VIDEOMODEL_H
 
-#include "video.h"
+#include "qinvidious/video.h"
 
 class InvidiousManager;
 class QNetworkReply;
 class VideoListModel;
 
-class VideoItem : public QObject, public Video
+class VideoItem : public QObject, public QInvidious::Video
 {
     Q_OBJECT
     Q_PROPERTY(QString videoId READ videoId CONSTANT)
@@ -41,6 +41,8 @@ class VideoItem : public QObject, public Video
     Q_PROPERTY(bool isListed READ isListed CONSTANT)
 
 public:
+    static VideoItem *fromJson(const QJsonObject &obj, QObject *parent = nullptr);
+
     VideoItem(QObject *parent = nullptr);
 
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;

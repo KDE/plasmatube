@@ -35,11 +35,12 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2)
 
-################# Enable C++11 features for clang and gcc #################
+################# Enable C++17 #################
 
-if(UNIX)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++0x")
-endif()
+# C++ standard settings:
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 ################# build and install #################
 add_subdirectory(src)

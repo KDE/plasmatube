@@ -7,12 +7,15 @@
 
 #include "videobasicinfo.h"
 
+namespace QInvidious {
+
 class Video : public VideoBasicInfo
 {
 public:
-    void parseFromJson(const QJsonObject&);
+    FROM_JSON_OVERLOADS(Video)
+    static Video fromJson(const QJsonObject &, Video &);
 
-    QString videoUrl() const;
+    Video();
 
     QStringList keywords() const;
     void setKeywords(const QStringList&);
@@ -67,6 +70,8 @@ private:
     double m_rating;
     bool m_isListed;
     QList<VideoBasicInfo> m_recommendedVideos;
+};
+
 };
 
 #endif // VIDEO_H

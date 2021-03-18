@@ -15,6 +15,8 @@
 #include "accountmanager.h"
 #include "constants.h"
 
+using namespace QInvidious;
+
 InvidiousManager::InvidiousManager(QObject *parent)
     : QObject(parent),
       m_region(QLocale::system().name().split("_").first())
@@ -114,27 +116,16 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
         if (queryType == Feed) {
             const QJsonObject obj = doc.object();
 
-            const QJsonArray notifications = obj.value("notifications").toArray();
+            const auto notifications = obj.value("notifications").toArray();
             for (const QJsonValue &val : notifications) {
-                VideoBasicInfo video;
-                video.parseFromJson(val.toObject());
+                auto video = VideoBasicInfo::fromJson(val);
                 video.setIsNotification(true);
-                results.append(video);
+                results << video;
             }
 
-            const QJsonArray videos = obj.value("videos").toArray();
-            for (const QJsonValue &val : videos) {
-                VideoBasicInfo video;
-                video.parseFromJson(val.toObject());
-                results.append(video);
-            }
+            results << VideoBasicInfo::fromJson(obj.value("videos").toArray());
         } else {
-            const auto videoArray = doc.array();
-            for (const QJsonValue &val : videoArray) {
-                VideoBasicInfo video;
-                video.parseFromJson(val.toObject());
-                results.append(video);
-            }
+            results = VideoBasicInfo::fromJson(doc.array());
         }
 
         emit videoQueryResults(results);

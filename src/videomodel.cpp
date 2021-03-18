@@ -52,13 +52,21 @@ void VideoModel::setIsLoading(bool loading)
 void VideoModel::handleVideoReceived(const QJsonObject &obj)
 {
     setIsLoading(false);
-    m_video->parseFromJson(obj);
+    m_video->deleteLater();
+    m_video = VideoItem::fromJson(obj, this);
     emit videoChanged();
 }
 
 void VideoModel::handleRequestFailed()
 {
     setIsLoading(false);
+}
+
+VideoItem *VideoItem::fromJson(const QJsonObject &obj, QObject *parent)
+{
+    auto video = new VideoItem(parent);
+    Video::fromJson(obj, *video);
+    return video;
 }
 
 VideoItem::VideoItem(QObject *parent)

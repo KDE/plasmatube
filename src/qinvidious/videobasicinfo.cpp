@@ -5,12 +5,21 @@
 #include "videobasicinfo.h"
 #include <QJsonArray>
 
-void VideoThumbnail::parseFromJson(const QJsonObject &obj)
+using namespace QInvidious;
+
+VideoThumbnail VideoThumbnail::fromJson(const QJsonObject &obj, VideoThumbnail &thumb)
 {
-    setQuality(obj.value("quality").toString());
-    setUrl(QUrl(obj.value("url").toString()));
-    setWidth(obj.value("width").toInt());
-    setHeight(obj.value("height").toInt());
+    thumb.setQuality(obj.value("quality").toString());
+    thumb.setUrl(QUrl(obj.value("url").toString()));
+    thumb.setWidth(obj.value("width").toInt());
+    thumb.setHeight(obj.value("height").toInt());
+    return thumb;
+}
+
+VideoThumbnail::VideoThumbnail()
+    : m_width(0),
+      m_height(0)
+{
 }
 
 QString VideoThumbnail::quality() const
@@ -53,33 +62,42 @@ void VideoThumbnail::setHeight(qint32 height)
     m_height = height;
 }
 
-void VideoBasicInfo::parseFromJson(const QJsonObject &obj)
+VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &info)
 {
-    setVideoId(obj.value("videoId").toString());
-    setTitle(obj.value("title").toString());
-    setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds").toInt()));
-    setViewCount(obj.value("viewCount").toInt());
-    setAuthor(obj.value("author").toString());
-    setAuthorId(obj.value("authorId").toString());
-    setAuthorUrl(obj.value("authorUrl").toString());
+    info.setVideoId(obj.value("videoId").toString());
+    info.setTitle(obj.value("title").toString());
+    info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds").toInt()));
+    info.setViewCount(obj.value("viewCount").toInt());
+    info.setAuthor(obj.value("author").toString());
+    info.setAuthorId(obj.value("authorId").toString());
+    info.setAuthorUrl(obj.value("authorUrl").toString());
     // FIXME: 2038 problem (timestamp is only 32 bit long)
     QDateTime published;
     published.setSecsSinceEpoch(obj.value("published").toInt());
-    setPublished(published);
-    setPublishedText(obj.value("publishedText").toString());
-    setDescription(obj.value("description").toString());
-    setDescriptionHtml(obj.value("descriptionHtml").toString());
-    setLiveNow(obj.value("liveNow").toBool(false));
-    setPaid(obj.value("paid").toBool(false));
-    setPremium(obj.value("premium").toBool(false));
+    info.setPublished(published);
+    info.setPublishedText(obj.value("publishedText").toString());
+    info.setDescription(obj.value("description").toString());
+    info.setDescriptionHtml(obj.value("descriptionHtml").toString());
+    info.setLiveNow(obj.value("liveNow").toBool(false));
+    info.setPaid(obj.value("paid").toBool(false));
+    info.setPremium(obj.value("premium").toBool(false));
 
     const auto thumbs = obj.value("videoThumbnails").toArray();
-    std::transform(thumbs.cbegin(), thumbs.cend(), std::back_inserter(m_videoThumbnails),
+    std::transform(thumbs.cbegin(), thumbs.cend(), std::back_inserter(info.m_videoThumbnails),
                    [](const QJsonValue &val) {
-        VideoThumbnail thumb;
-        thumb.parseFromJson(val.toObject());
-        return thumb;
+        return VideoThumbnail::fromJson(val);
     });
+
+    return info;
+}
+
+VideoBasicInfo::VideoBasicInfo()
+    : m_isNotification(false),
+      m_viewCount(0),
+      m_liveNow(false),
+      m_paid(false),
+      m_premium(false)
+{
 }
 
 bool VideoBasicInfo::isNotification() const

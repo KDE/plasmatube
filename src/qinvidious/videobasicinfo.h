@@ -8,12 +8,21 @@
 #include <QDateTime>
 #include <QString>
 #include <QUrl>
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
+
+#include "qinvidiousglobal.h"
+
+namespace QInvidious {
 
 class VideoThumbnail
 {
 public:
-    void parseFromJson(const QJsonObject&);
+    FROM_JSON_OVERLOADS(VideoThumbnail)
+    static VideoThumbnail fromJson(const QJsonObject &, VideoThumbnail &);
+
+    VideoThumbnail();
 
     QString quality() const;
     void setQuality(const QString&);
@@ -37,7 +46,10 @@ private:
 class VideoBasicInfo
 {
 public:
-    void parseFromJson(const QJsonObject&);
+    FROM_JSON_OVERLOADS(VideoBasicInfo)
+    static VideoBasicInfo fromJson(const QJsonObject &, VideoBasicInfo &);
+
+    VideoBasicInfo();
 
     bool isNotification() const;
     void setIsNotification(bool);
@@ -90,7 +102,7 @@ public:
     void setPremium(bool);
 
 private:
-    bool m_isNotification = false;
+    bool m_isNotification;
     QString m_videoId;
     QString m_title;
     QList<VideoThumbnail> m_videoThumbnails;
@@ -103,9 +115,11 @@ private:
     QString m_publishedText;
     QString m_description;
     QString m_descriptionHtml;
-    bool m_liveNow = false;
-    bool m_paid = false;
-    bool m_premium = false;
+    bool m_liveNow;
+    bool m_paid;
+    bool m_premium;
+};
+
 };
 
 #endif // VIDEOBASICINFO_H

@@ -6,7 +6,7 @@
 #define INVIDIOUSMANAGER_H
 
 #include <QObject>
-#include "video.h"
+#include "qinvidious/video.h"
 
 class QNetworkReply;
 class QNetworkAccessManager;
@@ -30,7 +30,7 @@ public:
     void setRegion(const QString&);
 
 signals:
-    void videoQueryResults(const QList<VideoBasicInfo>&);
+    void videoQueryResults(const QList<QInvidious::VideoBasicInfo>&);
     void videoQueryFailed(const QString &errorText);
 
     void videoReceived(const QJsonObject&);

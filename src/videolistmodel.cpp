@@ -7,6 +7,8 @@
 
 #include <QNetworkReply>
 
+using namespace QInvidious;
+
 VideoListModel::VideoListModel(QObject *parent)
     : QAbstractListModel(parent),
       m_invidious(new InvidiousManager(this))
