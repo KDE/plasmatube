@@ -149,12 +149,12 @@ Kirigami.ScrollablePage {
 
         Connections {
             target: AccountManager
-            onLoggedIn: {
+            function onLoggedIn() {
                 videoModel.queryType = InvidiousManager.Feed;
                 videoModel.query = "";
                 root.refreshing = true;
             }
-            onLoggedOut: {
+            function onLoggedOut() {
                 if (videoModel.queryType === InvidiousManager.Feed) {
                     videoModel.queryType = InvidiousManager.Trending;
                     root.refreshing = true;

@@ -54,13 +54,13 @@ Kirigami.ScrollablePage {
     Connections {
         target: AccountManager
 
-        onLoggingInFailed: {
+        function onLoggingInFailed(errorText) {
             showPassiveNotification(qsTr("Couldn't log in:") + " " + errorText);
             loadingIndicator.visible = false;
             form.visible = true;
         }
 
-        onLoggedIn: {
+        function onLoggedIn() {
             pageStack.layers.pop();
             showPassiveNotification("Successfully logged in as " + AccountManager.invidiousId + ".");
         }

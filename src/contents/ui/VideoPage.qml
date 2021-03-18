@@ -103,7 +103,7 @@ Kirigami.ScrollablePage {
                 ColumnLayout {
                     id: authorView
 
-                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(videoModel.video.authorId) != -1
+                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(videoModel.video.authorId) !== -1
 
                     Controls.Label {
                         text: videoModel.video.author
@@ -150,13 +150,17 @@ Kirigami.ScrollablePage {
                         Connections {
                             target: AccountManager
 
-                            onSubscribedToChannel: subscribingIndicator.visible = false;
-                            onSubscribingFailed: {
+                            function onSubscribedToChannel() {
+                                subscribingIndicator.visible = false;
+                            }
+                            function onSubscribingFailed() {
                                 subscribingIndicator.visible = false;
                                 showPassiveNotification(qsTr("Could not subscribe to channel."));
                             }
-                            onUnsubscribedFromChannel: subscribingIndicator.visible = false;
-                            onUnsubscribingFailed: {
+                            function onUnsubscribedFromChannel() {
+                                subscribingIndicator.visible = false;
+                            }
+                            function onUnsubscribingFailed() {
                                 subscribingIndicator.visible = false;
                                 showPassiveNotification(qsTr("Could not unsubscribe from channel."));
                             }
