@@ -108,10 +108,10 @@ QString VideoModel::remoteUrl()
     process->start(youtubeDl, arguments);
 
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-             [=](int, QProcess::ExitStatus) {
+            this, [=](int, QProcess::ExitStatus) {
                  const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
                  const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
-                 for (const auto value : formatsArray) {
+                 for (const auto &value : formatsArray) {
                     const auto format = value.toObject();
                     const auto formatNote = format["format_note"].toString();
                     if (formatNote == "tiny") {

@@ -19,15 +19,10 @@
 
 #include "constants.h"
 
-static AccountManager *s_instance;
-
 AccountManager::AccountManager(QObject *parent)
     : QObject(parent),
       m_netManager(new QNetworkAccessManager(this))
 {
-    Q_ASSERT(!s_instance);
-    s_instance = this;
-
     QSettings settings;
     m_instance = settings.value(SETTINGS_INSTANCE, QStringLiteral(DEFAULT_INSTANCE)).toString();
     m_username = settings.value(SETTINGS_USERNAME).toString();
@@ -45,15 +40,12 @@ AccountManager::AccountManager(QObject *parent)
 
 AccountManager::~AccountManager()
 {
-    s_instance = nullptr;
 }
 
-AccountManager * AccountManager::instance()
+AccountManager &AccountManager::instance()
 {
-    if (!s_instance)
-        s_instance = new AccountManager();
-
-    return s_instance;
+    static AccountManager instance;
+    return instance;
 }
 
 void AccountManager::logIn(const QString &username, const QString &password)
@@ -237,7 +229,7 @@ QString AccountManager::username() const
 
 QString AccountManager::invidiousId() const
 {
-    return QStringLiteral("%1@%2").arg(m_username).arg(QUrl(m_instance).host());
+    return m_username + u'@' + QUrl(m_instance).host();
 }
 
 QString AccountManager::invidiousInstance() const
@@ -263,10 +255,10 @@ QNetworkAccessManager *AccountManager::netManager()
 QNetworkRequest AccountManager::networkRequestWithCookie(const QString &url)
 {
     QNetworkRequest request(url);
-    if (!AccountManager::instance()->username().isEmpty()) {
+    if (!AccountManager::instance().username().isEmpty()) {
         request.setHeader(
             QNetworkRequest::CookieHeader,
-            QVariant::fromValue(QList<QNetworkCookie>{AccountManager::instance()->cookie()})
+            QVariant::fromValue(QList<QNetworkCookie>{AccountManager::instance().cookie()})
         );
     }
     return request;

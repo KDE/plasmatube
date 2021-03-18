@@ -23,7 +23,7 @@ public:
     AccountManager(QObject *parent = nullptr);
     ~AccountManager();
 
-    static AccountManager *instance();
+    static AccountManager &instance();
 
     Q_INVOKABLE void logIn(const QString &username, const QString &password);
     Q_INVOKABLE void logOut();

@@ -62,7 +62,7 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
                                             const QString &queryValue,
                                             qint32 page)
 {
-    QString urlString = AccountManager::instance()->invidiousInstance();
+    QString urlString = AccountManager::instance().invidiousInstance();
 
     QUrlQuery query;
     query.addQueryItem("region", m_region);
@@ -92,10 +92,10 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
     url.setQuery(query);
 
     QNetworkRequest request(url.toString());
-    if (!AccountManager::instance()->username().isEmpty()) {
+    if (!AccountManager::instance().username().isEmpty()) {
         request.setHeader(
             QNetworkRequest::CookieHeader,
-            QVariant::fromValue(QList<QNetworkCookie> { AccountManager::instance()->cookie() })
+            QVariant::fromValue(QList<QNetworkCookie> { AccountManager::instance().cookie() })
         );
     }
 
@@ -151,10 +151,10 @@ QNetworkReply* InvidiousManager::videoQuery(VideoListType queryType,
 
 QString InvidiousManager::invidiousInstance()
 {
-    return AccountManager::instance()->invidiousInstance();
+    return AccountManager::instance().invidiousInstance();
 }
 
 QNetworkAccessManager *InvidiousManager::netManager()
 {
-    return AccountManager::instance()->netManager();
+    return AccountManager::instance().netManager();
 }
