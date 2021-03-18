@@ -92,8 +92,8 @@ private:
     qint32 m_nextPage = 0;
 
     QList<VideoBasicInfo> m_results;
-    InvidiousManager *invidious;
-    QNetworkReply *lastRequest = nullptr;
+    InvidiousManager *m_invidious;
+    QNetworkReply *m_lastRequest = nullptr;
 };
 
 #endif // SEARCHMODEL_H

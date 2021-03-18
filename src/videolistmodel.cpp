@@ -25,11 +25,11 @@
 
 VideoListModel::VideoListModel(QObject *parent)
     : QAbstractListModel(parent),
-      invidious(new InvidiousManager(this))
+      m_invidious(new InvidiousManager(this))
 {
-    connect(invidious, &InvidiousManager::videoQueryResults,
+    connect(m_invidious, &InvidiousManager::videoQueryResults,
             this, &VideoListModel::handleSearchResults);
-    connect(invidious, &InvidiousManager::videoQueryFailed,
+    connect(m_invidious, &InvidiousManager::videoQueryFailed,
             this, &VideoListModel::handleSearchFailure);
 }
 
@@ -112,8 +112,8 @@ void VideoListModel::fetch()
 {
     // if currently loading, abort
     if (m_loading) {
-        lastRequest->abort();
-        lastRequest->deleteLater();
+        m_lastRequest->abort();
+        m_lastRequest->deleteLater();
         setIsLoading(false);
     }
 
@@ -122,7 +122,7 @@ void VideoListModel::fetch()
     clearAll();
 
     setIsLoading(true);
-    lastRequest = invidious->videoQuery(m_queryType, m_query, m_nextPage);
+    m_lastRequest = m_invidious->videoQuery(m_queryType, m_query, m_nextPage);
 }
 
 void VideoListModel::fetchMore(const QModelIndex&)
@@ -132,7 +132,7 @@ void VideoListModel::fetchMore(const QModelIndex&)
 
     setIsLoading(true);
     // only searches canFetchMore()
-    lastRequest = invidious->videoQuery(m_queryType, m_query, m_nextPage);
+    m_lastRequest = m_invidious->videoQuery(m_queryType, m_query, m_nextPage);
 }
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
