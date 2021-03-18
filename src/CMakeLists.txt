@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 set(qinvidious_SRCS
+    qinvidious/invidiousapi.cpp
+    qinvidious/credentials.cpp
     qinvidious/videobasicinfo.cpp
     qinvidious/video.cpp
 )
