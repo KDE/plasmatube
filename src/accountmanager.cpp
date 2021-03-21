@@ -35,7 +35,7 @@ AccountManager::AccountManager(QObject *parent)
 
     // fetch subscribed channels
     if (!m_username.isEmpty())
-        fetchSubscriptions();
+        QMetaObject::invokeMethod(this, "fetchSubscriptions", Qt::QueuedConnection);
 }
 
 AccountManager::~AccountManager()
