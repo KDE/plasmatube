@@ -9,12 +9,11 @@ import org.kde.kirigami 2.8 as Kirigami
 
 import org.kde.plasmatube.accountmanager 1.0
 import org.kde.plasmatube.models 1.0
-import org.kde.plasmatube.invidious 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
     id: root
-    title: videoListTypeToString(videoModel.queryType, videoModel.query)
+    title: videoModel.title
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -22,76 +21,42 @@ Kirigami.ScrollablePage {
 
     supportsRefreshing: true
     onRefreshingChanged: {
-        if (refreshing)
-            videoModel.fetch();
+        if (refreshing && !videoModel.isLoading) {
+            videoModel.refresh();
+        }
     }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     actions.contextualActions: [
-        Kirigami.Action {
-            visible: AccountManager.username.length > 0
-            text: videoListTypeToString(InvidiousManager.Feed)
-            icon.name: "feed-subscribe"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Feed;
-                videoModel.query = "";
-                root.refreshing = true;
-            }
+        VideoListAction {
+            visible: false // FIXME
+            videoModel: videoModel
+            queryType: VideoListModel.Feed
         },
-        Kirigami.Action {
-            text: videoListTypeToString(InvidiousManager.Top)
-            iconName: "arrow-up-double"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Top
-                videoModel.query = ""
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.Top
         },
-        Kirigami.Action {
-            text: Utils.trendingToString()
-            iconName: "favorite" // should actually be "user-trash-full-symbolic"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Trending
-                videoModel.query = ""
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.Trending
         },
-        Kirigami.Action {
-            text: Utils.trendingToString("music")
-            iconName: "folder-music-symbolic"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Trending
-                videoModel.query = "music"
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingGaming
         },
-        Kirigami.Action {
-            text: Utils.trendingToString("gaming")
-            iconName: "folder-games-symbolic"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Trending
-                videoModel.query = "gaming"
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingMovies
         },
-        Kirigami.Action {
-            text: Utils.trendingToString("news")
-            iconName: "message-news"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Trending
-                videoModel.query = "news"
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingMusic
         },
-        Kirigami.Action {
-            text: Utils.trendingToString("movies")
-            iconName: "folder-videos-symbolic"
-            onTriggered: {
-                videoModel.queryType = InvidiousManager.Trending
-                videoModel.query = "movies"
-                root.refreshing = true;
-            }
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingNews
         }
     ]
 
@@ -108,14 +73,12 @@ Kirigami.ScrollablePage {
             width: parent.width - 2 * Kirigami.Units.largeSpacing
 
             onAccepted: {
-                videoModel.queryType = InvidiousManager.Search;
-                videoModel.query = text;
-                root.refreshing = true;
+                videoModel.requestSearchResults(text)
             }
 
             rightActions: [
                 Kirigami.Action {
-                    iconName: "search"
+                    icon.name: "search"
                     onTriggered: searchField.accepted()
                 }
             ]
@@ -127,8 +90,10 @@ Kirigami.ScrollablePage {
         model: VideoListModel {
             id: videoModel
             onIsLoadingChanged: {
-                if (!isLoading)
-                    root.refreshing = false;
+                root.refreshing = isLoading
+            }
+            onErrorOccured: (errorText) => {
+                applicationWindow().showPassiveNotification(errorText)
             }
         }
         delegate: VideoListItem {
@@ -149,38 +114,20 @@ Kirigami.ScrollablePage {
 
         Connections {
             target: AccountManager
+
             function onLoggedIn() {
-                videoModel.queryType = InvidiousManager.Feed;
-                videoModel.query = "";
-                root.refreshing = true;
+                videoModel.requestQuery(VideoListModel.Feed)
             }
             function onLoggedOut() {
-                if (videoModel.queryType === InvidiousManager.Feed) {
-                    videoModel.queryType = InvidiousManager.Trending;
-                    root.refreshing = true;
-                }
+                videoModel.requestQuery(VideoListModel.Trending)
             }
         }
     }
 
     Component.onCompleted: {
         if (AccountManager.username.length > 0)
-            videoModel.queryType = InvidiousManager.Feed;
+            videoModel.requestQuery(VideoListModel.Feed)
         else
-            videoModel.queryType = InvidiousManager.Trending;
-        root.refreshing = true;
-    }
-
-    function videoListTypeToString(videoListType, query) {
-        switch (videoListType) {
-        case InvidiousManager.Feed:
-            return qsTr("Subscriptions");
-        case InvidiousManager.Trending:
-            return Utils.trendingToString(query);
-        case InvidiousManager.Top:
-            return qsTr("Invidious Top");
-        case InvidiousManager.Search:
-            return qsTr("Search");
-        }
+            videoModel.requestQuery(VideoListModel.Trending)
     }
 }

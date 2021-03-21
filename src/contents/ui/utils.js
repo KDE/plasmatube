@@ -22,18 +22,3 @@ function formatTime(time) {
     else
         return Qt.formatTime(time, "hh:mm:ss")
 }
-
-function trendingToString(category) {
-    switch (category) {
-    case "music":
-        return qsTr("Trending Music")
-    case "gaming":
-        return qsTr("Trending Gaming")
-    case "news":
-        return qsTr("Trending News")
-    case "movies":
-        return qsTr("Trending Movies")
-    default:
-        return qsTr("Trending")
-    }
-}

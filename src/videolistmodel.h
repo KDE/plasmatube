@@ -7,7 +7,7 @@
 
 #include <QAbstractListModel>
 #include "qinvidious/videobasicinfo.h"
-#include "invidiousmanager.h"
+#include "qinvidious/invidiousapi.h"
 
 class InvidiousManager;
 class QNetworkReply;
@@ -16,11 +16,10 @@ class VideoListModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
-    Q_PROPERTY(InvidiousManager::VideoListType queryType READ queryType WRITE setQueryType NOTIFY queryTypeChanged)
-    Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
+    Q_PROPERTY(QString title READ title NOTIFY titleChanged)
 
 public:
-    enum Roles {
+    enum Roles : int {
         IdRole = Qt::UserRole + 1,
         TitleRole,
         ThumbnailRole,
@@ -38,46 +37,58 @@ public:
         PremiumRole
     };
 
+    enum QueryType : quint8 {
+        NoQuery,
+        Feed,
+        Search,
+        Top,
+        Trending,
+        TrendingGaming,
+        TrendingMovies,
+        TrendingMusic,
+        TrendingNews,
+        RecommendedVideos,
+    };
+    Q_ENUM(QueryType)
+
+    Q_INVOKABLE static QString queryTypeString(QueryType);
+    Q_INVOKABLE static QString queryTypeIcon(QueryType);
+
     VideoListModel(QObject *parent = nullptr);
     VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    Q_INVOKABLE void fetch();
     Q_INVOKABLE void fetchMore(const QModelIndex &parent) override;
     Q_INVOKABLE bool canFetchMore(const QModelIndex &parent) const override;
 
+    Q_INVOKABLE void requestSearchResults(const QString &searchString);
+    Q_INVOKABLE void requestQuery(QueryType type);
+    Q_INVOKABLE void refresh();
+
     bool isLoading() const;
+    Q_SIGNAL void isLoadingChanged();
 
-    QString query() const;
-    void setQuery(const QString&);
+    QString title() const;
+    Q_SIGNAL void titleChanged();
 
-    InvidiousManager::VideoListType queryType() const;
-    void setQueryType(InvidiousManager::VideoListType queryType);
-
-signals:
-    void isLoadingChanged();
-    void queryTypeChanged();
-    void queryChanged();
-
-private slots:
-    void handleSearchResults(const QList<QInvidious::VideoBasicInfo>&);
-    void handleSearchFailure();
+    Q_SIGNAL void errorOccured(const QString &error);
 
 private:
-    void setIsLoading(bool);
+    void handleQuery(QFuture<QInvidious::VideoListResult> future, QueryType, bool reset = true);
+
+    void setQueryType(QueryType);
     void clearAll();
 
     bool m_constant = false;
-    bool m_loading = false;
-    QString m_query;
-    InvidiousManager::VideoListType m_queryType;
-    qint32 m_nextPage = 0;
+
+    QueryType m_queryType = NoQuery;
+    qint32 m_currentPage = 0;
+    QString m_searchQuery;
+    QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;
 
     QList<QInvidious::VideoBasicInfo> m_results;
-    InvidiousManager *m_invidious;
-    QNetworkReply *m_lastRequest = nullptr;
 };
 
 #endif // SEARCHMODEL_H

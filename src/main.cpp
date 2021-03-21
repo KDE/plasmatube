@@ -2,12 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "videolistmodel.h"
-#include "videomodel.h"
 #include "accountmanager.h"
 #include "invidiousmanager.h"
+#include "plasmatube.h"
+#include "videolistmodel.h"
+#include "videomodel.h"
 
-#include <clocale>
+#include "qinvidious/invidiousapi.h"
 
 #include <QApplication>
 #include <QQmlApplicationEngine>
@@ -24,13 +25,9 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName("plasmatube");
     QGuiApplication::setApplicationDisplayName("PlasmaTube");
 
-    // Qt sets the locale in the QGuiApplication constructor, but libmpv
-    // requires the LC_NUMERIC category to be set to "C", so change it back.
-    std::setlocale(LC_NUMERIC, "C");
-
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
-    qmlRegisterUncreatableType<InvidiousManager>("org.kde.plasmatube.invidious", 1, 0, "InvidiousManager", "Only enums defined.");
+    qmlRegisterSingletonInstance<PlasmaTube>("org.kde.plasmatube", 1, 0, "PlasmaTube", &PlasmaTube::instance());
     qmlRegisterSingletonInstance<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", &AccountManager::instance());
 
     QQmlApplicationEngine engine;
