@@ -13,6 +13,8 @@ set(plasmatube_SRCS
     main.cpp
     plasmatube.cpp
     logincontroller.cpp
+    subscriptionwatcher.cpp
+    subscriptioncontroller.cpp
     videomodel.cpp
     videolistmodel.cpp
     invidiousmanager.cpp

@@ -27,6 +27,9 @@ public:
     QString invidiousId() const;
     Q_SIGNAL void credentialsChanged();
 
+    std::optional<bool> isSubscribedToChannel(const QString &jid) const;
+    Q_SIGNAL void subscriptionsChanged();
+
     void fetchSubscriptions();
     Q_INVOKABLE void logOut();
 
@@ -38,7 +41,10 @@ public:
     Q_SIGNAL void loggedOut();
 
 private:
+    friend class SubscriptionController;
+
     void setSubscriptions(const QList<QString> &subscriptions);
+    std::optional<QList<QString>> &subscriptions();
 
     QInvidious::InvidiousApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;

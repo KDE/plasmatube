@@ -8,6 +8,7 @@ import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
 import QtMultimedia 5.15
 
+import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
 import org.kde.plasmatube.accountmanager 1.0
 import "utils.js" as Utils
@@ -101,17 +102,18 @@ Kirigami.ScrollablePage {
                 }
 
                 ColumnLayout {
-                    id: authorView
-
-                    property bool isSubscribed: AccountManager.subscribedChanneldIds.indexOf(videoModel.video.authorId) !== -1
+                    SubscriptionController {
+                        id: subscriptionController
+                        channelId: videoModel.video.authorId
+                    }
 
                     Controls.Label {
                         text: videoModel.video.author
                     }
                     Controls.Button {
                         Layout.preferredWidth: subscribeButtonContent.width + Kirigami.Units.largeSpacing * 2
-                        Kirigami.Theme.backgroundColor: authorView.isSubscribed ? undefined : "red"
-                        Kirigami.Theme.textColor: authorView.isSubscribed ? undefined : "white"
+                        Kirigami.Theme.backgroundColor: subscriptionController.isSubscribed ? undefined : "red"
+                        Kirigami.Theme.textColor: subscriptionController.isSubscribed ? undefined : "white"
 
                         RowLayout {
                             id: subscribeButtonContent
@@ -119,50 +121,27 @@ Kirigami.ScrollablePage {
                             spacing: 0
 
                             Controls.BusyIndicator {
-                                id: subscribingIndicator
-                                visible: false
+                                visible: subscriptionController.isLoading
                                 Layout.preferredHeight: 34
                                 Layout.preferredWidth: 34
                             }
 
                             Controls.Label {
                                 text: {
-                                    if (authorView.isSubscribed)
-                                        return "Unsubscribe (" + videoModel.video.subCountText + ")";
-                                    return "Subscribe (" + videoModel.video.subCountText + ")";
+                                    if (subscriptionController.isSubscribed) {
+                                        return "Unsubscribe (" + videoModel.video.subCountText + ")"
+                                    }
+                                    return "Subscribe (" + videoModel.video.subCountText + ")"
                                 }
                             }
                         }
 
                         onClicked: {
-                            if (AccountManager.username.length > 0) {
-                                if (authorView.isSubscribed)
-                                    AccountManager.unsubscribeFromChannel(videoModel.video.authorId);
-                                else
-                                    AccountManager.subscribeToChannel(videoModel.video.authorId);
-                                subscribingIndicator.visible = true;
-                            } else {
+                            if (subscriptionController.canToggleSubscription()) {
+                                subscriptionController.toggleSubscription()
+                            } else if (!PlasmaTube.isLoggedIn) {
                                 showPassiveNotification(qsTr("Please log in to subscribe to channels."));
                                 pageStack.layers.push(loginPageComponent);
-                            }
-                        }
-
-                        Connections {
-                            target: AccountManager
-
-                            function onSubscribedToChannel() {
-                                subscribingIndicator.visible = false;
-                            }
-                            function onSubscribingFailed() {
-                                subscribingIndicator.visible = false;
-                                showPassiveNotification(qsTr("Could not subscribe to channel."));
-                            }
-                            function onUnsubscribedFromChannel() {
-                                subscribingIndicator.visible = false;
-                            }
-                            function onUnsubscribingFailed() {
-                                subscribingIndicator.visible = false;
-                                showPassiveNotification(qsTr("Could not unsubscribe from channel."));
                             }
                         }
                     }

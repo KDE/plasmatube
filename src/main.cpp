@@ -6,6 +6,7 @@
 #include "invidiousmanager.h"
 #include "logincontroller.h"
 #include "plasmatube.h"
+#include "subscriptioncontroller.h"
 #include "videolistmodel.h"
 #include "videomodel.h"
 
@@ -29,6 +30,8 @@ int main(int argc, char **argv)
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
     qmlRegisterType<LogInController>("org.kde.plasmatube", 1, 0, "LogInController");
+    qmlRegisterType<SubscriptionWatcher>("org.kde.plasmatube", 1, 0, "SubscriptionWatcher");
+    qmlRegisterType<SubscriptionController>("org.kde.plasmatube", 1, 0, "SubscriptionController");
     qmlRegisterSingletonInstance<PlasmaTube>("org.kde.plasmatube", 1, 0, "PlasmaTube", &PlasmaTube::instance());
     qmlRegisterSingletonInstance<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", &AccountManager::instance());
 

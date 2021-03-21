@@ -24,6 +24,14 @@ PlasmaTube::PlasmaTube(QObject *parent)
     if (isLoggedIn()) {
         fetchSubscriptions();
     }
+
+    connect(this, &PlasmaTube::loggedOut, this, [=] {
+        m_subscriptions.reset();
+        emit subscriptionsChanged();
+    });
+    connect(this, &PlasmaTube::loggedIn, this, [=] {
+        fetchSubscriptions();
+    });
 }
 
 PlasmaTube &PlasmaTube::instance()
@@ -48,6 +56,14 @@ QString PlasmaTube::invidiousId() const
     return credentials.username() % u'@' % QUrl(credentials.apiInstance()).host();
 }
 
+std::optional<bool> PlasmaTube::isSubscribedToChannel(const QString &jid) const
+{
+    if (m_subscriptions.has_value()) {
+        return m_subscriptions->contains(jid);
+    }
+    return std::nullopt;
+}
+
 void PlasmaTube::fetchSubscriptions()
 {
     auto *watcher = new QFutureWatcher<QInvidious::SubscriptionsResult>();
@@ -57,6 +73,7 @@ void PlasmaTube::fetchSubscriptions()
         if (const auto subscriptions = std::get_if<QList<QString>>(&result)) {
             setSubscriptions(*subscriptions);
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            qDebug() << "Fetching subscriptions:" << error->first << error->second;
             emit errorOccurred(error->second);
         }
 
@@ -103,4 +120,10 @@ void PlasmaTube::saveCredentials() const
 void PlasmaTube::setSubscriptions(const QList<QString> &subscriptions)
 {
     m_subscriptions = subscriptions;
+    emit subscriptionsChanged();
+}
+
+std::optional<QList<QString>> &PlasmaTube::subscriptions()
+{
+    return m_subscriptions;
 }
