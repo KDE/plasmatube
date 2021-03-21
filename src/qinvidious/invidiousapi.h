@@ -48,6 +48,7 @@ public:
     Credentials credentials() const;
     void setCredentials(const Credentials &credentials);
     void setCredentials(const QString &apiInstance);
+    Q_SIGNAL void credentialsChanged();
 
     QString invidiousInstance() const;
 

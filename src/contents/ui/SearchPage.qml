@@ -7,7 +7,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.8 as Kirigami
 
-import org.kde.plasmatube.accountmanager 1.0
+import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
 import "utils.js" as Utils
 
@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
 
     actions.contextualActions: [
         VideoListAction {
-            visible: false // FIXME
+            visible: PlasmaTube.isLoggedIn
             videoModel: videoModel
             queryType: VideoListModel.Feed
         },
@@ -113,7 +113,7 @@ Kirigami.ScrollablePage {
         }
 
         Connections {
-            target: AccountManager
+            target: PlasmaTube
 
             function onLoggedIn() {
                 videoModel.requestQuery(VideoListModel.Feed)
@@ -125,7 +125,7 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: {
-        if (AccountManager.username.length > 0)
+        if (PlasmaTube.isLoggedIn)
             videoModel.requestQuery(VideoListModel.Feed)
         else
             videoModel.requestQuery(VideoListModel.Trending)

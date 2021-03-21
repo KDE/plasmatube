@@ -46,12 +46,14 @@ Credentials InvidiousApi::credentials() const
 void InvidiousApi::setCredentials(const Credentials &credentials)
 {
     m_credentials = credentials;
+    emit credentialsChanged();
 }
 
 void InvidiousApi::setCredentials(const QString &apiInstance)
 {
     m_credentials = Credentials();
     m_credentials.setApiInstance(apiInstance);
+    emit credentialsChanged();
 }
 
 QString InvidiousApi::invidiousInstance() const
@@ -76,6 +78,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
         if (!cookies.isEmpty()) {
             m_credentials.setUsername(username);
             m_credentials.setCookie(cookies.first());
+            emit credentialsChanged();
             return m_credentials;
         }
         return std::pair(QNetworkReply::ContentAccessDenied, tr("Username or password is wrong."));
