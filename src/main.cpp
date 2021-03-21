@@ -11,6 +11,9 @@
 
 #include <QApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+
+#include <KLocalizedContext>
 
 int main(int argc, char **argv)
 {
@@ -31,6 +34,9 @@ int main(int argc, char **argv)
     qmlRegisterSingletonInstance<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", &AccountManager::instance());
 
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
     if (engine.rootObjects().isEmpty())
