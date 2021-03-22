@@ -2,8 +2,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "accountmanager.h"
-#include "invidiousmanager.h"
 #include "logincontroller.h"
 #include "plasmatube.h"
 #include "subscriptioncontroller.h"
@@ -33,7 +31,6 @@ int main(int argc, char **argv)
     qmlRegisterType<SubscriptionWatcher>("org.kde.plasmatube", 1, 0, "SubscriptionWatcher");
     qmlRegisterType<SubscriptionController>("org.kde.plasmatube", 1, 0, "SubscriptionController");
     qmlRegisterSingletonInstance<PlasmaTube>("org.kde.plasmatube", 1, 0, "PlasmaTube", &PlasmaTube::instance());
-    qmlRegisterSingletonInstance<AccountManager>("org.kde.plasmatube.accountmanager", 1, 0, "AccountManager", &AccountManager::instance());
 
     QQmlApplicationEngine engine;
 

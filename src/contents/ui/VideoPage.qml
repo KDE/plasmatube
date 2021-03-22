@@ -10,7 +10,6 @@ import QtMultimedia 5.15
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
-import org.kde.plasmatube.accountmanager 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {

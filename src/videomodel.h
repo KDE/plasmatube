@@ -6,9 +6,10 @@
 #define VIDEOMODEL_H
 
 #include "qinvidious/video.h"
+#include "qinvidious/invidiousapi.h"
 
-class InvidiousManager;
-class QNetworkReply;
+template<typename T>
+class QFutureWatcher;
 class VideoListModel;
 
 class VideoItem : public QObject, public QInvidious::Video
@@ -41,19 +42,18 @@ class VideoItem : public QObject, public QInvidious::Video
     Q_PROPERTY(bool isListed READ isListed CONSTANT)
 
 public:
-    static VideoItem *fromJson(const QJsonObject &obj, QObject *parent = nullptr);
-
     VideoItem(QObject *parent = nullptr);
+    VideoItem(const QInvidious::Video &, QObject *parent = nullptr);
 
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;
     Q_INVOKABLE QUrl authorThumbnail(qint32 size) const;
-    Q_INVOKABLE VideoListModel *recommendedVideosModel() const;
+    Q_INVOKABLE VideoListModel *recommendedVideosModel();
 };
 
 class VideoModel : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool isLoading MEMBER m_isLoading NOTIFY isLoadingChanged)
+    Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString videoId MEMBER m_videoId NOTIFY videoIdChanged)
     Q_PROPERTY(QString remoteUrl READ remoteUrl NOTIFY remoteUrlChanged)
     Q_PROPERTY(QString audioUrl READ audioUrl NOTIFY remoteUrlChanged)
@@ -65,36 +65,30 @@ public:
     explicit VideoModel(QObject *parent = nullptr);
 
     Q_INVOKABLE void fetch();
-    void setIsLoading(bool);
 
+    bool isLoading() const;
     QString remoteUrl();
     QString audioUrl() const;
     QStringList formatList() const;
     QString selectedFormat() const;
     void setSelectedFormat(const QString &selectedFormat);
 
-signals:
-    void isLoadingChanged();
-    void videoIdChanged();
-    void videoChanged();
-    void remoteUrlChanged();
-    void formatListChanged();
-    void selectedFormatChanged();
-
-private slots:
-    void handleVideoReceived(const QJsonObject&);
-    void handleRequestFailed();
+    Q_SIGNAL void isLoadingChanged();
+    Q_SIGNAL void videoIdChanged();
+    Q_SIGNAL void videoChanged();
+    Q_SIGNAL void remoteUrlChanged();
+    Q_SIGNAL void formatListChanged();
+    Q_SIGNAL void selectedFormatChanged();
+    Q_SIGNAL void errorOccurred(const QString &errorText);
 
 private:
-    bool m_isLoading = false;
     QString m_videoId;
     QString m_remoteUrl;
     QHash<QString, QString> m_formatUrl;
     QString m_selectedFormat = "720p";
     QString m_audioUrl;
-    VideoItem* m_video;
-    QNetworkReply *lastRequest = nullptr;
-    InvidiousManager *invidious;
+    VideoItem *m_video;
+    QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;
 };
 
 #endif // VIDEOMODEL_H

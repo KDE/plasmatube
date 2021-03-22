@@ -4,34 +4,31 @@
 
 #include "videomodel.h"
 #include "videolistmodel.h"
-#include "invidiousmanager.h"
+#include "plasmatube.h"
+
+#include <QFutureWatcher>
 #include <QNetworkReply>
 #include <QProcess>
 #include <QJsonDocument>
 #include <QJsonArray>
 
 VideoModel::VideoModel(QObject *parent)
-    : QObject(parent), m_video(new VideoItem(this)),
-      invidious(new InvidiousManager(this))
+    : QObject(parent),
+      m_video(new VideoItem(this))
 {
-    connect(invidious, &InvidiousManager::videoReceived,
-            this, &VideoModel::handleVideoReceived);
-    connect(invidious, &InvidiousManager::videoRequestFailed,
-            this, &VideoModel::handleRequestFailed);
-    connect(this, &VideoModel::videoIdChanged,
-            this, [this] {
-                m_remoteUrl.clear();
-                Q_EMIT remoteUrlChanged();
-            });
+    connect(this, &VideoModel::videoIdChanged, this, [this] {
+        m_remoteUrl.clear();
+        Q_EMIT remoteUrlChanged();
+    });
 }
 
 void VideoModel::fetch()
 {
     // if currently loading, abort
-    if (m_isLoading) {
-        lastRequest->abort();
-        lastRequest->deleteLater();
-        setIsLoading(false);
+    if (m_watcher) {
+        m_watcher->cancel();
+        m_watcher->deleteLater();
+        m_watcher = nullptr;
     }
 
     // clean up
@@ -39,39 +36,42 @@ void VideoModel::fetch()
     m_video = new VideoItem(this);
     emit videoChanged();
 
-    setIsLoading(true);
-    lastRequest = invidious->requestVideo(m_videoId);
-}
+    auto future = PlasmaTube::instance().api()->requestVideo(m_videoId);
 
-void VideoModel::setIsLoading(bool loading)
-{
-    m_isLoading = loading;
+    m_watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
+    connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
+        auto result = m_watcher->result();
+
+        if (const auto video = std::get_if<QInvidious::Video>(&result)) {
+            m_video->deleteLater();
+            m_video = new VideoItem(*video, this);
+            emit videoChanged();
+        } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            emit errorOccurred(error->second);
+        }
+
+        m_watcher->deleteLater();
+        m_watcher = nullptr;
+        emit isLoadingChanged();
+    });
+    m_watcher->setFuture(future);
     emit isLoadingChanged();
 }
 
-void VideoModel::handleVideoReceived(const QJsonObject &obj)
+bool VideoModel::isLoading() const
 {
-    setIsLoading(false);
-    m_video->deleteLater();
-    m_video = VideoItem::fromJson(obj, this);
-    emit videoChanged();
-}
-
-void VideoModel::handleRequestFailed()
-{
-    setIsLoading(false);
-}
-
-VideoItem *VideoItem::fromJson(const QJsonObject &obj, QObject *parent)
-{
-    auto video = new VideoItem(parent);
-    Video::fromJson(obj, *video);
-    return video;
+    return m_watcher != nullptr;
 }
 
 VideoItem::VideoItem(QObject *parent)
     : QObject(parent)
 {
+}
+
+VideoItem::VideoItem(const QInvidious::Video &video, QObject *parent)
+    : QObject(parent)
+{
+    *static_cast<QInvidious::Video *>(this) = video;
 }
 
 QUrl VideoItem::thumbnailUrl(const QString &quality) const
@@ -92,10 +92,9 @@ QUrl VideoItem::authorThumbnail(qint32 size) const
     return {};
 }
 
-VideoListModel *VideoItem::recommendedVideosModel() const
+VideoListModel *VideoItem::recommendedVideosModel()
 {
-    VideoListModel *videoModel = new VideoListModel(recommendedVideos(), (QObject*) this);
-    return videoModel;
+    return new VideoListModel(recommendedVideos(), this);
 }
 
 QString VideoModel::remoteUrl()
