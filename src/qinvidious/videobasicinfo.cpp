@@ -81,6 +81,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     info.setLiveNow(obj.value("liveNow").toBool(false));
     info.setPaid(obj.value("paid").toBool(false));
     info.setPremium(obj.value("premium").toBool(false));
+    info.setUpcoming(obj.value("isUpcoming").toBool(false));
 
     const auto thumbs = obj.value("videoThumbnails").toArray();
     std::transform(thumbs.cbegin(), thumbs.cend(), std::back_inserter(info.m_videoThumbnails),
@@ -92,11 +93,12 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
 }
 
 VideoBasicInfo::VideoBasicInfo()
-    : m_isNotification(false),
-      m_viewCount(0),
+    : m_viewCount(0),
+      m_isNotification(false),
       m_liveNow(false),
       m_paid(false),
-      m_premium(false)
+      m_premium(false),
+      m_upcoming(false)
 {
 }
 
@@ -270,4 +272,14 @@ bool VideoBasicInfo::premium() const
 void VideoBasicInfo::setPremium(bool premium)
 {
     m_premium = premium;
+}
+
+bool VideoBasicInfo::upcoming() const
+{
+    return m_upcoming;
+}
+
+void VideoBasicInfo::setUpcoming(bool upcoming)
+{
+    m_upcoming = upcoming;
 }

@@ -101,8 +101,10 @@ public:
     bool premium() const;
     void setPremium(bool);
 
+    bool upcoming() const;
+    void setUpcoming(bool upcoming);
+
 private:
-    bool m_isNotification;
     QString m_videoId;
     QString m_title;
     QList<VideoThumbnail> m_videoThumbnails;
@@ -115,9 +117,11 @@ private:
     QString m_publishedText;
     QString m_description;
     QString m_descriptionHtml;
+    bool m_isNotification;
     bool m_liveNow;
     bool m_paid;
     bool m_premium;
+    bool m_upcoming;
 };
 
 };
