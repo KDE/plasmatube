@@ -51,7 +51,7 @@ QQC2.Control {
                 visible: video.seekable
                 Layout.fillWidth: true
                 from: 0
-                to: vide.duration
+                to: video.duration
                 value: video.position / video.duration
                 onMoved: {
                     console.log( video.seekable)
