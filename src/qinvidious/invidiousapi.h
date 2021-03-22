@@ -45,6 +45,9 @@ public:
     QString region() const;
     void setRegion(const QString &region);
 
+    QString language() const;
+    void setLanguage(const QString &language);
+
     Credentials credentials() const;
     void setCredentials(const Credentials &credentials);
     void setCredentials(const QString &apiInstance);
@@ -121,6 +124,7 @@ private:
 
     QNetworkAccessManager *m_netManager;
     QString m_region;
+    QString m_language;
     Credentials m_credentials;
 };
 

@@ -18,7 +18,9 @@ PlasmaTube::PlasmaTube(QObject *parent)
 {
     connect(m_api, &QInvidious::Api::credentialsChanged, this, &PlasmaTube::credentialsChanged);
 
-    m_api->setRegion(QLocale::system().name().split(u'_').first());
+    const auto locale = QLocale::system().name().toLower().split(u'_');
+    m_api->setLanguage(locale.at(0));
+    m_api->setRegion(locale.at(1));
     loadCredentials();
 
     if (isLoggedIn()) {

@@ -38,6 +38,16 @@ void InvidiousApi::setRegion(const QString &region)
     m_region = region;
 }
 
+QString InvidiousApi::language() const
+{
+    return m_language;
+}
+
+void InvidiousApi::setLanguage(const QString &language)
+{
+    m_language = language;
+}
+
 Credentials InvidiousApi::credentials() const
 {
     return m_credentials;
@@ -214,6 +224,9 @@ QNetworkRequest InvidiousApi::authenticatedNetworkRequest(QUrl &&url)
 QUrlQuery InvidiousApi::genericUrlQuery() const
 {
     QUrlQuery query;
+    if (!m_language.isEmpty()) {
+        query.addQueryItem("hl", m_language);
+    }
     if (!m_region.isEmpty()) {
         query.addQueryItem("region", m_region);
     }
