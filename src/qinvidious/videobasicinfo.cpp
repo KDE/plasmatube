@@ -3,64 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videobasicinfo.h"
-#include <QJsonArray>
 
 using namespace QInvidious;
-
-VideoThumbnail VideoThumbnail::fromJson(const QJsonObject &obj, VideoThumbnail &thumb)
-{
-    thumb.setQuality(obj.value("quality").toString());
-    thumb.setUrl(QUrl(obj.value("url").toString()));
-    thumb.setWidth(obj.value("width").toInt());
-    thumb.setHeight(obj.value("height").toInt());
-    return thumb;
-}
-
-VideoThumbnail::VideoThumbnail()
-    : m_width(0),
-      m_height(0)
-{
-}
-
-QString VideoThumbnail::quality() const
-{
-    return m_quality;
-}
-
-void VideoThumbnail::setQuality(const QString &quality)
-{
-    m_quality = quality;
-}
-
-QUrl VideoThumbnail::url() const
-{
-    return m_url;
-}
-
-void VideoThumbnail::setUrl(const QUrl &url)
-{
-    m_url = url;
-}
-
-qint32 VideoThumbnail::width() const
-{
-    return m_width;
-}
-
-void VideoThumbnail::setWidth(qint32 width)
-{
-    m_width = width;
-}
-
-qint32 VideoThumbnail::height() const
-{
-    return m_height;
-}
-
-void VideoThumbnail::setHeight(qint32 height)
-{
-    m_height = height;
-}
 
 VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &info)
 {

@@ -6,42 +6,12 @@
 #define VIDEOBASICINFO_H
 
 #include <QDateTime>
-#include <QString>
 #include <QUrl>
-#include <QJsonArray>
-#include <QJsonDocument>
-#include <QJsonObject>
 
 #include "qinvidiousglobal.h"
+#include "videothumbnail.h"
 
 namespace QInvidious {
-
-class VideoThumbnail
-{
-public:
-    FROM_JSON_OVERLOADS(VideoThumbnail)
-    static VideoThumbnail fromJson(const QJsonObject &, VideoThumbnail &);
-
-    VideoThumbnail();
-
-    QString quality() const;
-    void setQuality(const QString&);
-
-    QUrl url() const;
-    void setUrl(const QUrl&);
-
-    qint32 width() const;
-    void setWidth(qint32);
-
-    qint32 height() const;
-    void setHeight(qint32);
-
-private:
-    QString m_quality;
-    QUrl m_url;
-    qint32 m_width;
-    qint32 m_height;
-};
 
 class VideoBasicInfo
 {

@@ -7,6 +7,7 @@ set(qinvidious_SRCS
     qinvidious/credentials.cpp
     qinvidious/videobasicinfo.cpp
     qinvidious/video.cpp
+    qinvidious/videothumbnail.cpp
     qinvidious/caption.cpp
     qinvidious/mediaformat.cpp
 )
