@@ -17,8 +17,6 @@ set(plasmatube_SRCS
     subscriptioncontroller.cpp
     videomodel.cpp
     videolistmodel.cpp
-    invidiousmanager.cpp
-    accountmanager.cpp
 )
 
 qt5_add_resources(RESOURCES resources.qrc)
