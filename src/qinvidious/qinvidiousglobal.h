@@ -39,22 +39,18 @@ namespace QInvidious
 {
 
 template <typename T>
-void parseArray(const QJsonValue &value, QList<T> &values)
+void parseArray(const QJsonValue &val, QList<T> &values)
 {
-    return parseArray<T>(value.toArray(), values);
-}
-
-template <typename T>
-void parseArray(const QJsonArray &array, QList<T> &values)
-{
-    std::transform(array.cbegin(), array.cend(), std::back_inserter(values),
+    const auto array = val.toArray();
+    std::transform(array.begin(), array.end(), std::back_inserter(values),
                    [](const QJsonValue &val) {
         return T::fromJson(val);
     });
 }
 
-inline void parseArray(const QJsonArray &array, QList<QString> &values)
+inline void parseArray(const QJsonValue &val, QList<QString> &values)
 {
+    const auto array = val.toArray();
     std::transform(array.cbegin(), array.cend(), std::back_inserter(values),
                    [](const QJsonValue &val) {
         return val.toString();
