@@ -2,6 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#pragma once
+
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+
 #define FROM_JSON_OVERLOADS(className) \
     static className fromJson(const QByteArray &bytes) \
     { \
@@ -28,3 +34,23 @@
         } \
         return items; \
     }
+
+namespace QInvidious
+{
+
+template <typename T>
+void parseArray(const QJsonValue &value, QList<T> &values)
+{
+    return parseArray<T>(value.toArray(), values);
+}
+
+template <typename T>
+void parseArray(const QJsonArray &array, QList<T> &values)
+{
+    std::transform(array.cbegin(), array.cend(), std::back_inserter(values),
+                   [](const QJsonValue &val) {
+        return T::fromJson(val);
+    });
+}
+
+}

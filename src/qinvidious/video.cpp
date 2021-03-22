@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "video.h"
-#include <QJsonArray>
 
 using namespace QInvidious;
 
@@ -45,6 +44,17 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         return VideoBasicInfo::fromJson(val);
     });
 
+    if (obj.contains(u"premiereTimestamp")) {
+        video.setPremiereTimestamp(
+            QDateTime::fromMSecsSinceEpoch(
+                obj.value(u"premiereTimestamp").toInt()
+            )
+        );
+    }
+    video.setHlsUrl(obj.value(u"hlsUrl").toString());
+    parseArray(obj.value(u"adaptiveFormats"), video.m_adaptiveFormats);
+    parseArray(obj.value(u"formatStreams"), video.m_combinedFormats);
+    parseArray(obj.value(u"captions"), video.m_captions);
     return video;
 }
 
@@ -186,4 +196,54 @@ QList<VideoBasicInfo> Video::recommendedVideos() const
 void Video::setRecommendedVideos(const QList<VideoBasicInfo> &recommendedVideos)
 {
     m_recommendedVideos = recommendedVideos;
+}
+
+std::optional<QDateTime> Video::premiereTimestamp() const
+{
+    return m_premiereTimestamp;
+}
+
+void Video::setPremiereTimestamp(const std::optional<QDateTime> &premiereTimestamp)
+{
+    m_premiereTimestamp = premiereTimestamp;
+}
+
+QUrl Video::hlsUrl() const
+{
+    return m_hlsUrl;
+}
+
+void Video::setHlsUrl(const QUrl &hlsUrl)
+{
+    m_hlsUrl = hlsUrl;
+}
+
+QList<MediaFormat> Video::adaptiveFormats() const
+{
+    return m_adaptiveFormats;
+}
+
+void Video::setAdaptiveFormats(const QList<MediaFormat> &adaptiveFormats)
+{
+    m_adaptiveFormats = adaptiveFormats;
+}
+
+QList<MediaFormatCombined> Video::combinedFormats() const
+{
+    return m_combinedFormats;
+}
+
+void Video::setCombinedFormats(const QList<MediaFormatCombined> &combinedFormats)
+{
+    m_combinedFormats = combinedFormats;
+}
+
+QList<Caption> Video::captions() const
+{
+    return m_captions;
+}
+
+void Video::setCaptions(const QList<Caption> &captions)
+{
+    m_captions = captions;
 }

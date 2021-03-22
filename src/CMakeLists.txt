@@ -7,6 +7,8 @@ set(qinvidious_SRCS
     qinvidious/credentials.cpp
     qinvidious/videobasicinfo.cpp
     qinvidious/video.cpp
+    qinvidious/caption.cpp
+    qinvidious/mediaformat.cpp
 )
 
 set(plasmatube_SRCS
