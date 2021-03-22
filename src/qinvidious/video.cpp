@@ -10,40 +10,19 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
 {
     VideoBasicInfo::fromJson(obj, video);
 
-    auto jsonValueToString = [](const QJsonValue &val) {
-        return val.toString();
-    };
-
-    const auto keywords = obj.value("keywords").toArray();
-    std::transform(keywords.cbegin(), keywords.cend(), std::back_inserter(video.m_keywords), jsonValueToString);
-
+    parseArray(obj.value("keywords"), video.m_keywords);
     video.setLikeCount(obj.value("likeCount").toInt());
     video.setDislikeCount(obj.value("dislikeCount").toInt());
     video.setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
-
-    const auto allowedRegions = obj.value("allowedRegions").toArray();
-    std::transform(allowedRegions.cbegin(), allowedRegions.cend(), std::back_inserter(video.m_allowedRegions), jsonValueToString);
-
+    parseArray(obj.value("allowedRegions"), video.m_allowedRegions);
     video.setGenre(obj.value("genre").toString());
     video.setGenreUrl(obj.value("genreUrl").toString());
-
-    const auto authorThumbnails = obj.value("authorThumbnails").toArray();
-    std::transform(authorThumbnails.cbegin(), authorThumbnails.cend(), std::back_inserter(video.m_authorThumbnails),
-                   [](const QJsonValue &val) {
-        return VideoThumbnail::fromJson(val);
-    });
-
+    parseArray(obj.value("authorThumbnails"), video.m_authorThumbnails);
     video.setSubCountText(obj.value("subCountText").toString());
     video.setAllowRatings(obj.value("allowRatings").toBool(true));
     video.setRating(obj.value("rating").toDouble(5.0));
     video.setIsListed(obj.value("isListed").toBool(true));
-
-    const auto recommendedVideos = obj.value("recommendedVideos").toArray();
-    std::transform(recommendedVideos.cbegin(), recommendedVideos.cend(), std::back_inserter(video.m_recommendedVideos),
-                   [](const QJsonValue &val) {
-        return VideoBasicInfo::fromJson(val);
-    });
-
+    parseArray(obj.value("recommendedVideos"), video.m_recommendedVideos);
     if (obj.contains(u"premiereTimestamp")) {
         video.setPremiereTimestamp(
             QDateTime::fromMSecsSinceEpoch(

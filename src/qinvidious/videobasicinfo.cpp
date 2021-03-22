@@ -72,9 +72,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     info.setAuthorId(obj.value("authorId").toString());
     info.setAuthorUrl(obj.value("authorUrl").toString());
     // FIXME: 2038 problem (timestamp is only 32 bit long)
-    QDateTime published;
-    published.setSecsSinceEpoch(obj.value("published").toInt());
-    info.setPublished(published);
+    info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published").toInt()));
     info.setPublishedText(obj.value("publishedText").toString());
     info.setDescription(obj.value("description").toString());
     info.setDescriptionHtml(obj.value("descriptionHtml").toString());
@@ -82,13 +80,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     info.setPaid(obj.value("paid").toBool(false));
     info.setPremium(obj.value("premium").toBool(false));
     info.setUpcoming(obj.value("isUpcoming").toBool(false));
-
-    const auto thumbs = obj.value("videoThumbnails").toArray();
-    std::transform(thumbs.cbegin(), thumbs.cend(), std::back_inserter(info.m_videoThumbnails),
-                   [](const QJsonValue &val) {
-        return VideoThumbnail::fromJson(val);
-    });
-
+    parseArray(obj.value("videoThumbnails"), info.m_videoThumbnails);
     return info;
 }
 

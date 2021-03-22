@@ -53,4 +53,12 @@ void parseArray(const QJsonArray &array, QList<T> &values)
     });
 }
 
+inline void parseArray(const QJsonArray &array, QList<QString> &values)
+{
+    std::transform(array.cbegin(), array.cend(), std::back_inserter(values),
+                   [](const QJsonValue &val) {
+        return val.toString();
+    });
+}
+
 }
