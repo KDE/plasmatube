@@ -48,7 +48,9 @@ MediaFormatBase MediaFormatBase::fromJson(const QJsonObject &obj, MediaFormatBas
     format.m_formatId = obj.value(u"itag").toInt();
     format.m_fps = obj.value(u"fps").toInt();
     // remove 'p' from "2160p", resolution doesn't contain something like "720p60"
-    format.m_resolution = obj.value(u"resolution").toString().chopped(1).toUInt();
+    if (const auto resolution = obj.value(u"resolution").toString(); resolution.size() > 1) {
+        format.m_resolution = resolution.chopped(1).toUInt();
+    }
     format.m_container = containerFromString(obj.value(u"container").toString());
     return format;
 }
