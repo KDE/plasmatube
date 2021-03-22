@@ -60,16 +60,16 @@ private:
     QStringList m_keywords;
     qint32 m_likeCount;
     qint32 m_dislikeCount;
-    bool m_isFamilyFriendly;
     QStringList m_allowedRegions;
     QString m_genre;
     QString m_genreUrl;
     QList<VideoThumbnail> m_authorThumbnails;
     QString m_subCountText;
-    bool m_allowRatings;
-    double m_rating;
-    bool m_isListed;
     QList<VideoBasicInfo> m_recommendedVideos;
+    double m_rating;
+    bool m_isFamilyFriendly;
+    bool m_allowRatings;
+    bool m_isListed;
 };
 
 };

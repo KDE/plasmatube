@@ -51,9 +51,9 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
 Video::Video()
     : m_likeCount(0),
       m_dislikeCount(0),
+      m_rating(1.0),
       m_isFamilyFriendly(true),
       m_allowRatings(true),
-      m_rating(1.0),
       m_isListed(true)
 {
 }
