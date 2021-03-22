@@ -46,7 +46,7 @@ public:
     VideoItem(const QInvidious::Video &, QObject *parent = nullptr);
 
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;
-    Q_INVOKABLE QUrl authorThumbnail(uint32_t size) const;
+    Q_INVOKABLE QUrl authorThumbnail(quint32 size) const;
     Q_INVOKABLE VideoListModel *recommendedVideosModel();
 };
 

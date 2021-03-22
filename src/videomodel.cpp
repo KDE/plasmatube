@@ -79,7 +79,7 @@ QUrl VideoItem::thumbnailUrl(const QString &quality) const
     return thumbnail(quality).url();
 }
 
-QUrl VideoItem::authorThumbnail(uint32_t size) const
+QUrl VideoItem::authorThumbnail(quint32 size) const
 {
     // thumbnails are sorted by size
     const auto authorThumbs = authorThumbnails();
