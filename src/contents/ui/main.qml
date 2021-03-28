@@ -16,7 +16,7 @@ Kirigami.ApplicationWindow {
         title: "PlasmaTube"
         actions: [
             Kirigami.Action {
-                text: PlasmaTube.isLoggedIn ? qsTr("Log out") : qsTr("Log in")
+                text: PlasmaTube.isLoggedIn ? qsTr("Log out (%1)").arg(PlasmaTube.invidiousId) : qsTr("Log in")
                 icon.name: PlasmaTube.isLoggedIn ? "system-log-out" : "arrow-right"
                 onTriggered: {
                     if (PlasmaTube.isLoggedIn) {
