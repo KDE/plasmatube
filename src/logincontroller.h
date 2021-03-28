@@ -19,7 +19,7 @@ public:
     bool isLoading() const;
     Q_SIGNAL void isLoadingChanged();
 
-    Q_INVOKABLE void logIn(const QString &username, const QString &password);
+    Q_INVOKABLE void logIn(const QString &username, const QString &password, const QString &invidiousInstance);
 
     Q_SIGNAL void errorOccurred(const QString &errorText);
     Q_SIGNAL void loggedIn();

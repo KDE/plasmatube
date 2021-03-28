@@ -19,7 +19,7 @@ bool LogInController::isLoading() const
     return m_watcher != nullptr;
 }
 
-void LogInController::logIn(const QString &username, const QString &password)
+void LogInController::logIn(const QString &username, const QString &password, const QString &invidiousInstance)
 {
     if (m_watcher) {
         m_watcher->cancel();
@@ -27,6 +27,9 @@ void LogInController::logIn(const QString &username, const QString &password)
         m_watcher = nullptr;
     }
 
+    const auto previousInstance = PlasmaTube::instance().api()->invidiousInstance();
+
+    PlasmaTube::instance().api()->setCredentials(invidiousInstance);
     auto future = PlasmaTube::instance().api()->logIn(username, password);
 
     m_watcher = new QFutureWatcher<QInvidious::LogInResult>(this);
@@ -48,6 +51,8 @@ void LogInController::logIn(const QString &username, const QString &password)
             default:
                 emit errorOccurred(error->second);
             }
+
+            PlasmaTube::instance().api()->setCredentials(previousInstance);
         }
 
         m_watcher->deleteLater();

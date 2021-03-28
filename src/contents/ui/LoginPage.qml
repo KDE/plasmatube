@@ -42,6 +42,12 @@ Kirigami.ScrollablePage {
         }
 
         Kirigami.FormLayout {
+            Controls.ComboBox {
+                id: invidiousInstance
+                editable: true
+                model: ["https://ytprivate.com", "https://invidiou.site"]
+            }
+
             Controls.TextField {
                 id: usernameField
                 placeholderText: qsTr("Username")
@@ -65,7 +71,7 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignRight
             text: qsTr("Sign in")
             onClicked: {
-                logInController.logIn(usernameField.text, passwordField.text)
+                logInController.logIn(usernameField.text, passwordField.text, invidiousInstance.editText)
             }
         }
     }
