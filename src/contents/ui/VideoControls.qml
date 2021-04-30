@@ -112,8 +112,10 @@ QQC2.Control {
                     onClicked: {
                         if (video.playbackState !== Multimedia.MediaPlayer.PlayingState) {
                             video.play();
+                            audio.play();
                         } else {
                             video.pause();
+                            audio.pause();
                         }
                     }
                 }
