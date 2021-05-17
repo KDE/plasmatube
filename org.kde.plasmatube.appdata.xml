@@ -1,15 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
 <!--
 SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
-
+SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 SPDX-License-Identifier: CC0-1.0
 -->
-
-<?xml version="1.0" encoding="utf-8"?>
-<component type="desktop-application">
+<component type="desktop">
   <id>org.kde.plasmatube</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
   <name>PlasmaTube</name>
   <summary>Watch YouTube videos</summary>
-  <metadata_license>FSFAP</metadata_license>
-  <project_license>GPL-3+</project_license>
-  <developer_name>KDE Community</developer_name>
+  <description>
+    <p>PlasmaTube allows you to watch YouTube videos on your phone or desktop using a elegant user interface integrated with the rest of Plasma.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.plasma-mobile.org/2021/04/27/plasma-mobile-update-march-april/plasmatube.png</image>
+    </screenshot>
+  </screenshots>
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+  <content_rating type="oars-1.0"/>
+  <url type="homepage">https://invent.kde.org/lnj/plasmatube/</url>
+  <url type="bugtracker">https://invent.kde.org/lnj/plasmatube/-/issues</url>
+  <url type="donation">https://kde.org/community/donations/?app=org.kde.plasmatube</url>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>plasmatube</binary>
+  </provides>
 </component>
+
