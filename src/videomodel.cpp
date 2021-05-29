@@ -85,7 +85,13 @@ bool VideoItem::isLoaded() const
 
 QUrl VideoItem::thumbnailUrl(const QString &quality) const
 {
-    return thumbnail(quality).url();
+    const QUrl thumbnailUrl = thumbnail(quality).url();
+
+    if (thumbnailUrl.isRelative()) {
+        return QUrl(PlasmaTube::instance().api()->invidiousInstance() + thumbnailUrl.toString(QUrl::FullyEncoded));
+    }
+
+    return thumbnailUrl;
 }
 
 QUrl VideoItem::authorThumbnail(quint32 size) const
