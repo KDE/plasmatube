@@ -31,6 +31,9 @@ Kirigami.ScrollablePage {
                 // is also executed in initial set
                 videoModel.fetch()
             }
+            onErrorOccurred: (errorText) => {
+                applicationWindow().showPassiveNotification(errorText)
+            }
         }
         Video {
             id: renderer

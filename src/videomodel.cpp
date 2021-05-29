@@ -47,6 +47,7 @@ void VideoModel::fetch()
             m_video = new VideoItem(*video, this);
             emit videoChanged();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            qDebug() << "VideoModel::fetch(): Error:" << error->second << error->first;
             emit errorOccurred(error->second);
         }
 
