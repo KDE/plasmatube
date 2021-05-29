@@ -24,8 +24,8 @@ SPDX-License-Identifier: CC0-1.0
     <control>touch</control>
   </recommends>
   <content_rating type="oars-1.0"/>
-  <url type="homepage">https://invent.kde.org/lnj/plasmatube/</url>
-  <url type="bugtracker">https://invent.kde.org/lnj/plasmatube/-/issues</url>
+  <url type="homepage">https://apps.kde.org/plasmatube/</url>
+  <url type="bugtracker">https://invent.kde.org/plasma-mobile/plasmatube/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.plasmatube</url>
   <project_group>KDE</project_group>
   <provides>
