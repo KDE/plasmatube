@@ -15,6 +15,7 @@ class VideoListModel;
 class VideoItem : public QObject, public QInvidious::Video
 {
     Q_OBJECT
+    Q_PROPERTY(bool isLoaded READ isLoaded CONSTANT)
     Q_PROPERTY(QString videoId READ videoId CONSTANT)
     Q_PROPERTY(QString title READ title CONSTANT)
     Q_PROPERTY(QTime length READ length CONSTANT)
@@ -45,9 +46,13 @@ public:
     VideoItem(QObject *parent = nullptr);
     VideoItem(const QInvidious::Video &, QObject *parent = nullptr);
 
+    bool isLoaded() const;
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;
     Q_INVOKABLE QUrl authorThumbnail(quint32 size) const;
     Q_INVOKABLE VideoListModel *recommendedVideosModel();
+
+private:
+    bool m_isLoaded = false;
 };
 
 class VideoModel : public QObject

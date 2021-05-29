@@ -65,14 +65,21 @@ bool VideoModel::isLoading() const
 }
 
 VideoItem::VideoItem(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_isLoaded(false)
 {
 }
 
 VideoItem::VideoItem(const QInvidious::Video &video, QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_isLoaded(true)
 {
     *static_cast<QInvidious::Video *>(this) = video;
+}
+
+bool VideoItem::isLoaded() const
+{
+    return m_isLoaded;
 }
 
 QUrl VideoItem::thumbnailUrl(const QString &quality) const

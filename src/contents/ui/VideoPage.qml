@@ -83,8 +83,8 @@ Kirigami.ScrollablePage {
             Layout.leftMargin: 12
             Layout.rightMargin: 12
             Layout.fillWidth: true
-            visible: !videoModel.isLoading
-            enabled: !videoModel.isLoading
+            visible: !videoModel.isLoading && videoModel.video.isLoaded
+            enabled: !videoModel.isLoading && videoModel.video.isLoaded
 
             // title
             Kirigami.Heading {
