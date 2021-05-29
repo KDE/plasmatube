@@ -71,6 +71,7 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             anchors.margins: Kirigami.Units.largeSpacing
             width: parent.width - 2 * Kirigami.Units.largeSpacing
+            delaySearch: true
 
             onAccepted: {
                 videoModel.requestSearchResults(text)
