@@ -245,9 +245,7 @@ QUrl InvidiousApi::logInUrl() const
 
 QUrl InvidiousApi::videoUrl(QStringView videoId) const
 {
-    QUrl url(invidiousInstance() % API_VIDEOS % u'/' % videoId);
-    url.setQuery(genericUrlQuery());
-    return url;
+    return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
 }
 
 QUrl InvidiousApi::videoListUrl(VideoListType queryType, QStringView queryValue, qint32 page) const
