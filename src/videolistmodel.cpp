@@ -105,8 +105,13 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
         return video.videoId();
     case TitleRole:
         return video.title();
-    case ThumbnailRole:
-        return video.thumbnail("medium").url();
+    case ThumbnailRole: {
+        const auto thumbnailUrl = video.thumbnail("medium").url();
+        if (thumbnailUrl.isRelative()) {
+            return QUrl(PlasmaTube::instance().api()->invidiousInstance() + thumbnailUrl.toString(QUrl::FullyEncoded));
+        }
+        return thumbnailUrl;
+    }
     case LengthRole:
         return video.length();
     case ViewCountRole:
