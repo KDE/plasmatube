@@ -18,6 +18,7 @@ VideoModel::VideoModel(QObject *parent)
 {
     connect(this, &VideoModel::videoIdChanged, this, [this] {
         m_remoteUrl.clear();
+        m_formatUrl.clear();
         Q_EMIT remoteUrlChanged();
     });
 }
