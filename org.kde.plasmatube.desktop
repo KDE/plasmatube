@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=PlasmaTube
+Name[ca]=PlasmaTube
+Name[de]=PlasmaTube
+Name[es]=PlasmaTube
+Name[ko]=PlasmaTube
+Name[nl]=PlasmaTube
+Name[uk]=PlasmaTube
+Name[x-test]=xxPlasmaTubexx
 Comment=Watch (YouTube) videos
+Comment[ca]=Veure vídeos (YouTube)
+Comment[de]=YouTube-Videos ansehen
+Comment[es]=Ver vídeos (de YouTube)
+Comment[ko]=(YouTube) 동영상 보기
+Comment[nl]=(YouTube-)video's kijken
+Comment[uk]=Перегляд відео (з YouTube)
+Comment[x-test]=xxWatch (YouTube) videosxx
 Exec=plasmatube
 Icon=org.kde.plasmatube
 Type=Application
