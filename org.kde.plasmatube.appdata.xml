@@ -9,9 +9,30 @@ SPDX-License-Identifier: CC0-1.0
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
   <name>PlasmaTube</name>
+  <name xml:lang="ca">PlasmaTube</name>
+  <name xml:lang="de">PlasmaTube</name>
+  <name xml:lang="es">PlasmaTube</name>
+  <name xml:lang="ko">PlasmaTube</name>
+  <name xml:lang="nl">PlasmaTube</name>
+  <name xml:lang="uk">PlasmaTube</name>
+  <name xml:lang="x-test">xxPlasmaTubexx</name>
   <summary>Watch YouTube videos</summary>
+  <summary xml:lang="ca">Veure vídeos de YouTube</summary>
+  <summary xml:lang="de">YouTube-Videos ansehen</summary>
+  <summary xml:lang="es">Ver vídeos de YouTube</summary>
+  <summary xml:lang="ko">YouTube 동영상 보기</summary>
+  <summary xml:lang="nl">YouTube-video's kijken</summary>
+  <summary xml:lang="uk">Перегляд відео з YouTube</summary>
+  <summary xml:lang="x-test">xxWatch YouTube videosxx</summary>
   <description>
     <p>PlasmaTube allows you to watch YouTube videos on your phone or desktop using a elegant user interface integrated with the rest of Plasma.</p>
+    <p xml:lang="ca">El PlasmaTube permet veure vídeos de YouTube al vostre telèfon o escriptori usant una interfície d'usuari elegant integrada amb la resta del Plasma.</p>
+    <p xml:lang="de">Mit PlasmaTube können Sie YouTube-Videos auf Ihrem Mobiltelefon oder der Arbeitsfläche über eine elegante, in den Rest von Plasma integrierte Benutzeroberfläche ansehen.</p>
+    <p xml:lang="es">PlasmaTube le permite ver vídeos de YouTube en el teléfono o en el escritorio usando una elegante interfaz de usuario integrada con el resto de Plasma.</p>
+    <p xml:lang="ko">PlasmaTube를 사용하여 휴대폰에서 YouTube 동영상을 보거나 데스크톱에서 Plasma 인터페이스와 통합된 형태로 볼 수 있습니다.</p>
+    <p xml:lang="nl">PlasmaTube biedt u het kijken naar YouTube video's op uw telefoon of bureaublad met een elegant gebruikersinterface geïntegreerd met de rest van Plasma.</p>
+    <p xml:lang="uk">За допомогою PlasmaTube ви зможете переглядати відео з YouTube на вашому телефоні або комп'ютері, користуючись елегантним інтерфейсом користувача, який інтегровано з рештою Плазми.</p>
+    <p xml:lang="x-test">xxPlasmaTube allows you to watch YouTube videos on your phone or desktop using a elegant user interface integrated with the rest of Plasma.xx</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -32,4 +53,3 @@ SPDX-License-Identifier: CC0-1.0
     <binary>plasmatube</binary>
   </provides>
 </component>
-
