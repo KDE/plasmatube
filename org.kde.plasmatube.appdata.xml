@@ -17,6 +17,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="it">PlasmaTube</name>
   <name xml:lang="ko">PlasmaTube</name>
   <name xml:lang="nl">PlasmaTube</name>
+  <name xml:lang="pt-BR">PlasmaTube</name>
   <name xml:lang="sk">PlasmaTube</name>
   <name xml:lang="sl">PlasmaTube</name>
   <name xml:lang="uk">PlasmaTube</name>
@@ -30,6 +31,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="it">Guarda i video di YouTube</summary>
   <summary xml:lang="ko">YouTube 동영상 보기</summary>
   <summary xml:lang="nl">YouTube-video's kijken</summary>
+  <summary xml:lang="pt-BR">Assista vídeos do YouTube</summary>
   <summary xml:lang="sk">Pozeranie YouTube videa</summary>
   <summary xml:lang="sl">Glej YouTube videoposnetke</summary>
   <summary xml:lang="uk">Перегляд відео з YouTube</summary>
@@ -43,6 +45,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="it">PlasmaTube ti consente di guardare i video di YouTube sul tuo telefono o desktop utilizzando un'elegante interfaccia utente integrata con il resto di Plasma.</p>
     <p xml:lang="ko">PlasmaTube를 사용하여 휴대폰에서 YouTube 동영상을 보거나 데스크톱에서 Plasma 인터페이스와 통합된 형태로 볼 수 있습니다.</p>
     <p xml:lang="nl">PlasmaTube biedt u het kijken naar YouTube video's op uw telefoon of bureaublad met een elegant gebruikersinterface geïntegreerd met de rest van Plasma.</p>
+    <p xml:lang="pt-BR">O PlasmaTube permite a você assistir vídeos do YouTube em seu celular ou computador usando uma interface de usuário elegante e integrada com o resto do Plasma.</p>
     <p xml:lang="sl">PlasmaTube vam omogoča ogled videoposnetkov v YouTubu na telefonu ali namizju z uporaboelegantnega uporabniškega vmesnika integriranega v Plasmo.</p>
     <p xml:lang="uk">За допомогою PlasmaTube ви зможете переглядати відео з YouTube на вашому телефоні або комп'ютері, користуючись елегантним інтерфейсом користувача, який інтегровано з рештою Плазми.</p>
     <p xml:lang="x-test">xxPlasmaTube allows you to watch YouTube videos on your phone or desktop using a elegant user interface integrated with the rest of Plasma.xx</p>
