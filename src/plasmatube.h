@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <optional>
 
 namespace QInvidious
 {

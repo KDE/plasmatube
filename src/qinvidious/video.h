@@ -9,6 +9,8 @@
 #include "mediaformat.h"
 #include "caption.h"
 
+#include <optional>
+
 namespace QInvidious {
 
 class Video : public VideoBasicInfo

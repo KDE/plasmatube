@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <optional>
 
 class SubscriptionWatcher : public QObject
 {
