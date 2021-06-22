@@ -21,7 +21,8 @@ PlasmaTube::PlasmaTube(QObject *parent)
     const auto locale = QLocale::system().name().toLower().split(u'_');
     if (locale.size() == 2) {
         m_api->setLanguage(locale.at(0));
-        m_api->setRegion(locale.at(1));
+        // Regions seem to cause internal server errors. See https://invent.kde.org/plasma-mobile/plasmatube/-/issues/20 for details
+        //m_api->setRegion(locale.at(1));
     }
     loadCredentials();
 
