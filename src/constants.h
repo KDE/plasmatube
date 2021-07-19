@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#define DEFAULT_INSTANCE "https://yewtu.be"
+#define DEFAULT_INSTANCE "https://ytprivate.com"
 
 #define SETTINGS_INSTANCE "auth/instance"
 #define SETTINGS_USERNAME "auth/username"
