@@ -94,6 +94,14 @@ SPDX-License-Identifier: CC0-1.0
       <image>https://cdn.kde.org/screenshots/plasmatube/plasmatube.png</image>
     </screenshot>
   </screenshots>
+  <releases>
+    <release version="21.12" date="2021-12-07">
+      <description>
+        <p>Initial release of Plasmatube, a functional Youtube player powered by an invidious server.</p>
+      </description>
+      <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
+    </release>
+  </releases>
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
