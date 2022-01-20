@@ -7,9 +7,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <RCC>
     <qresource prefix="/">
-        <file alias="LoginPage.qml">contents/ui/LoginPage.qml</file>
+        <file alias="AccountPage.qml">contents/ui/AccountPage.qml</file>
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="SearchPage.qml">contents/ui/SearchPage.qml</file>
+        <file alias="TrendingPage.qml">contents/ui/TrendingPage.qml</file>
         <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
         <file alias="VideoPage.qml">contents/ui/VideoPage.qml</file>
         <file alias="VideoData.qml">contents/ui/VideoData.qml</file>

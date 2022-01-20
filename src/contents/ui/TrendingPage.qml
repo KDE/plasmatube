@@ -6,7 +6,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami 2.8 as Kirigami
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
@@ -14,7 +14,7 @@ import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
     id: root
-    title: i18n("Search")
+    title: videoModel.title
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -29,27 +29,39 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    header: Rectangle {
-        color: Kirigami.Theme.backgroundColor
-        height: searchField.implicitHeight + 2 * Kirigami.Units.largeSpacing
-        width: root.width
-
-        Kirigami.SearchField {
-            id: searchField
-            selectByMouse: true
-            anchors.centerIn: parent
-            anchors.margins: Kirigami.Units.largeSpacing
-            width: parent.width - 2 * Kirigami.Units.largeSpacing
-            delaySearch: true
-
-            onAccepted: {
-                videoModel.requestSearchResults(text)
-            }
+    actions.contextualActions: [
+        VideoListAction {
+            visible: PlasmaTube.isLoggedIn
+            videoModel: videoModel
+            queryType: VideoListModel.Feed
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.Top
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.Trending
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingGaming
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingMovies
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingMusic
+        },
+        VideoListAction {
+            videoModel: videoModel
+            queryType: VideoListModel.TrendingNews
         }
-    }
+    ]
 
     ListView {
-        id: listView
         currentIndex: -1
         model: VideoListModel {
             id: videoModel
@@ -75,12 +87,24 @@ Kirigami.ScrollablePage {
                 pageStack.push(videoPageComponent, {"vid": vid})
             }
         }
-        
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            visible: listView.count === 0 && !root.refreshing
-            text: searchField.text === "" ? i18n("Search") : i18n("No results")
-            icon.name: "search"
+
+        Connections {
+            target: PlasmaTube
+
+            function onLoggedIn() {
+                videoModel.requestQuery(VideoListModel.Feed)
+            }
+            function onLoggedOut() {
+                videoModel.requestQuery(VideoListModel.Trending)
+            }
         }
     }
+
+    Component.onCompleted: {
+        if (PlasmaTube.isLoggedIn)
+            videoModel.requestQuery(VideoListModel.Feed)
+        else
+            videoModel.requestQuery(VideoListModel.Trending)
+    }
 }
+
