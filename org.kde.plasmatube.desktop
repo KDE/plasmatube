@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=PlasmaTube
+Name[ar]=بلازما تيوب
 Name[az]=PlasmaTube
 Name[ca]=PlasmaTube
 Name[ca@valencia]=PlasmaTube
@@ -28,6 +29,7 @@ Name[uk]=PlasmaTube
 Name[x-test]=xxPlasmaTubexx
 Name[zh_CN]=PlasmaTube
 Comment=Watch (YouTube) videos
+Comment[ar]=شاهد فيديوهات (يوتيوب)
 Comment[az]=Videolara baxın (YouTube'dən)
 Comment[ca]=Veure vídeos (YouTube)
 Comment[ca@valencia]=Veure vídeos (YouTube)
