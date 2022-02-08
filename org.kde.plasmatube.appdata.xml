@@ -100,6 +100,14 @@ SPDX-License-Identifier: CC0-1.0
     </screenshot>
   </screenshots>
   <releases>
+    <release version="22.02" date="2021-02-09">
+      <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
+      <description>
+        <ul>
+          <li>User interface improvements.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.12" date="2021-12-07">
       <description>
         <p>Initial release of Plasmatube, a functional Youtube player powered by an invidious server.</p>
