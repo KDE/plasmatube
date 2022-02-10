@@ -31,6 +31,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pt">PlasmaTube</name>
   <name xml:lang="pt-BR">PlasmaTube</name>
   <name xml:lang="ro">PlasmaTube</name>
+  <name xml:lang="ru">PlasmaTube</name>
   <name xml:lang="sk">PlasmaTube</name>
   <name xml:lang="sl">PlasmaTube</name>
   <name xml:lang="sv">PlasmaTube</name>
@@ -60,6 +61,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="pt">Ver vídeos do YouTube</summary>
   <summary xml:lang="pt-BR">Assista vídeos do YouTube</summary>
   <summary xml:lang="ro">Vizualizează filmulețe YouTube</summary>
+  <summary xml:lang="ru">Просмотр видеороликов с Youtube</summary>
   <summary xml:lang="sk">Pozeranie YouTube videa</summary>
   <summary xml:lang="sl">Glej YouTube videoposnetke</summary>
   <summary xml:lang="sv">Titta på YouTube-videor</summary>
@@ -88,6 +90,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pl">PlasmaTube umożliwia ci oglądanie filmów z YouTube na twoim urządzeniu przenośnym lub biurkowym w interfejsie wbudowanym w resztę Plazmy.</p>
     <p xml:lang="pt">O PlasmaTube permite-lhe ver vídeos do YouTube no seu telemóvel ou computador com uma interface de utilizador elegante e integrada com o resto do Plasma.</p>
     <p xml:lang="pt-BR">O PlasmaTube permite a você assistir vídeos do YouTube em seu celular ou computador usando uma interface de usuário elegante e integrada com o resto do Plasma.</p>
+    <p xml:lang="ru">Приложение PlasmaTube позволяет просматривать видео с YouTube на телефоне или компьютере, предоставляя элегантный пользовательский интерфейс, интегрированный с остальной частью Plasma.</p>
     <p xml:lang="sl">PlasmaTube vam omogoča ogled videoposnetkov v YouTubu na telefonu ali namizju z uporaboelegantnega uporabniškega vmesnika integriranega v Plasmo.</p>
     <p xml:lang="sv">Med PlasmaTube kan du titta på YouTube-videor på din telefon eller skrivbordsdator med ett elegant användargränssnitt integrerat med resten av Plasma.</p>
     <p xml:lang="uk">За допомогою PlasmaTube ви зможете переглядати відео з YouTube на вашому телефоні або комп'ютері, користуючись елегантним інтерфейсом користувача, який інтегровано з рештою Плазми.</p>
