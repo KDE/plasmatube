@@ -10,6 +10,7 @@
 
 #include "qinvidious/invidiousapi.h"
 
+#include "PlasmaTubeSettings.h"
 #include "constants.h"
 
 PlasmaTube::PlasmaTube(QObject *parent)
@@ -98,9 +99,10 @@ void PlasmaTube::logOut()
 
 void PlasmaTube::loadCredentials()
 {
+    const PlasmaTubeSettings plasmaTubeSettings;
     QSettings settings;
     QInvidious::Credentials credentials;
-    credentials.setApiInstance(settings.value(SETTINGS_INSTANCE, DEFAULT_INSTANCE).toString());
+    credentials.setApiInstance(settings.value(SETTINGS_INSTANCE, plasmaTubeSettings.invidiousInstance()).toString());
     credentials.setUsername(settings.value(SETTINGS_USERNAME).toString());
     if (const auto cookies = QNetworkCookie::parseCookies(settings.value(SETTINGS_COOKIE).toByteArray());
             !cookies.isEmpty()) {

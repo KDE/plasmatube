@@ -94,13 +94,13 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
-                iconName: "user-identity"
-                text: i18n("Account")
+                iconName: "settings-configure"
+                text: i18n("Settings")
                 onTriggered: {
                     while (applicationWindow().pageStack.depth > 0) {
                         applicationWindow().pageStack.pop();
                     }
-                    applicationWindow().pageStack.push(accountPageComponent);
+                    applicationWindow().pageStack.push(settingsPageComponent);
                 }
             }
         ]
@@ -119,7 +119,7 @@ Kirigami.ApplicationWindow {
         VideoPage {}
     }
     Component {
-        id: accountPageComponent
-        AccountPage {}
+        id: settingsPageComponent
+        SettingsPage {}
     }
 }

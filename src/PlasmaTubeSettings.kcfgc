@@ -1,0 +1,6 @@
+File=PlasmaTubeSettings.kcfg
+ClassName=PlasmaTubeSettings
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true

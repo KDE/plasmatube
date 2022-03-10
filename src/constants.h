@@ -2,8 +2,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#define DEFAULT_INSTANCE "https://inv.riverside.rocks"
-
 #define SETTINGS_INSTANCE "auth/instance"
 #define SETTINGS_USERNAME "auth/username"
 #define SETTINGS_COOKIE "auth/cookie"

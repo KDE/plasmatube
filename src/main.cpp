@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include "PlasmaTubeSettings.h"
 #include "logincontroller.h"
 #include "plasmatube.h"
 #include "subscriptioncontroller.h"
@@ -35,6 +36,10 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    PlasmaTubeSettings settings;
+    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube", 1, 0, "Settings", &settings);
+    QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
