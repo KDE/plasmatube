@@ -37,6 +37,7 @@ Kirigami.ScrollablePage {
         }
         Video {
             id: renderer
+            property var video: videoModel
             Layout.fillWidth: true
             Layout.preferredHeight: width / 16.0 * 9.0
             Layout.maximumHeight: root.height

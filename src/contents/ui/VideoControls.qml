@@ -7,7 +7,7 @@ import QtQuick 2.10
 import QtQuick.Layouts 1.10
 import QtQuick.Controls 2.10 as QQC2
 import QtMultimedia 5.12 as Multimedia
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 
 QQC2.Control {
@@ -144,9 +144,46 @@ QQC2.Control {
 
                     TabIndicator {}
                 }
+                QQC2.ToolButton {
+                    width: Kirigami.Units.iconSizes.large
+                    height: width
+                    icon.name: "configure"
+                    icon.color: "white"
+
+                    onClicked: {
+                        configureDialog.open()
+                    }
+
+                    TabIndicator {}
+                }
             }
             Item {Layout.fillWidth: true}
         }
         Item { height: Kirigami.Units.largeSpacing }
+    }
+
+    Kirigami.Dialog {
+        id: configureDialog
+        title: i18n("Settings")
+        padding: Kirigami.Units.largeSpacing
+        preferredHeight: Kirigami.Units.gridUnit * 20
+        preferredWidth: Kirigami.Units.gridUnit * 10
+
+        ListView {
+            QQC2.ButtonGroup {
+                id: radioGroup
+            }
+            model: video.video.formatList
+            delegate: QQC2.RadioButton {
+                checked: video.video.selectedFormat === modelData
+                text: modelData
+                QQC2.ButtonGroup.group: radioGroup
+                onCheckedChanged: {
+                    if (checked) {
+                        video.video.selectedFormat = modelData
+                    }
+                }
+            }
+        }
     }
 }

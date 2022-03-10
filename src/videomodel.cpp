@@ -143,6 +143,7 @@ QString VideoModel::remoteUrl()
                     }
                  }
                  Q_EMIT remoteUrlChanged();
+                 Q_EMIT formatListChanged();
                  process->deleteLater();
              });
     return QString();
