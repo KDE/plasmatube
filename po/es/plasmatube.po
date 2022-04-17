@@ -1,0 +1,106 @@
+# Spanish translations for plasmatube.po package.
+# Copyright (C) 2021 This file is copyright:
+# This file is distributed under the same license as the plasmatube package.
+#
+# Automatically generated, 2021.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmatube\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-11 00:49+0000\n"
+"PO-Revision-Date: 2022-03-11 22:23+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: contents/ui/AccountPage.qml:21
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Sesión iniciada con éxito como %1."
+
+#: contents/ui/AccountPage.qml:40
+#, kde-format
+msgid "Currently logged in as %1."
+msgstr "Sesión iniciada como %1."
+
+#: contents/ui/AccountPage.qml:49
+#, kde-format
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: contents/ui/AccountPage.qml:59
+#, kde-format
+msgid ""
+"Please visit the website to register with an invidious instance.\n"
+"There is currently no API for registering."
+msgstr ""
+"Visite el sitio web para registrarse con una instancia individual.\n"
+"En la actualidad no hay API para registrar."
+
+#: contents/ui/AccountPage.qml:76
+#, kde-format
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Videos"
+msgstr "Vídeos"
+
+#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:82
+#, kde-format
+msgid "Search"
+msgstr "Buscar"
+
+#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
+#: contents/ui/VideoControls.qml:167
+#, kde-format
+msgid "Settings"
+msgstr "Preferencias"
+
+#: contents/ui/SearchPage.qml:82
+#, kde-format
+msgid "No results"
+msgstr "Sin resultado"
+
+#: contents/ui/SettingsPage.qml:18
+#, kde-format
+msgid "Invidious"
+msgstr "Invidious"
+
+#: contents/ui/SettingsPage.qml:22
+#, kde-format
+msgid "Instance"
+msgstr "Instancia"
+
+#: contents/ui/SettingsPage.qml:34
+#, kde-format
+msgid "Account"
+msgstr "Cuenta"
+
+#: contents/ui/SettingsPage.qml:38
+#, kde-format
+msgid "Open Account Settings"
+msgstr "Abrir las preferencias de la cuenta"
+
+#: contents/ui/VideoData.qml:55
+#, kde-format
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+#: contents/ui/VideoData.qml:55
+#, kde-format
+msgid "Restore"
+msgstr "Restaurar"
