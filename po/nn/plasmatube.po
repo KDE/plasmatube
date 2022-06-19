@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-11 00:49+0000\n"
-"PO-Revision-Date: 2022-02-13 14:43+0100\n"
+"PO-Revision-Date: 2022-06-18 14:51+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 22.04.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -66,7 +66,7 @@ msgstr "Søk"
 #: contents/ui/VideoControls.qml:167
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Innstillingar"
 
 #: contents/ui/SearchPage.qml:82
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "Konto"
 #: contents/ui/SettingsPage.qml:38
 #, kde-format
 msgid "Open Account Settings"
-msgstr ""
+msgstr "Opna kontoinnstillingar"
 
 #: contents/ui/VideoData.qml:55
 #, kde-format
