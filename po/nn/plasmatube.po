@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-11 00:49+0000\n"
-"PO-Revision-Date: 2022-06-18 14:51+0200\n"
+"PO-Revision-Date: 2022-07-02 13:35+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -40,6 +40,8 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
+"Gå til nettsida for å registrera deg hos ein Invidious-instans.\n"
+"Det finst førebels ikkje noko API for brukarregistrering."
 
 #: contents/ui/AccountPage.qml:76
 #, kde-format
@@ -73,15 +75,16 @@ msgstr "Innstillingar"
 msgid "No results"
 msgstr "Ingen søkjetreff"
 
+# https://api.invidious.io/
 #: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:22
 #, kde-format
 msgid "Instance"
-msgstr ""
+msgstr "Instans"
 
 #: contents/ui/SettingsPage.qml:34
 #, kde-format
