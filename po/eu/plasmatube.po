@@ -1,16 +1,16 @@
 # Translation for plasmatube.po to Euskara/Basque (eu).
-# Copyright (C) 2021, This file is copyright:
+# Copyright (C) 2021-2022, This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-11 00:49+0000\n"
-"PO-Revision-Date: 2021-07-08 23:11+0200\n"
+"PO-Revision-Date: 2022-08-03 13:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,22 +18,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.04.2\n"
+"X-Generator: Lokalize 22.04.3\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
 msgid "Successfully logged in as %1."
-msgstr ""
+msgstr "%1 gisa saio ondo hasi duzu."
 
 #: contents/ui/AccountPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr ""
+msgstr "Une honetan %1 erabiltzaile gisa saio-hasita."
 
 #: contents/ui/AccountPage.qml:49
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Itxi saioa"
 
 #: contents/ui/AccountPage.qml:59
 #, kde-format
@@ -41,58 +41,61 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
+"Mesedez, bisita ezazu webgunea Invidious-en instantzia batekin "
+"erregistratzeko.\n"
+"Une honetan ez dago erregistratzeko APIrik."
 
 #: contents/ui/AccountPage.qml:76
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Erabiltzaile-izena"
 
 #: contents/ui/AccountPage.qml:93
 #, kde-format
 msgid "Sign in"
-msgstr ""
+msgstr "Sinatu"
 
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "Bideoak"
 
 #: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:82
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Bilatu"
 
 #: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
 #: contents/ui/VideoControls.qml:167
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Ezarpenak"
 
 #: contents/ui/SearchPage.qml:82
 #, kde-format
 msgid "No results"
-msgstr ""
+msgstr "Emaitzarik gabe"
 
 #: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:22
 #, kde-format
 msgid "Instance"
-msgstr ""
+msgstr "Instantzia"
 
 #: contents/ui/SettingsPage.qml:34
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "Kontua"
 
 #: contents/ui/SettingsPage.qml:38
 #, kde-format
 msgid "Open Account Settings"
-msgstr ""
+msgstr "Ireki kontuaren ezarpenak"
 
 #: contents/ui/VideoData.qml:55
 #, kde-format
