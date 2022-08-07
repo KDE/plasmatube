@@ -41,7 +41,7 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
-"Visiteu el lloc web per a registrar-se amb una instància de l'Invidious.\n"
+"Visiteu el lloc web per a registrar-se amb una instància d'Invidious.\n"
 "Actualment no hi ha cap API per a registrar-se."
 
 #: contents/ui/AccountPage.qml:76
