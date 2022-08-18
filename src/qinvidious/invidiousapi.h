@@ -7,6 +7,7 @@
 // std
 #include <variant>
 // Qt
+#include <QHash>
 #include <QObject>
 #include <QFuture>
 #include <QNetworkReply>
@@ -14,6 +15,7 @@
 // QInvidious
 #include "video.h"
 #include "credentials.h"
+#include "searchparameters.h"
 
 class QNetworkAccessManager;
 
@@ -57,7 +59,7 @@ public:
 
     QFuture<LogInResult> logIn(QStringView username, QStringView password);
     QFuture<VideoResult> requestVideo(QStringView videoId);
-    QFuture<VideoListResult> requestSearchResults(QStringView query, qint32 page = 0);
+    QFuture<VideoListResult> requestSearchResults(const SearchParameters& parameters);
     QFuture<VideoListResult> requestFeed();
     QFuture<VideoListResult> requestTop();
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main);
@@ -76,12 +78,12 @@ private:
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
 
-    QFuture<VideoListResult> requestVideoList(VideoListType queryType, QStringView queryValue = {}, qint32 page = 0);
+    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QHash<QString, QString>& parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
     QUrl logInUrl() const;
     QUrl videoUrl(QStringView videoId) const;
-    QUrl videoListUrl(VideoListType queryType, QStringView queryValue, qint32 page) const;
+    QUrl videoListUrl(VideoListType queryType, const QHash<QString, QString> &parameters = {}) const;
     QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(QStringView channelId) const;
 

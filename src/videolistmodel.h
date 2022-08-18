@@ -8,6 +8,7 @@
 #include <QAbstractListModel>
 #include "qinvidious/videobasicinfo.h"
 #include "qinvidious/invidiousapi.h"
+#include "qinvidious/searchparameters.h"
 
 class InvidiousManager;
 class QNetworkReply;
@@ -63,7 +64,7 @@ public:
     Q_INVOKABLE void fetchMore(const QModelIndex &parent) override;
     Q_INVOKABLE bool canFetchMore(const QModelIndex &parent) const override;
 
-    Q_INVOKABLE void requestSearchResults(const QString &searchString);
+    Q_INVOKABLE void requestSearchResults(const SearchParameters *searchParameters);
     Q_INVOKABLE void requestQuery(QueryType type);
     Q_INVOKABLE void refresh();
 
@@ -85,7 +86,7 @@ private:
 
     QueryType m_queryType = NoQuery;
     qint32 m_currentPage = 0;
-    QString m_searchQuery;
+    SearchParameters m_searchParameters;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;
 
     QList<QInvidious::VideoBasicInfo> m_results;

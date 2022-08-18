@@ -11,6 +11,7 @@ set(qinvidious_SRCS
     videothumbnail.cpp
     caption.cpp
     mediaformat.cpp
+    searchparameters.cpp
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})

@@ -143,7 +143,9 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
 void VideoListModel::fetchMore(const QModelIndex &index)
 {
     if (canFetchMore(index)) {
-        auto future = PlasmaTube::instance().api()->requestSearchResults(m_searchQuery, ++m_currentPage);
+        m_currentPage++;
+        m_searchParameters.setPage(m_currentPage);
+        auto future = PlasmaTube::instance().api()->requestSearchResults(m_searchParameters);
         handleQuery(future, Search, false);
     }
 }
@@ -162,22 +164,22 @@ QString VideoListModel::title() const
 {
     switch (m_queryType) {
     case Search:
-        return tr("Search results for \"%1\"").arg(m_searchQuery);
+        return tr("Search results for \"%1\"").arg(m_searchParameters.query());
     default:
         return queryTypeString(m_queryType);
     }
 }
 
-void VideoListModel::requestSearchResults(const QString &searchString)
+void VideoListModel::requestSearchResults(const SearchParameters *searchParameters)
 {
-    m_searchQuery = searchString;
+    m_searchParameters.fill(*searchParameters);
     m_currentPage = 0;
-    handleQuery(PlasmaTube::instance().api()->requestSearchResults(searchString), Search);
+    handleQuery(PlasmaTube::instance().api()->requestSearchResults(m_searchParameters), Search);
 }
 
 void VideoListModel::requestQuery(QueryType type)
 {
-    m_searchQuery.clear();
+    m_searchParameters.clear();
     switch (type) {
     case Feed:
         handleQuery(PlasmaTube::instance().api()->requestFeed(), type);
@@ -210,7 +212,7 @@ void VideoListModel::refresh()
     if (!isLoading() && m_queryType != NoQuery) {
         switch (m_queryType) {
         case Search:
-            requestSearchResults(m_searchQuery);
+            requestSearchResults(&m_searchParameters);
             break;
         default:
             requestQuery(m_queryType);
@@ -259,7 +261,7 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
 void VideoListModel::setQueryType(QueryType type)
 {
     // title changes if the type changes or the search string has been updated (page 0)
-    if (m_queryType != type || m_searchQuery == 0) {
+    if (m_queryType != type || m_searchParameters.query().isEmpty()) {
         m_queryType = type;
         emit titleChanged();
     }

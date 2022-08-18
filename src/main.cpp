@@ -10,6 +10,7 @@
 #include "videomodel.h"
 
 #include "qinvidious/invidiousapi.h"
+#include "qinvidious/searchparameters.h"
 
 #include <QApplication>
 #include <QQmlApplicationEngine>
@@ -32,6 +33,13 @@ int main(int argc, char **argv)
     qmlRegisterType<SubscriptionWatcher>("org.kde.plasmatube", 1, 0, "SubscriptionWatcher");
     qmlRegisterType<SubscriptionController>("org.kde.plasmatube", 1, 0, "SubscriptionController");
     qmlRegisterSingletonInstance<PlasmaTube>("org.kde.plasmatube", 1, 0, "PlasmaTube", &PlasmaTube::instance());
+    qRegisterMetaType<SearchParameters::SortBy>("SortBy");
+    qRegisterMetaType<SearchParameters::Date>("Date");
+    qRegisterMetaType<SearchParameters::Duration>("Duration");
+    qRegisterMetaType<SearchParameters::Type>("Type");
+    qRegisterMetaType<SearchParameters::Feature>("Feature");
+    qmlRegisterType<SearchParameters>("org.kde.plasmatube", 1, 0, "SearchParameters");
+    qRegisterMetaType<SearchParameters*>("const SearchParameters*");
 
     QQmlApplicationEngine engine;
 

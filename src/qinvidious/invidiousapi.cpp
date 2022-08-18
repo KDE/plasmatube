@@ -106,9 +106,9 @@ QFuture<VideoResult> InvidiousApi::requestVideo(QStringView videoId)
     });
 }
 
-QFuture<VideoListResult> InvidiousApi::requestSearchResults(QStringView query, qint32 page)
+QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
 {
-    return requestVideoList(Search, query, page);
+    return requestVideoList(Search, parameters.toQueryParameters());
 }
 
 QFuture<VideoListResult> InvidiousApi::requestFeed()
@@ -123,18 +123,24 @@ QFuture<VideoListResult> InvidiousApi::requestTop()
 
 QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
 {
+    QHash<QString, QString> parameters;
     switch (topic) {
     case Music:
-        return requestVideoList(Trending, u"music");
+        parameters.insert("type", "music");
+        break;
     case Gaming:
-        return requestVideoList(Trending, u"gaming");
+        parameters.insert("type", "gaming");
+        break;
     case Movies:
-        return requestVideoList(Trending, u"movies");
+        parameters.insert("type", "movies");
+        break;
     case News:
-        return requestVideoList(Trending, u"news");
-    default:
-        return requestVideoList(Trending);
+        parameters.insert("type", "news");
+        break;
+    case Main:
+        break;
     }
+    return requestVideoList(Trending, parameters);
 }
 
 QFuture<SubscriptionsResult> InvidiousApi::requestSubscriptions()
@@ -179,9 +185,9 @@ Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
     return std::pair(QNetworkReply::InternalServerError, tr("Server returned status code ") + QString::number(status));
 }
 
-QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, QStringView queryValue, qint32 page)
+QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QHash<QString, QString> &parameters)
 {
-    auto url = videoListUrl(queryType, queryValue, page);
+    auto url = videoListUrl(queryType, parameters);
     // Feed requests require to be authenticated
     auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url))
                                      : QNetworkRequest(url);
@@ -248,7 +254,7 @@ QUrl InvidiousApi::videoUrl(QStringView videoId) const
     return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
 }
 
-QUrl InvidiousApi::videoListUrl(VideoListType queryType, QStringView queryValue, qint32 page) const
+QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QHash<QString, QString>& parameters) const
 {
     auto urlString = invidiousInstance();
     auto query = genericUrlQuery();
@@ -256,16 +262,9 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, QStringView queryValue,
     switch (queryType) {
     case Search:
         urlString.append(API_SEARCH);
-
-        query.addQueryItem("q", QUrl::toPercentEncoding(queryValue.toString()));
-        query.addQueryItem("page", QString::number(page));
         break;
     case Trending:
         urlString.append(API_TRENDING);
-
-        if (!queryValue.isEmpty()) {
-            query.addQueryItem("type", queryValue.toString());
-        }
         break;
     case Top:
         urlString.append(API_TOP);
@@ -273,6 +272,10 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, QStringView queryValue,
     case Feed:
         urlString.append(API_FEED);
         break;
+    }
+
+    for (QHash<QString, QString>::const_iterator parameter = parameters.begin(); parameter != parameters.end(); ++parameter) {
+        query.addQueryItem(parameter.key(), parameter.value());
     }
 
     QUrl url(urlString);

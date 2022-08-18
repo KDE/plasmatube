@@ -30,22 +30,97 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     header: Rectangle {
-        color: Kirigami.Theme.backgroundColor
-        height: searchField.implicitHeight + 2 * Kirigami.Units.largeSpacing
-        width: root.width
+        color: "transparent"
+        anchors.top: root.top
+        anchors.left: root.left
+        anchors.margins: Kirigami.Units.largeSpacing
+        height: childrenRect.height + Kirigami.Units.largeSpacing
 
-        Kirigami.SearchField {
-            id: searchField
-            selectByMouse: true
-            anchors.centerIn: parent
-            anchors.margins: Kirigami.Units.largeSpacing
-            width: parent.width - 2 * Kirigami.Units.largeSpacing
-            delaySearch: true
+        ColumnLayout {
+            width: root.width - 2 * Kirigami.Units.largeSpacing
 
-            onAccepted: {
-                videoModel.requestSearchResults(text)
+            RowLayout {
+                Kirigami.SearchField {
+                    id: searchField
+                    selectByMouse: true
+                    delaySearch: true
+                    Layout.fillWidth: true
+
+                    onAccepted: {
+                        searchParameters.query = text
+                        videoModel.requestSearchResults(searchParameters)
+                    }
+                }
+
+                Controls.Button {
+                    id: showFiltersButton
+                    icon.name: "settings-configure"
+                    checkable: true
+                    checked: false
+                }
+            }
+
+            RowLayout {
+                id: filtersBar
+                visible: showFiltersButton.checked
+
+                Controls.ButtonGroup { id: sortGroup }
+
+                Controls.Label {
+                    text: i18n("Sort By:")
+                }
+
+                Controls.RadioButton {
+                    text: i18n("Rating")
+                    checkable: true
+                    Controls.ButtonGroup.group: sortGroup
+                    onCheckedChanged:
+                        if (checked) {
+                            searchParameters.sortBy = SearchParameters.SortBy.Rating
+                            videoModel.requestSearchResults(searchParameters)
+                        }
+                }
+
+                Controls.RadioButton {
+                    text: i18n("Relevance")
+                    checkable: true
+                    checked: true
+                    Controls.ButtonGroup.group: sortGroup
+                    onCheckedChanged:
+                        if (checked) {
+                            searchParameters.sortBy = SearchParameters.SortBy.Relevance
+                            videoModel.requestSearchResults(searchParameters)
+                        }
+                }
+
+                Controls.RadioButton {
+                    text: i18n("Upload Date")
+                    checkable: true
+                    Controls.ButtonGroup.group: sortGroup
+                    onCheckedChanged:
+                        if (checked) {
+                            searchParameters.sortBy = SearchParameters.SortBy.UploadDate
+                            videoModel.requestSearchResults(searchParameters)
+                        }
+                }
+
+                Controls.RadioButton {
+                    text: i18n("View Count")
+                    checkable: true
+                    Controls.ButtonGroup.group: sortGroup
+                    onCheckedChanged:
+                        if (checked) {
+                            searchParameters.sortBy = SearchParameters.SortBy.ViewCount
+                            videoModel.requestSearchResults(searchParameters)
+                        }
+                }
             }
         }
+    }
+
+    SearchParameters {
+        id: searchParameters
+        query: ""
     }
 
     ListView {
