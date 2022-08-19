@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-11 00:49+0000\n"
+"POT-Creation-Date: 2022-08-19 00:47+0000\n"
 "PO-Revision-Date: 2022-03-12 09:18+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -58,7 +58,7 @@ msgid "Videos"
 msgstr "Video posnetki"
 
 #: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:82
+#: contents/ui/SearchPage.qml:157
 #, kde-format
 msgid "Search"
 msgstr "Išči"
@@ -69,7 +69,32 @@ msgstr "Išči"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: contents/ui/SearchPage.qml:82
+#: contents/ui/SearchPage.qml:70
+#, kde-format
+msgid "Sort By:"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:74
+#, kde-format
+msgid "Rating"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:85
+#, kde-format
+msgid "Relevance"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:97
+#, kde-format
+msgid "Upload Date"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:108
+#, kde-format
+msgid "View Count"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:157
 #, kde-format
 msgid "No results"
 msgstr "Ni zadetkov"
