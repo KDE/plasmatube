@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-19 00:47+0000\n"
-"PO-Revision-Date: 2022-03-11 08:37+0200\n"
+"PO-Revision-Date: 2022-08-19 15:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -72,27 +72,27 @@ msgstr "Параметри"
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Критерій впорядкування:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Оцінка"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Відповідність"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Дата вивантаження"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Кількість переглядів"
 
 #: contents/ui/SearchPage.qml:157
 #, kde-format

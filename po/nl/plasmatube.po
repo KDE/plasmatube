@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-19 00:47+0000\n"
-"PO-Revision-Date: 2022-03-12 11:20+0100\n"
+"PO-Revision-Date: 2022-08-19 13:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.04.3\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -71,27 +71,27 @@ msgstr "Instellingen"
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Sorteren op:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Waardering"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Relevantie"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Datum van uploaden"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Aantal keer bekeken"
 
 #: contents/ui/SearchPage.qml:157
 #, kde-format
