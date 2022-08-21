@@ -8,6 +8,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <RCC>
     <qresource prefix="/">
         <file alias="AccountPage.qml">contents/ui/AccountPage.qml</file>
+        <file alias="ChannelPage.qml">contents/ui/ChannelPage.qml</file>
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="SearchPage.qml">contents/ui/SearchPage.qml</file>
         <file alias="SettingsPage.qml">contents/ui/SettingsPage.qml</file>

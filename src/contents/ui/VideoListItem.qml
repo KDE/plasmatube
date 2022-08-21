@@ -16,6 +16,7 @@ Kirigami.AbstractListItem {
     property date length
     property string title
     property string author
+    property string authorId
     property string description
     property int viewCount
     property string publishedText
@@ -79,6 +80,16 @@ Kirigami.AbstractListItem {
                 font.italic: true
                 maximumLineCount: 1
                 elide: Text.ElideRight
+                color: mouseArea.containsMouse ? Kirigami.Theme.highlightColor: Kirigami.Theme.textColor
+                MouseArea {
+                    id: mouseArea
+                    cursorShape: Qt.PointingHandCursor
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: {
+                        pageStack.push("qrc:/ChannelPage.qml", {author, authorId})
+                    }
+                }
             }
             Controls.Label {
                 visible: root.width > 580

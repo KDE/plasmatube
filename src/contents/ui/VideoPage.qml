@@ -112,6 +112,19 @@ Kirigami.ScrollablePage {
 
                     Controls.Label {
                         text: videoModel.video.author
+                        color: mouseArea.containsMouse ? Kirigami.Theme.highlightColor: Kirigami.Theme.textColor
+                        MouseArea {
+                            id: mouseArea
+                            cursorShape: Qt.PointingHandCursor
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onClicked: {
+                                const author = videoModel.video.author
+                                const authorId = videoModel.video.authorId
+                                pageStack.pop()
+                                pageStack.push("qrc:/ChannelPage.qml", {author, authorId})
+                            }
+                        }
                     }
                     Controls.Button {
                         Layout.preferredWidth: subscribeButtonContent.width + Kirigami.Units.largeSpacing * 2
@@ -219,6 +232,7 @@ Kirigami.ScrollablePage {
                     length: model.length
                     title: model.title
                     author: model.author
+                    authorId: model.authorId
                     description: model.description
                     viewCount: model.viewCount
                     publishedText: model.publishedText

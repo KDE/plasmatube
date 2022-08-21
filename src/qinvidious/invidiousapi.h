@@ -63,6 +63,7 @@ public:
     QFuture<VideoListResult> requestFeed();
     QFuture<VideoListResult> requestTop();
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main);
+    QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 0);
     QFuture<SubscriptionsResult> requestSubscriptions();
     QFuture<Result> subscribeToChannel(QStringView channel);
     QFuture<Result> unsubscribeFromChannel(QStringView channel);
@@ -72,18 +73,19 @@ private:
         Search,
         Trending,
         Top,
-        Feed
+        Feed,
+        Channel
     };
 
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
 
-    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QHash<QString, QString>& parameters = {});
+    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString& urlExtension = "", const QHash<QString, QString>& parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
     QUrl logInUrl() const;
     QUrl videoUrl(QStringView videoId) const;
-    QUrl videoListUrl(VideoListType queryType, const QHash<QString, QString> &parameters = {}) const;
+    QUrl videoListUrl(VideoListType queryType, const QString& urlExtension = "", const QHash<QString, QString> &parameters = {}) const;
     QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(QStringView channelId) const;
 

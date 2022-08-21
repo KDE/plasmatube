@@ -143,16 +143,29 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
 void VideoListModel::fetchMore(const QModelIndex &index)
 {
     if (canFetchMore(index)) {
-        m_currentPage++;
-        m_searchParameters.setPage(m_currentPage);
-        auto future = PlasmaTube::instance().api()->requestSearchResults(m_searchParameters);
-        handleQuery(future, Search, false);
+        switch (m_queryType) {
+        case Search:
+        {
+            m_currentPage++;
+            m_searchParameters.setPage(m_currentPage);
+            auto future = PlasmaTube::instance().api()->requestSearchResults(m_searchParameters);
+            handleQuery(future, Search, false);
+            break;
+        }
+        case Channel:
+        {
+            auto future = PlasmaTube::instance().api()->requestChannel(m_channel, ++m_currentPage);
+            handleQuery(future, Channel, false);
+            break;
+        }
+        default: {}
+        }
     }
 }
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
-    return !m_futureWatcher && m_queryType == Search;
+    return !m_futureWatcher && (m_queryType == Search || m_queryType == Channel);
 }
 
 bool VideoListModel::isLoading() const
@@ -175,6 +188,13 @@ void VideoListModel::requestSearchResults(const SearchParameters *searchParamete
     m_searchParameters.fill(*searchParameters);
     m_currentPage = 0;
     handleQuery(PlasmaTube::instance().api()->requestSearchResults(m_searchParameters), Search);
+}
+
+void VideoListModel::requestChannel(const QString &ucid)
+{
+    m_channel = ucid;
+    m_currentPage = 1;
+    handleQuery(PlasmaTube::instance().api()->requestChannel(ucid, m_currentPage), Channel);
 }
 
 void VideoListModel::requestQuery(QueryType type)
@@ -213,6 +233,9 @@ void VideoListModel::refresh()
         switch (m_queryType) {
         case Search:
             requestSearchResults(&m_searchParameters);
+            break;
+        case Channel:
+            requestChannel(m_channel);
             break;
         default:
             requestQuery(m_queryType);

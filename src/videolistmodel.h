@@ -49,6 +49,7 @@ public:
         TrendingMusic,
         TrendingNews,
         RecommendedVideos,
+        Channel
     };
     Q_ENUM(QueryType)
 
@@ -65,6 +66,7 @@ public:
     Q_INVOKABLE bool canFetchMore(const QModelIndex &parent) const override;
 
     Q_INVOKABLE void requestSearchResults(const SearchParameters *searchParameters);
+    Q_INVOKABLE void requestChannel(const QString &ucid);
     Q_INVOKABLE void requestQuery(QueryType type);
     Q_INVOKABLE void refresh();
 
@@ -87,6 +89,7 @@ private:
     QueryType m_queryType = NoQuery;
     qint32 m_currentPage = 0;
     SearchParameters m_searchParameters;
+    QString m_channel;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;
 
     QList<QInvidious::VideoBasicInfo> m_results;

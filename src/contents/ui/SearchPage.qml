@@ -142,6 +142,7 @@ Kirigami.ScrollablePage {
             length: model.length
             title: model.title
             author: model.author
+            authorId: model.authorId
             description: model.description
             viewCount: model.viewCount
             publishedText: model.publishedText

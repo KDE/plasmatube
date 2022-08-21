@@ -19,6 +19,7 @@ constexpr QStringView API_SUBSCRIPTIONS = u"/api/v1/auth/subscriptions";
 constexpr QStringView API_TOP = u"/api/v1/top";
 constexpr QStringView API_TRENDING = u"/api/v1/trending";
 constexpr QStringView API_VIDEOS = u"/api/v1/videos";
+constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
 
 using namespace QInvidious;
 
@@ -108,7 +109,7 @@ QFuture<VideoResult> InvidiousApi::requestVideo(QStringView videoId)
 
 QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
 {
-    return requestVideoList(Search, parameters.toQueryParameters());
+    return requestVideoList(Search, "", parameters.toQueryParameters());
 }
 
 QFuture<VideoListResult> InvidiousApi::requestFeed()
@@ -140,7 +141,15 @@ QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
     case Main:
         break;
     }
-    return requestVideoList(Trending, parameters);
+    return requestVideoList(Trending, "", parameters);
+}
+
+QFuture<VideoListResult> InvidiousApi::requestChannel(QStringView query, qint32 page)
+{
+
+    QHash<QString, QString> parameters;
+    parameters.insert("page", QString::number(page));
+    return requestVideoList(Channel, query.toString(), parameters);
 }
 
 QFuture<SubscriptionsResult> InvidiousApi::requestSubscriptions()
@@ -185,9 +194,9 @@ Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
     return std::pair(QNetworkReply::InternalServerError, tr("Server returned status code ") + QString::number(status));
 }
 
-QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QHash<QString, QString> &parameters)
+QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters)
 {
-    auto url = videoListUrl(queryType, parameters);
+    auto url = videoListUrl(queryType, urlExtension, parameters);
     // Feed requests require to be authenticated
     auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url))
                                      : QNetworkRequest(url);
@@ -254,7 +263,7 @@ QUrl InvidiousApi::videoUrl(QStringView videoId) const
     return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
 }
 
-QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QHash<QString, QString>& parameters) const
+QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString>& parameters) const
 {
     auto urlString = invidiousInstance();
     auto query = genericUrlQuery();
@@ -272,6 +281,15 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QHash<QString, QS
     case Feed:
         urlString.append(API_FEED);
         break;
+    case Channel:
+        urlString.append(API_CHANNELS);
+        break;
+    }
+
+    if (!urlExtension.isEmpty())
+    {
+        urlString.append("/");
+        urlString.append(urlExtension);
     }
 
     for (QHash<QString, QString>::const_iterator parameter = parameters.begin(); parameter != parameters.end(); ++parameter) {
