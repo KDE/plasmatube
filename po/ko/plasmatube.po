@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-19 00:47+0000\n"
+"POT-Creation-Date: 2022-08-22 00:48+0000\n"
 "PO-Revision-Date: 2022-04-16 01:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -51,13 +51,18 @@ msgstr "사용자 이름"
 msgid "Sign in"
 msgstr "로그인"
 
+#: contents/ui/ChannelPage.qml:66
+#, kde-format
+msgid "Loading"
+msgstr ""
+
 #: contents/ui/main.qml:77
 #, kde-format
 msgid "Videos"
 msgstr "비디오"
 
 #: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:157
+#: contents/ui/SearchPage.qml:158
 #, kde-format
 msgid "Search"
 msgstr "검색"
@@ -93,7 +98,7 @@ msgstr ""
 msgid "View Count"
 msgstr ""
 
-#: contents/ui/SearchPage.qml:157
+#: contents/ui/SearchPage.qml:158
 #, kde-format
 msgid "No results"
 msgstr "결과 없음"
