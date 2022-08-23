@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:48+0000\n"
-"PO-Revision-Date: 2022-08-19 18:30+0200\n"
+"PO-Revision-Date: 2022-08-22 09:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -57,7 +57,7 @@ msgstr "Inicia la sessió"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "S'està carregant"
 
 #: contents/ui/main.qml:77
 #, kde-format

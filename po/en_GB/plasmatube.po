@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:48+0000\n"
-"PO-Revision-Date: 2022-04-02 16:53+0100\n"
+"PO-Revision-Date: 2022-08-22 17:17+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.0\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "Sign in"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "Loading"
 
 #: contents/ui/main.qml:77
 #, kde-format
@@ -76,27 +76,27 @@ msgstr "Settings"
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Sort By:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Rating"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Relevance"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Upload Date"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "View Count"
 
 #: contents/ui/SearchPage.qml:158
 #, kde-format
