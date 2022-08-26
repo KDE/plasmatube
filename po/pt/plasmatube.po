@@ -56,7 +56,7 @@ msgstr "Autenticar"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "A carregar"
 
 #: contents/ui/main.qml:77
 #, kde-format
