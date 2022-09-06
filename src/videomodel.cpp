@@ -121,7 +121,7 @@ QString VideoModel::remoteUrl()
         return {};
     }
 
-    QString youtubeDl = QStringLiteral("youtube-dl");
+    QString youtubeDl = QStringLiteral("yt-dlp");
     QStringList arguments;
     arguments << QLatin1String("--dump-json")
               << m_videoId;
@@ -136,7 +136,7 @@ QString VideoModel::remoteUrl()
                  for (const auto &value : formatsArray) {
                     const auto format = value.toObject();
                     const auto formatNote = format["format_note"].toString();
-                    if (formatNote == "tiny") {
+                    if (formatNote == "medium") {
                         m_audioUrl = format["url"].toString();
                     } else {
                         m_formatUrl[formatNote] = format["url"].toString();
