@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasmatube",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
     "command": "plasmatube",
     "tags": ["nightly"],
@@ -19,18 +19,7 @@
     "separate-locales": false,
 
     "modules": [
-        {
-            "name": "youtube-dl",
-            "no-autogen": true,
-            "no-make-install": true,
-            "make-args": ["youtube-dl", "PYTHON=/usr/bin/python3"],
-            "post-install": ["install youtube-dl -D /app/bin/youtube-dl"],
-            "sources": [{
-                "type": "git",
-                "url": "https://github.com/rg3/youtube-dl.git",
-                "branch": "master"
-            }]
-        },
+        "flatpak/python3-yt-dlp.json",
         {
             "name": "plasmatube",
             "buildsystem": "cmake-ninja",
