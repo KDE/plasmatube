@@ -52,7 +52,7 @@ msgstr "Přidat se"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "Načítání"
 
 #: contents/ui/main.qml:77
 #, kde-format
@@ -74,17 +74,17 @@ msgstr "Nastavení"
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Řadit dle:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Hodnocení"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Relevance"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
