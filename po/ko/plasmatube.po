@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:48+0000\n"
-"PO-Revision-Date: 2022-04-16 01:25+0200\n"
+"PO-Revision-Date: 2022-10-03 15:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language-Team: Korean <kde-i18n-doc@kde.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "로그인"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "불러오는 중"
 
 #: contents/ui/main.qml:77
 #, kde-format
@@ -76,27 +76,27 @@ msgstr "설정"
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "정렬 순서:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "별점"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "관련성"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "업로드 날짜"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "조회 수"
 
 #: contents/ui/SearchPage.qml:158
 #, kde-format
