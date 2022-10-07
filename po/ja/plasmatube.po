@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmatube\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-22 00:48+0000\n"
+"PO-Revision-Date: 2021-06-07 23:33-0700\n"
+"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: contents/ui/AccountPage.qml:21
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr ""
+
+#: contents/ui/AccountPage.qml:40
+#, kde-format
+msgid "Currently logged in as %1."
+msgstr ""
+
+#: contents/ui/AccountPage.qml:49
+#, kde-format
+msgid "Log out"
+msgstr ""
+
+#: contents/ui/AccountPage.qml:59
+#, kde-format
+msgid ""
+"Please visit the website to register with an invidious instance.\n"
+"There is currently no API for registering."
+msgstr ""
+
+#: contents/ui/AccountPage.qml:76
+#, kde-format
+msgid "Username"
+msgstr ""
+
+#: contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr ""
+
+#: contents/ui/ChannelPage.qml:66
+#, kde-format
+msgid "Loading"
+msgstr ""
+
+#: contents/ui/main.qml:77
+#, kde-format
+msgid "Videos"
+msgstr ""
+
+#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:158
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
+#: contents/ui/VideoControls.qml:167
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:70
+#, kde-format
+msgid "Sort By:"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:74
+#, kde-format
+msgid "Rating"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:85
+#, kde-format
+msgid "Relevance"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:97
+#, kde-format
+msgid "Upload Date"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:108
+#, kde-format
+msgid "View Count"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:158
+#, kde-format
+msgid "No results"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:18
+#, kde-format
+msgid "Invidious"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:22
+#, kde-format
+msgid "Instance"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:34
+#, kde-format
+msgid "Account"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:38
+#, kde-format
+msgid "Open Account Settings"
+msgstr ""
+
+#: contents/ui/VideoData.qml:55
+#, kde-format
+msgid "Fullscreen"
+msgstr ""
+
+#: contents/ui/VideoData.qml:55
+#, kde-format
+msgid "Restore"
+msgstr ""
