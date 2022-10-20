@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:48+0000\n"
-"PO-Revision-Date: 2022-08-19 15:15-0300\n"
+"PO-Revision-Date: 2022-10-19 15:35-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -55,7 +55,7 @@ msgstr "Entrar"
 #: contents/ui/ChannelPage.qml:66
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "Carregando"
 
 #: contents/ui/main.qml:77
 #, kde-format
