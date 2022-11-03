@@ -20,6 +20,6 @@ add_executable(plasmatube ${plasmatube_SRCS})
 kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc GENERATE_MOC)
 
 target_include_directories(plasmatube PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(plasmatube qinvidious Qt5::Core Qt5::Qml Qt5::Quick Qt5::Svg KF5::ConfigCore KF5::ConfigGui KF5::I18n)
+target_link_libraries(plasmatube qinvidious Qt::Core Qt::Qml Qt::Quick Qt::Svg Qt::Widgets KF5::ConfigCore KF5::ConfigGui KF5::I18n)
 
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
