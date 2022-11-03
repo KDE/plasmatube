@@ -12,11 +12,10 @@ set(plasmatube_SRCS
     subscriptioncontroller.cpp
     videomodel.cpp
     videolistmodel.cpp
+    resources.qrc
 )
 
-qt5_add_resources(RESOURCES resources.qrc)
-
-add_executable(plasmatube ${plasmatube_SRCS} ${RESOURCES})
+add_executable(plasmatube ${plasmatube_SRCS})
 
 kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc GENERATE_MOC)
 
