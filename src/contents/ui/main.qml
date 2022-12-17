@@ -9,6 +9,8 @@ import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.plasmatube 1.0
+import "videoplayer"
+import "components"
 
 Kirigami.ApplicationWindow {
     id: root
@@ -19,29 +21,6 @@ Kirigami.ApplicationWindow {
 
     readonly property real wideScreenThreshold: Kirigami.Units.gridUnit * 40
     readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
-    onIsWidescreenChanged: changeNav(isWidescreen);
-
-    Component.onCompleted: {
-        changeNav(isWidescreen);
-    }
-    
-    // switch between bottom toolbar and sidebar
-    function changeNav(toWidescreen) {
-        if (toWidescreen) {
-            if (footer !== null) {
-                footer.destroy();
-                footer = null;
-            }
-            sidebarLoader.active = true;
-            globalDrawer = sidebarLoader.item;
-        } else {
-            sidebarLoader.active = false;
-            globalDrawer = null;
-
-            let bottomToolbar = Qt.createComponent("qrc:/components/BottomNavBar.qml")
-            footer = bottomToolbar.createObject(root);
-        }
-    }
 
     function getPage(name) {
         switch (name) {
@@ -52,15 +31,57 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    function switchVideo(video) {
+        videoPlayer.switchVideo(video);
+    }
+
     Loader {
         id: sidebarLoader
         source: "qrc:/components/Sidebar.qml"
-        active: false
+        active: root.isWidescreen
     }
 
     Kirigami.PagePool {
         id: pagePool
     }
 
+    globalDrawer: sidebarLoader.item
     contextDrawer: Kirigami.ContextDrawer {}
+
+    footer: Loader {
+        id: footerLoader
+        visible: active
+        active: !root.isWidescreen
+        sourceComponent: BottomNavBar {
+            shadow: !videoPlayer.isVideoLoaded
+            opacity: (videoPlayer.contentY === 0) ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation { duration: Kirigami.Units.shortDuration }
+            }
+        }
+    }
+
+    // FloatingVideoPreview {
+    //     id: minimizedVideo
+    //     z: 998
+    //     parent: Controls.Overlay.overlay
+    //     x: root.width - width - Kirigami.Units.gridUnit
+    //     y: root.height - height - Kirigami.Units.gridUnit
+    //     width: Kirigami.Units.gridUnit * 9
+    //     height: Kirigami.Units.gridUnit * 6
+    //     previewSource: videoPlayer.previewSource
+    //
+    //     onClicked: videoPlayer.open()
+    // }
+
+    // create space at the bottom to show miniplayer without it hiding stuff underneath
+    pageStack.anchors.bottomMargin: videoPlayer.isVideoLoaded ? videoPlayer.miniPlayerHeight + 1 : 0
+
+    VideoPlayerParent {
+        id: videoPlayer
+        anchors.fill: parent
+        contentToPlayerSpacing: footerLoader.active ? footerLoader.height + 1 : 0
+        onContentToPlayerSpacingChanged: console.log(footerLoader.active + ' ' + footerLoader.height)
+        z: contentY === 0 ? -1 : 999
+    }
 }

@@ -6,14 +6,16 @@
 import QtQuick 2.10
 import QtQuick.Layouts 1.10
 import QtQuick.Controls 2.10 as QQC2
+
 import QtMultimedia 5.12 as Multimedia
+
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 
 QQC2.Control {
     required property var video
     required property var audio
-    anchors.fill: parent
+
     Rectangle {
         height: parent.children[1].height * 3
         anchors {

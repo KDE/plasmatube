@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
+// SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -7,16 +8,42 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
 import QtMultimedia 5.15
+import QtGraphicalEffects 1.15
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
-import "utils.js" as Utils
+import "../utils.js" as Utils
+
+import "../"
 
 Kirigami.ScrollablePage {
     id: root
-    property string vid
 
-    title: videoModel.video.title
+    property string vid: ""
+    property var previewSource: renderer
+
+    readonly property string videoName: videoModel.video.title
+    readonly property string channelName: videoModel.video.author
+
+    readonly property bool isPlaying: renderer.playbackState === MediaPlayer.PlayingState
+
+    function stop() {
+        vid = "";
+        renderer.pause();
+        playMusic.pause();
+    }
+
+    function togglePlaying() {
+        if (renderer.playbackState !== MediaPlayer.PlayingState) {
+            renderer.play();
+            playMusic.play();
+        } else {
+            renderer.pause();
+            playMusic.pause();
+        }
+    }
+
+    title: videoName
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -24,6 +51,8 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     ColumnLayout {
+        spacing: 0
+
         VideoModel {
             id: videoModel
             videoId: vid
@@ -35,19 +64,25 @@ Kirigami.ScrollablePage {
                 applicationWindow().showPassiveNotification(errorText)
             }
         }
-        Video {
-            id: renderer
-            property var video: videoModel
+
+        Item {
+            id: videoContainer
             Layout.fillWidth: true
             Layout.preferredHeight: width / 16.0 * 9.0
             Layout.maximumHeight: root.height
-            source: videoModel.remoteUrl
-            muted: true
 
-            Image {
+            Video {
+                id: renderer
                 anchors.fill: parent
-                visible: renderer.playbackState === MediaPlayer.StoppedState
-                source: videoModel.video.thumbnailUrl("high")
+                property var video: videoModel
+                source: videoModel.remoteUrl
+                muted: true
+
+                Image {
+                    anchors.fill: parent
+                    visible: renderer.playbackState === MediaPlayer.StoppedState
+                    source: videoModel.video.thumbnailUrl("high")
+                }
             }
 
             VideoData {
@@ -55,22 +90,10 @@ Kirigami.ScrollablePage {
             }
 
             VideoControls {
+                anchors.fill: parent
                 audio: playMusic
                 video: renderer
             }
-
-            /*MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    if (renderer.playbackState !== MediaPlayer.PlayingState) {
-                        renderer.play()
-                        playMusic.play();
-                    } else {
-                        renderer.pause()
-                        playMusic.pause()
-                    }
-                }
-            }*/
 
             Audio {
                 id: playMusic
@@ -81,6 +104,7 @@ Kirigami.ScrollablePage {
 
         // extra layout to make all details invisible while loading
         ColumnLayout {
+            Layout.topMargin: Kirigami.Units.gridUnit
             Layout.leftMargin: 12
             Layout.rightMargin: 12
             Layout.fillWidth: true
@@ -219,6 +243,7 @@ Kirigami.ScrollablePage {
         }
 
         ColumnLayout {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             spacing: 0
 
