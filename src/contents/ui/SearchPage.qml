@@ -148,7 +148,7 @@ Kirigami.ScrollablePage {
             publishedText: model.publishedText
 
             onClicked: {
-                pageStack.push(videoPageComponent, {"vid": vid})
+                pageStack.push("qrc:/VideoPage.qml", {"vid": vid})
             }
         }
         

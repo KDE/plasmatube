@@ -12,114 +12,55 @@ import org.kde.plasmatube 1.0
 
 Kirigami.ApplicationWindow {
     id: root
-    pageStack.initialPage: trendingPageComponent
+    pageStack.initialPage: getPage("TrendingPage")
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
 
-    contextDrawer: Kirigami.ContextDrawer {}
+    readonly property real wideScreenThreshold: Kirigami.Units.gridUnit * 40
+    readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
+    onIsWidescreenChanged: changeNav(isWidescreen);
+
+    Component.onCompleted: {
+        changeNav(isWidescreen);
+    }
     
-    footer: Kirigami.NavigationTabBar {
-        id: navbar
-        property bool shouldShow: pageStack.currentIndex === 0
-        onShouldShowChanged: {
-            if (shouldShow) {
-                hideAnim.stop();
-                showAnim.restart();
-            } else {
-                showAnim.stop();
-                hideAnim.restart();
+    // switch between bottom toolbar and sidebar
+    function changeNav(toWidescreen) {
+        if (toWidescreen) {
+            if (footer !== null) {
+                footer.destroy();
+                footer = null;
             }
+            sidebarLoader.active = true;
+            globalDrawer = sidebarLoader.item;
+        } else {
+            sidebarLoader.active = false;
+            globalDrawer = null;
+
+            let bottomToolbar = Qt.createComponent("qrc:/components/BottomNavBar.qml")
+            footer = bottomToolbar.createObject(root);
         }
-        
-        visible: height !== 0
-        
-        // animate showing and hiding of navbar
-        ParallelAnimation {
-            id: showAnim
-            NumberAnimation {
-                target: navbar
-                property: "height"
-                to: navbar.implicitHeight
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-            NumberAnimation {
-                target: navbar
-                property: "opacity"
-                to: 1
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-        
-        SequentialAnimation {
-            id: hideAnim
-            NumberAnimation {
-                target: navbar
-                property: "opacity"
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-            NumberAnimation {
-                target: navbar
-                property: "height"
-                to: 0
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-        
-        actions: [
-            Kirigami.Action {
-                iconName: "videoclip-amarok"
-                text: i18n("Videos")
-                checked: true // initial page that opens
-                onTriggered: {
-                    while (applicationWindow().pageStack.depth > 0) {
-                        applicationWindow().pageStack.pop();
-                    }
-                    applicationWindow().pageStack.push(trendingPageComponent);
-                }
-            },
-            Kirigami.Action {
-                iconName: "search"
-                text: i18n("Search")
-                onTriggered: {
-                    while (applicationWindow().pageStack.depth > 0) {
-                        applicationWindow().pageStack.pop();
-                    }
-                    applicationWindow().pageStack.push(searchPageComponent);
-                }
-            },
-            Kirigami.Action {
-                iconName: "settings-configure"
-                text: i18n("Settings")
-                onTriggered: {
-                    while (applicationWindow().pageStack.depth > 0) {
-                        applicationWindow().pageStack.pop();
-                    }
-                    applicationWindow().pageStack.push(settingsPageComponent);
-                }
-            }
-        ]
     }
 
-    Component {
-        id: trendingPageComponent
-        TrendingPage {}
+    function getPage(name) {
+        switch (name) {
+            case "TrendingPage": return pagePool.loadPage("qrc:/TrendingPage.qml");
+            case "SearchPage": return pagePool.loadPage("qrc:/SearchPage.qml");
+            case "VideoPage": return pagePool.loadPage("qrc:/VideoPage.qml");
+            case "SettingsPage": return pagePool.loadPage("qrc:/SettingsPage.qml");
+        }
     }
-    Component {
-        id: searchPageComponent
-        SearchPage {}
+
+    Loader {
+        id: sidebarLoader
+        source: "qrc:/components/Sidebar.qml"
+        active: false
     }
-    Component {
-        id: videoPageComponent
-        VideoPage {}
+
+    Kirigami.PagePool {
+        id: pagePool
     }
-    Component {
-        id: settingsPageComponent
-        SettingsPage {}
-    }
+
+    contextDrawer: Kirigami.ContextDrawer {}
 }

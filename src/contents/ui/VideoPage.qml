@@ -157,7 +157,7 @@ Kirigami.ScrollablePage {
                                 subscriptionController.toggleSubscription()
                             } else if (!PlasmaTube.isLoggedIn) {
                                 showPassiveNotification(qsTr("Please log in to subscribe to channels."));
-                                pageStack.layers.push(loginPageComponent);
+                                pageStack.layers.push("qrc:/AccountPage.qml");
                             }
                         }
                     }

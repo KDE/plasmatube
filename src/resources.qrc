@@ -19,6 +19,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="VideoControls.qml">contents/ui/VideoControls.qml</file>
         <file alias="TabIndicator.qml">contents/ui/TabIndicator.qml</file>
         <file alias="VideoListAction.qml">contents/ui/VideoListAction.qml</file>
+        <file alias="components/Sidebar.qml">contents/ui/components/Sidebar.qml</file>
+        <file alias="components/BottomNavBar.qml">contents/ui/components/BottomNavBar.qml</file>
         <file alias="utils.js">contents/ui/utils.js</file>
     </qresource>
 </RCC>
