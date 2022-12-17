@@ -27,6 +27,7 @@ Kirigami.OverlayDrawer {
             }
             applicationWindow().pageStack.push(page, 0);
         }
+        applicationWindow().closePlayer();
     }
 
     contentItem: ColumnLayout {

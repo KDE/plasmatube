@@ -71,6 +71,7 @@ Kirigami.NavigationTabBar {
                     applicationWindow().pageStack.pop();
                 }
                 applicationWindow().pageStack.push(applicationWindow().getPage("TrendingPage"));
+                applicationWindow().closePlayer();
             }
         },
         Kirigami.Action {
@@ -81,6 +82,7 @@ Kirigami.NavigationTabBar {
                     applicationWindow().pageStack.pop();
                 }
                 applicationWindow().pageStack.push(applicationWindow().getPage("SearchPage"));
+                applicationWindow().closePlayer();
             }
         },
         Kirigami.Action {
@@ -91,6 +93,7 @@ Kirigami.NavigationTabBar {
                     applicationWindow().pageStack.pop();
                 }
                 applicationWindow().pageStack.push(applicationWindow().getPage("SettingsPage"));
+                applicationWindow().closePlayer();
             }
         }
     ]

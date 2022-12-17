@@ -35,6 +35,14 @@ Kirigami.ApplicationWindow {
         videoPlayer.switchVideo(video);
     }
 
+    function openPlayer() {
+        videoPlayer.open();
+    }
+
+    function closePlayer() {
+        videoPlayer.close();
+    }
+
     Loader {
         id: sidebarLoader
         source: "qrc:/components/Sidebar.qml"
@@ -80,7 +88,7 @@ Kirigami.ApplicationWindow {
     VideoPlayerParent {
         id: videoPlayer
         anchors.fill: parent
-        contentToPlayerSpacing: footerLoader.active ? footerLoader.height + 1 : 0
+        contentToPlayerSpacing: footerLoader.active ? footerLoader.height : 0
         onContentToPlayerSpacingChanged: console.log(footerLoader.active + ' ' + footerLoader.height)
         z: contentY === 0 ? -1 : 999
     }

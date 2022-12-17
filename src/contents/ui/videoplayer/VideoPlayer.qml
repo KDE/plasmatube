@@ -6,7 +6,7 @@
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import QtMultimedia 5.15
 import QtGraphicalEffects 1.15
 
@@ -27,6 +27,8 @@ Kirigami.ScrollablePage {
 
     readonly property bool isPlaying: renderer.playbackState === MediaPlayer.PlayingState
 
+    signal requestClosePlayer()
+
     function stop() {
         vid = "";
         renderer.pause();
@@ -41,6 +43,14 @@ Kirigami.ScrollablePage {
             renderer.pause();
             playMusic.pause();
         }
+    }
+
+    function goToChannel() {
+        const author = videoModel.video.author;
+        const authorId = videoModel.video.authorId;
+        pageStack.pop();
+        pageStack.push("qrc:/ChannelPage.qml", {author, authorId});
+        root.requestClosePlayer();
     }
 
     title: videoName
@@ -71,6 +81,9 @@ Kirigami.ScrollablePage {
             Layout.preferredHeight: width / 16.0 * 9.0
             Layout.maximumHeight: root.height
 
+            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+            Kirigami.Theme.inherit: false
+
             Video {
                 id: renderer
                 anchors.fill: parent
@@ -99,15 +112,33 @@ Kirigami.ScrollablePage {
                 id: playMusic
                 source: videoModel.audioUrl
             }
+
+            Controls.ToolButton {
+                id: closeButton
+                anchors.top: parent.top
+                anchors.topMargin: Kirigami.Units.largeSpacing
+                anchors.left: parent.left
+                anchors.leftMargin: Kirigami.Units.largeSpacing
+                icon.name: "go-previous-view"
+                icon.width: Kirigami.Units.iconSizes.small
+                icon.height: Kirigami.Units.iconSizes.small
+
+                width: Kirigami.Units.gridUnit * 2
+                height: Kirigami.Units.gridUnit * 2
+                onClicked: root.requestClosePlayer();
+
+                TabIndicator {}
+            }
         }
 
 
         // extra layout to make all details invisible while loading
         ColumnLayout {
             Layout.topMargin: Kirigami.Units.gridUnit
-            Layout.leftMargin: 12
-            Layout.rightMargin: 12
+            Layout.leftMargin: Kirigami.Units.gridUnit
+            Layout.rightMargin: Kirigami.Units.gridUnit
             Layout.fillWidth: true
+            spacing: 0
             visible: !videoModel.isLoading && videoModel.video.isLoaded
             enabled: !videoModel.isLoading && videoModel.video.isLoaded
 
@@ -116,19 +147,32 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 text: videoModel.video.title
                 wrapMode: Text.WordWrap
+                font.weight: Font.Bold
             }
 
             // author info and like statistics
             RowLayout {
+                Layout.topMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
+                spacing: Kirigami.Units.largeSpacing
+
                 Image {
                     Layout.preferredHeight: 50
                     Layout.preferredWidth: 50
                     fillMode: Image.PreserveAspectFit
                     source: videoModel.video.authorThumbnail(100)
+
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: root.goToChannel()
+                    }
                 }
 
                 ColumnLayout {
+                    id: column
+                    spacing: 0
+
                     SubscriptionController {
                         id: subscriptionController
                         channelId: videoModel.video.authorId
@@ -136,37 +180,48 @@ Kirigami.ScrollablePage {
 
                     Controls.Label {
                         text: videoModel.video.author
-                        color: mouseArea.containsMouse ? Kirigami.Theme.highlightColor: Kirigami.Theme.textColor
+                        font.weight: Font.Bold
+
                         MouseArea {
-                            id: mouseArea
-                            cursorShape: Qt.PointingHandCursor
                             anchors.fill: parent
-                            hoverEnabled: true
-                            onClicked: {
-                                const author = videoModel.video.author
-                                const authorId = videoModel.video.authorId
-                                pageStack.pop()
-                                pageStack.push("qrc:/ChannelPage.qml", {author, authorId})
-                            }
+                            cursorShape: Qt.PointingHandCursor
+                            onClicked: root.goToChannel()
                         }
                     }
-                    Controls.Button {
-                        Layout.preferredWidth: subscribeButtonContent.width + Kirigami.Units.largeSpacing * 2
-                        Kirigami.Theme.backgroundColor: subscriptionController.isSubscribed ? undefined : "red"
-                        Kirigami.Theme.textColor: subscriptionController.isSubscribed ? undefined : "white"
 
-                        RowLayout {
+                    Controls.Button {
+                        id: subscribeButton
+                        Layout.topMargin: Kirigami.Units.smallSpacing
+
+                        background: Rectangle {
+                            color: subscriptionController.isSubscribed ? "grey" : "red"
+                            radius: Kirigami.Units.smallSpacing
+
+                            Rectangle {
+                                anchors.fill: parent
+                                radius: Kirigami.Units.smallSpacing
+                                color: "black"
+                                opacity: subscribeButton.pressed ? 0.6 : subscribeButton.hovered ? 0.3 : 0
+                            }
+                        }
+
+                        leftPadding: Kirigami.Units.largeSpacing
+                        rightPadding: Kirigami.Units.largeSpacing
+                        bottomPadding: Kirigami.Units.largeSpacing
+                        topPadding: Kirigami.Units.largeSpacing
+
+                        contentItem: RowLayout {
                             id: subscribeButtonContent
-                            anchors.centerIn: parent
                             spacing: 0
 
                             Controls.BusyIndicator {
                                 visible: subscriptionController.isLoading
-                                Layout.preferredHeight: 34
-                                Layout.preferredWidth: 34
+                                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                                Layout.preferredWidth: Kirigami.Units.gridUnit * 2
                             }
 
                             Controls.Label {
+                                color: "white"
                                 text: {
                                     if (subscriptionController.isSubscribed) {
                                         return "Unsubscribe (" + videoModel.video.subCountText + ")"
@@ -180,6 +235,7 @@ Kirigami.ScrollablePage {
                             if (subscriptionController.canToggleSubscription()) {
                                 subscriptionController.toggleSubscription()
                             } else if (!PlasmaTube.isLoggedIn) {
+                                root.requestClosePlayer();
                                 showPassiveNotification(qsTr("Please log in to subscribe to channels."));
                                 pageStack.layers.push("qrc:/AccountPage.qml");
                             }
@@ -190,47 +246,31 @@ Kirigami.ScrollablePage {
                 Item {
                     Layout.fillWidth: true
                 }
+            }
 
-                ColumnLayout {
-                    spacing: 0
-                    Controls.Label {
-                        Layout.alignment: Qt.AlignHCenter
-                        text: Utils.formatCount(videoModel.video.viewCount) + " views"
-                    }
-                    Controls.ProgressBar {
-                        Layout.preferredWidth: 150
-                        value: videoModel.video.rating / 5.0
-                    }
-                    RowLayout {
-                        Layout.alignment: Qt.AlignHCenter
-                        Kirigami.Icon {
-                            source: "draw-arrow-up"
-                            width: 22
-                            height: 22
-                        }
-                        Controls.Label {
-                            text: Utils.formatCount(videoModel.video.likeCount)
-                        }
+            RowLayout {
+                Layout.topMargin: Kirigami.Units.gridUnit
+                spacing: Kirigami.Units.largeSpacing
 
-                        // placeholder
-                        Item {
-                            width: 5
-                        }
+                Kirigami.Chip {
+                    closable: false
+                    labelItem.color: Kirigami.Theme.disabledTextColor
+                    labelItem.font.weight: Font.Bold
+                    text: i18n("%1 views", Utils.formatCount(videoModel.video.viewCount))
+                }
 
-                        Kirigami.Icon {
-                            source: "draw-arrow-down"
-                            width: 22
-                            height: 22
-                        }
-                        Controls.Label {
-                            text: Utils.formatCount(videoModel.video.dislikeCount)
-                        }
-                    }
+                Kirigami.Chip {
+                    closable: false
+                    labelItem.color: Kirigami.Theme.disabledTextColor
+                    labelItem.font.weight: Font.Bold
+                    text: i18n("%1 Likes", Utils.formatCount(videoModel.video.likeCount))
                 }
             }
 
             // video description
             Controls.Label {
+                Layout.topMargin: Kirigami.Units.gridUnit
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
                 text: videoModel.video.description
                 wrapMode: Text.WordWrap

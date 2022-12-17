@@ -35,7 +35,7 @@ void VideoModel::fetch()
     // clean up
     m_video->deleteLater();
     m_video = new VideoItem(this);
-    emit videoChanged();
+    Q_EMIT videoChanged();
 
     auto future = PlasmaTube::instance().api()->requestVideo(m_videoId);
 
@@ -46,18 +46,18 @@ void VideoModel::fetch()
         if (const auto video = std::get_if<QInvidious::Video>(&result)) {
             m_video->deleteLater();
             m_video = new VideoItem(*video, this);
-            emit videoChanged();
+            Q_EMIT videoChanged();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
             qDebug() << "VideoModel::fetch(): Error:" << error->second << error->first;
-            emit errorOccurred(error->second);
+            Q_EMIT errorOccurred(error->second);
         }
 
         m_watcher->deleteLater();
         m_watcher = nullptr;
-        emit isLoadingChanged();
+        Q_EMIT isLoadingChanged();
     });
     m_watcher->setFuture(future);
-    emit isLoadingChanged();
+    Q_EMIT isLoadingChanged();
 }
 
 bool VideoModel::isLoading() const

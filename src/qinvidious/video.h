@@ -77,6 +77,7 @@ public:
 
 private:
     QStringList m_keywords;
+    QString m_viewCountText;
     qint32 m_likeCount;
     qint32 m_dislikeCount;
     QStringList m_allowedRegions;

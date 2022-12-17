@@ -13,11 +13,5 @@ Rectangle {
         width: parent.focus ? 3 : 0
     }
     Component.onCompleted: parent.activeFocusOnTab = true
-    Connections {
-        target: parent
-        function onFocusChanged() {
-            showControls = true
-        }
-    }
 }
 

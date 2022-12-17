@@ -5,7 +5,6 @@
 
 import QtQuick 2.10
 import QtQuick.Layouts 1.10
-import QtQuick.Window 2.15
 import QtQuick.Controls 2.10 as QQC2
 import org.kde.kirigami 2.10 as Kirigami
 
@@ -47,20 +46,6 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: title // todo also handle metadata title
                 level: 3
-            }
-            QQC2.ToolButton {
-                id: fullscreen
-                anchors.right: parent.right
-                text: applicationWindow().visibility != Window.FullScreen ?
-                      i18n("Fullscreen") : i18n("Restore")
-
-                icon.name: "view-fullscreen"
-
-                checkable: true
-                checked: false
-                //onToggled: //Hologram.Video.fullScreen = !Hologram.Video.fullScreen
-
-                TabIndicator {}
             }
         }
     }

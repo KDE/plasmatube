@@ -149,6 +149,8 @@ Flickable {
             id: videoPlayer
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            onRequestClosePlayer: root.close();
         }
     }
 }

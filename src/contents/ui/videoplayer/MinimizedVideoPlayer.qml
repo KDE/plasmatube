@@ -37,7 +37,7 @@ Rectangle {
             Layout.fillWidth: true
 
             // press feedback
-            color: (trackClick.pressed || trackClick.containsMouse) ? Qt.rgba(0, 0, 0, 0.05) : "transparent"
+            color: (trackClick.pressed || trackClick.containsMouse) ? Qt.rgba(0, 0, 0, 0.1) : "transparent"
 
             RowLayout {
                 spacing: Kirigami.Units.largeSpacing
@@ -87,8 +87,8 @@ Rectangle {
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignVCenter
             icon.name: root.isPlaying ? "media-playback-pause" : "media-playback-start"
-            icon.height: Kirigami.Units.iconSizes.smallMedium
-            icon.width: Kirigami.Units.iconSizes.smallMedium
+            icon.height: Kirigami.Units.iconSizes.small
+            icon.width: Kirigami.Units.iconSizes.small
             onClicked: root.toggleRequested()
         }
 
@@ -99,8 +99,8 @@ Rectangle {
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignVCenter
             icon.name: "media-playback-stop"
-            icon.height: Kirigami.Units.iconSizes.smallMedium
-            icon.width: Kirigami.Units.iconSizes.smallMedium
+            icon.height: Kirigami.Units.iconSizes.small
+            icon.width: Kirigami.Units.iconSizes.small
             onClicked: root.stopRequested()
         }
     }
