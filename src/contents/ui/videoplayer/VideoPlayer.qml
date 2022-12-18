@@ -61,155 +61,144 @@ Kirigami.ScrollablePage {
     bottomPadding: 0
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    ColumnLayout {
-        id: parentColumn
-        spacing: 0
+    readonly property bool widescreen: root.width > 1200
 
-        VideoModel {
-            id: videoModel
-            videoId: vid
-            onVideoIdChanged: {
-                // is also executed in initial set
-                videoModel.fetch()
-            }
-            onErrorOccurred: (errorText) => {
-                applicationWindow().showPassiveNotification(errorText)
-            }
-        }
+    GridLayout {
+        columns: root.widescreen ? 2 : 1
+        rowSpacing: 0
+        columnSpacing: 0
 
-        MouseArea {
-            id: videoContainer
-            Layout.fillWidth: true
-            Layout.preferredHeight: width / 16.0 * 9.0
-            Layout.maximumHeight: root.height
-
-            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-            Kirigami.Theme.inherit: false
-
-            property bool showControls: false
-            onClicked: {
-                if (showControls) {
-                    controlTimer.stop();
-                    videoContainer.showControls = false;
-                } else {
-                    showControls = true;
-                    controlTimer.restart();
-                }
-            }
-
-            hoverEnabled: !Kirigami.Settings.tabletMode
-            onContainsMouseChanged: {
-                if (!pressed && hoverEnabled) {
-                    videoContainer.showControls = containsMouse;
-                }
-            }
-
-            Timer {
-                id: controlTimer
-                interval: 2000
-                onTriggered: videoContainer.showControls = false
-            }
-
-            MpvObject {
-                id: renderer
-                anchors.fill: parent
-
-                Image {
-                    anchors.fill: parent
-                    visible: renderer.playbackState === MediaPlayer.StoppedState
-                    source: videoModel.video.thumbnailUrl("high")
-                }
-            }
-
-            VideoData {
-                title: videoModel.video.title
-
-                visible: opacity > 0
-                opacity: videoContainer.showControls ? 1 : 0
-                Behavior on opacity {
-                    NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
-                }
-            }
-
-            VideoControls {
-                anchors.fill: parent
-                video: renderer
-
-                visible: opacity > 0
-                opacity: videoContainer.showControls ? 1 : 0
-                Behavior on opacity {
-                    NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
-                }
-            }
-
-            Controls.ToolButton {
-                id: closeButton
-                anchors.top: parent.top
-                anchors.topMargin: Kirigami.Units.largeSpacing
-                anchors.left: parent.left
-                anchors.leftMargin: Kirigami.Units.largeSpacing
-                icon.name: "go-previous-view"
-                icon.width: Kirigami.Units.iconSizes.small
-                icon.height: Kirigami.Units.iconSizes.small
-
-                width: Kirigami.Units.gridUnit * 2
-                height: Kirigami.Units.gridUnit * 2
-                onClicked: root.requestClosePlayer();
-
-                TabIndicator {}
-            }
-        }
-
-
-        // extra layout to make all details invisible while loading
         ColumnLayout {
-            Layout.topMargin: Kirigami.Units.gridUnit
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            Layout.fillWidth: true
+            id: parentColumn
             spacing: 0
-            visible: !videoModel.isLoading && videoModel.video.isLoaded
-            enabled: !videoModel.isLoading && videoModel.video.isLoaded
+            Layout.alignment: Qt.AlignTop
+            Layout.fillWidth: true
 
-            // title
-            Kirigami.Heading {
-                Layout.fillWidth: true
-                text: videoModel.video.title
-                wrapMode: Text.Wrap
-                font.weight: Font.Bold
+            VideoModel {
+                id: videoModel
+                videoId: vid
+                onVideoIdChanged: {
+                    // is also executed in initial set
+                    videoModel.fetch()
+                }
+                onErrorOccurred: (errorText) => {
+                    applicationWindow().showPassiveNotification(errorText)
+                }
             }
 
-            // author info and like statistics
-            RowLayout {
-                Layout.topMargin: Kirigami.Units.gridUnit
+            MouseArea {
+                id: videoContainer
                 Layout.fillWidth: true
-                spacing: Kirigami.Units.largeSpacing
+                Layout.preferredHeight: width / 16.0 * 9.0
+                Layout.maximumHeight: root.height
 
-                Image {
-                    Layout.preferredHeight: 50
-                    Layout.preferredWidth: 50
-                    fillMode: Image.PreserveAspectFit
-                    source: videoModel.video.authorThumbnail(100)
+                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.inherit: false
 
-                    MouseArea {
-                        anchors.fill: parent
-                        cursorShape: Qt.PointingHandCursor
-                        onClicked: root.goToChannel()
+                property bool showControls: false
+                onClicked: {
+                    if (showControls) {
+                        controlTimer.stop();
+                        videoContainer.showControls = false;
+                    } else {
+                        showControls = true;
+                        controlTimer.restart();
                     }
                 }
 
-                ColumnLayout {
-                    id: column
-                    spacing: 0
-
-                    SubscriptionController {
-                        id: subscriptionController
-                        channelId: videoModel.video.authorId
+                hoverEnabled: !Kirigami.Settings.tabletMode
+                onContainsMouseChanged: {
+                    if (!pressed && hoverEnabled) {
+                        videoContainer.showControls = containsMouse;
                     }
+                }
 
-                    Controls.Label {
-                        text: videoModel.video.author
-                        font.weight: Font.Bold
+                Timer {
+                    id: controlTimer
+                    interval: 2000
+                    onTriggered: videoContainer.showControls = false
+                }
+
+                MpvObject {
+                    id: renderer
+                    anchors.fill: parent
+
+                    Image {
+                        anchors.fill: parent
+                        visible: renderer.playbackState === MediaPlayer.StoppedState
+                        source: videoModel.video.thumbnailUrl("high")
+                    }
+                }
+
+                VideoData {
+                    title: videoModel.video.title
+
+                    visible: opacity > 0
+                    opacity: videoContainer.showControls ? 1 : 0
+                    Behavior on opacity {
+                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                    }
+                }
+
+                VideoControls {
+                    anchors.fill: parent
+                    video: renderer
+
+                    visible: opacity > 0
+                    opacity: videoContainer.showControls ? 1 : 0
+                    Behavior on opacity {
+                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                    }
+                }
+
+                Controls.ToolButton {
+                    id: closeButton
+                    anchors.top: parent.top
+                    anchors.topMargin: Kirigami.Units.largeSpacing
+                    anchors.left: parent.left
+                    anchors.leftMargin: Kirigami.Units.largeSpacing
+                    icon.name: "go-previous-view"
+                    icon.width: Kirigami.Units.iconSizes.small
+                    icon.height: Kirigami.Units.iconSizes.small
+
+                    width: Kirigami.Units.gridUnit * 2
+                    height: Kirigami.Units.gridUnit * 2
+                    onClicked: root.requestClosePlayer();
+
+                    TabIndicator {}
+                }
+            }
+
+
+            // extra layout to make all details invisible while loading
+            ColumnLayout {
+                Layout.topMargin: Kirigami.Units.gridUnit
+                Layout.leftMargin: Kirigami.Units.gridUnit
+                Layout.rightMargin: Kirigami.Units.gridUnit
+                Layout.fillWidth: true
+                spacing: 0
+                visible: !videoModel.isLoading && videoModel.video.isLoaded
+                enabled: !videoModel.isLoading && videoModel.video.isLoaded
+
+                // title
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    text: videoModel.video.title
+                    wrapMode: Text.Wrap
+                    font.weight: Font.Bold
+                }
+
+                // author info and like statistics
+                RowLayout {
+                    Layout.topMargin: Kirigami.Units.gridUnit
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.largeSpacing
+
+                    Image {
+                        Layout.preferredHeight: 50
+                        Layout.preferredWidth: 50
+                        fillMode: Image.PreserveAspectFit
+                        source: videoModel.video.authorThumbnail(100)
 
                         MouseArea {
                             anchors.fill: parent
@@ -218,102 +207,124 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    Controls.Button {
-                        id: subscribeButton
-                        Layout.topMargin: Kirigami.Units.smallSpacing
+                    ColumnLayout {
+                        id: column
+                        spacing: 0
 
-                        background: Rectangle {
-                            color: subscriptionController.isSubscribed ? "grey" : "red"
-                            radius: Kirigami.Units.smallSpacing
+                        SubscriptionController {
+                            id: subscriptionController
+                            channelId: videoModel.video.authorId
+                        }
 
-                            Rectangle {
+                        Controls.Label {
+                            text: videoModel.video.author
+                            font.weight: Font.Bold
+
+                            MouseArea {
                                 anchors.fill: parent
-                                radius: Kirigami.Units.smallSpacing
-                                color: "black"
-                                opacity: subscribeButton.pressed ? 0.6 : subscribeButton.hovered ? 0.3 : 0
+                                cursorShape: Qt.PointingHandCursor
+                                onClicked: root.goToChannel()
                             }
                         }
 
-                        leftPadding: Kirigami.Units.largeSpacing
-                        rightPadding: Kirigami.Units.largeSpacing
-                        bottomPadding: Kirigami.Units.largeSpacing
-                        topPadding: Kirigami.Units.largeSpacing
+                        Controls.Button {
+                            id: subscribeButton
+                            Layout.topMargin: Kirigami.Units.smallSpacing
 
-                        contentItem: RowLayout {
-                            id: subscribeButtonContent
-                            spacing: 0
+                            background: Rectangle {
+                                color: subscriptionController.isSubscribed ? "grey" : "red"
+                                radius: Kirigami.Units.smallSpacing
 
-                            Controls.BusyIndicator {
-                                visible: subscriptionController.isLoading
-                                Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-                                Layout.preferredWidth: Kirigami.Units.gridUnit * 2
+                                Rectangle {
+                                    anchors.fill: parent
+                                    radius: Kirigami.Units.smallSpacing
+                                    color: "black"
+                                    opacity: subscribeButton.pressed ? 0.6 : subscribeButton.hovered ? 0.3 : 0
+                                }
                             }
 
-                            Controls.Label {
-                                color: "white"
-                                text: {
-                                    if (subscriptionController.isSubscribed) {
-                                        return "Unsubscribe (" + videoModel.video.subCountText + ")"
+                            leftPadding: Kirigami.Units.largeSpacing
+                            rightPadding: Kirigami.Units.largeSpacing
+                            bottomPadding: Kirigami.Units.largeSpacing
+                            topPadding: Kirigami.Units.largeSpacing
+
+                            contentItem: RowLayout {
+                                id: subscribeButtonContent
+                                spacing: 0
+
+                                Controls.BusyIndicator {
+                                    visible: subscriptionController.isLoading
+                                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
+                                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
+                                }
+
+                                Controls.Label {
+                                    color: "white"
+                                    text: {
+                                        if (subscriptionController.isSubscribed) {
+                                            return "Unsubscribe (" + videoModel.video.subCountText + ")"
+                                        }
+                                        return "Subscribe (" + videoModel.video.subCountText + ")"
                                     }
-                                    return "Subscribe (" + videoModel.video.subCountText + ")"
+                                }
+                            }
+
+                            onClicked: {
+                                if (subscriptionController.canToggleSubscription()) {
+                                    subscriptionController.toggleSubscription()
+                                } else if (!PlasmaTube.isLoggedIn) {
+                                    root.requestClosePlayer();
+                                    showPassiveNotification(qsTr("Please log in to subscribe to channels."));
+                                    pageStack.layers.push("qrc:/AccountPage.qml");
                                 }
                             }
                         }
+                    }
 
-                        onClicked: {
-                            if (subscriptionController.canToggleSubscription()) {
-                                subscriptionController.toggleSubscription()
-                            } else if (!PlasmaTube.isLoggedIn) {
-                                root.requestClosePlayer();
-                                showPassiveNotification(qsTr("Please log in to subscribe to channels."));
-                                pageStack.layers.push("qrc:/AccountPage.qml");
-                            }
-                        }
+                    Item {
+                        Layout.fillWidth: true
                     }
                 }
 
-                Item {
+                RowLayout {
+                    Layout.topMargin: Kirigami.Units.gridUnit
+                    spacing: Kirigami.Units.largeSpacing
+
+                    Kirigami.Chip {
+                        closable: false
+                        labelItem.color: Kirigami.Theme.disabledTextColor
+                        labelItem.font.weight: Font.Bold
+                        text: i18n("%1 views", Utils.formatCount(videoModel.video.viewCount))
+                    }
+
+                    Kirigami.Chip {
+                        closable: false
+                        labelItem.color: Kirigami.Theme.disabledTextColor
+                        labelItem.font.weight: Font.Bold
+                        text: i18n("%1 Likes", Utils.formatCount(videoModel.video.likeCount))
+                    }
+                }
+
+                // video description
+                Controls.Label {
+                    Layout.topMargin: Kirigami.Units.gridUnit
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
+                    text: videoModel.video.description
+                    wrapMode: Text.Wrap
                 }
             }
 
-            RowLayout {
-                Layout.topMargin: Kirigami.Units.gridUnit
-                spacing: Kirigami.Units.largeSpacing
-
-                Kirigami.Chip {
-                    closable: false
-                    labelItem.color: Kirigami.Theme.disabledTextColor
-                    labelItem.font.weight: Font.Bold
-                    text: i18n("%1 views", Utils.formatCount(videoModel.video.viewCount))
-                }
-
-                Kirigami.Chip {
-                    closable: false
-                    labelItem.color: Kirigami.Theme.disabledTextColor
-                    labelItem.font.weight: Font.Bold
-                    text: i18n("%1 Likes", Utils.formatCount(videoModel.video.likeCount))
-                }
+            Controls.BusyIndicator {
+                Layout.alignment: Qt.AlignCenter
+                visible: videoModel.isLoading
             }
-
-            // video description
-            Controls.Label {
-                Layout.topMargin: Kirigami.Units.gridUnit
-                Layout.bottomMargin: Kirigami.Units.largeSpacing
-                Layout.fillWidth: true
-                text: videoModel.video.description
-                wrapMode: Text.Wrap
-            }
-        }
-
-        Controls.BusyIndicator {
-            Layout.alignment: Qt.AlignCenter
-            visible: videoModel.isLoading
         }
 
         ColumnLayout {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+            Layout.topMargin: root.widescreen ? 0 : Kirigami.Units.largeSpacing
+            Layout.fillWidth: !root.widescreen
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: 0
 
             Repeater {

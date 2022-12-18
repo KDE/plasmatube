@@ -31,7 +31,7 @@ Item {
     signal clicked()
 
     ColumnLayout {
-        id: gridLayout
+        id: column
         anchors.fill: parent
         anchors.topMargin: root.topPadding
         anchors.bottomMargin: root.bottomPadding
@@ -43,10 +43,10 @@ Item {
         Image {
             id: thumb
             Layout.alignment: Qt.AlignTop
-            Layout.preferredWidth: gridLayout.width
-            Layout.maximumWidth: gridLayout.width
-            Layout.preferredHeight: gridLayout.width / 16 * 8
-            Layout.maximumHeight: gridLayout.width / 16 * 8
+            Layout.preferredWidth: column.width
+            Layout.maximumWidth: column.width
+            Layout.preferredHeight: column.width / 16 * 8
+            Layout.maximumHeight: column.width / 16 * 8
 
             source: thumbnail
             fillMode: Image.PreserveAspectCrop
