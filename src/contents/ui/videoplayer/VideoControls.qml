@@ -35,18 +35,18 @@ QQC2.Control {
         visible: true //Hologram.Video.mediaObject.error == Multimedia.MediaPlayer.NoError
         anchors {
             bottom: parent.bottom
-            horizontalCenter: parent.horizontalCenter
             left: parent.left
             right: parent.right
-            leftMargin: Kirigami.Units.gridUnit
-            rightMargin: Kirigami.Units.gridUnit
+            leftMargin: Kirigami.Units.largeSpacing
+            rightMargin: Kirigami.Units.largeSpacing
         }
 
         Kirigami.Theme.textColor: Qt.rgba(1,1,1,0.8)
+
         RowLayout {
             Layout.fillWidth: true
-            Item { Layout.fillWidth: true }
-
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
             QQC2.Label {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
@@ -61,10 +61,8 @@ QQC2.Control {
                 value: video.position
 
                 onMoved: {
-                    console.log(video.seekable)
                     video.seek(value)
                     audio.seek(value)
-                    console.log(value, video.duration, value * video.duration);
                     /*value = Qt.binding(function() {
                         return video.position / video.duration;
                     });*/
@@ -77,12 +75,14 @@ QQC2.Control {
                 font.weight: Font.Bold
                 text: "-" + KCoreAddons.Format.formatDuration(video.duration)
             }
-
-            Item { Layout.fillWidth: true }
         }
+
         RowLayout {
             Layout.fillWidth: true
-            Item {Layout.fillWidth: true}
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+
+            Item { Layout.fillWidth: true }
+
             Row {
                 Layout.alignment: Qt.AlignHCenter
                 spacing: Kirigami.Units.largeSpacing
@@ -205,9 +205,9 @@ QQC2.Control {
                     TabIndicator {}
                 }
             }
-            Item {Layout.fillWidth: true}
+
+            Item { Layout.fillWidth: true }
         }
-        Item { height: Kirigami.Units.largeSpacing }
     }
 
     Kirigami.Dialog {

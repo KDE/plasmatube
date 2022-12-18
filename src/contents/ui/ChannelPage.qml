@@ -31,8 +31,20 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    ListView {
-        id: listView
+    GridView {
+        id: gridView
+        topMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
+        bottomMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
+        leftMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
+        rightMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
+
+        readonly property real effectiveWidth: width - leftMargin - rightMargin
+        readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
+        readonly property int columns: Math.floor(effectiveWidth / targetDelegateWidth)
+
+        cellWidth: effectiveWidth / columns
+        cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
+
         currentIndex: -1
         model: VideoListModel {
             id: videoModel
@@ -43,7 +55,10 @@ Kirigami.ScrollablePage {
                 applicationWindow().showPassiveNotification(errorText)
             }
         }
-        delegate: VideoListItem {
+        delegate: VideoGridItem {
+            width: gridView.cellWidth
+            height: gridView.cellHeight
+
             vid: model.id
             thumbnail: model.thumbnail
             liveNow: model.liveNow
@@ -62,7 +77,7 @@ Kirigami.ScrollablePage {
         
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            visible: listView.count === 0 && !root.refreshing
+            visible: gridView.count === 0 && !root.refreshing
             text: i18n("Loading")
         }
     }

@@ -19,6 +19,8 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
 
+    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+
     readonly property real wideScreenThreshold: Kirigami.Units.gridUnit * 40
     readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
 

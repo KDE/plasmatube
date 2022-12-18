@@ -61,6 +61,7 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     ColumnLayout {
+        id: parentColumn
         spacing: 0
 
         VideoModel {
@@ -146,7 +147,7 @@ Kirigami.ScrollablePage {
             Kirigami.Heading {
                 Layout.fillWidth: true
                 text: videoModel.video.title
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 font.weight: Font.Bold
             }
 
@@ -273,7 +274,7 @@ Kirigami.ScrollablePage {
                 Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
                 text: videoModel.video.description
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
             }
         }
 
@@ -290,7 +291,8 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: videoModel.video.recommendedVideosModel()
                 delegate: VideoListItem {
-                    width: parent.width
+                    Layout.fillWidth: true
+                    Layout.maximumWidth: parentColumn.width
                     vid: model.id
                     thumbnail: model.thumbnail
                     liveNow: model.liveNow

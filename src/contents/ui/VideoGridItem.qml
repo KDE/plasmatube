@@ -12,9 +12,6 @@ import "utils.js" as Utils
 
 Item {
     id: root
-    implicitWidth: gridLayout.implicitWidth + leftPadding + rightPadding
-    implicitHeight: gridLayout.implicitHeight + topPadding + bottomPadding
-
     property real leftPadding: Kirigami.Units.largeSpacing
     property real rightPadding: Kirigami.Units.largeSpacing
     property real topPadding: Kirigami.Units.largeSpacing
@@ -33,23 +30,24 @@ Item {
 
     signal clicked()
 
-    RowLayout {
+    ColumnLayout {
         id: gridLayout
-        anchors.top: parent.top
+        anchors.fill: parent
         anchors.topMargin: root.topPadding
-        anchors.left: parent.left
+        anchors.bottomMargin: root.bottomPadding
         anchors.leftMargin: root.leftPadding
-        anchors.right: parent.right
         anchors.rightMargin: root.rightPadding
 
-        spacing: Kirigami.Units.largeSpacing
+        spacing: 0
 
         Image {
             id: thumb
-            Layout.preferredWidth: root.width < 500 ? Kirigami.Units.gridUnit * 8 : Kirigami.Units.gridUnit * 12
-            Layout.preferredHeight: root.width < 500 ? Kirigami.Units.gridUnit * 4.5 : Kirigami.Units.gridUnit * 6.75
-            Layout.maximumWidth: root.width < 500 ? Kirigami.Units.gridUnit * 8 : Kirigami.Units.gridUnit * 12
-            Layout.maximumHeight: root.width < 500 ? Kirigami.Units.gridUnit * 4.5 : Kirigami.Units.gridUnit * 6.75
+            Layout.alignment: Qt.AlignTop
+            Layout.preferredWidth: gridLayout.width
+            Layout.maximumWidth: gridLayout.width
+            Layout.preferredHeight: gridLayout.width / 16 * 8
+            Layout.maximumHeight: gridLayout.width / 16 * 8
+
             source: thumbnail
             fillMode: Image.PreserveAspectCrop
 
@@ -57,16 +55,19 @@ Item {
                 visible: !liveNow
                 text: Utils.formatTime(length)
                 color: "white"
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
 
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
-                anchors.rightMargin: 7
-                anchors.bottomMargin: 3
+                anchors.rightMargin: Kirigami.Units.smallSpacing * 2
+                anchors.bottomMargin: Kirigami.Units.smallSpacing * 2
 
                 Rectangle {
                     anchors.fill: parent
-                    anchors.leftMargin: -2
-                    anchors.rightMargin: -2
+                    anchors.topMargin: -Kirigami.Units.smallSpacing
+                    anchors.bottomMargin: -Kirigami.Units.smallSpacing
+                    anchors.leftMargin: -Kirigami.Units.smallSpacing
+                    anchors.rightMargin: -Kirigami.Units.smallSpacing
                     z: -1
                     color: "#90000000"
                     radius: 2
@@ -84,9 +85,10 @@ Item {
 
         ColumnLayout {
             id: videoInfo
+            Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
-            // Layout.preferredHeight: thumb.height
-            spacing: Kirigami.Units.smallSpacing
+            Layout.topMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            spacing: Kirigami.Units.largeSpacing
 
             Kirigami.Heading {
                 Layout.alignment: Qt.AlignTop
@@ -105,8 +107,9 @@ Item {
                 }
             }
 
-            Flow {
+            RowLayout {
                 Layout.fillWidth: true
+                Layout.alignment: Qt.AlignTop
 
                 Controls.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
@@ -128,20 +131,15 @@ Item {
 
                 Controls.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n(" \u2022 %1 views", Utils.formatCount(viewCount))
-                    color: Kirigami.Theme.disabledTextColor
-                    maximumLineCount: 1
-                    elide: Text.ElideRight
-                }
-
-                Controls.Label {
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n(" \u2022 %1", liveNow ? "<i>live now</i>" : publishedText)
+                    text: i18n("\u2022 %1 views \u2022 %2", Utils.formatCount(viewCount), liveNow ? "<i>live now</i>" : publishedText)
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight
                 }
             }
         }
+
+        Item { Layout.fillHeight: true }
     }
 }
+

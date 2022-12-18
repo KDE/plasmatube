@@ -14,6 +14,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="SettingsPage.qml">contents/ui/SettingsPage.qml</file>
         <file alias="TrendingPage.qml">contents/ui/TrendingPage.qml</file>
         <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
+        <file alias="VideoGridItem.qml">contents/ui/VideoGridItem.qml</file>
         <file alias="VideoListAction.qml">contents/ui/VideoListAction.qml</file>
         <file alias="videoplayer/TabIndicator.qml">contents/ui/videoplayer/TabIndicator.qml</file>
         <file alias="videoplayer/MinimizedVideoPlayer.qml">contents/ui/videoplayer/MinimizedVideoPlayer.qml</file>
