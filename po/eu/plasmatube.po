@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:48+0000\n"
+"POT-Creation-Date: 2022-12-18 00:57+0000\n"
 "PO-Revision-Date: 2022-08-22 15:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -60,19 +60,22 @@ msgstr "Sinatu"
 msgid "Loading"
 msgstr "Kargatzen"
 
-#: contents/ui/main.qml:77
+#: contents/ui/components/BottomNavBar.qml:67
+#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Bideoak"
 
-#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
+#: contents/ui/components/BottomNavBar.qml:79
+#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:158
 #, kde-format
 msgid "Search"
 msgstr "Bilatu"
 
-#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
-#: contents/ui/VideoControls.qml:167
+#: contents/ui/components/BottomNavBar.qml:90
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/videoplayer/VideoControls.qml:215
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -127,12 +130,18 @@ msgstr "Kontua"
 msgid "Open Account Settings"
 msgstr "Ireki kontuaren ezarpenak"
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:259
 #, kde-format
-msgid "Fullscreen"
-msgstr "Pantaila-betea"
+msgid "%1 views"
+msgstr ""
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:266
 #, kde-format
-msgid "Restore"
-msgstr "Lehengoratu"
+msgid "%1 Likes"
+msgstr ""
+
+#~ msgid "Fullscreen"
+#~ msgstr "Pantaila-betea"
+
+#~ msgid "Restore"
+#~ msgstr "Lehengoratu"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:48+0000\n"
+"POT-Creation-Date: 2022-12-18 00:57+0000\n"
 "PO-Revision-Date: 2022-11-27 11:24+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -57,19 +57,22 @@ msgstr "შესვლა"
 msgid "Loading"
 msgstr "იტვირთება"
 
-#: contents/ui/main.qml:77
+#: contents/ui/components/BottomNavBar.qml:67
+#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "ვიდეო"
 
-#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
+#: contents/ui/components/BottomNavBar.qml:79
+#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:158
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
 
-#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
-#: contents/ui/VideoControls.qml:167
+#: contents/ui/components/BottomNavBar.qml:90
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/videoplayer/VideoControls.qml:215
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
@@ -124,12 +127,18 @@ msgstr "ანგარიში"
 msgid "Open Account Settings"
 msgstr "ანგარიშის პარამეტრების გახსნა"
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:259
 #, kde-format
-msgid "Fullscreen"
-msgstr "მთელს ეკრანზე"
+msgid "%1 views"
+msgstr ""
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:266
 #, kde-format
-msgid "Restore"
-msgstr "აღდგენა"
+msgid "%1 Likes"
+msgstr ""
+
+#~ msgid "Fullscreen"
+#~ msgstr "მთელს ეკრანზე"
+
+#~ msgid "Restore"
+#~ msgstr "აღდგენა"

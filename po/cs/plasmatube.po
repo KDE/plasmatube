@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:48+0000\n"
+"POT-Creation-Date: 2022-12-18 00:57+0000\n"
 "PO-Revision-Date: 2022-04-06 11:30+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -54,19 +54,22 @@ msgstr "Přidat se"
 msgid "Loading"
 msgstr "Načítání"
 
-#: contents/ui/main.qml:77
+#: contents/ui/components/BottomNavBar.qml:67
+#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Videa"
 
-#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
+#: contents/ui/components/BottomNavBar.qml:79
+#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:158
 #, kde-format
 msgid "Search"
 msgstr "Hledat"
 
-#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
-#: contents/ui/VideoControls.qml:167
+#: contents/ui/components/BottomNavBar.qml:90
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/videoplayer/VideoControls.qml:215
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
@@ -121,12 +124,18 @@ msgstr "Účet"
 msgid "Open Account Settings"
 msgstr "Otevřít nastavení účtu"
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:259
 #, kde-format
-msgid "Fullscreen"
-msgstr "Celá obrazovka"
+msgid "%1 views"
+msgstr ""
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/videoplayer/VideoPlayer.qml:266
 #, kde-format
-msgid "Restore"
-msgstr "Obnovit"
+msgid "%1 Likes"
+msgstr ""
+
+#~ msgid "Fullscreen"
+#~ msgstr "Celá obrazovka"
+
+#~ msgid "Restore"
+#~ msgstr "Obnovit"
