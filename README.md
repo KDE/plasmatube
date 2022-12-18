@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 # PlasmaTube
 
-YouTube video player based on QtMultimedia and yt-dlp.
+YouTube video player based on libmpv and yt-dlp.
 
 ## Screenshot
 

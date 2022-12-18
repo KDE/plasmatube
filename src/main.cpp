@@ -8,6 +8,7 @@
 #include "subscriptioncontroller.h"
 #include "videolistmodel.h"
 #include "videomodel.h"
+#include "mpvobject.h"
 
 #include "qinvidious/invidiousapi.h"
 #include "qinvidious/searchparameters.h"
@@ -27,6 +28,10 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName("plasmatube");
     QGuiApplication::setApplicationDisplayName("PlasmaTube");
 
+    // required by mpv
+    setlocale(LC_NUMERIC, "C");
+
+    qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
     qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
     qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
     qmlRegisterType<LogInController>("org.kde.plasmatube", 1, 0, "LogInController");

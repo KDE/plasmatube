@@ -107,7 +107,7 @@ Item {
                 }
             }
 
-            RowLayout {
+            Flow {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignTop
 

@@ -21,28 +21,28 @@ Kirigami.ScrollablePage {
     flickable.boundsBehavior: Flickable.StopAtBounds
 
     property string vid: ""
+    onVidChanged: {
+        renderer.command(["loadfile", "ytdl://" + vid]);
+    }
     property var previewSource: renderer
 
     readonly property string videoName: videoModel.video.title
     readonly property string channelName: videoModel.video.author
 
-    readonly property bool isPlaying: renderer.playbackState === MediaPlayer.PlayingState
+    readonly property bool isPlaying: !renderer.paused
 
     signal requestClosePlayer()
 
     function stop() {
         vid = "";
         renderer.pause();
-        playMusic.pause();
     }
 
     function togglePlaying() {
-        if (renderer.playbackState !== MediaPlayer.PlayingState) {
+        if (renderer.paused) {
             renderer.play();
-            playMusic.play();
         } else {
             renderer.pause();
-            playMusic.pause();
         }
     }
 
@@ -110,12 +110,9 @@ Kirigami.ScrollablePage {
                 onTriggered: videoContainer.showControls = false
             }
 
-            Video {
+            MpvObject {
                 id: renderer
                 anchors.fill: parent
-                property var video: videoModel
-                source: videoModel.remoteUrl
-                muted: true
 
                 Image {
                     anchors.fill: parent
@@ -136,7 +133,6 @@ Kirigami.ScrollablePage {
 
             VideoControls {
                 anchors.fill: parent
-                audio: playMusic
                 video: renderer
 
                 visible: opacity > 0
@@ -144,11 +140,6 @@ Kirigami.ScrollablePage {
                 Behavior on opacity {
                     NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
                 }
-            }
-
-            Audio {
-                id: playMusic
-                source: videoModel.audioUrl
             }
 
             Controls.ToolButton {
