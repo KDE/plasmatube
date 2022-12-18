@@ -5,7 +5,7 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.15 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 import QtMultimedia 5.15
 import QtGraphicalEffects 1.15
@@ -18,18 +18,30 @@ import "../"
 
 Kirigami.ScrollablePage {
     id: root
+
     flickable.boundsBehavior: Flickable.StopAtBounds
+
+    title: videoName
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     property string vid: ""
     onVidChanged: {
         renderer.command(["loadfile", "ytdl://" + vid]);
     }
+
     property var previewSource: renderer
 
     readonly property string videoName: videoModel.video.title
     readonly property string channelName: videoModel.video.author
-
     readonly property bool isPlaying: !renderer.paused
+
+    readonly property bool widescreen: root.width > 1200
+    property bool inFullScreen: false
 
     signal requestClosePlayer()
 
@@ -54,14 +66,21 @@ Kirigami.ScrollablePage {
         root.requestClosePlayer();
     }
 
-    title: videoName
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: 0
-    bottomPadding: 0
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    function openFullScreen() {
+        console.log('enter');
+        videoContainer.parent = Controls.Overlay.overlay;
+        videoContainer.anchors.fill = Controls.Overlay.overlay;
+        root.inFullScreen = true;
+        applicationWindow().showFullScreen();
+    }
 
-    readonly property bool widescreen: root.width > 1200
+    function exitFullScreen() {
+        console.log('exit');
+        videoContainer.parent = inlineVideoContainer;
+        videoContainer.anchors.fill = inlineVideoContainer;
+        root.inFullScreen = false;
+        applicationWindow().showNormal();
+    }
 
     GridLayout {
         columns: root.widescreen ? 2 : 1
@@ -86,86 +105,99 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            MouseArea {
-                id: videoContainer
+            Item {
+                id: inlineVideoContainer
                 Layout.fillWidth: true
                 Layout.preferredHeight: width / 16.0 * 9.0
                 Layout.maximumHeight: root.height
 
-                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-                Kirigami.Theme.inherit: false
-
-                property bool showControls: false
-                onClicked: {
-                    if (showControls) {
-                        controlTimer.stop();
-                        videoContainer.showControls = false;
-                    } else {
-                        showControls = true;
-                        controlTimer.restart();
-                    }
-                }
-
-                hoverEnabled: !Kirigami.Settings.tabletMode
-                onContainsMouseChanged: {
-                    if (!pressed && hoverEnabled) {
-                        videoContainer.showControls = containsMouse;
-                    }
-                }
-
-                Timer {
-                    id: controlTimer
-                    interval: 2000
-                    onTriggered: videoContainer.showControls = false
-                }
-
-                MpvObject {
-                    id: renderer
+                MouseArea {
+                    id: videoContainer
                     anchors.fill: parent
 
-                    Image {
+                    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                    Kirigami.Theme.inherit: false
+
+                    property bool showControls: false
+                    onClicked: {
+                        if (showControls) {
+                            controlTimer.stop();
+                            videoContainer.showControls = false;
+                        } else {
+                            showControls = true;
+                            controlTimer.restart();
+                        }
+                    }
+
+                    hoverEnabled: !Kirigami.Settings.tabletMode
+                    onContainsMouseChanged: {
+                        if (!pressed && hoverEnabled) {
+                            videoContainer.showControls = containsMouse;
+                        }
+                    }
+
+                    Timer {
+                        id: controlTimer
+                        interval: 2000
+                        onTriggered: videoContainer.showControls = false
+                    }
+
+                    MpvObject {
+                        id: renderer
                         anchors.fill: parent
-                        visible: renderer.playbackState === MediaPlayer.StoppedState
-                        source: videoModel.video.thumbnailUrl("high")
+
+                        Image {
+                            anchors.fill: parent
+                            visible: renderer.playbackState === MediaPlayer.StoppedState
+                            source: videoModel.video.thumbnailUrl("high")
+                        }
                     }
-                }
 
-                VideoData {
-                    title: videoModel.video.title
+                    VideoData {
+                        title: videoModel.video.title
 
-                    visible: opacity > 0
-                    opacity: videoContainer.showControls ? 1 : 0
-                    Behavior on opacity {
-                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                        visible: opacity > 0
+                        opacity: videoContainer.showControls ? 1 : 0
+                        Behavior on opacity {
+                            NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                        }
                     }
-                }
 
-                VideoControls {
-                    anchors.fill: parent
-                    video: renderer
+                    VideoControls {
+                        anchors.fill: parent
+                        video: renderer
 
-                    visible: opacity > 0
-                    opacity: videoContainer.showControls ? 1 : 0
-                    Behavior on opacity {
-                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                        onRequestFullScreen: {
+                            if (root.inFullScreen) {
+                                root.exitFullScreen();
+                            } else {
+                                root.openFullScreen();
+                            }
+                        }
+
+                        visible: opacity > 0
+                        opacity: videoContainer.showControls ? 1 : 0
+                        Behavior on opacity {
+                            NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                        }
                     }
-                }
 
-                Controls.ToolButton {
-                    id: closeButton
-                    anchors.top: parent.top
-                    anchors.topMargin: Kirigami.Units.largeSpacing
-                    anchors.left: parent.left
-                    anchors.leftMargin: Kirigami.Units.largeSpacing
-                    icon.name: "go-previous-view"
-                    icon.width: Kirigami.Units.iconSizes.small
-                    icon.height: Kirigami.Units.iconSizes.small
+                    Controls.ToolButton {
+                        id: closeButton
+                        anchors.top: parent.top
+                        anchors.topMargin: Kirigami.Units.largeSpacing
+                        anchors.left: parent.left
+                        anchors.leftMargin: Kirigami.Units.largeSpacing
+                        icon.name: "go-previous-view"
+                        icon.width: Kirigami.Units.iconSizes.small
+                        icon.height: Kirigami.Units.iconSizes.small
 
-                    width: Kirigami.Units.gridUnit * 2
-                    height: Kirigami.Units.gridUnit * 2
-                    onClicked: root.requestClosePlayer();
+                        width: Kirigami.Units.gridUnit * 2
+                        height: Kirigami.Units.gridUnit * 2
+                        onClicked: root.requestClosePlayer();
 
-                    TabIndicator {}
+                        TabIndicator {}
+                    }
                 }
             }
 
@@ -322,6 +354,7 @@ Kirigami.ScrollablePage {
         }
 
         ColumnLayout {
+            Layout.alignment: Qt.AlignTop
             Layout.topMargin: root.widescreen ? 0 : Kirigami.Units.largeSpacing
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
