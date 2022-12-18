@@ -10,7 +10,7 @@ import org.kde.kirigami 2.7 as Kirigami
 
 import "utils.js" as Utils
 
-Item {
+MouseArea {
     id: root
     property real leftPadding: Kirigami.Units.largeSpacing
     property real rightPadding: Kirigami.Units.largeSpacing
@@ -28,7 +28,20 @@ Item {
     property int viewCount
     property string publishedText
 
-    signal clicked()
+    property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
+    Behavior on zoomScale {
+        NumberAnimation {
+            duration: 200
+            easing.type: Easing.OutExpo
+        }
+    }
+
+    transform: Scale {
+        origin.x: root.width / 2;
+        origin.y: root.height / 2;
+        xScale: root.zoomScale
+        yScale: root.zoomScale
+    }
 
     ColumnLayout {
         id: column
@@ -77,9 +90,10 @@ Item {
             }
 
             MouseArea {
+                id: thumbnailMouseArea
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: root.clicked()
+                onClicked: root.clicked(mouse)
             }
         }
 
@@ -101,9 +115,10 @@ Item {
                 elide: Text.ElideRight
 
                 MouseArea {
+                    id: titleMouseArea
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
-                    onClicked: root.clicked()
+                    onClicked: root.clicked(mouse)
                 }
             }
 
