@@ -18,6 +18,7 @@ import "../"
 
 Kirigami.ScrollablePage {
     id: root
+    flickable.boundsBehavior: Flickable.StopAtBounds
 
     property string vid: ""
     property var previewSource: renderer
