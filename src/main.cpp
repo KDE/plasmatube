@@ -13,6 +13,8 @@
 #include "qinvidious/invidiousapi.h"
 #include "qinvidious/searchparameters.h"
 
+#include <clocale>
+
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -28,7 +30,8 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName("plasmatube");
     QGuiApplication::setApplicationDisplayName("PlasmaTube");
 
-    // required by mpv
+    // Qt sets the locale in the QGuiApplication constructor, but libmpv
+    // requires the LC_NUMERIC category to be set to "C", so change it back.
     setlocale(LC_NUMERIC, "C");
 
     qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
