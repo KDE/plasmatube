@@ -65,6 +65,7 @@ Kirigami.ApplicationWindow {
         sourceComponent: BottomNavBar {
             shadow: !videoPlayer.isVideoLoaded
             opacity: (videoPlayer.contentY === 0) ? 1 : 0
+
             Behavior on opacity {
                 NumberAnimation { duration: Kirigami.Units.shortDuration }
             }
@@ -91,7 +92,6 @@ Kirigami.ApplicationWindow {
         id: videoPlayer
         anchors.fill: parent
         contentToPlayerSpacing: footerLoader.active ? footerLoader.height : 0
-        onContentToPlayerSpacingChanged: console.log(footerLoader.active + ' ' + footerLoader.height)
         z: contentY === 0 ? -1 : 999
     }
 }

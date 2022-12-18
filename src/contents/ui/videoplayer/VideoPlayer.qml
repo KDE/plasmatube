@@ -76,7 +76,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Item {
+        MouseArea {
             id: videoContainer
             Layout.fillWidth: true
             Layout.preferredHeight: width / 16.0 * 9.0
@@ -84,6 +84,30 @@ Kirigami.ScrollablePage {
 
             Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
             Kirigami.Theme.inherit: false
+
+            property bool showControls: false
+            onClicked: {
+                if (showControls) {
+                    controlTimer.stop();
+                    videoContainer.showControls = false;
+                } else {
+                    showControls = true;
+                    controlTimer.restart();
+                }
+            }
+
+            hoverEnabled: !Kirigami.Settings.tabletMode
+            onContainsMouseChanged: {
+                if (!pressed && hoverEnabled) {
+                    videoContainer.showControls = containsMouse;
+                }
+            }
+
+            Timer {
+                id: controlTimer
+                interval: 2000
+                onTriggered: videoContainer.showControls = false
+            }
 
             Video {
                 id: renderer
@@ -101,12 +125,24 @@ Kirigami.ScrollablePage {
 
             VideoData {
                 title: videoModel.video.title
+
+                visible: opacity > 0
+                opacity: videoContainer.showControls ? 1 : 0
+                Behavior on opacity {
+                    NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                }
             }
 
             VideoControls {
                 anchors.fill: parent
                 audio: playMusic
                 video: renderer
+
+                visible: opacity > 0
+                opacity: videoContainer.showControls ? 1 : 0
+                Behavior on opacity {
+                    NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                }
             }
 
             Audio {

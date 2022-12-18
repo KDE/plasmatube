@@ -72,6 +72,7 @@ Kirigami.ScrollablePage {
 
             onClicked: {
                 applicationWindow().switchVideo(vid);
+                applicationWindow().openPlayer();
             }
         }
         

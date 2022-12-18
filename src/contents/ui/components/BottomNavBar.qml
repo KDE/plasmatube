@@ -25,6 +25,7 @@ Kirigami.NavigationTabBar {
     // animate showing and hiding of navbar
     ParallelAnimation {
         id: showAnim
+        onFinished: root.height = Qt.binding(() => root.implicitHeight);
         NumberAnimation {
             target: root
             property: "height"
@@ -43,6 +44,7 @@ Kirigami.NavigationTabBar {
 
     SequentialAnimation {
         id: hideAnim
+        onFinished: root.height = Qt.binding(() => root.implicitHeight);
         NumberAnimation {
             target: root
             property: "opacity"
