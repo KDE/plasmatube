@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2017 the mpv developers
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #ifndef LIBMPV_QTHELPER_H_
 #define LIBMPV_QTHELPER_H_
 
