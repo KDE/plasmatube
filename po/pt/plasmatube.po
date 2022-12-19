@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:57+0000\n"
-"PO-Revision-Date: 2022-08-21 13:11+0100\n"
+"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"PO-Revision-Date: 2022-12-18 11:57+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -53,27 +53,27 @@ msgstr "Nome do Utilizador"
 msgid "Sign in"
 msgstr "Autenticar"
 
-#: contents/ui/ChannelPage.qml:66
+#: contents/ui/ChannelPage.qml:82
 #, kde-format
 msgid "Loading"
 msgstr "A carregar"
 
-#: contents/ui/components/BottomNavBar.qml:67
+#: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: contents/ui/components/BottomNavBar.qml:79
+#: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
 msgstr "Procurar"
 
-#: contents/ui/components/BottomNavBar.qml:90
+#: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
-#: contents/ui/videoplayer/VideoControls.qml:215
+#: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"
@@ -103,7 +103,7 @@ msgstr "Data de Envio"
 msgid "View Count"
 msgstr "Número de Visualizações"
 
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
 msgstr "Sem resultados"
@@ -128,18 +128,28 @@ msgstr "Conta"
 msgid "Open Account Settings"
 msgstr "Abrir a Configuração da Conta"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:259
+#: contents/ui/VideoGridItem.qml:149
+#, kde-format
+msgid "• %1 views • %2"
+msgstr ""
+
+#: contents/ui/VideoListItem.qml:146
+#, fuzzy, kde-format
+#| msgid "%1 views"
+msgid " • %1 views"
+msgstr "%1 visualizações"
+
+#: contents/ui/VideoListItem.qml:154
+#, kde-format
+msgid " • %1"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 visualizações"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:266
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
-
-#~ msgid "Fullscreen"
-#~ msgstr "Ecrã Completo"
-
-#~ msgid "Restore"
-#~ msgstr "Repor"
+msgstr "%1 gostos"

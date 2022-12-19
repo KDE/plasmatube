@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:57+0000\n"
-"PO-Revision-Date: 2022-08-23 18:40+0200\n"
+"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"PO-Revision-Date: 2022-12-18 03:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.90\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -53,27 +53,27 @@ msgstr "Nombre de usuario"
 msgid "Sign in"
 msgstr "Iniciar sesión"
 
-#: contents/ui/ChannelPage.qml:66
+#: contents/ui/ChannelPage.qml:82
 #, kde-format
 msgid "Loading"
 msgstr "Cargando"
 
-#: contents/ui/components/BottomNavBar.qml:67
+#: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: contents/ui/components/BottomNavBar.qml:79
+#: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
 msgstr "Buscar"
 
-#: contents/ui/components/BottomNavBar.qml:90
+#: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
-#: contents/ui/videoplayer/VideoControls.qml:215
+#: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
 msgstr "Preferencias"
@@ -103,7 +103,7 @@ msgstr "Fecha de subida"
 msgid "View Count"
 msgstr "Contador de vistas"
 
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
 msgstr "Sin resultado"
@@ -128,15 +128,31 @@ msgstr "Cuenta"
 msgid "Open Account Settings"
 msgstr "Abrir las preferencias de la cuenta"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:259
+#: contents/ui/VideoGridItem.qml:149
 #, kde-format
-msgid "%1 views"
+msgid "• %1 views • %2"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:266
+#: contents/ui/VideoListItem.qml:146
+#, fuzzy, kde-format
+#| msgid "%1 views"
+msgid " • %1 views"
+msgstr "%1 veces visto"
+
+#: contents/ui/VideoListItem.qml:154
+#, kde-format
+msgid " • %1"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:329
+#, kde-format
+msgid "%1 views"
+msgstr "%1 veces visto"
+
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 me gusta"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Pantalla completa"
