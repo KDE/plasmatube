@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-12-18 03:39+0100\n"
+"PO-Revision-Date: 2022-12-19 13:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -131,23 +131,22 @@ msgstr "Abrir las preferencias de la cuenta"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 visualizaciones • %2"
 
 #: contents/ui/VideoListItem.qml:146
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid " • %1 views"
-msgstr "%1 veces visto"
+msgstr " • %1 visualizaciones"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr "%1 veces visto"
+msgstr "%1 visualizaciones"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-12-18 12:34+0100\n"
+"PO-Revision-Date: 2022-12-19 10:35+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -129,18 +129,17 @@ msgstr "Accountinstellingen openen"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 weergaven • %2"
 
 #: contents/ui/VideoListItem.qml:146
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid " • %1 views"
-msgstr "%1 weergaven"
+msgstr " • %1 weergaven"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format

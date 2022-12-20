@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:48+0000\n"
+"POT-Creation-Date: 2022-12-19 00:48+0000\n"
 "PO-Revision-Date: 2022-09-11 19:45+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -53,24 +53,27 @@ msgstr "Brukarnamn"
 msgid "Sign in"
 msgstr "Logg inn"
 
-#: contents/ui/ChannelPage.qml:66
+#: contents/ui/ChannelPage.qml:82
 #, kde-format
 msgid "Loading"
 msgstr "Lastar"
 
-#: contents/ui/main.qml:77
+#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Videoar"
 
-#: contents/ui/main.qml:88 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
 msgstr "Søk"
 
-#: contents/ui/main.qml:98 contents/ui/SettingsPage.qml:13
-#: contents/ui/VideoControls.qml:167
+#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
 msgstr "Innstillingar"
@@ -100,7 +103,7 @@ msgstr "Opplastingsdato"
 msgid "View Count"
 msgstr "Visingar"
 
-#: contents/ui/SearchPage.qml:158
+#: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
 msgstr "Ingen søkjetreff"
@@ -126,12 +129,27 @@ msgstr "Konto"
 msgid "Open Account Settings"
 msgstr "Opna kontoinnstillingar"
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/VideoGridItem.qml:149
 #, kde-format
-msgid "Fullscreen"
-msgstr "Fullskjerm"
+msgid "• %1 views • %2"
+msgstr ""
 
-#: contents/ui/VideoData.qml:55
+#: contents/ui/VideoListItem.qml:146
 #, kde-format
-msgid "Restore"
-msgstr "Gjenopprett"
+msgid " • %1 views"
+msgstr ""
+
+#: contents/ui/VideoListItem.qml:154
+#, kde-format
+msgid " • %1"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:329
+#, kde-format
+msgid "%1 views"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:336
+#, kde-format
+msgid "%1 Likes"
+msgstr ""

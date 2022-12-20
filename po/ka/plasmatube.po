@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-11-27 11:24+0100\n"
+"PO-Revision-Date: 2022-12-19 08:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -130,27 +130,27 @@ msgstr "ანგარიშის პარამეტრების გა�
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 ნახვა • %2"
 
 #: contents/ui/VideoListItem.qml:146
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 ნახვა"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 ნახვა"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 მოწონება"
 
 #~ msgid "Fullscreen"
 #~ msgstr "მთელს ეკრანზე"
