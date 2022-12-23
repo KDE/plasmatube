@@ -152,7 +152,7 @@ SPDX-License-Identifier: CC0-1.0
   </recommends>
   <content_rating type="oars-1.0"/>
   <url type="homepage">https://apps.kde.org/plasmatube/</url>
-  <url type="bugtracker">https://invent.kde.org/plasma-mobile/plasmatube/-/issues</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=PlasmaTube</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.plasmatube</url>
   <project_group>KDE</project_group>
   <provides>
