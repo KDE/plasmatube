@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-12-18 11:57+0000\n"
+"PO-Revision-Date: 2022-12-23 20:43+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -131,18 +131,17 @@ msgstr "Abrir a Configuração da Conta"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 visualizações • %2"
 
 #: contents/ui/VideoListItem.qml:146
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid " • %1 views"
-msgstr "%1 visualizações"
+msgstr " • %1 visualizações"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
