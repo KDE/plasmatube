@@ -1,5 +1,5 @@
 # Translation for plasmatube.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2022, This file is copyright:
+# Copyright (C) 2021-2022 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-08-22 15:00+0200\n"
+"PO-Revision-Date: 2022-12-28 23:51+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -133,27 +133,27 @@ msgstr "Ireki kontuaren ezarpenak"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 ikustaldi • %2"
 
 #: contents/ui/VideoListItem.qml:146
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 ikustaldi"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 ikustaldi"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 atsegin"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Pantaila-betea"
