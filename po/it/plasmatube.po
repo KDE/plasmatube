@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-08-24 20:39+0200\n"
+"PO-Revision-Date: 2022-12-19 17:40+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -129,27 +129,27 @@ msgstr "Apri le impostazioni dell'account"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 visualizzazioni • %2"
 
 #: contents/ui/VideoListItem.qml:146
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 visualizzazioni"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 visualizzazioni"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 Mi piace"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Schermo intero"
