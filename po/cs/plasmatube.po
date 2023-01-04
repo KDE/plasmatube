@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2022-04-06 11:30+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2022-10-10 16:49+0200\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -92,12 +92,12 @@ msgstr "Relevance"
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Datum odeslání odesílání"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Zobrazit počet"
 
 #: contents/ui/SearchPage.qml:174
 #, kde-format
@@ -148,9 +148,3 @@ msgstr ""
 #, kde-format
 msgid "%1 Likes"
 msgstr ""
-
-#~ msgid "Fullscreen"
-#~ msgstr "Celá obrazovka"
-
-#~ msgid "Restore"
-#~ msgstr "Obnovit"
