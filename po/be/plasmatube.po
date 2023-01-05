@@ -1,37 +1,40 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the plasmatube package.
-#
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021, 2022, 2023.
+# Zmicier <zmicerturok@gmail.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: plasmatube\n"
+"Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2023-01-04 20:49+0100\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
-"Language: pl\n"
+"PO-Revision-Date: 2023-01-03 10:01\n"
+"Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
+"Language-Team: Belarusian\n"
+"Language: be_BY\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
 "X-Generator: Lokalize 22.12.0\n"
+"X-Crowdin-Project: 86ff119b1606fcaa910d6b44fc14b611\n"
+"X-Crowdin-Project-ID: 127\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /main/be/plasmatube/plasmatube.po\n"
+"X-Crowdin-File-ID: 8964\n"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
 msgid "Successfully logged in as %1."
-msgstr "Zalogowano się pomyślnie jako %1."
+msgstr "Паспяхова ўвайшлі як %1."
 
 #: contents/ui/AccountPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr "Obecnie zalogowany jako %1."
+msgstr "Вы ўвайшлі як %1."
 
 #: contents/ui/AccountPage.qml:49
 #, kde-format
 msgid "Log out"
-msgstr "Wyloguj"
+msgstr "Выйсці"
 
 #: contents/ui/AccountPage.qml:59
 #, kde-format
@@ -39,103 +42,103 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
-"Odwiedź stronę, aby zarejestrować jako osobne wystąpienie.\n"
-"Obecnie nie jest dostępne API do rejestrowania."
+"Наведайце вэб-сайт, каб зарэгістравацца ў invidious.\n"
+"На дадзены момант няма API для рэгістрацыі."
 
 #: contents/ui/AccountPage.qml:76
 #, kde-format
 msgid "Username"
-msgstr "Nazwa użytkownika"
+msgstr "Імя карыстальніка"
 
 #: contents/ui/AccountPage.qml:93
 #, kde-format
 msgid "Sign in"
-msgstr "Wpisz się"
+msgstr "Увайсці"
 
 #: contents/ui/ChannelPage.qml:82
 #, kde-format
 msgid "Loading"
-msgstr "Wczytywanie"
+msgstr "Загрузка"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
-msgstr "Filmy"
+msgstr "Відэа"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
-msgstr "Poszukaj"
+msgstr "Шукаць"
 
 #: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Налады"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr "Uszereguj wg:"
+msgstr "Сартаванне:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr "Ocena"
+msgstr "Рэйтынг"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr "Trafność"
+msgstr "Актуальнасць"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr "Data wysłania"
+msgstr "Дата запампоўвання"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr "Licznik odwiedzin"
+msgstr "Колькасць праглядаў"
 
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
-msgstr "Nie ma żadnych wyników"
+msgstr "Няма вынікаў"
 
 #: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
-msgstr "Krzywdzący"
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:22
 #, kde-format
 msgid "Instance"
-msgstr "Wystąpienie"
+msgstr "Асобнік"
 
 #: contents/ui/SettingsPage.qml:34
 #, kde-format
 msgid "Account"
-msgstr "Konto"
+msgstr "Акаўнт"
 
 #: contents/ui/SettingsPage.qml:38
 #, kde-format
 msgid "Open Account Settings"
-msgstr "Otwórz ustawienia konta"
+msgstr "Адкрыць налады акаўнта"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr "• %1 odwiedziny • %2"
+msgstr "• %1 прагляд(аў) • %2"
 
 #: contents/ui/VideoListItem.qml:146
 #, kde-format
 msgid " • %1 views"
-msgstr " • %1 odwiedziny"
+msgstr " • %1 прагляд(аў)"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
@@ -145,15 +148,9 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr "%1 odwiedziny"
+msgstr "%1 прагляд(аў)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr "%1 polubienia"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Pełny ekran"
-
-#~ msgid "Restore"
-#~ msgstr "Przywróć"
+msgstr "%1 упадабанне(яў)"
