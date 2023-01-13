@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-19 00:48+0000\n"
-"PO-Revision-Date: 2023-01-02 07:12\n"
+"PO-Revision-Date: 2023-01-12 10:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -54,7 +54,7 @@ msgstr "登录"
 #: contents/ui/ChannelPage.qml:82
 #, kde-format
 msgid "Loading"
-msgstr ""
+msgstr "正在加载"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -129,24 +129,24 @@ msgstr "打开账户设置"
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 次观看 • %2"
 
 #: contents/ui/VideoListItem.qml:146
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 次观看"
 
 #: contents/ui/VideoListItem.qml:154
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 次观看"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 个点赞"
