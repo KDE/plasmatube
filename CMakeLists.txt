@@ -4,7 +4,8 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-project(plasmatube)
+set(PROJECT_VERSION "23.01.0")
+project(plasmatube VERSION ${PROJECT_VERSION})
 
 set(KF5_MIN_VERSION "5.81.0")
 set(QT_MIN_VERSION "5.15.0")
