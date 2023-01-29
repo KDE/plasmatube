@@ -18,17 +18,39 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QIcon>
+#include <QCommandLineParser>
 
 #include <KLocalizedContext>
+#include <KAboutData>
+#include <KLocalizedString>
+
+#include "plasmatube-version.h"
 
 int main(int argc, char **argv)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
+
     QApplication app(argc, argv);
+
+    KLocalizedString::setApplicationDomain("tokodon");
     QCoreApplication::setOrganizationName("KDE");
-    QCoreApplication::setOrganizationDomain("kde.org");
-    QCoreApplication::setApplicationName("plasmatube");
-    QGuiApplication::setApplicationDisplayName("PlasmaTube");
+
+    KAboutData about(QStringLiteral("plasmatube"),
+                     i18n("PlasmaTube"),
+                     QStringLiteral(PLASMATUBE_VERSION_STRING),
+                     i18n("YouTube client"),
+                     KAboutLicense::GPL_V3,
+                     i18n("© Linus Jahn"));
+    about.addAuthor(i18n("Linus Jahn"), i18n("Creator"), QStringLiteral("lnj@kaidan.im"));
+    about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
+    about.setOrganizationDomain("kde.org");
+    about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=plasmatube");
+
+    KAboutData::setApplicationData(about);
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.plasmatube")));
 
     // Qt sets the locale in the QGuiApplication constructor, but libmpv
     // requires the LC_NUMERIC category to be set to "C", so change it back.
@@ -48,6 +70,9 @@ int main(int argc, char **argv)
     qRegisterMetaType<SearchParameters::Feature>("Feature");
     qmlRegisterType<SearchParameters>("org.kde.plasmatube", 1, 0, "SearchParameters");
     qRegisterMetaType<SearchParameters*>("const SearchParameters*");
+    qmlRegisterSingletonType("org.kde.plasmatube", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });
 
     QQmlApplicationEngine engine;
 
@@ -56,6 +81,12 @@ int main(int argc, char **argv)
     PlasmaTubeSettings settings;
     qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube", 1, 0, "Settings", &settings);
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(i18n("YouTube client"));
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
