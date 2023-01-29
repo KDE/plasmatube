@@ -11,7 +11,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.plasmatube 1.0
 
 Kirigami.ScrollablePage {
-    title: qsTr("Sign in")
+    title: i18n("Sign in")
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     LogInController {

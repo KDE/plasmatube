@@ -294,9 +294,9 @@ Kirigami.ScrollablePage {
                                     color: "white"
                                     text: {
                                         if (subscriptionController.isSubscribed) {
-                                            return "Unsubscribe (" + videoModel.video.subCountText + ")"
+                                            return i18n("Unsubscribe (%1)", videoModel.video.subCountText)
                                         }
-                                        return "Subscribe (" + videoModel.video.subCountText + ")"
+                                        return i18n("Subscribe (%1)", videoModel.video.subCountText)
                                     }
                                 }
                             }
@@ -306,7 +306,7 @@ Kirigami.ScrollablePage {
                                     subscriptionController.toggleSubscription()
                                 } else if (!PlasmaTube.isLoggedIn) {
                                     root.requestClosePlayer();
-                                    showPassiveNotification(qsTr("Please log in to subscribe to channels."));
+                                    showPassiveNotification(i18n("Please log in to subscribe to channels."));
                                     pageStack.layers.push("qrc:/AccountPage.qml");
                                 }
                             }
