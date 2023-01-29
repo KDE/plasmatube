@@ -5,7 +5,7 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
+import QtQuick.Controls 2.15 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.plasmatube 1.0
@@ -14,6 +14,29 @@ import "components"
 
 Kirigami.ApplicationWindow {
     id: root
+
+    property Item hoverLinkIndicator: Controls.Control {
+        property string text
+
+        parent: overlay.parent
+        opacity: linkText.text.length > 0 ? 1 : 0
+
+        x: 0
+        y: parent.height - implicitHeight
+        z: globalDrawer.z + 1
+
+        contentItem: Controls.Label {
+            id: linkText
+            text: parent.text
+        }
+
+        background: Rectangle {
+             color: Kirigami.Theme.backgroundColor
+        }
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+    }
+
     pageStack.initialPage: getPage("TrendingPage")
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar

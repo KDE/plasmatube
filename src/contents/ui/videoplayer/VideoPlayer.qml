@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.1
-import QtQuick.Layouts 1.3
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 import QtMultimedia 5.15
@@ -338,12 +338,41 @@ Kirigami.ScrollablePage {
                 }
 
                 // video description
-                Controls.Label {
+                Controls.TextArea {
+                    readonly property var linkRegex: /(href=["'])?(\b(https?):\/\/[^\s\<\>\"\'\\\?\:\)\(]+(\(.*?\))*(\?(?=[a-z])[^\s\\\)]+|$)?)/g
+
+                    text: videoModel.video.description.replace(linkRegex, function() {
+                        if (arguments[1]) {
+                            return arguments[0];
+                        }
+                        const l = arguments[2];
+                        if ([".", ","].includes(l[l.length-1])) {
+                            const link = l.substring(0, l.length-1);
+                            const leftover = l[l.length-1];
+                            return `<a href="${link}">${link}</a>${leftover}`;
+                        }
+                        return `<a href="${l}">${l}</a>`;
+                    }).replace(/(?:\r\n|\r|\n)/g, '<br>')
+                    textFormat: TextEdit.RichText
+                    background: null
+                    readOnly: true
+                    padding: 0
+
                     Layout.topMargin: Kirigami.Units.gridUnit
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
-                    text: videoModel.video.description
-                    wrapMode: Text.Wrap
+
+                    onHoveredLinkChanged: if (hoveredLink.length > 0 && hoveredLink !== "1") {
+                        applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                    } else {
+                        applicationWindow().hoverLinkIndicator.text = "";
+                    }
+
+                    HoverHandler {
+                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.IBeamCursor
+                    }
+
+                    selectByMouse: !Kirigami.Settings.isMobile
                 }
             }
 
