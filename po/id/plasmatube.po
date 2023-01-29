@@ -1,0 +1,152 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasmatube package.
+# Linerly <linerly@protonmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmatube\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"PO-Revision-Date: 2023-01-13 08:37+0700\n"
+"Last-Translator: Linerly <linerly@protonmail.com>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.1\n"
+
+#: contents/ui/AccountPage.qml:21
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Berhasil masuk sebagai %1."
+
+#: contents/ui/AccountPage.qml:40
+#, kde-format
+msgid "Currently logged in as %1."
+msgstr "Saat ini masuk sebagai %1."
+
+#: contents/ui/AccountPage.qml:49
+#, kde-format
+msgid "Log out"
+msgstr "Keluar dari akun"
+
+#: contents/ui/AccountPage.qml:59
+#, kde-format
+msgid ""
+"Please visit the website to register with an invidious instance.\n"
+"There is currently no API for registering."
+msgstr ""
+"Silakan mengunjungi situs web untuk mendaftar dengan server Invidious.\n"
+"Saat ini tidak ada API untuk mendaftar."
+
+#: contents/ui/AccountPage.qml:76
+#, kde-format
+msgid "Username"
+msgstr "Nama pengguna"
+
+#: contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr "Masuk"
+
+#: contents/ui/ChannelPage.qml:82
+#, kde-format
+msgid "Loading"
+msgstr "Memuat"
+
+#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/Sidebar.qml:60
+#, kde-format
+msgid "Videos"
+msgstr "Video"
+
+#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:174
+#, kde-format
+msgid "Search"
+msgstr "Cari"
+
+#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/videoplayer/VideoControls.qml:175
+#, kde-format
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: contents/ui/SearchPage.qml:70
+#, kde-format
+msgid "Sort By:"
+msgstr "Urutkan Berdasarkan:"
+
+#: contents/ui/SearchPage.qml:74
+#, kde-format
+msgid "Rating"
+msgstr "Peringkat"
+
+#: contents/ui/SearchPage.qml:85
+#, kde-format
+msgid "Relevance"
+msgstr "Keterkaitan"
+
+#: contents/ui/SearchPage.qml:97
+#, kde-format
+msgid "Upload Date"
+msgstr "Tanggal Unggah"
+
+#: contents/ui/SearchPage.qml:108
+#, kde-format
+msgid "View Count"
+msgstr "Jumlah Tampilan"
+
+#: contents/ui/SearchPage.qml:174
+#, kde-format
+msgid "No results"
+msgstr "Tidak ada hasil"
+
+#: contents/ui/SettingsPage.qml:18
+#, kde-format
+msgid "Invidious"
+msgstr "Invidious"
+
+#: contents/ui/SettingsPage.qml:22
+#, kde-format
+msgid "Instance"
+msgstr "Server"
+
+#: contents/ui/SettingsPage.qml:34
+#, kde-format
+msgid "Account"
+msgstr "Akun"
+
+#: contents/ui/SettingsPage.qml:38
+#, kde-format
+msgid "Open Account Settings"
+msgstr "Buka Pengaturan Akun"
+
+#: contents/ui/VideoGridItem.qml:149
+#, kde-format
+msgid "• %1 views • %2"
+msgstr "• %1 tampilan • %2"
+
+#: contents/ui/VideoListItem.qml:146
+#, kde-format
+msgid " • %1 views"
+msgstr " • %1 tampilan"
+
+#: contents/ui/VideoListItem.qml:154
+#, kde-format
+msgid " • %1"
+msgstr " • %1"
+
+#: contents/ui/videoplayer/VideoPlayer.qml:329
+#, kde-format
+msgid "%1 views"
+msgstr "%1 tampilan"
+
+#: contents/ui/videoplayer/VideoPlayer.qml:336
+#, kde-format
+msgid "%1 Likes"
+msgstr "%1 Suka"
