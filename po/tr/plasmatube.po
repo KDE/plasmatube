@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"POT-Creation-Date: 2023-01-30 01:00+0000\n"
 "PO-Revision-Date: 2022-12-23 20:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.0\n"
+
+#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr "Giriş Yap"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -45,11 +50,6 @@ msgstr ""
 #, kde-format
 msgid "Username"
 msgstr "Kullanıcı Adı"
-
-#: contents/ui/AccountPage.qml:93
-#, kde-format
-msgid "Sign in"
-msgstr "Giriş Yap"
 
 #: contents/ui/ChannelPage.qml:82
 #, kde-format
@@ -141,6 +141,21 @@ msgstr " • %1 görüntülenme"
 msgid " • %1"
 msgstr " • %1"
 
+#: contents/ui/videoplayer/VideoPlayer.qml:297
+#, kde-format
+msgid "Unsubscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:299
+#, kde-format
+msgid "Subscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:309
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr ""
+
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
@@ -150,6 +165,43 @@ msgstr "%1 görüntüleme"
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 beğeni"
+
+#: main.cpp:42
+#, kde-format
+msgid "PlasmaTube"
+msgstr ""
+
+#: main.cpp:44 main.cpp:86
+#, kde-format
+msgid "YouTube client"
+msgstr ""
+
+#: main.cpp:46
+#, kde-format
+msgid "© Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Creator"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
 #~ msgid "Fullscreen"
 #~ msgstr "Tam Ekran"

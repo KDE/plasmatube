@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"POT-Creation-Date: 2023-01-30 01:00+0000\n"
 "PO-Revision-Date: 2022-12-19 09:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,6 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 20.12.0\n"
+
+#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr "Inicia la sessió"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -48,11 +53,6 @@ msgstr ""
 #, kde-format
 msgid "Username"
 msgstr "Nom d'usuari"
-
-#: contents/ui/AccountPage.qml:93
-#, kde-format
-msgid "Sign in"
-msgstr "Inicia la sessió"
 
 #: contents/ui/ChannelPage.qml:82
 #, kde-format
@@ -145,6 +145,21 @@ msgstr " • %1 vistes"
 msgid " • %1"
 msgstr " • %1"
 
+#: contents/ui/videoplayer/VideoPlayer.qml:297
+#, kde-format
+msgid "Unsubscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:299
+#, kde-format
+msgid "Subscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:309
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr ""
+
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
@@ -154,3 +169,40 @@ msgstr "%1 vistes"
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 m'agrades"
+
+#: main.cpp:42
+#, kde-format
+msgid "PlasmaTube"
+msgstr ""
+
+#: main.cpp:44 main.cpp:86
+#, kde-format
+msgid "YouTube client"
+msgstr ""
+
+#: main.cpp:46
+#, kde-format
+msgid "© Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Creator"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
