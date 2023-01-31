@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
 "PO-Revision-Date: 2022-10-03 15:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -18,6 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "로그인"
@@ -32,12 +33,12 @@ msgstr "%1(으)로 로그인했습니다."
 msgid "Currently logged in as %1."
 msgstr "현재 %1(으)로 로그인했습니다."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -46,7 +47,7 @@ msgstr ""
 "개인 인스턴스를 등록하려면 웹 사이트를 방문하십시오.\n"
 "현재 등록 API가 없습니다."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "사용자 이름"
@@ -70,7 +71,7 @@ msgid "Search"
 msgstr "검색"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -106,25 +107,36 @@ msgstr "조회 수"
 msgid "No results"
 msgstr "결과 없음"
 
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "개별"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "인스턴스"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "계정"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Currently logged in as %1."
+msgid "Currently logged in as:"
+msgstr "현재 %1(으)로 로그인했습니다."
+
+#: contents/ui/SettingsPage.qml:118
 #, kde-format
-msgid "Open Account Settings"
-msgstr "계정 설정 열기"
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, kde-format
+msgid "About PlasmaTube"
+msgstr ""
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -202,6 +214,9 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "Open Account Settings"
+#~ msgstr "계정 설정 열기"
 
 #~ msgid "Fullscreen"
 #~ msgstr "전체 화면"

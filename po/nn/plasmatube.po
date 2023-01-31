@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"POT-Creation-Date: 2023-01-30 01:00+0000\n"
 "PO-Revision-Date: 2023-01-15 12:03+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -18,6 +18,11 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+
+#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#, kde-format
+msgid "Sign in"
+msgstr "Logg inn"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
@@ -47,11 +52,6 @@ msgstr ""
 #, kde-format
 msgid "Username"
 msgstr "Brukarnamn"
-
-#: contents/ui/AccountPage.qml:93
-#, kde-format
-msgid "Sign in"
-msgstr "Logg inn"
 
 #: contents/ui/ChannelPage.qml:82
 #, kde-format
@@ -144,6 +144,21 @@ msgstr " • %1 visingar"
 msgid " • %1"
 msgstr " • %1"
 
+#: contents/ui/videoplayer/VideoPlayer.qml:297
+#, kde-format
+msgid "Unsubscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:299
+#, kde-format
+msgid "Subscribe (%1)"
+msgstr ""
+
+#: contents/ui/videoplayer/VideoPlayer.qml:309
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr ""
+
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
@@ -153,3 +168,40 @@ msgstr "%1 visingar"
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 likarlikk"
+
+#: main.cpp:42
+#, kde-format
+msgid "PlasmaTube"
+msgstr ""
+
+#: main.cpp:44 main.cpp:86
+#, kde-format
+msgid "YouTube client"
+msgstr ""
+
+#: main.cpp:46
+#, kde-format
+msgid "© Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Linus Jahn"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Creator"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""

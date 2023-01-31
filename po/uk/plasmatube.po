@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
-"PO-Revision-Date: 2022-12-19 11:28+0200\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
+"PO-Revision-Date: 2023-01-30 08:57+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "Увійти"
@@ -33,12 +34,12 @@ msgstr "Здійснено успішний вхід до системи від 
 msgid "Currently logged in as %1."
 msgstr "Зараз працюємо від імені облікового запису %1."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "Вийти"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -47,7 +48,7 @@ msgstr ""
 "Будь ласка, відвідайте сайт для реєстрації індивідуального екземпляра.\n"
 "У програмі поки що не передбачено інтерфейсу для реєстрації."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Користувач"
@@ -71,7 +72,7 @@ msgid "Search"
 msgstr "Пошук"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -107,25 +108,37 @@ msgstr "Кількість переглядів"
 msgid "No results"
 msgstr "Нічого не знайдено"
 
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "Екземпляр"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "Обліковий запис"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Currently logged in as %1."
+msgid "Currently logged in as:"
+msgstr "Зараз працюємо від імені облікового запису %1."
+
+#: contents/ui/SettingsPage.qml:118
 #, kde-format
-msgid "Open Account Settings"
-msgstr "Відкрити параметри облікового запису"
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, fuzzy, kde-format
+#| msgid "PlasmaTube"
+msgid "About PlasmaTube"
+msgstr "PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -145,17 +158,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:297
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Скасувати підписку (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:299
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Підписатися (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Будь ласка, увійдіть до системи, щоб підписатися на канали."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
@@ -170,39 +183,42 @@ msgstr "%1 уподобань"
 #: main.cpp:42
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:44 main.cpp:86
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Клієнт YouTube"
 
 #: main.cpp:46
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:47
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:47
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Автор"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Юрій Чорноіван"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "yurchor@ukr.net"
+
+#~ msgid "Open Account Settings"
+#~ msgstr "Відкрити параметри облікового запису"
 
 #~ msgid "Fullscreen"
 #~ msgstr "На весь екран"

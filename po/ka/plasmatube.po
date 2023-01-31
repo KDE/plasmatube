@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
-"PO-Revision-Date: 2022-12-19 08:42+0100\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
+"PO-Revision-Date: 2023-01-30 09:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "შესვლა"
@@ -33,12 +34,12 @@ msgstr "წარმატებით შეხვედით, როგორ
 msgid "Currently logged in as %1."
 msgstr "ამჟამად შესული ბრძანდებით, როგორც %1."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "გასვლა"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -47,7 +48,7 @@ msgstr ""
 "ინდივიდუალური ასლისთვის საჭიროა ვებგვერდზე რეგისტრაცია.\n"
 "რეგისტრაციის API ამჟამად არ არსებობს."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "მომხმარებლის სახელი"
@@ -71,7 +72,7 @@ msgid "Search"
 msgstr "ძებნა"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -107,25 +108,37 @@ msgstr "ნახვების რაოდენობა"
 msgid "No results"
 msgstr "შედეგების გარეშე"
 
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "გაშვებული ასლი"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "ანგარიში"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Currently logged in as %1."
+msgid "Currently logged in as:"
+msgstr "ამჟამად შესული ბრძანდებით, როგორც %1."
+
+#: contents/ui/SettingsPage.qml:118
 #, kde-format
-msgid "Open Account Settings"
-msgstr "ანგარიშის პარამეტრების გახსნა"
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, fuzzy, kde-format
+#| msgid "PlasmaTube"
+msgid "About PlasmaTube"
+msgstr "PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -145,17 +158,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:297
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "გამოწერის გაუქმება (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:299
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "გამოწერა (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "არხების გამოსაწერად საჭიროა სისტემაში შეხვიდეთ."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
@@ -170,39 +183,42 @@ msgstr "%1 მოწონება"
 #: main.cpp:42
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:44 main.cpp:86
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "YouTube-ის კლიენტი"
 
 #: main.cpp:46
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© ლინუს იანი"
 
 #: main.cpp:47
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "ლინუს იანი"
 
 #: main.cpp:47
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "შემქმნელი"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Temuri Doghonadze"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Temuri.doghonadze@gmail.com"
+
+#~ msgid "Open Account Settings"
+#~ msgstr "ანგარიშის პარამეტრების გახსნა"
 
 #~ msgid "Fullscreen"
 #~ msgstr "მთელს ეკრანზე"

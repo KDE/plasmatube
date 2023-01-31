@@ -1,15 +1,15 @@
 # Translation of plasmatube.po to Catalan
-# Copyright (C) 2021-2022 This_file_is_part_of_KDE
+# Copyright (C) 2021-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
-"PO-Revision-Date: 2022-12-19 09:21+0100\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
+"PO-Revision-Date: 2023-01-30 10:53+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -21,6 +21,7 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "Inicia la sessió"
@@ -35,12 +36,12 @@ msgstr "S'ha iniciat la sessió correctament com a %1."
 msgid "Currently logged in as %1."
 msgstr "Connectat actualment com a %1."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "Sortida"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -49,7 +50,7 @@ msgstr ""
 "Visiteu el lloc web per a registrar-se amb una instància de l'Invidious.\n"
 "Actualment no hi ha cap API per a registrar-se."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Nom d'usuari"
@@ -73,7 +74,7 @@ msgid "Search"
 msgstr "Cerca"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -110,25 +111,37 @@ msgid "No results"
 msgstr "Sense resultats"
 
 # És un nom propi: https://github.com/iv-org/invidious
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "Instància"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "Compte"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Currently logged in as %1."
+msgid "Currently logged in as:"
+msgstr "Connectat actualment com a %1."
+
+#: contents/ui/SettingsPage.qml:118
 #, kde-format
-msgid "Open Account Settings"
-msgstr "Obre la configuració del compte"
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, fuzzy, kde-format
+#| msgid "PlasmaTube"
+msgid "About PlasmaTube"
+msgstr "PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -148,17 +161,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:297
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Cancel·la la subscripció (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:299
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Subscriu (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Inicieu la sessió per a subscriure's als canals."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
@@ -173,36 +186,39 @@ msgstr "%1 m'agrades"
 #: main.cpp:42
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:44 main.cpp:86
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Client de YouTube"
 
 #: main.cpp:46
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:47
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:47
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Creador"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Josep M. Ferrer"
 
 #: main.cpp:48
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "txemaq@gmail.com"
+
+#~ msgid "Open Account Settings"
+#~ msgstr "Obre la configuració del compte"

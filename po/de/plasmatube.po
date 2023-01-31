@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
 "PO-Revision-Date: 2022-11-10 20:42+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -20,6 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 22.08.3\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "Registrieren"
@@ -34,12 +35,12 @@ msgstr "Erfolgreich als %1 angemeldet."
 msgid "Currently logged in as %1."
 msgstr "Aktuell angemeldet als %1."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "Abmelden"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -49,7 +50,7 @@ msgstr ""
 "registrieren.\n"
 "Es gibt derzeit keine API für die Registrierung."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Benutzername"
@@ -73,7 +74,7 @@ msgid "Search"
 msgstr "Suchen"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -109,25 +110,36 @@ msgstr "Anzahl Angesehen"
 msgid "No results"
 msgstr "Keine Ergebnisse"
 
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "Instanz"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "Zugang"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
+#, fuzzy, kde-format
+#| msgid "Currently logged in as %1."
+msgid "Currently logged in as:"
+msgstr "Aktuell angemeldet als %1."
+
+#: contents/ui/SettingsPage.qml:118
 #, kde-format
-msgid "Open Account Settings"
-msgstr "Zugangseinstellungen öffnen"
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, kde-format
+msgid "About PlasmaTube"
+msgstr ""
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -205,6 +217,9 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
+
+#~ msgid "Open Account Settings"
+#~ msgstr "Zugangseinstellungen öffnen"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Vollbild"
