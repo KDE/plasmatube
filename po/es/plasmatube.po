@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:01+0000\n"
-"PO-Revision-Date: 2023-01-30 20:51+0100\n"
+"PO-Revision-Date: 2023-01-31 13:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -125,21 +125,19 @@ msgid "Account"
 msgstr "Cuenta"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Sesión iniciada como %1."
+msgstr "Sesión iniciada como:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: contents/ui/SettingsPage.qml:158
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgid "About PlasmaTube"
-msgstr "PlasmaTube"
+msgstr "Acerca de PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format

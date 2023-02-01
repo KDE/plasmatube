@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:01+0000\n"
-"PO-Revision-Date: 2023-01-30 08:57+0200\n"
+"PO-Revision-Date: 2023-01-31 07:59+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -124,21 +124,19 @@ msgid "Account"
 msgstr "Обліковий запис"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Зараз працюємо від імені облікового запису %1."
+msgstr "Зараз працюємо від імені:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: contents/ui/SettingsPage.qml:158
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgid "About PlasmaTube"
-msgstr "PlasmaTube"
+msgstr "Про PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format

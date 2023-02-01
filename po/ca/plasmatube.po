@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:01+0000\n"
-"PO-Revision-Date: 2023-01-30 10:53+0100\n"
+"PO-Revision-Date: 2023-01-31 10:11+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -127,21 +127,19 @@ msgid "Account"
 msgstr "Compte"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Connectat actualment com a %1."
+msgstr "Sessió iniciada actualment com a:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Contrasenya"
 
 #: contents/ui/SettingsPage.qml:158
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgid "About PlasmaTube"
-msgstr "PlasmaTube"
+msgstr "Quant al PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -219,6 +217,3 @@ msgstr "Josep M. Ferrer"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
-
-#~ msgid "Open Account Settings"
-#~ msgstr "Obre la configuració del compte"
