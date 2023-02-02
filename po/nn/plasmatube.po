@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 01:00+0000\n"
+"POT-Creation-Date: 2023-01-31 01:01+0000\n"
 "PO-Revision-Date: 2023-01-15 12:03+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -20,6 +20,7 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
+#: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
 msgstr "Logg inn"
@@ -34,12 +35,12 @@ msgstr "Vart logga inn som %1."
 msgid "Currently logged in as %1."
 msgstr "Er logga inn som %1."
 
-#: contents/ui/AccountPage.qml:49
+#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
 msgstr "Logg ut"
 
-#: contents/ui/AccountPage.qml:59
+#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
 msgid ""
 "Please visit the website to register with an invidious instance.\n"
@@ -48,7 +49,7 @@ msgstr ""
 "Gå til nettsida for å registrera deg hos ein Invidious-instans.\n"
 "Det finst førebels ikkje noko API for brukarregistrering."
 
-#: contents/ui/AccountPage.qml:76
+#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
 msgstr "Brukarnamn"
@@ -72,7 +73,7 @@ msgid "Search"
 msgstr "Søk"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:13
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:175
 #, kde-format
 msgid "Settings"
@@ -109,25 +110,35 @@ msgid "No results"
 msgstr "Ingen søkjetreff"
 
 # https://api.invidious.io/
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:22
+#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
 msgstr "Instans"
 
-#: contents/ui/SettingsPage.qml:34
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
 msgstr "Konto"
 
-#: contents/ui/SettingsPage.qml:38
+#: contents/ui/SettingsPage.qml:49
 #, kde-format
-msgid "Open Account Settings"
-msgstr "Opna kontoinnstillingar"
+msgid "Currently logged in as:"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:118
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:158
+#, kde-format
+msgid "About PlasmaTube"
+msgstr ""
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format

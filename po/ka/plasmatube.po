@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-31 01:01+0000\n"
-"PO-Revision-Date: 2023-01-30 09:44+0100\n"
+"PO-Revision-Date: 2023-02-01 02:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -124,21 +124,19 @@ msgid "Account"
 msgstr "ანგარიში"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "ამჟამად შესული ბრძანდებით, როგორც %1."
+msgstr "ამჟამად შესული ბრძანდებით, როგორც:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "პაროლი"
 
 #: contents/ui/SettingsPage.qml:158
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgid "About PlasmaTube"
-msgstr "PlasmaTube"
+msgstr "PlasmaTube-ის შესახებ"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
