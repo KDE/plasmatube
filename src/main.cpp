@@ -20,6 +20,7 @@
 #include <QQmlContext>
 #include <QIcon>
 #include <QCommandLineParser>
+#include <QQuickStyle>
 
 #include <KLocalizedContext>
 #include <KAboutData>
@@ -34,6 +35,10 @@ int main(int argc, char **argv)
 #endif
 
     QApplication app(argc, argv);
+
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE") && QQuickStyle::name().isEmpty()) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
 
     KLocalizedString::setApplicationDomain("tokodon");
     QCoreApplication::setOrganizationName("KDE");
