@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:01+0000\n"
-"PO-Revision-Date: 2023-01-24 15:31+0100\n"
+"POT-Creation-Date: 2023-02-04 00:58+0000\n"
+"PO-Revision-Date: 2023-02-01 10:34+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -121,20 +121,19 @@ msgid "Account"
 msgstr "Účet"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Nyní jste přihlášeni jako %1."
+msgstr "Nyní jste přihlášeni jako:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "O aplikaci PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -154,17 +153,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:297
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Odhlásit se (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:299
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Přihlásit se (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Prosím přihlašte se pro přihlášení do kanálů."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
@@ -176,42 +175,39 @@ msgstr "%1 zobrazení"
 msgid "%1 Likes"
 msgstr ""
 
-#: main.cpp:42
+#: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
-#: main.cpp:44 main.cpp:86
+#: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Klient YouTube"
 
-#: main.cpp:46
+#: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
-#: main.cpp:47
+#: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
-#: main.cpp:47
+#: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Vytvořil"
 
-#: main.cpp:48
+#: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Vít Pelčák"
 
-#: main.cpp:48
+#: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-
-#~ msgid "Open Account Settings"
-#~ msgstr "Otevřít nastavení účtu"
+msgstr "vit@pelcak.org"

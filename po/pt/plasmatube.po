@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 01:01+0000\n"
+"POT-Creation-Date: 2023-02-04 00:58+0000\n"
 "PO-Revision-Date: 2022-12-23 20:43+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -180,38 +180,38 @@ msgstr "%1 visualizações"
 msgid "%1 Likes"
 msgstr "%1 gostos"
 
-#: main.cpp:42
+#: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
 msgstr ""
 
-#: main.cpp:44 main.cpp:86
+#: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
 msgstr ""
 
-#: main.cpp:46
+#: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
 msgstr ""
 
-#: main.cpp:47
+#: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
 msgstr ""
 
-#: main.cpp:47
+#: main.cpp:52
 #, kde-format
 msgid "Creator"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: main.cpp:48
+#: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
