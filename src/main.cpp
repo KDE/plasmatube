@@ -40,7 +40,7 @@ int main(int argc, char **argv)
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
 
-    KLocalizedString::setApplicationDomain("tokodon");
+    KLocalizedString::setApplicationDomain("neochat");
     QCoreApplication::setOrganizationName("KDE");
 
     KAboutData about(QStringLiteral("plasmatube"),
