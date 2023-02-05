@@ -8,23 +8,25 @@
 #include <QFutureWatcher>
 #include <QNetworkReply>
 
+#include <KLocalizedString>
+
 QString VideoListModel::queryTypeString(QueryType type)
 {
     switch (type) {
     case Feed:
-        return tr("Subscriptions");
+        return i18n("Subscriptions");
     case Top:
-        return tr("Invidious Top");
+        return i18n("Invidious Top");
     case Trending:
-        return tr("Trending");
+        return i18n("Trending");
     case TrendingGaming:
-        return tr("Trending Gaming");
+        return i18n("Trending Gaming");
     case TrendingMovies:
-        return tr("Trending Movies");
+        return i18n("Trending Movies");
     case TrendingMusic:
-        return tr("Trending Music");
+        return i18n("Trending Music");
     case TrendingNews:
-        return tr("Trending News");
+        return i18n("Trending News");
     default:
         return {};
     }
@@ -177,7 +179,7 @@ QString VideoListModel::title() const
 {
     switch (m_queryType) {
     case Search:
-        return tr("Search results for \"%1\"").arg(m_searchParameters.query());
+        return i18n("Search results for \"%1\"").arg(m_searchParameters.query());
     default:
         return queryTypeString(m_queryType);
     }

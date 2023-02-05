@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
                 }
 
                 MobileForm.FormButtonDelegate {
-                    id: button
+                    id: logout
                     visible: PlasmaTube.isLoggedIn
                     Layout.alignment: Qt.AlignHCenter
                     text: i18n("Log out")

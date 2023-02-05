@@ -12,6 +12,8 @@
 #include <QUrl>
 #include <QUrlQuery>
 
+#include <KLocalizedString>
+
 constexpr QStringView API_FEED = u"/api/v1/auth/feed";
 constexpr QStringView API_LOGIN = u"/login";
 constexpr QStringView API_SEARCH = u"/api/v1/search";
@@ -57,14 +59,14 @@ Credentials InvidiousApi::credentials() const
 void InvidiousApi::setCredentials(const Credentials &credentials)
 {
     m_credentials = credentials;
-    emit credentialsChanged();
+    Q_EMIT credentialsChanged();
 }
 
 void InvidiousApi::setCredentials(const QString &apiInstance)
 {
     m_credentials = Credentials();
     m_credentials.setApiInstance(apiInstance);
-    emit credentialsChanged();
+    Q_EMIT credentialsChanged();
 }
 
 QString InvidiousApi::invidiousInstance() const
@@ -92,7 +94,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
             emit credentialsChanged();
             return m_credentials;
         }
-        return std::pair(QNetworkReply::ContentAccessDenied, tr("Username or password is wrong."));
+        return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
     });
 }
 
@@ -182,7 +184,7 @@ QFuture<Result> InvidiousApi::unsubscribeFromChannel(QStringView channel)
 
 Error InvidiousApi::invalidJsonError()
 {
-    return std::pair(QNetworkReply::InternalServerError, tr("Server returned no valid JSON."));
+    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));
 }
 
 Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
@@ -191,7 +193,7 @@ Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
     if (status >= 200 && status < 300) {
         return Success();
     }
-    return std::pair(QNetworkReply::InternalServerError, tr("Server returned status code ") + QString::number(status));
+    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned status code ") + QString::number(status));
 }
 
 QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters)

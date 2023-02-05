@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "logincontroller.h"
+#include "plasmatube.h"
 
 #include <QFutureWatcher>
-
-#include "plasmatube.h"
+#include <KLocalizedString>
 
 LogInController::LogInController(QObject *parent)
     : QObject(parent)
@@ -39,17 +39,17 @@ void LogInController::logIn(const QString &username, const QString &password, co
         if (const auto crendentials = std::get_if<QInvidious::Credentials>(&result)) {
             // credentials are set automatically
             PlasmaTube::instance().saveCredentials();
-            emit loggedIn();
+            Q_EMIT loggedIn();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
             switch (error->first) {
             case QNetworkReply::AuthenticationRequiredError:
-                emit errorOccurred(tr("Username or password is wrong."));
+                Q_EMIT errorOccurred(i18n("Username or password is wrong."));
                 break;
             case QNetworkReply::ContentAccessDenied:
-                emit errorOccurred(tr("This instance has disabled the registration."));
+                Q_EMIT errorOccurred(i18n("This instance has disabled the registration."));
                 break;
             default:
-                emit errorOccurred(error->second);
+                Q_EMIT errorOccurred(error->second);
             }
 
             PlasmaTube::instance().api()->setCredentials(previousInstance);
@@ -57,9 +57,9 @@ void LogInController::logIn(const QString &username, const QString &password, co
 
         m_watcher->deleteLater();
         m_watcher = nullptr;
-        emit isLoadingChanged();
+        Q_EMIT isLoadingChanged();
     });
     m_watcher->setFuture(future);
 
-    emit isLoadingChanged();
+    Q_EMIT isLoadingChanged();
 }
