@@ -1,16 +1,16 @@
 # Translation for plasmatube.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2022 This file is copyright:
+# Copyright (C) 2021-2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-04 00:58+0000\n"
-"PO-Revision-Date: 2022-12-28 23:51+0100\n"
+"PO-Revision-Date: 2023-02-04 09:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -127,20 +127,19 @@ msgid "Account"
 msgstr "Kontua"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Une honetan %1 erabiltzaile gisa saio-hasita."
+msgstr "Une honetan honen gisa saio-hasita:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Pasahitza"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "«PlasmaTube»ri buruz"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -160,17 +159,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:297
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Harpidetza kendu (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:299
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Harpidetu (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Mesedez, saio-hasi kanaletan harpidetzeko."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
@@ -185,39 +184,39 @@ msgstr "%1 atsegin"
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "«YouTube»ren bezeroa"
 
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Sortzailea"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Iñigo Salvador Azurmendi"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "xalba@ni.eus"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Ireki kontuaren ezarpenak"
