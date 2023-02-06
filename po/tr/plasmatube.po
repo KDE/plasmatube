@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:58+0000\n"
+"POT-Creation-Date: 2023-02-06 00:59+0000\n"
 "PO-Revision-Date: 2023-01-31 18:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -72,7 +72,7 @@ msgstr "Ara"
 
 #: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
-#: contents/ui/videoplayer/VideoControls.qml:175
+#: contents/ui/videoplayer/VideoControls.qml:176
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
@@ -152,30 +152,40 @@ msgstr " • %1 görüntülenme"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:297
+#: contents/ui/videoplayer/VideoPlayer.qml:300
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Abonelikten Çık (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:299
+#: contents/ui/videoplayer/VideoPlayer.qml:302
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Abone Ol (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:309
+#: contents/ui/videoplayer/VideoPlayer.qml:312
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Kanallara abone olmak için giriş yapın."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:329
+#: contents/ui/videoplayer/VideoPlayer.qml:332
 #, kde-format
 msgid "%1 views"
 msgstr "%1 görüntüleme"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:336
+#: contents/ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 beğeni"
+
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
+#, kde-format
+msgid "Username or password is wrong."
+msgstr ""
+
+#: logincontroller.cpp:49
+#, kde-format
+msgid "This instance has disabled the registration."
+msgstr ""
 
 #: main.cpp:47
 #, kde-format
@@ -213,6 +223,57 @@ msgstr "Emir SARI"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
+
+#: qinvidious/invidiousapi.cpp:187
+#, kde-format
+msgid "Server returned no valid JSON."
+msgstr ""
+
+#: qinvidious/invidiousapi.cpp:196
+#, kde-format
+msgid "Server returned status code "
+msgstr ""
+
+#: videolistmodel.cpp:17
+#, kde-format
+msgid "Subscriptions"
+msgstr ""
+
+#: videolistmodel.cpp:19
+#, fuzzy, kde-format
+#| msgid "Invidious"
+msgid "Invidious Top"
+msgstr "Kırıcı"
+
+#: videolistmodel.cpp:21
+#, kde-format
+msgid "Trending"
+msgstr ""
+
+#: videolistmodel.cpp:23
+#, kde-format
+msgid "Trending Gaming"
+msgstr ""
+
+#: videolistmodel.cpp:25
+#, kde-format
+msgid "Trending Movies"
+msgstr ""
+
+#: videolistmodel.cpp:27
+#, kde-format
+msgid "Trending Music"
+msgstr ""
+
+#: videolistmodel.cpp:29
+#, kde-format
+msgid "Trending News"
+msgstr ""
+
+#: videolistmodel.cpp:182
+#, kde-format
+msgid "Search results for \"%1\""
+msgstr ""
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Hesap Ayarlarını Aç"
