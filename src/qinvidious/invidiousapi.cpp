@@ -193,7 +193,7 @@ Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
     if (status >= 200 && status < 300) {
         return Success();
     }
-    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned status code ") + QString::number(status));
+    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned the status code %1", QString::number(status)));
 }
 
 QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters)
