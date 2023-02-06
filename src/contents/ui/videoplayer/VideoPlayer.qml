@@ -32,6 +32,7 @@ Kirigami.ScrollablePage {
     property string vid: ""
     onVidChanged: {
         renderer.command(["loadfile", "ytdl://" + vid]);
+        renderer.setOption("ytdl-format", "best");
     }
 
     property var previewSource: renderer
@@ -67,7 +68,6 @@ Kirigami.ScrollablePage {
     }
 
     function openFullScreen() {
-        console.log('enter');
         videoContainer.parent = Controls.Overlay.overlay;
         videoContainer.anchors.fill = Controls.Overlay.overlay;
         root.inFullScreen = true;
@@ -75,11 +75,25 @@ Kirigami.ScrollablePage {
     }
 
     function exitFullScreen() {
-        console.log('exit');
         videoContainer.parent = inlineVideoContainer;
         videoContainer.anchors.fill = inlineVideoContainer;
         root.inFullScreen = false;
         applicationWindow().showNormal();
+    }
+    
+    property var video: VideoModel {
+        id: videoModel
+        videoId: vid
+        onVideoIdChanged: {
+            // is also executed in initial set
+            videoModel.fetch()
+        }
+        onErrorOccurred: (errorText) => {
+            applicationWindow().showPassiveNotification(errorText)
+        }
+        onSelectedFormatChanged: {
+            renderer.setOption("ytdl-format", videoModel.selectedFormat);
+        }
     }
 
     GridLayout {
@@ -92,18 +106,6 @@ Kirigami.ScrollablePage {
             spacing: 0
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
-
-            VideoModel {
-                id: videoModel
-                videoId: vid
-                onVideoIdChanged: {
-                    // is also executed in initial set
-                    videoModel.fetch()
-                }
-                onErrorOccurred: (errorText) => {
-                    applicationWindow().showPassiveNotification(errorText)
-                }
-            }
 
             Item {
                 id: inlineVideoContainer
@@ -165,7 +167,8 @@ Kirigami.ScrollablePage {
 
                     VideoControls {
                         anchors.fill: parent
-                        video: renderer
+                        renderer: renderer
+                        videoModel: videoModel
 
                         onRequestFullScreen: {
                             if (root.inFullScreen) {

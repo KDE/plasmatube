@@ -221,6 +221,11 @@ void MpvObject::command(const QVariant& params)
     mpv::qt::command(mpv, params);
 }
 
+void MpvObject::setOption(const QString &name, const QVariant &value)
+{
+    mpv::qt::set_option_variant(mpv, name, value);
+}
+
 void MpvObject::setProperty(const QString& name, const QVariant& value)
 {
     mpv::qt::set_property(mpv, name, value);

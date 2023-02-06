@@ -58,6 +58,34 @@ void VideoModel::fetch()
     });
     m_watcher->setFuture(future);
     Q_EMIT isLoadingChanged();
+    
+    
+    // load format list
+    QString youtubeDl = QStringLiteral("yt-dlp");
+    QStringList arguments;
+    arguments << QLatin1String("--dump-json")
+              << m_videoId;
+    QProcess *process = new QProcess();
+    process->setReadChannel(QProcess::StandardOutput);
+    process->start(youtubeDl, arguments);
+
+    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+            this, [=](int, QProcess::ExitStatus) {
+                 const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
+                 const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
+                 for (const auto &value : formatsArray) {
+                    const auto format = value.toObject();
+                    const auto formatNote = format["format_note"].toString();
+                    if (formatNote == "medium") {
+                        m_audioUrl = format["url"].toString();
+                    } else {
+                        m_formatUrl[formatNote] = format["url"].toString();
+                    }
+                 }
+                 Q_EMIT remoteUrlChanged();
+                 Q_EMIT formatListChanged();
+                 process->deleteLater();
+             });
 }
 
 bool VideoModel::isLoading() const
@@ -114,39 +142,10 @@ VideoListModel *VideoItem::recommendedVideosModel()
 
 QString VideoModel::remoteUrl()
 {
-    if (!m_formatUrl.isEmpty()) {
-        if (m_formatUrl.contains(m_selectedFormat)) {
-            return m_formatUrl[m_selectedFormat];
-        }
-        return {};
+    if (!m_formatUrl.isEmpty() && m_formatUrl.contains(m_selectedFormat)) {
+        return m_formatUrl[m_selectedFormat];
     }
-
-    QString youtubeDl = QStringLiteral("yt-dlp");
-    QStringList arguments;
-    arguments << QLatin1String("--dump-json")
-              << m_videoId;
-    QProcess *process = new QProcess();
-    process->setReadChannel(QProcess::StandardOutput);
-    process->start(youtubeDl, arguments);
-
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this, [=](int, QProcess::ExitStatus) {
-                 const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
-                 const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
-                 for (const auto &value : formatsArray) {
-                    const auto format = value.toObject();
-                    const auto formatNote = format["format_note"].toString();
-                    if (formatNote == "medium") {
-                        m_audioUrl = format["url"].toString();
-                    } else {
-                        m_formatUrl[formatNote] = format["url"].toString();
-                    }
-                 }
-                 Q_EMIT remoteUrlChanged();
-                 Q_EMIT formatListChanged();
-                 process->deleteLater();
-             });
-    return QString();
+    return {};
 }
 
 QString VideoModel::audioUrl() const

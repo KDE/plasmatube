@@ -16,7 +16,8 @@ import org.kde.kcoreaddons 1.0 as KCoreAddons
 
 QQC2.Control {
     id: root
-    required property var video
+    required property var renderer
+    required property var videoModel
 
     signal requestFullScreen()
 
@@ -53,17 +54,17 @@ QQC2.Control {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 font.weight: Font.Bold
-                text: KCoreAddons.Format.formatDuration(video.position * 1000)
+                text: KCoreAddons.Format.formatDuration(renderer.position * 1000)
             }
 
             QQC2.Slider {
                 Layout.fillWidth: true
                 from: 0
-                to: video.duration
-                value: video.position
+                to: renderer.duration
+                value: renderer.position
 
                 onMoved: {
-                    video.setPosition(value)
+                    renderer.setPosition(value)
                 }
             }
 
@@ -71,7 +72,7 @@ QQC2.Control {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 font.weight: Font.Bold
-                text: KCoreAddons.Format.formatDuration(video.duration * 1000)
+                text: KCoreAddons.Format.formatDuration(renderer.duration * 1000)
             }
         }
 
@@ -111,7 +112,7 @@ QQC2.Control {
                     TabIndicator {}
 
                     onClicked: {
-                        video.seek(-5);
+                        renderer.seek(-5);
                     }
                 }
 
@@ -119,7 +120,7 @@ QQC2.Control {
                     width: Kirigami.Units.gridUnit * 3
                     height: width
 
-                    icon.name: video.paused ? "media-playback-start" : "media-playback-pause"
+                    icon.name: renderer.paused ? "media-playback-start" : "media-playback-pause"
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium
@@ -127,10 +128,10 @@ QQC2.Control {
                     TabIndicator {}
 
                     onClicked: {
-                        if (video.paused) {
-                            video.play();
+                        if (renderer.paused) {
+                            renderer.play();
                         } else {
-                            video.pause();
+                            renderer.pause();
                         }
                     }
                 }
@@ -146,7 +147,7 @@ QQC2.Control {
                     TabIndicator {}
 
                     onClicked: {
-                        video.seek(5);
+                        renderer.seek(5);
                     }
                 }
 
@@ -183,15 +184,15 @@ QQC2.Control {
                 id: radioGroup
             }
             Repeater {
-                model: video.video.formatList
+                model: videoModel.formatList
                 delegate: QQC2.RadioDelegate {
                     Layout.fillWidth: true
-                    checked: video.video.selectedFormat === modelData
+                    checked: videoModel.selectedFormat === modelData
                     text: modelData
                     QQC2.ButtonGroup.group: radioGroup
                     onCheckedChanged: {
                         if (checked) {
-                            video.video.selectedFormat = modelData
+                            videoModel.selectedFormat = modelData
                         }
                     }
                 }

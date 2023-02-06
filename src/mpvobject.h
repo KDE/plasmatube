@@ -44,7 +44,8 @@ public Q_SLOTS:
     void setPosition(double value);
     void seek(qreal offset);
     void command(const QVariant& params);
-    void setProperty(const QString& name, const QVariant& value);
+    void setOption(const QString &name, const QVariant &value);
+    void setProperty(const QString &name, const QVariant &value);
     QVariant getProperty(const QString& name);
 
 Q_SIGNALS:
