@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:59+0000\n"
-"PO-Revision-Date: 2023-01-31 07:59+0200\n"
+"POT-Creation-Date: 2023-02-07 00:58+0000\n"
+"PO-Revision-Date: 2023-02-06 08:11+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -181,12 +181,12 @@ msgstr "%1 уподобань"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Помилкове ім'я користувача або пароль."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "У цьому екземплярі реєстрацію вимкнено."
 
 #: main.cpp:47
 #, kde-format
@@ -228,53 +228,53 @@ msgstr "yurchor@ukr.net"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "Сервером не повернуто коректного коду JSON."
 
 #: qinvidious/invidiousapi.cpp:196
-#, kde-format
-msgid "Server returned status code "
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Server returned status code "
+msgid "Server returned the status code %1"
+msgstr "Сервером повернуто код стану"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Підписки"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Invidious"
+msgstr "Топ Invidious"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Тренди"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Ігрові тренди"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Кінотренди"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Музичні тренди"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Тренди новин"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Результати пошуку для «%1»"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Відкрити параметри облікового запису"

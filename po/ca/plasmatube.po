@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:59+0000\n"
-"PO-Revision-Date: 2023-01-31 10:11+0100\n"
+"POT-Creation-Date: 2023-02-07 00:58+0000\n"
+"PO-Revision-Date: 2023-02-06 13:32+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -184,12 +184,12 @@ msgstr "%1 m'agrades"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "El nom d'usuari o la contrasenya és incorrecte."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Aquesta instància ha desactivat el registre."
 
 #: main.cpp:47
 #, kde-format
@@ -231,51 +231,51 @@ msgstr "txemaq@gmail.com"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "El servidor ha retornat un JSON no vàlid."
 
 #: qinvidious/invidiousapi.cpp:196
-#, kde-format
-msgid "Server returned status code "
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Server returned status code "
+msgid "Server returned the status code %1"
+msgstr "El servidor ha retornat un codi d'estat"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Subscripcions"
 
-# És un nom propi: https://github.com/iv-org/invidious
+# "Invidious" és un nom propi: https://github.com/iv-org/invidious
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Invidious"
+msgstr "Els millors d'Invidious"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Tendències"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Tendències de jocs"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Tendències de pel·lícules"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Tendències de música"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Tendències de notícies"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Resultats de la cerca de «%1»"

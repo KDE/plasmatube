@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:59+0000\n"
-"PO-Revision-Date: 2023-01-31 18:40+0300\n"
+"POT-Creation-Date: 2023-02-07 00:58+0000\n"
+"PO-Revision-Date: 2023-02-06 19:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -180,12 +180,12 @@ msgstr "%1 beğeni"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Kullanıcı adı veya parola yanlış."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Bu örnek, kaydı devre dışı bıraktı."
 
 #: main.cpp:47
 #, kde-format
@@ -227,53 +227,53 @@ msgstr "emir_sari@icloud.com"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "Sunucu, geçerli bir JSON döndürmedi."
 
 #: qinvidious/invidiousapi.cpp:196
-#, kde-format
-msgid "Server returned status code "
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Server returned status code "
+msgid "Server returned the status code %1"
+msgstr "Sunucu, şu durum kodunu döndürdü: "
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Abonelikler"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Kırıcı"
+msgstr "Kırıcı En Popüler"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Trendler"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Trend Oyunlar"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Trend Filmler"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Trend Müzikler"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Trend Haberler"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "\"%1\" için arama sonuçları"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Hesap Ayarlarını Aç"

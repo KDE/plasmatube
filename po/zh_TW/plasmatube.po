@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:59+0000\n"
+"POT-Creation-Date: 2023-02-07 00:58+0000\n"
 "PO-Revision-Date: 2022-03-11 00:49+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -230,7 +230,7 @@ msgstr ""
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
-msgid "Server returned status code "
+msgid "Server returned the status code %1"
 msgstr ""
 
 #: videolistmodel.cpp:17

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:59+0000\n"
+"POT-Creation-Date: 2023-02-07 00:58+0000\n"
 "PO-Revision-Date: 2022-12-23 20:43+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -133,7 +133,7 @@ msgstr "Autenticado de momento como %1."
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
@@ -193,7 +193,7 @@ msgstr ""
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
@@ -234,13 +234,13 @@ msgstr ""
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
-msgid "Server returned status code "
+msgid "Server returned the status code %1"
 msgstr ""
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Subscrições"
 
 #: videolistmodel.cpp:19
 #, fuzzy, kde-format
