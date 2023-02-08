@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2021, 2022.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 00:58+0000\n"
-"PO-Revision-Date: 2022-12-19 17:40+0100\n"
+"PO-Revision-Date: 2023-02-06 15:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -123,20 +123,19 @@ msgid "Account"
 msgstr "Account"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Accesso attualmente eseguito come %1."
+msgstr "Accesso attualmente eseguito come:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "Informazioni su PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -156,17 +155,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:300
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Cancella l'iscrizione (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:302
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Iscriviti (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:312
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Accedi per iscriverti ai canali."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:332
 #, kde-format
@@ -181,54 +180,54 @@ msgstr "%1 Mi piace"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Il nome utente o la password sono errati."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Questa istanza ha disabilitato la registrazione."
 
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Client YouTube"
 
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Creatore"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Vincenzo Reale"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "smart2128vr@gmail.com"
 
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "Il server non ha restituito un JSON valido."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
@@ -238,43 +237,42 @@ msgstr ""
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Sottoscrizioni"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Invidious"
+msgstr "Principali Invidious"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Di tendenza"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Giochi di tendenza"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Film di tendenza"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Musica di tendenza"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Notizie di tendenza"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Risultati della ricerca di «%1»"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Apri le impostazioni dell'account"

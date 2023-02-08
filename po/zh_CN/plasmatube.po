@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 00:58+0000\n"
-"PO-Revision-Date: 2023-01-12 10:32\n"
+"PO-Revision-Date: 2023-02-07 11:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -123,10 +123,9 @@ msgid "Account"
 msgstr "账户"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "目前已经以 %1 身份登录。"
+msgstr ""
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
@@ -241,10 +240,9 @@ msgid "Subscriptions"
 msgstr ""
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "偏好"
+msgstr ""
 
 #: videolistmodel.cpp:21
 #, kde-format
@@ -275,6 +273,3 @@ msgstr ""
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr ""
-
-#~ msgid "Open Account Settings"
-#~ msgstr "打开账户设置"

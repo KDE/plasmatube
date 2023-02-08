@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 00:58+0000\n"
-"PO-Revision-Date: 2023-02-01 02:19+0100\n"
+"PO-Revision-Date: 2023-02-07 07:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -111,7 +111,7 @@ msgstr "შედეგების გარეშე"
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
-msgstr "Invidious"
+msgstr "ცბიერი"
 
 #: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
@@ -181,12 +181,12 @@ msgstr "%1 მოწონება"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "გაშვებულმა ასლმა რეგისტრაცია გამორთო."
 
 #: main.cpp:47
 #, kde-format
@@ -228,53 +228,52 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "სერვერის დაბრუნებული სტატუსის კოდია %1"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "გამოწერები"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Invidious"
+msgstr "ცბიერი ზედა"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "ტრენდები"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "ტრენდები თამაშებში"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "ტრენდები ფილმებში"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "ტრენდები მუსიკაში"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "ტრენდები სიახლეებში"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "ძებნის შედეგები \"%1\"-სთვის"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "ანგარიშის პარამეტრების გახსნა"
