@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 00:58+0000\n"
-"PO-Revision-Date: 2023-01-04 20:49+0100\n"
+"PO-Revision-Date: 2023-02-11 08:44+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -124,20 +124,19 @@ msgid "Account"
 msgstr "Konto"
 
 #: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
+#, kde-format
 msgid "Currently logged in as:"
-msgstr "Obecnie zalogowany jako %1."
+msgstr "Obecnie zalogowany jako:"
 
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Hasło"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "O PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:149
 #, kde-format
@@ -157,17 +156,17 @@ msgstr " • %1"
 #: contents/ui/videoplayer/VideoPlayer.qml:300
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Przestań śledzić (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:302
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Zacznij śledzić (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:312
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Zaloguj się, aby móc śledzić kanały."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:332
 #, kde-format
@@ -182,100 +181,99 @@ msgstr "%1 polubienia"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Nazwa użytkownika lub hasło jest niepoprawne."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Wystąpienie to wyłączyło rejestrowanie."
 
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Program dla YouTube"
 
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Twórca"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Łukasz Wojniłowicz"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "lukasz.wojnilowicz@gmail.com"
 
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "Serwer nie zwrócił prawidłowego pliku JSON."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "Serwer nie zwrócił kod błędu %1"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Śledzone"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "Krzywdzący"
+msgstr "Krzywdzący Szczyt"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Na czasie"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Gry na czasie"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Filmy na czasie"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Muzyka na czasie"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Wieści na czasie"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Wyniki wyszukiwania dla \"%1\""
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Otwórz ustawienia konta"
