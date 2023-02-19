@@ -19,6 +19,7 @@
     "separate-locales": false,
 
     "modules": [
+        "flatpak/kirigami-addons.json",
         "flatpak/mpv.json",
         "flatpak/python3-yt-dlp.json",
         {
