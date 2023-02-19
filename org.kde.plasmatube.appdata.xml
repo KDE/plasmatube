@@ -114,6 +114,7 @@ SPDX-License-Identifier: CC0-1.0
       <image>https://cdn.kde.org/screenshots/plasmatube/plasmatube.png</image>
     </screenshot>
   </screenshots>
+  <launchable type="desktop-id">org.kde.plasmatube.desktop</launchable>
   <releases>
     <release version="23.01" date="2023-01-30">
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
