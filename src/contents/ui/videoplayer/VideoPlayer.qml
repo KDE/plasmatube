@@ -230,11 +230,21 @@ Kirigami.ScrollablePage {
                     spacing: Kirigami.Units.largeSpacing
 
                     Image {
+                        id: chanelThumb
                         Layout.preferredHeight: 50
                         Layout.preferredWidth: 50
                         fillMode: Image.PreserveAspectFit
                         source: videoModel.video.authorThumbnail(100)
-
+                        layer.enabled: true
+                        layer.effect: OpacityMask {
+                            maskSource: mask
+                        }
+                        Rectangle {
+                            id: mask
+                            radius: chanelThumb.height/2
+                            anchors.fill: chanelThumb
+                            visible: false
+                        }
                         MouseArea {
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor

@@ -7,6 +7,8 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.7 as Kirigami
+import QtGraphicalEffects 1.0
+
 
 import "utils.js" as Utils
 
@@ -65,7 +67,16 @@ MouseArea {
             Layout.maximumHeight: root.width < 500 ? Kirigami.Units.gridUnit * 4.5 : Kirigami.Units.gridUnit * 6.75
             source: thumbnail
             fillMode: Image.PreserveAspectCrop
-
+            layer.enabled: true
+            layer.effect: OpacityMask {
+                maskSource: mask
+            }
+            Rectangle {
+                id: mask
+                radius: 7
+                anchors.fill: thumb
+                visible: false
+            }
             Text {
                 visible: !liveNow
                 text: Utils.formatTime(length)
