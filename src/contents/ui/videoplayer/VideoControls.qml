@@ -18,6 +18,7 @@ QQC2.Control {
     id: root
     required property var renderer
     required property var videoModel
+    property bool inFullScreen: false
 
     signal requestFullScreen()
 
@@ -82,7 +83,7 @@ QQC2.Control {
 
             Item { Layout.fillWidth: true }
 
-            Row {
+            RowLayout {
                 Layout.alignment: Qt.AlignHCenter
                 spacing: Kirigami.Units.largeSpacing
 
@@ -101,53 +102,121 @@ QQC2.Control {
                     TabIndicator {}
                 }
 
-                QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
-                    height: width
-                    icon.name: "media-seek-backward"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
 
-                    TabIndicator {}
+                RowLayout {
 
-                    onClicked: {
-                        renderer.seek(-5);
-                    }
-                }
+                    id: controlButtonBox
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    Layout.fillHeight: true
+                    spacing: 2
 
-                QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
-                    height: width
 
-                    icon.name: renderer.paused ? "media-playback-start" : "media-playback-pause"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
+                    QQC2.Button {
+                        id: seekBackwardButton
+                        implicitHeight: 40
+                        implicitWidth: 40
 
-                    TabIndicator {}
+                        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                        Kirigami.Theme.inherit: false
 
-                    onClicked: {
-                        if (renderer.paused) {
-                            renderer.play();
-                        } else {
-                            renderer.pause();
+                        enabled: UserPlaylistModel.canSkipBack
+                        onClicked: {
+                            renderer.seek(-5);
                         }
+                        contentItem: Item{
+                            Kirigami.Icon {
+                                anchors.centerIn:parent
+                                source:"media-seek-backward"
+                                color: "white"
+                                width: Kirigami.Units.gridUnit
+                                height: Kirigami.Units.gridUnit
+
+                            }
+                        }
+                        background: Kirigami.ShadowedRectangle{
+                            corners.topLeftRadius: 7
+                            corners.bottomLeftRadius: 7
+
+
+                            color: if (parent.down){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
+                                }else if(parent.hovered){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
+                                }else{
+                                    Qt.rgba(1, 1, 1, 0.3)
+                                }
+                        }
+                        TabIndicator {}
                     }
-                }
 
-                QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
-                    height: width
-                    icon.name: "media-seek-forward"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
+                    QQC2.Button {
+                        id: playPauseButton
+                        implicitHeight: 40
+                        implicitWidth: 60
+                        onClicked: {
+                            if (renderer.paused) {
+                                renderer.play();
+                            } else {
+                                renderer.pause();
+                            }
+                        }
+                        contentItem: Item{
+                            Kirigami.Icon {
+                                anchors.centerIn:parent
+                                source: renderer.paused ? "media-playback-start" : "media-playback-pause"
+                                color: "white"
+                                width: Kirigami.Units.gridUnit
+                                height: Kirigami.Units.gridUnit
+                            }
+                        }
+                        background: Kirigami.ShadowedRectangle{
+                            color: if (parent.down){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
+                                }else if(parent.hovered){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
+                                }else{
+                                    Qt.rgba(1, 1, 1, 0.3)
+                                }
+                        }
+                        TabIndicator {}
+                    }
 
-                    TabIndicator {}
+                    QQC2.Button {
+                        id: seekForwardButton
+                        implicitHeight: 40
+                        implicitWidth: 40
+                        Layout.rightMargin:isWidescreen?0:10
 
-                    onClicked: {
-                        renderer.seek(5);
+                        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                        Kirigami.Theme.inherit: false
+
+                        enabled: UserPlaylistModel.canSkip
+
+                        onClicked: {
+                            renderer.seek(5);
+                        }
+                        contentItem: Item{
+                            Kirigami.Icon {
+                                anchors.centerIn:parent
+                                source:"media-seek-forward"
+                                color: "white"
+                                width: Kirigami.Units.gridUnit
+                                height: Kirigami.Units.gridUnit
+
+                            }
+                        }
+                        background: Kirigami.ShadowedRectangle{
+                            corners.topRightRadius: 7
+                            corners.bottomRightRadius: 7
+                            color: if (parent.down){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
+                                }else if(parent.hovered){
+                                    Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
+                                }else{
+                                    Qt.rgba(1, 1, 1, 0.3)
+                                }
+                        }
+                        TabIndicator {}
                     }
                 }
 

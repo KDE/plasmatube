@@ -95,7 +95,23 @@ Kirigami.ScrollablePage {
             renderer.setOption("ytdl-format", videoModel.selectedFormat);
         }
     }
+    header: Kirigami.AbstractApplicationHeader{
+        contentItem:
+            RowLayout{
+            Controls.ToolButton {
+                id: closeButton
+                icon.name: "go-previous-view"
 
+                width: Kirigami.Units.gridUnit * 2
+                height: Kirigami.Units.gridUnit * 2
+                onClicked: root.requestClosePlayer();
+
+            }
+                Kirigami.Heading{
+                text: videoModel.video.title
+            }
+        }
+    }
     GridLayout {
         columns: root.widescreen ? 2 : 1
         rowSpacing: 0
@@ -108,11 +124,16 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             Item {
+
+                Layout.margins: widescreen? Kirigami.Units.largeSpacing * 2 : 0
                 id: inlineVideoContainer
                 Layout.fillWidth: true
                 Layout.preferredHeight: width / 16.0 * 9.0
                 Layout.maximumHeight: root.height
-
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: playerMask
+                }
                 MouseArea {
                     id: videoContainer
                     anchors.fill: parent
@@ -154,10 +175,14 @@ Kirigami.ScrollablePage {
                             source: videoModel.video.thumbnailUrl("high")
                         }
                     }
-
+                    Rectangle {
+                        id: playerMask
+                        radius: widescreen? 7 : 0
+                        anchors.fill: renderer
+                        visible: false
+                    }
                     VideoData {
                         title: videoModel.video.title
-
                         visible: opacity > 0
                         opacity: videoContainer.showControls ? 1 : 0
                         Behavior on opacity {
@@ -166,6 +191,7 @@ Kirigami.ScrollablePage {
                     }
 
                     VideoControls {
+                        inFullScreen: root.inFullScreen
                         anchors.fill: parent
                         renderer: renderer
                         videoModel: videoModel
@@ -185,22 +211,7 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    Controls.ToolButton {
-                        id: closeButton
-                        anchors.top: parent.top
-                        anchors.topMargin: Kirigami.Units.largeSpacing
-                        anchors.left: parent.left
-                        anchors.leftMargin: Kirigami.Units.largeSpacing
-                        icon.name: "go-previous-view"
-                        icon.width: Kirigami.Units.iconSizes.small
-                        icon.height: Kirigami.Units.iconSizes.small
 
-                        width: Kirigami.Units.gridUnit * 2
-                        height: Kirigami.Units.gridUnit * 2
-                        onClicked: root.requestClosePlayer();
-
-                        TabIndicator {}
-                    }
                 }
             }
 
@@ -397,7 +408,7 @@ Kirigami.ScrollablePage {
 
         ColumnLayout {
             Layout.alignment: Qt.AlignTop
-            Layout.topMargin: root.widescreen ? 0 : Kirigami.Units.largeSpacing
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: 0
@@ -405,6 +416,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: videoModel.video.recommendedVideosModel()
                 delegate: VideoListItem {
+                    id: videoDelegate
                     Layout.fillWidth: true
                     Layout.maximumWidth: parentColumn.width
                     vid: model.id

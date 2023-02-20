@@ -10,7 +10,7 @@ Rectangle {
     radius: 3
     border {
         color: "white"
-        width: parent.focus ? 3 : 0
+        width: parent.focus ? 1 : 0
     }
     Component.onCompleted: parent.activeFocusOnTab = true
 }
