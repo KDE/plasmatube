@@ -44,7 +44,7 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
-"개인 인스턴스를 등록하려면 웹 사이트를 방문하십시오.\n"
+"개인 인스턴스를 등록하려면 웹사이트를 방문하십시오.\n"
 "현재 등록 API가 없습니다."
 
 #: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
