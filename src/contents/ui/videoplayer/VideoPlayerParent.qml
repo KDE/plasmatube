@@ -12,6 +12,7 @@ Flickable {
     id: root
     boundsBehavior: Flickable.StopAtBounds
     contentHeight: applicationWindow().height * 2
+    interactive: Kirigami.Settings.hasTransientTouchInput
 
     readonly property bool isMaximized: contentY === contentHeight
     property real contentToPlayerSpacing: 0
