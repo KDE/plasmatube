@@ -6,7 +6,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.8 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
@@ -116,6 +116,12 @@ Kirigami.ScrollablePage {
             function onLoggedOut() {
                 videoModel.requestQuery(VideoListModel.Trending)
             }
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18nc("@info:status", "Loading…")
+            visible: gridView.model.isLoading
         }
     }
 
