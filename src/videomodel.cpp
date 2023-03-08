@@ -115,8 +115,9 @@ QUrl VideoItem::thumbnailUrl(const QString &quality) const
 {
     const QUrl thumbnailUrl = thumbnail(quality).url();
 
-    if (thumbnailUrl.isRelative()) {
-        return QUrl(PlasmaTube::instance().api()->invidiousInstance() + thumbnailUrl.toString(QUrl::FullyEncoded));
+    if (!thumbnailUrl.isEmpty() && thumbnailUrl.isRelative()) {
+        return QUrl(PlasmaTube::instance().api()->invidiousInstance() +
+                    thumbnailUrl.toString(QUrl::FullyEncoded));
     }
 
     return thumbnailUrl;
