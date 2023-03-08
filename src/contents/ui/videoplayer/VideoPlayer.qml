@@ -348,6 +348,7 @@ Kirigami.ScrollablePage {
 
                     Kirigami.Chip {
                         closable: false
+                        enabled: false
                         labelItem.color: Kirigami.Theme.disabledTextColor
                         labelItem.font.weight: Font.Bold
                         text: i18n("%1 views", Utils.formatCount(videoModel.video.viewCount))
@@ -355,6 +356,7 @@ Kirigami.ScrollablePage {
 
                     Kirigami.Chip {
                         closable: false
+                        enabled: false
                         labelItem.color: Kirigami.Theme.disabledTextColor
                         labelItem.font.weight: Font.Bold
                         text: i18n("%1 Likes", Utils.formatCount(videoModel.video.likeCount))
