@@ -137,6 +137,8 @@ MouseArea {
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignTop
 
+                spacing: Kirigami.Units.smallSpacing
+
                 Controls.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     text: author
