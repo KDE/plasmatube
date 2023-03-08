@@ -174,5 +174,11 @@ Kirigami.ScrollablePage {
             text: searchField.text === "" ? i18n("Search") : i18n("No results")
             icon.name: "search"
         }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18nc("@info:status", "Loading…")
+            visible: gridView.model.isLoading
+        }
     }
 }
