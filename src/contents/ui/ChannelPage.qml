@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: gridView.count === 0 && !root.refreshing
-            text: i18n("Loading")
+            text: i18nc("@info:status", "Loading…")
         }
     }
 
