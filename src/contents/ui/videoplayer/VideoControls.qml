@@ -119,10 +119,7 @@ QQC2.Control {
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
 
-                        enabled: UserPlaylistModel.canSkipBack
-                        onClicked: {
-                            renderer.seek(-5);
-                        }
+                        onClicked: renderer.seek(-5)
                         contentItem: Item{
                             Kirigami.Icon {
                                 anchors.centerIn:parent
@@ -190,11 +187,8 @@ QQC2.Control {
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
 
-                        enabled: UserPlaylistModel.canSkip
+                        onClicked: renderer.seek(5)
 
-                        onClicked: {
-                            renderer.seek(5);
-                        }
                         contentItem: Item{
                             Kirigami.Icon {
                                 anchors.centerIn:parent
