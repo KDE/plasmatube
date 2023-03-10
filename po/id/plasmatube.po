@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:57+0000\n"
+"POT-Creation-Date: 2023-03-10 00:46+0000\n"
 "PO-Revision-Date: 2023-01-13 08:37+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -52,9 +52,12 @@ msgstr ""
 msgid "Username"
 msgstr "Nama pengguna"
 
-#: contents/ui/ChannelPage.qml:82
-#, kde-format
-msgid "Loading"
+#: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
+#: contents/ui/TrendingPage.qml:123
+#, fuzzy, kde-format
+#| msgid "Loading"
+msgctxt "@info:status"
+msgid "Loading…"
 msgstr "Memuat"
 
 #: contents/ui/components/BottomNavBar.qml:69
@@ -72,7 +75,7 @@ msgstr "Cari"
 
 #: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
-#: contents/ui/videoplayer/VideoControls.qml:245
+#: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Pengaturan"
@@ -138,7 +141,7 @@ msgstr ""
 msgid "About PlasmaTube"
 msgstr ""
 
-#: contents/ui/VideoGridItem.qml:160
+#: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 tampilan • %2"
@@ -168,12 +171,12 @@ msgstr ""
 msgid "Please log in to subscribe to channels."
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:353
+#: contents/ui/videoplayer/VideoPlayer.qml:354
 #, kde-format
 msgid "%1 views"
 msgstr "%1 tampilan"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:360
+#: contents/ui/videoplayer/VideoPlayer.qml:362
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Suka"
