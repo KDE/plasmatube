@@ -53,6 +53,10 @@ Kirigami.ScrollablePage {
                     padding: Kirigami.Units.largeSpacing
                 }
 
+                MobileForm.FormDelegateSeparator {
+                    visible: PlasmaTube.isLoggedIn
+                }
+
                 MobileForm.FormButtonDelegate {
                     visible: !PlasmaTube.isLoggedIn
                     Layout.alignment: Qt.AlignHCenter
