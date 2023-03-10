@@ -93,6 +93,7 @@ void PlasmaTube::logOut()
     if (!m_api->credentials().isAnonymous()) {
         // set the credentials to only the invidious api instance
         m_api->setCredentials(m_api->credentials().apiInstance());
+        saveCredentials();
         emit loggedOut();
     }
 }
