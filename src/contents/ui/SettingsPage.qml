@@ -44,101 +44,27 @@ Kirigami.ScrollablePage {
                     title: i18n("Account")
                 }
 
-                MobileForm.FormTextDelegate {
+                QQC2.Label {
                     visible: PlasmaTube.isLoggedIn
-                    text: i18n("Currently logged in as:")
-                    description: PlasmaTube.invidiousId
-                }
-
-                MobileForm.FormDelegateSeparator {
-                    above: logout
-                    visible: PlasmaTube.isLoggedIn
+                    Layout.fillWidth: true
+                    text: i18n("Currently logged in as %1.", PlasmaTube.invidiousId)
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    padding: Kirigami.Units.largeSpacing
                 }
 
                 MobileForm.FormButtonDelegate {
-                    id: logout
+                    visible: !PlasmaTube.isLoggedIn
+                    Layout.alignment: Qt.AlignHCenter
+                    text: i18n("Log in")
+                    onClicked: pageStack.layers.push("qrc:/LoginPage.qml");
+                }
+
+                MobileForm.FormButtonDelegate {
                     visible: PlasmaTube.isLoggedIn
                     Layout.alignment: Qt.AlignHCenter
                     text: i18n("Log out")
                     onClicked: PlasmaTube.logOut();
-                }
-
-                MobileForm.FormSectionText {
-                    visible: !PlasmaTube.isLoggedIn
-                    text: i18n("Please visit the website to register with an invidious instance.\nThere is currently no API for registering.")
-                }
-
-                MobileForm.AbstractFormDelegate {
-                    Layout.fillWidth: true
-
-                    visible: !PlasmaTube.isLoggedIn
-                    background: Item {}
-
-                    contentItem: ColumnLayout {
-                        QQC2.Label {
-                            text: i18n("Instance")
-                            Layout.fillWidth: true
-                        }
-
-                        QQC2.ComboBox {
-                            id: invidiousInstance
-
-                            editable: true
-                            model: ["https://ytprivate.com", "https://invidiou.site"]
-                            Layout.fillWidth: true
-                        }
-                    }
-                }
-
-                MobileForm.FormDelegateSeparator {
-                    visible: !PlasmaTube.isLoggedIn
-                }
-
-                MobileForm.FormTextFieldDelegate {
-                    id: usernameField
-
-                    label: i18n("Username")
-                    visible: !PlasmaTube.isLoggedIn
-                    onAccepted: passwordField.forceActiveFocus()
-                }
-
-                MobileForm.FormDelegateSeparator {
-                    visible: !PlasmaTube.isLoggedIn
-                }
-
-                MobileForm.AbstractFormDelegate {
-                    Layout.fillWidth: true
-
-                    visible: !PlasmaTube.isLoggedIn
-
-                    background: Item {}
-
-                    contentItem: ColumnLayout {
-                        QQC2.Label {
-                            text: i18n("Password")
-                            Layout.fillWidth: true
-                        }
-
-                        Kirigami.PasswordField {
-                            id: passwordField
-
-                            onAccepted: logInButton.clicked()
-
-                            Layout.fillWidth: true
-                        }
-                    }
-                }
-
-                MobileForm.FormDelegateSeparator {
-                    above: logInButton
-                    visible: !PlasmaTube.isLoggedIn
-                }
-
-                MobileForm.FormButtonDelegate {
-                    id: logInButton
-                    visible: !PlasmaTube.isLoggedIn
-                    text: i18n("Sign in")
-                    onClicked: logInController.logIn(usernameField.text, passwordField.text, invidiousInstance.editText)
                 }
             }
         }

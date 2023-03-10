@@ -331,7 +331,7 @@ Kirigami.ScrollablePage {
                                 } else if (!PlasmaTube.isLoggedIn) {
                                     root.requestClosePlayer();
                                     showPassiveNotification(i18n("Please log in to subscribe to channels."));
-                                    pageStack.layers.push("qrc:/AccountPage.qml");
+                                    pageStack.layers.push("qrc:/LoginPage.qml");
                                 }
                             }
                         }
