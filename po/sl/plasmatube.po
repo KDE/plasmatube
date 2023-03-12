@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 08:41+0100\n"
+"PO-Revision-Date: 2023-03-11 09:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -55,11 +55,10 @@ msgstr "Uporabniško ime"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "Nalaganje"
+msgstr "Nalaganje…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60

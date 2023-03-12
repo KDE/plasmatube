@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 20:33+0100\n"
+"PO-Revision-Date: 2023-03-10 11:59+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -53,8 +53,7 @@ msgstr "Nom d'utilisateur"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Chargement en cours… "
