@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
 "PO-Revision-Date: 2022-10-03 15:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -16,41 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 21.12.3\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "로그인"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "%1(으)로 로그인했습니다."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "현재 %1(으)로 로그인했습니다."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "로그아웃"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-"개인 인스턴스를 등록하려면 웹사이트를 방문하십시오.\n"
-"현재 등록 API가 없습니다."
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "사용자 이름"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -79,6 +44,58 @@ msgstr "검색"
 #, kde-format
 msgid "Settings"
 msgstr "설정"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "로그인"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "%1(으)로 로그인했습니다."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "인스턴스"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "사용자 이름"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "로그아웃"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -115,7 +132,7 @@ msgstr "결과 없음"
 msgid "Invidious"
 msgstr "개별"
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "인스턴스"
@@ -125,18 +142,17 @@ msgstr "인스턴스"
 msgid "Account"
 msgstr "계정"
 
-#: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
-msgid "Currently logged in as:"
+#: contents/ui/SettingsPage.qml:50
+#, kde-format
+msgid "Currently logged in as %1."
 msgstr "현재 %1(으)로 로그인했습니다."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr ""
+msgid "Log out"
+msgstr "로그아웃"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr ""
@@ -278,6 +294,18 @@ msgstr ""
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr ""
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "개인 인스턴스를 등록하려면 웹사이트를 방문하십시오.\n"
+#~ "현재 등록 API가 없습니다."
+
+#, fuzzy
+#~| msgid "Currently logged in as %1."
+#~ msgid "Currently logged in as:"
+#~ msgstr "현재 %1(으)로 로그인했습니다."
 
 #~ msgid "Open Account Settings"
 #~ msgstr "계정 설정 열기"

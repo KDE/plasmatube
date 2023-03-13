@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-10 08:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -17,41 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "Увійти"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "Здійснено успішний вхід до системи від імені %1."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "Зараз працюємо від імені облікового запису %1."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "Вийти"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-"Будь ласка, відвідайте сайт для реєстрації індивідуального екземпляра.\n"
-"У програмі поки що не передбачено інтерфейсу для реєстрації."
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "Користувач"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -79,6 +44,58 @@ msgstr "Пошук"
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "Увійти"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Здійснено успішний вхід до системи від імені %1."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "Екземпляр"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "Користувач"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr "Пароль"
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Вийти"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -115,7 +132,7 @@ msgstr "Нічого не знайдено"
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "Екземпляр"
@@ -125,17 +142,17 @@ msgstr "Екземпляр"
 msgid "Account"
 msgstr "Обліковий запис"
 
-#: contents/ui/SettingsPage.qml:49
+#: contents/ui/SettingsPage.qml:50
 #, kde-format
-msgid "Currently logged in as:"
-msgstr "Зараз працюємо від імені:"
+msgid "Currently logged in as %1."
+msgstr "Зараз працюємо від імені облікового запису %1."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr "Пароль"
+msgid "Log out"
+msgstr "Вийти"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Про PlasmaTube"
@@ -276,6 +293,16 @@ msgstr "Тренди новин"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Результати пошуку для «%1»"
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "Будь ласка, відвідайте сайт для реєстрації індивідуального екземпляра.\n"
+#~ "У програмі поки що не передбачено інтерфейсу для реєстрації."
+
+#~ msgid "Currently logged in as:"
+#~ msgstr "Зараз працюємо від імені:"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Відкрити параметри облікового запису"

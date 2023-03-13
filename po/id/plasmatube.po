@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
 "PO-Revision-Date: 2023-01-13 08:37+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -16,41 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.1\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "Masuk"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "Berhasil masuk sebagai %1."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "Saat ini masuk sebagai %1."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "Keluar dari akun"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-"Silakan mengunjungi situs web untuk mendaftar dengan server Invidious.\n"
-"Saat ini tidak ada API untuk mendaftar."
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "Nama pengguna"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -79,6 +44,58 @@ msgstr "Cari"
 #, kde-format
 msgid "Settings"
 msgstr "Pengaturan"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "Masuk"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Berhasil masuk sebagai %1."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "Server"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "Nama pengguna"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Keluar dari akun"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -115,7 +132,7 @@ msgstr "Tidak ada hasil"
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "Server"
@@ -125,18 +142,17 @@ msgstr "Server"
 msgid "Account"
 msgstr "Akun"
 
-#: contents/ui/SettingsPage.qml:49
-#, fuzzy, kde-format
-#| msgid "Currently logged in as %1."
-msgid "Currently logged in as:"
+#: contents/ui/SettingsPage.qml:50
+#, kde-format
+msgid "Currently logged in as %1."
 msgstr "Saat ini masuk sebagai %1."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr ""
+msgid "Log out"
+msgstr "Keluar dari akun"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr ""
@@ -278,6 +294,18 @@ msgstr ""
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr ""
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "Silakan mengunjungi situs web untuk mendaftar dengan server Invidious.\n"
+#~ "Saat ini tidak ada API untuk mendaftar."
+
+#, fuzzy
+#~| msgid "Currently logged in as %1."
+#~ msgid "Currently logged in as:"
+#~ msgstr "Saat ini masuk sebagai %1."
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Buka Pengaturan Akun"

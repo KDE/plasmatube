@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2023-02-08 02:39+0100\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"PO-Revision-Date: 2023-03-10 16:35+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,50 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "Accedi"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "Accesso eseguito correttamente come %1."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "Accesso attualmente eseguito come %1."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "Disconnetti"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-"Visita il sito web per registrarti con un'istanza invidious.\n"
-"Al momento non ci sono API per la registrazione."
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "Nome utente"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "Caricamento"
+msgstr "Caricamento…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -79,6 +43,58 @@ msgstr "Cerca"
 #, kde-format
 msgid "Settings"
 msgstr "Impostazioni"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "Accedi"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Accesso eseguito correttamente come %1."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "Istanza"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "Nome utente"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr "Password"
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Disconnetti"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -115,7 +131,7 @@ msgstr "Nessun risultato"
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "Istanza"
@@ -125,17 +141,17 @@ msgstr "Istanza"
 msgid "Account"
 msgstr "Account"
 
-#: contents/ui/SettingsPage.qml:49
+#: contents/ui/SettingsPage.qml:50
 #, kde-format
-msgid "Currently logged in as:"
-msgstr "Accesso attualmente eseguito come:"
+msgid "Currently logged in as %1."
+msgstr "Accesso attualmente eseguito come %1."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr "Password"
+msgid "Log out"
+msgstr "Disconnetti"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Informazioni su PlasmaTube"
@@ -276,6 +292,16 @@ msgstr "Notizie di tendenza"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Risultati della ricerca di «%1»"
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "Visita il sito web per registrarti con un'istanza invidious.\n"
+#~ "Al momento non ci sono API per la registrazione."
+
+#~ msgid "Currently logged in as:"
+#~ msgstr "Accesso attualmente eseguito come:"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Apri le impostazioni dell'account"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
 "PO-Revision-Date: 2023-03-10 10:50+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -16,39 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 22.12.3\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "Přidat se"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "Úspěšně přihlášeni jako %1."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "Nyní jste přihlášeni jako %1."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "Odhlásit se"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "Uživatelské jméno"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -76,6 +43,58 @@ msgstr "Hledat"
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "Přidat se"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Úspěšně přihlášeni jako %1."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "Instance"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr "Heslo"
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Odhlásit se"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -112,7 +131,7 @@ msgstr "Žádné výsledky"
 msgid "Invidious"
 msgstr ""
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "Instance"
@@ -122,17 +141,17 @@ msgstr "Instance"
 msgid "Account"
 msgstr "Účet"
 
-#: contents/ui/SettingsPage.qml:49
+#: contents/ui/SettingsPage.qml:50
 #, kde-format
-msgid "Currently logged in as:"
-msgstr "Nyní jste přihlášeni jako:"
+msgid "Currently logged in as %1."
+msgstr "Nyní jste přihlášeni jako %1."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr "Heslo"
+msgid "Log out"
+msgstr "Odhlásit se"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "O aplikaci PlasmaTube"
@@ -273,3 +292,6 @@ msgstr "Trendové novinky"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Hledat výsledky pro \"%1\""
+
+#~ msgid "Currently logged in as:"
+#~ msgstr "Nyní jste přihlášeni jako:"

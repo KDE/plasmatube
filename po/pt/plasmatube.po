@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:46+0000\n"
+"POT-Creation-Date: 2023-03-13 00:48+0000\n"
 "PO-Revision-Date: 2023-02-15 12:38+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -17,42 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Invidious PlasmaTube YouTube Linus Jahn JSON Top\n"
-
-#: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
-#: contents/ui/SettingsPage.qml:140
-#, kde-format
-msgid "Sign in"
-msgstr "Autenticar"
-
-#: contents/ui/AccountPage.qml:21
-#, kde-format
-msgid "Successfully logged in as %1."
-msgstr "Autenticado com sucesso como %1."
-
-#: contents/ui/AccountPage.qml:40
-#, kde-format
-msgid "Currently logged in as %1."
-msgstr "Autenticado de momento como %1."
-
-#: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
-#, kde-format
-msgid "Log out"
-msgstr "Encerrar"
-
-#: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
-#, kde-format
-msgid ""
-"Please visit the website to register with an invidious instance.\n"
-"There is currently no API for registering."
-msgstr ""
-"Por favor visite a página Web para se registar com uma instância do "
-"Invidious.\n"
-"Não existe nenhuma API de momento para se registar."
-
-#: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
-#, kde-format
-msgid "Username"
-msgstr "Nome do Utilizador"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -81,6 +45,58 @@ msgstr "Procurar"
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"
+
+#: contents/ui/LoginPage.qml:13
+#, kde-format
+msgid "Sign in"
+msgstr "Autenticar"
+
+#: contents/ui/LoginPage.qml:19
+#, kde-format
+msgid "Successfully logged in as %1."
+msgstr "Autenticado com sucesso como %1."
+
+#: contents/ui/LoginPage.qml:46
+#, kde-format
+msgid "Log in to an Invidious Account"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:51
+#, fuzzy, kde-format
+#| msgid "Instance"
+msgid "Instance Url"
+msgstr "Instância"
+
+#: contents/ui/LoginPage.qml:63
+#, kde-format
+msgid "Username"
+msgstr "Nome do Utilizador"
+
+#: contents/ui/LoginPage.qml:72
+#, kde-format
+msgid "Password"
+msgstr "Senha"
+
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Encerrar"
+
+#: contents/ui/LoginPage.qml:91
+#, kde-format
+msgid "Instance URL must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:96
+#, kde-format
+msgid "Username must not be empty!"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:101
+#, kde-format
+msgid "Password must not be empty!"
+msgstr ""
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -117,7 +133,7 @@ msgstr "Sem resultados"
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
+#: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
 msgstr "Instância"
@@ -127,17 +143,17 @@ msgstr "Instância"
 msgid "Account"
 msgstr "Conta"
 
-#: contents/ui/SettingsPage.qml:49
+#: contents/ui/SettingsPage.qml:50
 #, kde-format
-msgid "Currently logged in as:"
-msgstr "Autenticado de momento como:"
+msgid "Currently logged in as %1."
+msgstr "Autenticado de momento como %1."
 
-#: contents/ui/SettingsPage.qml:118
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
-msgid "Password"
-msgstr "Senha"
+msgid "Log out"
+msgstr "Encerrar"
 
-#: contents/ui/SettingsPage.qml:158
+#: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Acerca do PlasmaTube"
@@ -278,3 +294,14 @@ msgstr "Tendências na Notícias"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Resultados da pesquisa por \"%1\""
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "Por favor visite a página Web para se registar com uma instância do "
+#~ "Invidious.\n"
+#~ "Não existe nenhuma API de momento para se registar."
+
+#~ msgid "Currently logged in as:"
+#~ msgstr "Autenticado de momento como:"
