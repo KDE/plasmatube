@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-10 08:30+0200\n"
+"PO-Revision-Date: 2023-03-13 08:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -58,13 +58,12 @@ msgstr "Здійснено успішний вхід до системи від 
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Вхід до індивідуального облікового запису"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Екземпляр"
+msgstr "Адреса екземпляра"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -77,25 +76,24 @@ msgid "Password"
 msgstr "Пароль"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Вийти"
+msgstr "Увійти"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "Адреса екземпляра не може бути порожньою!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Ім'я користувача має бути непорожнім!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Пароль має бути непорожнім!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format

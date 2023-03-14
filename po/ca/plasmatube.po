@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-10 08:51+0100\n"
+"PO-Revision-Date: 2023-03-13 09:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -60,13 +60,12 @@ msgstr "S'ha iniciat la sessió correctament com a %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Inici de sessió a un compte d'Invidious"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Instància"
+msgstr "URL de la instància"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -79,25 +78,24 @@ msgid "Password"
 msgstr "Contrasenya"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Sortida"
+msgstr "Inici de sessió"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "L'URL de la instància no pot estar buit!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "El nom d'usuari no pot estar buit!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "La contrasenya no pot estar buida!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -297,13 +295,3 @@ msgstr "Tendències de notícies"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Resultats de la cerca de «%1»"
-
-#~ msgid ""
-#~ "Please visit the website to register with an invidious instance.\n"
-#~ "There is currently no API for registering."
-#~ msgstr ""
-#~ "Visiteu el lloc web per a registrar-se amb una instància de l'Invidious.\n"
-#~ "Actualment no hi ha cap API per a registrar-se."
-
-#~ msgid "Currently logged in as:"
-#~ msgstr "Sessió iniciada actualment com a:"
