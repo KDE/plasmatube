@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-11 09:24+0100\n"
+"PO-Revision-Date: 2023-03-14 09:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -58,13 +58,12 @@ msgstr "Uspešno prijavljeni kot %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Prijavi se na individualni račun"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Pojavek"
+msgstr "Url pojavka"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -77,25 +76,24 @@ msgid "Password"
 msgstr "Geslo"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Odjavi se"
+msgstr "Prijavi se"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "URL pojavka ne sme biti prazen!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Uporabniško ime ne sme biti prazno!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Geslo ne sme biti prazno!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format

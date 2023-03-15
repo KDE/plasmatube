@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-11 06:53+0100\n"
+"PO-Revision-Date: 2023-03-14 05:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -58,13 +58,12 @@ msgstr "წარმატებით შეხვედით, როგორ
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "შედით საეჭვო ანგარიშში"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "გაშვებული ასლი"
+msgstr "გაშვებული ასლის URL"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -77,25 +76,24 @@ msgid "Password"
 msgstr "პაროლი"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "გასვლა"
+msgstr "შესვლა"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "მომხმარებლის სახელი ცარიელი არ შეიძლება იყოს!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "პაროლი ცარიელი არ შეიძლება, იყოს!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
