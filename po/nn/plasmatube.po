@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-11 15:05+0100\n"
+"PO-Revision-Date: 2023-03-19 14:30+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -59,12 +59,12 @@ msgstr "Vart logga inn som %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Logg på Invidious-konto"
 
 #: contents/ui/LoginPage.qml:51
 #, kde-format
 msgid "Instance Url"
-msgstr ""
+msgstr "Instansadresse"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -79,22 +79,22 @@ msgstr "Passord"
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Logg inn"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "Instansadresse kan ikkje vera tom."
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Brukarnamnet kan ikkje vera tomt."
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Passordet kan ikkje vera tomt."
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
