@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-10 10:50+0100\n"
+"PO-Revision-Date: 2023-03-15 14:29+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -60,10 +60,9 @@ msgid "Log in to an Invidious Account"
 msgstr ""
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Instance"
+msgstr "URL instance"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -76,25 +75,24 @@ msgid "Password"
 msgstr "Heslo"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Odhlásit se"
+msgstr "Přihlásit"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "URL instance není být prázdné."
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Uživatelské jméno nesmí zůstat prázdné."
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Heslo nesmí být prázdné."
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -292,6 +290,3 @@ msgstr "Trendové novinky"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Hledat výsledky pro \"%1\""
-
-#~ msgid "Currently logged in as:"
-#~ msgstr "Nyní jste přihlášeni jako:"

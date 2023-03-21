@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-02-15 12:38+0000\n"
+"PO-Revision-Date: 2023-03-20 11:13+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -20,11 +20,10 @@ msgstr ""
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "A carregar"
+msgstr "A carregar…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -59,13 +58,12 @@ msgstr "Autenticado com sucesso como %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Autenticar com uma Conta do Invidious"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Instância"
+msgstr "URL da Instância"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -78,25 +76,24 @@ msgid "Password"
 msgstr "Senha"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Encerrar"
+msgstr "Ligar"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "O URL da instância não deverá estar em branco!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "O utilizador não deverá ser vazio!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "A senha não deverá ser vazia!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -294,14 +291,3 @@ msgstr "Tendências na Notícias"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Resultados da pesquisa por \"%1\""
-
-#~ msgid ""
-#~ "Please visit the website to register with an invidious instance.\n"
-#~ "There is currently no API for registering."
-#~ msgstr ""
-#~ "Por favor visite a página Web para se registar com uma instância do "
-#~ "Invidious.\n"
-#~ "Não existe nenhuma API de momento para se registar."
-
-#~ msgid "Currently logged in as:"
-#~ msgstr "Autenticado de momento como:"
