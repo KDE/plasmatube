@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-02-16 12:44+0400\n"
+"PO-Revision-Date: 2023-03-23 12:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -20,11 +20,10 @@ msgstr ""
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "يحمّل"
+msgstr "يحمّل..."
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -59,13 +58,12 @@ msgstr "نجح في الولوج كـ %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "لج إلى حساب انفيديوس"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "المثيل"
+msgstr "عنوان النسخة"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -78,25 +76,24 @@ msgid "Password"
 msgstr "كلمة السّرّ"
 
 #: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "اخرج"
+msgstr "سجل الدخول"
 
 #: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "يجب ألا يكون العنوان فارغًا!"
 
 #: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "يجب ألا يكون الاسم فارغًا!"
 
 #: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "يجب ألا تكون كلمة السر فارغة!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -186,7 +183,7 @@ msgstr "اشترك (%1)"
 #: contents/ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "من فضلك لج لتشترك في القنوات"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:354
 #, kde-format
@@ -201,12 +198,12 @@ msgstr "الإعجابات %1"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "اسم المستخدم أو كلمة المرور خاطئة."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "عطلة هذه النسخة التسجيل"
 
 #: main.cpp:47
 #, kde-format
@@ -221,7 +218,7 @@ msgstr "عميل يوتيوب"
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© لينوس جان"
 
 #: main.cpp:52
 #, kde-format
@@ -248,12 +245,12 @@ msgstr "zayed.alsaidi@gmail.com"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "أرجع الخادوم ملف جوسون غير صحيح."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "أرجع الخادوم رمز حالة %1"
 
 #: videolistmodel.cpp:17
 #, kde-format
@@ -261,40 +258,39 @@ msgid "Subscriptions"
 msgstr "الاشتراكات"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "فردي"
+msgstr "الأعلى في انفيديوس"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "الرائج"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "الرائج في الألعاب"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "الرائج في الأفلام"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "الرائج في الموسيقى"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "الرائج في الأخبار"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "نتائج البحث عن \"%1\""
 
 #~ msgid ""
 #~ "Please visit the website to register with an invidious instance.\n"
