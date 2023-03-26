@@ -67,6 +67,8 @@ Kirigami.ScrollablePage {
                     onAccepted: passwordField.clicked()
                 }
 
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextFieldDelegate {
                     id: passwordField
                     label: i18n("Password")
