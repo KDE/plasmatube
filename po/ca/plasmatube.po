@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-03-13 09:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -72,27 +72,27 @@ msgstr "URL de la instància"
 msgid "Username"
 msgstr "Nom d'usuari"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr "Contrasenya"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Log in"
 msgstr "Inici de sessió"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "L'URL de la instància no pot estar buit!"
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "El nom d'usuari no pot estar buit!"
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "La contrasenya no pot estar buida!"

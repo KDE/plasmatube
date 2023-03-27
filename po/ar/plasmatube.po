@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-03-23 12:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -70,27 +70,27 @@ msgstr "عنوان النسخة"
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr "كلمة السّرّ"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Log in"
 msgstr "سجل الدخول"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "يجب ألا يكون العنوان فارغًا!"
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "يجب ألا يكون الاسم فارغًا!"
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "يجب ألا تكون كلمة السر فارغة!"

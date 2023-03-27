@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2022-09-24 15:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -71,28 +71,28 @@ msgstr "Instans"
 msgid "Username"
 msgstr "Användarnamn"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Log out"
 msgid "Log in"
 msgstr "Logga ut"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr ""

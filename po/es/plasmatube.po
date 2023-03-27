@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-03-13 21:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -71,27 +71,27 @@ msgstr "URL de la instancia"
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr "Contraseña"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "La URL de la instancia no puede estar vacía."
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "El nombre de usuario no puede estar vacío."
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "La contraseña no puede estar vacía."

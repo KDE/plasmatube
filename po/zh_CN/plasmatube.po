@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
-"PO-Revision-Date: 2023-03-11 04:53\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"PO-Revision-Date: 2023-03-26 02:19\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -60,38 +60,36 @@ msgid "Log in to an Invidious Account"
 msgstr ""
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "实例"
+msgstr ""
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
 msgid "Username"
 msgstr "用户名"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
+#, kde-format
 msgid "Log in"
-msgstr "注销"
+msgstr ""
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr ""
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr ""
@@ -292,10 +290,3 @@ msgstr ""
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr ""
-
-#~ msgid ""
-#~ "Please visit the website to register with an invidious instance.\n"
-#~ "There is currently no API for registering."
-#~ msgstr ""
-#~ "请访问该网站注册一个独立账户。\n"
-#~ "目前尚未有用于注册的 API 可用。"
