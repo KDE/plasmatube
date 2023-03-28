@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:48+0000\n"
+"POT-Creation-Date: 2023-03-27 00:48+0000\n"
 "PO-Revision-Date: 2023-03-19 14:30+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -71,27 +71,27 @@ msgstr "Instansadresse"
 msgid "Username"
 msgstr "Brukarnamn"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
 msgstr "Passord"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Log in"
 msgstr "Logg inn"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "Instansadresse kan ikkje vera tom."
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "Brukarnamnet kan ikkje vera tomt."
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Passordet kan ikkje vera tomt."
