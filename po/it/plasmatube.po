@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:48+0000\n"
-"PO-Revision-Date: 2023-03-10 16:35+0100\n"
+"PO-Revision-Date: 2023-03-13 19:53+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -57,13 +57,12 @@ msgstr "Accesso eseguito correttamente come %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Accedi a un account Invidious"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Istanza"
+msgstr "URL istanza"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -76,25 +75,24 @@ msgid "Password"
 msgstr "Password"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Disconnetti"
+msgstr "Accedi"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "L'URL dell'istanza non può essere vuoto!"
 
 #: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Il nome utente non può essere vuoto!"
 
 #: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "La password non può essere vuota!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
