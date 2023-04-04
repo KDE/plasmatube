@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:48+0000\n"
-"PO-Revision-Date: 2023-03-06 20:17+0200\n"
+"PO-Revision-Date: 2023-03-30 12:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -22,7 +22,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "Ladataan…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -57,13 +57,12 @@ msgstr "Kirjautuminen tunnuksella %1 onnistui."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Kirjaudu vihamieliselle tilille"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Instanssi"
+msgstr "Instanssin verkko-osoite"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -76,25 +75,24 @@ msgid "Password"
 msgstr "Salasana"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Kirjaudu ulos"
+msgstr "Kirjaudu"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "Instanssin verkko-osoite ei saa olla tyhjä!"
 
 #: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Käyttäjätunnus ei saa olla tyhjä!"
 
 #: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Salasana ei saa olla tyhjä!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
