@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2023-03-06 20:17+0200\n"
+"PO-Revision-Date: 2023-03-30 12:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -44,7 +44,7 @@ msgid ""
 "Please visit the website to register with an invidious instance.\n"
 "There is currently no API for registering."
 msgstr ""
-"Rekisteröi instanssi sivustolla.\n"
+"Rekisteröidy vihamieliseen instanssiin käymällä sivustolla.\n"
 "Rekisteröintiin ei toistaiseksi ole APIa."
 
 #: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
@@ -57,7 +57,7 @@ msgstr "Käyttäjätunnus"
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "Ladataan…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
