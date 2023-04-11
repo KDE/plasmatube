@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 20:54+0100\n"
+"PO-Revision-Date: 2023-04-11 00:35+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/AccountPage.qml:14 contents/ui/AccountPage.qml:93
 #: contents/ui/SettingsPage.qml:140
@@ -58,11 +58,10 @@ msgstr "Erabiltzaile-izena"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "Kargatzen"
+msgstr "Zamatzen…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
