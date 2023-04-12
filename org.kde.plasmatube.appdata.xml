@@ -119,6 +119,7 @@ SPDX-License-Identifier: CC0-1.0
   </screenshots>
   <launchable type="desktop-id">org.kde.plasmatube.desktop</launchable>
   <releases>
+    <release version="23.04.0" date="2023-04-20"/>
     <release version="23.01" date="2023-01-30">
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
     </release>
@@ -127,32 +128,6 @@ SPDX-License-Identifier: CC0-1.0
     </release>
     <release version="22.09" date="2022-09-27">
       <url>https://www.plasma-mobile.org/2022/09/27/plasma-mobile-gear-22-09/</url>
-    </release>
-    <release version="22.06" date="2022-06-24">
-      <url>https://www.plasma-mobile.org/2022/06/28/plasma-mobile-gear-22-06/</url>
-    </release>
-    <release version="22.04" date="2022-04-26">
-      <url>https://www.plasma-mobile.org/2022/04/26/plasma-mobile-gear-22-04/</url>
-      <description>
-        <ul>
-          <li>Add settings page to configure invidious instance</li>
-          <li>Add option to configure video format</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.02" date="2022-02-09">
-      <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
-      <description>
-        <ul>
-          <li>User interface improvements.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.12" date="2021-12-07">
-      <description>
-        <p>Initial release of Plasmatube, a functional Youtube player powered by an invidious server.</p>
-      </description>
-      <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
     </release>
   </releases>
   <recommends>
