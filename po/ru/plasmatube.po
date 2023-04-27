@@ -2,58 +2,59 @@
 # This file is distributed under the same license as the plasmatube package.
 #
 # Alexander Yavorsky <kekcuha@gmail.com>, 2021.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:48+0000\n"
-"PO-Revision-Date: 2021-09-18 15:01+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-04-26 10:50+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "Загрузка…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "Видеозаписи"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: contents/ui/LoginPage.qml:13
 #, kde-format
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: contents/ui/LoginPage.qml:19
 #, kde-format
 msgid "Successfully logged in as %1."
-msgstr ""
+msgstr "Выполнен успешный вход под учётной записью %1."
 
 #: contents/ui/LoginPage.qml:46
 #, kde-format
@@ -61,24 +62,24 @@ msgid "Log in to an Invidious Account"
 msgstr ""
 
 #: contents/ui/LoginPage.qml:51
-#, kde-format
+#, fuzzy, kde-format
 msgid "Instance Url"
-msgstr ""
+msgstr "Экземпляр"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, kde-format
+#, fuzzy, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Выйти"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
@@ -98,202 +99,212 @@ msgstr ""
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Сортировка:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Оценка"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Соответствие"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Дата отправки"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Количество просмотров"
 
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
-msgstr ""
+msgstr "Нет результатов"
 
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:29
 #, kde-format
 msgid "Instance"
-msgstr ""
+msgstr "Экземпляр"
 
 #: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "Учётная запись"
 
 #: contents/ui/SettingsPage.qml:50
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr ""
+msgstr "В настоящее время используется учётная запись %1."
 
 #: contents/ui/SettingsPage.qml:70
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Выйти"
 
 #: contents/ui/SettingsPage.qml:88
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "О программе PlasmaTube"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 просм. • %2"
 
 #: contents/ui/VideoListItem.qml:157
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 просм."
 
 #: contents/ui/VideoListItem.qml:165
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:321
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Отписаться (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:323
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Подписаться (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Чтобы подписываться на каналы, необходимо выполнить вход."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:354
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 просм."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:362
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 «нравится»"
 
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Неверное имя пользователя или пароль."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "В этом экземпляре отключена регистрация."
 
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "Клиент YouTube"
 
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Создатель"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Олеся Герасименко"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "translation-team@basealt.ru"
 
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "От сервера не получен корректный код JSON."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "От сервера получен код состояния %1"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Подписки"
 
 #: videolistmodel.cpp:19
 #, kde-format
 msgid "Invidious Top"
-msgstr ""
+msgstr "Топ Invidious"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Тренды"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "Игровые тренды"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "Кинотренды"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "Музыкальные тренды"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "Новостные тренды"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Результаты поиска «%1»"
 
 #~ msgid "Fullscreen"
 #~ msgstr "Fullscreen"
 
 #~ msgid "Restore"
 #~ msgstr "Восстановить"
+
+#~ msgid ""
+#~ "Please visit the website to register with an invidious instance.\n"
+#~ "There is currently no API for registering."
+#~ msgstr ""
+#~ "Посетите веб-сайт для регистрации экземпляра Invidious.\n"
+#~ "В текущей версии не предусмотрен программный интерфейс для регистрации."
+
+#~ msgid "Currently logged in as:"
+#~ msgstr "В настоящее время используется следующая учётная запись:"
