@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:48+0000\n"
-"PO-Revision-Date: 2023-03-21 09:37-0300\n"
+"PO-Revision-Date: 2023-05-31 14:49-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -61,10 +61,9 @@ msgid "Log in to an Invidious Account"
 msgstr ""
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "Instância"
+msgstr "URL da instância"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -77,15 +76,14 @@ msgid "Password"
 msgstr "Senha"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Encerrar sessão"
+msgstr "Entrar"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "A URL da instância não pode estar vazia!"
 
 #: contents/ui/LoginPage.qml:98
 #, kde-format
@@ -160,12 +158,12 @@ msgstr "Sobre o PlasmaTube"
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 visualizações • %2"
 
 #: contents/ui/VideoListItem.qml:157
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 visualizações"
 
 #: contents/ui/VideoListItem.qml:165
 #, kde-format
@@ -185,27 +183,27 @@ msgstr "Inscrever (%1)"
 #: contents/ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Entre para se inscrever nos canais."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:354
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 visualizações"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:362
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 curtidas"
 
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Usuário ou senha errado."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Esta instância desabilitou o registro."
 
 #: main.cpp:47
 #, kde-format
@@ -247,12 +245,12 @@ msgstr "elchevive@opensuse.org"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "O servidor não retornou nenhum JSON válido."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "O servidor retornou o código de status %1"
 
 #: videolistmodel.cpp:17
 #, kde-format
