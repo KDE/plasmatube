@@ -78,17 +78,39 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 spacing: 0
+
                 Component {
                     id: aboutPage
+
                     MobileForm.AboutPage {
                         aboutData: About
                     }
+
                 }
+
+                Component {
+                    id: aboutKDEPage
+
+                    MobileForm.AboutKDE {
+                    }
+
+                }
+
                 MobileForm.FormButtonDelegate {
                     text: i18n("About PlasmaTube")
                     onClicked: applicationWindow().pageStack.layers.push(aboutPage)
                 }
+
+                MobileForm.FormDelegateSeparator {
+                }
+
+                MobileForm.FormButtonDelegate {
+                    text: i18n("About KDE")
+                    onClicked: applicationWindow().pageStack.layers.push(aboutKDEPage)
+                }
+
             }
+
         }
     }
 }
