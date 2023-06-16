@@ -208,15 +208,23 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
             if (queryType == Feed) {
                 const auto obj = doc.object();
 
-                // add videos marked as notification
-                auto results = VideoBasicInfo::fromJson(obj.value("notifications").toArray());
-                for (auto &video : results) {
-                    video.setIsNotification(true);
-                }
+              // add videos marked as notification
+              auto results = VideoBasicInfo::fromJson(
+                  obj.value("notifications").toArray());
+              for (auto &video : results) {
+                video.setIsNotification(true);
+              }
 
-                // add the rest
-                results << VideoBasicInfo::fromJson(obj.value("videos").toArray());
-                return results;
+              // add the rest
+              results << VideoBasicInfo::fromJson(
+                  obj.value("videos").toArray());
+              return results;
+            } else if (queryType == Channel) {
+              const auto obj = doc.object();
+
+              auto results =
+                  VideoBasicInfo::fromJson(obj.value("videos").toArray());
+              return results;
             }
             return VideoBasicInfo::fromJson(doc.array());
         }
