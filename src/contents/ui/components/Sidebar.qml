@@ -6,9 +6,6 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 
-import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
-
 Kirigami.OverlayDrawer {
     id: root
     modal: false
@@ -24,9 +21,6 @@ Kirigami.OverlayDrawer {
     bottomPadding: 0
 
     function switchToPage(page) {
-        applicationWindow().pageStack.pop();
-        applicationWindow().pageStack.push(page, 0);
-        return;
         if (applicationWindow().pageStack.currentItem !== page) {
             while (applicationWindow().pageStack.depth > 0) {
                 applicationWindow().pageStack.pop();
@@ -58,40 +52,13 @@ Kirigami.OverlayDrawer {
                 spacing: 0
 
                 Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("PopularPage")
-                    Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
-                    icon.name: "arrow-up-double"
-                    text: i18n("Popular")
-                    checked: pageStack.currentItem === page
-                    onClicked: {
-                        root.switchToPage(page);
-                    }
-                }
-
-                Kirigami.NavigationTabButton {
                     property var page: applicationWindow().getPage("TrendingPage")
                     Layout.fillWidth: true
                     width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
-                    icon.name: "favorite"
-                    text: i18n("Trending")
-                    checked: pageStack.currentItem === page
-                    onClicked: {
-                        root.switchToPage(page);
-                    }
-                }
-
-                Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("SubscriptionsPage")
-                    Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
                     icon.name: "videoclip-amarok"
-                    text: i18n("Subscriptions")
+                    text: i18n("Videos")
                     checked: pageStack.currentItem === page
-                    enabled: PlasmaTube.isLoggedIn
                     onClicked: {
                         root.switchToPage(page);
                     }
