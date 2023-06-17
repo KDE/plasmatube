@@ -183,11 +183,11 @@ void MpvObject::pause()
     Q_EMIT pausedChanged();
 }
 
-void MpvObject::stop()
-{
+void MpvObject::stop() {
     setPosition(0);
-    setProperty("pause", true);
-    Q_EMIT pausedChanged();
+    setProperty("stop", true);
+    m_stopped = true;
+    Q_EMIT stoppedChanged();
 }
 
 void MpvObject::setPosition(double value)
@@ -258,10 +258,15 @@ void MpvObject::onMpvEvents() {
                 mpv_event_property *prop = (mpv_event_property *)event->data;
                 if (strcmp(prop->name, "time-pos") == 0) {
                     if (prop->format == MPV_FORMAT_DOUBLE) {
-                        double time = *(double *)prop->data;
-                        m_position = time;
-                        Q_EMIT positionChanged();
-                    }
+                  double time = *(double *)prop->data;
+                  m_position = time;
+                  Q_EMIT positionChanged();
+
+                  if (m_position > 0.0 && m_stopped) {
+                    m_stopped = false;
+                    Q_EMIT stoppedChanged();
+                  }
+                }
                 } else if (strcmp(prop->name, "duration") == 0) {
                     if (prop->format == MPV_FORMAT_DOUBLE) {
                         double time = *(double *)prop->data;
@@ -276,8 +281,10 @@ void MpvObject::onMpvEvents() {
                 }
                 break;
             }
-            default: ;
+            default:;
                 // Ignore uninteresting or unknown events.
-        }
+            }
     }
 }
+
+bool MpvObject::stopped() { return m_stopped; }

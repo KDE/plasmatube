@@ -20,6 +20,7 @@ class MpvObject : public QQuickFramebufferObject
     Q_PROPERTY(qreal position READ position NOTIFY positionChanged)
     Q_PROPERTY(qreal duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)
+    Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
 
     mpv_handle *mpv;
     mpv_render_context *mpv_gl;
@@ -36,8 +37,9 @@ public:
     qreal position();
     qreal duration();
     bool paused();
+    bool stopped();
 
-public Q_SLOTS:
+  public Q_SLOTS:
     void play();
     void pause();
     void stop();
@@ -53,8 +55,9 @@ Q_SIGNALS:
     void durationChanged();
     void pausedChanged();
     void onUpdate();
+    void stoppedChanged();
 
-private Q_SLOTS:
+  private Q_SLOTS:
     void onMpvEvents();
     void doUpdate();
 
@@ -62,6 +65,7 @@ private:
     bool m_paused = true;
     qreal m_position = 0;
     qreal m_duration = 0;
+    bool m_stopped = true;
 };
 
 #endif
