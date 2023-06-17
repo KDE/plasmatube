@@ -49,10 +49,18 @@ Kirigami.ApplicationWindow {
 
     function getPage(name) {
         switch (name) {
-            case "TrendingPage": return pagePool.loadPage("qrc:/TrendingPage.qml");
-            case "SearchPage": return pagePool.loadPage("qrc:/SearchPage.qml");
-            case "VideoPage": return pagePool.loadPage("qrc:/VideoPage.qml");
-            case "SettingsPage": return pagePool.loadPage("qrc:/SettingsPage.qml");
+            case "PopularPage":
+                return pagePool.loadPage("qrc:/PopularPage.qml");
+            case "SubscriptionsPage":
+                return pagePool.loadPage("qrc:/SubscriptionsPage.qml");
+            case "TrendingPage":
+                return pagePool.loadPage("qrc:/TrendingPage.qml");
+            case "SearchPage":
+                return pagePool.loadPage("qrc:/SearchPage.qml");
+            case "VideoPage":
+                return pagePool.loadPage("qrc:/VideoPage.qml");
+            case "SettingsPage":
+                return pagePool.loadPage("qrc:/SettingsPage.qml");
         }
     }
 
