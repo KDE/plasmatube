@@ -16,7 +16,7 @@ QString VideoListModel::queryTypeString(QueryType type)
     case Feed:
         return i18n("Subscriptions");
     case Top:
-        return i18n("Popular");
+        return i18n("Invidious Top");
     case Trending:
         return i18n("Trending");
     case TrendingGaming:
