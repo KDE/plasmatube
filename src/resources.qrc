@@ -11,6 +11,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="ChannelPage.qml">contents/ui/ChannelPage.qml</file>
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="SearchPage.qml">contents/ui/SearchPage.qml</file>
+        <file alias="FeedPage.qml">contents/ui/FeedPage.qml</file>
+        <file alias="PopularPage.qml">contents/ui/PopularPage.qml</file>
+        <file alias="SubscriptionsPage.qml">contents/ui/SubscriptionsPage.qml</file>
         <file alias="SettingsPage.qml">contents/ui/SettingsPage.qml</file>
         <file alias="TrendingPage.qml">contents/ui/TrendingPage.qml</file>
         <file alias="VideoListItem.qml">contents/ui/VideoListItem.qml</file>
