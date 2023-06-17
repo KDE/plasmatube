@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
 
     function stop() {
         vid = "";
-        renderer.pause();
+        renderer.stop();
     }
 
     function togglePlaying() {
@@ -169,15 +169,28 @@ Kirigami.ScrollablePage {
                         id: renderer
                         anchors.fill: parent
 
+                        visible: !stopped
+                    }
+                    Rectangle {
+                        anchors.fill: renderer
+
+                        color: "black"
+                        visible: renderer.stopped
+
                         Image {
+                            id: thumbnailImage
+
                             anchors.fill: parent
-                            visible: renderer.playbackState === MediaPlayer.StoppedState
                             source: videoModel.video.thumbnailUrl("high")
+                        }
+
+                        Controls.BusyIndicator {
+                            anchors.centerIn: parent
                         }
                     }
                     Rectangle {
                         id: playerMask
-                        radius: widescreen? 7 : 0
+                        radius: widescreen ? 7 : 0
                         anchors.fill: renderer
                         visible: false
                     }
