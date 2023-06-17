@@ -225,8 +225,16 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
               auto results =
                   VideoBasicInfo::fromJson(obj.value("videos").toArray());
               return results;
+            } else {
+              QList<VideoBasicInfo> results;
+              for (auto value : doc.array()) {
+                if (value.isObject() && value.toObject()["type"] == "video") {
+                  results << VideoBasicInfo::fromJson(value.toObject());
+                }
+              }
+
+              return results;
             }
-            return VideoBasicInfo::fromJson(doc.array());
         }
         return invalidJsonError();
     });
