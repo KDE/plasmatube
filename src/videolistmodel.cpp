@@ -49,7 +49,7 @@ QString VideoListModel::queryTypeIcon(QueryType type)
     case TrendingMusic:
         return QStringLiteral("folder-music-symbolic");
     case TrendingNews:
-        return QStringLiteral("news-subscribe");
+        return QStringLiteral("message-news");
     default:
         return {};
     }
