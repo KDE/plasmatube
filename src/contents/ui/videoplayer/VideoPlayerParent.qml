@@ -14,7 +14,7 @@ Flickable {
     contentHeight: applicationWindow().height * 2
     interactive: Kirigami.Settings.hasTransientTouchInput
 
-    readonly property bool isMaximized: contentY === contentHeight
+    property bool maximized: false
     property real contentToPlayerSpacing: 0
 
     property alias previewSource: videoPlayer.previewSource
@@ -32,10 +32,12 @@ Flickable {
 
     function open() {
         toOpen.restart();
+        maximized = true
     }
 
     function close() {
         toClose.restart();
+        maximized = false
     }
 
     function resetToBoundsOnFlick() {
@@ -55,7 +57,7 @@ Flickable {
     }
 
     function resetToBoundsOnResize() {
-        if (contentY > contentHeight / 4) {
+        if (maximized) {
             contentY = contentHeight / 2;
         } else {
             contentY = 0;
@@ -97,7 +99,14 @@ Flickable {
     }
     onFlickStarted: resetToBoundsOnFlick()
     onMovementEnded: resetToBoundsOnFlick()
-    onHeightChanged: resetToBoundsOnResize()
+
+    Connections {
+        target: applicationWindow()
+
+        function onHeightChanged() {
+            resetToBoundsOnResize()
+        }
+    }
 
     ColumnLayout {
         id: contentZone
