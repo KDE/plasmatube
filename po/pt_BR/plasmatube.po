@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-20 00:50+0000\n"
 "PO-Revision-Date: 2023-05-31 14:49-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -150,10 +150,15 @@ msgstr "Conectado atualmente como %1."
 msgid "Log out"
 msgstr "Encerrar sessão"
 
-#: contents/ui/SettingsPage.qml:88
+#: contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Sobre o PlasmaTube"
+
+#: contents/ui/SettingsPage.qml:108
+#, kde-format
+msgid "About KDE"
+msgstr ""
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
@@ -170,27 +175,27 @@ msgstr " • %1 visualizações"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:321
+#: contents/ui/videoplayer/VideoPlayer.qml:334
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Cancelar inscrição (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:323
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Inscrever (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:333
+#: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Entre para se inscrever nos canais."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:354
+#: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizações"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:362
+#: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 curtidas"

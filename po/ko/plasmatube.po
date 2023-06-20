@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-20 00:50+0000\n"
 "PO-Revision-Date: 2022-10-03 15:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -152,9 +152,14 @@ msgstr "현재 %1(으)로 로그인했습니다."
 msgid "Log out"
 msgstr "로그아웃"
 
-#: contents/ui/SettingsPage.qml:88
+#: contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "About PlasmaTube"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:108
+#, kde-format
+msgid "About KDE"
 msgstr ""
 
 #: contents/ui/VideoGridItem.qml:162
@@ -172,27 +177,27 @@ msgstr ""
 msgid " • %1"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:321
+#: contents/ui/videoplayer/VideoPlayer.qml:334
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:323
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:333
+#: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:354
+#: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:362
+#: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
 msgid "%1 Likes"
 msgstr ""

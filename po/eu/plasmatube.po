@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-20 00:50+0000\n"
 "PO-Revision-Date: 2023-04-11 00:43+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -152,10 +152,15 @@ msgstr "Une honetan %1 erabiltzaile gisa saio-hasita."
 msgid "Log out"
 msgstr "Itxi saioa"
 
-#: contents/ui/SettingsPage.qml:88
+#: contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "«PlasmaTube»ri buruz"
+
+#: contents/ui/SettingsPage.qml:108
+#, kde-format
+msgid "About KDE"
+msgstr ""
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
@@ -172,27 +177,27 @@ msgstr " • %1 ikustaldi"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:321
+#: contents/ui/videoplayer/VideoPlayer.qml:334
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Harpidetza kendu (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:323
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Harpidetu (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:333
+#: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Mesedez, saio-hasi kanaletan harpidetzeko."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:354
+#: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ikustaldi"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:362
+#: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 atsegin"
