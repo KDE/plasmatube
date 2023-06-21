@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-20 00:50+0000\n"
-"PO-Revision-Date: 2023-03-13 12:05+0100\n"
+"PO-Revision-Date: 2023-06-20 09:54+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -157,7 +157,7 @@ msgstr "Info over PlasmaTube"
 #: contents/ui/SettingsPage.qml:108
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Over KDE"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
