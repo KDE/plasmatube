@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-20 00:50+0000\n"
-"PO-Revision-Date: 2023-03-15 14:29+0100\n"
+"PO-Revision-Date: 2023-06-22 13:16+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -157,7 +157,7 @@ msgstr "O aplikaci PlasmaTube"
 #: contents/ui/SettingsPage.qml:108
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "O prostředí KDE"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
@@ -187,7 +187,7 @@ msgstr "Přihlásit se (%1)"
 #: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr "Prosím přihlašte se pro přihlášení do kanálů."
+msgstr "Prosím přihlaste se pro přihlášení do kanálů."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
