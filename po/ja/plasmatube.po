@@ -1,10 +1,11 @@
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:46+0000\n"
-"PO-Revision-Date: 2021-06-07 23:33-0700\n"
-"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2023-07-01 16:06-0700\n"
+"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -18,22 +19,22 @@ msgstr ""
 #: contents/ui/SettingsPage.qml:140
 #, kde-format
 msgid "Sign in"
-msgstr ""
+msgstr "サインイン"
 
 #: contents/ui/AccountPage.qml:21
 #, kde-format
 msgid "Successfully logged in as %1."
-msgstr ""
+msgstr "%1 として正常にログインしました。"
 
 #: contents/ui/AccountPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr ""
+msgstr "%1 でログイン中です。"
 
 #: contents/ui/AccountPage.qml:49 contents/ui/SettingsPage.qml:62
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "ログアウト"
 
 #: contents/ui/AccountPage.qml:59 contents/ui/SettingsPage.qml:68
 #, kde-format
@@ -45,64 +46,64 @@ msgstr ""
 #: contents/ui/AccountPage.qml:76 contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "ユーザ名"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "読み込み中..."
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "動画"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 #: contents/ui/components/BottomNavBar.qml:92
 #: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "並び替え:"
 
 #: contents/ui/SearchPage.qml:74
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "評価"
 
 #: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "関連度"
 
 #: contents/ui/SearchPage.qml:97
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "アップロード日"
 
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "視聴回数"
 
 #: contents/ui/SearchPage.qml:174
 #, kde-format
 msgid "No results"
-msgstr ""
+msgstr "見つかりません"
 
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
@@ -112,12 +113,12 @@ msgstr ""
 #: contents/ui/SettingsPage.qml:29 contents/ui/SettingsPage.qml:79
 #, kde-format
 msgid "Instance"
-msgstr ""
+msgstr "インスタンス"
 
 #: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "アカウント"
 
 #: contents/ui/SettingsPage.qml:49
 #, kde-format
@@ -127,22 +128,22 @@ msgstr ""
 #: contents/ui/SettingsPage.qml:118
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "パスワード"
 
 #: contents/ui/SettingsPage.qml:158
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube について"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 回視聴 • %2"
 
 #: contents/ui/VideoListItem.qml:157
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 回視聴"
 
 #: contents/ui/VideoListItem.qml:165
 #, kde-format
@@ -152,17 +153,17 @@ msgstr ""
 #: contents/ui/videoplayer/VideoPlayer.qml:321
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "登録解除 (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:323
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "チャンネル登録 (%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "チャンネルを購読するにはログインしてください。"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:354
 #, kde-format
@@ -177,12 +178,12 @@ msgstr ""
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "ユーザ名かパスワードが誤っています。"
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "このインスタンスは登録を許可していません。"
 
 #: main.cpp:47
 #, kde-format
@@ -192,7 +193,7 @@ msgstr ""
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "YouTube クライアント"
 
 #: main.cpp:51
 #, kde-format
@@ -207,66 +208,66 @@ msgstr ""
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "開発者"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "maboroshin"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "pc.genkaku.in"
 
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "JSON ファイルが正しくないとサーバが返しました。"
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "ステータスコード %1 をサーバが返しました。"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "登録チャンネル"
 
 #: videolistmodel.cpp:19
 #, kde-format
 msgid "Invidious Top"
-msgstr ""
+msgstr "Invidious トップ"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "急上昇"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "急上昇のゲーム動画"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "急上昇の映画"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "急上昇の音楽"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "急上昇のニュース"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "「%1」の検索結果"
