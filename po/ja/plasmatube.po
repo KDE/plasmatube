@@ -1,3 +1,4 @@
+# maboroshini <pc.genkaku.in>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
 msgid ""
 msgstr ""
@@ -190,12 +191,12 @@ msgstr "チャンネルを購読するにはログインしてください。"
 #: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 回視聴"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 高評価"
 
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
