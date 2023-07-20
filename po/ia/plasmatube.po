@@ -157,7 +157,7 @@ msgstr "A proposito de Plasma Tube"
 #: contents/ui/SettingsPage.qml:108
 #, kde-format
 msgid "About KDE"
-msgstr "A proposio de KDE"
+msgstr "A proposito de KDE"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
