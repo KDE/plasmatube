@@ -58,6 +58,7 @@ Kirigami.ApplicationWindow {
 
     function switchVideo(video) {
         videoPlayer.switchVideo(video);
+        PlasmaTube.markVideoWatched(video);
     }
 
     function openPlayer() {
