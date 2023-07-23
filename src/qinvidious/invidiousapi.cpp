@@ -183,9 +183,15 @@ QFuture<Result> InvidiousApi::unsubscribeFromChannel(QStringView channel)
     return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
 }
 
-QFuture<HistoryResult> InvidiousApi::requestHistory()
+QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
 {
-    return get<HistoryResult>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY)), [=](QNetworkReply *reply) -> HistoryResult {
+    QUrlQuery parameters;
+    parameters.addQueryItem("page", QString::number(page));
+
+    QUrl url{invidiousInstance() % API_HISTORY};
+    url.setQuery(parameters);
+
+    return get<HistoryResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> HistoryResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto array = doc.array();
 

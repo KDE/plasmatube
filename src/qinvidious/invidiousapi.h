@@ -68,7 +68,7 @@ public:
     QFuture<SubscriptionsResult> requestSubscriptions();
     QFuture<Result> subscribeToChannel(QStringView channel);
     QFuture<Result> unsubscribeFromChannel(QStringView channel);
-    QFuture<HistoryResult> requestHistory();
+    QFuture<HistoryResult> requestHistory(qint32 page = 1);
     QFuture<Result> markWatched(const QString &videoId);
     QFuture<Result> markUnwatched(const QString &videoId);
 
