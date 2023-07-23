@@ -88,7 +88,7 @@ private:
     bool m_constant = false;
 
     QueryType m_queryType = NoQuery;
-    qint32 m_currentPage = 0;
+    qint32 m_currentPage = 1;
     SearchParameters m_searchParameters;
     QString m_channel;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;

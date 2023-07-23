@@ -61,10 +61,10 @@ public:
     QFuture<LogInResult> logIn(QStringView username, QStringView password);
     QFuture<VideoResult> requestVideo(QStringView videoId);
     QFuture<VideoListResult> requestSearchResults(const SearchParameters &parameters);
-    QFuture<VideoListResult> requestFeed();
+    QFuture<VideoListResult> requestFeed(qint32 page = 1);
     QFuture<VideoListResult> requestTop();
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main);
-    QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 0);
+    QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 1);
     QFuture<SubscriptionsResult> requestSubscriptions();
     QFuture<Result> subscribeToChannel(QStringView channel);
     QFuture<Result> unsubscribeFromChannel(QStringView channel);

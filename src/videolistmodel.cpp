@@ -147,17 +147,22 @@ void VideoListModel::fetchMore(const QModelIndex &index)
 {
     if (canFetchMore(index)) {
         switch (m_queryType) {
-        case Search:
-        {
-            m_currentPage++;
-            m_searchParameters.setPage(m_currentPage);
-            auto future = PlasmaTube::instance().api()->requestSearchResults(m_searchParameters);
+        case Feed: {
+            auto future =
+                PlasmaTube::instance().api()->requestFeed(++m_currentPage);
+            handleQuery(future, Feed, false);
+            break;
+        }
+        case Search: {
+            m_searchParameters.setPage(++m_currentPage);
+            auto future = PlasmaTube::instance().api()->requestSearchResults(
+                m_searchParameters);
             handleQuery(future, Search, false);
             break;
         }
-        case Channel:
-        {
-            auto future = PlasmaTube::instance().api()->requestChannel(m_channel, ++m_currentPage);
+        case Channel: {
+            auto future = PlasmaTube::instance().api()->requestChannel(
+                m_channel, ++m_currentPage);
             handleQuery(future, Channel, false);
             break;
         }
@@ -168,7 +173,8 @@ void VideoListModel::fetchMore(const QModelIndex &index)
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
-    return !m_futureWatcher && (m_queryType == Search || m_queryType == Channel);
+    return !m_futureWatcher && (m_queryType == Search ||
+                                m_queryType == Channel || m_queryType == Feed);
 }
 
 bool VideoListModel::isLoading() const
@@ -189,8 +195,10 @@ QString VideoListModel::title() const
 void VideoListModel::requestSearchResults(const SearchParameters *searchParameters)
 {
     m_searchParameters.fill(*searchParameters);
-    m_currentPage = 0;
-    handleQuery(PlasmaTube::instance().api()->requestSearchResults(m_searchParameters), Search);
+    m_currentPage = 1;
+    handleQuery(
+        PlasmaTube::instance().api()->requestSearchResults(m_searchParameters),
+        Search);
 }
 
 void VideoListModel::requestChannel(const QString &ucid)

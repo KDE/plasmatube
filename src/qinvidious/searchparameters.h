@@ -108,10 +108,10 @@ public:
     void setFeatures(const QVector<Feature> &features);
 
 private:
-    QString m_query;
-    unsigned int m_page = 0;
-    SortBy m_sortBy = SortBy::Default;
-    Date m_date = Date::Default;
+  QString m_query;
+  unsigned int m_page = 1;
+  SortBy m_sortBy = SortBy::Default;
+  Date m_date = Date::Default;
     Duration m_duration = Duration::Default;
     Type m_type = Type::Default;
     QVector<Feature> m_features;

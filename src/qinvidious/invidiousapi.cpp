@@ -115,9 +115,11 @@ QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParamete
     return requestVideoList(Search, "", parameters.toQueryParameters());
 }
 
-QFuture<VideoListResult> InvidiousApi::requestFeed()
-{
-    return requestVideoList(Feed);
+QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page) {
+    QHash<QString, QString> parameters;
+    parameters.insert("page", QString::number(page));
+
+    return requestVideoList(Feed, "", parameters);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestTop()
