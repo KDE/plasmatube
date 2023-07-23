@@ -28,6 +28,7 @@ using VideoResult = std::variant<Video, Error>;
 using VideoListResult = std::variant<QList<VideoBasicInfo>, Error>;
 using SubscriptionsResult = std::variant<QList<QString>, Error>;
 using Result = std::variant<Success, Error>;
+using HistoryResult = std::variant<QList<QString>, Error>;
 
 enum TrendingTopic : quint8 {
     Main,
@@ -59,7 +60,7 @@ public:
 
     QFuture<LogInResult> logIn(QStringView username, QStringView password);
     QFuture<VideoResult> requestVideo(QStringView videoId);
-    QFuture<VideoListResult> requestSearchResults(const SearchParameters& parameters);
+    QFuture<VideoListResult> requestSearchResults(const SearchParameters &parameters);
     QFuture<VideoListResult> requestFeed();
     QFuture<VideoListResult> requestTop();
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main);
@@ -67,20 +68,17 @@ public:
     QFuture<SubscriptionsResult> requestSubscriptions();
     QFuture<Result> subscribeToChannel(QStringView channel);
     QFuture<Result> unsubscribeFromChannel(QStringView channel);
+    QFuture<HistoryResult> requestHistory();
+    QFuture<Result> markWatched(const QString &videoId);
+    QFuture<Result> markUnwatched(const QString &videoId);
 
 private:
-    enum VideoListType {
-        Search,
-        Trending,
-        Top,
-        Feed,
-        Channel
-    };
+    enum VideoListType { Search, Trending, Top, Feed, Channel };
 
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
 
-    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString& urlExtension = "", const QHash<QString, QString>& parameters = {});
+    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = "", const QHash<QString, QString> &parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
     QUrl logInUrl() const;

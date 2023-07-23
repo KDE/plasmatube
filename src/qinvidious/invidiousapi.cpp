@@ -22,6 +22,7 @@ constexpr QStringView API_TOP = u"/api/v1/top";
 constexpr QStringView API_TRENDING = u"/api/v1/trending";
 constexpr QStringView API_VIDEOS = u"/api/v1/videos";
 constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
+constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
 
 using namespace QInvidious;
 
@@ -180,6 +181,32 @@ QFuture<Result> InvidiousApi::subscribeToChannel(QStringView channel)
 QFuture<Result> InvidiousApi::unsubscribeFromChannel(QStringView channel)
 {
     return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
+}
+
+QFuture<HistoryResult> InvidiousApi::requestHistory()
+{
+    return get<HistoryResult>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY)), [=](QNetworkReply *reply) -> HistoryResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            auto array = doc.array();
+
+            QList<QString> history;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(history), [](const QJsonValue &val) {
+                return val.toString();
+            });
+            return history;
+        }
+        return invalidJsonError();
+    });
+}
+
+QFuture<Result> InvidiousApi::markWatched(const QString &videoId)
+{
+    return post<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), {}, checkIsReplyOk);
+}
+
+QFuture<Result> InvidiousApi::markUnwatched(const QString &videoId)
+{
+    return deleteResource<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), checkIsReplyOk);
 }
 
 Error InvidiousApi::invalidJsonError()
