@@ -193,7 +193,7 @@ QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
 
     return get<HistoryResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> HistoryResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            auto array = doc.array();
+            const auto array = doc.array();
 
             QList<QString> history;
             std::transform(array.cbegin(), array.cend(), std::back_inserter(history), [](const QJsonValue &val) {
