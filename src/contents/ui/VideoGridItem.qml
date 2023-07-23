@@ -29,6 +29,7 @@ MouseArea {
     property string description
     property int viewCount
     property string publishedText
+    property bool watched
 
     property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
     Behavior on zoomScale {
@@ -81,6 +82,8 @@ MouseArea {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
 
+                z: 2
+
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 anchors.rightMargin: Kirigami.Units.smallSpacing * 2
@@ -97,6 +100,26 @@ MouseArea {
                     radius: 2
                     width: 60
                     height: 15
+                }
+            }
+
+            Rectangle {
+                id: watchIndicator
+
+                color: "black"
+                opacity: 0.5
+                visible: root.watched
+                anchors.fill: parent
+
+                Rectangle {
+                    anchors {
+                        bottom: parent.bottom
+                        left: parent.left
+                        right: parent.right
+                    }
+
+                    color: "red"
+                    height: 3
                 }
             }
 

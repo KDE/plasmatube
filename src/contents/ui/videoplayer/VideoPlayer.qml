@@ -444,6 +444,7 @@ Kirigami.ScrollablePage {
                     description: model.description
                     viewCount: model.viewCount
                     publishedText: model.publishedText
+                    watched: model.watched
 
                     onClicked: {
                         root.vid = model.id;

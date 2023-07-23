@@ -69,6 +69,7 @@ Kirigami.ScrollablePage {
             description: model.description
             viewCount: model.viewCount
             publishedText: model.publishedText
+            watched: model.watched
 
             onClicked: {
                 applicationWindow().switchVideo(vid);
