@@ -70,23 +70,22 @@ VideoListModel::VideoListModel(const QList<QInvidious::VideoBasicInfo> &list,
 
 QHash<int, QByteArray> VideoListModel::roleNames() const
 {
-    return {
-        {IdRole, "id"},
-        {TitleRole, "title"},
-        {ThumbnailRole, "thumbnail"},
-        {LengthRole, "length"},
-        {ViewCountRole, "viewCount"},
-        {AuthorRole, "author"},
-        {AuthorIdRole, "authorId"},
-        {AuthorUrlRole, "authorUrl"},
-        {PublishedRole, "published"},
-        {PublishedTextRole, "publishedText"},
-        {DescriptionRole, "description"},
-        {DescriptionHtmlRole, "descriptionHtml"},
-        {LiveNowRole, "liveNow"},
-        {PaidRole, "paid"},
-        {PremiumRole, "premium"}
-    };
+    return {{IdRole, "id"},
+            {TitleRole, "title"},
+            {ThumbnailRole, "thumbnail"},
+            {LengthRole, "length"},
+            {ViewCountRole, "viewCount"},
+            {AuthorRole, "author"},
+            {AuthorIdRole, "authorId"},
+            {AuthorUrlRole, "authorUrl"},
+            {PublishedRole, "published"},
+            {PublishedTextRole, "publishedText"},
+            {DescriptionRole, "description"},
+            {DescriptionHtmlRole, "descriptionHtml"},
+            {LiveNowRole, "liveNow"},
+            {PaidRole, "paid"},
+            {PremiumRole, "premium"},
+            {WatchedRole, "watched"}};
 }
 
 int VideoListModel::rowCount(const QModelIndex &parent) const
@@ -138,6 +137,8 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
         return video.paid();
     case PremiumRole:
         return video.premium();
+    case WatchedRole:
+        return PlasmaTube::instance().isVideoWatched(video.videoId());
     }
     return {};
 }

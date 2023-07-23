@@ -35,7 +35,8 @@ public:
         DescriptionHtmlRole,
         LiveNowRole,
         PaidRole,
-        PremiumRole
+        PremiumRole,
+        WatchedRole
     };
 
     enum QueryType : quint8 {
