@@ -41,12 +41,19 @@ public:
     Q_SIGNAL void loggedIn();
     Q_SIGNAL void loggedOut();
 
+    bool isVideoWatched(const QString &videoId);
+    Q_INVOKABLE void markVideoWatched(const QString &videoId);
+    void markVideoUnwatched(const QString &videoId);
+
 private:
     friend class SubscriptionController;
 
     void setSubscriptions(const QList<QString> &subscriptions);
     std::optional<QList<QString>> &subscriptions();
 
+    void fetchHistory(qint32 page = 1);
+
     QInvidious::InvidiousApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;
+    QList<QString> m_watchedVideos;
 };

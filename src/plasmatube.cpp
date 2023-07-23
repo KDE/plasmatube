@@ -110,6 +110,7 @@ void PlasmaTube::loadCredentials()
         credentials.setCookie(cookies.first());
     }
     m_api->setCredentials(credentials);
+    fetchHistory();
 }
 
 void PlasmaTube::saveCredentials() const
@@ -134,4 +135,50 @@ void PlasmaTube::setSubscriptions(const QList<QString> &subscriptions)
 std::optional<QList<QString>> &PlasmaTube::subscriptions()
 {
     return m_subscriptions;
+}
+
+bool PlasmaTube::isVideoWatched(const QString &videoId)
+{
+    return m_watchedVideos.contains(videoId);
+}
+
+void PlasmaTube::markVideoWatched(const QString &videoId)
+{
+    if (!m_watchedVideos.contains(videoId) && isLoggedIn()) {
+        m_watchedVideos.push_back(videoId);
+        m_api->markWatched(videoId);
+    }
+}
+
+void PlasmaTube::markVideoUnwatched(const QString &videoId)
+{
+    if (m_watchedVideos.contains(videoId) && isLoggedIn()) {
+        m_watchedVideos.removeAll(videoId);
+        m_api->markUnwatched(videoId);
+    }
+}
+
+void PlasmaTube::fetchHistory(qint32 page)
+{
+    if (!isLoggedIn()) {
+        return;
+    }
+
+    if (page == 1) {
+        m_watchedVideos.clear();
+    }
+
+    auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
+    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
+        auto result = watcher->result();
+
+        if (const auto history = std::get_if<QList<QString>>(&result)) {
+            m_watchedVideos.append(*history);
+
+            fetchHistory(page + 1);
+        }
+
+        watcher->deleteLater();
+    });
+    watcher->setFuture(m_api->requestHistory(page));
 }
