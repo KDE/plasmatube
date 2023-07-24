@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:50+0000\n"
+"POT-Creation-Date: 2023-07-24 07:32+0000\n"
 "PO-Revision-Date: 2023-01-13 08:37+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.1\n"
 
-#: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
-#: contents/ui/TrendingPage.qml:123
+#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
+#: contents/ui/TrendingPage.qml:124
 #, fuzzy, kde-format
 #| msgid "Loading"
 msgctxt "@info:status"
@@ -33,7 +33,7 @@ msgstr "Video"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Cari"
@@ -122,7 +122,7 @@ msgstr "Tanggal Unggah"
 msgid "View Count"
 msgstr "Jumlah Tampilan"
 
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "No results"
 msgstr "Tidak ada hasil"
@@ -162,17 +162,17 @@ msgstr ""
 msgid "About KDE"
 msgstr ""
 
-#: contents/ui/VideoGridItem.qml:162
+#: contents/ui/VideoGridItem.qml:185
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 tampilan • %2"
 
-#: contents/ui/VideoListItem.qml:157
+#: contents/ui/VideoListItem.qml:180
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 tampilan"
 
-#: contents/ui/VideoListItem.qml:165
+#: contents/ui/VideoListItem.qml:188
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -202,7 +202,7 @@ msgstr "%1 tampilan"
 msgid "%1 Likes"
 msgstr "%1 Suka"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
 #, kde-format
 msgid "Username or password is wrong."
 msgstr ""
@@ -249,12 +249,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:187
+#: qinvidious/invidiousapi.cpp:220
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:196
+#: qinvidious/invidiousapi.cpp:229
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr ""
@@ -295,7 +295,7 @@ msgstr ""
 msgid "Trending News"
 msgstr ""
 
-#: videolistmodel.cpp:182
+#: videolistmodel.cpp:183
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:50+0000\n"
+"POT-Creation-Date: 2023-07-24 07:32+0000\n"
 "PO-Revision-Date: 2023-06-21 06:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
-#: contents/ui/TrendingPage.qml:123
+#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
+#: contents/ui/TrendingPage.qml:124
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -33,7 +33,7 @@ msgstr "ვიდეო"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
@@ -120,7 +120,7 @@ msgstr "ატვირთვის თარიღი"
 msgid "View Count"
 msgstr "ნახვების რაოდენობა"
 
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "No results"
 msgstr "შედეგების გარეშე"
@@ -160,17 +160,17 @@ msgstr "PlasmaTube-ის შესახებ"
 msgid "About KDE"
 msgstr "KDE-ს შესახებ"
 
-#: contents/ui/VideoGridItem.qml:162
+#: contents/ui/VideoGridItem.qml:185
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 ნახვა • %2"
 
-#: contents/ui/VideoListItem.qml:157
+#: contents/ui/VideoListItem.qml:180
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 ნახვა"
 
-#: contents/ui/VideoListItem.qml:165
+#: contents/ui/VideoListItem.qml:188
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -200,7 +200,7 @@ msgstr "%1 ნახვა"
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
@@ -247,12 +247,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: qinvidious/invidiousapi.cpp:187
+#: qinvidious/invidiousapi.cpp:220
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
-#: qinvidious/invidiousapi.cpp:196
+#: qinvidious/invidiousapi.cpp:229
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "სერვერის დაბრუნებული სტატუსის კოდია %1"
@@ -292,7 +292,7 @@ msgstr "ტრენდები მუსიკაში"
 msgid "Trending News"
 msgstr "ტრენდები სიახლეებში"
 
-#: videolistmodel.cpp:182
+#: videolistmodel.cpp:183
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "ძებნის შედეგები \"%1\"-სთვის"

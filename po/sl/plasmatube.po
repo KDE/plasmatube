@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:50+0000\n"
+"POT-Creation-Date: 2023-07-24 07:32+0000\n"
 "PO-Revision-Date: 2023-06-20 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
-#: contents/ui/TrendingPage.qml:123
+#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
+#: contents/ui/TrendingPage.qml:124
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -33,7 +33,7 @@ msgstr "Video posnetki"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Išči"
@@ -120,7 +120,7 @@ msgstr "Datum prenosa"
 msgid "View Count"
 msgstr "Število ogledov"
 
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "No results"
 msgstr "Ni zadetkov"
@@ -160,17 +160,17 @@ msgstr "O PlasmaTube"
 msgid "About KDE"
 msgstr "O KDE"
 
-#: contents/ui/VideoGridItem.qml:162
+#: contents/ui/VideoGridItem.qml:185
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 pogledi • %2"
 
-#: contents/ui/VideoListItem.qml:157
+#: contents/ui/VideoListItem.qml:180
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 pogledi"
 
-#: contents/ui/VideoListItem.qml:165
+#: contents/ui/VideoListItem.qml:188
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -200,7 +200,7 @@ msgstr "%1 pogledi"
 msgid "%1 Likes"
 msgstr "%1 Všečkov"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Uporabniško ime ali geslo je napačno."
@@ -247,12 +247,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: qinvidious/invidiousapi.cpp:187
+#: qinvidious/invidiousapi.cpp:220
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Strežnik ni vrnil veljavne JSON."
 
-#: qinvidious/invidiousapi.cpp:196
+#: qinvidious/invidiousapi.cpp:229
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Strežnik je vrnil statusno kodo %1"
@@ -292,7 +292,7 @@ msgstr "Glasba v trendu"
 msgid "Trending News"
 msgstr "Novice v trendu"
 
-#: videolistmodel.cpp:182
+#: videolistmodel.cpp:183
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Zadetki iskanja za \"%1\""

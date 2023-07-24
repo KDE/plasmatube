@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:50+0000\n"
+"POT-Creation-Date: 2023-07-24 07:32+0000\n"
 "PO-Revision-Date: 2023-03-14 20:53+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.03.70\n"
 
-#: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
-#: contents/ui/TrendingPage.qml:123
+#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
+#: contents/ui/TrendingPage.qml:124
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -32,7 +32,7 @@ msgstr "Videos"
 
 #: contents/ui/components/BottomNavBar.qml:81
 #: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Search"
@@ -119,7 +119,7 @@ msgstr "Upload Date"
 msgid "View Count"
 msgstr "View Count"
 
-#: contents/ui/SearchPage.qml:174
+#: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "No results"
 msgstr "No results"
@@ -159,17 +159,17 @@ msgstr "About PlasmaTube"
 msgid "About KDE"
 msgstr ""
 
-#: contents/ui/VideoGridItem.qml:162
+#: contents/ui/VideoGridItem.qml:185
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 views • %2"
 
-#: contents/ui/VideoListItem.qml:157
+#: contents/ui/VideoListItem.qml:180
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 views"
 
-#: contents/ui/VideoListItem.qml:165
+#: contents/ui/VideoListItem.qml:188
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -199,7 +199,7 @@ msgstr "%1 views"
 msgid "%1 Likes"
 msgstr "%1 Likes"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Username or password is wrong."
@@ -246,12 +246,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: qinvidious/invidiousapi.cpp:187
+#: qinvidious/invidiousapi.cpp:220
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Server returned no valid JSON."
 
-#: qinvidious/invidiousapi.cpp:196
+#: qinvidious/invidiousapi.cpp:229
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Server returned the status code %1"
@@ -291,7 +291,7 @@ msgstr "Trending Music"
 msgid "Trending News"
 msgstr "Trending News"
 
-#: videolistmodel.cpp:182
+#: videolistmodel.cpp:183
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Search results for \"%1\""
