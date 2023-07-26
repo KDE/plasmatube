@@ -1,29 +1,28 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Shinjo Park <kde@peremen.name>, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-20 00:50+0000\n"
-"PO-Revision-Date: 2022-10-03 15:26+0200\n"
+"PO-Revision-Date: 2023-07-26 00:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-i18n-doc@kde.org>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Loading"
+#, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "불러오는 중"
+msgstr "불러오는 중…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -58,13 +57,12 @@ msgstr "%1(으)로 로그인했습니다."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Invidious 계정에 로그인"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
-#| msgid "Instance"
+#, kde-format
 msgid "Instance Url"
-msgstr "인스턴스"
+msgstr "인스턴스 URL"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -74,28 +72,27 @@ msgstr "사용자 이름"
 #: contents/ui/LoginPage.qml:74
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "암호"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "로그아웃"
+msgstr "로그인"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "인스턴스 URL을 입력해야 합니다!"
 
 #: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "사용자 이름을 입력해야 합니다!"
 
 #: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "암호를 입력해야 합니다!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -130,7 +127,7 @@ msgstr "결과 없음"
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
-msgstr "개별"
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:29
 #, kde-format
@@ -155,150 +152,149 @@ msgstr "로그아웃"
 #: contents/ui/SettingsPage.qml:100
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube 정보"
 
 #: contents/ui/SettingsPage.qml:108
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "KDE 정보"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• 조회수 %1회 • %2"
 
 #: contents/ui/VideoListItem.qml:157
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • 조회수 %1회"
 
 #: contents/ui/VideoListItem.qml:165
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:334
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "구독 해제(%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "구독(%1)"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "채널을 구독하려면 로그인하십시오."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "조회수 %1회"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "좋아요 %1개"
 
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "사용자 이름이나 암호가 잘못되었습니다."
 
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "이 인스턴스에서 등록을 비활성화했습니다."
 
 #: main.cpp:47
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:49 main.cpp:91
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "YouTube 클라이언트"
 
 #: main.cpp:51
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:52
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "개발자"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "박신조"
 
 #: main.cpp:53
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "kde@peremen.name"
 
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "서버에서 올바른 JSON을 반환하지 않았습니다."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "서버에서 상태 코드 %1을(를) 반환함"
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "구독"
 
 #: videolistmodel.cpp:19
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Invidious Top"
-msgstr "개별"
+msgstr "Invidious 순위권"
 
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "트렌드"
 
 #: videolistmodel.cpp:23
 #, kde-format
 msgid "Trending Gaming"
-msgstr ""
+msgstr "게이밍 트렌드"
 
 #: videolistmodel.cpp:25
 #, kde-format
 msgid "Trending Movies"
-msgstr ""
+msgstr "영화 트렌드"
 
 #: videolistmodel.cpp:27
 #, kde-format
 msgid "Trending Music"
-msgstr ""
+msgstr "음악 트렌드"
 
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr ""
+msgstr "뉴스 트렌드"
 
 #: videolistmodel.cpp:182
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "\"%1\" 검색 결과"
 
 #~ msgid ""
 #~ "Please visit the website to register with an invidious instance.\n"
