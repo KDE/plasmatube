@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 07:32+0000\n"
+"POT-Creation-Date: 2023-08-12 00:45+0000\n"
 "PO-Revision-Date: 2023-06-22 09:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -247,12 +247,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: qinvidious/invidiousapi.cpp:220
+#: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "أرجع الخادوم ملف جوسون غير صحيح."
 
-#: qinvidious/invidiousapi.cpp:229
+#: qinvidious/invidiousapi.cpp:231
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "أرجع الخادوم رمز حالة %1"
@@ -292,7 +292,7 @@ msgstr "الرائج في الموسيقى"
 msgid "Trending News"
 msgstr "الرائج في الأخبار"
 
-#: videolistmodel.cpp:183
+#: videolistmodel.cpp:189
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "نتائج البحث عن \"%1\""

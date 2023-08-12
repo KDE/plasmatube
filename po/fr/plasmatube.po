@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 07:32+0000\n"
+"POT-Creation-Date: 2023-08-12 00:45+0000\n"
 "PO-Revision-Date: 2023-03-14 07:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -244,12 +244,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: qinvidious/invidiousapi.cpp:220
+#: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Le serveur a retourné un élément « JSON » non valable."
 
-#: qinvidious/invidiousapi.cpp:229
+#: qinvidious/invidiousapi.cpp:231
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Le serveur a retourné un code d'état %1."
@@ -289,7 +289,7 @@ msgstr "Musique à la mode"
 msgid "Trending News"
 msgstr "Nouvelles à la mode"
 
-#: videolistmodel.cpp:183
+#: videolistmodel.cpp:189
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Rechercher des résultats pour « %1 »"

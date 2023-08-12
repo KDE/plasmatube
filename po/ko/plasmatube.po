@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-24 07:32+0000\n"
+"POT-Creation-Date: 2023-08-12 00:45+0000\n"
 "PO-Revision-Date: 2023-07-26 00:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -246,12 +246,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: qinvidious/invidiousapi.cpp:220
+#: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "서버에서 올바른 JSON을 반환하지 않았습니다."
 
-#: qinvidious/invidiousapi.cpp:229
+#: qinvidious/invidiousapi.cpp:231
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "서버에서 상태 코드 %1을(를) 반환함"
@@ -291,7 +291,7 @@ msgstr "음악 트렌드"
 msgid "Trending News"
 msgstr "뉴스 트렌드"
 
-#: videolistmodel.cpp:183
+#: videolistmodel.cpp:189
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "\"%1\" 검색 결과"
