@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kconfig': '@stable'
     'frameworks/ki18n': '@stable'
     'frameworks/kirigami': '@stable'
+    'libraries/kirigami-addons': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
   'require':
@@ -17,3 +18,4 @@ Dependencies:
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest-kf6'
