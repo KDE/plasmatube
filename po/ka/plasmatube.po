@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:45+0000\n"
+"POT-Creation-Date: 2023-09-14 00:44+0000\n"
 "PO-Revision-Date: 2023-06-21 06:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -39,58 +39,58 @@ msgid "Search"
 msgstr "ძებნა"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
 
-#: contents/ui/LoginPage.qml:13
+#: contents/ui/LoginPage.qml:15
 #, kde-format
 msgid "Sign in"
 msgstr "შესვლა"
 
-#: contents/ui/LoginPage.qml:19
+#: contents/ui/LoginPage.qml:22
 #, kde-format
 msgid "Successfully logged in as %1."
 msgstr "წარმატებით შეხვედით, როგორც %1."
 
-#: contents/ui/LoginPage.qml:46
+#: contents/ui/LoginPage.qml:40
 #, kde-format
 msgid "Log in to an Invidious Account"
 msgstr "შედით საეჭვო ანგარიშში"
 
-#: contents/ui/LoginPage.qml:51
+#: contents/ui/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url"
 msgstr "გაშვებული ასლის URL"
 
-#: contents/ui/LoginPage.qml:63
+#: contents/ui/LoginPage.qml:61
 #, kde-format
 msgid "Username"
 msgstr "მომხმარებლის სახელი"
 
-#: contents/ui/LoginPage.qml:74
+#: contents/ui/LoginPage.qml:72
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
-#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:54
 #, kde-format
 msgid "Log in"
 msgstr "შესვლა"
 
-#: contents/ui/LoginPage.qml:93
+#: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "გაშვებული ასლის ბმული ცარიელი არ შეიძლება იყოს!"
 
-#: contents/ui/LoginPage.qml:98
+#: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "მომხმარებლის სახელი ცარიელი არ შეიძლება იყოს!"
 
-#: contents/ui/LoginPage.qml:103
+#: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "პაროლი ცარიელი არ შეიძლება, იყოს!"
@@ -125,37 +125,37 @@ msgstr "ნახვების რაოდენობა"
 msgid "No results"
 msgstr "შედეგების გარეშე"
 
-#: contents/ui/SettingsPage.qml:25
+#: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
 msgstr "ცბიერი"
 
-#: contents/ui/SettingsPage.qml:29
+#: contents/ui/SettingsPage.qml:23
 #, kde-format
 msgid "Instance"
 msgstr "გაშვებული ასლი"
 
-#: contents/ui/SettingsPage.qml:44
+#: contents/ui/SettingsPage.qml:31
 #, kde-format
 msgid "Account"
 msgstr "ანგარიში"
 
-#: contents/ui/SettingsPage.qml:50
+#: contents/ui/SettingsPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "ამჟამად შესული ბრძანდებით, როგორც %1."
 
-#: contents/ui/SettingsPage.qml:70
+#: contents/ui/SettingsPage.qml:61
 #, kde-format
 msgid "Log out"
 msgstr "გასვლა"
 
-#: contents/ui/SettingsPage.qml:100
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "PlasmaTube-ის შესახებ"
 
-#: contents/ui/SettingsPage.qml:108
+#: contents/ui/SettingsPage.qml:85
 #, kde-format
 msgid "About KDE"
 msgstr "KDE-ს შესახებ"

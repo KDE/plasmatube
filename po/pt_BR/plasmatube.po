@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:45+0000\n"
+"POT-Creation-Date: 2023-09-14 00:44+0000\n"
 "PO-Revision-Date: 2023-07-28 22:52-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -40,58 +40,58 @@ msgid "Search"
 msgstr "Pesquisar"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"
 
-#: contents/ui/LoginPage.qml:13
+#: contents/ui/LoginPage.qml:15
 #, kde-format
 msgid "Sign in"
 msgstr "Entrar"
 
-#: contents/ui/LoginPage.qml:19
+#: contents/ui/LoginPage.qml:22
 #, kde-format
 msgid "Successfully logged in as %1."
 msgstr "Conectado com sucesso como %1."
 
-#: contents/ui/LoginPage.qml:46
+#: contents/ui/LoginPage.qml:40
 #, kde-format
 msgid "Log in to an Invidious Account"
 msgstr "Faça login em uma conta Invidious"
 
-#: contents/ui/LoginPage.qml:51
+#: contents/ui/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url"
 msgstr "URL da instância"
 
-#: contents/ui/LoginPage.qml:63
+#: contents/ui/LoginPage.qml:61
 #, kde-format
 msgid "Username"
 msgstr "Nome de usuário"
 
-#: contents/ui/LoginPage.qml:74
+#: contents/ui/LoginPage.qml:72
 #, kde-format
 msgid "Password"
 msgstr "Senha"
 
-#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:54
 #, kde-format
 msgid "Log in"
 msgstr "Entrar"
 
-#: contents/ui/LoginPage.qml:93
+#: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "A URL da instância não pode estar vazia!"
 
-#: contents/ui/LoginPage.qml:98
+#: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "O nome de usuário não pode estar em branco!"
 
-#: contents/ui/LoginPage.qml:103
+#: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "A senha não pode estar em branco!"
@@ -126,37 +126,37 @@ msgstr "Visualizações"
 msgid "No results"
 msgstr "Nenhum resultado"
 
-#: contents/ui/SettingsPage.qml:25
+#: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
 msgstr "Odioso"
 
-#: contents/ui/SettingsPage.qml:29
+#: contents/ui/SettingsPage.qml:23
 #, kde-format
 msgid "Instance"
 msgstr "Instância"
 
-#: contents/ui/SettingsPage.qml:44
+#: contents/ui/SettingsPage.qml:31
 #, kde-format
 msgid "Account"
 msgstr "Conta"
 
-#: contents/ui/SettingsPage.qml:50
+#: contents/ui/SettingsPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "Conectado atualmente como %1."
 
-#: contents/ui/SettingsPage.qml:70
+#: contents/ui/SettingsPage.qml:61
 #, kde-format
 msgid "Log out"
 msgstr "Encerrar sessão"
 
-#: contents/ui/SettingsPage.qml:100
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Sobre o PlasmaTube"
 
-#: contents/ui/SettingsPage.qml:108
+#: contents/ui/SettingsPage.qml:85
 #, kde-format
 msgid "About KDE"
 msgstr "Sobre o KDE"

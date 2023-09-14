@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:45+0000\n"
+"POT-Creation-Date: 2023-09-14 00:44+0000\n"
 "PO-Revision-Date: 2023-07-20 23:53+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -41,58 +41,58 @@ msgid "Search"
 msgstr "Bilatu"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:14
+#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: contents/ui/LoginPage.qml:13
+#: contents/ui/LoginPage.qml:15
 #, kde-format
 msgid "Sign in"
 msgstr "Sinatu"
 
-#: contents/ui/LoginPage.qml:19
+#: contents/ui/LoginPage.qml:22
 #, kde-format
 msgid "Successfully logged in as %1."
 msgstr "%1 gisa saioa ondo hasi duzu."
 
-#: contents/ui/LoginPage.qml:46
+#: contents/ui/LoginPage.qml:40
 #, kde-format
 msgid "Log in to an Invidious Account"
 msgstr "Saioa ireki «Invidious» kontu batean"
 
-#: contents/ui/LoginPage.qml:51
+#: contents/ui/LoginPage.qml:49
 #, kde-format
 msgid "Instance Url"
 msgstr "Instantziaren URL"
 
-#: contents/ui/LoginPage.qml:63
+#: contents/ui/LoginPage.qml:61
 #, kde-format
 msgid "Username"
 msgstr "Erabiltzaile-izena"
 
-#: contents/ui/LoginPage.qml:74
+#: contents/ui/LoginPage.qml:72
 #, kde-format
 msgid "Password"
 msgstr "Pasahitza"
 
-#: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:54
 #, kde-format
 msgid "Log in"
 msgstr "Saioa ireki"
 
-#: contents/ui/LoginPage.qml:93
+#: contents/ui/LoginPage.qml:91
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "Instantziaren URLa ez da hutsik egon behar!"
 
-#: contents/ui/LoginPage.qml:98
+#: contents/ui/LoginPage.qml:96
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "Erabiltzaile-izena ez da hutsik egon behar!"
 
-#: contents/ui/LoginPage.qml:103
+#: contents/ui/LoginPage.qml:101
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Pasahitza ez da hutsik egon behar!"
@@ -127,37 +127,37 @@ msgstr "Ikustaldi kopurua"
 msgid "No results"
 msgstr "Emaitzarik gabe"
 
-#: contents/ui/SettingsPage.qml:25
+#: contents/ui/SettingsPage.qml:18
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: contents/ui/SettingsPage.qml:29
+#: contents/ui/SettingsPage.qml:23
 #, kde-format
 msgid "Instance"
 msgstr "Instantzia"
 
-#: contents/ui/SettingsPage.qml:44
+#: contents/ui/SettingsPage.qml:31
 #, kde-format
 msgid "Account"
 msgstr "Kontua"
 
-#: contents/ui/SettingsPage.qml:50
+#: contents/ui/SettingsPage.qml:40
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "Une honetan %1 erabiltzaile gisa saio-hasita."
 
-#: contents/ui/SettingsPage.qml:70
+#: contents/ui/SettingsPage.qml:61
 #, kde-format
 msgid "Log out"
 msgstr "Itxi saioa"
 
-#: contents/ui/SettingsPage.qml:100
+#: contents/ui/SettingsPage.qml:70
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "«PlasmaTube»ri buruz"
 
-#: contents/ui/SettingsPage.qml:108
+#: contents/ui/SettingsPage.qml:85
 #, kde-format
 msgid "About KDE"
 msgstr "KDEri buruz"
