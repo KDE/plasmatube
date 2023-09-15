@@ -126,4 +126,13 @@ Kirigami.ApplicationWindow {
         contentToPlayerSpacing: footerLoader.active ? footerLoader.height : 0
         z: contentY === 0 ? -1 : 999
     }
+
+    Connections {
+        target: PlasmaTube
+
+        function onOpenVideo(videoId: string) {
+            root.switchVideo(videoId);
+            openPlayer();
+        }
+    }
 }

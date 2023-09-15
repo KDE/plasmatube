@@ -45,6 +45,9 @@ public:
     Q_INVOKABLE void markVideoWatched(const QString &videoId);
     void markVideoUnwatched(const QString &videoId);
 
+Q_SIGNALS:
+    void openVideo(const QString &id);
+
 private:
     friend class SubscriptionController;
 

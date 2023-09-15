@@ -89,6 +89,9 @@ int main(int argc, char **argv)
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("YouTube client"));
+
+    parser.addPositionalArgument(QStringLiteral("video-url"), QStringLiteral("YouTube video URL to play"));
+
     about.setupCommandLine(&parser);
     parser.process(app);
     about.processCommandLine(&parser);
@@ -97,6 +100,15 @@ int main(int argc, char **argv)
 
     if (engine.rootObjects().isEmpty())
         return -1;
+
+    if (QApplication::arguments().length() > 1) {
+        auto videoUrl = app.arguments()[1];
+        const QRegularExpression exp(QStringLiteral(R"(https:\/\/[www.]*youtube.com\/watch\?v=(.*))"));
+        const auto match = exp.match(videoUrl);
+        if (match.hasMatch()) {
+            PlasmaTube::instance().openVideo(match.captured(1));
+        }
+    }
 
     return app.exec();
 }
