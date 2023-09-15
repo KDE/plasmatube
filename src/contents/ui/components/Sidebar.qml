@@ -24,9 +24,6 @@ Kirigami.OverlayDrawer {
     bottomPadding: 0
 
     function switchToPage(page) {
-        applicationWindow().pageStack.pop();
-        applicationWindow().pageStack.push(page, 0);
-        return;
         if (applicationWindow().pageStack.currentItem !== page) {
             while (applicationWindow().pageStack.depth > 0) {
                 applicationWindow().pageStack.pop();
