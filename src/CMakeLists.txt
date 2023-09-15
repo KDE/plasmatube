@@ -26,4 +26,9 @@ target_link_libraries(plasmatube qinvidious Qt::Core Qt::Qml Qt::Quick Qt::Quick
 target_include_directories(plasmatube PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(plasmatube PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 
+if (NOT ANDROID)
+    target_link_libraries(plasmatube Qt::DBus)
+    target_compile_options(plasmatube PUBLIC -DHAS_DBUS)
+endif()
+
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

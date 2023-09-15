@@ -71,6 +71,7 @@ Kirigami.ScrollablePage {
         videoContainer.parent = Controls.Overlay.overlay;
         videoContainer.anchors.fill = Controls.Overlay.overlay;
         root.inFullScreen = true;
+        PlasmaTube.setInhibitSleep(true);
         applicationWindow().showFullScreen();
     }
 
@@ -78,6 +79,7 @@ Kirigami.ScrollablePage {
         videoContainer.parent = inlineVideoContainer;
         videoContainer.anchors.fill = inlineVideoContainer;
         root.inFullScreen = false;
+        PlasmaTube.setInhibitSleep(false);
         applicationWindow().showNormal();
     }
     

@@ -45,6 +45,8 @@ public:
     Q_INVOKABLE void markVideoWatched(const QString &videoId);
     void markVideoUnwatched(const QString &videoId);
 
+    Q_INVOKABLE void setInhibitSleep(bool inhibit);
+
 Q_SIGNALS:
     void openVideo(const QString &id);
 
@@ -59,4 +61,5 @@ private:
     QInvidious::InvidiousApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
+    unsigned int screenSaverDbusCookie = 0;
 };
