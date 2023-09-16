@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:44+0000\n"
+"POT-Creation-Date: 2023-09-16 00:44+0000\n"
 "PO-Revision-Date: 2023-06-20 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,32 +18,52 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.1\n"
 
-#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
-#: contents/ui/TrendingPage.qml:124
+#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
+#: contents/ui/SearchPage.qml:181
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Nalaganje…"
 
 #: contents/ui/components/BottomNavBar.qml:69
-#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Video posnetki"
 
 #: contents/ui/components/BottomNavBar.qml:81
-#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
+#: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Išči"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
+#: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
+
+#: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
+#, kde-format
+msgid "Popular"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
+#, kde-format
+msgid "Trending"
+msgstr "V trendu"
+
+#: contents/ui/components/Sidebar.qml:89 videolistmodel.cpp:17
+#, kde-format
+msgid "Subscriptions"
+msgstr "Naročnine"
+
+#: contents/ui/FeedPage.qml:89
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgid "No videos"
+msgstr "Video posnetki"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -175,27 +195,27 @@ msgstr " • %1 pogledi"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:334
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Prekliči naročnino (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:336
+#: contents/ui/videoplayer/VideoPlayer.qml:338
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Naroči se (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:346
+#: contents/ui/videoplayer/VideoPlayer.qml:348
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Prijavite se, da se naročite na kanale."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:367
+#: contents/ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "%1 views"
 msgstr "%1 pogledi"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:375
+#: contents/ui/videoplayer/VideoPlayer.qml:377
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Všečkov"
@@ -247,6 +267,11 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
+#: plasmatube.cpp:200
+#, kde-format
+msgid "Playing video"
+msgstr ""
+
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
@@ -256,21 +281,6 @@ msgstr "Strežnik ni vrnil veljavne JSON."
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Strežnik je vrnil statusno kodo %1"
-
-#: videolistmodel.cpp:17
-#, kde-format
-msgid "Subscriptions"
-msgstr "Naročnine"
-
-#: videolistmodel.cpp:19
-#, kde-format
-msgid "Invidious Top"
-msgstr "Nevidni vrh"
-
-#: videolistmodel.cpp:21
-#, kde-format
-msgid "Trending"
-msgstr "V trendu"
 
 #: videolistmodel.cpp:23
 #, kde-format
@@ -296,6 +306,9 @@ msgstr "Novice v trendu"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Zadetki iskanja za \"%1\""
+
+#~ msgid "Invidious Top"
+#~ msgstr "Nevidni vrh"
 
 #~ msgid ""
 #~ "Please visit the website to register with an invidious instance.\n"

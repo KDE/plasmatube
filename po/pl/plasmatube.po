@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:44+0000\n"
+"POT-Creation-Date: 2023-09-16 00:44+0000\n"
 "PO-Revision-Date: 2023-09-10 10:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,32 +18,52 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
-#: contents/ui/TrendingPage.qml:124
+#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
+#: contents/ui/SearchPage.qml:181
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
 #: contents/ui/components/BottomNavBar.qml:69
-#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr "Filmy"
 
 #: contents/ui/components/BottomNavBar.qml:81
-#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
+#: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Poszukaj"
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
+#: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Ustawienia"
+
+#: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
+#, kde-format
+msgid "Popular"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
+#, kde-format
+msgid "Trending"
+msgstr "Na czasie"
+
+#: contents/ui/components/Sidebar.qml:89 videolistmodel.cpp:17
+#, kde-format
+msgid "Subscriptions"
+msgstr "Śledzone"
+
+#: contents/ui/FeedPage.qml:89
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgid "No videos"
+msgstr "Filmy"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -175,27 +195,27 @@ msgstr " • %1 odwiedziny"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:334
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Przestań śledzić (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:336
+#: contents/ui/videoplayer/VideoPlayer.qml:338
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Zacznij śledzić (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:346
+#: contents/ui/videoplayer/VideoPlayer.qml:348
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Zaloguj się, aby móc śledzić kanały."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:367
+#: contents/ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "%1 views"
 msgstr "%1 odwiedziny"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:375
+#: contents/ui/videoplayer/VideoPlayer.qml:377
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 polubienia"
@@ -247,6 +267,11 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lukasz.wojnilowicz@gmail.com"
 
+#: plasmatube.cpp:200
+#, kde-format
+msgid "Playing video"
+msgstr ""
+
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
@@ -256,21 +281,6 @@ msgstr "Serwer nie zwrócił prawidłowego pliku JSON."
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Serwer nie zwrócił kod błędu %1"
-
-#: videolistmodel.cpp:17
-#, kde-format
-msgid "Subscriptions"
-msgstr "Śledzone"
-
-#: videolistmodel.cpp:19
-#, kde-format
-msgid "Invidious Top"
-msgstr "Krzywdzący Szczyt"
-
-#: videolistmodel.cpp:21
-#, kde-format
-msgid "Trending"
-msgstr "Na czasie"
 
 #: videolistmodel.cpp:23
 #, kde-format
@@ -296,6 +306,9 @@ msgstr "Wieści na czasie"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Wyniki wyszukiwania dla \"%1\""
+
+#~ msgid "Invidious Top"
+#~ msgstr "Krzywdzący Szczyt"
 
 #~ msgid ""
 #~ "Please visit the website to register with an invidious instance.\n"

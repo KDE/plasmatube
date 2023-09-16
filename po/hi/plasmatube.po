@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:44+0000\n"
+"POT-Creation-Date: 2023-09-16 00:44+0000\n"
 "PO-Revision-Date: 2021-06-29 17:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -17,31 +17,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 21.04.2\n"
 
-#: contents/ui/ChannelPage.qml:83 contents/ui/SearchPage.qml:181
-#: contents/ui/TrendingPage.qml:124
+#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
+#: contents/ui/SearchPage.qml:181
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr ""
 
 #: contents/ui/components/BottomNavBar.qml:69
-#: contents/ui/components/Sidebar.qml:60
 #, kde-format
 msgid "Videos"
 msgstr ""
 
 #: contents/ui/components/BottomNavBar.qml:81
-#: contents/ui/components/Sidebar.qml:73 contents/ui/SearchPage.qml:17
+#: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr ""
 
 #: contents/ui/components/BottomNavBar.qml:92
-#: contents/ui/components/Sidebar.qml:94 contents/ui/SettingsPage.qml:15
+#: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
+#, kde-format
+msgid "Popular"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
+#, kde-format
+msgid "Trending"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:89 videolistmodel.cpp:17
+#, kde-format
+msgid "Subscriptions"
+msgstr ""
+
+#: contents/ui/FeedPage.qml:89
+#, kde-format
+msgid "No videos"
 msgstr ""
 
 #: contents/ui/LoginPage.qml:15
@@ -174,27 +193,27 @@ msgstr ""
 msgid " • %1"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:334
+#: contents/ui/videoplayer/VideoPlayer.qml:336
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:336
+#: contents/ui/videoplayer/VideoPlayer.qml:338
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:346
+#: contents/ui/videoplayer/VideoPlayer.qml:348
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:367
+#: contents/ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "%1 views"
 msgstr ""
 
-#: contents/ui/videoplayer/VideoPlayer.qml:375
+#: contents/ui/videoplayer/VideoPlayer.qml:377
 #, kde-format
 msgid "%1 Likes"
 msgstr ""
@@ -246,6 +265,11 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
+#: plasmatube.cpp:200
+#, kde-format
+msgid "Playing video"
+msgstr ""
+
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
 msgid "Server returned no valid JSON."
@@ -254,21 +278,6 @@ msgstr ""
 #: qinvidious/invidiousapi.cpp:231
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
-
-#: videolistmodel.cpp:17
-#, kde-format
-msgid "Subscriptions"
-msgstr ""
-
-#: videolistmodel.cpp:19
-#, kde-format
-msgid "Invidious Top"
-msgstr ""
-
-#: videolistmodel.cpp:21
-#, kde-format
-msgid "Trending"
 msgstr ""
 
 #: videolistmodel.cpp:23
