@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-20 09:47+0200\n"
+"PO-Revision-Date: 2023-09-16 12:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -49,7 +49,7 @@ msgstr "Configuració"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Populars"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -62,10 +62,9 @@ msgid "Subscriptions"
 msgstr "Subscripcions"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Vídeos"
+msgstr "Sense vídeos"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -273,7 +272,7 @@ msgstr "txemaq@gmail.com"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "S'està reproduint un vídeo"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
@@ -309,7 +308,3 @@ msgstr "Tendències de notícies"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Resultats de la busca de «%1»"
-
-# "Invidious" és un nom propi: https://github.com/iv-org/invidious
-#~ msgid "Invidious Top"
-#~ msgstr "Els millors d'Invidious"

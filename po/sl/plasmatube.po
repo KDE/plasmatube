@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-20 06:43+0200\n"
+"PO-Revision-Date: 2023-09-16 09:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
 #: contents/ui/SearchPage.qml:181
@@ -47,7 +47,7 @@ msgstr "Nastavitve"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Popularno"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -60,10 +60,9 @@ msgid "Subscriptions"
 msgstr "Naročnine"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Video posnetki"
+msgstr "Ni video posnetkov"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -270,7 +269,7 @@ msgstr "matjaz.jeran@amis.net"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Predvajanje videa"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format

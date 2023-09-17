@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-20 09:54+0200\n"
+"PO-Revision-Date: 2023-09-16 13:09+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
 #: contents/ui/SearchPage.qml:181
@@ -46,7 +46,7 @@ msgstr "Instellingen"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Populair"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Subscriptions"
 msgstr "Inschrijvingen"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Video's"
+msgstr "Geen video's"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -269,7 +268,7 @@ msgstr "freekdekruijf@kde.nl"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Video afspelen"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format

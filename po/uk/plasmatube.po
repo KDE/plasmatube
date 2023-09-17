@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-20 07:21+0300\n"
+"PO-Revision-Date: 2023-09-16 08:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -47,7 +47,7 @@ msgstr "Параметри"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Популярні"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -60,10 +60,9 @@ msgid "Subscriptions"
 msgstr "Підписки"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Відео"
+msgstr "Немає відео"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -270,7 +269,7 @@ msgstr "yurchor@ukr.net"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Відтворення відео"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
