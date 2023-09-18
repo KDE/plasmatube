@@ -46,7 +46,7 @@ msgstr "Ayarlar"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Popüler"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Subscriptions"
 msgstr "Abonelikler"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Videolar"
+msgstr "Video yok"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -269,7 +268,7 @@ msgstr "emir_sari@icloud.com"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Video oynatılıyor"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
@@ -305,25 +304,3 @@ msgstr "Trend Haberler"
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "\"%1\" için arama sonuçları"
-
-#~ msgid "Invidious Top"
-#~ msgstr "Kırıcı En Popüler"
-
-#~ msgid ""
-#~ "Please visit the website to register with an invidious instance.\n"
-#~ "There is currently no API for registering."
-#~ msgstr ""
-#~ "Bireysel olarak kaydolmak için lütfen web sayfasını ziyaret edin.\n"
-#~ "Şu anda kayıt için bir uygulama arayüzü bulunmamaktadır."
-
-#~ msgid "Currently logged in as:"
-#~ msgstr "Oturum açılan hesap:"
-
-#~ msgid "Open Account Settings"
-#~ msgstr "Hesap Ayarlarını Aç"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Tam Ekran"
-
-#~ msgid "Restore"
-#~ msgstr "Geri Yükle"

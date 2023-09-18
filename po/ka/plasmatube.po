@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-21 06:12+0200\n"
+"PO-Revision-Date: 2023-09-17 06:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
 #: contents/ui/SearchPage.qml:181
@@ -47,7 +47,7 @@ msgstr "პარამეტრები"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "პოპულარული"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -60,10 +60,9 @@ msgid "Subscriptions"
 msgstr "გამოწერები"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "ვიდეო"
+msgstr "ვიდეოების გარეშე"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -270,7 +269,7 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "მიმდინარეობს ვიდეოს დაკვრა"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
