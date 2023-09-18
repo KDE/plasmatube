@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-20 00:50+0000\n"
-"PO-Revision-Date: 2023-06-21 07:27+0200\n"
+"PO-Revision-Date: 2023-09-17 16:22+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -67,7 +67,7 @@ msgstr "URL da instancia"
 #: contents/ui/LoginPage.qml:63
 #, kde-format
 msgid "Username"
-msgstr "Usuaria"
+msgstr "Nome de usuaria"
 
 #: contents/ui/LoginPage.qml:74
 #, kde-format
@@ -87,7 +87,7 @@ msgstr "O URL da instancia non pode estar baleiro!"
 #: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
-msgstr "O nome de persoa usuaria non pode estar baleiro."
+msgstr "O nome de usuaria non pode estar baleiro."
 
 #: contents/ui/LoginPage.qml:103
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "%1 gústames"
 #: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:97
 #, kde-format
 msgid "Username or password is wrong."
-msgstr "O nome de persoa usuario ou o contrasinal son incorrectos."
+msgstr "O nome de usuaria ou o contrasinal son incorrectos."
 
 #: logincontroller.cpp:49
 #, kde-format
@@ -249,7 +249,7 @@ msgstr "adrian@chaves.io"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "O servidor devolveu un JSON non válido."
+msgstr "O servidor non devolveu un JSON correcto."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
