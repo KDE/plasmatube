@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-06-20 16:30+0200\n"
+"PO-Revision-Date: 2023-09-16 13:42+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
 #: contents/ui/SearchPage.qml:181
@@ -46,7 +46,7 @@ msgstr "Impostazioni"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Popolari"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Subscriptions"
 msgstr "Sottoscrizioni"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Video"
+msgstr "Nessun video"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -269,7 +268,7 @@ msgstr "smart2128vr@gmail.com"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Riproduzione video"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
