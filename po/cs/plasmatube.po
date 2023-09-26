@@ -46,7 +46,7 @@ msgstr "Nastavení"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Populární"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Subscriptions"
 msgstr "Přihlášení"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Videa"
+msgstr ""
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
