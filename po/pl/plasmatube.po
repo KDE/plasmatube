@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:44+0000\n"
-"PO-Revision-Date: 2023-09-10 10:55+0200\n"
+"PO-Revision-Date: 2023-10-01 09:42+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr "Ustawienia"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Popularne"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -60,10 +60,9 @@ msgid "Subscriptions"
 msgstr "Śledzone"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Filmy"
+msgstr "Brak filmów"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -270,7 +269,7 @@ msgstr "lukasz.wojnilowicz@gmail.com"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Odtwarzanie filmu"
 
 #: qinvidious/invidiousapi.cpp:222
 #, kde-format
