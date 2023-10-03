@@ -23,7 +23,7 @@ Kirigami.ApplicationWindow {
 
         x: 0
         y: parent.height - implicitHeight
-        z: globalDrawer.z + 1
+        z: 999990
 
         contentItem: Controls.Label {
             id: linkText

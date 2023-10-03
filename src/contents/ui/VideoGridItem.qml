@@ -127,7 +127,7 @@ MouseArea {
                 id: thumbnailMouseArea
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: root.clicked(mouse)
+                onClicked: (event) => root.clicked(event)
             }
         }
 
