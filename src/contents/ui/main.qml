@@ -77,17 +77,11 @@ Kirigami.ApplicationWindow {
         videoPlayer.close();
     }
 
-    Loader {
-        id: sidebarLoader
-        source: "qrc:/components/Sidebar.qml"
-        active: root.isWidescreen
-    }
-
     Kirigami.PagePool {
         id: pagePool
     }
 
-    globalDrawer: sidebarLoader.item
+    globalDrawer: Sidebar {}
     contextDrawer: Kirigami.ContextDrawer {}
 
     footer: Loader {
