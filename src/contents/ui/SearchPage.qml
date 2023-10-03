@@ -34,17 +34,25 @@ Kirigami.ScrollablePage {
         searchField.accepted();
     }
 
-    header: Rectangle {
-        color: "transparent"
+    header: Controls.Control {
+        padding: Kirigami.Units.largeSpacing
+
+        background: Rectangle {
+            Kirigami.Theme.colorSet: Kirigami.Theme.Window
+            Kirigami.Theme.inherit: false
+
+            color: Kirigami.Theme.backgroundColor
+        }
+
         anchors.top: root.top
         anchors.left: root.left
-        anchors.margins: Kirigami.Units.largeSpacing
-        height: childrenRect.height + Kirigami.Units.largeSpacing
 
-        ColumnLayout {
-            width: root.width - 2 * Kirigami.Units.largeSpacing
+        contentItem: ColumnLayout {
+            spacing: Kirigami.Units.mediumSpacing
 
             RowLayout {
+                spacing: Kirigami.Units.mediumSpacing
+
                 Kirigami.SearchField {
                     id: searchField
                     selectByMouse: true
@@ -66,6 +74,8 @@ Kirigami.ScrollablePage {
             }
 
             RowLayout {
+                spacing: Kirigami.Units.mediumSpacing
+
                 id: filtersBar
                 visible: showFiltersButton.checked
 
@@ -119,6 +129,15 @@ Kirigami.ScrollablePage {
                             videoModel.requestSearchResults(searchParameters)
                         }
                 }
+            }
+        }
+
+        Kirigami.Separator {
+            z: 999
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.bottom
             }
         }
     }
