@@ -40,10 +40,34 @@ Kirigami.OverlayDrawer {
     }
 
     contentItem: ColumnLayout {
+        id: column
+
         spacing: 0
 
-        Kirigami.AbstractApplicationHeader {
+        QQC2.ToolBar {
             Layout.fillWidth: true
+            Layout.preferredHeight: pageStack.globalToolBar.preferredHeight
+            Layout.bottomMargin: Kirigami.Units.smallSpacing / 2
+
+            leftPadding: 3
+            rightPadding: 3
+            topPadding: 3
+            bottomPadding: 3
+
+            visible: !Kirigami.Settings.isMobile
+
+            contentItem: Kirigami.SearchField {
+                id: searchField
+
+                autoAccept: false
+
+                onAccepted: {
+                    let page = applicationWindow().getPage("SearchPage");
+                    root.switchToPage(page);
+                    page.doSearch(searchField.text);
+                    searchField.text = "";
+                }
+            }
         }
 
         Delegates.RoundedItemDelegate {
@@ -81,19 +105,6 @@ Kirigami.OverlayDrawer {
             text: i18n("Subscriptions")
             checked: pageStack.currentItem === page
             enabled: PlasmaTube.isLoggedIn
-            onClicked: {
-                root.switchToPage(page);
-            }
-        }
-
-        Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("SearchPage")
-            Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
-            icon.name: "search"
-            text: i18n("Search")
-            checked: pageStack.currentItem === page
             onClicked: {
                 root.switchToPage(page);
             }

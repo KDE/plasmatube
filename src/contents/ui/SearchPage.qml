@@ -29,6 +29,11 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
+    function doSearch(term: string) {
+        searchField.text = term;
+        searchField.accepted();
+    }
+
     header: Rectangle {
         color: "transparent"
         anchors.top: root.top
