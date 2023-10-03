@@ -15,4 +15,4 @@ set(qinvidious_SRCS
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})
-target_link_libraries(qinvidious Qt::Core Qt::Network KF${QT_MAJOR_VERSION}::I18n)
+target_link_libraries(qinvidious Qt::Core Qt::Network KF6::I18n)
