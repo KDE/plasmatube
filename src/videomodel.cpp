@@ -12,6 +12,8 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 
+using namespace Qt::StringLiterals;
+
 VideoModel::VideoModel(QObject *parent)
     : QObject(parent),
       m_video(new VideoItem(this))
@@ -75,11 +77,11 @@ void VideoModel::fetch()
                  const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
                  for (const auto &value : formatsArray) {
                     const auto format = value.toObject();
-                    const auto formatNote = format["format_note"].toString();
-                    if (formatNote == "medium") {
-                        m_audioUrl = format["url"].toString();
+                    const auto formatNote = format["format_note"_L1].toString();
+                    if (formatNote == "medium"_L1) {
+                        m_audioUrl = format["url"_L1].toString();
                     } else {
-                        m_formatUrl[formatNote] = format["url"].toString();
+                        m_formatUrl[formatNote] = format["url"_L1].toString();
                     }
                  }
                  Q_EMIT remoteUrlChanged();

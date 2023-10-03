@@ -12,7 +12,7 @@ import QtQuick.Controls 2.10 as QQC2
 import QtMultimedia 5.12 as Multimedia
 
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons 1.0 as KCoreAddons
 
 QQC2.Control {
     id: root

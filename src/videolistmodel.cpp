@@ -107,7 +107,7 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
     case TitleRole:
         return video.title();
     case ThumbnailRole: {
-        const auto thumbnailUrl = video.thumbnail("medium").url();
+        const auto thumbnailUrl = video.thumbnail(QStringLiteral("medium")).url();
         if (thumbnailUrl.isRelative()) {
             return QUrl(PlasmaTube::instance().api()->invidiousInstance() + thumbnailUrl.toString(QUrl::FullyEncoded));
         }
@@ -279,17 +279,17 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
             m_results << *videos;
             endInsertRows();
         } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            emit errorOccured(error->second);
+            Q_EMIT errorOccured(error->second);
         }
 
         m_futureWatcher->deleteLater();
         m_futureWatcher = nullptr;
-        emit isLoadingChanged();
+        Q_EMIT isLoadingChanged();
     });
 
     setQueryType(type);
     m_futureWatcher->setFuture(future);
-    emit isLoadingChanged();
+    Q_EMIT isLoadingChanged();
 }
 
 void VideoListModel::setQueryType(QueryType type)
@@ -297,7 +297,7 @@ void VideoListModel::setQueryType(QueryType type)
     // title changes if the type changes or the search string has been updated (page 0)
     if (m_queryType != type || m_searchParameters.query().isEmpty()) {
         m_queryType = type;
-        emit titleChanged();
+        Q_EMIT titleChanged();
     }
 }
 

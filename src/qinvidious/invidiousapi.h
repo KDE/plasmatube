@@ -78,12 +78,12 @@ private:
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
 
-    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = "", const QHash<QString, QString> &parameters = {});
+    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
     QUrl logInUrl() const;
     QUrl videoUrl(QStringView videoId) const;
-    QUrl videoListUrl(VideoListType queryType, const QString& urlExtension = "", const QHash<QString, QString> &parameters = {}) const;
+    QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
     QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(QStringView channelId) const;
 

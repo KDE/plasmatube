@@ -8,7 +8,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 import QtMultimedia 5.15
-import QtGraphicalEffects 1.15
+import Qt5Compat.GraphicalEffects
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0

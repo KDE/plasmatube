@@ -119,13 +119,12 @@ MpvObject::MpvObject(QQuickItem * parent)
         throw std::runtime_error("could not initialize mpv context");
 
     // resume/save playback position
-    QString watchLaterLocation = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) +
-            QDir::separator() + "watch-later";
+    QString watchLaterLocation = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QDir::separator() + QStringLiteral("watch-later");
     QDir watchLaterDir(watchLaterLocation);
     if (!watchLaterDir.exists())
-        watchLaterDir.mkpath(".");
+        watchLaterDir.mkpath(QStringLiteral("."));
 
-    mpv::qt::set_property(mpv, "watch-later-directory", watchLaterLocation);
+    mpv::qt::set_property(mpv, QStringLiteral("watch-later-directory"), watchLaterLocation);
 
     // don't save position on quit?
     // mpv::qt::set_property(mpv, "save-position-on-quit", true);
@@ -170,7 +169,7 @@ void MpvObject::play()
     if (!paused()) {
         return;
     }
-    setProperty("pause", false);
+    setProperty(QStringLiteral("pause"), false);
     Q_EMIT pausedChanged();
 }
 
@@ -179,13 +178,13 @@ void MpvObject::pause()
     if (paused()) {
         return;
     }
-    setProperty("pause", true);
+    setProperty(QStringLiteral("pause"), true);
     Q_EMIT pausedChanged();
 }
 
 void MpvObject::stop() {
     setPosition(0);
-    setProperty("stop", true);
+    setProperty(QStringLiteral("stop"), true);
     m_stopped = true;
     Q_EMIT stoppedChanged();
 }
@@ -195,13 +194,13 @@ void MpvObject::setPosition(double value)
     if (value == position()) {
         return;
     }
-    setProperty("time-pos", value);
+    setProperty(QStringLiteral("time-pos"), value);
     Q_EMIT positionChanged();
 }
 
 void MpvObject::seek(qreal offset)
 {
-    command(QStringList() << "add" << "time-pos" << QString::number(offset));
+    command(QStringList() << QStringLiteral("add") << QStringLiteral("time-pos") << QString::number(offset));
 }
 
 void MpvObject::on_update(void *ctx)

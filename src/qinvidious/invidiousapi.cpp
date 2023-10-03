@@ -25,6 +25,7 @@ constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
 constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
 
 using namespace QInvidious;
+using namespace Qt::StringLiterals;
 
 InvidiousApi::InvidiousApi(QNetworkAccessManager *netManager, QObject *parent)
     : QObject(parent),
@@ -78,12 +79,12 @@ QString InvidiousApi::invidiousInstance() const
 QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;
-    params.addQueryItem("email", QUrl::toPercentEncoding(username.toString()));
-    params.addQueryItem("password", QUrl::toPercentEncoding(password.toString()));
-    params.addQueryItem("action", "signin");
+    params.addQueryItem(QStringLiteral("email"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
+    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
+    params.addQueryItem(QStringLiteral("action"), QStringLiteral("signin"));
 
     QNetworkRequest request(logInUrl());
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
 
     return post<LogInResult>(std::move(request), params.toString().toUtf8(),
                              [=](QNetworkReply *reply) -> LogInResult {
@@ -92,7 +93,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
         if (!cookies.isEmpty()) {
             m_credentials.setUsername(username);
             m_credentials.setCookie(cookies.first());
-            emit credentialsChanged();
+            Q_EMIT credentialsChanged();
             return m_credentials;
         }
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
@@ -112,14 +113,14 @@ QFuture<VideoResult> InvidiousApi::requestVideo(QStringView videoId)
 
 QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
 {
-    return requestVideoList(Search, "", parameters.toQueryParameters());
+    return requestVideoList(Search, QStringLiteral(""), parameters.toQueryParameters());
 }
 
 QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page) {
     QHash<QString, QString> parameters;
-    parameters.insert("page", QString::number(page));
+    parameters.insert(QStringLiteral("page"), QString::number(page));
 
-    return requestVideoList(Feed, "", parameters);
+    return requestVideoList(Feed, QStringLiteral(""), parameters);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestTop()
@@ -132,28 +133,28 @@ QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
     QHash<QString, QString> parameters;
     switch (topic) {
     case Music:
-        parameters.insert("type", "music");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("music"));
         break;
     case Gaming:
-        parameters.insert("type", "gaming");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("gaming"));
         break;
     case Movies:
-        parameters.insert("type", "movies");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("movies"));
         break;
     case News:
-        parameters.insert("type", "news");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("news"));
         break;
     case Main:
         break;
     }
-    return requestVideoList(Trending, "", parameters);
+    return requestVideoList(Trending, QStringLiteral(""), parameters);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestChannel(QStringView query, qint32 page)
 {
 
     QHash<QString, QString> parameters;
-    parameters.insert("page", QString::number(page));
+    parameters.insert(QStringLiteral("page"), QString::number(page));
     return requestVideoList(Channel, query.toString(), parameters);
 }
 
@@ -188,7 +189,7 @@ QFuture<Result> InvidiousApi::unsubscribeFromChannel(QStringView channel)
 QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
 {
     QUrlQuery parameters;
-    parameters.addQueryItem("page", QString::number(page));
+    parameters.addQueryItem(QStringLiteral("page"), QString::number(page));
 
     QUrl url{invidiousInstance() % API_HISTORY};
     url.setQuery(parameters);
@@ -244,28 +245,25 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
                 const auto obj = doc.object();
 
               // add videos marked as notification
-              auto results = VideoBasicInfo::fromJson(
-                  obj.value("notifications").toArray());
-              for (auto &video : results) {
-                video.setIsNotification(true);
-              }
+                auto results = VideoBasicInfo::fromJson(obj.value("notifications"_L1).toArray());
+                for (auto &video : results) {
+                    video.setIsNotification(true);
+                }
 
-              // add the rest
-              results << VideoBasicInfo::fromJson(
-                  obj.value("videos").toArray());
-              return results;
+                // add the rest
+                results << VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
+                return results;
             } else if (queryType == Channel) {
               const auto obj = doc.object();
 
-              auto results =
-                  VideoBasicInfo::fromJson(obj.value("videos").toArray());
+              auto results = VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
               return results;
             } else {
               QList<VideoBasicInfo> results;
               for (auto value : doc.array()) {
-                if (value.isObject() && value.toObject()["type"] == "video") {
-                  results << VideoBasicInfo::fromJson(value.toObject());
-                }
+                  if (value.isObject() && value.toObject()["type"_L1] == "video"_L1) {
+                      results << VideoBasicInfo::fromJson(value.toObject());
+                  }
               }
 
               return results;
@@ -293,10 +291,10 @@ QUrlQuery InvidiousApi::genericUrlQuery() const
 {
     QUrlQuery query;
     if (!m_language.isEmpty()) {
-        query.addQueryItem("hl", m_language);
+        query.addQueryItem(QStringLiteral("hl"), m_language);
     }
     if (!m_region.isEmpty()) {
-        query.addQueryItem("region", m_region);
+        query.addQueryItem(QStringLiteral("region"), m_region);
     }
     return query;
 }
@@ -305,8 +303,8 @@ QUrl InvidiousApi::logInUrl() const
 {
     QUrl url(invidiousInstance() % API_LOGIN);
     auto urlQuery = genericUrlQuery();
-    urlQuery.addQueryItem("referer", QUrl::toPercentEncoding("/"));
-    urlQuery.addQueryItem("type", "invidious");
+    urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
+    urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
     url.setQuery(urlQuery);
     return url;
 }
@@ -341,7 +339,7 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExten
 
     if (!urlExtension.isEmpty())
     {
-        urlString.append("/");
+        urlString.append(QStringLiteral("/"));
         urlString.append(urlExtension);
     }
 
@@ -358,7 +356,7 @@ QUrl InvidiousApi::subscriptionsUrl() const
 {
     auto url = QUrl(invidiousInstance() % API_SUBSCRIPTIONS);
     QUrlQuery query;
-    query.addQueryItem("fields", "authorId");
+    query.addQueryItem(QStringLiteral("fields"), QStringLiteral("authorId"));
     url.setQuery(query);
     return url;
 

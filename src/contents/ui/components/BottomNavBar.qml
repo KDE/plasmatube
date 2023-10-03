@@ -65,7 +65,9 @@ Kirigami.NavigationTabBar {
 
     actions: [
         Kirigami.Action {
-            iconName: "videoclip-amarok"
+            icon.name
+    :
+    "videoclip-amarok"
             text: i18n("Videos")
             checked: true // initial page that opens
             onTriggered: {
@@ -77,7 +79,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "search"
+            icon.name: "search"
             text: i18n("Search")
             onTriggered: {
                 while (applicationWindow().pageStack.depth > 0) {
@@ -88,7 +90,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "settings-configure"
+            icon.name: "settings-configure"
             text: i18n("Settings")
             onTriggered: {
                 while (applicationWindow().pageStack.depth > 0) {

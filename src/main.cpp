@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     }
 
     KLocalizedString::setApplicationDomain("plasmatube");
-    QCoreApplication::setOrganizationName("KDE");
+    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
 
     KAboutData about(QStringLiteral("plasmatube"),
                      i18n("PlasmaTube"),

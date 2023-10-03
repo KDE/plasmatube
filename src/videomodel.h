@@ -90,7 +90,7 @@ private:
     QString m_videoId;
     QString m_remoteUrl;
     QHash<QString, QString> m_formatUrl;
-    QString m_selectedFormat = "720p";
+    QString m_selectedFormat = QStringLiteral("720p");
     QString m_audioUrl;
     VideoItem *m_video;
     QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;

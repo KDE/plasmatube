@@ -5,24 +5,25 @@
 #include "video.h"
 
 using namespace QInvidious;
+using namespace Qt::StringLiterals;
 
 Video Video::fromJson(const QJsonObject &obj, Video &video)
 {
     VideoBasicInfo::fromJson(obj, video);
 
-    parseArray(obj.value("keywords"), video.m_keywords);
-    video.setLikeCount(obj.value("likeCount").toInt());
-    video.setDislikeCount(obj.value("dislikeCount").toInt());
-    video.setIsFamilyFriendly(obj.value("isFamilyFriendly").toBool(true));
-    parseArray(obj.value("allowedRegions"), video.m_allowedRegions);
-    video.setGenre(obj.value("genre").toString());
-    video.setGenreUrl(obj.value("genreUrl").toString());
-    parseArray(obj.value("authorThumbnails"), video.m_authorThumbnails);
-    video.setSubCountText(obj.value("subCountText").toString());
-    video.setAllowRatings(obj.value("allowRatings").toBool(true));
-    video.setRating(obj.value("rating").toDouble(5.0));
-    video.setIsListed(obj.value("isListed").toBool(true));
-    parseArray(obj.value("recommendedVideos"), video.m_recommendedVideos);
+    parseArray(obj.value("keywords"_L1), video.m_keywords);
+    video.setLikeCount(obj.value("likeCount"_L1).toInt());
+    video.setDislikeCount(obj.value("dislikeCount"_L1).toInt());
+    video.setIsFamilyFriendly(obj.value("isFamilyFriendly"_L1).toBool(true));
+    parseArray(obj.value("allowedRegions"_L1), video.m_allowedRegions);
+    video.setGenre(obj.value("genre"_L1).toString());
+    video.setGenreUrl(obj.value("genreUrl"_L1).toString());
+    parseArray(obj.value("authorThumbnails"_L1), video.m_authorThumbnails);
+    video.setSubCountText(obj.value("subCountText"_L1).toString());
+    video.setAllowRatings(obj.value("allowRatings"_L1).toBool(true));
+    video.setRating(obj.value("rating"_L1).toDouble(5.0));
+    video.setIsListed(obj.value("isListed"_L1).toBool(true));
+    parseArray(obj.value("recommendedVideos"_L1), video.m_recommendedVideos);
     if (obj.contains(u"premiereTimestamp")) {
         video.setPremiereTimestamp(
             QDateTime::fromMSecsSinceEpoch(
@@ -30,7 +31,7 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
             )
         );
     }
-    video.setHlsUrl(obj.value(u"hlsUrl").toString());
+    video.setHlsUrl(QUrl(obj.value(u"hlsUrl").toString()));
     parseArray(obj.value(u"adaptiveFormats"), video.m_adaptiveFormats);
     parseArray(obj.value(u"formatStreams"), video.m_combinedFormats);
     parseArray(obj.value(u"captions"), video.m_captions);

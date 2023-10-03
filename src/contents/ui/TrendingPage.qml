@@ -9,7 +9,7 @@ FeedPage {
 
     initialQuery: VideoListModel.Trending
 
-    actions.contextualActions: [
+    actions: [
         VideoListAction {
             videoModel: page.videoModel
             queryType: VideoListModel.Trending

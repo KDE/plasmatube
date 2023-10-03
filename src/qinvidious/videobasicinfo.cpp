@@ -5,26 +5,27 @@
 #include "videobasicinfo.h"
 
 using namespace QInvidious;
+using namespace Qt::StringLiterals;
 
 VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &info)
 {
-    info.setVideoId(obj.value("videoId").toString());
-    info.setTitle(obj.value("title").toString());
-    info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds").toInt()));
-    info.setViewCount(obj.value("viewCount").toInt());
-    info.setAuthor(obj.value("author").toString());
-    info.setAuthorId(obj.value("authorId").toString());
-    info.setAuthorUrl(obj.value("authorUrl").toString());
+    info.setVideoId(obj.value("videoId"_L1).toString());
+    info.setTitle(obj.value("title"_L1).toString());
+    info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds"_L1).toInt()));
+    info.setViewCount(obj.value("viewCount"_L1).toInt());
+    info.setAuthor(obj.value("author"_L1).toString());
+    info.setAuthorId(obj.value("authorId"_L1).toString());
+    info.setAuthorUrl(obj.value("authorUrl"_L1).toString());
     // FIXME: 2038 problem (timestamp is only 32 bit long)
-    info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published").toInt()));
-    info.setPublishedText(obj.value("publishedText").toString());
-    info.setDescription(obj.value("description").toString());
-    info.setDescriptionHtml(obj.value("descriptionHtml").toString());
-    info.setLiveNow(obj.value("liveNow").toBool(false));
-    info.setPaid(obj.value("paid").toBool(false));
-    info.setPremium(obj.value("premium").toBool(false));
-    info.setUpcoming(obj.value("isUpcoming").toBool(false));
-    parseArray(obj.value("videoThumbnails"), info.m_videoThumbnails);
+    info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt()));
+    info.setPublishedText(obj.value("publishedText"_L1).toString());
+    info.setDescription(obj.value("description"_L1).toString());
+    info.setDescriptionHtml(obj.value("descriptionHtml"_L1).toString());
+    info.setLiveNow(obj.value("liveNow"_L1).toBool(false));
+    info.setPaid(obj.value("paid"_L1).toBool(false));
+    info.setPremium(obj.value("premium"_L1).toBool(false));
+    info.setUpcoming(obj.value("isUpcoming"_L1).toBool(false));
+    parseArray(obj.value("videoThumbnails"_L1), info.m_videoThumbnails);
     return info;
 }
 

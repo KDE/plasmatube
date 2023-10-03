@@ -5,13 +5,14 @@
 #include "videothumbnail.h"
 
 using namespace QInvidious;
+using namespace Qt::StringLiterals;
 
 VideoThumbnail VideoThumbnail::fromJson(const QJsonObject &obj, VideoThumbnail &thumb)
 {
-    thumb.setQuality(obj.value("quality").toString());
-    thumb.setUrl(QUrl(obj.value("url").toString()));
-    thumb.setWidth(obj.value("width").toInt());
-    thumb.setHeight(obj.value("height").toInt());
+    thumb.setQuality(obj.value("quality"_L1).toString());
+    thumb.setUrl(QUrl(obj.value("url"_L1).toString()));
+    thumb.setWidth(obj.value("width"_L1).toInt());
+    thumb.setHeight(obj.value("height"_L1).toInt());
     return thumb;
 }
 

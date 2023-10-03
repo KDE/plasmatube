@@ -16,7 +16,7 @@ void SearchParameters::fill(const SearchParameters &other) {
 }
 
 void SearchParameters::clear() {
-    m_query = "";
+    m_query = QStringLiteral("");
     m_page = 0;
     m_sortBy = SortBy::Default;
     m_date = Date::Default;
@@ -27,23 +27,23 @@ void SearchParameters::clear() {
 
 QHash<QString, QString> SearchParameters::toQueryParameters() const {
     QHash<QString, QString> parameters;
-    parameters.insert("q", QUrl::toPercentEncoding(m_query));
-    parameters.insert("page", QString::number(m_page));
+    parameters.insert(QStringLiteral("q"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
+    parameters.insert(QStringLiteral("page"), QString::number(m_page));
 
     switch (m_sortBy) {
     case SortBy::Default:
         break;
     case SortBy::Relevance:
-        parameters.insert("sort_by", "relevance");
+        parameters.insert(QStringLiteral("sort_by"), QStringLiteral("relevance"));
         break;
     case SortBy::Rating:
-        parameters.insert("sort_by", "rating");
+        parameters.insert(QStringLiteral("sort_by"), QStringLiteral("rating"));
         break;
     case SortBy::UploadDate:
-        parameters.insert("sort_by", "upload_date");
+        parameters.insert(QStringLiteral("sort_by"), QStringLiteral("upload_date"));
         break;
     case SortBy::ViewCount:
-        parameters.insert("sort_by", "view_count");
+        parameters.insert(QStringLiteral("sort_by"), QStringLiteral("view_count"));
         break;
     }
 
@@ -51,19 +51,19 @@ QHash<QString, QString> SearchParameters::toQueryParameters() const {
     case Date::Default:
         break;
     case Date::Hour:
-        parameters.insert("date", "hour");
+        parameters.insert(QStringLiteral("date"), QStringLiteral("hour"));
         break;
     case Date::Today:
-        parameters.insert("date", "today");
+        parameters.insert(QStringLiteral("date"), QStringLiteral("today"));
         break;
     case Date::Week:
-        parameters.insert("date", "week");
+        parameters.insert(QStringLiteral("date"), QStringLiteral("week"));
         break;
     case Date::Month:
-        parameters.insert("date", "month");
+        parameters.insert(QStringLiteral("date"), QStringLiteral("month"));
         break;
     case Date::Year:
-        parameters.insert("date", "year");
+        parameters.insert(QStringLiteral("date"), QStringLiteral("year"));
         break;
     }
 
@@ -71,10 +71,10 @@ QHash<QString, QString> SearchParameters::toQueryParameters() const {
     case Duration::Default:
         break;
     case Duration::Short:
-        parameters.insert("duration", "short");
+        parameters.insert(QStringLiteral("duration"), QStringLiteral("short"));
         break;
     case Duration::Long:
-        parameters.insert("duration", "long");
+        parameters.insert(QStringLiteral("duration"), QStringLiteral("long"));
         break;
     }
 
@@ -82,59 +82,59 @@ QHash<QString, QString> SearchParameters::toQueryParameters() const {
     case Type::Default:
         break;
     case Type::Video:
-        parameters.insert("type", "video");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("video"));
         break;
     case Type::Playlist:
-        parameters.insert("type", "playlist");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("playlist"));
         break;
     case Type::Channel:
-        parameters.insert("type", "channel");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("channel"));
         break;
     case Type::All:
-        parameters.insert("type", "all");
+        parameters.insert(QStringLiteral("type"), QStringLiteral("all"));
         break;
     }
 
     if (!m_features.empty()) {
-        QString featureList = "";
-        foreach (auto feature, m_features) {
+        QString featureList = QStringLiteral("");
+        for (auto feature : m_features) {
             if (!featureList.isEmpty()) {
-                featureList.append(",");
+                featureList.append(QStringLiteral(","));
             }
             switch (feature) {
             case Feature::Hd:
-                featureList.append("hd");
+                featureList.append(QStringLiteral("hd"));
                 break;
             case Feature::Subtitles:
-                 featureList.append("subtitles");
+                featureList.append(QStringLiteral("subtitles"));
                 break;
             case Feature::CreativeCommons:
-                 featureList.append("creative_commons");
+                featureList.append(QStringLiteral("creative_commons"));
                 break;
             case Feature::ThreeD:
-                 featureList.append("3d");
+                featureList.append(QStringLiteral("3d"));
                 break;
             case Feature::Live:
-                 featureList.append("live");
+                featureList.append(QStringLiteral("live"));
                 break;
             case Feature::Purchased:
-                 featureList.append("purchased");
+                featureList.append(QStringLiteral("purchased"));
                 break;
             case Feature::FourK:
-                 featureList.append("4k");
+                featureList.append(QStringLiteral("4k"));
                 break;
             case Feature::ThreeSixty:
-                 featureList.append("360");
+                featureList.append(QStringLiteral("360"));
                 break;
             case Feature::Location:
-                 featureList.append("location");
+                featureList.append(QStringLiteral("location"));
                 break;
             case Feature::Hdr:
-                 featureList.append("hdr");
+                featureList.append(QStringLiteral("hdr"));
                 break;
             }
         }
-        parameters.insert("features", featureList);
+        parameters.insert(QStringLiteral("features"), featureList);
     }
     return parameters;
 }

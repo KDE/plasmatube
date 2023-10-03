@@ -38,7 +38,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
 
     connect(this, &PlasmaTube::loggedOut, this, [=] {
         m_subscriptions.reset();
-        emit subscriptionsChanged();
+        Q_EMIT subscriptionsChanged();
     });
     connect(this, &PlasmaTube::loggedIn, this, [=] {
         fetchSubscriptions();
@@ -85,7 +85,7 @@ void PlasmaTube::fetchSubscriptions()
             setSubscriptions(*subscriptions);
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
             qDebug() << "Fetching subscriptions:" << error->first << error->second;
-            emit errorOccurred(error->second);
+            Q_EMIT errorOccurred(error->second);
         }
 
         watcher->deleteLater();
@@ -99,7 +99,7 @@ void PlasmaTube::logOut()
         // set the credentials to only the invidious api instance
         m_api->setCredentials(m_api->credentials().apiInstance());
         saveCredentials();
-        emit loggedOut();
+        Q_EMIT loggedOut();
     }
 }
 
@@ -134,7 +134,7 @@ void PlasmaTube::saveCredentials() const
 void PlasmaTube::setSubscriptions(const QList<QString> &subscriptions)
 {
     m_subscriptions = subscriptions;
-    emit subscriptionsChanged();
+    Q_EMIT subscriptionsChanged();
 }
 
 std::optional<QList<QString>> &PlasmaTube::subscriptions()

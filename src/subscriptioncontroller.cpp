@@ -53,20 +53,20 @@ void SubscriptionController::toggleSubscription()
                     // was not subscribed -> now subscribed
                     subs->append(channelId());
                 }
-                emit PlasmaTube::instance().subscriptionsChanged();
+                Q_EMIT PlasmaTube::instance().subscriptionsChanged();
             } else {
                 qDebug() << "SubscriptionController::toggleSubscription():"
                          << "(Un)subscription successful, but subscriptions are not loaded.";
                 setIsSubscribed(!isSubscribed());
             }
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
-            emit errorOccurred(error->second);
+            Q_EMIT errorOccurred(error->second);
         }
 
         m_watcher->deleteLater();
         m_watcher = nullptr;
-        emit isLoadingChanged();
+        Q_EMIT isLoadingChanged();
     });
-    emit isLoadingChanged();
+    Q_EMIT isLoadingChanged();
     m_watcher->setFuture(future);
 }

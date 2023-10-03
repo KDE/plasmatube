@@ -12,8 +12,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(plasmatube VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION "5.81.0")
-set(QT_MIN_VERSION "5.15.0")
+set(KF_MIN_VERSION "5.240.0")
+set(QT_MIN_VERSION "6.5.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
@@ -27,14 +27,14 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(FeatureSummary)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets)
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami2 I18n)
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.11 REQUIRED)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami2 I18n)
+find_package(KF6KirigamiAddons 0.11 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 
 if (NOT ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
 endif()
 
 set(CMAKE_CXX_STANDARD 17)

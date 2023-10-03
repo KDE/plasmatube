@@ -25,7 +25,7 @@ void SubscriptionWatcher::setChannelId(const QString &channelId)
 {
     if (m_channelId != channelId) {
         m_channelId = channelId;
-        emit channelIdChanged();
+        Q_EMIT channelIdChanged();
 
         setIsSubscribed();
     }
@@ -40,7 +40,7 @@ void SubscriptionWatcher::setIsSubscribed(bool isSubscribed)
 {
     if (m_isSubscribed != isSubscribed) {
         m_isSubscribed = isSubscribed;
-        emit isSubscribedChanged();
+        Q_EMIT isSubscribedChanged();
     }
 }
 
