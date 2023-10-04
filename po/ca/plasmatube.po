@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:44+0000\n"
+"POT-Creation-Date: 2023-10-04 01:39+0000\n"
 "PO-Revision-Date: 2023-09-16 12:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -27,19 +27,19 @@ msgctxt "@info:status"
 msgid "Loading…"
 msgstr "S'està carregant…"
 
-#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/BottomNavBar.qml:71
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/BottomNavBar.qml:83
 #: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
 
-#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/BottomNavBar.qml:94
 #: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
@@ -187,12 +187,12 @@ msgstr "Quant a KDE"
 msgid "• %1 views • %2"
 msgstr "• %1 vistes • %2"
 
-#: contents/ui/VideoListItem.qml:180
+#: contents/ui/VideoListItem.qml:179
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 vistes"
 
-#: contents/ui/VideoListItem.qml:188
+#: contents/ui/VideoListItem.qml:187
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -222,7 +222,7 @@ msgstr "%1 vistes"
 msgid "%1 Likes"
 msgstr "%1 m'agrades"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "El nom d'usuari o la contrasenya és incorrecte."
@@ -232,38 +232,38 @@ msgstr "El nom d'usuari o la contrasenya és incorrecte."
 msgid "This instance has disabled the registration."
 msgstr "Aquesta instància ha desactivat el registre."
 
-#: main.cpp:47
+#: main.cpp:43
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:49 main.cpp:91
+#: main.cpp:45 main.cpp:87
 #, kde-format
 msgid "YouTube client"
 msgstr "Client de YouTube"
 
-#: main.cpp:51
+#: main.cpp:47
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Creator"
 msgstr "Creador"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -274,12 +274,12 @@ msgstr "txemaq@gmail.com"
 msgid "Playing video"
 msgstr "S'està reproduint un vídeo"
 
-#: qinvidious/invidiousapi.cpp:222
+#: qinvidious/invidiousapi.cpp:223
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "El servidor ha retornat un JSON no vàlid."
 
-#: qinvidious/invidiousapi.cpp:231
+#: qinvidious/invidiousapi.cpp:232
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "El servidor ha retornat el codi d'estat %1"

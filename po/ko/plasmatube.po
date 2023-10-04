@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:44+0000\n"
+"POT-Creation-Date: 2023-10-04 01:39+0000\n"
 "PO-Revision-Date: 2023-07-26 00:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -24,19 +24,19 @@ msgctxt "@info:status"
 msgid "Loading…"
 msgstr "불러오는 중…"
 
-#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/BottomNavBar.qml:71
 #, kde-format
 msgid "Videos"
 msgstr "비디오"
 
-#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/BottomNavBar.qml:83
 #: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "검색"
 
-#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/BottomNavBar.qml:94
 #: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
@@ -184,12 +184,12 @@ msgstr "KDE 정보"
 msgid "• %1 views • %2"
 msgstr "• 조회수 %1회 • %2"
 
-#: contents/ui/VideoListItem.qml:180
+#: contents/ui/VideoListItem.qml:179
 #, kde-format
 msgid " • %1 views"
 msgstr " • 조회수 %1회"
 
-#: contents/ui/VideoListItem.qml:188
+#: contents/ui/VideoListItem.qml:187
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -219,7 +219,7 @@ msgstr "조회수 %1회"
 msgid "%1 Likes"
 msgstr "좋아요 %1개"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "사용자 이름이나 암호가 잘못되었습니다."
@@ -229,38 +229,38 @@ msgstr "사용자 이름이나 암호가 잘못되었습니다."
 msgid "This instance has disabled the registration."
 msgstr "이 인스턴스에서 등록을 비활성화했습니다."
 
-#: main.cpp:47
+#: main.cpp:43
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:49 main.cpp:91
+#: main.cpp:45 main.cpp:87
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube 클라이언트"
 
-#: main.cpp:51
+#: main.cpp:47
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Creator"
 msgstr "개발자"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "박신조"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -271,12 +271,12 @@ msgstr "kde@peremen.name"
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:222
+#: qinvidious/invidiousapi.cpp:223
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "서버에서 올바른 JSON을 반환하지 않았습니다."
 
-#: qinvidious/invidiousapi.cpp:231
+#: qinvidious/invidiousapi.cpp:232
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "서버에서 상태 코드 %1을(를) 반환함"

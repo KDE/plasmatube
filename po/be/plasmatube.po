@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:44+0000\n"
+"POT-Creation-Date: 2023-10-04 01:39+0000\n"
 "PO-Revision-Date: 2023-02-09 14:47\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -29,19 +29,19 @@ msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Загрузка"
 
-#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/BottomNavBar.qml:71
 #, kde-format
 msgid "Videos"
 msgstr "Відэа"
 
-#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/BottomNavBar.qml:83
 #: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Шукаць"
 
-#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/BottomNavBar.qml:94
 #: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
@@ -191,12 +191,12 @@ msgstr ""
 msgid "• %1 views • %2"
 msgstr "• %1 прагляд(аў) • %2"
 
-#: contents/ui/VideoListItem.qml:180
+#: contents/ui/VideoListItem.qml:179
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 прагляд(аў)"
 
-#: contents/ui/VideoListItem.qml:188
+#: contents/ui/VideoListItem.qml:187
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -226,7 +226,7 @@ msgstr "%1 прагляд(аў)"
 msgid "%1 Likes"
 msgstr "%1 упадабанне(яў)"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Няправільнае імя карыстальніка або пароль."
@@ -236,38 +236,38 @@ msgstr "Няправільнае імя карыстальніка або пар
 msgid "This instance has disabled the registration."
 msgstr "Гэты асобнік адключыў рэгістрацыю."
 
-#: main.cpp:47
+#: main.cpp:43
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:49 main.cpp:91
+#: main.cpp:45 main.cpp:87
 #, kde-format
 msgid "YouTube client"
 msgstr "Кліент для YouTube"
 
-#: main.cpp:51
+#: main.cpp:47
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Creator"
 msgstr "Стваральнік"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Antikruk"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -278,12 +278,12 @@ msgstr "nashtlumach@gmail.com"
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:222
+#: qinvidious/invidiousapi.cpp:223
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Сервер вярнуў несапраўдны JSON."
 
-#: qinvidious/invidiousapi.cpp:231
+#: qinvidious/invidiousapi.cpp:232
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Сервер вярнуў код стану %1"

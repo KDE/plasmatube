@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:44+0000\n"
+"POT-Creation-Date: 2023-10-04 01:39+0000\n"
 "PO-Revision-Date: 2023-06-22 09:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -25,19 +25,19 @@ msgctxt "@info:status"
 msgid "Loading…"
 msgstr "يحمّل..."
 
-#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/BottomNavBar.qml:71
 #, kde-format
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/BottomNavBar.qml:83
 #: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "ابحث"
 
-#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/BottomNavBar.qml:94
 #: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
@@ -185,12 +185,12 @@ msgstr "عن كِيدِي"
 msgid "• %1 views • %2"
 msgstr "• المشاهدات %1 • %2"
 
-#: contents/ui/VideoListItem.qml:180
+#: contents/ui/VideoListItem.qml:179
 #, kde-format
 msgid " • %1 views"
 msgstr " • المشاهدات %1"
 
-#: contents/ui/VideoListItem.qml:188
+#: contents/ui/VideoListItem.qml:187
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -220,7 +220,7 @@ msgstr "المشاهدات %1"
 msgid "%1 Likes"
 msgstr "الإعجابات %1"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "اسم المستخدم أو كلمة المرور خاطئة."
@@ -230,38 +230,38 @@ msgstr "اسم المستخدم أو كلمة المرور خاطئة."
 msgid "This instance has disabled the registration."
 msgstr "عطلة هذه النسخة التسجيل"
 
-#: main.cpp:47
+#: main.cpp:43
 #, kde-format
 msgid "PlasmaTube"
 msgstr "بلازما تيوب"
 
-#: main.cpp:49 main.cpp:91
+#: main.cpp:45 main.cpp:87
 #, kde-format
 msgid "YouTube client"
 msgstr "عميل يوتيوب"
 
-#: main.cpp:51
+#: main.cpp:47
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© لينوس جان"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Linus Jahn"
 msgstr "لينوس جان"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Creator"
 msgstr "المُنشئ"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "زايد السعيدي"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -272,12 +272,12 @@ msgstr "zayed.alsaidi@gmail.com"
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:222
+#: qinvidious/invidiousapi.cpp:223
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "أرجع الخادوم ملف جوسون غير صحيح."
 
-#: qinvidious/invidiousapi.cpp:231
+#: qinvidious/invidiousapi.cpp:232
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "أرجع الخادوم رمز حالة %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:44+0000\n"
+"POT-Creation-Date: 2023-10-04 01:39+0000\n"
 "PO-Revision-Date: 2023-07-04 21:34+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -24,19 +24,19 @@ msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Ladataan…"
 
-#: contents/ui/components/BottomNavBar.qml:69
+#: contents/ui/components/BottomNavBar.qml:71
 #, kde-format
 msgid "Videos"
 msgstr "Videot"
 
-#: contents/ui/components/BottomNavBar.qml:81
+#: contents/ui/components/BottomNavBar.qml:83
 #: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
 #: contents/ui/SearchPage.qml:175
 #, kde-format
 msgid "Search"
 msgstr "Etsi"
 
-#: contents/ui/components/BottomNavBar.qml:92
+#: contents/ui/components/BottomNavBar.qml:94
 #: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
@@ -184,12 +184,12 @@ msgstr "Tietoa KDE:stä"
 msgid "• %1 views • %2"
 msgstr "• %1 katselua • %2"
 
-#: contents/ui/VideoListItem.qml:180
+#: contents/ui/VideoListItem.qml:179
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 katselua"
 
-#: contents/ui/VideoListItem.qml:188
+#: contents/ui/VideoListItem.qml:187
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -219,7 +219,7 @@ msgstr "%1 katselua"
 msgid "%1 Likes"
 msgstr "%1 tykkäystä"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:98
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Käyttäjätunnus tai salasana on väärin."
@@ -229,38 +229,38 @@ msgstr "Käyttäjätunnus tai salasana on väärin."
 msgid "This instance has disabled the registration."
 msgstr "Tämä instanssi on poistanut rekisteröitymisen käytöstä."
 
-#: main.cpp:47
+#: main.cpp:43
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:49 main.cpp:91
+#: main.cpp:45 main.cpp:87
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-asiakas"
 
-#: main.cpp:51
+#: main.cpp:47
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:52
+#: main.cpp:48
 #, kde-format
 msgid "Creator"
 msgstr "Tekijä"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen"
 
-#: main.cpp:53
+#: main.cpp:49
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -271,12 +271,12 @@ msgstr "translator@legisign.org"
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:222
+#: qinvidious/invidiousapi.cpp:223
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Palvelin ei palauttanut kelvollista JSONia."
 
-#: qinvidious/invidiousapi.cpp:231
+#: qinvidious/invidiousapi.cpp:232
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Palvelin palautti tilakoodin %1"
