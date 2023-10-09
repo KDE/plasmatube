@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-04 01:39+0000\n"
-"PO-Revision-Date: 2023-07-26 00:45+0200\n"
+"PO-Revision-Date: 2023-10-08 23:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -46,7 +46,7 @@ msgstr "설정"
 #: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "인기 항목"
 
 #: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Subscriptions"
 msgstr "구독"
 
 #: contents/ui/FeedPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "비디오"
+msgstr "동영상 없음"
 
 #: contents/ui/LoginPage.qml:15
 #, kde-format
@@ -269,7 +268,7 @@ msgstr "kde@peremen.name"
 #: plasmatube.cpp:200
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "동영상 재생"
 
 #: qinvidious/invidiousapi.cpp:223
 #, kde-format
