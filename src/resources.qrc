@@ -29,6 +29,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="videoplayer/VideoPlayerParent.qml">contents/ui/videoplayer/VideoPlayerParent.qml</file>
         <file alias="components/Sidebar.qml">contents/ui/components/Sidebar.qml</file>
         <file alias="components/BottomNavBar.qml">contents/ui/components/BottomNavBar.qml</file>
+        <file alias="components/Comments.qml">contents/ui/components/Comments.qml</file>
         <file alias="utils.js">contents/ui/utils.js</file>
     </qresource>
 </RCC>

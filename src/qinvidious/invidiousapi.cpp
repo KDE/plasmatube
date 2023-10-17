@@ -23,6 +23,7 @@ constexpr QStringView API_TRENDING = u"/api/v1/trending";
 constexpr QStringView API_VIDEOS = u"/api/v1/videos";
 constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
 constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
+constexpr QStringView API_COMMENTS = u"/api/v1/comments";
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -216,6 +217,32 @@ QFuture<Result> InvidiousApi::markWatched(const QString &videoId)
 QFuture<Result> InvidiousApi::markUnwatched(const QString &videoId)
 {
     return deleteResource<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), checkIsReplyOk);
+}
+
+QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, const QString &continuation)
+{
+    QUrlQuery parameters;
+    if (!continuation.isEmpty()) {
+        parameters.addQueryItem(QStringLiteral("continuation"), continuation);
+    }
+
+    QUrl url{invidiousInstance() % API_COMMENTS % u'/' % videoId};
+    url.setQuery(parameters);
+
+    return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto array = doc[u"comments"].toArray();
+
+            QList<Comment> comments;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(comments), [](const QJsonValue &val) {
+                Comment comment;
+                Comment::fromJson(val.toObject(), comment);
+                return comment;
+            });
+            return Comments{comments, doc[u"continuation"].toString()};
+        }
+        return invalidJsonError();
+    });
 }
 
 Error InvidiousApi::invalidJsonError()

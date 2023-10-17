@@ -13,13 +13,19 @@
 #include <QNetworkReply>
 #include <QNetworkCookie>
 // QInvidious
-#include "video.h"
+#include "comment.h"
 #include "credentials.h"
 #include "searchparameters.h"
+#include "video.h"
 
 class QNetworkAccessManager;
 
 namespace QInvidious {
+
+struct Comments {
+    QList<Comment> comments;
+    QString continuation;
+};
 
 using Error = std::pair<QNetworkReply::NetworkError, QString>;
 using Success = std::monostate;
@@ -29,6 +35,7 @@ using VideoListResult = std::variant<QList<VideoBasicInfo>, Error>;
 using SubscriptionsResult = std::variant<QList<QString>, Error>;
 using Result = std::variant<Success, Error>;
 using HistoryResult = std::variant<QList<QString>, Error>;
+using CommentsResult = std::variant<Comments, Error>;
 
 enum TrendingTopic : quint8 {
     Main,
@@ -71,6 +78,7 @@ public:
     QFuture<HistoryResult> requestHistory(qint32 page = 1);
     QFuture<Result> markWatched(const QString &videoId);
     QFuture<Result> markUnwatched(const QString &videoId);
+    QFuture<CommentsResult> requestComments(const QString &videoId, const QString &continuation = {});
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };

@@ -5,6 +5,8 @@
 add_subdirectory(qinvidious)
 
 set(plasmatube_SRCS
+    commentsmodel.cpp
+    commentsmodel.h
     main.cpp
     plasmatube.cpp
     logincontroller.cpp

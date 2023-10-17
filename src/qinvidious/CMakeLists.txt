@@ -12,6 +12,7 @@ set(qinvidious_SRCS
     caption.cpp
     mediaformat.cpp
     searchparameters.cpp
+    comment.cpp
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})

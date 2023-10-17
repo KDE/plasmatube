@@ -15,6 +15,7 @@ import org.kde.plasmatube.models 1.0
 import "../utils.js" as Utils
 
 import "../"
+import "../components"
 
 Kirigami.ScrollablePage {
     id: root
@@ -31,6 +32,7 @@ Kirigami.ScrollablePage {
 
     property string vid: ""
     onVidChanged: {
+        comments.loadComments(vid);
         renderer.command(["loadfile", "ytdl://" + vid]);
         renderer.setOption("ytdl-format", "best");
     }
@@ -414,6 +416,12 @@ Kirigami.ScrollablePage {
                     }
 
                     selectByMouse: !Kirigami.Settings.isMobile
+                }
+
+                Comments {
+                    id: comments
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
                 }
             }
 
