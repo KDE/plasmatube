@@ -4,6 +4,8 @@
 
 #include "credentials.h"
 
+#include <QUrl>
+
 using namespace QInvidious;
 
 QString Credentials::apiInstance() const
@@ -13,7 +15,9 @@ QString Credentials::apiInstance() const
 
 void Credentials::setApiInstance(const QString &instance)
 {
-    m_apiInstance = instance;
+    QUrl instanceUrl = QUrl::fromUserInput(instance);
+    instanceUrl.setPath({});
+    m_apiInstance = instanceUrl.toString();
 }
 
 void Credentials::setApiInstance(QStringView instance)
