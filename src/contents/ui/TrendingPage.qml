@@ -13,6 +13,8 @@ FeedPage {
 
     initialQuery: VideoListModel.Trending
 
+    title: i18nc("@title Trending videos", "Trending")
+
     header: Kirigami.NavigationTabBar {
         width: parent.width
         actions: [
