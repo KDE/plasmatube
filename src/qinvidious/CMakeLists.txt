@@ -14,6 +14,7 @@ set(qinvidious_SRCS
     searchparameters.cpp
     comment.cpp
     playlist.cpp
+    preferences.cpp
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})

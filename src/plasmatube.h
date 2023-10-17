@@ -7,6 +7,8 @@
 #include <QObject>
 #include <optional>
 
+#include "preferences.h"
+
 namespace QInvidious
 {
     class InvidiousApi;
@@ -17,6 +19,7 @@ class PlasmaTube : public QObject
     Q_OBJECT
     Q_PROPERTY(bool isLoggedIn READ isLoggedIn NOTIFY credentialsChanged)
     Q_PROPERTY(QString invidiousId READ invidiousId NOTIFY credentialsChanged)
+    Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
 
 public:
     explicit PlasmaTube(QObject *parent = nullptr);
@@ -47,8 +50,12 @@ public:
 
     Q_INVOKABLE void setInhibitSleep(bool inhibit);
 
+    QInvidious::Preferences preferences();
+    void setPreferences(const QInvidious::Preferences &preferences);
+
 Q_SIGNALS:
     void openVideo(const QString &id);
+    void preferencesChanged();
 
 private:
     friend class SubscriptionController;
@@ -58,8 +65,11 @@ private:
 
     void fetchHistory(qint32 page = 1);
 
+    void fetchPreferences();
+
     QInvidious::InvidiousApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
     unsigned int screenSaverDbusCookie = 0;
+    QInvidious::Preferences m_preferences;
 };

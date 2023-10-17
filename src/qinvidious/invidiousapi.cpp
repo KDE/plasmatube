@@ -25,6 +25,7 @@ constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
 constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
 constexpr QStringView API_COMMENTS = u"/api/v1/comments";
 constexpr QStringView API_LIST_PLAYLISTS = u"/api/v1/auth/playlists";
+constexpr QStringView API_PREFERENCES = u"/api/v1/auth/preferences";
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -265,6 +266,27 @@ QFuture<PlaylistsResult> InvidiousApi::requestPlaylists()
         }
         return invalidJsonError();
     });
+}
+
+QFuture<PreferencesResult> InvidiousApi::requestPreferences()
+{
+    QUrl url{invidiousInstance() % API_PREFERENCES};
+
+    return get<PreferencesResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PreferencesResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            Preferences preferences;
+            Preferences::fromJson(doc.object(), preferences);
+            return preferences;
+        }
+        return invalidJsonError();
+    });
+}
+
+QFuture<Result> InvidiousApi::setPreferences(const QInvidious::Preferences &preferences)
+{
+    QUrl url{invidiousInstance() % API_PREFERENCES};
+
+    return post<Result>(authenticatedNetworkRequest(std::move(url)), QJsonDocument(preferences.toJson()).toJson(), checkIsReplyOk);
 }
 
 Error InvidiousApi::invalidJsonError()

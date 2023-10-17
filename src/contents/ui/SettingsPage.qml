@@ -43,6 +43,30 @@ FormCard.FormCardPage {
             padding: Kirigami.Units.largeSpacing
         }
 
+        Loader {
+            id: preferencesLoader
+
+            active: PlasmaTube.isLoggedIn && PlasmaTube.preferences
+
+            Layout.fillWidth: true
+
+            sourceComponent: ColumnLayout {
+                spacing: 0
+
+                FormCard.FormDelegateSeparator {}
+
+                FormCard.FormCheckDelegate {
+                    text: i18n("Autoplay")
+                    checked: PlasmaTube.preferences.autoPlay
+                    onCheckedChanged: {
+                        let preferences = PlasmaTube.preferences;
+                        preferences.autoPlay = checked;
+                        PlasmaTube.preferences = preferences;
+                    }
+                }
+            }
+        }
+
         FormCard.FormDelegateSeparator {
             visible: PlasmaTube.isLoggedIn
             below: isLoggedInLabel

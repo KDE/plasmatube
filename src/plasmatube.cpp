@@ -116,6 +116,7 @@ void PlasmaTube::loadCredentials()
     }
     m_api->setCredentials(credentials);
     fetchHistory();
+    fetchPreferences();
 }
 
 void PlasmaTube::saveCredentials() const
@@ -215,4 +216,40 @@ void PlasmaTube::setInhibitSleep(const bool inhibit)
         }
     }
 #endif
+}
+
+QInvidious::Preferences PlasmaTube::preferences()
+{
+    return m_preferences;
+}
+
+void PlasmaTube::setPreferences(const QInvidious::Preferences &preferences)
+{
+    if (!isLoggedIn()) {
+        return;
+    }
+
+    m_api->setPreferences(preferences);
+    m_preferences = preferences;
+    Q_EMIT preferencesChanged();
+}
+
+void PlasmaTube::fetchPreferences()
+{
+    if (!isLoggedIn()) {
+        return;
+    }
+
+    auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
+    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
+        auto result = watcher->result();
+
+        if (const auto prefs = std::get_if<QInvidious::Preferences>(&result)) {
+            m_preferences = *prefs;
+            Q_EMIT preferencesChanged();
+        }
+
+        watcher->deleteLater();
+    });
+    watcher->setFuture(m_api->requestPreferences());
 }
