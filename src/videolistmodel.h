@@ -5,10 +5,11 @@
 #ifndef SEARCHMODEL_H
 #define SEARCHMODEL_H
 
-#include <QAbstractListModel>
-#include "qinvidious/videobasicinfo.h"
 #include "qinvidious/invidiousapi.h"
 #include "qinvidious/searchparameters.h"
+#include "qinvidious/videobasicinfo.h"
+#include <QAbstractListModel>
+#include <QFutureSynchronizer>
 
 class InvidiousManager;
 class QNetworkReply;
@@ -50,7 +51,8 @@ public:
         TrendingMusic,
         TrendingNews,
         RecommendedVideos,
-        Channel
+        Channel,
+        History
     };
     Q_ENUM(QueryType)
 
@@ -93,7 +95,15 @@ private:
     QString m_channel;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;
 
+    // history
+    QFutureWatcher<QInvidious::HistoryResult> *m_historyPageWatcher = nullptr;
+    QFutureSynchronizer<QInvidious::VideoResult> m_historyFutureSync;
+    QFutureWatcher<void> *m_historyFetchFinishWatcher = nullptr;
+
     QList<QInvidious::VideoBasicInfo> m_results;
+
+    void requestHistory();
+    void processHistoryResult(const QList<QString> &result);
 };
 
 #endif // SEARCHMODEL_H

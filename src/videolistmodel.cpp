@@ -7,6 +7,7 @@
 
 #include <QFutureWatcher>
 #include <QNetworkReply>
+#include <QtConcurrent>
 
 #include <KLocalizedString>
 
@@ -27,6 +28,8 @@ QString VideoListModel::queryTypeString(QueryType type)
         return i18nc("@action:button Trending music videos", "Music");
     case TrendingNews:
         return i18nc("@action:button Trending news videos", "News");
+    case History:
+        return i18nc("@action:button Video watch history", "History");
     default:
         return {};
     }
@@ -50,6 +53,8 @@ QString VideoListModel::queryTypeIcon(QueryType type)
         return QStringLiteral("folder-music-symbolic");
     case TrendingNews:
         return QStringLiteral("news-subscribe");
+    case History:
+        return QStringLiteral("view-history");
     default:
         return {};
     }
@@ -166,6 +171,10 @@ void VideoListModel::fetchMore(const QModelIndex &index)
             handleQuery(future, Channel, false);
             break;
         }
+        case History: {
+            m_currentPage++;
+            requestQuery(History);
+        } break;
         default: {}
         }
     }
@@ -173,8 +182,7 @@ void VideoListModel::fetchMore(const QModelIndex &index)
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
-    return !m_futureWatcher && (m_queryType == Search ||
-                                m_queryType == Channel || m_queryType == Feed);
+    return !m_futureWatcher && (m_queryType == Search || m_queryType == Channel || m_queryType == Feed || m_queryType == History);
 }
 
 bool VideoListModel::isLoading() const
@@ -232,6 +240,9 @@ void VideoListModel::requestQuery(QueryType type)
         break;
     case TrendingNews:
         handleQuery(PlasmaTube::instance().api()->requestTrending(QInvidious::News), type);
+        break;
+    case History:
+        requestHistory();
         break;
     default:
         qDebug() << "VideoListModel::requestQuery() called with not allowed type" << type;
@@ -306,4 +317,60 @@ void VideoListModel::clearAll()
     beginResetModel();
     m_results.clear();
     endResetModel();
+}
+
+void VideoListModel::requestHistory()
+{
+    auto pageFuture = PlasmaTube::instance().api()->requestHistory(m_currentPage);
+
+    m_historyPageWatcher = new QFutureWatcher<QInvidious::HistoryResult>();
+    m_historyPageWatcher->setFuture(pageFuture);
+
+    connect(m_historyPageWatcher, &QFutureWatcherBase::finished, this, [this] {
+        auto result = m_historyPageWatcher->future().result();
+        if (auto historyList = std::get_if<QList<QString>>(&result)) {
+            processHistoryResult(*historyList);
+        } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
+            Q_EMIT errorOccured(error->second);
+        }
+
+        m_historyPageWatcher->deleteLater();
+        m_historyPageWatcher = nullptr;
+    });
+
+    setQueryType(History);
+    Q_EMIT isLoadingChanged();
+}
+
+void VideoListModel::processHistoryResult(const QList<QString> &result)
+{
+    for (const auto &videoId : result) {
+        auto future = PlasmaTube::instance().api()->requestVideo(videoId);
+        m_historyFutureSync.addFuture(future);
+    }
+
+    m_historyFetchFinishWatcher = new QFutureWatcher<void>();
+    m_historyFetchFinishWatcher->setFuture(QtConcurrent::run([this] {
+        m_historyFutureSync.waitForFinished();
+    }));
+
+    connect(m_historyFetchFinishWatcher, &QFutureWatcherBase::finished, this, [this] {
+        for (const auto &future : m_historyFutureSync.futures()) {
+            auto result = future.result();
+            if (auto video = std::get_if<QInvidious::Video>(&result)) {
+                const auto rows = rowCount();
+                beginInsertRows({}, rows, rows);
+                m_results.push_back(QInvidious::VideoBasicInfo(*video));
+                endInsertRows();
+            } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
+                Q_EMIT errorOccured(error->second);
+            }
+        }
+
+        m_historyFutureSync.clearFutures();
+
+        m_historyFetchFinishWatcher->deleteLater();
+        m_historyFetchFinishWatcher = nullptr;
+        Q_EMIT isLoadingChanged();
+    });
 }

@@ -110,6 +110,20 @@ Kirigami.OverlayDrawer {
             }
         }
 
+        Delegates.RoundedItemDelegate {
+            property var page: applicationWindow().getPage("HistoryPage")
+            Layout.fillWidth: true
+            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
+            icon.name: "view-history"
+            text: i18n("History")
+            checked: pageStack.currentItem === page
+            enabled: PlasmaTube.isLoggedIn
+            onClicked: {
+                root.switchToPage(page);
+            }
+        }
+
         Item {
             Layout.fillHeight: true
         }
