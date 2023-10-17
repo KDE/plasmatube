@@ -29,16 +29,6 @@ Kirigami.OverlayDrawer {
     topPadding: 0
     bottomPadding: 0
 
-    function switchToPage(page) {
-        if (applicationWindow().pageStack.currentItem !== page) {
-            while (applicationWindow().pageStack.depth > 0) {
-                applicationWindow().pageStack.pop();
-            }
-            applicationWindow().pageStack.push(page, 0);
-        }
-        applicationWindow().closePlayer();
-    }
-
     contentItem: ColumnLayout {
         id: column
 
@@ -63,7 +53,7 @@ Kirigami.OverlayDrawer {
 
                 onAccepted: {
                     let page = applicationWindow().getPage("SearchPage");
-                    root.switchToPage(page);
+                    applicationWindow().switchToPage(page);
                     page.doSearch(searchField.text);
                     searchField.text = "";
                 }
@@ -79,7 +69,7 @@ Kirigami.OverlayDrawer {
             text: i18n("Popular")
             checked: pageStack.currentItem === page
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
         }
 
@@ -92,7 +82,7 @@ Kirigami.OverlayDrawer {
             text: i18n("Trending")
             checked: pageStack.currentItem === page
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
         }
 
@@ -106,7 +96,7 @@ Kirigami.OverlayDrawer {
             checked: pageStack.currentItem === page
             enabled: PlasmaTube.isLoggedIn
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
         }
 
@@ -120,7 +110,7 @@ Kirigami.OverlayDrawer {
             checked: pageStack.currentItem === page
             enabled: PlasmaTube.isLoggedIn
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
         }
 
@@ -134,7 +124,7 @@ Kirigami.OverlayDrawer {
             checked: pageStack.currentItem === page
             enabled: PlasmaTube.isLoggedIn
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
         }
 
@@ -151,7 +141,7 @@ Kirigami.OverlayDrawer {
 
             checked: pageStack.currentItem === page
             onClicked: {
-                root.switchToPage(page);
+                applicationWindow().switchToPage(page);
             }
 
             Layout.fillWidth: true

@@ -10,6 +10,7 @@ using namespace Qt::StringLiterals;
 Preferences Preferences::fromJson(const QJsonObject &obj, Preferences &preferences)
 {
     preferences.setAutoPlay(obj["autoplay"_L1].toBool());
+    preferences.setDefaultHome(obj["default_home"_L1].toString());
     preferences.m_originalPreferences = obj;
     return preferences;
 }
@@ -18,6 +19,7 @@ QJsonObject Preferences::toJson() const
 {
     QJsonObject obj = m_originalPreferences;
     obj["autoplay"_L1] = autoPlay();
+    obj["default_home"_L1] = defaultHome();
 
     return obj;
 }

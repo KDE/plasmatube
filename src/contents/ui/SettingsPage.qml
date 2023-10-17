@@ -64,6 +64,67 @@ FormCard.FormCardPage {
                         PlasmaTube.preferences = preferences;
                     }
                 }
+
+                FormCard.FormDelegateSeparator {}
+
+                FormCard.FormComboBoxDelegate {
+                    id: defaultHomepageDelegate
+                    Layout.fillWidth: true
+                    text: i18n("Default homepage")
+                    textRole: "display"
+                    valueRole: "display"
+                    // TODO: these need to be localized, but ListElement makes this difficult...
+                    model: ListModel {
+                        ListElement {
+                            display: "Search"
+                        }
+                        ListElement {
+                            display: "Popular"
+                        }
+                        ListElement {
+                            display: "Trending"
+                        }
+                        ListElement {
+                            display: "Subscriptions"
+                        }
+                        ListElement {
+                            display: "Playlists"
+                        }
+                    }
+                    function calculateIndex() {
+                        let defaultHome = PlasmaTube.preferences.defaultHome;
+                        switch (defaultHome) {
+                            case "Search":
+                                currentIndex = 0;
+                                break;
+                            case "Popular":
+                                currentIndex = 1;
+                                break;
+                            case "Trending":
+                                currentIndex = 2;
+                                break;
+                            case "Subscriptions":
+                                currentIndex = 3;
+                                break;
+                            case "Playlists":
+                                currentIndex = 4;
+                                break;
+                        }
+                    }
+                    onCurrentValueChanged: {
+                        let preferences = PlasmaTube.preferences;
+                        preferences.defaultHome = currentText;
+                        PlasmaTube.preferences = preferences;
+                    }
+                }
+
+                Connections {
+                    target: PlasmaTube
+
+                    function onPreferencesChanged() {
+                        defaultHomepageDelegate.calculateIndex();
+                    }
+                }
             }
         }
 

@@ -13,6 +13,7 @@ class Preferences
 {
     Q_GADGET
     Q_PROPERTY(bool autoPlay MEMBER m_autoPlay)
+    Q_PROPERTY(QString defaultHome MEMBER m_defaultHome)
 
 public:
     FROM_JSON_OVERLOADS(Preferences)

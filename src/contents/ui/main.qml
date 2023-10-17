@@ -15,6 +15,8 @@ import "components"
 Kirigami.ApplicationWindow {
     id: root
 
+    property bool hasSetInitialPage: false
+
     property Item hoverLinkIndicator: Controls.Control {
         property string text
 
@@ -125,12 +127,51 @@ Kirigami.ApplicationWindow {
         z: contentY === 0 ? -1 : 999
     }
 
+    function switchToPage(page) {
+        if (applicationWindow().pageStack.currentItem !== page) {
+            while (applicationWindow().pageStack.depth > 0) {
+                applicationWindow().pageStack.pop();
+            }
+            applicationWindow().pageStack.push(page, 0);
+        }
+        applicationWindow().closePlayer();
+    }
+
     Connections {
         target: PlasmaTube
 
         function onOpenVideo(videoId: string) {
             root.switchVideo(videoId);
             openPlayer();
+        }
+
+        // Load the default homepage
+        // TODO: hide the switch behind a loading screen ala NeoChat/Tokodon
+        function onPreferencesChanged() {
+            if (hasSetInitialPage) {
+                return;
+            }
+
+            let defaultHome = PlasmaTube.preferences.defaultHome;
+            switch (defaultHome) {
+                case "Search":
+                    root.switchToPage(getPage("SearchPage"));
+                    break;
+                case "Popular":
+                    root.switchToPage(getPage("PopularPage"));
+                    break;
+                case "Trending":
+                    root.switchToPage(getPage("TrendingPage"));
+                    break;
+                case "Subscriptions":
+                    root.switchToPage(getPage("SubscriptionsPage"));
+                    break;
+                case "Playlists":
+                    root.switchToPage(getPage("PlaylistsPage"));
+                    break;
+            }
+
+            hasSetInitialPage = true;
         }
     }
 }
