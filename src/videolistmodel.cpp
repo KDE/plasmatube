@@ -18,15 +18,15 @@ QString VideoListModel::queryTypeString(QueryType type)
     case Top:
         return i18n("Popular");
     case Trending:
-        return i18n("Trending");
+        return i18n("All");
     case TrendingGaming:
-        return i18n("Trending Gaming");
+        return i18n("Gaming");
     case TrendingMovies:
-        return i18n("Trending Movies");
+        return i18n("Movies");
     case TrendingMusic:
-        return i18n("Trending Music");
+        return i18n("Music");
     case TrendingNews:
-        return i18n("Trending News");
+        return i18n("News");
     default:
         return {};
     }
