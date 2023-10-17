@@ -58,7 +58,7 @@ FormCard.FormCardPage {
                 FormCard.FormCheckDelegate {
                     text: i18n("Autoplay")
                     checked: PlasmaTube.preferences.autoPlay
-                    onCheckedChanged: {
+                    onToggled: {
                         let preferences = PlasmaTube.preferences;
                         preferences.autoPlay = checked;
                         PlasmaTube.preferences = preferences;
