@@ -14,6 +14,7 @@ set(plasmatube_SRCS
     subscriptioncontroller.cpp
     videomodel.cpp
     videolistmodel.cpp
+    playlistsmodel.cpp
     qthelper.hpp
     mpvobject.cpp
     resources.qrc

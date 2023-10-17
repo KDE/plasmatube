@@ -13,6 +13,7 @@ set(qinvidious_SRCS
     mediaformat.cpp
     searchparameters.cpp
     comment.cpp
+    playlist.cpp
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})

@@ -63,6 +63,8 @@ Kirigami.ApplicationWindow {
                 return pagePool.loadPage("qrc:/SettingsPage.qml");
             case "HistoryPage":
                 return pagePool.loadPage("qrc:/HistoryPage.qml");
+            case "PlaylistsPage":
+                return pagePool.loadPage("qrc:/PlaylistsPage.qml");
         }
     }
 

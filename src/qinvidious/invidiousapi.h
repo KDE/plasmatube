@@ -15,6 +15,7 @@
 // QInvidious
 #include "comment.h"
 #include "credentials.h"
+#include "playlist.h"
 #include "searchparameters.h"
 #include "video.h"
 
@@ -36,6 +37,7 @@ using SubscriptionsResult = std::variant<QList<QString>, Error>;
 using Result = std::variant<Success, Error>;
 using HistoryResult = std::variant<QList<QString>, Error>;
 using CommentsResult = std::variant<Comments, Error>;
+using PlaylistsResult = std::variant<QList<Playlist>, Error>;
 
 enum TrendingTopic : quint8 {
     Main,
@@ -79,6 +81,7 @@ public:
     QFuture<Result> markWatched(const QString &videoId);
     QFuture<Result> markUnwatched(const QString &videoId);
     QFuture<CommentsResult> requestComments(const QString &videoId, const QString &continuation = {});
+    QFuture<PlaylistsResult> requestPlaylists();
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };

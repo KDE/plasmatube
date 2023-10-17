@@ -24,6 +24,7 @@ constexpr QStringView API_VIDEOS = u"/api/v1/videos";
 constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
 constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
 constexpr QStringView API_COMMENTS = u"/api/v1/comments";
+constexpr QStringView API_LIST_PLAYLISTS = u"/api/v1/auth/playlists";
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -240,6 +241,26 @@ QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, co
                 return comment;
             });
             return Comments{comments, doc[u"continuation"].toString()};
+        }
+        return invalidJsonError();
+    });
+}
+
+QFuture<PlaylistsResult> InvidiousApi::requestPlaylists()
+{
+    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS};
+
+    return get<PlaylistsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PlaylistsResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto array = doc.array();
+
+            QList<Playlist> playlists;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(playlists), [](const QJsonValue &val) {
+                Playlist playlist;
+                Playlist::fromJson(val.toObject(), playlist);
+                return playlist;
+            });
+            return playlists;
         }
         return invalidJsonError();
     });
