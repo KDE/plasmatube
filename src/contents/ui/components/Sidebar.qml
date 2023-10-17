@@ -13,7 +13,7 @@ import org.kde.plasmatube.models 1.0
 Kirigami.OverlayDrawer {
     id: root
 
-    width: Kirigami.Units.gridUnit * 16
+    width: Kirigami.Units.gridUnit * 13
     height: applicationWindow().height
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     drawerOpen: !Kirigami.Settings.isMobile && enabled
