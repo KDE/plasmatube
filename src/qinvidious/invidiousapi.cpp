@@ -87,6 +87,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
 
     QNetworkRequest request(logInUrl());
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
+    request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
     return post<LogInResult>(std::move(request), params.toString().toUtf8(),
                              [=](QNetworkReply *reply) -> LogInResult {
