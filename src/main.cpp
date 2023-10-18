@@ -26,6 +26,7 @@
 #include <KAboutData>
 #include <KLocalizedString>
 
+#include "channelcontroller.h"
 #include "commentsmodel.h"
 #include "plasmatube-version.h"
 #include "playlistsmodel.h"
@@ -75,6 +76,7 @@ int main(int argc, char **argv)
     qRegisterMetaType<SearchParameters*>("const SearchParameters*");
     qmlRegisterType<CommentsModel>("org.kde.plasmatube.models", 1, 0, "CommentsModel");
     qmlRegisterType<PlaylistsModel>("org.kde.plasmatube.models", 1, 0, "PlaylistsModel");
+    qmlRegisterType<ChannelController>("org.kde.plasmatube", 1, 0, "ChannelController");
     qmlRegisterSingletonType("org.kde.plasmatube", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });

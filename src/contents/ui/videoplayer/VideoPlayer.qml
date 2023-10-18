@@ -284,11 +284,6 @@ Kirigami.ScrollablePage {
                         id: column
                         spacing: 0
 
-                        SubscriptionController {
-                            id: subscriptionController
-                            channelId: videoModel.video.authorId
-                        }
-
                         Controls.Label {
                             text: videoModel.video.author
                             font.weight: Font.Bold
@@ -300,57 +295,11 @@ Kirigami.ScrollablePage {
                             }
                         }
 
-                        Controls.Button {
+                        SubscriptionButton {
                             id: subscribeButton
-                            Layout.topMargin: Kirigami.Units.smallSpacing
 
-                            background: Rectangle {
-                                color: subscriptionController.isSubscribed ? "grey" : "red"
-                                radius: Kirigami.Units.smallSpacing
-
-                                Rectangle {
-                                    anchors.fill: parent
-                                    radius: Kirigami.Units.smallSpacing
-                                    color: "black"
-                                    opacity: subscribeButton.pressed ? 0.6 : subscribeButton.hovered ? 0.3 : 0
-                                }
-                            }
-
-                            leftPadding: Kirigami.Units.largeSpacing
-                            rightPadding: Kirigami.Units.largeSpacing
-                            bottomPadding: Kirigami.Units.largeSpacing
-                            topPadding: Kirigami.Units.largeSpacing
-
-                            contentItem: RowLayout {
-                                id: subscribeButtonContent
-                                spacing: 0
-
-                                Controls.BusyIndicator {
-                                    visible: subscriptionController.isLoading
-                                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2
-                                    Layout.preferredWidth: Kirigami.Units.gridUnit * 2
-                                }
-
-                                Controls.Label {
-                                    color: "white"
-                                    text: {
-                                        if (subscriptionController.isSubscribed) {
-                                            return i18n("Unsubscribe (%1)", videoModel.video.subCountText)
-                                        }
-                                        return i18n("Subscribe (%1)", videoModel.video.subCountText)
-                                    }
-                                }
-                            }
-
-                            onClicked: {
-                                if (subscriptionController.canToggleSubscription()) {
-                                    subscriptionController.toggleSubscription()
-                                } else if (!PlasmaTube.isLoggedIn) {
-                                    root.requestClosePlayer();
-                                    showPassiveNotification(i18n("Please log in to subscribe to channels."));
-                                    pageStack.layers.push("qrc:/LoginPage.qml");
-                                }
-                            }
+                            channelId: videoModel.video.authorId
+                            subCountText: videoModel.video.subCountText
                         }
                     }
 

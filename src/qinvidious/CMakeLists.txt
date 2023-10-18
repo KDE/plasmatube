@@ -15,6 +15,7 @@ set(qinvidious_SRCS
     comment.cpp
     playlist.cpp
     preferences.cpp
+    channel.cpp
 )
 
 add_library(qinvidious STATIC ${qinvidious_SRCS})

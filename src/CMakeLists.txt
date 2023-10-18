@@ -5,6 +5,7 @@
 add_subdirectory(qinvidious)
 
 set(plasmatube_SRCS
+    channelcontroller.cpp
     commentsmodel.cpp
     commentsmodel.h
     main.cpp

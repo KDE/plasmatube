@@ -13,6 +13,7 @@
 #include <QNetworkReply>
 #include <QNetworkCookie>
 // QInvidious
+#include "channel.h"
 #include "comment.h"
 #include "credentials.h"
 #include "playlist.h"
@@ -40,6 +41,7 @@ using HistoryResult = std::variant<QList<QString>, Error>;
 using CommentsResult = std::variant<Comments, Error>;
 using PlaylistsResult = std::variant<QList<Playlist>, Error>;
 using PreferencesResult = std::variant<Preferences, Error>;
+using ChannelResult = std::variant<QInvidious::Channel, Error>;
 
 enum TrendingTopic : quint8 {
     Main,
@@ -87,6 +89,7 @@ public:
     QFuture<PreferencesResult> requestPreferences();
     QFuture<Result> setPreferences(const QInvidious::Preferences &preferences);
     QFuture<VideoListResult> requestPlaylist(const QString &plid);
+    QFuture<ChannelResult> requestChannelInfo(QStringView queryd);
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };
