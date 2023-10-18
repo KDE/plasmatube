@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "subscriptionwatcher.h"
 #include "qinvidious/invidiousapi.h"
 
@@ -13,6 +15,8 @@ class QFutureWatcher;
 class SubscriptionController : public SubscriptionWatcher
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
 
 public:

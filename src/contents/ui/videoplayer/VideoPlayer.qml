@@ -11,7 +11,6 @@ import QtMultimedia 5.15
 import Qt5Compat.GraphicalEffects
 
 import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
 import "../utils.js" as Utils
 
 import "../"

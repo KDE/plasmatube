@@ -9,7 +9,6 @@ import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.kirigamiaddons.components 1 as KirigamiComponents
 
 import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
 
 ColumnLayout {
     id: root

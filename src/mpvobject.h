@@ -7,6 +7,7 @@
 #define MPVRENDERER_H_
 
 #include <QQuickFramebufferObject>
+#include <QtQml/qqmlregistration.h>
 
 #include <mpv/client.h>
 #include <mpv/render_gl.h>
@@ -17,6 +18,8 @@ class MpvRenderer;
 class MpvObject : public QQuickFramebufferObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(qreal position READ position NOTIFY positionChanged)
     Q_PROPERTY(qreal duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)

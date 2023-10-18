@@ -3,20 +3,37 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-set(qinvidious_SRCS
-    invidiousapi.cpp
-    credentials.cpp
-    videobasicinfo.cpp
-    video.cpp
-    videothumbnail.cpp
-    caption.cpp
-    mediaformat.cpp
-    searchparameters.cpp
-    comment.cpp
-    playlist.cpp
-    preferences.cpp
-    channel.cpp
+qt_add_qml_module(qinvidious
+        STATIC
+        URI org.kde.plasmatube.invidious
+        VERSION 1.0)
+
+target_sources(qinvidious PRIVATE
+        caption.cpp
+        caption.h
+        channel.cpp
+        channel.h
+        comment.cpp
+        comment.h
+        credentials.cpp
+        credentials.h
+        invidiousapi.cpp
+        invidiousapi.h
+        mediaformat.cpp
+        mediaformat.h
+        playlist.cpp
+        playlist.h
+        preferences.cpp
+        preferences.h
+        qinvidiousglobal.h
+        searchparameters.cpp
+        searchparameters.h
+        video.cpp
+        video.h
+        videobasicinfo.cpp
+        videobasicinfo.h
+        videothumbnail.cpp
+        videothumbnail.h
 )
 
-add_library(qinvidious STATIC ${qinvidious_SRCS})
-target_link_libraries(qinvidious Qt::Core Qt::Network KF6::I18n)
+target_link_libraries(qinvidious PRIVATE Qt::Core Qt::Network KF6::I18n)

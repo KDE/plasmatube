@@ -5,6 +5,8 @@
 #ifndef VIDEOMODEL_H
 #define VIDEOMODEL_H
 
+#include <QtQml/qqmlregistration.h>
+
 #include "qinvidious/video.h"
 #include "qinvidious/invidiousapi.h"
 
@@ -15,6 +17,7 @@ class VideoListModel;
 class VideoItem : public QObject, public QInvidious::Video
 {
     Q_OBJECT
+
     Q_PROPERTY(bool isLoaded READ isLoaded CONSTANT)
     Q_PROPERTY(QString videoId READ videoId CONSTANT)
     Q_PROPERTY(QString title READ title CONSTANT)
@@ -58,6 +61,8 @@ private:
 class VideoModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString videoId MEMBER m_videoId NOTIFY videoIdChanged)
     Q_PROPERTY(QString remoteUrl READ remoteUrl NOTIFY remoteUrlChanged)

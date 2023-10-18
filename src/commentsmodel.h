@@ -7,6 +7,7 @@
 #include <QDateTime>
 #include <QFutureWatcher>
 #include <QUrl>
+#include <QtQml/qqmlregistration.h>
 
 #include "comment.h"
 #include "invidiousapi.h"
@@ -14,6 +15,7 @@
 class CommentsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 

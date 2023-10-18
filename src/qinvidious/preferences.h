@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <QtQml/qqmlregistration.h>
+
 #include "qinvidiousglobal.h"
 
 namespace QInvidious
@@ -12,6 +14,9 @@ namespace QInvidious
 class Preferences
 {
     Q_GADGET
+    QML_ELEMENT
+    QML_UNCREATABLE("You cannot create Preferences")
+
     Q_PROPERTY(bool autoPlay MEMBER m_autoPlay)
     Q_PROPERTY(QString defaultHome MEMBER m_defaultHome)
 

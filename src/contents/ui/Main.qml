@@ -52,21 +52,21 @@ Kirigami.ApplicationWindow {
     function getPage(name) {
         switch (name) {
             case "PopularPage":
-                return pagePool.loadPage("qrc:/PopularPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "PopularPage");
             case "SubscriptionsPage":
-                return pagePool.loadPage("qrc:/SubscriptionsPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage");
             case "TrendingPage":
-                return pagePool.loadPage("qrc:/TrendingPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "TrendingPage");
             case "SearchPage":
-                return pagePool.loadPage("qrc:/SearchPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "SearchPage");
             case "VideoPage":
-                return pagePool.loadPage("qrc:/VideoPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "VideoPage");
             case "SettingsPage":
-                return pagePool.loadPage("qrc:/SettingsPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "SettingsPage");
             case "HistoryPage":
-                return pagePool.loadPage("qrc:/HistoryPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "HistoryPage");
             case "PlaylistsPage":
-                return pagePool.loadPage("qrc:/PlaylistsPage.qml");
+                return Qt.createComponent("org.kde.plasmatube", "PlaylistsPage");
         }
     }
 
@@ -81,10 +81,6 @@ Kirigami.ApplicationWindow {
 
     function closePlayer() {
         videoPlayer.close();
-    }
-
-    Kirigami.PagePool {
-        id: pagePool
     }
 
     globalDrawer: Sidebar {}
@@ -127,12 +123,12 @@ Kirigami.ApplicationWindow {
         z: contentY === 0 ? -1 : 999
     }
 
-    function switchToPage(page) {
+    function switchToPage(page, args) {
         if (applicationWindow().pageStack.currentItem !== page) {
             while (applicationWindow().pageStack.depth > 0) {
                 applicationWindow().pageStack.pop();
             }
-            applicationWindow().pageStack.push(page, 0);
+            applicationWindow().pageStack.push(page, args);
         }
         applicationWindow().closePlayer();
     }

@@ -5,6 +5,8 @@
 #pragma once
 
 #include <QObject>
+#include <QQmlEngine>
+#include <QtQml/qqmlregistration.h>
 #include <optional>
 
 #include "preferences.h"
@@ -17,6 +19,9 @@ namespace QInvidious
 class PlasmaTube : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool isLoggedIn READ isLoggedIn NOTIFY credentialsChanged)
     Q_PROPERTY(QString invidiousId READ invidiousId NOTIFY credentialsChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
@@ -24,6 +29,13 @@ class PlasmaTube : public QObject
 public:
     explicit PlasmaTube(QObject *parent = nullptr);
     static PlasmaTube &instance();
+
+    static PlasmaTube *create(QQmlEngine *, QJSEngine *)
+    {
+        auto inst = &instance();
+        QJSEngine::setObjectOwnership(inst, QJSEngine::ObjectOwnership::CppOwnership);
+        return inst;
+    }
 
     QInvidious::InvidiousApi *api() const;
 

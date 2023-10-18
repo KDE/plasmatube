@@ -9,7 +9,7 @@ import QtQuick.Controls 2.4 as Controls
 import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
+import org.kde.plasmatube.invidious 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
@@ -20,6 +20,8 @@ Kirigami.ScrollablePage {
     topPadding: 0
     bottomPadding: 0
 
+    property string initialSearch
+
     supportsRefreshing: true
     onRefreshingChanged: {
         if (refreshing && !videoModel.isLoading) {
@@ -29,9 +31,12 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    function doSearch(term: string) {
-        searchField.text = term;
-        searchField.accepted();
+    Component.onCompleted: {
+        console.log("Searching for " + root.initialSearch);
+        if (initialSearch.length !== 0) {
+            searchField.text = initialSearch;
+            searchField.accepted();
+        }
     }
 
     header: Controls.Control {

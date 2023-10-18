@@ -4,7 +4,7 @@
 
 import QtQuick 2.15
 import org.kde.kirigami 2.8
-import org.kde.plasmatube.models 1.0
+import org.kde.plasmatube 1.0
 
 Action {
     required property VideoListModel videoModel

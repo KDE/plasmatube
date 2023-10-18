@@ -29,6 +29,7 @@ include(FeatureSummary)
 include(ECMQMLModules)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets Concurrent)
+qt_policy(SET QTP0001 NEW)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami2 I18n)
 find_package(KF6KirigamiAddons 0.11 REQUIRED)
 find_package(PkgConfig REQUIRED)

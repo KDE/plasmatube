@@ -8,8 +8,11 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import org.kde.coreaddons 1.0
 
 import org.kde.plasmatube 1.0
+import org.kde.plasmatube.private 1.0
+import org.kde.plasmatube.invidious 1.0
 
 FormCard.FormCardPage {
     title: i18n("Settings")
@@ -125,6 +128,8 @@ FormCard.FormCardPage {
                         defaultHomepageDelegate.calculateIndex();
                     }
                 }
+
+                Component.onCompleted: defaultHomepageDelegate.calculateIndex()
             }
         }
 
@@ -137,7 +142,7 @@ FormCard.FormCardPage {
             visible: !PlasmaTube.isLoggedIn
             Layout.alignment: Qt.AlignHCenter
             text: i18n("Log in")
-            onClicked: pageStack.layers.push("qrc:/LoginPage.qml");
+            onClicked: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"));
         }
 
         FormCard.FormButtonDelegate {
@@ -159,7 +164,7 @@ FormCard.FormCardPage {
                 id: aboutPage
 
                 FormCard.AboutPage {
-                    aboutData: About
+                    aboutData: AboutData
                 }
             }
         }

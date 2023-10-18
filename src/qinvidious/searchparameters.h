@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 #include <QHash>
 #include <QUrl>
@@ -13,6 +14,7 @@
 
 class SearchParameters : public QObject {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QString query READ query WRITE setQuery)
     Q_PROPERTY(unsigned int page READ page WRITE setPage)

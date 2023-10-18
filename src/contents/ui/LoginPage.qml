@@ -8,6 +8,7 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 import org.kde.plasmatube 1.0
+import org.kde.plasmatube.private 1.0
 
 FormCard.FormCardPage {
     id: root

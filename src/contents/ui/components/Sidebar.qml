@@ -8,7 +8,6 @@ import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
 
 Kirigami.OverlayDrawer {
     id: root
@@ -52,9 +51,8 @@ Kirigami.OverlayDrawer {
                 autoAccept: false
 
                 onAccepted: {
-                    let page = applicationWindow().getPage("SearchPage");
-                    applicationWindow().switchToPage(page);
-                    page.doSearch(searchField.text);
+                    let page = Qt.createComponent("org.kde.plasmatube", "SearchPage");
+                    applicationWindow().switchToPage(page, {initialSearch: searchField.text});
                     searchField.text = "";
                 }
             }

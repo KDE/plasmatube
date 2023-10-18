@@ -10,6 +10,7 @@
 #include "qinvidious/videobasicinfo.h"
 #include <QAbstractListModel>
 #include <QFutureSynchronizer>
+#include <QtQml/qqmlregistration.h>
 
 class InvidiousManager;
 class QNetworkReply;
@@ -17,6 +18,8 @@ class QNetworkReply;
 class VideoListModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString title READ title NOTIFY titleChanged)
 

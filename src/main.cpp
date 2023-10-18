@@ -60,33 +60,12 @@ int main(int argc, char **argv)
     // requires the LC_NUMERIC category to be set to "C", so change it back.
     setlocale(LC_NUMERIC, "C");
 
-    qmlRegisterType<MpvObject>("org.kde.plasmatube", 1, 0, "MpvObject");
-    qmlRegisterType<VideoListModel>("org.kde.plasmatube.models", 1, 0, "VideoListModel");
-    qmlRegisterType<VideoModel>("org.kde.plasmatube.models", 1, 0, "VideoModel");
-    qmlRegisterType<LogInController>("org.kde.plasmatube", 1, 0, "LogInController");
-    qmlRegisterType<SubscriptionWatcher>("org.kde.plasmatube", 1, 0, "SubscriptionWatcher");
-    qmlRegisterType<SubscriptionController>("org.kde.plasmatube", 1, 0, "SubscriptionController");
-    qmlRegisterSingletonInstance<PlasmaTube>("org.kde.plasmatube", 1, 0, "PlasmaTube", &PlasmaTube::instance());
-    qRegisterMetaType<SearchParameters::SortBy>("SortBy");
-    qRegisterMetaType<SearchParameters::Date>("Date");
-    qRegisterMetaType<SearchParameters::Duration>("Duration");
-    qRegisterMetaType<SearchParameters::Type>("Type");
-    qRegisterMetaType<SearchParameters::Feature>("Feature");
-    qmlRegisterType<SearchParameters>("org.kde.plasmatube", 1, 0, "SearchParameters");
-    qRegisterMetaType<SearchParameters*>("const SearchParameters*");
-    qmlRegisterType<CommentsModel>("org.kde.plasmatube.models", 1, 0, "CommentsModel");
-    qmlRegisterType<PlaylistsModel>("org.kde.plasmatube.models", 1, 0, "PlaylistsModel");
-    qmlRegisterType<ChannelController>("org.kde.plasmatube", 1, 0, "ChannelController");
-    qmlRegisterSingletonType("org.kde.plasmatube", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
-
     QQmlApplicationEngine engine;
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     PlasmaTubeSettings settings;
-    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube", 1, 0, "Settings", &settings);
+    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", &settings);
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
 
     QCommandLineParser parser;
@@ -98,7 +77,7 @@ int main(int argc, char **argv)
     parser.process(app);
     about.processCommandLine(&parser);
 
-    engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
+    engine.loadFromModule(QStringLiteral("org.kde.plasmatube"), QStringLiteral("Main"));
 
     if (engine.rootObjects().isEmpty())
         return -1;

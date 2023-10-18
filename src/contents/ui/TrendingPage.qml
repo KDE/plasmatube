@@ -5,8 +5,7 @@
 import QtQuick
 
 import org.kde.kirigami 2.19 as Kirigami
-
-import org.kde.plasmatube.models 1.0
+import org.kde.plasmatube 1.0
 
 FeedPage {
     id: page

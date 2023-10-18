@@ -10,7 +10,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import org.kde.plasmatube 1.0
-import org.kde.plasmatube.models 1.0
 import "utils.js" as Utils
 import "components"
 
