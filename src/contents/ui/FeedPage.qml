@@ -12,6 +12,7 @@ import org.kde.kirigamiaddons.delegates 1 as Delegates
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
 import "utils.js" as Utils
+import "components"
 
 Kirigami.ScrollablePage {
     id: root
@@ -25,6 +26,7 @@ Kirigami.ScrollablePage {
     property alias videoModel: videoModel
     property string currentVideoId
     property int currentVideoIndex
+    property string currentVideoTitle
 
     supportsRefreshing: true
     onRefreshingChanged: {
@@ -83,6 +85,7 @@ Kirigami.ScrollablePage {
                 } else {
                     currentVideoId = vid;
                     currentVideoIndex = index;
+                    currentVideoTitle = title;
                     videoMenu.isWatched = PlasmaTube.isVideoWatched(vid);
                     videoMenu.popup();
                 }
@@ -127,6 +130,11 @@ Kirigami.ScrollablePage {
                 addToPlaylistLoader.active = true;
                 addToPlaylistLoader.item.open();
             }
+        }
+
+        ShareMenu {
+            url: "https://youtube.com/watch?=" + currentVideoId
+            shareTitle: currentVideoTitle
         }
     }
 

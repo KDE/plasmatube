@@ -34,6 +34,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="components/BottomNavBar.qml">contents/ui/components/BottomNavBar.qml</file>
         <file alias="components/Comments.qml">contents/ui/components/Comments.qml</file>
         <file alias="components/SubscriptionButton.qml">contents/ui/components/SubscriptionButton.qml</file>
+        <file alias="components/ShareMenu.qml">contents/ui/components/ShareMenu.qml</file>
+        <file alias="components/ShareDialog.qml">contents/ui/components/ShareDialog.qml</file>
         <file alias="utils.js">contents/ui/utils.js</file>
     </qresource>
 </RCC>

@@ -26,12 +26,15 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(FeatureSummary)
+include(ECMQMLModules)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets Concurrent)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami2 I18n)
 find_package(KF6KirigamiAddons 0.11 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
+
+ecm_find_qmlmodule(org.kde.purpose 1.0)
 
 if (NOT ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
