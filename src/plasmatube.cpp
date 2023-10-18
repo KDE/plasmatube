@@ -179,9 +179,11 @@ void PlasmaTube::fetchHistory(qint32 page)
         auto result = watcher->result();
 
         if (const auto history = std::get_if<QList<QString>>(&result)) {
-            m_watchedVideos.append(*history);
+            if (!history->isEmpty()) {
+                m_watchedVideos.append(*history);
 
-            fetchHistory(page + 1);
+                fetchHistory(page + 1);
+            }
         }
 
         watcher->deleteLater();
