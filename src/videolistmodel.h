@@ -86,6 +86,8 @@ public:
     Q_INVOKABLE void markAsWatched(int index);
     Q_INVOKABLE void markAsUnwatched(int index);
 
+    Q_INVOKABLE void removeFromPlaylist(const QString &plid, int index);
+
 private:
     void handleQuery(QFuture<QInvidious::VideoListResult> future, QueryType, bool reset = true);
 

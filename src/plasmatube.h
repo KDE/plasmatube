@@ -53,6 +53,8 @@ public:
     QInvidious::Preferences preferences();
     void setPreferences(const QInvidious::Preferences &preferences);
 
+    Q_INVOKABLE void addToPlaylist(const QString &plid, const QString &videoId);
+
 Q_SIGNALS:
     void openVideo(const QString &id);
     void preferencesChanged();

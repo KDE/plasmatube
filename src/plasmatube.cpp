@@ -253,3 +253,8 @@ void PlasmaTube::fetchPreferences()
     });
     watcher->setFuture(m_api->requestPreferences());
 }
+
+void PlasmaTube::addToPlaylist(const QString &plid, const QString &videoId)
+{
+    PlasmaTube::instance().api()->addVideoToPlaylist(plid, videoId);
+}

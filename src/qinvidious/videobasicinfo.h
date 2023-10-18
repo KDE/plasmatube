@@ -74,6 +74,9 @@ public:
     bool upcoming() const;
     void setUpcoming(bool upcoming);
 
+    QString indexId() const;
+    void setIndexId(const QString &);
+
 private:
     QString m_videoId;
     QString m_title;
@@ -92,6 +95,7 @@ private:
     bool m_paid;
     bool m_premium;
     bool m_upcoming;
+    QString m_indexId;
 };
 
 };

@@ -26,6 +26,9 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     info.setPremium(obj.value("premium"_L1).toBool(false));
     info.setUpcoming(obj.value("isUpcoming"_L1).toBool(false));
     parseArray(obj.value("videoThumbnails"_L1), info.m_videoThumbnails);
+    if (obj.contains("indexId"_L1)) {
+        info.setIndexId(obj.value("indexId"_L1).toString());
+    }
     return info;
 }
 
@@ -219,4 +222,14 @@ bool VideoBasicInfo::upcoming() const
 void VideoBasicInfo::setUpcoming(bool upcoming)
 {
     m_upcoming = upcoming;
+}
+
+QString VideoBasicInfo::indexId() const
+{
+    return m_indexId;
+}
+
+void VideoBasicInfo::setIndexId(const QString &id)
+{
+    m_indexId = id;
 }

@@ -399,3 +399,14 @@ void VideoListModel::markAsUnwatched(int row)
     PlasmaTube::instance().markVideoUnwatched(data(videoIndex, IdRole).toString());
     Q_EMIT dataChanged(videoIndex, videoIndex, {WatchedRole});
 }
+
+void VideoListModel::removeFromPlaylist(const QString &plid, int index)
+{
+    auto video = m_results[index];
+
+    PlasmaTube::instance().api()->removeVideoFromPlaylist(plid, video.indexId());
+
+    beginRemoveRows({}, index, index);
+    m_results.removeAt(index);
+    endRemoveRows();
+}

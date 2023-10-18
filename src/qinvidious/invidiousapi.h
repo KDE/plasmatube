@@ -91,6 +91,7 @@ public:
     QFuture<VideoListResult> requestPlaylist(const QString &plid);
     QFuture<ChannelResult> requestChannelInfo(QStringView queryd);
     QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId);
+    QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId);
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };

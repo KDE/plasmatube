@@ -332,6 +332,13 @@ QFuture<Result> InvidiousApi::addVideoToPlaylist(const QString &plid, const QStr
     return post<Result>(std::move(request), QJsonDocument(requestObj).toJson(QJsonDocument::Compact), checkIsReplyOk);
 }
 
+QFuture<Result> InvidiousApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
+{
+    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos/" % indexId};
+
+    return deleteResource<Result>(authenticatedNetworkRequest(std::move(url)), checkIsReplyOk);
+}
+
 Error InvidiousApi::invalidJsonError()
 {
     return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));

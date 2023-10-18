@@ -13,6 +13,8 @@ import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
     required property string playlistId
+    property string currentVideoId
+    property int currentVideoIndex
 
     id: root
     leftPadding: 0
@@ -69,9 +71,16 @@ Kirigami.ScrollablePage {
             publishedText: model.publishedText
             watched: model.watched
 
-            onClicked: {
-                applicationWindow().switchVideo(vid);
-                applicationWindow().openPlayer();
+            onClicked: (mouse) => {
+                if (mouse.button === Qt.LeftButton) {
+                    applicationWindow().switchVideo(vid);
+                    applicationWindow().openPlayer();
+                } else {
+                    currentVideoId = vid;
+                    currentVideoIndex = index;
+                    videoMenu.isWatched = PlasmaTube.isVideoWatched(vid);
+                    videoMenu.popup();
+                }
             }
         }
 
@@ -79,6 +88,32 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             visible: gridView.count === 0 && !root.refreshing
             text: i18nc("@info:status", "Loading…")
+        }
+    }
+
+    Controls.Menu {
+        id: videoMenu
+
+        modal: true
+
+        property bool isWatched
+
+        Controls.MenuItem {
+            text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
+            icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
+            onTriggered: {
+                if (videoMenu.isWatched) {
+                    videoModel.markAsUnwatched(currentVideoIndex);
+                } else {
+                    videoModel.markAsWatched(currentVideoIndex);
+                }
+            }
+        }
+
+        Controls.MenuItem {
+            text: i18n("Remove from playlist")
+            icon.name: "media-playlist-append"
+            onTriggered: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)
         }
     }
 
