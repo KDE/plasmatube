@@ -32,7 +32,6 @@ Kirigami.ScrollablePage {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     Component.onCompleted: {
-        console.log("Searching for " + root.initialSearch);
         if (initialSearch.length !== 0) {
             searchField.text = initialSearch;
             searchField.accepted();
