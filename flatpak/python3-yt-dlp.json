@@ -7,33 +7,33 @@
     "sources": [
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip",
-            "sha256": "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
+            "url": "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz",
+            "sha256": "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/71/4c/3db2b8021bd6f2f0ceb0e088d6b2d49147671f25832fb17970e9b583d742/certifi-2022.12.7-py3-none-any.whl",
-            "sha256": "4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
+            "url": "https://files.pythonhosted.org/packages/4c/dd/2234eab22353ffc7d94e8d13177aaa050113286e93e7b40eae01fbf7c3d9/certifi-2023.7.22-py3-none-any.whl",
+            "sha256": "92d6037539857d8206b8f6ae472e8b77db8058fec5937a1ef3f54304089edbb9"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/03/ee/114d7016d2e34f341e212fefb5e7bd87785077ebcfff0ad23a497c70eea1/mutagen-1.46.0-py3-none-any.whl",
-            "sha256": "8af0728aa2d5c3ee5a727e28d0627966641fddfe804c23eabb5926a4d770aed5"
+            "url": "https://files.pythonhosted.org/packages/b0/7a/620f945b96be1f6ee357d211d5bf74ab1b7fe72a9f1525aafbfe3aee6875/mutagen-1.47.0-py3-none-any.whl",
+            "sha256": "edd96f50c5907a9539d8e5bba7245f62c9f520aef333d13392a79a4f70aca719"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3d/07/cfd8f52b9068877801317d26dc7225e19421bc659e1395d2cd6933b1a351/pycryptodomex-3.17.tar.gz",
-            "sha256": "0af93aad8d62e810247beedef0261c148790c52f3cd33643791cc6396dd217c1"
+            "url": "https://files.pythonhosted.org/packages/14/c9/09d5df04c9f29ae1b49d0e34c9934646b53bb2131a55e8ed2a0d447c7c53/pycryptodomex-3.19.0.tar.gz",
+            "sha256": "af83a554b3f077564229865c45af0791be008ac6469ef0098152139e6bd4b5b6"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/85/dc/549a807a53c13fd4a8dac286f117a7a71260defea9ec0c05d6027f2ae273/websockets-10.4.tar.gz",
-            "sha256": "eef610b23933c54d5d921c92578ae5f89813438fded840c2e9809d378dc765d3"
+            "url": "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz",
+            "sha256": "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/0d/f9/6816d1f3f7c0f5a807f7ddc7480d2fa0d6b6e066002653d3a676501512f2/yt_dlp-2023.2.17-py2.py3-none-any.whl",
-            "sha256": "3b2df037c80922f0f83f63ee2f9253496b4a8668c0fe8d2a836ba9040f853b07"
+            "url": "https://files.pythonhosted.org/packages/3f/b0/75194851f0b86dd6c207d8e1cb5625b62ae5ec254edda42bc2cb86306ba7/yt_dlp-2023.10.13-py2.py3-none-any.whl",
+            "sha256": "2b069f22675532eebacdfd6372b1825651a751fef848de9ae6efe6491b2dc38a"
         }
     ]
 }
