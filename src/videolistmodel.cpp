@@ -381,3 +381,21 @@ void VideoListModel::processHistoryResult(const QList<QString> &result)
         Q_EMIT isLoadingChanged();
     });
 }
+
+void VideoListModel::markAsWatched(int row)
+{
+    auto videoIndex = index(row, 0);
+    Q_ASSERT(checkIndex(videoIndex, QAbstractItemModel::CheckIndexOption::IndexIsValid));
+
+    PlasmaTube::instance().markVideoWatched(data(videoIndex, IdRole).toString());
+    Q_EMIT dataChanged(videoIndex, videoIndex, {WatchedRole});
+}
+
+void VideoListModel::markAsUnwatched(int row)
+{
+    auto videoIndex = index(row, 0);
+    Q_ASSERT(checkIndex(videoIndex, QAbstractItemModel::CheckIndexOption::IndexIsValid));
+
+    PlasmaTube::instance().markVideoUnwatched(data(videoIndex, IdRole).toString());
+    Q_EMIT dataChanged(videoIndex, videoIndex, {WatchedRole});
+}

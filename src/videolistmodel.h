@@ -83,6 +83,9 @@ public:
 
     Q_SIGNAL void errorOccured(const QString &error);
 
+    Q_INVOKABLE void markAsWatched(int index);
+    Q_INVOKABLE void markAsUnwatched(int index);
+
 private:
     void handleQuery(QFuture<QInvidious::VideoListResult> future, QueryType, bool reset = true);
 

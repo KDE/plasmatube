@@ -22,6 +22,8 @@ Kirigami.ScrollablePage {
 
     property var initialQuery: VideoListModel.Trending
     property alias videoModel: videoModel
+    property string currentVideoId
+    property int currentVideoIndex
 
     supportsRefreshing: true
     onRefreshingChanged: {
@@ -45,8 +47,7 @@ Kirigami.ScrollablePage {
             onIsLoadingChanged: {
                 root.refreshing = isLoading
             }
-            onErrorOccured: (errorText) =>
-                {
+            onErrorOccured: (errorText) => {
                 applicationWindow().showPassiveNotification(errorText)
             }
         }
@@ -74,9 +75,16 @@ Kirigami.ScrollablePage {
             publishedText: model.publishedText
             watched: model.watched
 
-            onClicked: {
-                applicationWindow().switchVideo(vid);
-                applicationWindow().openPlayer();
+            onClicked: (mouse) => {
+                if (mouse.button === Qt.LeftButton) {
+                    applicationWindow().switchVideo(vid);
+                    applicationWindow().openPlayer();
+                } else {
+                    currentVideoId = vid;
+                    currentVideoIndex = index;
+                    videoMenu.isWatched = PlasmaTube.isVideoWatched(vid);
+                    videoMenu.popup();
+                }
             }
         }
 
@@ -89,6 +97,26 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             text: i18n("No videos")
             visible: !gridView.model.isLoading && gridView.count === 0
+        }
+    }
+
+    Controls.Menu {
+        id: videoMenu
+
+        modal: true
+
+        property bool isWatched
+
+        Controls.MenuItem {
+            text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
+            icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
+            onTriggered: {
+                if (videoMenu.isWatched) {
+                    videoModel.markAsUnwatched(currentVideoIndex);
+                } else {
+                    videoModel.markAsWatched(currentVideoIndex);
+                }
+            }
         }
     }
 

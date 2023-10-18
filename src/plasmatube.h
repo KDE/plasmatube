@@ -44,7 +44,7 @@ public:
     Q_SIGNAL void loggedIn();
     Q_SIGNAL void loggedOut();
 
-    bool isVideoWatched(const QString &videoId);
+    Q_INVOKABLE bool isVideoWatched(const QString &videoId);
     Q_INVOKABLE void markVideoWatched(const QString &videoId);
     void markVideoUnwatched(const QString &videoId);
 
