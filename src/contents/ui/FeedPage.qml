@@ -6,7 +6,8 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates 1 as Delegates
 
 import org.kde.plasmatube 1.0
 import org.kde.plasmatube.models 1.0
@@ -117,6 +118,54 @@ Kirigami.ScrollablePage {
                     videoModel.markAsWatched(currentVideoIndex);
                 }
             }
+        }
+
+        Controls.MenuItem {
+            text: i18n("Add to playlist")
+            icon.name: "media-playlist-append"
+            onTriggered: {
+                addToPlaylistLoader.active = true;
+                addToPlaylistLoader.item.open();
+            }
+        }
+    }
+
+    Loader {
+        id: addToPlaylistLoader
+
+        active: false
+        sourceComponent: Kirigami.PromptDialog {
+            id: addToPlaylistDialog
+
+            title: i18n("Add to playlist")
+
+            standardButtons: Kirigami.Dialog.NoButton
+
+            mainItem: ColumnLayout {
+                Repeater {
+                    id: playlists
+
+                    model: PlaylistsModel {
+                        id: playlistsModel
+                    }
+
+                    delegate: Delegates.RoundedItemDelegate
+                        {
+                        required property string playlistId
+                        required property string title
+
+                        text: title
+
+                        Layout.fillWidth: true
+
+                        onClicked: {
+                            playlistsModel.addToPlaylist(playlistId, currentVideoId);
+                            addToPlaylistDialog.close();
+                        }
+                    }
+                }
+            }
+            onClosed: addToPlaylistLoader.active = false
         }
     }
 

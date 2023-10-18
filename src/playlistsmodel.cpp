@@ -61,6 +61,11 @@ QHash<int, QByteArray> PlaylistsModel::roleNames() const
     };
 }
 
+void PlaylistsModel::addToPlaylist(const QString &plid, const QString &videoId)
+{
+    PlasmaTube::instance().api()->addVideoToPlaylist(plid, videoId);
+}
+
 void PlaylistsModel::fill()
 {
     if (m_loading) {

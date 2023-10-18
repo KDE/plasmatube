@@ -29,6 +29,8 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    Q_INVOKABLE void addToPlaylist(const QString &plid, const QString &videoId);
+
 Q_SIGNALS:
     void loadingChanged();
 

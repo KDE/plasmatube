@@ -90,6 +90,7 @@ public:
     QFuture<Result> setPreferences(const QInvidious::Preferences &preferences);
     QFuture<VideoListResult> requestPlaylist(const QString &plid);
     QFuture<ChannelResult> requestChannelInfo(QStringView queryd);
+    QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId);
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };

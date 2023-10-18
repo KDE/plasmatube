@@ -319,6 +319,19 @@ QFuture<ChannelResult> InvidiousApi::requestChannelInfo(QStringView queryd)
     });
 }
 
+QFuture<Result> InvidiousApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
+{
+    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos"};
+
+    QJsonObject requestObj;
+    requestObj["videoId"_L1] = videoId;
+
+    QNetworkRequest request = authenticatedNetworkRequest(std::move(url));
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/json"));
+
+    return post<Result>(std::move(request), QJsonDocument(requestObj).toJson(QJsonDocument::Compact), checkIsReplyOk);
+}
+
 Error InvidiousApi::invalidJsonError()
 {
     return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));
