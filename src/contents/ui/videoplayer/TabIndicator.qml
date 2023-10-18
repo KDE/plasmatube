@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.10
+import QtQuick
 
 Rectangle {
     anchors.fill: parent

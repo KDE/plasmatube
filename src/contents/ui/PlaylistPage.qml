@@ -2,13 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
-import "utils.js" as Utils
+import org.kde.kirigami as Kirigami
+
+import org.kde.plasmatube
 
 Kirigami.ScrollablePage {
     required property string playlistId
@@ -90,14 +89,14 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Controls.Menu {
+    QQC2.Menu {
         id: videoMenu
 
         modal: true
 
         property bool isWatched
 
-        Controls.MenuItem {
+        QQC2.MenuItem {
             text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
             icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
             onTriggered: {
@@ -109,7 +108,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Controls.MenuItem {
+        QQC2.MenuItem {
             text: i18n("Remove from playlist")
             icon.name: "media-playlist-append"
             onTriggered: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)

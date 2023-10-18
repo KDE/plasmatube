@@ -2,6 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import org.kde.plasmatube
+
 FeedPage {
     initialQuery: VideoListModel.Top
 }

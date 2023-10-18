@@ -2,11 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import org.kde.kirigami 2.8
-import org.kde.plasmatube 1.0
+import QtQuick
 
-Action {
+import org.kde.kirigami as Kirigami
+
+import org.kde.plasmatube
+
+Kirigami.Action {
     required property VideoListModel videoModel
     required property int queryType
 

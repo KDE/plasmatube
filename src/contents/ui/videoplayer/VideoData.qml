@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.10
-import QtQuick.Layouts 1.10
-import QtQuick.Controls 2.10 as QQC2
-import org.kde.kirigami 2.10 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+
+import org.kde.kirigami as Kirigami
 
 Item {
     required property string title

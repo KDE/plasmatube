@@ -4,15 +4,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.10
-import QtQuick.Layouts 1.10
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.10 as QQC2
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import QtMultimedia 5.12 as Multimedia
-
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.coreaddons 1.0 as KCoreAddons
+import org.kde.kirigami as Kirigami
+import org.kde.coreaddons as KCoreAddons
 
 QQC2.Control {
     id: root

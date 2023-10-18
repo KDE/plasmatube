@@ -1,14 +1,12 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.14
-import QtQuick.Controls 2.14 as Controls
-import QtQuick.Layouts 1.14
-import QtMultimedia 5.15
-
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: root
@@ -56,13 +54,13 @@ Rectangle {
                     Layout.fillWidth: true
                     Layout.alignment: Qt.AlignVCenter
 
-                    Controls.Label {
+                    QQC2.Label {
                         Layout.fillWidth: true
                         text: root.videoName
                         elide: Text.ElideRight
                     }
 
-                    Controls.Label {
+                    QQC2.Label {
                         Layout.fillWidth: true
                         font: Kirigami.Theme.smallFont
                         text: root.channelName
@@ -80,7 +78,7 @@ Rectangle {
             }
         }
 
-        Controls.Button {
+        QQC2.Button {
             flat: true
             Layout.leftMargin: Kirigami.Units.smallSpacing
             Layout.rightMargin: Kirigami.Units.smallSpacing
@@ -92,7 +90,7 @@ Rectangle {
             onClicked: root.toggleRequested()
         }
 
-        Controls.Button {
+        QQC2.Button {
             flat: true
             Layout.leftMargin: Kirigami.Units.smallSpacing
             Layout.rightMargin: Kirigami.Units.smallSpacing

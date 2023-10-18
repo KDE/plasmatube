@@ -2,13 +2,14 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiComponents
+
+import org.kde.plasmatube
 import "utils.js" as Utils
 import "components"
 
@@ -105,7 +106,7 @@ Kirigami.ScrollablePage {
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 text: channelController.name
             }
-            Controls.TextArea {
+            QQC2.TextArea {
                 text: channelController.description
                 textFormat: TextEdit.RichText
                 readOnly: true

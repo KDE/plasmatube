@@ -12,6 +12,8 @@ class QFutureWatcher;
 class ChannelController : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(QString name READ name NOTIFY channelLoaded)
     Q_PROPERTY(QString banner READ banner NOTIFY channelLoaded)
     Q_PROPERTY(QString avatar READ avatar NOTIFY channelLoaded)

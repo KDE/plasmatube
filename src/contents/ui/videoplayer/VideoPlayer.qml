@@ -3,16 +3,14 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as Controls
-import org.kde.kirigami 2.19 as Kirigami
-import QtMultimedia 5.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
-import org.kde.plasmatube 1.0
+import org.kde.plasmatube
 import "../utils.js" as Utils
-
 import "../"
 import "../components"
 
@@ -64,13 +62,13 @@ Kirigami.ScrollablePage {
         const author = videoModel.video.author;
         const authorId = videoModel.video.authorId;
         pageStack.pop();
-        pageStack.push("qrc:/ChannelPage.qml", {author, authorId});
+        pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author, authorId});
         root.requestClosePlayer();
     }
 
     function openFullScreen() {
-        videoContainer.parent = Controls.Overlay.overlay;
-        videoContainer.anchors.fill = Controls.Overlay.overlay;
+        videoContainer.parent = QQC2.Overlay.overlay;
+        videoContainer.anchors.fill = QQC2.Overlay.overlay;
         root.inFullScreen = true;
         PlasmaTube.setInhibitSleep(true);
         applicationWindow().showFullScreen();
@@ -101,7 +99,7 @@ Kirigami.ScrollablePage {
     header: Kirigami.AbstractApplicationHeader{
         contentItem:
             RowLayout{
-            Controls.ToolButton {
+                QQC2.ToolButton {
                 id: closeButton
                 icon.name: "go-previous-view"
 
@@ -187,7 +185,7 @@ Kirigami.ScrollablePage {
                             source: videoModel.video.thumbnailUrl("high")
                         }
 
-                        Controls.BusyIndicator {
+                        QQC2.BusyIndicator {
                             anchors.centerIn: parent
                         }
                     }
@@ -283,7 +281,7 @@ Kirigami.ScrollablePage {
                         id: column
                         spacing: 0
 
-                        Controls.Label {
+                        QQC2.Label {
                             text: videoModel.video.author
                             font.weight: Font.Bold
 
@@ -329,7 +327,7 @@ Kirigami.ScrollablePage {
                 }
 
                 // video description
-                Controls.TextArea {
+                QQC2.TextArea {
                     readonly property var linkRegex: /(href=["'])?(\b(https?):\/\/[^\s\<\>\"\'\\\?\:\)\(]+(\(.*?\))*(\?(?=[a-z])[^\s\\\)]+|$)?)/g
 
                     text: videoModel.video.description.replace(linkRegex, function() {
@@ -373,7 +371,7 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            Controls.BusyIndicator {
+            QQC2.BusyIndicator {
                 Layout.alignment: Qt.AlignCenter
                 visible: videoModel.isLoading
             }

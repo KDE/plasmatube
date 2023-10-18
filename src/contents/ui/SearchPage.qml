@@ -3,14 +3,14 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
-import org.kde.plasmatube.invidious 1.0
-import "utils.js" as Utils
+import org.kde.kirigami as Kirigami
+
+import org.kde.plasmatube
+import org.kde.plasmatube.invidious
 
 Kirigami.ScrollablePage {
     id: root
@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         }
     }
 
-    header: Controls.Control {
+    header: QQC2.Control {
         padding: Kirigami.Units.largeSpacing
 
         background: Rectangle {
@@ -69,7 +69,7 @@ Kirigami.ScrollablePage {
                     }
                 }
 
-                Controls.Button {
+                QQC2.Button {
                     id: showFiltersButton
                     icon.name: "settings-configure"
                     checkable: true
@@ -83,16 +83,16 @@ Kirigami.ScrollablePage {
                 id: filtersBar
                 visible: showFiltersButton.checked
 
-                Controls.ButtonGroup { id: sortGroup }
+                QQC2.ButtonGroup { id: sortGroup }
 
-                Controls.Label {
+                QQC2.Label {
                     text: i18n("Sort By:")
                 }
 
-                Controls.RadioButton {
+                QQC2.RadioButton {
                     text: i18n("Rating")
                     checkable: true
-                    Controls.ButtonGroup.group: sortGroup
+                    QQC2.ButtonGroup.group: sortGroup
                     onCheckedChanged:
                         if (checked) {
                             searchParameters.sortBy = SearchParameters.SortBy.Rating
@@ -100,11 +100,11 @@ Kirigami.ScrollablePage {
                         }
                 }
 
-                Controls.RadioButton {
+                QQC2.RadioButton {
                     text: i18n("Relevance")
                     checkable: true
                     checked: true
-                    Controls.ButtonGroup.group: sortGroup
+                    QQC2.ButtonGroup.group: sortGroup
                     onCheckedChanged:
                         if (checked) {
                             searchParameters.sortBy = SearchParameters.SortBy.Relevance
@@ -112,10 +112,10 @@ Kirigami.ScrollablePage {
                         }
                 }
 
-                Controls.RadioButton {
+                QQC2.RadioButton {
                     text: i18n("Upload Date")
                     checkable: true
-                    Controls.ButtonGroup.group: sortGroup
+                    QQC2.ButtonGroup.group: sortGroup
                     onCheckedChanged:
                         if (checked) {
                             searchParameters.sortBy = SearchParameters.SortBy.UploadDate
@@ -123,10 +123,10 @@ Kirigami.ScrollablePage {
                         }
                 }
 
-                Controls.RadioButton {
+                QQC2.RadioButton {
                     text: i18n("View Count")
                     checkable: true
-                    Controls.ButtonGroup.group: sortGroup
+                    QQC2.ButtonGroup.group: sortGroup
                     onCheckedChanged:
                         if (checked) {
                             searchParameters.sortBy = SearchParameters.SortBy.ViewCount

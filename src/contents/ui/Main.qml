@@ -3,12 +3,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.1
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15 as Controls
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 
-import org.kde.plasmatube 1.0
+import org.kde.plasmatube
 import "videoplayer"
 import "components"
 
@@ -17,7 +16,7 @@ Kirigami.ApplicationWindow {
 
     property bool hasSetInitialPage: false
 
-    property Item hoverLinkIndicator: Controls.Control {
+    property Item hoverLinkIndicator: QQC2.Control {
         property string text
 
         parent: overlay.parent
@@ -27,7 +26,7 @@ Kirigami.ApplicationWindow {
         y: parent.height - implicitHeight
         z: 999990
 
-        contentItem: Controls.Label {
+        contentItem: QQC2.Label {
             id: linkText
             text: parent.text
         }

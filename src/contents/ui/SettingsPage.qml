@@ -3,16 +3,17 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
-import org.kde.coreaddons 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
-import org.kde.plasmatube.private 1.0
-import org.kde.plasmatube.invidious 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.coreaddons as KCoreAddons
+
+import org.kde.plasmatube
+import org.kde.plasmatube.private
+import org.kde.plasmatube.invidious
 
 FormCard.FormCardPage {
     title: i18n("Settings")
@@ -164,7 +165,7 @@ FormCard.FormCardPage {
                 id: aboutPage
 
                 FormCard.AboutPage {
-                    aboutData: AboutData
+                    aboutData: KCoreAddons.AboutData
                 }
             }
         }

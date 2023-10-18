@@ -1,13 +1,14 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.delegates 1 as Delegates
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
+
+import org.kde.plasmatube
 
 Kirigami.OverlayDrawer {
     id: root

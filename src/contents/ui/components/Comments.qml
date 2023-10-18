@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.delegates 1 as Delegates
-import org.kde.kirigamiaddons.components 1 as KirigamiComponents
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.plasmatube 1.0
 

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.plasmatube
 
 FeedPage {
     initialQuery: VideoListModel.History

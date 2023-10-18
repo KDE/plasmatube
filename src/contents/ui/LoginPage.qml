@@ -1,14 +1,14 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.1
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kirigamiaddons.formcard 1.0 as FormCard
+import QtQuick
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
-import org.kde.plasmatube.private 1.0
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+
+import org.kde.plasmatube
+import org.kde.plasmatube.private
 
 FormCard.FormCardPage {
     id: root
@@ -28,7 +28,7 @@ FormCard.FormCardPage {
                 applicationWindow().showPassiveNotification(errorText)
             }
         },
-        Controls.BusyIndicator {
+        QQC2.BusyIndicator {
             parent: root
             anchors.centerIn: parent
             visible: logInController.isLoading

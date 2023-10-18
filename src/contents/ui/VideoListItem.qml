@@ -3,11 +3,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.7 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
 import Qt5Compat.GraphicalEffects
+
+import org.kde.kirigami as Kirigami
 
 import "utils.js" as Utils
 
@@ -156,7 +157,7 @@ MouseArea {
             Flow {
                 Layout.fillWidth: true
 
-                Controls.Label {
+                QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     text: author
                     color: Kirigami.Theme.disabledTextColor
@@ -169,12 +170,12 @@ MouseArea {
                         anchors.fill: parent
                         hoverEnabled: true
                         onClicked: {
-                            pageStack.push("qrc:/ChannelPage.qml", {author, authorId})
+                            pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author, authorId})
                         }
                     }
                 }
 
-                Controls.Label {
+                QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     text: i18n(" \u2022 %1 views", Utils.formatCount(viewCount))
                     color: Kirigami.Theme.disabledTextColor
@@ -182,7 +183,7 @@ MouseArea {
                     elide: Text.ElideRight
                 }
 
-                Controls.Label {
+                QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     text: i18n(" \u2022 %1", liveNow ? "<i>live now</i>" : publishedText)
                     color: Kirigami.Theme.disabledTextColor

@@ -2,13 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.4 as Controls
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
 
-import org.kde.plasmatube 1.0
-import "utils.js" as Utils
+import org.kde.kirigami as Kirigami
+
+import org.kde.plasmatube
 
 Kirigami.ScrollablePage {
     id: root
