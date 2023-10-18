@@ -26,6 +26,7 @@ constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
 constexpr QStringView API_COMMENTS = u"/api/v1/comments";
 constexpr QStringView API_LIST_PLAYLISTS = u"/api/v1/auth/playlists";
 constexpr QStringView API_PREFERENCES = u"/api/v1/auth/preferences";
+constexpr QStringView API_PLAYLISTS = u"/api/v1/playlists";
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -287,6 +288,20 @@ QFuture<Result> InvidiousApi::setPreferences(const QInvidious::Preferences &pref
     QUrl url{invidiousInstance() % API_PREFERENCES};
 
     return post<Result>(authenticatedNetworkRequest(std::move(url)), QJsonDocument(preferences.toJson()).toJson(), checkIsReplyOk);
+}
+
+QFuture<VideoListResult> InvidiousApi::requestPlaylist(const QString &plid)
+{
+    QUrl url{invidiousInstance() % API_PLAYLISTS % u'/' % plid};
+
+    return get<VideoListResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> VideoListResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto obj = doc.object();
+
+            return VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
+        }
+        return invalidJsonError();
+    });
 }
 
 Error InvidiousApi::invalidJsonError()

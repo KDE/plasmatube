@@ -19,6 +19,8 @@ QVariant PlaylistsModel::data(const QModelIndex &index, int role) const
     const auto &comment = m_playlists[index.row()];
 
     switch (role) {
+    case PlaylistIdRole:
+        return comment.id();
     case TitleRole:
         return comment.title();
     case ThumbnailRole:
@@ -52,6 +54,7 @@ int PlaylistsModel::rowCount(const QModelIndex &parent) const
 QHash<int, QByteArray> PlaylistsModel::roleNames() const
 {
     return {
+        {PlaylistIdRole, "playlistId"},
         {TitleRole, "title"},
         {ThumbnailRole, "thumbnail"},
         {VideoCountRole, "videoCount"},

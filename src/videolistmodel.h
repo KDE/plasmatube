@@ -52,7 +52,8 @@ public:
         TrendingNews,
         RecommendedVideos,
         Channel,
-        History
+        History,
+        Playlist
     };
     Q_ENUM(QueryType)
 
@@ -71,6 +72,7 @@ public:
     Q_INVOKABLE void requestSearchResults(const SearchParameters *searchParameters);
     Q_INVOKABLE void requestChannel(const QString &ucid);
     Q_INVOKABLE void requestQuery(QueryType type);
+    Q_INVOKABLE void requestPlaylist(const QString &id);
     Q_INVOKABLE void refresh();
 
     bool isLoading() const;
@@ -99,6 +101,9 @@ private:
     QFutureWatcher<QInvidious::HistoryResult> *m_historyPageWatcher = nullptr;
     QFutureSynchronizer<QInvidious::VideoResult> m_historyFutureSync;
     QFutureWatcher<void> *m_historyFetchFinishWatcher = nullptr;
+
+    // playlist
+    QString m_playlist;
 
     QList<QInvidious::VideoBasicInfo> m_results;
 

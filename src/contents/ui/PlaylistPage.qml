@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -12,14 +12,20 @@ import org.kde.plasmatube.models 1.0
 import "utils.js" as Utils
 
 Kirigami.ScrollablePage {
+    required property string playlistId
+
     id: root
-
-    title: i18n("Playlists")
-
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+
+    supportsRefreshing: true
+    onRefreshingChanged: {
+        if (refreshing && !videoModel.isLoading) {
+            videoModel.refresh();
+        }
+    }
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
@@ -38,18 +44,43 @@ Kirigami.ScrollablePage {
         cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
 
         currentIndex: -1
-        model: PlaylistsModel {
+        model: VideoListModel {
             id: videoModel
+            onIsLoadingChanged: {
+                root.refreshing = isLoading
+            }
+            onErrorOccured: (errorText) => {
+                applicationWindow().showPassiveNotification(errorText)
+            }
         }
-        delegate: PlaylistGridItem {
-            required property string playlistId
-
+        delegate: VideoGridItem {
             width: gridView.cellWidth
             height: gridView.cellHeight
 
+            vid: model.id
+            thumbnail: model.thumbnail
+            liveNow: model.liveNow
+            length: model.length
+            title: model.title
+            author: model.author
+            authorId: model.authorId
+            description: model.description
+            viewCount: model.viewCount
+            publishedText: model.publishedText
+            watched: model.watched
+
             onClicked: {
-                pageStack.push("qrc:/PlaylistPage.qml", {playlistId, title})
+                applicationWindow().switchVideo(vid);
+                applicationWindow().openPlayer();
             }
         }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            visible: gridView.count === 0 && !root.refreshing
+            text: i18nc("@info:status", "Loading…")
+        }
     }
+
+    Component.onCompleted: videoModel.requestPlaylist(playlistId)
 }

@@ -22,6 +22,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <file alias="VideoGridItem.qml">contents/ui/VideoGridItem.qml</file>
         <file alias="PlaylistGridItem.qml">contents/ui/PlaylistGridItem.qml</file>
         <file alias="VideoListAction.qml">contents/ui/VideoListAction.qml</file>
+        <file alias="PlaylistPage.qml">contents/ui/PlaylistPage.qml</file>
         <file alias="videoplayer/TabIndicator.qml">contents/ui/videoplayer/TabIndicator.qml</file>
         <file alias="videoplayer/MinimizedVideoPlayer.qml">contents/ui/videoplayer/MinimizedVideoPlayer.qml</file>
         <file alias="videoplayer/FloatingVideoPreview.qml">contents/ui/videoplayer/FloatingVideoPreview.qml</file>

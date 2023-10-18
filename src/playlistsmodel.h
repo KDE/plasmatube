@@ -18,7 +18,7 @@ class PlaylistsModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
-    enum CustomRoles { TitleRole = Qt::UserRole, ThumbnailRole, VideoCountRole };
+    enum CustomRoles { PlaylistIdRole = Qt::UserRole, TitleRole, ThumbnailRole, VideoCountRole };
 
     explicit PlaylistsModel(QObject *parent = nullptr);
 

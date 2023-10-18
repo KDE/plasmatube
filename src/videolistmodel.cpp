@@ -216,6 +216,13 @@ void VideoListModel::requestChannel(const QString &ucid)
     handleQuery(PlasmaTube::instance().api()->requestChannel(ucid, m_currentPage), Channel);
 }
 
+void VideoListModel::requestPlaylist(const QString &id)
+{
+    m_playlist = id;
+    m_currentPage = 1;
+    handleQuery(PlasmaTube::instance().api()->requestPlaylist(id), Playlist);
+}
+
 void VideoListModel::requestQuery(QueryType type)
 {
     m_searchParameters.clear();

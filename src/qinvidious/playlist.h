@@ -15,6 +15,9 @@ public:
     FROM_JSON_OVERLOADS(Playlist)
     static Playlist fromJson(const QJsonObject &, Playlist &);
 
+    QString id() const;
+    void setId(const QString &id);
+
     QString title() const;
     void setTitle(const QString &name);
 
@@ -25,6 +28,7 @@ public:
     void setVideoCount(int count);
 
 private:
+    QString m_id;
     QString m_title;
     QString m_thumbnail;
     int m_videoCount;
