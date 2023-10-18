@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:39+0000\n"
+"POT-Creation-Date: 2023-10-18 01:42+0000\n"
 "PO-Revision-Date: 2023-03-20 11:13+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Invidious PlasmaTube YouTube Linus Jahn JSON Top\n"
 
-#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:84
-#: contents/ui/SearchPage.qml:181
+#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:85
+#: contents/ui/SearchPage.qml:205
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -30,36 +30,57 @@ msgstr "A carregar…"
 msgid "Videos"
 msgstr "Vídeos"
 
-#: contents/ui/components/BottomNavBar.qml:83
-#: contents/ui/components/Sidebar.qml:103 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:175
+#: contents/ui/components/BottomNavBar.qml:83 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:199
 #, kde-format
 msgid "Search"
 msgstr "Procurar"
 
-#: contents/ui/components/BottomNavBar.qml:94
-#: contents/ui/components/Sidebar.qml:124 contents/ui/SettingsPage.qml:15
+#: contents/ui/components/BottomNavBar.qml:94 contents/ui/SettingsPage.qml:15
 #: contents/ui/videoplayer/VideoControls.qml:239
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"
 
-#: contents/ui/components/Sidebar.qml:63 videolistmodel.cpp:19
+#: contents/ui/components/Comments.qml:71
+#, kde-format
+msgctxt "@action:button Load more comments"
+msgid "Load more"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:69 videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
 msgstr ""
 
-#: contents/ui/components/Sidebar.qml:76 videolistmodel.cpp:21
+#: contents/ui/components/Sidebar.qml:82
 #, kde-format
 msgid "Trending"
 msgstr "Tendências"
 
-#: contents/ui/components/Sidebar.qml:89 videolistmodel.cpp:17
+#: contents/ui/components/Sidebar.qml:95 videolistmodel.cpp:18
 #, kde-format
 msgid "Subscriptions"
 msgstr "Subscrições"
 
-#: contents/ui/FeedPage.qml:89
+#: contents/ui/components/Sidebar.qml:109 contents/ui/PlaylistsPage.qml:17
+#, kde-format
+msgid "Playlists"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:123
+#, kde-format
+msgid "History"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:139
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "Configuração"
+
+#: contents/ui/FeedPage.qml:90
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "No videos"
@@ -95,7 +116,7 @@ msgstr "Nome do Utilizador"
 msgid "Password"
 msgstr "Senha"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:54
+#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:139
 #, kde-format
 msgid "Log in"
 msgstr "Ligar"
@@ -115,32 +136,40 @@ msgstr "O utilizador não deverá ser vazio!"
 msgid "Password must not be empty!"
 msgstr "A senha não deverá ser vazia!"
 
-#: contents/ui/SearchPage.qml:70
+#: contents/ui/PlaylistGridItem.qml:73
+#, fuzzy, kde-format
+#| msgid "%1 views"
+msgid "%1 video"
+msgid_plural "%1 videos"
+msgstr[0] "%1 visualizações"
+msgstr[1] "%1 visualizações"
+
+#: contents/ui/SearchPage.qml:85
 #, kde-format
 msgid "Sort By:"
 msgstr "Ordenar Por:"
 
-#: contents/ui/SearchPage.qml:74
+#: contents/ui/SearchPage.qml:89
 #, kde-format
 msgid "Rating"
 msgstr "Classificação"
 
-#: contents/ui/SearchPage.qml:85
+#: contents/ui/SearchPage.qml:100
 #, kde-format
 msgid "Relevance"
 msgstr "Relevância"
 
-#: contents/ui/SearchPage.qml:97
+#: contents/ui/SearchPage.qml:112
 #, kde-format
 msgid "Upload Date"
 msgstr "Data de Envio"
 
-#: contents/ui/SearchPage.qml:108
+#: contents/ui/SearchPage.qml:123
 #, kde-format
 msgid "View Count"
 msgstr "Número de Visualizações"
 
-#: contents/ui/SearchPage.qml:175
+#: contents/ui/SearchPage.qml:199
 #, kde-format
 msgid "No results"
 msgstr "Sem resultados"
@@ -165,20 +194,37 @@ msgstr "Conta"
 msgid "Currently logged in as %1."
 msgstr "Autenticado de momento como %1."
 
-#: contents/ui/SettingsPage.qml:61
+#: contents/ui/SettingsPage.qml:59
+#, kde-format
+msgid "Autoplay"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:73
+#, kde-format
+msgid "Default homepage"
+msgstr ""
+
+#: contents/ui/SettingsPage.qml:146
 #, kde-format
 msgid "Log out"
 msgstr "Encerrar"
 
-#: contents/ui/SettingsPage.qml:70
+#: contents/ui/SettingsPage.qml:155
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Acerca do PlasmaTube"
 
-#: contents/ui/SettingsPage.qml:85
+#: contents/ui/SettingsPage.qml:170
 #, kde-format
 msgid "About KDE"
 msgstr "Acerca do KDE"
+
+#: contents/ui/TrendingPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Trending"
+msgctxt "@title Trending videos"
+msgid "Trending"
+msgstr "Tendências"
 
 #: contents/ui/VideoGridItem.qml:185
 #, kde-format
@@ -195,32 +241,32 @@ msgstr " • %1 visualizações"
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:336
+#: contents/ui/videoplayer/VideoPlayer.qml:338
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Cancelar a Subscrição (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:338
+#: contents/ui/videoplayer/VideoPlayer.qml:340
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Subscrever (%1)"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:348
+#: contents/ui/videoplayer/VideoPlayer.qml:350
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Por favor, autentique-se para subscrever os canais."
 
-#: contents/ui/videoplayer/VideoPlayer.qml:369
+#: contents/ui/videoplayer/VideoPlayer.qml:371
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizações"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:377
+#: contents/ui/videoplayer/VideoPlayer.qml:379
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 gostos"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:99
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:103
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "O utilizador ou a senha são incorrectos."
@@ -230,82 +276,110 @@ msgstr "O utilizador ou a senha são incorrectos."
 msgid "This instance has disabled the registration."
 msgstr "Esta instância desactivou o registo."
 
-#: main.cpp:43
+#: main.cpp:45
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:45 main.cpp:87
+#: main.cpp:47 main.cpp:91
 #, kde-format
 msgid "YouTube client"
 msgstr "Cliente do YouTube"
 
-#: main.cpp:47
+#: main.cpp:49
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:48
+#: main.cpp:50
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:48
+#: main.cpp:50
 #, kde-format
 msgid "Creator"
 msgstr "Criador"
 
-#: main.cpp:49
+#: main.cpp:51
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "José Nuno Pires"
 
-#: main.cpp:49
+#: main.cpp:51
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: plasmatube.cpp:200
+#: plasmatube.cpp:201
 #, kde-format
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:223
+#: qinvidious/invidiousapi.cpp:294
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "O servidor não devolveu qualquer JSON válido."
 
-#: qinvidious/invidiousapi.cpp:232
+#: qinvidious/invidiousapi.cpp:303
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "O servidor devolveu o código de estado %1"
 
-#: videolistmodel.cpp:23
+#: videolistmodel.cpp:22
 #, kde-format
-msgid "Trending Gaming"
-msgstr "Tendências nos Jogos"
+msgctxt "@action:button All trending videos"
+msgid "All"
+msgstr ""
 
-#: videolistmodel.cpp:25
+#: videolistmodel.cpp:24
 #, kde-format
-msgid "Trending Movies"
-msgstr "Tendências nos Filmes"
+msgctxt "@action:button Trending gaming videos"
+msgid "Gaming"
+msgstr ""
 
-#: videolistmodel.cpp:27
+#: videolistmodel.cpp:26
 #, kde-format
-msgid "Trending Music"
-msgstr "Tendências na Música"
+msgctxt "@action:button Trending movie videos"
+msgid "Movies"
+msgstr ""
 
-#: videolistmodel.cpp:29
+#: videolistmodel.cpp:28
 #, kde-format
-msgid "Trending News"
-msgstr "Tendências na Notícias"
+msgctxt "@action:button Trending music videos"
+msgid "Music"
+msgstr ""
 
-#: videolistmodel.cpp:189
+#: videolistmodel.cpp:30
+#, kde-format
+msgctxt "@action:button Trending news videos"
+msgid "News"
+msgstr ""
+
+#: videolistmodel.cpp:32
+#, kde-format
+msgctxt "@action:button Video watch history"
+msgid "History"
+msgstr ""
+
+#: videolistmodel.cpp:197
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Resultados da pesquisa por \"%1\""
+
+#~ msgid "Trending Gaming"
+#~ msgstr "Tendências nos Jogos"
+
+#~ msgid "Trending Movies"
+#~ msgstr "Tendências nos Filmes"
+
+#~ msgid "Trending Music"
+#~ msgstr "Tendências na Música"
+
+#~ msgid "Trending News"
+#~ msgstr "Tendências na Notícias"
 
 #~ msgid "Invidious Top"
 #~ msgstr "'Top' do Invidious"
