@@ -35,7 +35,7 @@ find_package(KF6KirigamiAddons 0.11 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 
-ecm_find_qmlmodule(org.kde.purpose 1.0)
+ecm_find_qmlmodule(org.kde.purpose 1.0 REQUIRED)
 
 if (NOT ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus)
