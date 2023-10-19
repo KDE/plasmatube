@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:42+0000\n"
+"POT-Creation-Date: 2023-10-19 01:41+0000\n"
 "PO-Revision-Date: 2023-06-22 09:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,125 +18,165 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: contents/ui/ChannelPage.qml:83 contents/ui/FeedPage.qml:85
-#: contents/ui/SearchPage.qml:205
+#: contents/ui/ChannelPage.qml:174 contents/ui/FeedPage.qml:96
+#: contents/ui/PlaylistPage.qml:88 contents/ui/SearchPage.qml:209
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "يحمّل..."
 
-#: contents/ui/components/BottomNavBar.qml:71
+#: contents/ui/components/BottomNavBar.qml:70
 #, kde-format
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: contents/ui/components/BottomNavBar.qml:83 contents/ui/SearchPage.qml:17
-#: contents/ui/SearchPage.qml:199
+#: contents/ui/components/BottomNavBar.qml:82 contents/ui/SearchPage.qml:17
+#: contents/ui/SearchPage.qml:203
 #, kde-format
 msgid "Search"
 msgstr "ابحث"
 
-#: contents/ui/components/BottomNavBar.qml:94 contents/ui/SettingsPage.qml:15
-#: contents/ui/videoplayer/VideoControls.qml:239
+#: contents/ui/components/BottomNavBar.qml:93 contents/ui/SettingsPage.qml:19
+#: contents/ui/videoplayer/VideoControls.qml:236
 #, kde-format
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: contents/ui/components/Comments.qml:71
+#: contents/ui/components/Comments.qml:70
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
 msgstr ""
 
-#: contents/ui/components/Sidebar.qml:69 videolistmodel.cpp:20
+#: contents/ui/components/ShareDialog.qml:33
+#, kde-format
+msgid "Sharing failed"
+msgstr ""
+
+#: contents/ui/components/ShareMenu.qml:17
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: contents/ui/components/Sidebar.qml:68 videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
 msgstr ""
 
-#: contents/ui/components/Sidebar.qml:82
+#: contents/ui/components/Sidebar.qml:81
 #, kde-format
 msgid "Trending"
 msgstr "الرائج"
 
-#: contents/ui/components/Sidebar.qml:95 videolistmodel.cpp:18
+#: contents/ui/components/Sidebar.qml:94 videolistmodel.cpp:18
 #, kde-format
 msgid "Subscriptions"
 msgstr "الاشتراكات"
 
-#: contents/ui/components/Sidebar.qml:109 contents/ui/PlaylistsPage.qml:17
+#: contents/ui/components/Sidebar.qml:108 contents/ui/PlaylistsPage.qml:15
 #, kde-format
 msgid "Playlists"
 msgstr ""
 
-#: contents/ui/components/Sidebar.qml:123
+#: contents/ui/components/Sidebar.qml:122
 #, kde-format
 msgid "History"
 msgstr ""
 
-#: contents/ui/components/Sidebar.qml:139
+#: contents/ui/components/Sidebar.qml:138
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "الإعدادات"
 
-#: contents/ui/FeedPage.qml:90
+#: contents/ui/components/SubscriptionButton.qml:56
+#, kde-format
+msgid "Unsubscribe (%1)"
+msgstr "أزل الاشتراك (%1)"
+
+#: contents/ui/components/SubscriptionButton.qml:58
+#, kde-format
+msgid "Subscribe (%1)"
+msgstr "اشترك (%1)"
+
+#: contents/ui/components/SubscriptionButton.qml:68
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr "من فضلك لج لتشترك في القنوات"
+
+#: contents/ui/FeedPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "No videos"
 msgstr "الفيديوهات"
 
-#: contents/ui/LoginPage.qml:15
+#: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
+#, kde-format
+msgid "Mark as unwatched"
+msgstr ""
+
+#: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
+#, kde-format
+msgid "Mark as watched"
+msgstr ""
+
+#: contents/ui/FeedPage.qml:126 contents/ui/FeedPage.qml:147
+#, kde-format
+msgid "Add to playlist"
+msgstr ""
+
+#: contents/ui/LoginPage.qml:16
 #, kde-format
 msgid "Sign in"
 msgstr "سجّل"
 
-#: contents/ui/LoginPage.qml:22
+#: contents/ui/LoginPage.qml:23
 #, kde-format
 msgid "Successfully logged in as %1."
 msgstr "نجح في الولوج كـ %1."
 
-#: contents/ui/LoginPage.qml:40
+#: contents/ui/LoginPage.qml:41
 #, kde-format
 msgid "Log in to an Invidious Account"
 msgstr "لج إلى حساب انفيديوس"
 
-#: contents/ui/LoginPage.qml:49
+#: contents/ui/LoginPage.qml:50
 #, kde-format
 msgid "Instance Url"
 msgstr "عنوان النسخة"
 
-#: contents/ui/LoginPage.qml:61
+#: contents/ui/LoginPage.qml:62
 #, kde-format
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: contents/ui/LoginPage.qml:72
+#: contents/ui/LoginPage.qml:73
 #, kde-format
 msgid "Password"
 msgstr "كلمة السّرّ"
 
-#: contents/ui/LoginPage.qml:84 contents/ui/SettingsPage.qml:139
+#: contents/ui/LoginPage.qml:85 contents/ui/SettingsPage.qml:145
 #, kde-format
 msgid "Log in"
 msgstr "سجل الدخول"
 
-#: contents/ui/LoginPage.qml:91
+#: contents/ui/LoginPage.qml:92
 #, kde-format
 msgid "Instance URL must not be empty!"
 msgstr "يجب ألا يكون العنوان فارغًا!"
 
-#: contents/ui/LoginPage.qml:96
+#: contents/ui/LoginPage.qml:97
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "يجب ألا يكون الاسم فارغًا!"
 
-#: contents/ui/LoginPage.qml:101
+#: contents/ui/LoginPage.qml:102
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "يجب ألا تكون كلمة السر فارغة!"
 
-#: contents/ui/PlaylistGridItem.qml:73
+#: contents/ui/PlaylistGridItem.qml:70
 #, fuzzy, kde-format
 #| msgid "%1 views"
 msgid "%1 video"
@@ -148,77 +188,82 @@ msgstr[3] "المشاهدات %1"
 msgstr[4] "المشاهدات %1"
 msgstr[5] "المشاهدات %1"
 
-#: contents/ui/SearchPage.qml:85
+#: contents/ui/PlaylistPage.qml:112
+#, kde-format
+msgid "Remove from playlist"
+msgstr ""
+
+#: contents/ui/SearchPage.qml:89
 #, kde-format
 msgid "Sort By:"
 msgstr "افرز حسب:"
 
-#: contents/ui/SearchPage.qml:89
+#: contents/ui/SearchPage.qml:93
 #, kde-format
 msgid "Rating"
 msgstr "التّقييم"
 
-#: contents/ui/SearchPage.qml:100
+#: contents/ui/SearchPage.qml:104
 #, kde-format
 msgid "Relevance"
 msgstr "الصلة"
 
-#: contents/ui/SearchPage.qml:112
+#: contents/ui/SearchPage.qml:116
 #, kde-format
 msgid "Upload Date"
 msgstr "تاريخ الرفع"
 
-#: contents/ui/SearchPage.qml:123
+#: contents/ui/SearchPage.qml:127
 #, kde-format
 msgid "View Count"
 msgstr "عدد المشاهدات"
 
-#: contents/ui/SearchPage.qml:199
+#: contents/ui/SearchPage.qml:203
 #, kde-format
 msgid "No results"
 msgstr "لا نتائج"
 
-#: contents/ui/SettingsPage.qml:18
+#: contents/ui/SettingsPage.qml:22
 #, kde-format
 msgid "Invidious"
 msgstr "فردي"
 
-#: contents/ui/SettingsPage.qml:23
+#: contents/ui/SettingsPage.qml:27
 #, kde-format
 msgid "Instance"
 msgstr "المثيل"
 
-#: contents/ui/SettingsPage.qml:31
+#: contents/ui/SettingsPage.qml:35
 #, kde-format
 msgid "Account"
 msgstr "الحساب"
 
-#: contents/ui/SettingsPage.qml:40
+#: contents/ui/SettingsPage.qml:44
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "والج ك‍ %1."
 
-#: contents/ui/SettingsPage.qml:59
+#: contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Autoplay"
 msgstr ""
 
-#: contents/ui/SettingsPage.qml:73
+#: contents/ui/SettingsPage.qml:77
 #, kde-format
 msgid "Default homepage"
 msgstr ""
 
-#: contents/ui/SettingsPage.qml:146
+#: contents/ui/SettingsPage.qml:152
 #, kde-format
 msgid "Log out"
 msgstr "اخرج"
 
-#: contents/ui/SettingsPage.qml:155
+#: contents/ui/SettingsPage.qml:161
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "عن بلازما تيوب"
 
-#: contents/ui/SettingsPage.qml:170
+#: contents/ui/SettingsPage.qml:176
 #, kde-format
 msgid "About KDE"
 msgstr "عن كِيدِي"
@@ -230,47 +275,32 @@ msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "الرائج"
 
-#: contents/ui/VideoGridItem.qml:185
+#: contents/ui/VideoGridItem.qml:187
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• المشاهدات %1 • %2"
 
-#: contents/ui/VideoListItem.qml:179
+#: contents/ui/VideoListItem.qml:180
 #, kde-format
 msgid " • %1 views"
 msgstr " • المشاهدات %1"
 
-#: contents/ui/VideoListItem.qml:187
+#: contents/ui/VideoListItem.qml:188
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:338
-#, kde-format
-msgid "Unsubscribe (%1)"
-msgstr "أزل الاشتراك (%1)"
-
-#: contents/ui/videoplayer/VideoPlayer.qml:340
-#, kde-format
-msgid "Subscribe (%1)"
-msgstr "اشترك (%1)"
-
-#: contents/ui/videoplayer/VideoPlayer.qml:350
-#, kde-format
-msgid "Please log in to subscribe to channels."
-msgstr "من فضلك لج لتشترك في القنوات"
-
-#: contents/ui/videoplayer/VideoPlayer.qml:371
+#: contents/ui/videoplayer/VideoPlayer.qml:317
 #, kde-format
 msgid "%1 views"
 msgstr "المشاهدات %1"
 
-#: contents/ui/videoplayer/VideoPlayer.qml:379
+#: contents/ui/videoplayer/VideoPlayer.qml:325
 #, kde-format
 msgid "%1 Likes"
 msgstr "الإعجابات %1"
 
-#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:103
+#: logincontroller.cpp:46 qinvidious/invidiousapi.cpp:105
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "اسم المستخدم أو كلمة المرور خاطئة."
@@ -280,54 +310,54 @@ msgstr "اسم المستخدم أو كلمة المرور خاطئة."
 msgid "This instance has disabled the registration."
 msgstr "عطلة هذه النسخة التسجيل"
 
-#: main.cpp:45
+#: main.cpp:46
 #, kde-format
 msgid "PlasmaTube"
 msgstr "بلازما تيوب"
 
-#: main.cpp:47 main.cpp:91
+#: main.cpp:48 main.cpp:72
 #, kde-format
 msgid "YouTube client"
 msgstr "عميل يوتيوب"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© لينوس جان"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Linus Jahn"
 msgstr "لينوس جان"
 
-#: main.cpp:50
+#: main.cpp:51
 #, kde-format
 msgid "Creator"
 msgstr "المُنشئ"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "زايد السعيدي"
 
-#: main.cpp:51
+#: main.cpp:52
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: plasmatube.cpp:201
+#: plasmatube.cpp:203
 #, kde-format
 msgid "Playing video"
 msgstr ""
 
-#: qinvidious/invidiousapi.cpp:294
+#: qinvidious/invidiousapi.cpp:344
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "أرجع الخادوم ملف جوسون غير صحيح."
 
-#: qinvidious/invidiousapi.cpp:303
+#: qinvidious/invidiousapi.cpp:353
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "أرجع الخادوم رمز حالة %1"
