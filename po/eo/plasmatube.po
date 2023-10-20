@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:41+0000\n"
-"PO-Revision-Date: 2023-10-18 21:55+0100\n"
+"PO-Revision-Date: 2023-10-19 07:22+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -50,12 +50,12 @@ msgstr "Ŝargi pliajn"
 #: contents/ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Kundividado malsukcesis"
 
 #: contents/ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Kundivi"
 
 #: contents/ui/components/Sidebar.qml:68 videolistmodel.cpp:20
 #, kde-format
@@ -111,18 +111,17 @@ msgstr "Neniuj filmetoj"
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "Marki kiel neobservita"
 
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "Marki kiel observita"
 
 #: contents/ui/FeedPage.qml:126 contents/ui/FeedPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Add to playlist"
-msgstr "Aŭtomata ludado"
+msgstr "Aldoni al ludlisto"
 
 #: contents/ui/LoginPage.qml:16
 #, kde-format
@@ -184,7 +183,7 @@ msgstr[1] "%1 filmetoj"
 #: contents/ui/PlaylistPage.qml:112
 #, kde-format
 msgid "Remove from playlist"
-msgstr ""
+msgstr "Forigi el ludlisto"
 
 #: contents/ui/SearchPage.qml:89
 #, kde-format

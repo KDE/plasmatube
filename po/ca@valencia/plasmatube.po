@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:41+0000\n"
-"PO-Revision-Date: 2023-10-18 11:30+0200\n"
+"PO-Revision-Date: 2023-10-19 12:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -53,12 +53,12 @@ msgstr "Carrega'n més"
 #: contents/ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Ha fallat la compartició"
 
 #: contents/ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Compartix"
 
 #: contents/ui/components/Sidebar.qml:68 videolistmodel.cpp:20
 #, kde-format
@@ -114,18 +114,17 @@ msgstr "Sense vídeos"
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "Marca com a no vist"
 
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "Marca com a vist"
 
 #: contents/ui/FeedPage.qml:126 contents/ui/FeedPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Add to playlist"
-msgstr "Reproducció automàtica"
+msgstr "Afig a la llista de reproducció"
 
 #: contents/ui/LoginPage.qml:16
 #, kde-format
@@ -187,7 +186,7 @@ msgstr[1] "%1 vídeos"
 #: contents/ui/PlaylistPage.qml:112
 #, kde-format
 msgid "Remove from playlist"
-msgstr ""
+msgstr "Elimina de la llista de reproducció"
 
 #: contents/ui/SearchPage.qml:89
 #, kde-format

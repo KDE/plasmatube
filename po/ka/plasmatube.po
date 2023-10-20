@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:41+0000\n"
-"PO-Revision-Date: 2023-09-17 06:31+0200\n"
+"PO-Revision-Date: 2023-10-19 06:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: contents/ui/ChannelPage.qml:174 contents/ui/FeedPage.qml:96
 #: contents/ui/PlaylistPage.qml:88 contents/ui/SearchPage.qml:209
@@ -46,17 +46,17 @@ msgstr "პარამეტრები"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "მეტის ჩატვირთვა"
 
 #: contents/ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "გაზიარების შეცდომა"
 
 #: contents/ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "გაზიარება"
 
 #: contents/ui/components/Sidebar.qml:68 videolistmodel.cpp:20
 #, kde-format
@@ -76,19 +76,18 @@ msgstr "გამოწერები"
 #: contents/ui/components/Sidebar.qml:108 contents/ui/PlaylistsPage.qml:15
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "დასაკრავი სიები"
 
 #: contents/ui/components/Sidebar.qml:122
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "ისტორია"
 
 #: contents/ui/components/Sidebar.qml:138
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr "პარამეტრები"
+msgstr "მორგება"
 
 #: contents/ui/components/SubscriptionButton.qml:56
 #, kde-format
@@ -113,17 +112,17 @@ msgstr "ვიდეოების გარეშე"
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "უნახავად მონიშვნა"
 
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "ნანახად მონიშვნა"
 
 #: contents/ui/FeedPage.qml:126 contents/ui/FeedPage.qml:147
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "დასაკრავ სიაში დამატება"
 
 #: contents/ui/LoginPage.qml:16
 #, kde-format
@@ -176,17 +175,16 @@ msgid "Password must not be empty!"
 msgstr "პაროლი ცარიელი არ შეიძლება, იყოს!"
 
 #: contents/ui/PlaylistGridItem.qml:70
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "%1 ნახვა"
-msgstr[1] "%1 ნახვა"
+msgstr[0] "%1 ვიდეო"
+msgstr[1] "%1 ვიდეო"
 
 #: contents/ui/PlaylistPage.qml:112
 #, kde-format
 msgid "Remove from playlist"
-msgstr ""
+msgstr "დასაკრავი სიიდან წაშლა"
 
 #: contents/ui/SearchPage.qml:89
 #, kde-format
@@ -241,12 +239,12 @@ msgstr "ამჟამად შესული ბრძანდებით,
 #: contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "ავტომატური დაკვრა"
 
 #: contents/ui/SettingsPage.qml:77
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "ნაგულისხმევი საწყისი გვერდი"
 
 #: contents/ui/SettingsPage.qml:152
 #, kde-format
@@ -264,8 +262,7 @@ msgid "About KDE"
 msgstr "KDE-ს შესახებ"
 
 #: contents/ui/TrendingPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "ტრენდები"
@@ -361,37 +358,37 @@ msgstr "სერვერის დაბრუნებული სტატ�
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "ყველა"
 
 #: videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "თამაშები"
 
 #: videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "ფილმები"
 
 #: videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "მუსიკა"
 
 #: videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "სიახლეები"
 
 #: videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "ისტორია"
 
 #: videolistmodel.cpp:197
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:41+0000\n"
-"PO-Revision-Date: 2023-10-18 17:39+0300\n"
+"PO-Revision-Date: 2023-10-19 17:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -51,12 +51,12 @@ msgstr "Завантажити більше"
 #: contents/ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Не вдалося оприлюднити"
 
 #: contents/ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Оприлюднити"
 
 #: contents/ui/components/Sidebar.qml:68 videolistmodel.cpp:20
 #, kde-format
@@ -112,18 +112,17 @@ msgstr "Немає відео"
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "Позначити як непереглянуте"
 
 #: contents/ui/FeedPage.qml:114 contents/ui/PlaylistPage.qml:100
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "Позначити як переглянуте"
 
 #: contents/ui/FeedPage.qml:126 contents/ui/FeedPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Add to playlist"
-msgstr "Автовідтворення"
+msgstr "Додати до списку відтворення"
 
 #: contents/ui/LoginPage.qml:16
 #, kde-format
@@ -187,7 +186,7 @@ msgstr[3] "%1 відео"
 #: contents/ui/PlaylistPage.qml:112
 #, kde-format
 msgid "Remove from playlist"
-msgstr ""
+msgstr "Вилучити зі списку відтворення"
 
 #: contents/ui/SearchPage.qml:89
 #, kde-format
