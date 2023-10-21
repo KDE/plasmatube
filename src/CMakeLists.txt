@@ -51,14 +51,25 @@ qt_target_qml_sources(plasmatube
     QML_FILES
         contents/ui/components/BottomNavBar.qml
         contents/ui/components/Comments.qml
+        contents/ui/components/PlaylistGridItem.qml
         contents/ui/components/ShareDialog.qml
         contents/ui/components/ShareMenu.qml
         contents/ui/components/Sidebar.qml
+        contents/ui/components/SourceSwitcher.qml
         contents/ui/components/SubscriptionButton.qml
+        contents/ui/components/VideoGridItem.qml
+        contents/ui/components/VideoListAction.qml
+        contents/ui/components/VideoListItem.qml
+        contents/ui/components/VideoMenu.qml
 
         contents/ui/loginflow/AddInvidiousPage.qml
         contents/ui/loginflow/AddPeerTubePage.qml
         contents/ui/loginflow/WelcomePage.qml
+
+        contents/ui/settings/InvidiousSourcePage.qml
+        contents/ui/settings/NetworkProxyPage.qml
+        contents/ui/settings/PeerTubeSourcePage.qml
+        contents/ui/settings/SettingsPage.qml
 
         contents/ui/videoplayer/MinimizedVideoPlayer.qml
         contents/ui/videoplayer/PictureInPictureVideo.qml
@@ -71,26 +82,16 @@ qt_target_qml_sources(plasmatube
         contents/ui/ChannelPage.qml
         contents/ui/FeedPage.qml
         contents/ui/HistoryPage.qml
-        contents/ui/InvidiousSourcePage.qml
         contents/ui/LoginPage.qml
         contents/ui/Main.qml
-        contents/ui/NetworkProxyPage.qml
-        contents/ui/PeerTubeSourcePage.qml
-        contents/ui/PlaylistGridItem.qml
         contents/ui/PlaylistPage.qml
         contents/ui/PlaylistsPage.qml
         contents/ui/PopularPage.qml
         contents/ui/SearchPage.qml
-        contents/ui/SettingsPage.qml
         contents/ui/SubscriptionsPage.qml
-        contents/ui/SourceSwitcher.qml
         contents/ui/TrendingPage.qml
-        contents/ui/VideoGridItem.qml
-        contents/ui/VideoListAction.qml
-        contents/ui/VideoListItem.qml
-        contents/ui/VideoMenu.qml
     RESOURCES
-        contents/ui/utils.js
+        contents/ui/components/utils.js
 )
 
 set_source_files_properties(../org.kde.plasmatube.svg PROPERTIES

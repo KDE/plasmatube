@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
 import org.kde.plasmatube
-import "../utils.js" as Utils
+import "../components/utils.js" as Utils
 import "../"
 import "../components"
 

@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.plasmatube
-import "utils.js" as Utils
+import "components/utils.js" as Utils
 import "components"
 
 Kirigami.ScrollablePage {
