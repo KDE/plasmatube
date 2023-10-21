@@ -9,8 +9,8 @@
 #include <QUrl>
 #include <QtQml/qqmlregistration.h>
 
+#include "abstractapi.h"
 #include "comment.h"
-#include "invidiousapi.h"
 
 class CommentsModel : public QAbstractListModel
 {

@@ -9,25 +9,52 @@ using namespace Qt::StringLiterals;
 
 VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &info)
 {
-    info.setVideoId(obj.value("videoId"_L1).toString());
-    info.setTitle(obj.value("title"_L1).toString());
-    info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds"_L1).toInt()));
-    info.setViewCount(obj.value("viewCount"_L1).toInt());
-    info.setAuthor(obj.value("author"_L1).toString());
-    info.setAuthorId(obj.value("authorId"_L1).toString());
-    info.setAuthorUrl(obj.value("authorUrl"_L1).toString());
-    // FIXME: 2038 problem (timestamp is only 32 bit long)
-    info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt()));
-    info.setPublishedText(obj.value("publishedText"_L1).toString());
-    info.setDescription(obj.value("description"_L1).toString());
-    info.setDescriptionHtml(obj.value("descriptionHtml"_L1).toString());
-    info.setLiveNow(obj.value("liveNow"_L1).toBool(false));
-    info.setPaid(obj.value("paid"_L1).toBool(false));
-    info.setPremium(obj.value("premium"_L1).toBool(false));
-    info.setUpcoming(obj.value("isUpcoming"_L1).toBool(false));
-    parseArray(obj.value("videoThumbnails"_L1), info.m_videoThumbnails);
-    if (obj.contains("indexId"_L1)) {
-        info.setIndexId(obj.value("indexId"_L1).toString());
+    const bool isPeerTube = obj.contains("id"_L1);
+    if (isPeerTube) {
+        info.setVideoId(obj.value("uuid"_L1).toString());
+        info.setTitle(obj.value("name"_L1).toString());
+        info.setLength(QTime(0, 0).addSecs(obj.value("duration"_L1).toInt()));
+        info.setViewCount(obj.value("views"_L1).toInt());
+
+        const auto channel = obj.value("channel"_L1).toObject();
+
+        info.setAuthor(channel.value("displayName"_L1).toString());
+        info.setAuthorId(channel.value("name"_L1).toString());
+        info.setAuthorUrl(channel.value("url"_L1).toString());
+        // FIXME: 2038 problem (timestamp is only 32 bit long)
+        info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("publishedAt"_L1).toInt()));
+        // info.setPublishedText(obj.value("publishedText"_L1).toString());
+        info.setDescription(obj.value("description"_L1).toString());
+        info.setDescriptionHtml(obj.value("description"_L1).toString());
+        info.setLiveNow(obj.value("isLive"_L1).toBool(false));
+        info.setPaid(false);
+        info.setPremium(false);
+        info.setUpcoming(false);
+
+        VideoThumbnail thumbnail;
+        thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnailPath"_L1).toString()));
+        info.m_videoThumbnails.push_back(thumbnail);
+    } else {
+        info.setVideoId(obj.value("videoId"_L1).toString());
+        info.setTitle(obj.value("title"_L1).toString());
+        info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds"_L1).toInt()));
+        info.setViewCount(obj.value("viewCount"_L1).toInt());
+        info.setAuthor(obj.value("author"_L1).toString());
+        info.setAuthorId(obj.value("authorId"_L1).toString());
+        info.setAuthorUrl(obj.value("authorUrl"_L1).toString());
+        // FIXME: 2038 problem (timestamp is only 32 bit long)
+        info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt()));
+        info.setPublishedText(obj.value("publishedText"_L1).toString());
+        info.setDescription(obj.value("description"_L1).toString());
+        info.setDescriptionHtml(obj.value("descriptionHtml"_L1).toString());
+        info.setLiveNow(obj.value("liveNow"_L1).toBool(false));
+        info.setPaid(obj.value("paid"_L1).toBool(false));
+        info.setPremium(obj.value("premium"_L1).toBool(false));
+        info.setUpcoming(obj.value("isUpcoming"_L1).toBool(false));
+        parseArray(obj.value("videoThumbnails"_L1), info.m_videoThumbnails);
+        if (obj.contains("indexId"_L1)) {
+            info.setIndexId(obj.value("indexId"_L1).toString());
+        }
     }
     return info;
 }

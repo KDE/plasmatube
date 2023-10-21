@@ -9,13 +9,24 @@ using namespace Qt::StringLiterals;
 
 Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
 {
-    channel.setName(obj["author"_L1].toString());
-    const QJsonValue firstAvatar = obj["authorThumbnails"_L1].toArray().first();
-    channel.setAvatar(firstAvatar.toObject()["url"_L1].toString());
-    const QJsonValue firstBanners = obj["authorBanners"_L1].toArray().first();
-    channel.setBanner(firstBanners.toObject()["url"_L1].toString());
-    channel.setDescription(obj["description"_L1].toString());
-    channel.setSubCount(obj["subCount"_L1].toInt());
+    const bool isPeerTube = obj.contains("id"_L1);
+    if (isPeerTube) {
+        channel.setName(obj["name"_L1].toString());
+        channel.setDescription(obj["description"_L1].toString());
+        channel.setSubCount(obj["followersCount"_L1].toInt());
+        channel.setAvatar(obj["avatar"_L1].toObject()["path"_L1].toString());
+        const QJsonValue firstBanners = obj["banners"_L1].toArray().first();
+        channel.setBanner(firstBanners.toObject()["path"_L1].toString());
+    } else {
+        channel.setName(obj["author"_L1].toString());
+        const QJsonValue firstAvatar = obj["authorThumbnails"_L1].toArray().first();
+        channel.setAvatar(firstAvatar.toObject()["url"_L1].toString());
+        const QJsonValue firstBanners = obj["authorBanners"_L1].toArray().first();
+        channel.setBanner(firstBanners.toObject()["url"_L1].toString());
+        channel.setDescription(obj["description"_L1].toString());
+        channel.setSubCount(obj["subCount"_L1].toInt());
+    }
+
     return channel;
 }
 

@@ -14,7 +14,7 @@
 
 namespace QInvidious
 {
-    class InvidiousApi;
+class AbstractApi;
 }
 
 class PlasmaTube : public QObject
@@ -39,7 +39,7 @@ public:
         return inst;
     }
 
-    QInvidious::InvidiousApi *api() const;
+    QInvidious::AbstractApi *api() const;
     VideoController *videoController() const;
 
     bool isLoggedIn() const;
@@ -83,7 +83,7 @@ private:
 
     void fetchPreferences();
 
-    QInvidious::InvidiousApi *const m_api;
+    QInvidious::AbstractApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
     unsigned int screenSaverDbusCookie = 0;

@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "qinvidious/invidiousapi.h"
+#include "qinvidious/invidious/invidiousapi.h"
 
 template<typename T>
 class QFutureWatcher;

@@ -6,8 +6,8 @@
 
 #include <QtQml/qqmlregistration.h>
 
+#include "abstractapi.h"
 #include "subscriptionwatcher.h"
-#include "qinvidious/invidiousapi.h"
 
 template<typename T>
 class QFutureWatcher;

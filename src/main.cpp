@@ -10,7 +10,6 @@
 #include "videomodel.h"
 #include "mpvobject.h"
 
-#include "qinvidious/invidiousapi.h"
 #include "qinvidious/searchparameters.h"
 
 #include <clocale>

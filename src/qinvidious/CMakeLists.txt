@@ -9,6 +9,14 @@ qt_add_qml_module(qinvidious
         VERSION 1.0)
 
 target_sources(qinvidious PRIVATE
+        invidious/invidiousapi.cpp
+        invidious/invidiousapi.h
+
+        peertube/peertubeapi.cpp
+        peertube/peertubeapi.h
+
+        abstractapi.h
+        abstractapi.cpp
         caption.cpp
         caption.h
         channel.cpp
@@ -17,8 +25,6 @@ target_sources(qinvidious PRIVATE
         comment.h
         credentials.cpp
         credentials.h
-        invidiousapi.cpp
-        invidiousapi.h
         mediaformat.cpp
         mediaformat.h
         playlist.cpp

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videocontroller.h"
+#include "plasmatube.h"
 
 VideoController::VideoController(QObject *parent)
     : QObject(parent)
@@ -80,7 +81,7 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     }
 
     m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
-    m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << QStringLiteral("ytdl://") + m_videoModel->videoId());
+    m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << PlasmaTube::instance().api()->resolveVideoUrl(m_videoModel->videoId()));
     m_currentPlayer->setOption(QStringLiteral("ytdl-format"), QStringLiteral("best"));
 
     // Restore old position if we had an existing player

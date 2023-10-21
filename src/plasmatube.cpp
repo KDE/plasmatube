@@ -13,17 +13,16 @@
 #include <QSettings>
 #include <QStringBuilder>
 
-#include "qinvidious/invidiousapi.h"
-
 #include "PlasmaTubeSettings.h"
 #include "constants.h"
+#include "qinvidious/invidious/invidiousapi.h"
 
 PlasmaTube::PlasmaTube(QObject *parent)
     : QObject(parent)
-    , m_api(new QInvidious::Api(new QNetworkAccessManager(this), this))
+    , m_api(new QInvidious::InvidiousApi(new QNetworkAccessManager(this), this))
     , m_controller(new VideoController(this))
 {
-    connect(m_api, &QInvidious::Api::credentialsChanged, this, &PlasmaTube::credentialsChanged);
+    connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &PlasmaTube::credentialsChanged);
 
     const auto locale = QLocale::system().name().toLower().split(u'_');
     if (locale.size() == 2) {
@@ -52,7 +51,7 @@ PlasmaTube &PlasmaTube::instance()
     return instance;
 }
 
-QInvidious::InvidiousApi *PlasmaTube::api() const
+QInvidious::AbstractApi *PlasmaTube::api() const
 {
     return m_api;
 }

@@ -5,8 +5,9 @@
 #pragma once
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
-#include "qinvidious/invidiousapi.h"
+#include "qinvidious/abstractapi.h"
 
 class LogInController : public QObject
 {

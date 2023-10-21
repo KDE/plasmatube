@@ -7,8 +7,8 @@
 
 #include <QtQml/qqmlregistration.h>
 
+#include "abstractapi.h"
 #include "qinvidious/video.h"
-#include "qinvidious/invidiousapi.h"
 
 template<typename T>
 class QFutureWatcher;

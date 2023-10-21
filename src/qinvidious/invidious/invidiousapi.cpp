@@ -33,52 +33,8 @@ using namespace QInvidious;
 using namespace Qt::StringLiterals;
 
 InvidiousApi::InvidiousApi(QNetworkAccessManager *netManager, QObject *parent)
-    : QObject(parent),
-      m_netManager(netManager)
+    : AbstractApi(netManager, parent)
 {
-}
-
-QString InvidiousApi::region() const
-{
-    return m_region;
-}
-
-void InvidiousApi::setRegion(const QString &region)
-{
-    m_region = region;
-}
-
-QString InvidiousApi::language() const
-{
-    return m_language;
-}
-
-void InvidiousApi::setLanguage(const QString &language)
-{
-    m_language = language;
-}
-
-Credentials InvidiousApi::credentials() const
-{
-    return m_credentials;
-}
-
-void InvidiousApi::setCredentials(const Credentials &credentials)
-{
-    m_credentials = credentials;
-    Q_EMIT credentialsChanged();
-}
-
-void InvidiousApi::setCredentials(const QString &apiInstance)
-{
-    m_credentials = Credentials();
-    m_credentials.setApiInstance(apiInstance);
-    Q_EMIT credentialsChanged();
-}
-
-QString InvidiousApi::invidiousInstance() const
-{
-    return m_credentials.apiInstance();
 }
 
 QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView password)
@@ -92,8 +48,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
-    return post<LogInResult>(std::move(request), params.toString().toUtf8(),
-                             [=](QNetworkReply *reply) -> LogInResult {
+    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
         const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
 
         if (!cookies.isEmpty()) {
@@ -108,8 +63,7 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
 
 QFuture<VideoResult> InvidiousApi::requestVideo(QStringView videoId)
 {
-    return get<VideoResult>(QNetworkRequest(videoUrl(videoId)),
-                            [=](QNetworkReply *reply) -> VideoResult {
+    return get<VideoResult>(QNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             return Video::fromJson(doc);
         }
@@ -117,12 +71,18 @@ QFuture<VideoResult> InvidiousApi::requestVideo(QStringView videoId)
     });
 }
 
+QString InvidiousApi::resolveVideoUrl(QStringView videoId)
+{
+    return QStringLiteral("ytdl://%1").arg(videoId);
+}
+
 QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
 {
     return requestVideoList(Search, QStringLiteral(""), parameters.toQueryParameters());
 }
 
-QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page) {
+QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page)
+{
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("page"), QString::number(page));
 
@@ -158,7 +118,6 @@ QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
 
 QFuture<VideoListResult> InvidiousApi::requestChannel(QStringView query, qint32 page)
 {
-
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("page"), QString::number(page));
     return requestVideoList(Channel, query.toString(), parameters);
@@ -166,14 +125,12 @@ QFuture<VideoListResult> InvidiousApi::requestChannel(QStringView query, qint32 
 
 QFuture<SubscriptionsResult> InvidiousApi::requestSubscriptions()
 {
-    return get<SubscriptionsResult>(authenticatedNetworkRequest(subscriptionsUrl()),
-                                    [=](QNetworkReply *reply) -> SubscriptionsResult {
+    return get<SubscriptionsResult>(authenticatedNetworkRequest(subscriptionsUrl()), [=](QNetworkReply *reply) -> SubscriptionsResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto array = doc.array();
 
             QList<QString> subscriptions;
-            std::transform(array.cbegin(), array.cend(), std::back_inserter(subscriptions),
-                           [](const QJsonValue &val) {
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(subscriptions), [](const QJsonValue &val) {
                 return val.toObject().value(QStringLiteral("authorId")).toString();
             });
             return subscriptions;
@@ -357,15 +314,14 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
 {
     auto url = videoListUrl(queryType, urlExtension, parameters);
     // Feed requests require to be authenticated
-    auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url))
-                                     : QNetworkRequest(url);
+    auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url)) : QNetworkRequest(url);
 
     return get<VideoListResult>(std::move(request), [=](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             if (queryType == Feed) {
                 const auto obj = doc.object();
 
-              // add videos marked as notification
+                // add videos marked as notification
                 auto results = VideoBasicInfo::fromJson(obj.value("notifications"_L1).toArray());
                 for (auto &video : results) {
                     video.setIsNotification(true);
@@ -375,19 +331,19 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
                 results << VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
                 return results;
             } else if (queryType == Channel) {
-              const auto obj = doc.object();
+                const auto obj = doc.object();
 
-              auto results = VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
-              return results;
+                auto results = VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
+                return results;
             } else {
-              QList<VideoBasicInfo> results;
-              for (auto value : doc.array()) {
-                  if (value.isObject() && value.toObject()["type"_L1] == "video"_L1) {
-                      results << VideoBasicInfo::fromJson(value.toObject());
-                  }
-              }
+                QList<VideoBasicInfo> results;
+                for (auto value : doc.array()) {
+                    if (value.isObject() && value.toObject()["type"_L1] == "video"_L1) {
+                        results << VideoBasicInfo::fromJson(value.toObject());
+                    }
+                }
 
-              return results;
+                return results;
             }
         }
         return invalidJsonError();
@@ -398,9 +354,7 @@ QNetworkRequest InvidiousApi::authenticatedNetworkRequest(QUrl &&url)
 {
     QNetworkRequest request(url);
     if (!m_credentials.isAnonymous()) {
-        const QList<QNetworkCookie> cookies {
-            m_credentials.cookie().value()
-        };
+        const QList<QNetworkCookie> cookies{m_credentials.cookie().value()};
         request.setHeader(QNetworkRequest::CookieHeader, QVariant::fromValue(cookies));
     }
     // some invidious instances redirect some calls using reverse proxies
@@ -435,7 +389,7 @@ QUrl InvidiousApi::videoUrl(QStringView videoId) const
     return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
 }
 
-QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString>& parameters) const
+QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters) const
 {
     auto urlString = invidiousInstance();
     auto query = genericUrlQuery();
@@ -458,8 +412,7 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExten
         break;
     }
 
-    if (!urlExtension.isEmpty())
-    {
+    if (!urlExtension.isEmpty()) {
         urlString.append(QStringLiteral("/"));
         urlString.append(urlExtension);
     }
@@ -480,7 +433,6 @@ QUrl InvidiousApi::subscriptionsUrl() const
     query.addQueryItem(QStringLiteral("fields"), QStringLiteral("authorId"));
     url.setQuery(query);
     return url;
-
 }
 
 QUrl InvidiousApi::subscribeUrl(QStringView channelId) const

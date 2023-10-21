@@ -5,7 +5,7 @@
 #ifndef SEARCHMODEL_H
 #define SEARCHMODEL_H
 
-#include "qinvidious/invidiousapi.h"
+#include "abstractapi.h"
 #include "qinvidious/searchparameters.h"
 #include "qinvidious/videobasicinfo.h"
 #include <QAbstractListModel>

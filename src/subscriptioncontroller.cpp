@@ -6,8 +6,6 @@
 
 #include <QFutureWatcher>
 
-#include "qinvidious/invidiousapi.h"
-
 #include "plasmatube.h"
 
 SubscriptionController::SubscriptionController(QObject *parent)
