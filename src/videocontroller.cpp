@@ -89,7 +89,7 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
             m_currentPlayer->seek(*oldPosition);
             qDebug() << "Set old position...";
 
-            disconnect(this);
+            disconnect(m_currentPlayer);
         });
     }
 }
