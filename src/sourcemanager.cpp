@@ -87,6 +87,8 @@ bool SourceManager::canRemove() const
 
 void SourceManager::removeSource(VideoSource *source)
 {
+    source->logOut();
+
     auto config = KSharedConfig::openStateConfig();
     config->deleteGroup(QStringLiteral("source-%1").arg(source->uuid()));
     config->sync();
