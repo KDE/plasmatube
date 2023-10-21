@@ -81,8 +81,14 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     }
 
     m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
-    // m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") <<
-    // PlasmaTube::instance().sourceManager()->selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
+    // See https://github.com/mpv-player/mpv/issues/10029 why this is needed
+    if (PlasmaTube::instance().selectedSource()->type() == VideoSource::Type::PeerTube) {
+        m_currentPlayer->setOption(QStringLiteral("stream-lavf-o"), QStringLiteral("seekable=0"));
+    } else {
+        m_currentPlayer->setOption(QStringLiteral("stream-lavf-o"), QStringLiteral(""));
+    }
+    m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
+                                           << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
     m_currentPlayer->setOption(QStringLiteral("ytdl-format"), QStringLiteral("best"));
 
     // Restore old position if we had an existing player

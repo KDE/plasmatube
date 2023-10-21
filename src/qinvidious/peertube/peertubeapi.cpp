@@ -60,7 +60,7 @@ QFuture<VideoResult> PeerTubeApi::requestVideo(QStringView videoId)
 
 QString PeerTubeApi::resolveVideoUrl(QStringView videoId)
 {
-    return QStringLiteral("%1/videos/watch/%2").arg(m_apiHost, videoId);
+    return QStringLiteral("https://%1/videos/watch/%2").arg(m_apiHost, videoId);
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters)
