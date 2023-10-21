@@ -101,7 +101,7 @@ Kirigami.OverlayDrawer {
             icon.name: "videoclip-amarok"
             text: i18n("Subscriptions")
             checked: pageStack.currentItem === page
-            //enabled: PlasmaTube.isLoggedIn
+            enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }
@@ -115,7 +115,7 @@ Kirigami.OverlayDrawer {
             icon.name: "view-media-playlist"
             text: i18n("Playlists")
             checked: pageStack.currentItem === page
-            //enabled: PlasmaTube.isLoggedIn
+            enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }
@@ -129,7 +129,7 @@ Kirigami.OverlayDrawer {
             icon.name: "view-history"
             text: i18n("History")
             checked: pageStack.currentItem === page
-            //enabled: PlasmaTube.isLoggedIn
+            enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }
