@@ -103,7 +103,7 @@ qt_target_qml_sources(plasmatube
 kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
 target_include_directories(plasmatube PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n ${MPV_LIBRARIES})
+target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain ${MPV_LIBRARIES})
 target_include_directories(plasmatube PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(plasmatube PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
 

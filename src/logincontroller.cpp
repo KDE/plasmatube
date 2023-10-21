@@ -11,7 +11,6 @@
 LogInController::LogInController(QObject *parent)
     : QObject(parent)
 {
-    connect(this, &LogInController::loggedIn, &PlasmaTube::instance(), &PlasmaTube::loggedIn);
 }
 
 bool LogInController::isLoading() const
@@ -27,16 +26,15 @@ void LogInController::logIn(const QString &username, const QString &password)
         m_watcher = nullptr;
     }
 
-    // PlasmaTube::instance().sourceManager()->selectedSource()->api()->setCredentials(invidiousInstance);
     auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->logIn(username, password);
 
     m_watcher = new QFutureWatcher<QInvidious::LogInResult>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
         auto result = m_watcher->result();
 
-        if (const auto crendentials = std::get_if<QInvidious::Credentials>(&result)) {
-            // credentials are set automatically
-            PlasmaTube::instance().saveCredentials();
+        if (const auto credentials = std::get_if<QInvidious::Credentials>(&result)) {
+            m_source->setUsername(username);
+            m_source->setCookie(QString::fromUtf8(credentials->cookie()->toRawForm()));
             Q_EMIT loggedIn();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
             switch (error->first) {

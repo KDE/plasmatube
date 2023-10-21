@@ -39,10 +39,6 @@ public:
     std::optional<bool> isSubscribedToChannel(const QString &jid) const;
 
     void fetchSubscriptions();
-    Q_INVOKABLE void logOut();
-
-    void loadCredentials();
-    void saveCredentials() const;
 
     Q_INVOKABLE bool isVideoWatched(const QString &videoId);
     Q_INVOKABLE void markVideoWatched(const QString &videoId);
@@ -60,8 +56,6 @@ Q_SIGNALS:
     void openVideo(const QString &id);
     void preferencesChanged();
     void errorOccurred(const QString &errorText);
-    void loggedIn();
-    void loggedOut();
 
 private:
     explicit PlasmaTube(QObject *parent = nullptr);

@@ -35,6 +35,12 @@ find_package(KF6KirigamiAddons 0.11 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPV REQUIRED mpv)
 
+find_package(Qt6Keychain)
+set_package_properties(Qt6Keychain PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Secure storage of account secrets"
+)
+
 ecm_find_qmlmodule(org.kde.purpose 1.0)
 
 if (NOT ANDROID)

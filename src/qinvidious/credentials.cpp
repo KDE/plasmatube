@@ -38,3 +38,8 @@ bool Credentials::isAnonymous() const
     return !m_cookie.has_value() || m_username.isEmpty();
 }
 
+Credentials::Credentials(QString username, QString cookie)
+{
+    setUsername(username);
+    setCookie(QNetworkCookie(cookie.toUtf8()));
+}

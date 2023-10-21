@@ -84,45 +84,6 @@ void PlasmaTube::fetchSubscriptions()
     watcher->setFuture(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSubscriptions());
 }
 
-void PlasmaTube::logOut()
-{
-    /*if (!m_api->credentials().isAnonymous()) {
-        // set the credentials to only the invidious api instance
-        m_api->setCredentials(m_api->credentials().apiInstance());
-        saveCredentials();
-        Q_EMIT loggedOut();
-    }*/
-}
-
-void PlasmaTube::loadCredentials()
-{
-    /*const PlasmaTubeSettings plasmaTubeSettings;
-    QSettings settings;
-    QInvidious::Credentials credentials;
-    credentials.setApiInstance(settings.value(SETTINGS_INSTANCE, plasmaTubeSettings.invidiousInstance()).toString());
-    credentials.setUsername(settings.value(SETTINGS_USERNAME).toString());
-    if (const auto cookies = QNetworkCookie::parseCookies(settings.value(SETTINGS_COOKIE).toByteArray());
-            !cookies.isEmpty()) {
-        credentials.setCookie(cookies.first());
-    }
-    m_api->setCredentials(credentials);
-    fetchHistory();
-    fetchPreferences();*/
-}
-
-void PlasmaTube::saveCredentials() const
-{
-    /*QSettings settings;
-    auto credentials = m_api->credentials();
-    settings.setValue(SETTINGS_INSTANCE, credentials.apiInstance());
-    settings.setValue(SETTINGS_USERNAME, credentials.username());
-    if (credentials.cookie().has_value()) {
-        settings.setValue(SETTINGS_COOKIE, credentials.cookie()->toRawForm());
-    } else {
-        settings.remove(SETTINGS_COOKIE);
-    }*/
-}
-
 void PlasmaTube::setSubscriptions(const QList<QString> &subscriptions)
 {
     m_subscriptions = subscriptions;

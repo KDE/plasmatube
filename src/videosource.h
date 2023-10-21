@@ -23,7 +23,7 @@ class VideoSource : public QObject
     Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
     Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
     Q_PROPERTY(bool loggedIn READ loggedIn NOTIFY credentialsChanged)
-    Q_PROPERTY(QString username READ username NOTIFY credentialsChanged)
+    Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
 
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
@@ -40,7 +40,13 @@ public:
     void setType(Type type);
 
     bool loggedIn() const;
+    Q_INVOKABLE void logOut();
+
+    void setUsername(const QString &username);
     QString username() const;
+
+    void setCookie(const QString &cookie);
+    QString cookie() const;
 
     QInvidious::AbstractApi *api() const;
 
@@ -48,11 +54,15 @@ Q_SIGNALS:
     void urlChanged();
     void typeChanged();
     void credentialsChanged();
+    void usernameChanged();
 
 private:
     void createApi();
+    void setApiCookie();
+    QString cookieKey();
 
     SourceConfig m_config;
     QString m_key;
     QInvidious::AbstractApi *m_api;
+    QString m_cookie;
 };

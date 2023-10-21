@@ -12,6 +12,9 @@ namespace QInvidious {
 class Credentials
 {
 public:
+    Credentials() = default;
+    Credentials(QString username, QString cookie);
+
     QString username() const;
     void setUsername(const QString &username);
     void setUsername(QStringView username);

@@ -32,6 +32,10 @@ FormCard.FormCardPage {
             padding: Kirigami.Units.largeSpacing
         }
 
+        FormCard.FormDelegateSeparator {
+            above: isLoggedInLabel
+        }
+
         FormCard.FormButtonDelegate {
             visible: !page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
@@ -43,7 +47,7 @@ FormCard.FormCardPage {
             visible: page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
             text: i18n("Log out")
-            onClicked: PlasmaTube.logOut();
+            onClicked: page.source.logOut();
         }
     }
 
