@@ -187,3 +187,13 @@ QString VideoModel::videoId() const
 {
     return m_videoId;
 }
+
+void VideoModel::clearVideo()
+{
+    if (m_video) {
+        m_video->deleteLater();
+    }
+
+    m_video = new VideoItem(this);
+    Q_EMIT videoChanged();
+}

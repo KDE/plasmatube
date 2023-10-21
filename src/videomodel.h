@@ -85,6 +85,7 @@ public:
 
     VideoItem *video() const;
     QString videoId() const;
+    void clearVideo();
 
 Q_SIGNALS:
     void isLoadingChanged();

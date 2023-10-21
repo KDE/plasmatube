@@ -40,7 +40,8 @@ void VideoController::togglePlaying()
 void VideoController::stop()
 {
     if (m_currentPlayer != nullptr) {
-        m_currentPlayer->stop();
+        m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
+        videoModel()->clearVideo();
     }
 }
 
