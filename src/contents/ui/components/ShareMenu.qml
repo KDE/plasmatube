@@ -33,7 +33,7 @@ QQC2.Menu {
             icon.name: model.iconName
 
             onTriggered: {
-                applicationWindow().pageStack.pushDialogLayer('qrc:/components/ShareDialog.qml', {
+                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "ShareDialog"), {
                     index: index,
                     model: alternativesModel
                 })

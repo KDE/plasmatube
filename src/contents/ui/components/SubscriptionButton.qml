@@ -66,7 +66,7 @@ QQC2.Button {
         } else if (!PlasmaTube.isLoggedIn) {
             root.requestClosePlayer();
             showPassiveNotification(i18n("Please log in to subscribe to channels."));
-            pageStack.layers.push("qrc:/LoginPage.qml");
+            pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"));
         }
     }
 }
