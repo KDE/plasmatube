@@ -89,19 +89,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    // FloatingVideoPreview {
-    //     id: minimizedVideo
-    //     z: 998
-    //     parent: Controls.Overlay.overlay
-    //     x: root.width - width - Kirigami.Units.gridUnit
-    //     y: root.height - height - Kirigami.Units.gridUnit
-    //     width: Kirigami.Units.gridUnit * 9
-    //     height: Kirigami.Units.gridUnit * 6
-    //     previewSource: videoPlayer.previewSource
-    //
-    //     onClicked: videoPlayer.open()
-    // }
-
     // create space at the bottom to show miniplayer without it hiding stuff underneath
     pageStack.anchors.bottomMargin: videoPlayer.isVideoLoaded ? videoPlayer.miniPlayerHeight + 1 : 0
 
