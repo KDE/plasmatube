@@ -13,26 +13,23 @@
 #include <QSettings>
 #include <QStringBuilder>
 
-#include "PlasmaTubeSettings.h"
-#include "constants.h"
 #include "qinvidious/invidious/invidiousapi.h"
 
 PlasmaTube::PlasmaTube(QObject *parent)
     : QObject(parent)
-    , m_api(new QInvidious::InvidiousApi(new QNetworkAccessManager(this), this))
     , m_controller(new VideoController(this))
+    , m_sourceManager(new SourceManager(this))
 {
-    connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &PlasmaTube::credentialsChanged);
-
-    const auto locale = QLocale::system().name().toLower().split(u'_');
+    /*const auto locale = QLocale::system().name().toLower().split(u'_');
     if (locale.size() == 2) {
         m_api->setLanguage(locale.at(0));
         // Regions seem to cause internal server errors. See https://invent.kde.org/plasma-mobile/plasmatube/-/issues/20 for details
         //m_api->setRegion(locale.at(1));
     }
-    loadCredentials();
+    loadCredentials();*/
+    m_sourceManager->load();
 
-    if (isLoggedIn()) {
+    /*if (isLoggedIn()) {
         fetchSubscriptions();
     }
 
@@ -42,7 +39,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
     });
     connect(this, &PlasmaTube::loggedIn, this, [=] {
         fetchSubscriptions();
-    });
+    });*/
 }
 
 PlasmaTube &PlasmaTube::instance()
@@ -51,25 +48,14 @@ PlasmaTube &PlasmaTube::instance()
     return instance;
 }
 
-QInvidious::AbstractApi *PlasmaTube::api() const
-{
-    return m_api;
-}
-
 VideoController *PlasmaTube::videoController() const
 {
     return m_controller;
 }
 
-bool PlasmaTube::isLoggedIn() const
+SourceManager *PlasmaTube::sourceManager() const
 {
-    return !m_api->credentials().isAnonymous();
-}
-
-QString PlasmaTube::invidiousId() const
-{
-    const auto credentials = m_api->credentials();
-    return credentials.username() % u'@' % QUrl(credentials.apiInstance()).host();
+    return m_sourceManager;
 }
 
 std::optional<bool> PlasmaTube::isSubscribedToChannel(const QString &jid) const
@@ -95,22 +81,22 @@ void PlasmaTube::fetchSubscriptions()
 
         watcher->deleteLater();
     });
-    watcher->setFuture(m_api->requestSubscriptions());
+    watcher->setFuture(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSubscriptions());
 }
 
 void PlasmaTube::logOut()
 {
-    if (!m_api->credentials().isAnonymous()) {
+    /*if (!m_api->credentials().isAnonymous()) {
         // set the credentials to only the invidious api instance
         m_api->setCredentials(m_api->credentials().apiInstance());
         saveCredentials();
         Q_EMIT loggedOut();
-    }
+    }*/
 }
 
 void PlasmaTube::loadCredentials()
 {
-    const PlasmaTubeSettings plasmaTubeSettings;
+    /*const PlasmaTubeSettings plasmaTubeSettings;
     QSettings settings;
     QInvidious::Credentials credentials;
     credentials.setApiInstance(settings.value(SETTINGS_INSTANCE, plasmaTubeSettings.invidiousInstance()).toString());
@@ -121,12 +107,12 @@ void PlasmaTube::loadCredentials()
     }
     m_api->setCredentials(credentials);
     fetchHistory();
-    fetchPreferences();
+    fetchPreferences();*/
 }
 
 void PlasmaTube::saveCredentials() const
 {
-    QSettings settings;
+    /*QSettings settings;
     auto credentials = m_api->credentials();
     settings.setValue(SETTINGS_INSTANCE, credentials.apiInstance());
     settings.setValue(SETTINGS_USERNAME, credentials.username());
@@ -134,7 +120,7 @@ void PlasmaTube::saveCredentials() const
         settings.setValue(SETTINGS_COOKIE, credentials.cookie()->toRawForm());
     } else {
         settings.remove(SETTINGS_COOKIE);
-    }
+    }*/
 }
 
 void PlasmaTube::setSubscriptions(const QList<QString> &subscriptions)
@@ -155,23 +141,23 @@ bool PlasmaTube::isVideoWatched(const QString &videoId)
 
 void PlasmaTube::markVideoWatched(const QString &videoId)
 {
-    if (!m_watchedVideos.contains(videoId) && isLoggedIn()) {
+    /*if (!m_watchedVideos.contains(videoId) && isLoggedIn()) {
         m_watchedVideos.push_back(videoId);
         m_api->markWatched(videoId);
-    }
+    }*/
 }
 
 void PlasmaTube::markVideoUnwatched(const QString &videoId)
 {
-    if (m_watchedVideos.contains(videoId) && isLoggedIn()) {
+    /*if (m_watchedVideos.contains(videoId) && isLoggedIn()) {
         m_watchedVideos.removeAll(videoId);
         m_api->markUnwatched(videoId);
-    }
+    }*/
 }
 
 void PlasmaTube::fetchHistory(qint32 page)
 {
-    if (!isLoggedIn()) {
+    /*if (!isLoggedIn()) {
         return;
     }
 
@@ -193,7 +179,7 @@ void PlasmaTube::fetchHistory(qint32 page)
 
         watcher->deleteLater();
     });
-    watcher->setFuture(m_api->requestHistory(page));
+    watcher->setFuture(m_api->requestHistory(page));*/
 }
 
 void PlasmaTube::setInhibitSleep(const bool inhibit)
@@ -232,18 +218,18 @@ QInvidious::Preferences PlasmaTube::preferences()
 
 void PlasmaTube::setPreferences(const QInvidious::Preferences &preferences)
 {
-    if (!isLoggedIn()) {
+    /*if (!isLoggedIn()) {
         return;
     }
 
     m_api->setPreferences(preferences);
     m_preferences = preferences;
-    Q_EMIT preferencesChanged();
+    Q_EMIT preferencesChanged();*/
 }
 
 void PlasmaTube::fetchPreferences()
 {
-    if (!isLoggedIn()) {
+    /*if (!isLoggedIn()) {
         return;
     }
 
@@ -258,10 +244,10 @@ void PlasmaTube::fetchPreferences()
 
         watcher->deleteLater();
     });
-    watcher->setFuture(m_api->requestPreferences());
+    watcher->setFuture(m_api->requestPreferences());*/
 }
 
 void PlasmaTube::addToPlaylist(const QString &plid, const QString &videoId)
 {
-    PlasmaTube::instance().api()->addVideoToPlaylist(plid, videoId);
+    // PlasmaTube::instance().sourceManager()->selectedSource()->api()->addVideoToPlaylist(plid, videoId);
 }

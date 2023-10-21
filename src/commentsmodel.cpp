@@ -86,7 +86,7 @@ void CommentsModel::fill()
 
     m_futureWatcher = new QFutureWatcher<QInvidious::CommentsResult>();
 
-    auto future = PlasmaTube::instance().api()->requestComments(m_videoId, m_continuation);
+    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestComments(m_videoId, m_continuation);
     m_futureWatcher->setFuture(future);
 
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {

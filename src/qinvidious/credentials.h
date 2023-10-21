@@ -12,10 +12,6 @@ namespace QInvidious {
 class Credentials
 {
 public:
-    QString apiInstance() const;
-    void setApiInstance(const QString &instance);
-    void setApiInstance(QStringView instance);
-
     QString username() const;
     void setUsername(const QString &username);
     void setUsername(QStringView username);
@@ -26,7 +22,6 @@ public:
     bool isAnonymous() const;
 
 private:
-    QString m_apiInstance;
     QString m_username;
     std::optional<QNetworkCookie> m_cookie;
 };

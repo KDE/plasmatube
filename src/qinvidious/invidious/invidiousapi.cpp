@@ -14,20 +14,20 @@
 
 #include <KLocalizedString>
 
-constexpr QStringView API_FEED = u"/api/v1/auth/feed";
-constexpr QStringView API_LOGIN = u"/login";
-constexpr QStringView API_SEARCH = u"/api/v1/search";
-constexpr QStringView API_SUBSCRIPTIONS = u"/api/v1/auth/subscriptions";
-constexpr QStringView API_TOP = u"/api/v1/top";
-constexpr QStringView API_TRENDING = u"/api/v1/trending";
-constexpr QStringView API_VIDEOS = u"/api/v1/videos";
-constexpr QStringView API_CHANNELS = u"/api/v1/channels/videos";
-constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
-constexpr QStringView API_COMMENTS = u"/api/v1/comments";
-constexpr QStringView API_LIST_PLAYLISTS = u"/api/v1/auth/playlists";
-constexpr QStringView API_PREFERENCES = u"/api/v1/auth/preferences";
-constexpr QStringView API_PLAYLISTS = u"/api/v1/playlists";
-constexpr QStringView API_CHANNEL_INFO = u"/api/v1/channels";
+const QString API_FEED = QStringLiteral("/api/v1/auth/feed");
+const QString API_LOGIN = QStringLiteral("/login");
+const QString API_SEARCH = QStringLiteral("/api/v1/search");
+const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/auth/subscriptions");
+const QString API_TOP = QStringLiteral("/api/v1/top");
+const QString API_TRENDING = QStringLiteral("/api/v1/trending");
+const QString API_VIDEOS = QStringLiteral("/api/v1/videos");
+const QString API_CHANNELS = QStringLiteral("/api/v1/channels/videos");
+const QString API_HISTORY = QStringLiteral("/api/v1/auth/history");
+const QString API_COMMENTS = QStringLiteral("/api/v1/comments");
+const QString API_LIST_PLAYLISTS = QStringLiteral("/api/v1/auth/playlists");
+const QString API_PREFERENCES = QStringLiteral("/api/v1/auth/preferences");
+const QString API_PLAYLISTS = QStringLiteral("/api/v1/playlists");
+const QString API_CHANNEL_INFO = QStringLiteral("/api/v1/channels");
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -154,7 +154,7 @@ QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
     QUrlQuery parameters;
     parameters.addQueryItem(QStringLiteral("page"), QString::number(page));
 
-    QUrl url{invidiousInstance() % API_HISTORY};
+    QUrl url = apiUrl(API_HISTORY);
     url.setQuery(parameters);
 
     return get<HistoryResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> HistoryResult {
@@ -173,12 +173,12 @@ QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
 
 QFuture<Result> InvidiousApi::markWatched(const QString &videoId)
 {
-    return post<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), {}, checkIsReplyOk);
+    return post<Result>(authenticatedNetworkRequest(apiUrl(API_HISTORY % u'/' % videoId)), {}, checkIsReplyOk);
 }
 
 QFuture<Result> InvidiousApi::markUnwatched(const QString &videoId)
 {
-    return deleteResource<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), checkIsReplyOk);
+    return deleteResource<Result>(authenticatedNetworkRequest(apiUrl(API_HISTORY % u'/' % videoId)), checkIsReplyOk);
 }
 
 QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, const QString &continuation)
@@ -188,7 +188,7 @@ QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, co
         parameters.addQueryItem(QStringLiteral("continuation"), continuation);
     }
 
-    QUrl url{invidiousInstance() % API_COMMENTS % u'/' % videoId};
+    QUrl url = apiUrl(API_COMMENTS % u'/' % videoId);
     url.setQuery(parameters);
 
     return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
@@ -209,7 +209,7 @@ QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, co
 
 QFuture<PlaylistsResult> InvidiousApi::requestPlaylists()
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS};
+    QUrl url = apiUrl(API_LIST_PLAYLISTS);
 
     return get<PlaylistsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PlaylistsResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -229,7 +229,7 @@ QFuture<PlaylistsResult> InvidiousApi::requestPlaylists()
 
 QFuture<PreferencesResult> InvidiousApi::requestPreferences()
 {
-    QUrl url{invidiousInstance() % API_PREFERENCES};
+    QUrl url = apiUrl(API_PREFERENCES);
 
     return get<PreferencesResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PreferencesResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -243,14 +243,14 @@ QFuture<PreferencesResult> InvidiousApi::requestPreferences()
 
 QFuture<Result> InvidiousApi::setPreferences(const QInvidious::Preferences &preferences)
 {
-    QUrl url{invidiousInstance() % API_PREFERENCES};
+    QUrl url = apiUrl(API_PREFERENCES);
 
     return post<Result>(authenticatedNetworkRequest(std::move(url)), QJsonDocument(preferences.toJson()).toJson(), checkIsReplyOk);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestPlaylist(const QString &plid)
 {
-    QUrl url{invidiousInstance() % API_PLAYLISTS % u'/' % plid};
+    QUrl url = apiUrl(API_PLAYLISTS % u'/' % plid);
 
     return get<VideoListResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -264,7 +264,7 @@ QFuture<VideoListResult> InvidiousApi::requestPlaylist(const QString &plid)
 
 QFuture<ChannelResult> InvidiousApi::requestChannelInfo(QStringView queryd)
 {
-    QUrl url{invidiousInstance() % API_CHANNEL_INFO % u'/' % queryd};
+    QUrl url = apiUrl(API_CHANNEL_INFO % u'/' % queryd);
 
     return get<ChannelResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> ChannelResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -278,7 +278,7 @@ QFuture<ChannelResult> InvidiousApi::requestChannelInfo(QStringView queryd)
 
 QFuture<Result> InvidiousApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos"};
+    QUrl url = apiUrl(API_LIST_PLAYLISTS % u'/' % plid % u"/videos");
 
     QJsonObject requestObj;
     requestObj["videoId"_L1] = videoId;
@@ -291,7 +291,7 @@ QFuture<Result> InvidiousApi::addVideoToPlaylist(const QString &plid, const QStr
 
 QFuture<Result> InvidiousApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos/" % indexId};
+    QUrl url = apiUrl(API_LIST_PLAYLISTS % u'/' % plid % u"/videos/" % indexId);
 
     return deleteResource<Result>(authenticatedNetworkRequest(std::move(url)), checkIsReplyOk);
 }
@@ -376,7 +376,7 @@ QUrlQuery InvidiousApi::genericUrlQuery() const
 
 QUrl InvidiousApi::logInUrl() const
 {
-    QUrl url(invidiousInstance() % API_LOGIN);
+    QUrl url = apiUrl(API_LOGIN);
     auto urlQuery = genericUrlQuery();
     urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
     urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
@@ -386,12 +386,12 @@ QUrl InvidiousApi::logInUrl() const
 
 QUrl InvidiousApi::videoUrl(QStringView videoId) const
 {
-    return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
+    return apiUrl(API_VIDEOS % u'/' % videoId);
 }
 
 QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters) const
 {
-    auto urlString = invidiousInstance();
+    QString urlString;
     auto query = genericUrlQuery();
 
     switch (queryType) {
@@ -421,14 +421,14 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExten
         query.addQueryItem(parameter.key(), parameter.value());
     }
 
-    QUrl url(urlString);
+    QUrl url = apiUrl(urlString);
     url.setQuery(query);
     return url;
 }
 
 QUrl InvidiousApi::subscriptionsUrl() const
 {
-    auto url = QUrl(invidiousInstance() % API_SUBSCRIPTIONS);
+    auto url = apiUrl(API_SUBSCRIPTIONS);
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("fields"), QStringLiteral("authorId"));
     url.setQuery(query);
@@ -437,5 +437,5 @@ QUrl InvidiousApi::subscriptionsUrl() const
 
 QUrl InvidiousApi::subscribeUrl(QStringView channelId) const
 {
-    return QUrl(invidiousInstance() % API_SUBSCRIPTIONS % u'/' % channelId);
+    return apiUrl(API_SUBSCRIPTIONS % u'/' % channelId);
 }

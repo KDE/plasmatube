@@ -10,12 +10,8 @@
 #include <optional>
 
 #include "preferences.h"
+#include "sourcemanager.h"
 #include "videocontroller.h"
-
-namespace QInvidious
-{
-class AbstractApi;
-}
 
 class PlasmaTube : public QObject
 {
@@ -23,13 +19,11 @@ class PlasmaTube : public QObject
     QML_ELEMENT
     QML_SINGLETON
 
-    Q_PROPERTY(bool isLoggedIn READ isLoggedIn NOTIFY credentialsChanged)
-    Q_PROPERTY(QString invidiousId READ invidiousId NOTIFY credentialsChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
     Q_PROPERTY(VideoController *videoController READ videoController CONSTANT)
+    Q_PROPERTY(SourceManager *sourceManager READ sourceManager CONSTANT)
 
 public:
-    explicit PlasmaTube(QObject *parent = nullptr);
     static PlasmaTube &instance();
 
     static PlasmaTube *create(QQmlEngine *, QJSEngine *)
@@ -39,11 +33,8 @@ public:
         return inst;
     }
 
-    QInvidious::AbstractApi *api() const;
     VideoController *videoController() const;
-
-    bool isLoggedIn() const;
-    QString invidiousId() const;
+    SourceManager *sourceManager() const;
 
     std::optional<bool> isSubscribedToChannel(const QString &jid) const;
 
@@ -65,7 +56,6 @@ public:
     Q_INVOKABLE void addToPlaylist(const QString &plid, const QString &videoId);
 
 Q_SIGNALS:
-    void credentialsChanged();
     void subscriptionsChanged();
     void openVideo(const QString &id);
     void preferencesChanged();
@@ -74,6 +64,8 @@ Q_SIGNALS:
     void loggedOut();
 
 private:
+    explicit PlasmaTube(QObject *parent = nullptr);
+
     friend class SubscriptionController;
 
     void setSubscriptions(const QList<QString> &subscriptions);
@@ -83,10 +75,10 @@ private:
 
     void fetchPreferences();
 
-    QInvidious::AbstractApi *const m_api;
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
     unsigned int screenSaverDbusCookie = 0;
     QInvidious::Preferences m_preferences;
     VideoController *m_controller = nullptr;
+    SourceManager *m_sourceManager = nullptr;
 };

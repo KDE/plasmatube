@@ -15,17 +15,22 @@ target_sources(plasmatube PRIVATE
         channelcontroller.h
         commentsmodel.cpp
         commentsmodel.h
-        constants.h
+        invidiousinstancesmodel.cpp
+        invidiousinstancesmodel.h
         logincontroller.cpp
         logincontroller.h
         main.cpp
         mpvobject.cpp
         mpvobject.h
+        peertubeinstancesmodel.cpp
+        peertubeinstancesmodel.h
         plasmatube.cpp
         plasmatube.h
         playlistsmodel.cpp
         playlistsmodel.h
         qthelper.hpp
+        sourcemanager.cpp
+        sourcemanager.h
         subscriptioncontroller.cpp
         subscriptioncontroller.h
         subscriptionwatcher.cpp
@@ -36,6 +41,8 @@ target_sources(plasmatube PRIVATE
         videolistmodel.h
         videomodel.cpp
         videomodel.h
+        videosource.cpp
+        videosource.h
 )
 
 qt_target_qml_sources(plasmatube
@@ -46,6 +53,10 @@ qt_target_qml_sources(plasmatube
         contents/ui/components/ShareMenu.qml
         contents/ui/components/Sidebar.qml
         contents/ui/components/SubscriptionButton.qml
+
+        contents/ui/loginflow/AddInvidiousPage.qml
+        contents/ui/loginflow/AddPeerTubePage.qml
+        contents/ui/loginflow/WelcomePage.qml
 
         contents/ui/videoplayer/MinimizedVideoPlayer.qml
         contents/ui/videoplayer/PictureInPictureVideo.qml
@@ -67,6 +78,7 @@ qt_target_qml_sources(plasmatube
         contents/ui/SearchPage.qml
         contents/ui/SettingsPage.qml
         contents/ui/SubscriptionsPage.qml
+        contents/ui/SourceSwitcher.qml
         contents/ui/TrendingPage.qml
         contents/ui/VideoGridItem.qml
         contents/ui/VideoListAction.qml
@@ -76,7 +88,17 @@ qt_target_qml_sources(plasmatube
         contents/ui/utils.js
 )
 
-kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc GENERATE_MOC)
+set_source_files_properties(../org.kde.plasmatube.svg PROPERTIES
+        QT_RESOURCE_ALIAS /org.kde.plasmatube.svg
+)
+
+qt_target_qml_sources(plasmatube
+        PREFIX /
+        RESOURCES
+        ../org.kde.plasmatube.svg
+)
+
+kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
 target_include_directories(plasmatube PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n ${MPV_LIBRARIES})

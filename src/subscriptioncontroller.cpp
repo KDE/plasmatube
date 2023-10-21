@@ -22,9 +22,10 @@ bool SubscriptionController::isLoading() const
 bool SubscriptionController::canToggleSubscription() const
 {
     // subscriptions need to be loaded and no other task needs to run
-    return PlasmaTube::instance().isLoggedIn() &&
-           PlasmaTube::instance().subscriptions().has_value() &&
-           !m_watcher;
+    // return PlasmaTube::instance().isLoggedIn() &&
+    //       PlasmaTube::instance().subscriptions().has_value() &&
+    //       !m_watcher;
+    return false;
 }
 
 void SubscriptionController::toggleSubscription()
@@ -35,8 +36,8 @@ void SubscriptionController::toggleSubscription()
         m_watcher = nullptr;
     }
 
-    auto future = isSubscribed() ? PlasmaTube::instance().api()->unsubscribeFromChannel(channelId())
-                                 : PlasmaTube::instance().api()->subscribeToChannel(channelId());
+    auto future = isSubscribed() ? PlasmaTube::instance().sourceManager()->selectedSource()->api()->unsubscribeFromChannel(channelId())
+                                 : PlasmaTube::instance().sourceManager()->selectedSource()->api()->subscribeToChannel(channelId());
 
     m_watcher = new QFutureWatcher<QInvidious::Result>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {

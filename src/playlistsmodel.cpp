@@ -70,7 +70,7 @@ void PlaylistsModel::fill()
 
     m_futureWatcher = new QFutureWatcher<QInvidious::PlaylistsResult>();
 
-    auto future = PlasmaTube::instance().api()->requestPlaylists();
+    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylists();
     m_futureWatcher->setFuture(future);
 
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {

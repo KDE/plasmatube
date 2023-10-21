@@ -41,7 +41,7 @@ void VideoModel::fetch(const QString &videoId)
     m_video = new VideoItem(this);
     Q_EMIT videoChanged();
 
-    auto future = PlasmaTube::instance().api()->requestVideo(m_videoId);
+    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestVideo(m_videoId);
 
     m_watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
@@ -120,8 +120,7 @@ QUrl VideoItem::thumbnailUrl(const QString &quality) const
     const QUrl thumbnailUrl = thumbnail(quality).url();
 
     if (!thumbnailUrl.isEmpty() && thumbnailUrl.isRelative()) {
-        return QUrl(PlasmaTube::instance().api()->invidiousInstance() +
-                    thumbnailUrl.toString(QUrl::FullyEncoded));
+        return QUrl(PlasmaTube::instance().sourceManager()->selectedSource()->api()->apiHost() + thumbnailUrl.toString(QUrl::FullyEncoded));
     }
 
     return thumbnailUrl;

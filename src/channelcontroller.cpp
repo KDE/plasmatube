@@ -17,7 +17,7 @@ void ChannelController::loadChannel(QString channelId)
 {
     m_watcher = new QFutureWatcher<QInvidious::ChannelResult>();
 
-    auto future = PlasmaTube::instance().api()->requestChannelInfo(channelId);
+    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannelInfo(channelId);
     m_watcher->setFuture(future);
 
     connect(m_watcher, &QFutureWatcherBase::finished, this, [this] {

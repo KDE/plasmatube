@@ -59,6 +59,14 @@ Kirigami.OverlayDrawer {
             }
         }
 
+        SourceSwitcher {
+            Layout.fillWidth: true
+        }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+
         Delegates.RoundedItemDelegate {
             property var page: applicationWindow().getPage("PopularPage")
             Layout.fillWidth: true
@@ -93,7 +101,7 @@ Kirigami.OverlayDrawer {
             icon.name: "videoclip-amarok"
             text: i18n("Subscriptions")
             checked: pageStack.currentItem === page
-            enabled: PlasmaTube.isLoggedIn
+            //enabled: PlasmaTube.isLoggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }
@@ -107,7 +115,7 @@ Kirigami.OverlayDrawer {
             icon.name: "view-media-playlist"
             text: i18n("Playlists")
             checked: pageStack.currentItem === page
-            enabled: PlasmaTube.isLoggedIn
+            //enabled: PlasmaTube.isLoggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }
@@ -121,7 +129,7 @@ Kirigami.OverlayDrawer {
             icon.name: "view-history"
             text: i18n("History")
             checked: pageStack.currentItem === page
-            enabled: PlasmaTube.isLoggedIn
+            //enabled: PlasmaTube.isLoggedIn
             onClicked: {
                 applicationWindow().switchToPage(page);
             }

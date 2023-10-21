@@ -64,7 +64,10 @@ public:
     void setCredentials(const Credentials &credentials);
     void setCredentials(const QString &apiInstance);
 
-    QString invidiousInstance() const;
+    QNetworkAccessManager *net() const;
+
+    void setApiHost(const QString &host);
+    QString apiHost() const;
 
     virtual QFuture<LogInResult> logIn(QStringView username, QStringView password) = 0;
     virtual QFuture<VideoResult> requestVideo(QStringView videoId) = 0;
@@ -93,6 +96,8 @@ Q_SIGNALS:
     void credentialsChanged();
 
 protected:
+    QUrl apiUrl(const QString &path) const;
+
     template<typename T>
     QFuture<T> reportResults(QNetworkReply *reply, std::function<T(QNetworkReply *)> processs)
     {
@@ -133,6 +138,7 @@ protected:
     QNetworkAccessManager *m_netManager;
     QString m_region;
     QString m_language;
+    QString m_apiHost;
     Credentials m_credentials;
 };
 

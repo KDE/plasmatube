@@ -8,23 +8,6 @@
 
 using namespace QInvidious;
 
-QString Credentials::apiInstance() const
-{
-    return m_apiInstance;
-}
-
-void Credentials::setApiInstance(const QString &instance)
-{
-    QUrl instanceUrl = QUrl::fromUserInput(instance);
-    instanceUrl.setPath({});
-    m_apiInstance = instanceUrl.toString();
-}
-
-void Credentials::setApiInstance(QStringView instance)
-{
-    m_apiInstance = instance.toString();
-}
-
 QString Credentials::username() const
 {
     return m_username;

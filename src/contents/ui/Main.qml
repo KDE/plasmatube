@@ -14,8 +14,6 @@ import "components"
 Kirigami.ApplicationWindow {
     id: root
 
-    property bool hasSetInitialPage: false
-
     property Item hoverLinkIndicator: QQC2.Control {
         property string text
 
@@ -38,7 +36,7 @@ Kirigami.ApplicationWindow {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
     }
 
-    pageStack.initialPage: getPage("TrendingPage")
+    pageStack.initialPage: Qt.createComponent("org.kde.plasmatube", "WelcomePage")
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
@@ -73,12 +71,14 @@ Kirigami.ApplicationWindow {
         videoPlayer.close();
     }
 
-    globalDrawer: Sidebar {}
+    globalDrawer: Sidebar {
+        enabled: PlasmaTube.sourceManager.hasAnySources
+    }
 
     footer: Loader {
         id: footerLoader
         visible: active
-        active: !root.isWidescreen
+        active: !root.isWidescreen && PlasmaTube.sourceManager.hasAnySources
         sourceComponent: BottomNavBar {
             shadow: !videoPlayer.isVideoLoaded
             opacity: (videoPlayer.contentY === 0) ? 1 : 0
@@ -113,6 +113,7 @@ Kirigami.ApplicationWindow {
     }
 
     function switchToPage(page, args) {
+        applicationWindow().pageStack.layers.clear();
         if (applicationWindow().pageStack.currentItem !== page) {
             while (applicationWindow().pageStack.depth > 0) {
                 applicationWindow().pageStack.pop();
@@ -124,35 +125,6 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: PlasmaTube
-
-        // Load the default homepage
-        // TODO: hide the switch behind a loading screen ala NeoChat/Tokodon
-        function onPreferencesChanged() {
-            if (hasSetInitialPage) {
-                return;
-            }
-
-            let defaultHome = PlasmaTube.preferences.defaultHome;
-            switch (defaultHome) {
-                case "Search":
-                    root.switchToPage(getPage("SearchPage"));
-                    break;
-                case "Popular":
-                    root.switchToPage(getPage("PopularPage"));
-                    break;
-                case "Trending":
-                    root.switchToPage(getPage("TrendingPage"));
-                    break;
-                case "Subscriptions":
-                    root.switchToPage(getPage("SubscriptionsPage"));
-                    break;
-                case "Playlists":
-                    root.switchToPage(getPage("PlaylistsPage"));
-                    break;
-            }
-
-            hasSetInitialPage = true;
-        }
     }
 
     Connections {
@@ -170,5 +142,46 @@ Kirigami.ApplicationWindow {
             // in our case we still want to open up the normal player anyway
             videoPlayer.open();
         }
+    }
+
+    Connections {
+        target: PlasmaTube.sourceManager
+
+        function onSourceSelected() {
+            console.log("hi!");
+            loadDefaultPage();
+        }
+    }
+
+    Component.onCompleted: {
+        console.log(PlasmaTube.sourceManager.hasAnySources);
+
+        if (PlasmaTube.sourceManager.hasAnySources) {
+            loadDefaultPage();
+        }
+    }
+
+    function loadDefaultPage() {
+
+        /*let defaultHome = PlasmaTube.preferences.defaultHome;
+        switch (defaultHome) {
+            case "Search":
+                root.switchToPage(getPage("SearchPage"));
+                break;
+            case "Popular":
+                root.switchToPage(getPage("PopularPage"));
+                break;
+            case "Trending":
+                root.switchToPage(getPage("TrendingPage"));
+                break;
+            case "Subscriptions":
+                root.switchToPage(getPage("SubscriptionsPage"));
+                break;
+            case "Playlists":
+                root.switchToPage(getPage("PlaylistsPage"));
+                break;
+        }*/
+
+        root.switchToPage(getPage("PopularPage"));
     }
 }

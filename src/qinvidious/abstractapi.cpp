@@ -48,13 +48,30 @@ void AbstractApi::setCredentials(const Credentials &credentials)
 void AbstractApi::setCredentials(const QString &apiInstance)
 {
     m_credentials = Credentials();
-    m_credentials.setApiInstance(apiInstance);
     Q_EMIT credentialsChanged();
 }
 
-QString AbstractApi::invidiousInstance() const
+QNetworkAccessManager *AbstractApi::net() const
 {
-    return m_credentials.apiInstance();
+    return m_netManager;
 }
 
+QUrl AbstractApi::apiUrl(const QString &path) const
+{
+    QUrl url = QUrl::fromUserInput(m_apiHost);
+    url.setScheme(QStringLiteral("https"));
+    url.setPath(path);
+
+    return url;
+}
+
+void AbstractApi::setApiHost(const QString &host)
+{
+    m_apiHost = host;
+}
+
+QString AbstractApi::apiHost() const
+{
+    return m_apiHost;
+}
 }

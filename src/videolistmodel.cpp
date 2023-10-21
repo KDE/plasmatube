@@ -114,7 +114,7 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
     case ThumbnailRole: {
         const auto thumbnailUrl = video.thumbnail(QStringLiteral("medium")).url();
         if (thumbnailUrl.isRelative()) {
-            return QUrl(PlasmaTube::instance().api()->invidiousInstance() + thumbnailUrl.toString(QUrl::FullyEncoded));
+            return QUrl(PlasmaTube::instance().sourceManager()->selectedSource()->api()->apiHost() + thumbnailUrl.toString(QUrl::FullyEncoded));
         }
         return thumbnailUrl;
     }
@@ -153,21 +153,18 @@ void VideoListModel::fetchMore(const QModelIndex &index)
     if (canFetchMore(index)) {
         switch (m_queryType) {
         case Feed: {
-            auto future =
-                PlasmaTube::instance().api()->requestFeed(++m_currentPage);
+            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestFeed(++m_currentPage);
             handleQuery(future, Feed, false);
             break;
         }
         case Search: {
             m_searchParameters.setPage(++m_currentPage);
-            auto future = PlasmaTube::instance().api()->requestSearchResults(
-                m_searchParameters);
+            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSearchResults(m_searchParameters);
             handleQuery(future, Search, false);
             break;
         }
         case Channel: {
-            auto future = PlasmaTube::instance().api()->requestChannel(
-                m_channel, ++m_currentPage);
+            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(m_channel, ++m_currentPage);
             handleQuery(future, Channel, false);
             break;
         }
@@ -204,23 +201,21 @@ void VideoListModel::requestSearchResults(const SearchParameters *searchParamete
 {
     m_searchParameters.fill(*searchParameters);
     m_currentPage = 1;
-    handleQuery(
-        PlasmaTube::instance().api()->requestSearchResults(m_searchParameters),
-        Search);
+    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSearchResults(m_searchParameters), Search);
 }
 
 void VideoListModel::requestChannel(const QString &ucid)
 {
     m_channel = ucid;
     m_currentPage = 1;
-    handleQuery(PlasmaTube::instance().api()->requestChannel(ucid, m_currentPage), Channel);
+    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(ucid, m_currentPage), Channel);
 }
 
 void VideoListModel::requestPlaylist(const QString &id)
 {
     m_playlist = id;
     m_currentPage = 1;
-    handleQuery(PlasmaTube::instance().api()->requestPlaylist(id), Playlist);
+    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylist(id), Playlist);
 }
 
 void VideoListModel::requestQuery(QueryType type)
@@ -228,25 +223,25 @@ void VideoListModel::requestQuery(QueryType type)
     m_searchParameters.clear();
     switch (type) {
     case Feed:
-        handleQuery(PlasmaTube::instance().api()->requestFeed(), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestFeed(), type);
         break;
     case Top:
-        handleQuery(PlasmaTube::instance().api()->requestTop(), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTop(), type);
         break;
     case Trending:
-        handleQuery(PlasmaTube::instance().api()->requestTrending(), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(), type);
         break;
     case TrendingGaming:
-        handleQuery(PlasmaTube::instance().api()->requestTrending(QInvidious::Gaming), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Gaming), type);
         break;
     case TrendingMovies:
-        handleQuery(PlasmaTube::instance().api()->requestTrending(QInvidious::Movies), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Movies), type);
         break;
     case TrendingMusic:
-        handleQuery(PlasmaTube::instance().api()->requestTrending(QInvidious::Music), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Music), type);
         break;
     case TrendingNews:
-        handleQuery(PlasmaTube::instance().api()->requestTrending(QInvidious::News), type);
+        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::News), type);
         break;
     case History:
         requestHistory();
@@ -328,7 +323,7 @@ void VideoListModel::clearAll()
 
 void VideoListModel::requestHistory()
 {
-    auto pageFuture = PlasmaTube::instance().api()->requestHistory(m_currentPage);
+    auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(m_currentPage);
 
     m_historyPageWatcher = new QFutureWatcher<QInvidious::HistoryResult>();
     m_historyPageWatcher->setFuture(pageFuture);
@@ -352,7 +347,7 @@ void VideoListModel::requestHistory()
 void VideoListModel::processHistoryResult(const QList<QString> &result)
 {
     for (const auto &videoId : result) {
-        auto future = PlasmaTube::instance().api()->requestVideo(videoId);
+        auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestVideo(videoId);
         m_historyFutureSync.addFuture(future);
     }
 
@@ -404,7 +399,7 @@ void VideoListModel::removeFromPlaylist(const QString &plid, int index)
 {
     auto video = m_results[index];
 
-    PlasmaTube::instance().api()->removeVideoFromPlaylist(plid, video.indexId());
+    PlasmaTube::instance().sourceManager()->selectedSource()->api()->removeVideoFromPlaylist(plid, video.indexId());
 
     beginRemoveRows({}, index, index);
     m_results.removeAt(index);

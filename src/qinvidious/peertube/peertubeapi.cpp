@@ -4,7 +4,6 @@
 
 #include "peertubeapi.h"
 // Qt
-#include <QFutureInterface>
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -14,19 +13,8 @@
 
 #include <KLocalizedString>
 
-constexpr QStringView API_FEED = u"/api/v1/auth/feed";
-constexpr QStringView API_LOGIN = u"/login";
-constexpr QStringView API_SEARCH = u"/api/v1/search";
-constexpr QStringView API_SUBSCRIPTIONS = u"/api/v1/auth/subscriptions";
-constexpr QStringView API_TOP = u"/api/v1/videos";
-constexpr QStringView API_TRENDING = u"/api/v1/trending";
-constexpr QStringView API_VIDEOS = u"/api/v1/videos";
-constexpr QStringView API_CHANNEL = u"/api/v1/video-channels";
-constexpr QStringView API_HISTORY = u"/api/v1/auth/history";
-constexpr QStringView API_COMMENTS = u"/api/v1/comments";
-constexpr QStringView API_LIST_PLAYLISTS = u"/api/v1/auth/playlists";
-constexpr QStringView API_PREFERENCES = u"/api/v1/auth/preferences";
-constexpr QStringView API_PLAYLISTS = u"/api/v1/playlists";
+const QString API_VIDEOS = QStringLiteral("/api/v1/videos");
+const QString API_CHANNEL = QStringLiteral("/api/v1/video-channels");
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -72,7 +60,7 @@ QFuture<VideoResult> PeerTubeApi::requestVideo(QStringView videoId)
 
 QString PeerTubeApi::resolveVideoUrl(QStringView videoId)
 {
-    return QStringLiteral("%1/videos/watch/%2").arg(m_credentials.apiInstance(), videoId);
+    return QStringLiteral("%1/videos/watch/%2").arg(m_apiHost, videoId);
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters)
@@ -150,121 +138,47 @@ QFuture<Result> PeerTubeApi::unsubscribeFromChannel(QStringView channel)
 
 QFuture<HistoryResult> PeerTubeApi::requestHistory(qint32 page)
 {
-    QUrlQuery parameters;
-    parameters.addQueryItem(QStringLiteral("page"), QString::number(page));
-
-    QUrl url{invidiousInstance() % API_HISTORY};
-    url.setQuery(parameters);
-
-    return get<HistoryResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> HistoryResult {
-        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            const auto array = doc.array();
-
-            QList<QString> history;
-            std::transform(array.cbegin(), array.cend(), std::back_inserter(history), [](const QJsonValue &val) {
-                return val.toString();
-            });
-            return history;
-        }
-        return invalidJsonError();
-    });
+    return {};
 }
 
 QFuture<Result> PeerTubeApi::markWatched(const QString &videoId)
 {
-    return post<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), {}, checkIsReplyOk);
+    return {};
 }
 
 QFuture<Result> PeerTubeApi::markUnwatched(const QString &videoId)
 {
-    return deleteResource<Result>(authenticatedNetworkRequest(QUrl(invidiousInstance() % API_HISTORY % u'/' % videoId)), checkIsReplyOk);
+    return {};
 }
 
 QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, const QString &continuation)
 {
-    QUrlQuery parameters;
-    if (!continuation.isEmpty()) {
-        parameters.addQueryItem(QStringLiteral("continuation"), continuation);
-    }
-
-    QUrl url{invidiousInstance() % API_COMMENTS % u'/' % videoId};
-    url.setQuery(parameters);
-
-    return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
-        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            const auto array = doc[u"comments"].toArray();
-
-            QList<Comment> comments;
-            std::transform(array.cbegin(), array.cend(), std::back_inserter(comments), [](const QJsonValue &val) {
-                Comment comment;
-                Comment::fromJson(val.toObject(), comment);
-                return comment;
-            });
-            return Comments{comments, doc[u"continuation"].toString()};
-        }
-        return invalidJsonError();
-    });
+    return {};
 }
 
 QFuture<PlaylistsResult> PeerTubeApi::requestPlaylists()
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS};
-
-    return get<PlaylistsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PlaylistsResult {
-        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            const auto array = doc.array();
-
-            QList<Playlist> playlists;
-            std::transform(array.cbegin(), array.cend(), std::back_inserter(playlists), [](const QJsonValue &val) {
-                Playlist playlist;
-                Playlist::fromJson(val.toObject(), playlist);
-                return playlist;
-            });
-            return playlists;
-        }
-        return invalidJsonError();
-    });
+    return {};
 }
 
 QFuture<PreferencesResult> PeerTubeApi::requestPreferences()
 {
-    QUrl url{invidiousInstance() % API_PREFERENCES};
-
-    return get<PreferencesResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PreferencesResult {
-        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            Preferences preferences;
-            Preferences::fromJson(doc.object(), preferences);
-            return preferences;
-        }
-        return invalidJsonError();
-    });
+    return {};
 }
 
 QFuture<Result> PeerTubeApi::setPreferences(const QInvidious::Preferences &preferences)
 {
-    QUrl url{invidiousInstance() % API_PREFERENCES};
-
-    return post<Result>(authenticatedNetworkRequest(std::move(url)), QJsonDocument(preferences.toJson()).toJson(), checkIsReplyOk);
+    return {};
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestPlaylist(const QString &plid)
 {
-    QUrl url{invidiousInstance() % API_PLAYLISTS % u'/' % plid};
-
-    return get<VideoListResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> VideoListResult {
-        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            const auto obj = doc.object();
-
-            return VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
-        }
-        return invalidJsonError();
-    });
+    return {};
 }
 
 QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(QStringView queryd)
 {
-    QUrl url{invidiousInstance() % API_CHANNEL % u'/' % queryd};
-    qInfo() << url;
+    QUrl url = apiUrl(API_CHANNEL % u'/' % queryd);
 
     return get<ChannelResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> ChannelResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -279,22 +193,12 @@ QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(QStringView queryd)
 
 QFuture<Result> PeerTubeApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos"};
-
-    QJsonObject requestObj;
-    requestObj["videoId"_L1] = videoId;
-
-    QNetworkRequest request = authenticatedNetworkRequest(std::move(url));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/json"));
-
-    return post<Result>(std::move(request), QJsonDocument(requestObj).toJson(QJsonDocument::Compact), checkIsReplyOk);
+    return {};
 }
 
 QFuture<Result> PeerTubeApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
 {
-    QUrl url{invidiousInstance() % API_LIST_PLAYLISTS % u'/' % plid % u"/videos/" % indexId};
-
-    return deleteResource<Result>(authenticatedNetworkRequest(std::move(url)), checkIsReplyOk);
+    return {};
 }
 
 Error PeerTubeApi::invalidJsonError()
@@ -366,41 +270,19 @@ QUrlQuery PeerTubeApi::genericUrlQuery() const
 
 QUrl PeerTubeApi::logInUrl() const
 {
-    QUrl url(invidiousInstance() % API_LOGIN);
-    auto urlQuery = genericUrlQuery();
-    urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
-    urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
-    url.setQuery(urlQuery);
-    return url;
+    return {};
 }
 
 QUrl PeerTubeApi::videoUrl(QStringView videoId) const
 {
-    return QUrl(invidiousInstance() % API_VIDEOS % u'/' % videoId);
+    return {};
 }
 
 QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters) const
 {
-    auto urlString = invidiousInstance();
+    // TODO: implement other query types
+    QString urlString = API_VIDEOS;
     auto query = genericUrlQuery();
-
-    switch (queryType) {
-    case Search:
-        urlString.append(API_SEARCH);
-        break;
-    case Trending:
-        urlString.append(API_TRENDING);
-        break;
-    case Top:
-        urlString.append(API_TOP);
-        break;
-    case Feed:
-        urlString.append(API_FEED);
-        break;
-    case Channel:
-        urlString.append(API_CHANNEL);
-        break;
-    }
 
     if (!urlExtension.isEmpty()) {
         urlString.append(QStringLiteral("/"));
@@ -414,23 +296,19 @@ QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtens
         query.addQueryItem(parameter.key(), parameter.value());
     }
 
-    QUrl url(urlString);
+    QUrl url = apiUrl(urlString);
     url.setQuery(query);
     return url;
 }
 
 QUrl PeerTubeApi::subscriptionsUrl() const
 {
-    auto url = QUrl(invidiousInstance() % API_SUBSCRIPTIONS);
-    QUrlQuery query;
-    query.addQueryItem(QStringLiteral("fields"), QStringLiteral("authorId"));
-    url.setQuery(query);
-    return url;
+    return {};
 }
 
 QUrl PeerTubeApi::subscribeUrl(QStringView channelId) const
 {
-    return QUrl(invidiousInstance() % API_SUBSCRIPTIONS % u'/' % channelId);
+    return {};
 }
 
 void PeerTubeApi::fixupVideoThumbnails(QList<VideoBasicInfo> &list) const
@@ -439,7 +317,7 @@ void PeerTubeApi::fixupVideoThumbnails(QList<VideoBasicInfo> &list) const
     for (auto &video : list) {
         auto newThumbnails = video.videoThumbnails();
         for (auto &thumbnail : newThumbnails) {
-            thumbnail.setUrl(QUrl(QStringLiteral("%1/%2").arg(m_credentials.apiInstance(), thumbnail.url().path())));
+            thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
         }
         video.setVideoThumbnails(newThumbnails);
     }
@@ -448,6 +326,6 @@ void PeerTubeApi::fixupVideoThumbnails(QList<VideoBasicInfo> &list) const
 void PeerTubeApi::fixupChannel(QInvidious::Channel &channel)
 {
     // PeerTube gives us relative URLs for avatar/banner
-    channel.setAvatar(QStringLiteral("%1/%2").arg(m_credentials.apiInstance(), channel.avatar()));
-    channel.setBanner(QStringLiteral("%1/%2").arg(m_credentials.apiInstance(), channel.banner()));
+    channel.setAvatar(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.avatar()));
+    channel.setBanner(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.banner()));
 }

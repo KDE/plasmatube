@@ -81,7 +81,8 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     }
 
     m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
-    m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << PlasmaTube::instance().api()->resolveVideoUrl(m_videoModel->videoId()));
+    // m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") <<
+    // PlasmaTube::instance().sourceManager()->selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
     m_currentPlayer->setOption(QStringLiteral("ytdl-format"), QStringLiteral("best"));
 
     // Restore old position if we had an existing player
