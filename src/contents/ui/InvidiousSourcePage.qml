@@ -37,6 +37,92 @@ FormCard.FormCardPage {
             above: isLoggedInLabel
         }
 
+        Loader {
+            id: preferencesLoader
+
+            active: page.source.loggedIn && page.source.preferences
+
+            Layout.fillWidth: true
+
+            sourceComponent: ColumnLayout {
+                id: root
+
+                property var selectedSource
+
+                spacing: 0
+
+                FormCard.FormCheckDelegate {
+                    text: i18n("Autoplay")
+                    checked: root.selectedSource.preferences.autoPlay
+                    onToggled: {
+                        let preferences = root.selectedSource.preferences;
+                        preferences.autoPlay = checked;
+                        PlasmaTube.preferences = preferences;
+                    }
+                }
+
+                FormCard.FormDelegateSeparator {}
+
+                FormCard.FormComboBoxDelegate {
+                    id: defaultHomepageDelegate
+                    Layout.fillWidth: true
+                    text: i18n("Default homepage")
+                    textRole: "display"
+                    valueRole: "display"
+                    // TODO: these need to be localized, but ListElement makes this difficult...
+                    model: ListModel {
+                        ListElement {
+                            display: "Search"
+                        }
+                        ListElement {
+                            display: "Popular"
+                        }
+                        ListElement {
+                            display: "Trending"
+                        }
+                        ListElement {
+                            display: "Subscriptions"
+                        }
+                        ListElement {
+                            display: "Playlists"
+                        }
+                    }
+                    function calculateIndex() {
+                        let defaultHome = root.selectedSource.preferences.defaultHome;
+                        switch (defaultHome) {
+                            case "Search":
+                                currentIndex = 0;
+                                break;
+                            case "Popular":
+                                currentIndex = 1;
+                                break;
+                            case "Trending":
+                                currentIndex = 2;
+                                break;
+                            case "Subscriptions":
+                                currentIndex = 3;
+                                break;
+                            case "Playlists":
+                                currentIndex = 4;
+                                break;
+                        }
+                    }
+
+                    onCurrentValueChanged: {
+                        let preferences = root.selectedSource.preferences;
+                        preferences.defaultHome = currentText;
+                        PlasmaTube.preferences = preferences;
+                    }
+                }
+
+                FormCard.FormDelegateSeparator {}
+
+                onSelectedSourceChanged: defaultHomepageDelegate.calculateIndex()
+            }
+
+            onLoaded: item.selectedSource = page.source
+        }
+
         FormCard.FormButtonDelegate {
             visible: !page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
