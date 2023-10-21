@@ -20,26 +20,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
     , m_controller(new VideoController(this))
     , m_sourceManager(new SourceManager(this))
 {
-    /*const auto locale = QLocale::system().name().toLower().split(u'_');
-    if (locale.size() == 2) {
-        m_api->setLanguage(locale.at(0));
-        // Regions seem to cause internal server errors. See https://invent.kde.org/plasma-mobile/plasmatube/-/issues/20 for details
-        //m_api->setRegion(locale.at(1));
-    }
-    loadCredentials();*/
     m_sourceManager->load();
-
-    /*if (isLoggedIn()) {
-        fetchSubscriptions();
-    }
-
-    connect(this, &PlasmaTube::loggedOut, this, [=] {
-        m_subscriptions.reset();
-        Q_EMIT subscriptionsChanged();
-    });
-    connect(this, &PlasmaTube::loggedIn, this, [=] {
-        fetchSubscriptions();
-    });*/
 }
 
 PlasmaTube &PlasmaTube::instance()
@@ -102,23 +83,32 @@ bool PlasmaTube::isVideoWatched(const QString &videoId)
 
 void PlasmaTube::markVideoWatched(const QString &videoId)
 {
-    /*if (!m_watchedVideos.contains(videoId) && isLoggedIn()) {
+    auto currentSource = m_sourceManager->selectedSource();
+    Q_ASSERT(currentSource != nullptr);
+
+    if (!m_watchedVideos.contains(videoId) && currentSource->loggedIn()) {
         m_watchedVideos.push_back(videoId);
-        m_api->markWatched(videoId);
-    }*/
+        currentSource->api()->markWatched(videoId);
+    }
 }
 
 void PlasmaTube::markVideoUnwatched(const QString &videoId)
 {
-    /*if (m_watchedVideos.contains(videoId) && isLoggedIn()) {
+    auto currentSource = m_sourceManager->selectedSource();
+    Q_ASSERT(currentSource != nullptr);
+
+    if (m_watchedVideos.contains(videoId) && currentSource->loggedIn()) {
         m_watchedVideos.removeAll(videoId);
-        m_api->markUnwatched(videoId);
-    }*/
+        currentSource->api()->markUnwatched(videoId);
+    }
 }
 
 void PlasmaTube::fetchHistory(qint32 page)
 {
-    /*if (!isLoggedIn()) {
+    auto currentSource = m_sourceManager->selectedSource();
+    Q_ASSERT(currentSource != nullptr);
+
+    if (!currentSource->loggedIn()) {
         return;
     }
 
@@ -140,7 +130,7 @@ void PlasmaTube::fetchHistory(qint32 page)
 
         watcher->deleteLater();
     });
-    watcher->setFuture(m_api->requestHistory(page));*/
+    watcher->setFuture(currentSource->api()->requestHistory(page));
 }
 
 void PlasmaTube::setInhibitSleep(const bool inhibit)
@@ -179,18 +169,24 @@ QInvidious::Preferences PlasmaTube::preferences()
 
 void PlasmaTube::setPreferences(const QInvidious::Preferences &preferences)
 {
-    /*if (!isLoggedIn()) {
+    auto currentSource = m_sourceManager->selectedSource();
+    Q_ASSERT(currentSource != nullptr);
+
+    if (!currentSource->loggedIn()) {
         return;
     }
 
-    m_api->setPreferences(preferences);
+    currentSource->api()->setPreferences(preferences);
     m_preferences = preferences;
-    Q_EMIT preferencesChanged();*/
+    Q_EMIT preferencesChanged();
 }
 
 void PlasmaTube::fetchPreferences()
 {
-    /*if (!isLoggedIn()) {
+    auto currentSource = m_sourceManager->selectedSource();
+    Q_ASSERT(currentSource != nullptr);
+
+    if (!currentSource->loggedIn()) {
         return;
     }
 
@@ -205,10 +201,10 @@ void PlasmaTube::fetchPreferences()
 
         watcher->deleteLater();
     });
-    watcher->setFuture(m_api->requestPreferences());*/
+    watcher->setFuture(currentSource->api()->requestPreferences());
 }
 
 void PlasmaTube::addToPlaylist(const QString &plid, const QString &videoId)
 {
-    // PlasmaTube::instance().sourceManager()->selectedSource()->api()->addVideoToPlaylist(plid, videoId);
+    PlasmaTube::instance().sourceManager()->selectedSource()->api()->addVideoToPlaylist(plid, videoId);
 }
