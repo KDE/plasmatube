@@ -57,7 +57,7 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        text: i18n("Add to Playlist")
+        text: i18n("Add to Playlist…")
         icon.name: "media-playlist-append"
         onTriggered: root.addToPlaylist()
         visible: !root.shouldRemoveFromPlaylist
@@ -69,6 +69,8 @@ QQC2.Menu {
         onTriggered: root.removeFromPlaylist()
         visible: root.shouldRemoveFromPlaylist
     }
+
+    QQC2.MenuSeparator {}
 
     ShareMenu {
         url: "https://youtube.com/watch?=" + currentVideoId
