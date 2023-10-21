@@ -5,6 +5,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
@@ -16,21 +17,10 @@ import org.kde.plasmatube.private
 import org.kde.plasmatube.invidious
 
 FormCard.FormCardPage {
+    id: root
+    
     title: i18n("Settings")
-
-    FormCard.FormHeader {
-        title: i18n("Invidious")
-    }
-
-    FormCard.FormCard {
-        FormCard.FormTextFieldDelegate {
-            label: i18n("Instance")
-            text: Settings !== null ? Settings.invidiousInstance : ""
-            inputMethodHints: Qt.ImhUrlCharactersOnly
-            onAccepted: Settings.invidiousInstance = text
-        }
-    }
-
+    
     FormCard.FormHeader {
         title: i18n("Sources")
     }
@@ -75,7 +65,7 @@ FormCard.FormCardPage {
                                 break;
                         }
 
-                        applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", pageName), {
+                        root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", pageName), {
                             source
                         })
                     }
@@ -88,8 +78,17 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormButtonDelegate {
+            text: i18n("Add Source")
+            onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"))
+        }
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        FormCard.FormButtonDelegate {
             text: i18n("Network Proxy")
-            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "NetworkProxyPage"))
+            onClicked: root.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "NetworkProxyPage"))
         }
     }
 
@@ -98,7 +97,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             text: i18n("About PlasmaTube")
-            onClicked: applicationWindow().pageStack.layers.push(aboutPage)
+            onClicked: root.Window.window.pageStack.layers.push(aboutPage)
 
             Component {
                 id: aboutPage
@@ -113,7 +112,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             text: i18n("About KDE")
-            onClicked: applicationWindow().pageStack.layers.push(aboutKDEPage)
+            onClicked: root.Window.window.pageStack.layers.push(aboutKDEPage)
 
             Component {
                 id: aboutKDEPage
