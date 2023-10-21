@@ -38,6 +38,9 @@ public:
     VideoSource *selectedSource() const;
     int selectedIndex() const;
 
+    Q_INVOKABLE bool canRemove() const;
+    Q_INVOKABLE void removeSource(VideoSource *source);
+
     bool hasAnySources() const;
     bool hasFinishedLoading() const;
 

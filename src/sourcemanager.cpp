@@ -80,6 +80,23 @@ int SourceManager::selectedIndex() const
     }
 }
 
+bool SourceManager::canRemove() const
+{
+    return m_sources.size() != 1;
+}
+
+void SourceManager::removeSource(VideoSource *source)
+{
+    auto config = KSharedConfig::openStateConfig();
+    config->deleteGroup(QStringLiteral("source-%1").arg(source->uuid()));
+    config->sync();
+
+    const int row = static_cast<int>(m_sources.indexOf(source));
+    beginRemoveRows(QModelIndex(), row, row);
+    m_sources.removeAll(source);
+    endRemoveRows();
+}
+
 bool SourceManager::hasAnySources() const
 {
     return !m_sources.isEmpty();
