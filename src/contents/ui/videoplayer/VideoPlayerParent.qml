@@ -22,14 +22,6 @@ Flickable {
     readonly property bool isVideoLoaded: PlasmaTube.videoController.currentVideo.isLoaded
     readonly property real miniPlayerHeight: Kirigami.Units.gridUnit * 3 + Kirigami.Units.gridUnit / 6
 
-    function switchVideo(video) {
-        videoPlayer.vid = video;
-    }
-
-    function stopVideo() {
-        videoPlayer.stop();
-    }
-
     function open() {
         toOpen.restart();
         maximized = true
@@ -147,9 +139,9 @@ Flickable {
                 videoName: videoPlayer.videoName
                 channelName: videoPlayer.channelName
 
-                onToggleRequested: videoPlayer.togglePlaying();
-                onStopRequested: root.stopVideo();
-                onOpenRequested: root.open();
+                onToggleRequested: PlasmaTube.videoController.togglePlaying()
+                onStopRequested: PlasmaTube.videoController.stop()
+                onOpenRequested: root.open()
             }
         }
 

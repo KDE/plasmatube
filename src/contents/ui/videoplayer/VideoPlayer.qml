@@ -52,14 +52,6 @@ Kirigami.ScrollablePage {
         renderer.stop();
     }
 
-    function togglePlaying() {
-        if (renderer.paused) {
-            renderer.play();
-        } else {
-            renderer.pause();
-        }
-    }
-
     function goToChannel() {
         const author = video.author;
         const authorId = video.authorId;

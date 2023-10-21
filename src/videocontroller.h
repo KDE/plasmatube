@@ -26,6 +26,8 @@ public:
     explicit VideoController(QObject *parent = nullptr);
 
     Q_INVOKABLE void play(const QString &videoId);
+    Q_INVOKABLE void togglePlaying();
+    Q_INVOKABLE void stop();
 
     enum VideoMode { Normal, PictureInPicture };
     Q_ENUM(VideoMode);

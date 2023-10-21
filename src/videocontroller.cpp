@@ -26,6 +26,24 @@ void VideoController::play(const QString &videoId)
     openPlayer();
 }
 
+void VideoController::togglePlaying()
+{
+    if (m_currentPlayer != nullptr) {
+        if (m_currentPlayer->paused()) {
+            m_currentPlayer->play();
+        } else {
+            m_currentPlayer->pause();
+        }
+    }
+}
+
+void VideoController::stop()
+{
+    if (m_currentPlayer != nullptr) {
+        m_currentPlayer->stop();
+    }
+}
+
 VideoController::VideoMode VideoController::videoMode() const
 {
     return m_videoMode;
