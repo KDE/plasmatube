@@ -327,6 +327,8 @@ Kirigami.ScrollablePage {
                         applicationWindow().hoverLinkIndicator.text = "";
                     }
 
+                    onLinkActivated: (link) => Qt.openUrlExternally(link)
+
                     HoverHandler {
                         cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.IBeamCursor
                     }

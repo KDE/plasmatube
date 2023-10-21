@@ -69,6 +69,18 @@ ColumnLayout {
                     verticalAlignment: Text.AlignTop
                     wrapMode: Text.WordWrap
 
+                    onHoveredLinkChanged: if (hoveredLink.length > 0 && hoveredLink !== "1") {
+                        applicationWindow().hoverLinkIndicator.text = hoveredLink;
+                    } else {
+                        applicationWindow().hoverLinkIndicator.text = "";
+                    }
+
+                    onLinkActivated: (link) => Qt.openUrlExternally(link)
+
+                    HoverHandler {
+                        cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.IBeamCursor
+                    }
+
                     Layout.fillWidth: true
                 }
             }
