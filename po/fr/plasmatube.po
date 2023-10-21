@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-19 01:41+0000\n"
-"PO-Revision-Date: 2023-09-17 22:00+0200\n"
+"PO-Revision-Date: 2023-10-19 18:10+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -43,7 +43,7 @@ msgstr "Configuration"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Charger plus"
 
 #: contents/ui/components/ShareDialog.qml:33
 #, kde-format
@@ -73,16 +73,15 @@ msgstr "Abonnements"
 #: contents/ui/components/Sidebar.qml:108 contents/ui/PlaylistsPage.qml:15
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Listes de lecture"
 
 #: contents/ui/components/Sidebar.qml:122
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: contents/ui/components/Sidebar.qml:138
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuration"
@@ -173,12 +172,11 @@ msgid "Password must not be empty!"
 msgstr "Le mot de passe ne doit pas être vide !"
 
 #: contents/ui/PlaylistGridItem.qml:70
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "%1 vues"
-msgstr[1] "%1 vues"
+msgstr[0] "vidéo %1"
+msgstr[1] "%1 vidéos"
 
 #: contents/ui/PlaylistPage.qml:112
 #, kde-format
@@ -238,12 +236,12 @@ msgstr "Actuellement connecté comme %1."
 #: contents/ui/SettingsPage.qml:63
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Lecture automatique"
 
 #: contents/ui/SettingsPage.qml:77
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "Page d'accueil par défaut"
 
 #: contents/ui/SettingsPage.qml:152
 #, kde-format
@@ -261,11 +259,10 @@ msgid "About KDE"
 msgstr "À propos de KDE"
 
 #: contents/ui/TrendingPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr "A la mode"
+msgstr "Tendance"
 
 #: contents/ui/VideoGridItem.qml:187
 #, kde-format
@@ -358,37 +355,37 @@ msgstr "Le serveur a retourné un code d'état %1."
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "Tout"
 
 #: videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Jeux"
 
 #: videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Films"
 
 #: videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Musique"
 
 #: videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Nouvelles"
 
 #: videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: videolistmodel.cpp:197
 #, kde-format
