@@ -19,12 +19,13 @@ public:
     explicit LogInController(QObject *parent = nullptr);
 
     bool isLoading() const;
-    Q_SIGNAL void isLoadingChanged();
 
     Q_INVOKABLE void logIn(const QString &username, const QString &password, const QString &invidiousInstance);
 
-    Q_SIGNAL void errorOccurred(const QString &errorText);
-    Q_SIGNAL void loggedIn();
+Q_SIGNALS:
+    void isLoadingChanged();
+    void errorOccurred(const QString &errorText);
+    void loggedIn();
 
 private:
     QFutureWatcher<QInvidious::LogInResult> *m_watcher = nullptr;

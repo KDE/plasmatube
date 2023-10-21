@@ -79,17 +79,18 @@ public:
     Q_INVOKABLE void refresh();
 
     bool isLoading() const;
-    Q_SIGNAL void isLoadingChanged();
 
     QString title() const;
-    Q_SIGNAL void titleChanged();
-
-    Q_SIGNAL void errorOccured(const QString &error);
 
     Q_INVOKABLE void markAsWatched(int index);
     Q_INVOKABLE void markAsUnwatched(int index);
 
     Q_INVOKABLE void removeFromPlaylist(const QString &plid, int index);
+
+Q_SIGNALS:
+    void isLoadingChanged();
+    void titleChanged();
+    void errorOccured(const QString &error);
 
 private:
     void handleQuery(QFuture<QInvidious::VideoListResult> future, QueryType, bool reset = true);

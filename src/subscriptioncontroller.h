@@ -23,12 +23,13 @@ public:
     explicit SubscriptionController(QObject *parent = nullptr);
 
     bool isLoading() const;
-    Q_SIGNAL void isLoadingChanged();
 
     Q_INVOKABLE bool canToggleSubscription() const;
     Q_INVOKABLE void toggleSubscription();
 
-    Q_SIGNAL void errorOccurred(const QString &errorText);
+Q_SIGNALS:
+    void isLoadingChanged();
+    void errorOccurred(const QString &errorText);
 
 private:
     QFutureWatcher<QInvidious::Result> *m_watcher;

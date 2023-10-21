@@ -9,9 +9,9 @@
 #include <QQuickFramebufferObject>
 #include <QtQml/qqmlregistration.h>
 
+#include "qthelper.hpp"
 #include <mpv/client.h>
 #include <mpv/render_gl.h>
-#include "qthelper.hpp"
 
 class MpvRenderer;
 
@@ -33,7 +33,7 @@ class MpvObject : public QQuickFramebufferObject
 public:
     static void on_update(void *ctx);
 
-    MpvObject(QQuickItem * parent = 0);
+    MpvObject(QQuickItem *parent = nullptr);
     virtual ~MpvObject();
     Renderer *createRenderer() const override;
 
@@ -42,16 +42,16 @@ public:
     bool paused();
     bool stopped();
 
-  public Q_SLOTS:
+public Q_SLOTS:
     void play();
     void pause();
     void stop();
     void setPosition(double value);
     void seek(qreal offset);
-    void command(const QVariant& params);
+    void command(const QVariant &params);
     void setOption(const QString &name, const QVariant &value);
     void setProperty(const QString &name, const QVariant &value);
-    QVariant getProperty(const QString& name);
+    QVariant getProperty(const QString &name);
 
 Q_SIGNALS:
     void positionChanged();
@@ -60,7 +60,7 @@ Q_SIGNALS:
     void onUpdate();
     void stoppedChanged();
 
-  private Q_SLOTS:
+private Q_SLOTS:
     void onMpvEvents();
     void doUpdate();
 

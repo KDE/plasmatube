@@ -44,20 +44,14 @@ public:
 
     bool isLoggedIn() const;
     QString invidiousId() const;
-    Q_SIGNAL void credentialsChanged();
 
     std::optional<bool> isSubscribedToChannel(const QString &jid) const;
-    Q_SIGNAL void subscriptionsChanged();
 
     void fetchSubscriptions();
     Q_INVOKABLE void logOut();
 
     void loadCredentials();
     void saveCredentials() const;
-
-    Q_SIGNAL void errorOccurred(const QString &errorText);
-    Q_SIGNAL void loggedIn();
-    Q_SIGNAL void loggedOut();
 
     Q_INVOKABLE bool isVideoWatched(const QString &videoId);
     Q_INVOKABLE void markVideoWatched(const QString &videoId);
@@ -71,8 +65,13 @@ public:
     Q_INVOKABLE void addToPlaylist(const QString &plid, const QString &videoId);
 
 Q_SIGNALS:
+    void credentialsChanged();
+    void subscriptionsChanged();
     void openVideo(const QString &id);
     void preferencesChanged();
+    void errorOccurred(const QString &errorText);
+    void loggedIn();
+    void loggedOut();
 
 private:
     friend class SubscriptionController;

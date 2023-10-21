@@ -86,13 +86,14 @@ public:
     VideoItem *video() const;
     QString videoId() const;
 
-    Q_SIGNAL void isLoadingChanged();
-    Q_SIGNAL void videoIdChanged();
-    Q_SIGNAL void videoChanged();
-    Q_SIGNAL void remoteUrlChanged();
-    Q_SIGNAL void formatListChanged();
-    Q_SIGNAL void selectedFormatChanged();
-    Q_SIGNAL void errorOccurred(const QString &errorText);
+Q_SIGNALS:
+    void isLoadingChanged();
+    void videoIdChanged();
+    void videoChanged();
+    void remoteUrlChanged();
+    void formatListChanged();
+    void selectedFormatChanged();
+    void errorOccurred(const QString &errorText);
 
 private:
     QString m_videoId;

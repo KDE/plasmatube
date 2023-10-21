@@ -18,10 +18,12 @@ public:
 
     QString channelId() const;
     void setChannelId(const QString &channelId);
-    Q_SIGNAL void channelIdChanged();
 
     bool isSubscribed() const;
-    Q_SIGNAL void isSubscribedChanged();
+
+Q_SIGNALS:
+    void channelIdChanged();
+    void isSubscribedChanged();
 
 protected:
     void setIsSubscribed(bool isSubscribed);

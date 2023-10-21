@@ -67,7 +67,6 @@ public:
     Credentials credentials() const;
     void setCredentials(const Credentials &credentials);
     void setCredentials(const QString &apiInstance);
-    Q_SIGNAL void credentialsChanged();
 
     QString invidiousInstance() const;
 
@@ -92,6 +91,9 @@ public:
     QFuture<ChannelResult> requestChannelInfo(QStringView queryd);
     QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId);
     QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId);
+
+Q_SIGNALS:
+    void credentialsChanged();
 
 private:
     enum VideoListType { Search, Trending, Top, Feed, Channel };
