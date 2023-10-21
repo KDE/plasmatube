@@ -1,0 +1,67 @@
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+import QtQuick
+import QtQuick.Controls as QQC2
+
+import org.kde.plasmatube
+
+QQC2.Menu {
+    id: root
+
+    property bool isWatched
+    required property string videoId
+    property bool shouldRemoveFromPlaylist
+
+    signal markWatched()
+    signal addToPlaylist()
+    signal removeFromPlaylist()
+
+    modal: true
+
+    QQC2.MenuItem {
+        text: i18n("Play Now")
+        icon.name: "media-playback-start"
+        onTriggered: {
+            PlasmaTube.videoController.videoMode = VideoController.Normal;
+            PlasmaTube.videoController.play(root.videoId);
+        }
+    }
+
+    QQC2.MenuItem {
+        text: i18n("Play in Picture-in-Picture")
+        icon.name: "view-zoom-out-symbolic"
+        onTriggered: {
+            PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
+            PlasmaTube.videoController.play(root.videoId);
+        }
+    }
+
+    QQC2.MenuSeparator {}
+
+    QQC2.MenuItem {
+        text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
+        icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
+        onTriggered: root.markWatched()
+    }
+
+    QQC2.MenuItem {
+        text: i18n("Add to Playlist")
+        icon.name: "media-playlist-append"
+        onTriggered: root.addToPlaylist()
+        visible: !root.shouldRemoveFromPlaylist
+    }
+
+    QQC2.MenuItem {
+        text: i18n("Remove from Playlist")
+        icon.name: "remove"
+        onTriggered: root.removeFromPlaylist()
+        visible: root.shouldRemoveFromPlaylist
+    }
+
+    ShareMenu {
+        url: "https://youtube.com/watch?=" + currentVideoId
+        shareTitle: currentVideoTitle
+    }
+}

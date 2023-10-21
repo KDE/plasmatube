@@ -31,6 +31,10 @@ Kirigami.ScrollablePage {
 
     property var previewSource: renderer
 
+    property string currentVideoId
+    property int currentVideoIndex
+    property string currentVideoTitle
+
     readonly property string videoName: video.title
     readonly property string channelName: video.author
     readonly property bool isPlaying: !renderer.paused
@@ -368,8 +372,32 @@ Kirigami.ScrollablePage {
                     publishedText: model.publishedText
                     watched: model.watched
 
-                    onClicked: PlasmaTube.videoController.play(model.id)
+                    onClicked: (mouse) => {
+                        if (mouse.button === Qt.LeftButton) {
+                            PlasmaTube.videoController.play(vid);
+                        } else {
+                            currentVideoId = vid;
+                            currentVideoIndex = index;
+                            currentVideoTitle = title;
+                            videoMenu.isWatched = PlasmaTube.isVideoWatched(vid);
+                            videoMenu.popup();
+                        }
+                    }
                 }
+            }
+        }
+    }
+
+    VideoMenu {
+        id: videoMenu
+
+        videoId: currentVideoId
+
+        onMarkWatched: {
+            if (videoMenu.isWatched) {
+                video.recommendedVideosModel().markAsUnwatched(currentVideoIndex);
+            } else {
+                video.recommendedVideosModel().markAsWatched(currentVideoIndex);
             }
         }
     }

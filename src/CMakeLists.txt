@@ -71,6 +71,7 @@ qt_target_qml_sources(plasmatube
         contents/ui/VideoGridItem.qml
         contents/ui/VideoListAction.qml
         contents/ui/VideoListItem.qml
+        contents/ui/VideoMenu.qml
     RESOURCES
         contents/ui/utils.js
 )

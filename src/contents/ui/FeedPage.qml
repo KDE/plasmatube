@@ -102,57 +102,22 @@ Kirigami.ScrollablePage {
         }
     }
 
-    QQC2.Menu {
+    VideoMenu {
         id: videoMenu
 
-        modal: true
+        videoId: currentVideoId
 
-        property bool isWatched
-
-        QQC2.MenuItem {
-            text: i18n("Play Now")
-            icon.name: "media-playback-start"
-            onTriggered: {
-                PlasmaTube.videoController.videoMode = VideoController.Normal;
-                PlasmaTube.videoController.play(root.currentVideoId);
+        onMarkWatched: {
+            if (videoMenu.isWatched) {
+                videoModel.markAsUnwatched(currentVideoIndex);
+            } else {
+                videoModel.markAsWatched(currentVideoIndex);
             }
         }
 
-        QQC2.MenuItem {
-            text: i18n("Play in Picture-in-Picture")
-            icon.name: "view-zoom-out-symbolic"
-            onTriggered: {
-                PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
-                PlasmaTube.videoController.play(root.currentVideoId);
-            }
-        }
-
-        QQC2.MenuSeparator {}
-
-        QQC2.MenuItem {
-            text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
-            icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
-            onTriggered: {
-                if (videoMenu.isWatched) {
-                    videoModel.markAsUnwatched(currentVideoIndex);
-                } else {
-                    videoModel.markAsWatched(currentVideoIndex);
-                }
-            }
-        }
-
-        QQC2.MenuItem {
-            text: i18n("Add to playlist")
-            icon.name: "media-playlist-append"
-            onTriggered: {
-                addToPlaylistLoader.active = true;
-                addToPlaylistLoader.item.open();
-            }
-        }
-
-        ShareMenu {
-            url: "https://youtube.com/watch?=" + currentVideoId
-            shareTitle: currentVideoTitle
+        onAddToPlaylist: {
+            addToPlaylistLoader.active = true;
+            addToPlaylistLoader.item.open();
         }
     }
 

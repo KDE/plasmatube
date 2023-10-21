@@ -88,30 +88,21 @@ Kirigami.ScrollablePage {
         }
     }
 
-    QQC2.Menu {
+    VideoMenu {
         id: videoMenu
 
-        modal: true
+        videoId: currentVideoId
+        shouldRemoveFromPlaylist: true
 
-        property bool isWatched
-
-        QQC2.MenuItem {
-            text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
-            icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
-            onTriggered: {
-                if (videoMenu.isWatched) {
-                    videoModel.markAsUnwatched(currentVideoIndex);
-                } else {
-                    videoModel.markAsWatched(currentVideoIndex);
-                }
+        onMarkWatched: {
+            if (videoMenu.isWatched) {
+                videoModel.markAsUnwatched(currentVideoIndex);
+            } else {
+                videoModel.markAsWatched(currentVideoIndex);
             }
         }
 
-        QQC2.MenuItem {
-            text: i18n("Remove from playlist")
-            icon.name: "media-playlist-append"
-            onTriggered: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)
-        }
+        onRemoveFromPlaylist: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)
     }
 
     Component.onCompleted: videoModel.requestPlaylist(playlistId)

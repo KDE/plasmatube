@@ -34,6 +34,8 @@ MouseArea {
     property string publishedText
     property bool watched
 
+    acceptedButtons: Qt.LeftButton | Qt.RightButton
+
     property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
     Behavior on zoomScale {
         NumberAnimation {
