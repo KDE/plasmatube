@@ -117,6 +117,7 @@ MpvObject::MpvObject(QQuickItem * parent)
         watchLaterDir.mkpath(QStringLiteral("."));
 
     mpv::qt::set_property(mpv, QStringLiteral("watch-later-directory"), watchLaterLocation);
+    mpv::qt::set_property(mpv, QStringLiteral("keep-open"), QStringLiteral("always"));
 
     // don't save position on quit?
     // mpv::qt::set_property(mpv, "save-position-on-quit", true);
