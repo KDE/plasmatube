@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
+import org.kde.plasmatube
 
 Rectangle {
     id: root
@@ -15,7 +16,7 @@ Rectangle {
     property string videoName
     property string channelName
 
-    property bool isPlaying
+    readonly property bool isPlaying: PlasmaTube.videoController.currentPlayer ? !PlasmaTube.videoController.currentPlayer.paused : false
 
     signal toggleRequested()
     signal stopRequested()

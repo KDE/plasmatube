@@ -71,8 +71,7 @@ Kirigami.ScrollablePage {
 
             onClicked: (mouse) => {
                 if (mouse.button === Qt.LeftButton) {
-                    applicationWindow().switchVideo(vid);
-                    applicationWindow().openPlayer();
+                    PlasmaTube.videoController.play(vid);
                 } else {
                     currentVideoId = vid;
                     currentVideoIndex = index;

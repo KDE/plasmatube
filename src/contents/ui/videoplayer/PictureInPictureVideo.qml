@@ -27,20 +27,7 @@ Kirigami.ApplicationWindow {
         renderer.setOption("ytdl-format", "best");
     }
 
-    property var video: VideoModel {
-        id: videoModel
-        videoId: vid
-        onVideoIdChanged: {
-            // is also executed in initial set
-            videoModel.fetch()
-        }
-        onErrorOccurred: (errorText) => {
-            applicationWindow().showPassiveNotification(errorText)
-        }
-        onSelectedFormatChanged: {
-            renderer.setOption("ytdl-format", videoModel.selectedFormat);
-        }
-    }
+    property alias renderer: renderer
 
     MouseArea {
         id: videoContainer
@@ -111,8 +98,6 @@ Kirigami.ApplicationWindow {
         VideoControls {
             inFullScreen: false
             anchors.fill: parent
-            renderer: renderer
-            videoModel: videoModel
             showPresentationControls: false
 
             visible: opacity > 0

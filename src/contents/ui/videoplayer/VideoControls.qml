@@ -10,11 +10,14 @@ import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.coreaddons as KCoreAddons
+import org.kde.plasmatube
 
 QQC2.Control {
     id: root
-    required property var renderer
-    required property var videoModel
+
+    readonly property var currentVideo: PlasmaTube.videoController.currentVideo
+    readonly property var currentPlayer: PlasmaTube.videoController.currentPlayer
+
     property bool inFullScreen: false
     property bool showPresentationControls: true
 
@@ -53,17 +56,17 @@ QQC2.Control {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 font.weight: Font.Bold
-                text: KCoreAddons.Format.formatDuration(renderer.position * 1000)
+                text: root.currentPlayer ? KCoreAddons.Format.formatDuration(root.currentPlayer.position * 1000) : ""
             }
 
             QQC2.Slider {
                 Layout.fillWidth: true
                 from: 0
-                to: renderer.duration
-                value: renderer.position
+                to: root.currentPlayer ? root.currentPlayer.duration : 0
+                value: root.currentPlayer ? root.currentPlayer.position : 0
 
                 onMoved: {
-                    renderer.setPosition(value)
+                    root.currentPlayer.setPosition(value)
                 }
             }
 
@@ -71,7 +74,7 @@ QQC2.Control {
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 font.weight: Font.Bold
-                text: KCoreAddons.Format.formatDuration(renderer.duration * 1000)
+                text: root.currentPlayer ? KCoreAddons.Format.formatDuration(root.currentPlayer.duration * 1000) : ""
             }
         }
 
@@ -117,7 +120,7 @@ QQC2.Control {
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
 
-                        onClicked: renderer.seek(-5)
+                        onClicked: root.currentPlayer.seek(-5)
                         contentItem: Item{
                             Kirigami.Icon {
                                 anchors.centerIn:parent
@@ -149,16 +152,16 @@ QQC2.Control {
                         implicitHeight: 40
                         implicitWidth: 60
                         onClicked: {
-                            if (renderer.paused) {
-                                renderer.play();
+                            if (root.currentPlayer.paused) {
+                                root.currentPlayer.play();
                             } else {
-                                renderer.pause();
+                                root.currentPlayer.pause();
                             }
                         }
-                        contentItem: Item{
+                        contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent
-                                source: renderer.paused ? "media-playback-start" : "media-playback-pause"
+                                source: root.currentPlayer?.paused ? "media-playback-start" : "media-playback-pause"
                                 color: "white"
                                 width: Kirigami.Units.gridUnit
                                 height: Kirigami.Units.gridUnit
@@ -185,7 +188,7 @@ QQC2.Control {
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
 
-                        onClicked: renderer.seek(5)
+                        onClicked: root.currentPlayer.seek(5)
 
                         contentItem: Item{
                             Kirigami.Icon {
@@ -239,9 +242,7 @@ QQC2.Control {
 
                     visible: root.showPresentationControls
 
-                    onClicked: {
-                        applicationWindow().openPiP(root.vid);
-                    }
+                    onClicked: PlasmaTube.videoController.videoMode = VideoController.PictureInPicture
 
                     TabIndicator {}
                 }
@@ -264,10 +265,10 @@ QQC2.Control {
                 id: radioGroup
             }
             Repeater {
-                model: videoModel.formatList
+                model: PlasmaTube.videoController.videoModel.formatList
                 delegate: QQC2.RadioDelegate {
                     Layout.fillWidth: true
-                    checked: videoModel.selectedFormat === modelData
+                    checked: PlasmaTube.videoController.videoModel.selectedFormat === modelData
                     text: modelData
                     QQC2.ButtonGroup.group: radioGroup
                     onCheckedChanged: {

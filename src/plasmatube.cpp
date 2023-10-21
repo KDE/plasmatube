@@ -19,8 +19,9 @@
 #include "constants.h"
 
 PlasmaTube::PlasmaTube(QObject *parent)
-    : QObject(parent),
-      m_api(new QInvidious::Api(new QNetworkAccessManager(this), this))
+    : QObject(parent)
+    , m_api(new QInvidious::Api(new QNetworkAccessManager(this), this))
+    , m_controller(new VideoController(this))
 {
     connect(m_api, &QInvidious::Api::credentialsChanged, this, &PlasmaTube::credentialsChanged);
 
@@ -54,6 +55,11 @@ PlasmaTube &PlasmaTube::instance()
 QInvidious::InvidiousApi *PlasmaTube::api() const
 {
     return m_api;
+}
+
+VideoController *PlasmaTube::videoController() const
+{
+    return m_controller;
 }
 
 bool PlasmaTube::isLoggedIn() const

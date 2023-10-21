@@ -6,6 +6,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
+import org.kde.plasmatube
 
 Flickable {
     id: root
@@ -18,9 +19,8 @@ Flickable {
 
     property alias previewSource: videoPlayer.previewSource
 
-    readonly property bool isVideoLoaded: videoPlayer.vid !== ""
+    readonly property bool isVideoLoaded: PlasmaTube.videoController.currentVideo.isLoaded
     readonly property real miniPlayerHeight: Kirigami.Units.gridUnit * 3 + Kirigami.Units.gridUnit / 6
-    readonly property string currentVideoId: videoPlayer.vid
 
     function switchVideo(video) {
         videoPlayer.vid = video;
@@ -146,8 +146,6 @@ Flickable {
                 previewSource: root.previewSource
                 videoName: videoPlayer.videoName
                 channelName: videoPlayer.channelName
-
-                isPlaying: videoPlayer.isPlaying
 
                 onToggleRequested: videoPlayer.togglePlaying();
                 onStopRequested: root.stopVideo();

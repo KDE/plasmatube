@@ -30,6 +30,8 @@ target_sources(plasmatube PRIVATE
         subscriptioncontroller.h
         subscriptionwatcher.cpp
         subscriptionwatcher.h
+        videocontroller.cpp
+        videocontroller.h
         videolistmodel.cpp
         videolistmodel.h
         videomodel.cpp

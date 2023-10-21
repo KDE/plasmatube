@@ -74,7 +74,7 @@ class VideoModel : public QObject
 public:
     explicit VideoModel(QObject *parent = nullptr);
 
-    Q_INVOKABLE void fetch();
+    void fetch(const QString &videoId);
 
     bool isLoading() const;
     QString remoteUrl();
@@ -82,6 +82,9 @@ public:
     QStringList formatList() const;
     QString selectedFormat() const;
     void setSelectedFormat(const QString &selectedFormat);
+
+    VideoItem *video() const;
+    QString videoId() const;
 
     Q_SIGNAL void isLoadingChanged();
     Q_SIGNAL void videoIdChanged();
@@ -97,7 +100,7 @@ private:
     QHash<QString, QString> m_formatUrl;
     QString m_selectedFormat = QStringLiteral("720p");
     QString m_audioUrl;
-    VideoItem *m_video;
+    VideoItem *m_video = nullptr;
     QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;
 };
 

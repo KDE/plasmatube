@@ -25,8 +25,10 @@ VideoModel::VideoModel(QObject *parent)
     });
 }
 
-void VideoModel::fetch()
+void VideoModel::fetch(const QString &videoId)
 {
+    m_videoId = videoId;
+
     // if currently loading, abort
     if (m_watcher) {
         m_watcher->cancel();
@@ -174,4 +176,14 @@ void VideoModel::setSelectedFormat(const QString &selectedFormat)
     m_selectedFormat = selectedFormat;
     Q_EMIT remoteUrlChanged();
     Q_EMIT selectedFormatChanged();
+}
+
+VideoItem *VideoModel::video() const
+{
+    return m_video;
+}
+
+QString VideoModel::videoId() const
+{
+    return m_videoId;
 }

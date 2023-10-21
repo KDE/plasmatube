@@ -10,6 +10,7 @@
 #include <optional>
 
 #include "preferences.h"
+#include "videocontroller.h"
 
 namespace QInvidious
 {
@@ -25,6 +26,7 @@ class PlasmaTube : public QObject
     Q_PROPERTY(bool isLoggedIn READ isLoggedIn NOTIFY credentialsChanged)
     Q_PROPERTY(QString invidiousId READ invidiousId NOTIFY credentialsChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
+    Q_PROPERTY(VideoController *videoController READ videoController CONSTANT)
 
 public:
     explicit PlasmaTube(QObject *parent = nullptr);
@@ -38,6 +40,7 @@ public:
     }
 
     QInvidious::InvidiousApi *api() const;
+    VideoController *videoController() const;
 
     bool isLoggedIn() const;
     QString invidiousId() const;
@@ -86,4 +89,5 @@ private:
     QList<QString> m_watchedVideos;
     unsigned int screenSaverDbusCookie = 0;
     QInvidious::Preferences m_preferences;
+    VideoController *m_controller = nullptr;
 };

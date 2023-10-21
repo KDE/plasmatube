@@ -69,22 +69,8 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function switchVideo(video) {
-        videoPlayer.switchVideo(video);
-        PlasmaTube.markVideoWatched(video);
-    }
-
-    function openPlayer() {
-        videoPlayer.open();
-    }
-
     function closePlayer() {
         videoPlayer.close();
-    }
-
-    function openPiP(vid) {
-        switchVideo(vid);
-        pipLoader.active = true;
     }
 
     globalDrawer: Sidebar {}
@@ -133,7 +119,10 @@ Kirigami.ApplicationWindow {
         active: false
 
         sourceComponent: PictureInPictureVideo {
-            onClosing: pipLoader.active = false
+            onClosing: {
+                PlasmaTube.videoController.videoMode = VideoController.Normal;
+                pipLoader.active = false;
+            }
         }
 
         onLoaded: item.vid = videoPlayer.currentVideoId
@@ -151,11 +140,6 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: PlasmaTube
-
-        function onOpenVideo(videoId: string) {
-            root.switchVideo(videoId);
-            openPlayer();
-        }
 
         // Load the default homepage
         // TODO: hide the switch behind a loading screen ala NeoChat/Tokodon
@@ -184,6 +168,23 @@ Kirigami.ApplicationWindow {
             }
 
             hasSetInitialPage = true;
+        }
+    }
+
+    Connections {
+        target: PlasmaTube.videoController
+
+        function onOpenNormalPlayer() {
+            PlasmaTube.videoController.currentPlayer = videoPlayer.previewSource;
+            videoPlayer.open();
+        }
+
+        function onOpenPiPPlayer() {
+            pipLoader.active = true;
+            PlasmaTube.videoController.currentPlayer = pipLoader.item.renderer;
+
+            // in our case we still want to open up the normal player anyway
+            videoPlayer.open();
         }
     }
 }

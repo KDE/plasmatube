@@ -27,6 +27,8 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
+    readonly property var video: PlasmaTube.videoController.currentVideo
+
     property string vid: ""
     onVidChanged: {
         comments.loadComments(vid);
@@ -36,8 +38,8 @@ Kirigami.ScrollablePage {
 
     property var previewSource: renderer
 
-    readonly property string videoName: videoModel.video.title
-    readonly property string channelName: videoModel.video.author
+    readonly property string videoName: video.title
+    readonly property string channelName: video.author
     readonly property bool isPlaying: !renderer.paused
 
     readonly property bool widescreen: root.width > 1200
@@ -59,8 +61,8 @@ Kirigami.ScrollablePage {
     }
 
     function goToChannel() {
-        const author = videoModel.video.author;
-        const authorId = videoModel.video.authorId;
+        const author = video.author;
+        const authorId = video.authorId;
         pageStack.pop();
         pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author, authorId});
         root.requestClosePlayer();
@@ -81,21 +83,7 @@ Kirigami.ScrollablePage {
         PlasmaTube.setInhibitSleep(false);
         applicationWindow().showNormal();
     }
-    
-    property var video: VideoModel {
-        id: videoModel
-        videoId: vid
-        onVideoIdChanged: {
-            // is also executed in initial set
-            videoModel.fetch()
-        }
-        onErrorOccurred: (errorText) => {
-            applicationWindow().showPassiveNotification(errorText)
-        }
-        onSelectedFormatChanged: {
-            renderer.setOption("ytdl-format", videoModel.selectedFormat);
-        }
-    }
+
     header: Kirigami.AbstractApplicationHeader{
         contentItem:
             RowLayout{
@@ -108,8 +96,8 @@ Kirigami.ScrollablePage {
                 onClicked: root.requestClosePlayer();
 
             }
-                Kirigami.Heading{
-                text: videoModel.video.title
+            Kirigami.Heading{
+                text: video.title
             }
         }
     }
@@ -182,7 +170,7 @@ Kirigami.ScrollablePage {
                             id: thumbnailImage
 
                             anchors.fill: parent
-                            source: videoModel.video.thumbnailUrl("high")
+                            source: video.thumbnailUrl("high")
                         }
 
                         QQC2.BusyIndicator {
@@ -196,7 +184,7 @@ Kirigami.ScrollablePage {
                         visible: false
                     }
                     VideoData {
-                        title: videoModel.video.title
+                        title: video.title
                         visible: opacity > 0
                         opacity: videoContainer.showControls ? 1 : 0
                         Behavior on opacity {
@@ -207,8 +195,6 @@ Kirigami.ScrollablePage {
                     VideoControls {
                         inFullScreen: root.inFullScreen
                         anchors.fill: parent
-                        renderer: renderer
-                        videoModel: videoModel
 
                         onRequestFullScreen: {
                             if (root.inFullScreen) {
@@ -237,13 +223,13 @@ Kirigami.ScrollablePage {
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
                 spacing: 0
-                visible: !videoModel.isLoading && videoModel.video.isLoaded
-                enabled: !videoModel.isLoading && videoModel.video.isLoaded
+                visible: !PlasmaTube.videoController.videoModel.isLoading && video.isLoaded
+                enabled: !PlasmaTube.videoController.videoModel.isLoading && video.isLoaded
 
                 // title
                 Kirigami.Heading {
                     Layout.fillWidth: true
-                    text: videoModel.video.title
+                    text: video.title
                     wrapMode: Text.Wrap
                     font.weight: Font.Bold
                 }
@@ -259,7 +245,7 @@ Kirigami.ScrollablePage {
                         Layout.preferredHeight: 50
                         Layout.preferredWidth: 50
                         fillMode: Image.PreserveAspectFit
-                        source: videoModel.video.authorThumbnail(100)
+                        source: video.authorThumbnail(100)
                         layer.enabled: true
                         layer.effect: OpacityMask {
                             maskSource: mask
@@ -282,7 +268,7 @@ Kirigami.ScrollablePage {
                         spacing: 0
 
                         QQC2.Label {
-                            text: videoModel.video.author
+                            text: video.author
                             font.weight: Font.Bold
 
                             MouseArea {
@@ -295,8 +281,8 @@ Kirigami.ScrollablePage {
                         SubscriptionButton {
                             id: subscribeButton
 
-                            channelId: videoModel.video.authorId
-                            subCountText: videoModel.video.subCountText
+                            channelId: video.authorId
+                            subCountText: video.subCountText
                         }
                     }
 
@@ -314,7 +300,7 @@ Kirigami.ScrollablePage {
                         enabled: false
                         labelItem.color: Kirigami.Theme.disabledTextColor
                         labelItem.font.weight: Font.Bold
-                        text: i18n("%1 views", Utils.formatCount(videoModel.video.viewCount))
+                        text: i18n("%1 views", Utils.formatCount(video.viewCount))
                     }
 
                     Kirigami.Chip {
@@ -322,7 +308,7 @@ Kirigami.ScrollablePage {
                         enabled: false
                         labelItem.color: Kirigami.Theme.disabledTextColor
                         labelItem.font.weight: Font.Bold
-                        text: i18n("%1 Likes", Utils.formatCount(videoModel.video.likeCount))
+                        text: i18n("%1 Likes", Utils.formatCount(video.likeCount))
                     }
                 }
 
@@ -330,7 +316,7 @@ Kirigami.ScrollablePage {
                 QQC2.TextArea {
                     readonly property var linkRegex: /(href=["'])?(\b(https?):\/\/[^\s\<\>\"\'\\\?\:\)\(]+(\(.*?\))*(\?(?=[a-z])[^\s\\\)]+|$)?)/g
 
-                    text: videoModel.video.description.replace(linkRegex, function() {
+                    text: video.description.replace(linkRegex, function() {
                         if (arguments[1]) {
                             return arguments[0];
                         }
@@ -373,7 +359,7 @@ Kirigami.ScrollablePage {
 
             QQC2.BusyIndicator {
                 Layout.alignment: Qt.AlignCenter
-                visible: videoModel.isLoading
+                visible: PlasmaTube.videoController.videoModel.isLoading
             }
         }
 
@@ -385,7 +371,7 @@ Kirigami.ScrollablePage {
             spacing: 0
 
             Repeater {
-                model: videoModel.video.recommendedVideosModel()
+                model: video.recommendedVideosModel()
                 delegate: VideoListItem {
                     id: videoDelegate
                     Layout.fillWidth: true

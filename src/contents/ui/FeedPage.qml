@@ -79,8 +79,7 @@ Kirigami.ScrollablePage {
 
             onClicked: (mouse) => {
                 if (mouse.button === Qt.LeftButton) {
-                    applicationWindow().switchVideo(vid);
-                    applicationWindow().openPlayer();
+                    PlasmaTube.videoController.play(vid);
                 } else {
                     currentVideoId = vid;
                     currentVideoIndex = index;
@@ -111,10 +110,24 @@ Kirigami.ScrollablePage {
         property bool isWatched
 
         QQC2.MenuItem {
-            text: i18n("Open in Picture-in-Picture")
-            icon.name: "view-zoom-out-symbolic"
-            onTriggered: applicationWindow().openPiP(currentVideoId)
+            text: i18n("Play Now")
+            icon.name: "media-playback-start"
+            onTriggered: {
+                PlasmaTube.videoController.videoMode = VideoController.Normal;
+                PlasmaTube.videoController.play(root.currentVideoId);
+            }
         }
+
+        QQC2.MenuItem {
+            text: i18n("Play in Picture-in-Picture")
+            icon.name: "view-zoom-out-symbolic"
+            onTriggered: {
+                PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
+                PlasmaTube.videoController.play(root.currentVideoId);
+            }
+        }
+
+        QQC2.MenuSeparator {}
 
         QQC2.MenuItem {
             text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
