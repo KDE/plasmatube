@@ -18,13 +18,18 @@ ColumnLayout {
     }
 
     Repeater {
-        anchors.fill: parent
+        id: commentsRepeater
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
 
         model: CommentsModel {
             id: commentsModel
         }
 
         delegate: RowLayout {
+            width: commentsRepeater.width
+
             required property string author
             required property string authorAvatar
             required property string content
@@ -33,6 +38,8 @@ ColumnLayout {
                 source: authorAvatar
                 cache: true
                 name: author
+
+                Layout.alignment: Qt.AlignTop
             }
 
             ColumnLayout {
@@ -52,15 +59,17 @@ ColumnLayout {
                     verticalAlignment: Text.AlignTop
                     elide: Text.ElideRight
                     textFormat: Text.RichText
+
                     Layout.fillWidth: true
                 }
 
                 QQC2.Label {
-                    Layout.fillWidth: true
-                    elide: Text.ElideRight
                     color: Kirigami.Theme.disabledTextColor
                     text: content
                     verticalAlignment: Text.AlignTop
+                    wrapMode: Text.WordWrap
+
+                    Layout.fillWidth: true
                 }
             }
         }
