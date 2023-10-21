@@ -3,8 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "invidiousapi.h"
-// Qt
-#include <QFutureInterface>
+
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>

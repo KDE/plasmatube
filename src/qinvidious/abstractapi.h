@@ -5,15 +5,14 @@
 
 #pragma once
 
-// std
 #include <variant>
-// Qt
+
 #include <QFuture>
 #include <QHash>
 #include <QNetworkCookie>
 #include <QNetworkReply>
 #include <QObject>
-// QInvidious
+
 #include "channel.h"
 #include "comment.h"
 #include "credentials.h"

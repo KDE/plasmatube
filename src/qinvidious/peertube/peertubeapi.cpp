@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "peertubeapi.h"
-// Qt
+
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
