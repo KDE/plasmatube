@@ -110,8 +110,6 @@ Kirigami.ApplicationWindow {
                 pipLoader.active = false;
             }
         }
-
-        onLoaded: item.vid = videoPlayer.currentVideoId
     }
 
     function switchToPage(page, args) {
