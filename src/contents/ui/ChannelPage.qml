@@ -14,11 +14,13 @@ import "utils.js" as Utils
 import "components"
 
 Kirigami.ScrollablePage {
-    property string author
-    property string authorId
-
     id: root
+
+    required property string author
+    required property string authorId
+
     title: author
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
