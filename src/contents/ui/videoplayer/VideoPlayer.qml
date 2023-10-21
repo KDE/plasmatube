@@ -379,7 +379,7 @@ Kirigami.ScrollablePage {
                             currentVideoId = vid;
                             currentVideoIndex = index;
                             currentVideoTitle = title;
-                            videoMenu.isWatched = PlasmaTube.isVideoWatched(vid);
+                            videoMenu.isWatched = watched;
                             videoMenu.popup();
                         }
                     }

@@ -43,7 +43,10 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
         icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
-        onTriggered: root.markWatched()
+        onTriggered: {
+            root.markWatched();
+            root.isWatched = !root.isWatched;
+        }
     }
 
     QQC2.MenuItem {

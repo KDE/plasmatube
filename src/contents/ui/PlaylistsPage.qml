@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
             height: gridView.cellHeight
 
             onClicked: {
-                pageStack.push("qrc:/PlaylistPage.qml", {playlistId, title})
+                pageStack.push(Qt.createComponent("org.kde.plasmatube", "PlaylistPage"), {playlistId, title})
             }
         }
     }
