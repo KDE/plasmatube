@@ -191,7 +191,10 @@ Kirigami.ScrollablePage {
             publishedText: model.publishedText
             watched: model.watched
 
-            onClicked: PlasmaTube.videoController.play(vid)
+            onClicked: {
+                videoModel.markAsWatched(index);
+                PlasmaTube.videoController.play(vid);
+            }
         }
         
         Kirigami.PlaceholderMessage {

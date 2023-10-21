@@ -71,6 +71,7 @@ Kirigami.ScrollablePage {
 
             onClicked: (mouse) => {
                 if (mouse.button === Qt.LeftButton) {
+                    videoModel.markAsWatched(index);
                     PlasmaTube.videoController.play(vid);
                 } else {
                     currentVideoId = vid;
@@ -94,13 +95,8 @@ Kirigami.ScrollablePage {
         videoId: currentVideoId
         shouldRemoveFromPlaylist: true
 
-        onMarkWatched: {
-            if (videoMenu.isWatched) {
-                videoModel.markAsUnwatched(currentVideoIndex);
-            } else {
-                videoModel.markAsWatched(currentVideoIndex);
-            }
-        }
+        onMarkWatched: videoModel.markAsWatched(currentVideoIndex)
+        onMarkUnwatched: videoModel.markAsUnwatched(currentVideoIndex)
 
         onRemoveFromPlaylist: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)
     }

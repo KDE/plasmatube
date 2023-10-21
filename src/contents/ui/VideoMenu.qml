@@ -15,6 +15,7 @@ QQC2.Menu {
     property bool shouldRemoveFromPlaylist
 
     signal markWatched()
+    signal markUnwatched()
     signal addToPlaylist()
     signal removeFromPlaylist()
 
@@ -24,6 +25,7 @@ QQC2.Menu {
         text: i18n("Play Now")
         icon.name: "media-playback-start"
         onTriggered: {
+            root.markWatched();
             PlasmaTube.videoController.videoMode = VideoController.Normal;
             PlasmaTube.videoController.play(root.videoId);
         }
@@ -33,6 +35,7 @@ QQC2.Menu {
         text: i18n("Play in Picture-in-Picture")
         icon.name: "view-zoom-out-symbolic"
         onTriggered: {
+            root.markWatched();
             PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
             PlasmaTube.videoController.play(root.videoId);
         }
@@ -44,7 +47,11 @@ QQC2.Menu {
         text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
         icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
         onTriggered: {
-            root.markWatched();
+            if (root.isWatched) {
+                root.markUnwatched();
+            } else {
+                root.markWatched();
+            }
             root.isWatched = !root.isWatched;
         }
     }
