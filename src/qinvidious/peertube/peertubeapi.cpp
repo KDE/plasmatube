@@ -153,7 +153,22 @@ QFuture<Result> PeerTubeApi::markUnwatched(const QString &videoId)
 
 QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, const QString &continuation)
 {
-    return {};
+    QUrl url = apiUrl(API_VIDEOS % u'/' % videoId % u"/comment-threads");
+
+    return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto array = doc[u"data"].toArray();
+
+            QList<Comment> comments;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(comments), [](const QJsonValue &val) {
+                Comment comment;
+                Comment::fromJson(val.toObject(), comment);
+                return comment;
+            });
+            return Comments{comments, {}};
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<PlaylistsResult> PeerTubeApi::requestPlaylists()
@@ -275,7 +290,7 @@ QUrl PeerTubeApi::logInUrl() const
 
 QUrl PeerTubeApi::videoUrl(QStringView videoId) const
 {
-    return {};
+    return apiUrl(API_VIDEOS % u'/' % videoId);
 }
 
 QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters) const
