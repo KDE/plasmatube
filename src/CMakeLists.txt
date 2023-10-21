@@ -118,4 +118,8 @@ if (TARGET KF6::DBusAddons)
     target_compile_definitions(plasmatube PRIVATE -DHAVE_KDBUSADDONS)
 endif ()
 
+if(PLASMATUBE_FLATPAK)
+    target_compile_definitions(plasmatube PUBLIC PLASMATUBE_FLATPAK)
+endif()
+
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

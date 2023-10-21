@@ -24,7 +24,10 @@
             "name": "plasmatube",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
+            "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ],
+            "config-opts": [
+                "-DPLASMATUBE_FLATPAK=ON"
+            ]
         }
     ]
 }
