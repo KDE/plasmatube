@@ -162,48 +162,6 @@ void PlasmaTube::setInhibitSleep(const bool inhibit)
 #endif
 }
 
-QInvidious::Preferences PlasmaTube::preferences()
-{
-    return m_preferences;
-}
-
-void PlasmaTube::setPreferences(const QInvidious::Preferences &preferences)
-{
-    auto currentSource = m_sourceManager->selectedSource();
-    Q_ASSERT(currentSource != nullptr);
-
-    if (!currentSource->loggedIn()) {
-        return;
-    }
-
-    currentSource->api()->setPreferences(preferences);
-    m_preferences = preferences;
-    Q_EMIT preferencesChanged();
-}
-
-void PlasmaTube::fetchPreferences()
-{
-    auto currentSource = m_sourceManager->selectedSource();
-    Q_ASSERT(currentSource != nullptr);
-
-    if (!currentSource->loggedIn()) {
-        return;
-    }
-
-    auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
-    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
-        auto result = watcher->result();
-
-        if (const auto prefs = std::get_if<QInvidious::Preferences>(&result)) {
-            m_preferences = *prefs;
-            Q_EMIT preferencesChanged();
-        }
-
-        watcher->deleteLater();
-    });
-    watcher->setFuture(currentSource->api()->requestPreferences());
-}
-
 void PlasmaTube::addToPlaylist(const QString &plid, const QString &videoId)
 {
     PlasmaTube::instance().sourceManager()->selectedSource()->api()->addVideoToPlaylist(plid, videoId);

@@ -85,6 +85,11 @@ bool SourceManager::hasAnySources() const
     return !m_sources.isEmpty();
 }
 
+bool SourceManager::hasFinishedLoading() const
+{
+    return m_finishedLoading;
+}
+
 void SourceManager::createInvidiousSource(const QString &url)
 {
     auto source = new VideoSource(QUuid::createUuid().toString(), this);
@@ -105,12 +110,37 @@ void SourceManager::createPeerTubeSource(const QString &url)
 
 void SourceManager::insertSource(VideoSource *pSource)
 {
+    const int index = m_finishedSources.size();
+
     beginInsertRows(QModelIndex(), static_cast<int>(m_sources.size()), static_cast<int>(m_sources.size()));
     m_sources.append(pSource);
+    m_finishedSources.append(false);
     endInsertRows();
     Q_EMIT sourcesChanged();
 
+    if (pSource->hasFinishedLoading()) {
+        m_finishedSources[index] = true;
+        checkIfFinishedLoading();
+    } else {
+        connect(pSource, &VideoSource::finishedLoading, this, [this, index] {
+            m_finishedSources[index] = true;
+            checkIfFinishedLoading();
+        });
+    }
+
     if (m_selectedSource == nullptr) {
         selectSource(pSource);
+    }
+}
+
+void SourceManager::checkIfFinishedLoading()
+{
+    const bool didFinish = std::all_of(m_finishedSources.cbegin(), m_finishedSources.cend(), [](bool b) {
+        return b == true;
+    });
+
+    if (didFinish != m_finishedLoading) {
+        m_finishedLoading = didFinish;
+        Q_EMIT finishedLoading();
     }
 }

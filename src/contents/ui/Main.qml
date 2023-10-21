@@ -36,8 +36,6 @@ Kirigami.ApplicationWindow {
         Kirigami.Theme.colorSet: Kirigami.Theme.View
     }
 
-    pageStack.initialPage: Qt.createComponent("org.kde.plasmatube", "WelcomePage")
-
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
 
@@ -45,6 +43,7 @@ Kirigami.ApplicationWindow {
 
     readonly property real wideScreenThreshold: Kirigami.Units.gridUnit * 40
     readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
+    readonly property bool finishedLoading: PlasmaTube.sourceManager.hasAnySources ? PlasmaTube.sourceManager.finishedLoading : true
 
     function getPage(name) {
         switch (name) {
@@ -72,7 +71,7 @@ Kirigami.ApplicationWindow {
     }
 
     globalDrawer: Sidebar {
-        enabled: PlasmaTube.sourceManager.hasAnySources
+        enabled: PlasmaTube.sourceManager.hasAnySources && root.finishedLoading
     }
 
     footer: Loader {
@@ -112,6 +111,12 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    Kirigami.PlaceholderMessage {
+        anchors.fill: parent
+        text: i18nc("@info:status", "Loading…")
+        visible: !root.finishedLoading
+    }
+
     function switchToPage(page, args) {
         applicationWindow().pageStack.layers.clear();
         if (applicationWindow().pageStack.currentItem !== page) {
@@ -148,22 +153,32 @@ Kirigami.ApplicationWindow {
         target: PlasmaTube.sourceManager
 
         function onSourceSelected() {
-            console.log("hi!");
+            if (PlasmaTube.sourceManager.finishedLoading) {
+                loadDefaultPage();
+            }
+        }
+
+        function onFinishedLoading() {
             loadDefaultPage();
         }
     }
 
-    Component.onCompleted: {
-        console.log(PlasmaTube.sourceManager.hasAnySources);
-
-        if (PlasmaTube.sourceManager.hasAnySources) {
-            loadDefaultPage();
-        }
-    }
+    Component.onCompleted: loadDefaultPage()
 
     function loadDefaultPage() {
+        if (!PlasmaTube.sourceManager.hasAnySources) {
+            root.switchToPage(Qt.createComponent("org.kde.plasmatube", "WelcomePage"));
+            return;
+        }
 
-        /*let defaultHome = PlasmaTube.preferences.defaultHome;
+        let defaultHome = "Popular";
+
+        if (PlasmaTube.sourceManager.selectedSource !== null) {
+            if (PlasmaTube.sourceManager.selectedSource.preferences.defaultHome.length !== 0) {
+                defaultHome = PlasmaTube.sourceManager.selectedSource.preferences.defaultHome;
+            }
+        }
+
         switch (defaultHome) {
             case "Search":
                 root.switchToPage(getPage("SearchPage"));
@@ -180,8 +195,6 @@ Kirigami.ApplicationWindow {
             case "Playlists":
                 root.switchToPage(getPage("PlaylistsPage"));
                 break;
-        }*/
-
-        root.switchToPage(getPage("PopularPage"));
+        }
     }
 }

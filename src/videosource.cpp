@@ -1,5 +1,6 @@
 #include "videosource.h"
 
+#include <QFutureWatcher>
 #include <qt6keychain/keychain.h>
 
 #include "invidious/invidiousapi.h"
@@ -31,6 +32,8 @@ VideoSource::VideoSource(const QString &key, QObject *parent)
         m_cookie = value;
         setApiCookie();
     }
+
+    fetchPreferences();
 }
 
 QString VideoSource::uuid() const
@@ -117,6 +120,52 @@ void VideoSource::setCookie(const QString &cookie)
 QString VideoSource::cookie() const
 {
     return m_cookie;
+}
+
+QInvidious::Preferences VideoSource::preferences()
+{
+    return m_preferences;
+}
+
+void VideoSource::setPreferences(const QInvidious::Preferences &preferences)
+{
+    if (!loggedIn()) {
+        return;
+    }
+
+    m_api->setPreferences(preferences);
+    m_preferences = preferences;
+    Q_EMIT preferencesChanged();
+}
+
+void VideoSource::fetchPreferences()
+{
+    if (!loggedIn()) {
+        m_finishedLoading = true;
+        Q_EMIT finishedLoading();
+        return;
+    }
+
+    auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
+    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
+        auto result = watcher->result();
+
+        if (const auto prefs = std::get_if<QInvidious::Preferences>(&result)) {
+            m_preferences = *prefs;
+            Q_EMIT preferencesChanged();
+        }
+
+        m_finishedLoading = true;
+        Q_EMIT finishedLoading();
+
+        watcher->deleteLater();
+    });
+    watcher->setFuture(m_api->requestPreferences());
+}
+
+bool VideoSource::hasFinishedLoading() const
+{
+    return m_finishedLoading;
 }
 
 QInvidious::AbstractApi *VideoSource::api() const

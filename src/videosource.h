@@ -7,6 +7,7 @@
 #include <QObject>
 #include <QtQml/qqmlregistration.h>
 
+#include "preferences.h"
 #include "sourceconfig.h"
 
 namespace QInvidious
@@ -24,6 +25,7 @@ class VideoSource : public QObject
     Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
     Q_PROPERTY(bool loggedIn READ loggedIn NOTIFY credentialsChanged)
     Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
+    Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
 
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
@@ -48,6 +50,11 @@ public:
     void setCookie(const QString &cookie);
     QString cookie() const;
 
+    QInvidious::Preferences preferences();
+    void setPreferences(const QInvidious::Preferences &preferences);
+
+    bool hasFinishedLoading() const;
+
     QInvidious::AbstractApi *api() const;
 
 Q_SIGNALS:
@@ -55,14 +62,19 @@ Q_SIGNALS:
     void typeChanged();
     void credentialsChanged();
     void usernameChanged();
+    void preferencesChanged();
+    void finishedLoading();
 
 private:
     void createApi();
     void setApiCookie();
     QString cookieKey();
+    void fetchPreferences();
 
     SourceConfig m_config;
     QString m_key;
     QInvidious::AbstractApi *m_api;
     QString m_cookie;
+    QInvidious::Preferences m_preferences;
+    bool m_finishedLoading = false;
 };

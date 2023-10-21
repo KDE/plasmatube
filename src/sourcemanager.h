@@ -15,6 +15,7 @@ class SourceManager : public QAbstractListModel
     QML_UNCREATABLE("Use PlasmaTube.sourceManager")
 
     Q_PROPERTY(bool hasAnySources READ hasAnySources NOTIFY sourcesChanged)
+    Q_PROPERTY(bool finishedLoading READ hasFinishedLoading NOTIFY finishedLoading)
     Q_PROPERTY(VideoSource *selectedSource READ selectedSource WRITE selectSource NOTIFY sourceSelected)
     Q_PROPERTY(int selectedIndex READ selectedIndex NOTIFY sourceSelected)
 
@@ -38,6 +39,7 @@ public:
     int selectedIndex() const;
 
     bool hasAnySources() const;
+    bool hasFinishedLoading() const;
 
     Q_INVOKABLE void createInvidiousSource(const QString &url);
     Q_INVOKABLE void createPeerTubeSource(const QString &url);
@@ -45,9 +47,13 @@ public:
 Q_SIGNALS:
     void sourcesChanged();
     void sourceSelected();
+    void finishedLoading();
 
 private:
     QVector<VideoSource *> m_sources;
+    QVector<bool> m_finishedSources;
     void insertSource(VideoSource *pSource);
     VideoSource *m_selectedSource = nullptr;
+    bool m_finishedLoading = false;
+    void checkIfFinishedLoading();
 };
