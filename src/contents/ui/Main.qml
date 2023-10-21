@@ -82,6 +82,11 @@ Kirigami.ApplicationWindow {
         videoPlayer.close();
     }
 
+    function openPiP(vid) {
+        switchVideo(vid);
+        pipLoader.active = true;
+    }
+
     globalDrawer: Sidebar {}
     contextDrawer: Kirigami.ContextDrawer {}
 
@@ -120,6 +125,18 @@ Kirigami.ApplicationWindow {
         anchors.fill: parent
         contentToPlayerSpacing: footerLoader.active ? footerLoader.height : 0
         z: contentY === 0 ? -1 : 999
+    }
+
+    Loader {
+        id: pipLoader
+
+        active: false
+
+        sourceComponent: PictureInPictureVideo {
+            onClosing: pipLoader.active = false
+        }
+
+        onLoaded: item.vid = videoPlayer.currentVideoId
     }
 
     function switchToPage(page, args) {

@@ -16,6 +16,7 @@ QQC2.Control {
     required property var renderer
     required property var videoModel
     property bool inFullScreen: false
+    property bool showPresentationControls: true
 
     signal requestFullScreen()
 
@@ -219,8 +220,27 @@ QQC2.Control {
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium
 
+                    visible: root.showPresentationControls
+
                     onClicked: {
                         root.requestFullScreen();
+                    }
+
+                    TabIndicator {}
+                }
+
+                QQC2.ToolButton {
+                    width: Kirigami.Units.gridUnit * 3
+                    height: width
+                    icon.name: "view-zoom-in-symbolic"
+                    icon.color: "white"
+                    icon.width: Kirigami.Units.iconSizes.smallMedium
+                    icon.height: Kirigami.Units.iconSizes.smallMedium
+
+                    visible: root.showPresentationControls
+
+                    onClicked: {
+                        applicationWindow().openPiP(root.vid);
                     }
 
                     TabIndicator {}

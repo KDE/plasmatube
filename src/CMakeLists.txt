@@ -47,6 +47,7 @@ qt_target_qml_sources(plasmatube
 
         contents/ui/videoplayer/FloatingVideoPreview.qml
         contents/ui/videoplayer/MinimizedVideoPlayer.qml
+        contents/ui/videoplayer/PictureInPictureVideo.qml
         contents/ui/videoplayer/TabIndicator.qml
         contents/ui/videoplayer/VideoControls.qml
         contents/ui/videoplayer/VideoData.qml

@@ -111,6 +111,12 @@ Kirigami.ScrollablePage {
         property bool isWatched
 
         QQC2.MenuItem {
+            text: i18n("Open in Picture-in-Picture")
+            icon.name: "view-zoom-out-symbolic"
+            onTriggered: applicationWindow().openPiP(currentVideoId)
+        }
+
+        QQC2.MenuItem {
             text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
             icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
             onTriggered: {

@@ -20,6 +20,7 @@ Flickable {
 
     readonly property bool isVideoLoaded: videoPlayer.vid !== ""
     readonly property real miniPlayerHeight: Kirigami.Units.gridUnit * 3 + Kirigami.Units.gridUnit / 6
+    readonly property string currentVideoId: videoPlayer.vid
 
     function switchVideo(video) {
         videoPlayer.vid = video;
