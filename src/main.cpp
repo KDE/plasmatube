@@ -2,13 +2,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include "PlasmaTubeSettings.h"
-#include "logincontroller.h"
+#include "config.h"
 #include "plasmatube.h"
 #include "subscriptioncontroller.h"
 #include "videolistmodel.h"
 #include "videomodel.h"
-#include "mpvobject.h"
 
 #include "qinvidious/searchparameters.h"
 
@@ -25,8 +23,6 @@
 #include <KAboutData>
 #include <KLocalizedString>
 
-#include "channelcontroller.h"
-#include "commentsmodel.h"
 #include "plasmatube-version.h"
 #include "playlistsmodel.h"
 
@@ -63,7 +59,7 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    PlasmaTubeSettings settings;
+    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
     qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", &settings);
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
 

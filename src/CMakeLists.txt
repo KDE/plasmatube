@@ -100,7 +100,7 @@ qt_target_qml_sources(plasmatube
         ../org.kde.plasmatube.svg
 )
 
-kconfig_add_kcfg_files(plasmatube PlasmaTubeSettings.kcfgc sourceconfig.kcfgc GENERATE_MOC)
+kconfig_add_kcfg_files(plasmatube config.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
 target_include_directories(plasmatube PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain ${MPV_LIBRARIES})

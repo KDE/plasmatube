@@ -3,11 +3,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-  <kcfgfile name="plasmatuberc" />
+  <kcfgfile arg="true" />
   <group name="General">
-    <entry name="invidiousInstance" type="Url">
-      <label>Invidious Instance</label>
-      <default>https://inv.riverside.rocks</default>
-    </entry>
   </group>
 </kcfg>
