@@ -8,7 +8,7 @@
 SubscriptionWatcher::SubscriptionWatcher(QObject *parent)
     : QObject(parent)
 {
-    connect(&PlasmaTube::instance(), &PlasmaTube::subscriptionsChanged, this, [=] {
+    connect(PlasmaTube::instance().selectedSource(), &VideoSource::subscriptionsChanged, this, [=] {
         if (m_channelId.isEmpty()) {
             return;
         }
@@ -51,5 +51,5 @@ void SubscriptionWatcher::setIsSubscribed(std::optional<bool> isSubscribed)
 
 void SubscriptionWatcher::setIsSubscribed()
 {
-    setIsSubscribed(PlasmaTube::instance().isSubscribedToChannel(m_channelId));
+    setIsSubscribed(PlasmaTube::instance().selectedSource()->isSubscribedToChannel(m_channelId));
 }

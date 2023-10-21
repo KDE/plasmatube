@@ -22,9 +22,7 @@ bool SubscriptionController::isLoading() const
 bool SubscriptionController::canToggleSubscription() const
 {
     // subscriptions need to be loaded and no other task needs to run
-    // return PlasmaTube::instance().isLoggedIn() &&
-    //       PlasmaTube::instance().subscriptions().has_value() &&
-    //       !m_watcher;
+    return PlasmaTube::instance().selectedSource()->loggedIn() && PlasmaTube::instance().selectedSource()->subscriptions().has_value() && !m_watcher;
     return false;
 }
 
@@ -43,7 +41,7 @@ void SubscriptionController::toggleSubscription()
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
         auto result = m_watcher->result();
         if (std::holds_alternative<QInvidious::Success>(result)) {
-            auto &subs = PlasmaTube::instance().subscriptions();
+            auto &subs = PlasmaTube::instance().selectedSource()->subscriptions();
             if (subs.has_value()) {
                 if (isSubscribed()) {
                     // was subscribed -> now unsubscribed
@@ -52,7 +50,7 @@ void SubscriptionController::toggleSubscription()
                     // was not subscribed -> now subscribed
                     subs->append(channelId());
                 }
-                Q_EMIT PlasmaTube::instance().subscriptionsChanged();
+                Q_EMIT PlasmaTube::instance().selectedSource()->subscriptionsChanged();
             } else {
                 qDebug() << "SubscriptionController::toggleSubscription():"
                          << "(Un)subscription successful, but subscriptions are not loaded.";

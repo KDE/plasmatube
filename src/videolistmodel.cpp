@@ -143,7 +143,7 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
     case PremiumRole:
         return video.premium();
     case WatchedRole:
-        return PlasmaTube::instance().isVideoWatched(video.videoId());
+        return PlasmaTube::instance().selectedSource()->isVideoWatched(video.videoId());
     }
     return {};
 }
@@ -382,7 +382,7 @@ void VideoListModel::markAsWatched(int row)
     auto videoIndex = index(row, 0);
     Q_ASSERT(checkIndex(videoIndex, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
-    PlasmaTube::instance().markVideoWatched(data(videoIndex, IdRole).toString());
+    PlasmaTube::instance().selectedSource()->markVideoWatched(data(videoIndex, IdRole).toString());
     Q_EMIT dataChanged(videoIndex, videoIndex, {WatchedRole});
 }
 
@@ -391,7 +391,7 @@ void VideoListModel::markAsUnwatched(int row)
     auto videoIndex = index(row, 0);
     Q_ASSERT(checkIndex(videoIndex, QAbstractItemModel::CheckIndexOption::IndexIsValid));
 
-    PlasmaTube::instance().markVideoUnwatched(data(videoIndex, IdRole).toString());
+    PlasmaTube::instance().selectedSource()->markVideoUnwatched(data(videoIndex, IdRole).toString());
     Q_EMIT dataChanged(videoIndex, videoIndex, {WatchedRole});
 }
 

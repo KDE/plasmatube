@@ -53,6 +53,14 @@ public:
     QInvidious::Preferences preferences();
     void setPreferences(const QInvidious::Preferences &preferences);
 
+    Q_INVOKABLE bool isVideoWatched(const QString &videoId);
+    Q_INVOKABLE void markVideoWatched(const QString &videoId);
+    void markVideoUnwatched(const QString &videoId);
+
+    std::optional<bool> isSubscribedToChannel(const QString &jid) const;
+
+    Q_INVOKABLE void addToPlaylist(const QString &plid, const QString &videoId);
+
     bool hasFinishedLoading() const;
 
     QInvidious::AbstractApi *api() const;
@@ -64,17 +72,26 @@ Q_SIGNALS:
     void usernameChanged();
     void preferencesChanged();
     void finishedLoading();
+    void subscriptionsChanged();
 
 private:
+    friend class SubscriptionController;
+
     void createApi();
     void setApiCookie();
     QString cookieKey();
     void fetchPreferences();
+    void fetchSubscriptions();
+    void fetchHistory(qint32 page = 1);
+    void setSubscriptions(const QList<QString> &subscriptions);
+    std::optional<QList<QString>> &subscriptions();
 
     SourceConfig m_config;
     QString m_key;
     QInvidious::AbstractApi *m_api;
     QString m_cookie;
     QInvidious::Preferences m_preferences;
+    std::optional<QList<QString>> m_subscriptions;
+    QList<QString> m_watchedVideos;
     bool m_finishedLoading = false;
 };

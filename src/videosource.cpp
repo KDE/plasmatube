@@ -37,6 +37,7 @@ VideoSource::VideoSource(const QString &key, QObject *parent)
     }
 
     fetchPreferences();
+    fetchHistory();
 }
 
 QString VideoSource::uuid() const
@@ -202,4 +203,94 @@ QString VideoSource::cookieKey()
 #else
     return QStringLiteral("%1-cookie").arg(m_key);
 #endif
+}
+
+std::optional<bool> VideoSource::isSubscribedToChannel(const QString &jid) const
+{
+    if (m_subscriptions.has_value()) {
+        return m_subscriptions->contains(jid);
+    }
+    return std::nullopt;
+}
+
+void VideoSource::fetchSubscriptions()
+{
+    auto *watcher = new QFutureWatcher<QInvidious::SubscriptionsResult>();
+    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
+        auto result = watcher->result();
+
+        if (const auto subscriptions = std::get_if<QList<QString>>(&result)) {
+            setSubscriptions(*subscriptions);
+        } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            qDebug() << "Fetching subscriptions:" << error->first << error->second;
+            // Q_EMIT errorOccurred(error->second);
+        }
+
+        watcher->deleteLater();
+    });
+    watcher->setFuture(m_api->requestSubscriptions());
+}
+
+void VideoSource::setSubscriptions(const QList<QString> &subscriptions)
+{
+    m_subscriptions = subscriptions;
+    Q_EMIT subscriptionsChanged();
+}
+
+std::optional<QList<QString>> &VideoSource::subscriptions()
+{
+    return m_subscriptions;
+}
+
+bool VideoSource::isVideoWatched(const QString &videoId)
+{
+    return m_watchedVideos.contains(videoId);
+}
+
+void VideoSource::markVideoWatched(const QString &videoId)
+{
+    if (!m_watchedVideos.contains(videoId) && loggedIn()) {
+        m_watchedVideos.push_back(videoId);
+        m_api->markWatched(videoId);
+    }
+}
+
+void VideoSource::markVideoUnwatched(const QString &videoId)
+{
+    if (m_watchedVideos.contains(videoId) && loggedIn()) {
+        m_watchedVideos.removeAll(videoId);
+        m_api->markUnwatched(videoId);
+    }
+}
+
+void VideoSource::fetchHistory(qint32 page)
+{
+    if (!loggedIn()) {
+        return;
+    }
+
+    if (page == 1) {
+        m_watchedVideos.clear();
+    }
+
+    auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
+    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
+        auto result = watcher->result();
+
+        if (const auto history = std::get_if<QList<QString>>(&result)) {
+            if (!history->isEmpty()) {
+                m_watchedVideos.append(*history);
+
+                fetchHistory(page + 1);
+            }
+        }
+
+        watcher->deleteLater();
+    });
+    watcher->setFuture(m_api->requestHistory(page));
+}
+
+void VideoSource::addToPlaylist(const QString &plid, const QString &videoId)
+{
+    m_api->addVideoToPlaylist(plid, videoId);
 }

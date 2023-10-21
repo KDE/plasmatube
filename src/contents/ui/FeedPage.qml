@@ -146,7 +146,7 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
 
                         onClicked: {
-                            PlasmaTube.addToPlaylist(playlistId, currentVideoId);
+                            PlasmaTube.selectedSource.addToPlaylist(playlistId, currentVideoId);
                             addToPlaylistDialog.close();
                         }
                     }
