@@ -109,6 +109,10 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: PlasmaTube
+
+        function onOpenVideo(videoId: string) {
+            PlasmaTube.videoController.play(videoId);
+        }
     }
 
     Connections {
