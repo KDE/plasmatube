@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "config.h"
-#include "plasmatube.h"
-#include "subscriptioncontroller.h"
-#include "videolistmodel.h"
-#include "videomodel.h"
+#include "controllers/plasmatube.h"
+#include "controllers/subscriptioncontroller.h"
+#include "models/videolistmodel.h"
+#include "models/videomodel.h"
 
 #include <clocale>
 
@@ -27,9 +27,9 @@
 #include <KWindowSystem>
 #endif
 
+#include "controllers/windowcontroller.h"
+#include "models/playlistsmodel.h"
 #include "plasmatube-version.h"
-#include "playlistsmodel.h"
-#include "windowcontroller.h"
 
 std::optional<QString> parseVideoString(const QString &vid)
 {

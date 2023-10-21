@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-add_subdirectory(qinvidious)
+add_subdirectory(api)
 
 add_executable(plasmatube)
 
@@ -11,87 +11,91 @@ qt_add_qml_module(plasmatube
         VERSION 1.0)
 
 target_sources(plasmatube PRIVATE
-        channelcontroller.cpp
-        channelcontroller.h
-        commentsmodel.cpp
-        commentsmodel.h
-        invidiousinstancesmodel.cpp
-        invidiousinstancesmodel.h
-        logincontroller.cpp
-        logincontroller.h
+        controllers/channelcontroller.cpp
+        controllers/channelcontroller.h
+        controllers/plasmatube.cpp
+        controllers/plasmatube.h
+        controllers/logincontroller.cpp
+        controllers/logincontroller.h
+        controllers/videosource.cpp
+        controllers/videosource.h
+        controllers/windowcontroller.cpp
+        controllers/windowcontroller.h
+
+        models/commentsmodel.cpp
+        models/commentsmodel.h
+        models/invidiousinstancesmodel.cpp
+        models/invidiousinstancesmodel.h
+        models/peertubeinstancesmodel.cpp
+        models/peertubeinstancesmodel.h
+        models/playlistsmodel.cpp
+        models/playlistsmodel.h
+        models/videolistmodel.cpp
+        models/videolistmodel.h
+        models/videomodel.cpp
+        models/videomodel.h
+
+        controllers/sourcemanager.cpp
+        controllers/sourcemanager.h
+        controllers/subscriptioncontroller.cpp
+        controllers/subscriptioncontroller.h
+        controllers/subscriptionwatcher.cpp
+        controllers/subscriptionwatcher.h
+        controllers/videocontroller.cpp
+        controllers/videocontroller.h
+
+        utils/mpvobject.cpp
+        utils/mpvobject.h
+        utils/qthelper.hpp
+
         main.cpp
-        mpvobject.cpp
-        mpvobject.h
-        peertubeinstancesmodel.cpp
-        peertubeinstancesmodel.h
-        plasmatube.cpp
-        plasmatube.h
-        playlistsmodel.cpp
-        playlistsmodel.h
-        qthelper.hpp
-        sourcemanager.cpp
-        sourcemanager.h
-        subscriptioncontroller.cpp
-        subscriptioncontroller.h
-        subscriptionwatcher.cpp
-        subscriptionwatcher.h
-        videocontroller.cpp
-        videocontroller.h
-        videolistmodel.cpp
-        videolistmodel.h
-        videomodel.cpp
-        videomodel.h
-        videosource.cpp
-        videosource.h
-        windowcontroller.cpp
-        windowcontroller.h
 )
 
 qt_target_qml_sources(plasmatube
     QML_FILES
-        contents/ui/components/BottomNavBar.qml
-        contents/ui/components/Comments.qml
-        contents/ui/components/PlaylistGridItem.qml
-        contents/ui/components/ShareDialog.qml
-        contents/ui/components/ShareMenu.qml
-        contents/ui/components/Sidebar.qml
-        contents/ui/components/SourceSwitcher.qml
-        contents/ui/components/SubscriptionButton.qml
-        contents/ui/components/VideoGridItem.qml
-        contents/ui/components/VideoListAction.qml
-        contents/ui/components/VideoListItem.qml
-        contents/ui/components/VideoMenu.qml
+        ui/components/BottomNavBar.qml
+        ui/components/Comments.qml
+        ui/components/PlaylistGridItem.qml
+        ui/components/ShareDialog.qml
+        ui/components/ShareMenu.qml
+        ui/components/Sidebar.qml
+        ui/components/SourceSwitcher.qml
+        ui/components/SubscriptionButton.qml
+        ui/components/VideoGridItem.qml
+        ui/components/VideoListAction.qml
+        ui/components/VideoListItem.qml
+        ui/components/VideoMenu.qml
 
-        contents/ui/loginflow/AddInvidiousPage.qml
-        contents/ui/loginflow/AddPeerTubePage.qml
-        contents/ui/loginflow/WelcomePage.qml
+        ui/loginflow/AddInvidiousPage.qml
+        ui/loginflow/AddPeerTubePage.qml
+        ui/loginflow/WelcomePage.qml
 
-        contents/ui/settings/InvidiousSourcePage.qml
-        contents/ui/settings/NetworkProxyPage.qml
-        contents/ui/settings/PeerTubeSourcePage.qml
-        contents/ui/settings/SettingsPage.qml
+        ui/settings/InvidiousSourcePage.qml
+        ui/settings/NetworkProxyPage.qml
+        ui/settings/PeerTubeSourcePage.qml
+        ui/settings/SettingsPage.qml
 
-        contents/ui/videoplayer/MinimizedVideoPlayer.qml
-        contents/ui/videoplayer/PictureInPictureVideo.qml
-        contents/ui/videoplayer/TabIndicator.qml
-        contents/ui/videoplayer/VideoControls.qml
-        contents/ui/videoplayer/VideoData.qml
-        contents/ui/videoplayer/VideoPlayer.qml
-        contents/ui/videoplayer/VideoPlayerParent.qml
+        ui/videoplayer/MinimizedVideoPlayer.qml
+        ui/videoplayer/PictureInPictureVideo.qml
+        ui/videoplayer/TabIndicator.qml
+        ui/videoplayer/VideoControls.qml
+        ui/videoplayer/VideoData.qml
+        ui/videoplayer/VideoPlayer.qml
+        ui/videoplayer/VideoPlayerParent.qml
 
-        contents/ui/ChannelPage.qml
-        contents/ui/FeedPage.qml
-        contents/ui/HistoryPage.qml
-        contents/ui/LoginPage.qml
-        contents/ui/Main.qml
-        contents/ui/PlaylistPage.qml
-        contents/ui/PlaylistsPage.qml
-        contents/ui/PopularPage.qml
-        contents/ui/SearchPage.qml
-        contents/ui/SubscriptionsPage.qml
-        contents/ui/TrendingPage.qml
+        ui/ChannelPage.qml
+        ui/FeedPage.qml
+        ui/HistoryPage.qml
+        ui/LoginPage.qml
+        ui/Main.qml
+        ui/PlaylistPage.qml
+        ui/PlaylistsPage.qml
+        ui/PopularPage.qml
+        ui/SearchPage.qml
+        ui/SubscriptionsPage.qml
+        ui/TrendingPage.qml
     RESOURCES
-        contents/ui/components/utils.js
+        ui/components/utils.js
 )
 
 set_source_files_properties(../org.kde.plasmatube.svg PROPERTIES
@@ -106,7 +110,12 @@ qt_target_qml_sources(plasmatube
 
 kconfig_add_kcfg_files(plasmatube config.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
-target_include_directories(plasmatube PRIVATE ${CMAKE_BINARY_DIR})
+target_include_directories(plasmatube PRIVATE
+        ${CMAKE_BINARY_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/controllers
+        ${CMAKE_CURRENT_SOURCE_DIR}/models
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils
+)
 target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain ${MPV_LIBRARIES})
 target_include_directories(plasmatube PUBLIC ${MPV_INCLUDE_DIRS})
 target_compile_options(plasmatube PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
