@@ -29,6 +29,7 @@
 
 #include "plasmatube-version.h"
 #include "playlistsmodel.h"
+#include "windowcontroller.h"
 
 std::optional<QString> parseVideoString(const QString &vid)
 {
@@ -125,6 +126,25 @@ int main(int argc, char **argv)
             PlasmaTube::instance().openVideo(*videoUrl);
         }
     }
+
+#ifdef HAVE_KDBUSADDONS
+    QQuickWindow *window = nullptr;
+
+    const auto rootObjects = engine.rootObjects();
+    for (auto obj : rootObjects) {
+        auto view = qobject_cast<QQuickWindow *>(obj);
+        if (view) {
+            window = view;
+            break;
+        }
+    }
+
+    if (window != nullptr) {
+        auto controller = engine.singletonInstance<WindowController *>(QStringLiteral("org.kde.plasmatube"), QStringLiteral("WindowController"));
+        controller->setWindow(window);
+        controller->restoreGeometry();
+    }
+#endif
 
     return app.exec();
 }

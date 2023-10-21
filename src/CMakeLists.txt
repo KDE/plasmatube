@@ -43,6 +43,8 @@ target_sources(plasmatube PRIVATE
         videomodel.h
         videosource.cpp
         videosource.h
+        windowcontroller.cpp
+        windowcontroller.h
 )
 
 qt_target_qml_sources(plasmatube
