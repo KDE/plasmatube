@@ -20,14 +20,8 @@ Kirigami.ApplicationWindow {
     minimumWidth: 320
     minimumHeight: 240
 
-    property string vid
-
-    onVidChanged: {
-        renderer.command(["loadfile", "ytdl://" + root.vid]);
-        renderer.setOption("ytdl-format", "best");
-    }
-
     property alias renderer: renderer
+    readonly property var video: PlasmaTube.videoController.currentVideo
 
     MouseArea {
         id: videoContainer
@@ -76,7 +70,7 @@ Kirigami.ApplicationWindow {
                 id: thumbnailImage
 
                 anchors.fill: parent
-                source: videoModel.video.thumbnailUrl("high")
+                source: video.thumbnailUrl("high")
             }
 
             QQC2.BusyIndicator {
@@ -85,7 +79,7 @@ Kirigami.ApplicationWindow {
         }
 
         VideoData {
-            title: videoModel.video.title
+            title: video.title
             visible: opacity > 0
             opacity: videoContainer.showControls ? 1 : 0
             Behavior on opacity {

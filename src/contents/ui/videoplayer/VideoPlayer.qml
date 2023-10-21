@@ -29,13 +29,6 @@ Kirigami.ScrollablePage {
 
     readonly property var video: PlasmaTube.videoController.currentVideo
 
-    property string vid: ""
-    onVidChanged: {
-        comments.loadComments(vid);
-        renderer.command(["loadfile", "ytdl://" + vid]);
-        renderer.setOption("ytdl-format", "best");
-    }
-
     property var previewSource: renderer
 
     readonly property string videoName: video.title
@@ -46,11 +39,6 @@ Kirigami.ScrollablePage {
     property bool inFullScreen: false
 
     signal requestClosePlayer()
-
-    function stop() {
-        vid = "";
-        renderer.stop();
-    }
 
     function goToChannel() {
         const author = video.author;
@@ -380,10 +368,18 @@ Kirigami.ScrollablePage {
                     publishedText: model.publishedText
                     watched: model.watched
 
-                    onClicked: {
-                        root.vid = model.id;
-                    }
+                    onClicked: PlasmaTube.videoController.play(model.id)
                 }
+            }
+        }
+    }
+
+    Connections {
+        target: PlasmaTube.videoController
+
+        function onCurrentVideoChanged() {
+            if (PlasmaTube.videoController.currentVideo !== null) {
+                comments.loadComments(PlasmaTube.videoController.currentVideo.videoId);
             }
         }
     }

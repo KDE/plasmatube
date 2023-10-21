@@ -273,7 +273,7 @@ QQC2.Control {
                     QQC2.ButtonGroup.group: radioGroup
                     onCheckedChanged: {
                         if (checked) {
-                            videoModel.selectedFormat = modelData
+                            PlasmaTube.videoController.videoModel.selectedFormat = modelData
                         }
                     }
                 }
