@@ -74,7 +74,6 @@ Kirigami.ApplicationWindow {
     }
 
     globalDrawer: Sidebar {}
-    contextDrawer: Kirigami.ContextDrawer {}
 
     footer: Loader {
         id: footerLoader
