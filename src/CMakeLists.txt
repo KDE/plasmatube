@@ -47,7 +47,6 @@ qt_target_qml_sources(plasmatube
         contents/ui/components/Sidebar.qml
         contents/ui/components/SubscriptionButton.qml
 
-        contents/ui/videoplayer/FloatingVideoPreview.qml
         contents/ui/videoplayer/MinimizedVideoPlayer.qml
         contents/ui/videoplayer/PictureInPictureVideo.qml
         contents/ui/videoplayer/TabIndicator.qml
