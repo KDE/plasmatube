@@ -18,6 +18,8 @@ QQC2.Control {
     readonly property var currentVideo: PlasmaTube.videoController.currentVideo
     readonly property var currentPlayer: PlasmaTube.videoController.currentPlayer
 
+    readonly property bool atEnd: currentPlayer !== null && currentPlayer.paused ? (Math.abs(currentPlayer.duration - currentPlayer.position) < 0.1) : false
+
     property bool inFullScreen: false
     property bool showPresentationControls: true
 
@@ -153,6 +155,10 @@ QQC2.Control {
                         implicitWidth: 60
                         onClicked: {
                             if (root.currentPlayer.paused) {
+                                if (root.atEnd) {
+                                    root.currentPlayer.setPosition(0);
+                                }
+
                                 root.currentPlayer.play();
                             } else {
                                 root.currentPlayer.pause();
@@ -161,7 +167,17 @@ QQC2.Control {
                         contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent
-                                source: root.currentPlayer?.paused ? "media-playback-start" : "media-playback-pause"
+                                source: {
+                                    if (root.currentPlayer?.paused) {
+                                        if (root.atEnd) {
+                                            return "media-playlist-repeat";
+                                        } else {
+                                            return "media-playback-start";
+                                        }
+                                    } else {
+                                        return "media-playback-pause";
+                                    }
+                                }
                                 color: "white"
                                 width: Kirigami.Units.gridUnit
                                 height: Kirigami.Units.gridUnit
