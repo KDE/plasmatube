@@ -88,6 +88,15 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormButtonDelegate {
+            text: i18n("Network Proxy")
+            onClicked: applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "NetworkProxyPage"))
+        }
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        FormCard.FormButtonDelegate {
             text: i18n("About PlasmaTube")
             onClicked: applicationWindow().pageStack.layers.push(aboutPage)
 

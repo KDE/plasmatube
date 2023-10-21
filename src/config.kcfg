@@ -4,6 +4,34 @@
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile arg="true" />
-  <group name="General">
+  <group name="NetworkProxy">
+    <entry name="ProxyType" type="Enum">
+      <label>The type of proxy used by the application.</label>
+      <choices>
+        <choice name="System">
+          <label>System Default</label>
+        </choice>
+        <choice name="HTTP">
+          <label>HTTP</label>
+        </choice>
+      </choices>
+      <default>System</default>
+    </entry>
+    <entry name="ProxyHost" type="String">
+      <label>IP or hostname of the proxy</label>
+      <default>127.0.0.1</default>
+    </entry>
+    <entry name="ProxyPort" type="int">
+      <label>The port number of the proxy</label>
+      <default>1080</default>
+    </entry>
+    <entry name="ProxyUser" type="String">
+      <label>The user of the proxy</label>
+      <default></default>
+    </entry>
+    <entry name="ProxyPassword" type="Password">
+      <label>The password of the proxy</label>
+      <default></default>
+    </entry>
   </group>
 </kcfg>

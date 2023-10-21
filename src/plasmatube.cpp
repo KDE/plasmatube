@@ -4,12 +4,15 @@
 
 #include "plasmatube.h"
 
+#include "config.h"
+
 #include <KLocalizedString>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusReply>
 #include <QFutureWatcher>
 #include <QGuiApplication>
+#include <QNetworkProxy>
 #include <QSettings>
 #include <QStringBuilder>
 
@@ -18,6 +21,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
     , m_controller(new VideoController(this))
     , m_sourceManager(new SourceManager(this))
 {
+    setApplicationProxy();
     m_sourceManager->load();
     connect(m_sourceManager, &SourceManager::sourceSelected, this, &PlasmaTube::sourceSelected);
 }
@@ -70,4 +74,28 @@ void PlasmaTube::setInhibitSleep(const bool inhibit)
         }
     }
 #endif
+}
+
+void PlasmaTube::setApplicationProxy()
+{
+    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
+    QNetworkProxy proxy;
+
+    // type match to ProxyType from config.kcfg
+    switch (settings.proxyType()) {
+    case 1: // HTTP
+        proxy.setType(QNetworkProxy::HttpProxy);
+        proxy.setHostName(settings.proxyHost());
+        proxy.setPort(settings.proxyPort());
+        proxy.setUser(settings.proxyUser());
+        proxy.setPassword(settings.proxyPassword());
+        break;
+        break;
+    case 0: // System Default
+    default:
+        // do nothing
+        break;
+    }
+
+    QNetworkProxy::setApplicationProxy(proxy);
 }

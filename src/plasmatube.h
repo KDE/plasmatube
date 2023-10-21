@@ -38,6 +38,7 @@ public:
     VideoSource *selectedSource();
 
     Q_INVOKABLE void setInhibitSleep(bool inhibit);
+    Q_INVOKABLE void setApplicationProxy();
 
 Q_SIGNALS:
     void openVideo(const QString &id);

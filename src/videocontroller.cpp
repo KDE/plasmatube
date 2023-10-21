@@ -3,6 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videocontroller.h"
+
+#include "config.h"
 #include "plasmatube.h"
 
 VideoController::VideoController(QObject *parent)
@@ -87,6 +89,15 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     } else {
         m_currentPlayer->setOption(QStringLiteral("stream-lavf-o"), QStringLiteral(""));
     }
+
+    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
+    if (settings.proxyType() == 1) {
+        QString proxyString = QStringLiteral("http://%1:%2@%3:%4")
+                                  .arg(settings.proxyUser(), settings.proxyPassword(), settings.proxyHost(), QString::number(settings.proxyPort()));
+        m_currentPlayer->setOption(QStringLiteral("http-proxy"), proxyString);
+        m_currentPlayer->setOption(QStringLiteral("ytdl-raw-options"), proxyString);
+    }
+
     m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
                                            << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
     m_currentPlayer->setOption(QStringLiteral("ytdl-format"), QStringLiteral("best"));
