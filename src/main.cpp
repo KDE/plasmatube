@@ -8,23 +8,38 @@
 #include "videolistmodel.h"
 #include "videomodel.h"
 
-#include "qinvidious/searchparameters.h"
-
 #include <clocale>
 
 #include <QApplication>
+#include <QCommandLineParser>
+#include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QIcon>
-#include <QCommandLineParser>
 #include <QQuickStyle>
+#include <QQuickWindow>
 
 #include <KLocalizedContext>
 #include <KAboutData>
 #include <KLocalizedString>
 
+#ifdef HAVE_KDBUSADDONS
+#include <KDBusService>
+#include <KWindowSystem>
+#endif
+
 #include "plasmatube-version.h"
 #include "playlistsmodel.h"
+
+std::optional<QString> parseVideoString(const QString &vid)
+{
+    const QRegularExpression exp(QStringLiteral(R"(https:\/\/[www.]*youtube.com\/watch\?v=(.*))"));
+    const auto match = exp.match(vid);
+    if (match.hasMatch()) {
+        return match.captured(1);
+    }
+
+    return std::nullopt;
+}
 
 int main(int argc, char **argv)
 {
@@ -57,6 +72,34 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
 
+#ifdef HAVE_KDBUSADDONS
+    KDBusService service(KDBusService::Unique);
+    QObject::connect(&service, &KDBusService::activateRequested, &engine, [&engine](const QStringList &arguments, const QString & /*workingDirectory*/) {
+        const auto rootObjects = engine.rootObjects();
+        for (auto obj : rootObjects) {
+            if (auto view = qobject_cast<QQuickWindow *>(obj)) {
+                KWindowSystem::updateStartupId(view);
+                KWindowSystem::activateWindow(view);
+
+                if (arguments.isEmpty()) {
+                    return;
+                }
+
+                auto args = arguments;
+                args.removeFirst();
+
+                if (arguments.length() >= 1) {
+                    if (const auto videoUrl = parseVideoString(args[0])) {
+                        PlasmaTube::instance().openVideo(*videoUrl);
+                    }
+                }
+
+                return;
+            }
+        }
+    });
+#endif
+
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
@@ -78,11 +121,8 @@ int main(int argc, char **argv)
         return -1;
 
     if (QApplication::arguments().length() > 1) {
-        auto videoUrl = app.arguments()[1];
-        const QRegularExpression exp(QStringLiteral(R"(https:\/\/[www.]*youtube.com\/watch\?v=(.*))"));
-        const auto match = exp.match(videoUrl);
-        if (match.hasMatch()) {
-            PlasmaTube::instance().openVideo(match.captured(1));
+        if (const auto videoUrl = parseVideoString(app.arguments()[1])) {
+            PlasmaTube::instance().openVideo(*videoUrl);
         }
     }
 

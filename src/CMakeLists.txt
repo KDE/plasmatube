@@ -113,4 +113,9 @@ if (NOT ANDROID)
     target_compile_options(plasmatube PUBLIC -DHAS_DBUS)
 endif()
 
+if (TARGET KF6::DBusAddons)
+    target_link_libraries(plasmatube PRIVATE KF6::DBusAddons KF6::WindowSystem)
+    target_compile_definitions(plasmatube PRIVATE -DHAVE_KDBUSADDONS)
+endif ()
+
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
