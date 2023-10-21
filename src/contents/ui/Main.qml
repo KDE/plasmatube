@@ -45,27 +45,6 @@ Kirigami.ApplicationWindow {
     readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
     readonly property bool finishedLoading: PlasmaTube.sourceManager.hasAnySources ? PlasmaTube.sourceManager.finishedLoading : true
 
-    function getPage(name) {
-        switch (name) {
-            case "PopularPage":
-                return Qt.createComponent("org.kde.plasmatube", "PopularPage");
-            case "SubscriptionsPage":
-                return Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage");
-            case "TrendingPage":
-                return Qt.createComponent("org.kde.plasmatube", "TrendingPage");
-            case "SearchPage":
-                return Qt.createComponent("org.kde.plasmatube", "SearchPage");
-            case "VideoPage":
-                return Qt.createComponent("org.kde.plasmatube", "VideoPage");
-            case "SettingsPage":
-                return Qt.createComponent("org.kde.plasmatube", "SettingsPage");
-            case "HistoryPage":
-                return Qt.createComponent("org.kde.plasmatube", "HistoryPage");
-            case "PlaylistsPage":
-                return Qt.createComponent("org.kde.plasmatube", "PlaylistsPage");
-        }
-    }
-
     function closePlayer() {
         videoPlayer.close();
     }
@@ -181,19 +160,19 @@ Kirigami.ApplicationWindow {
 
         switch (defaultHome) {
             case "Search":
-                root.switchToPage(getPage("SearchPage"));
+                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SearchPage"));
                 break;
             case "Popular":
-                root.switchToPage(getPage("PopularPage"));
+                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
                 break;
             case "Trending":
-                root.switchToPage(getPage("TrendingPage"));
+                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
                 break;
             case "Subscriptions":
-                root.switchToPage(getPage("SubscriptionsPage"));
+                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage"));
                 break;
             case "Playlists":
-                root.switchToPage(getPage("PlaylistsPage"));
+                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "PlaylistsPage"));
                 break;
         }
     }

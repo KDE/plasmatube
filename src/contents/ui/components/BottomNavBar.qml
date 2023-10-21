@@ -73,7 +73,7 @@ Kirigami.NavigationTabBar {
                 while (applicationWindow().pageStack.depth > 0) {
                     applicationWindow().pageStack.pop();
                 }
-                applicationWindow().pageStack.push(applicationWindow().getPage("TrendingPage"));
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
                 applicationWindow().closePlayer();
             }
         },
@@ -84,7 +84,7 @@ Kirigami.NavigationTabBar {
                 while (applicationWindow().pageStack.depth > 0) {
                     applicationWindow().pageStack.pop();
                 }
-                applicationWindow().pageStack.push(applicationWindow().getPage("SearchPage"));
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.plasmatube", "SearchPage"));
                 applicationWindow().closePlayer();
             }
         },
@@ -95,7 +95,7 @@ Kirigami.NavigationTabBar {
                 while (applicationWindow().pageStack.depth > 0) {
                     applicationWindow().pageStack.pop();
                 }
-                applicationWindow().pageStack.push(applicationWindow().getPage("SettingsPage"));
+                applicationWindow().pageStack.push(Qt.createComponent("org.kde.plasmatube", "SettingsPage"));
                 applicationWindow().closePlayer();
             }
         }

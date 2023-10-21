@@ -67,72 +67,81 @@ Kirigami.OverlayDrawer {
             Layout.fillWidth: true
         }
 
+        QQC2.ButtonGroup {
+            id: pageButtonGroup
+        }
+
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("PopularPage")
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "arrow-up-double"
             text: i18n("Popular")
-            checked: pageStack.currentItem === page
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
+                checked = true;
             }
+
+            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("TrendingPage")
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "favorite"
             text: i18n("Trending")
-            checked: pageStack.currentItem === page
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
+                checked = true;
             }
+
+            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("SubscriptionsPage")
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "videoclip-amarok"
             text: i18n("Subscriptions")
-            checked: pageStack.currentItem === page
             enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage"));
+                checked = true;
             }
+
+            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("PlaylistsPage")
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "view-media-playlist"
             text: i18n("Playlists")
-            checked: pageStack.currentItem === page
             enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "PlaylistsPage"));
+                checked = true;
             }
+
+            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("HistoryPage")
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "view-history"
             text: i18n("History")
-            checked: pageStack.currentItem === page
             enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "HistoryPage"));
+                checked = true;
             }
+
+            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Item {
@@ -140,15 +149,12 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
-            property var page: applicationWindow().getPage("SettingsPage")
-
             icon.name: "settings-configure"
             text: i18nc("@action:button Open settings dialog", "Settings")
             padding: Kirigami.Units.largeSpacing
 
-            checked: pageStack.currentItem === page
             onClicked: {
-                applicationWindow().switchToPage(page);
+                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "SettingsPage"));
             }
 
             Layout.fillWidth: true
