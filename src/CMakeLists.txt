@@ -69,8 +69,10 @@ qt_target_qml_sources(plasmatube
         contents/ui/ChannelPage.qml
         contents/ui/FeedPage.qml
         contents/ui/HistoryPage.qml
+        contents/ui/InvidiousSourcePage.qml
         contents/ui/LoginPage.qml
         contents/ui/Main.qml
+        contents/ui/PeerTubeSourcePage.qml
         contents/ui/PlaylistGridItem.qml
         contents/ui/PlaylistPage.qml
         contents/ui/PlaylistsPage.qml

@@ -66,7 +66,6 @@ private:
     QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
-    QUrl logInUrl() const;
     QUrl videoUrl(QStringView videoId) const;
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
     QUrl subscriptionsUrl() const;

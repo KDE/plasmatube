@@ -44,7 +44,13 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
     params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
     params.addQueryItem(QStringLiteral("action"), QStringLiteral("signin"));
 
-    QNetworkRequest request(logInUrl());
+    QUrl url = apiUrl(API_LOGIN);
+    auto urlQuery = genericUrlQuery();
+    urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
+    urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
+    url.setQuery(urlQuery);
+
+    QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
@@ -372,16 +378,6 @@ QUrlQuery InvidiousApi::genericUrlQuery() const
         query.addQueryItem(QStringLiteral("region"), m_region);
     }
     return query;
-}
-
-QUrl InvidiousApi::logInUrl() const
-{
-    QUrl url = apiUrl(API_LOGIN);
-    auto urlQuery = genericUrlQuery();
-    urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
-    urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
-    url.setQuery(urlQuery);
-    return url;
 }
 
 QUrl InvidiousApi::videoUrl(QStringView videoId) const

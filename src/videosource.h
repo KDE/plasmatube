@@ -21,6 +21,9 @@ class VideoSource : public QObject
     QML_UNCREATABLE("Use from SourceManager")
 
     Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
+    Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
+    Q_PROPERTY(bool loggedIn READ loggedIn NOTIFY credentialsChanged)
+    Q_PROPERTY(QString username READ username NOTIFY credentialsChanged)
 
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
@@ -35,6 +38,9 @@ public:
 
     [[nodiscard]] Type type() const;
     void setType(Type type);
+
+    bool loggedIn() const;
+    QString username() const;
 
     QInvidious::AbstractApi *api() const;
 

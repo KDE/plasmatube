@@ -13,14 +13,20 @@ import org.kde.plasmatube.private
 FormCard.FormCardPage {
     id: root
 
+    required property var source
+
+    readonly property bool isValid: usernameField.text.length !== 0 && passwordField.text.length !== 0
+
     title: i18n("Sign in")
 
     data: [
         LogInController {
             id: logInController
 
+            source: root.source
+
             onLoggedIn: {
-                applicationWindow().showPassiveNotification(i18n("Successfully logged in as %1.", PlasmaTube.invidiousId))
+                applicationWindow().showPassiveNotification(i18n("Successfully logged in!"))
                 applicationWindow().pageStack.layers.pop()
             }
 
@@ -35,27 +41,15 @@ FormCard.FormCardPage {
         }
     ]
 
-    Component.onCompleted: invidiousInstance.clicked()
+    Component.onCompleted: usernameField.clicked()
 
     FormCard.FormHeader {
-        title: i18n("Log in to an Invidious Account")
+        title: i18n("Log in")
         visible: !logInController.isLoading
     }
 
     FormCard.FormCard {
         visible: !logInController.isLoading
-
-        FormCard.FormTextFieldDelegate {
-            id: invidiousInstance
-            label: i18n("Instance Url")
-            inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoPredictiveText
-            text: Settings !== null ? Settings.invidiousInstance : ""
-            status: Kirigami.MessageType.Error
-
-            onAccepted: usernameField.clicked()
-        }
-
-        FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextFieldDelegate {
             id: usernameField
@@ -66,7 +60,10 @@ FormCard.FormCardPage {
             onAccepted: passwordField.clicked()
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: usernameField
+            below: passwordField
+        }
 
         FormCard.FormTextFieldDelegate {
             id: passwordField
@@ -78,20 +75,18 @@ FormCard.FormCardPage {
             onAccepted: logInButton.clicked()
         }
 
-        FormCard.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {
+            above: passwordField
+            below: logInButton
+        }
 
         FormCard.FormButtonDelegate {
             id: logInButton
             text: i18n("Log in")
+            enabled: root.isValid
             onClicked: {
-                invidiousInstance.statusMessage = ""
                 usernameField.statusMessage = ""
                 passwordField.statusMessage = ""
-
-                if (!invidiousInstance.text) {
-                    invidiousInstance.statusMessage = i18n("Instance URL must not be empty!")
-                    return;
-                }
 
                 if (!usernameField.text) {
                     usernameField.statusMessage = i18n("Username must not be empty!")
@@ -103,7 +98,7 @@ FormCard.FormCardPage {
                     return;
                 }
 
-                logInController.logIn(usernameField.text, passwordField.text, invidiousInstance.text)
+                logInController.logIn(usernameField.text, passwordField.text)
             }
         }
     }

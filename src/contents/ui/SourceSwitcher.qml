@@ -25,7 +25,7 @@ QQC2.Pane {
         spacing: 0
 
         Delegates.RoundedItemDelegate {
-            id: currentAccountDelegate
+            id: currentSourceDelegate
 
             text: root.selectedSource?.url
 
@@ -35,7 +35,16 @@ QQC2.Pane {
                 spacing: Kirigami.Units.smallSpacing
 
                 Delegates.SubtitleContentItem {
-                    itemDelegate: currentAccountDelegate
+                    itemDelegate: currentSourceDelegate
+                    subtitle: {
+                        switch (root.selectedSource?.type) {
+                            case VideoSource.Invidious:
+                                return i18n("Invidious");
+                            case VideoSource.PeerTube:
+                                return i18n("PeerTube");
+                        }
+                    }
+                    subtitleItem.textFormat: Text.PlainText
 
                     Layout.fillWidth: true
                 }

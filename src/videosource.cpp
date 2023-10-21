@@ -47,6 +47,16 @@ void VideoSource::setType(const VideoSource::Type value)
     }
 }
 
+bool VideoSource::loggedIn() const
+{
+    return false;
+}
+
+QString VideoSource::username() const
+{
+    return {};
+}
+
 QInvidious::AbstractApi *VideoSource::api() const
 {
     return m_api;
