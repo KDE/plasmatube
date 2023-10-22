@@ -4,6 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import QtQuick.Window
 import QtQml.Models
 
 import org.kde.kirigami as Kirigami
@@ -17,7 +18,10 @@ FormCard.FormCardPage {
     title: i18nc("@title:window", "Add Invidious Source")
 
     function addSource(url) {
-        let source = PlasmaTube.sourceManager.createInvidiousSource(url);
+        PlasmaTube.sourceManager.createInvidiousSource(url);
+        if (root.Window.window !== applicationWindow()) {
+            root.Window.window.close();
+        }
     }
 
     FormCard.FormHeader {
