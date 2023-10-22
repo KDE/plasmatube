@@ -33,6 +33,20 @@ Kirigami.ScrollablePage {
         }
     }
 
+    header: KirigamiComponents.Banner {
+        id: message
+        type: Kirigami.MessageType.Error
+        width: parent.width
+
+        showCloseButton: true
+
+        actions: Kirigami.Action {
+            text: i18n("Proxy Settings")
+            icon.name: "settings-configure"
+            onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "NetworkProxyPage"))
+        }
+    }
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     ChannelController {
@@ -145,7 +159,8 @@ Kirigami.ScrollablePage {
                 root.refreshing = isLoading
             }
             onErrorOccured: (errorText) => {
-                applicationWindow().showPassiveNotification(errorText)
+                message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
+                message.visible = true;
             }
         }
         delegate: VideoGridItem {

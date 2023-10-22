@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 import org.kde.plasmatube.invidious
@@ -144,6 +145,20 @@ Kirigami.ScrollablePage {
                 top: parent.bottom
             }
         }
+
+        Components.Banner {
+            id: message
+            type: Kirigami.MessageType.Error
+            width: parent.width
+
+            showCloseButton: true
+
+            actions: Kirigami.Action {
+                text: i18n("Proxy Settings")
+                icon.name: "settings-configure"
+                onTriggered: pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "NetworkProxyPage"))
+            }
+        }
     }
 
     SearchParameters {
@@ -172,7 +187,8 @@ Kirigami.ScrollablePage {
                 root.refreshing = isLoading
             }
             onErrorOccured: (errorText) => {
-                applicationWindow().showPassiveNotification(errorText)
+                message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
+                message.visible = true;
             }
         }
         delegate: VideoGridItem {
