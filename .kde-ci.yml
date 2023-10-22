@@ -5,10 +5,11 @@ Dependencies:
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
+    'frameworks/kitemmodels': '@latest-kf6'
     'frameworks/purpose': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
     'third-party/qtkeychain': '@latest'
