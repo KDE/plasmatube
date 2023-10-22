@@ -10,6 +10,7 @@ using namespace Qt::StringLiterals;
 VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &info)
 {
     const bool isPeerTube = obj.contains("id"_L1);
+    const bool isInvidious = obj.contains("videoId"_L1);
     if (isPeerTube) {
         info.setVideoId(obj.value("uuid"_L1).toString());
         info.setTitle(obj.value("name"_L1).toString());
@@ -23,7 +24,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.setAuthorUrl(channel.value("url"_L1).toString());
         // FIXME: 2038 problem (timestamp is only 32 bit long)
         info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("publishedAt"_L1).toInt()));
-        // info.setPublishedText(obj.value("publishedText"_L1).toString());
+        info.setPublishedText(info.published().toString());
         info.setDescription(obj.value("description"_L1).toString());
         info.setDescriptionHtml(obj.value("description"_L1).toString());
         info.setLiveNow(obj.value("isLive"_L1).toBool(false));
@@ -34,7 +35,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         VideoThumbnail thumbnail;
         thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnailPath"_L1).toString()));
         info.m_videoThumbnails.push_back(thumbnail);
-    } else {
+    } else if (isInvidious) {
         info.setVideoId(obj.value("videoId"_L1).toString());
         info.setTitle(obj.value("title"_L1).toString());
         info.setLength(QTime(0, 0).addSecs(obj.value("lengthSeconds"_L1).toInt()));
@@ -55,6 +56,32 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         if (obj.contains("indexId"_L1)) {
             info.setIndexId(obj.value("indexId"_L1).toString());
         }
+    } else {
+        info.setVideoId(obj.value("url"_L1).toString().remove(QStringLiteral("/watch?v=")));
+        info.setTitle(obj.value("title"_L1).toString());
+        info.setLength(QTime(0, 0).addSecs(obj.value("duration"_L1).toInt()));
+        info.setViewCount(obj.value("views"_L1).toInt());
+        info.setAuthor(obj.value("uploaderName"_L1).toString());
+        info.setAuthorUrl(obj.value("uploaderUrl"_L1).toString());
+        info.setAuthorId(obj.value("uploaderUrl"_L1).toString().remove(QStringLiteral("/channel/")));
+        // FIXME: 2038 problem (timestamp is only 32 bit long)
+        info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("uploaded"_L1).toInt()));
+        info.setPublishedText(obj.value("uploadedDate"_L1).toString());
+        if (obj.contains("description"_L1)) {
+            info.setDescription(obj.value("description"_L1).toString());
+            info.setDescriptionHtml(obj.value("description"_L1).toString());
+        } else {
+            info.setDescription(obj.value("shortDescription"_L1).toString());
+            info.setDescriptionHtml(obj.value("shortDescription"_L1).toString());
+        }
+        info.setLiveNow(false);
+        info.setPaid(false);
+        info.setPremium(false);
+        info.setUpcoming(false);
+
+        VideoThumbnail thumbnail;
+        thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnail"_L1).toString()));
+        info.m_videoThumbnails.push_back(thumbnail);
     }
     return info;
 }

@@ -30,7 +30,7 @@ class VideoSource : public QObject
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
 
-    enum class Type { Invidious, PeerTube };
+    enum class Type { Invidious, PeerTube, Piped };
     Q_ENUM(Type)
 
     [[nodiscard]] QString uuid() const;

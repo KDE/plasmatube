@@ -55,5 +55,16 @@ FormCard.FormCardPage {
             text: i18n("Add PeerTube Source")
             onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPeerTubePage"))
         }
+
+        FormCard.FormDelegateSeparator {
+            above: peerTubeButton
+            below: pipedButton
+        }
+
+        FormCard.FormButtonDelegate {
+            id: pipedButton
+            text: i18n("Add Piped Source")
+            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPipedPage"))
+        }
     }
 }

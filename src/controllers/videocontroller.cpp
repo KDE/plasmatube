@@ -18,6 +18,11 @@ VideoController::VideoController(QObject *parent)
 
 void VideoController::play(const QString &videoId)
 {
+    if (videoId.isEmpty()) {
+        qWarning() << "Not trying to play an empty video id.";
+        return;
+    }
+
     // If the user is attempting to "play" the same video, they probably meant to open the player
     if (currentVideo() && currentVideo()->videoId() == videoId) {
         openPlayer();

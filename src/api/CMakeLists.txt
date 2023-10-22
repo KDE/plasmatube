@@ -15,6 +15,9 @@ target_sources(qinvidious PRIVATE
         peertube/peertubeapi.cpp
         peertube/peertubeapi.h
 
+        piped/pipedapi.cpp
+        piped/pipedapi.h
+
         abstractapi.h
         abstractapi.cpp
         caption.cpp

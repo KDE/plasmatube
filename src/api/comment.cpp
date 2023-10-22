@@ -10,9 +10,14 @@ using namespace Qt::StringLiterals;
 Comment Comment::fromJson(const QJsonObject &obj, Comment &comment)
 {
     const bool isPeerTube = obj.contains("id"_L1);
+    const bool isPiped = obj.contains("commentId"_L1);
     if (isPeerTube) {
         comment.setAuthor(obj["account"_L1].toObject()["displayName"_L1].toString());
         comment.setContent(obj["text"_L1].toString());
+    } else if (isPiped) {
+        comment.setAuthor(obj["author"_L1].toString());
+        comment.setContent(obj["commentText"_L1].toString());
+        comment.setAuthorAvatar(obj["thumbnail"_L1].toString());
     } else {
         comment.setAuthor(obj["author"_L1].toString());
         comment.setContent(obj["contentHtml"_L1].toString());

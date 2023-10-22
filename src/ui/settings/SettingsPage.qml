@@ -51,6 +51,8 @@ FormCard.FormCardPage {
                                 return i18n("Invidious");
                             case VideoSource.PeerTube:
                                 return i18n("PeerTube");
+                            case VideoSource.Piped:
+                                return i18n("Piped");
                         }
                     }
 
@@ -62,6 +64,9 @@ FormCard.FormCardPage {
                                 break;
                             case VideoSource.PeerTube:
                                 pageName = "PeerTubeSourcePage";
+                                break;
+                            case VideoSource.Piped:
+                                pageName = "PipedSourcePage";
                                 break;
                         }
 

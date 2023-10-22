@@ -141,6 +141,14 @@ QHash<QString, QString> SearchParameters::toQueryParameters() const
     return parameters;
 }
 
+QHash<QString, QString> SearchParameters::toPipedQueryParameters() const
+{
+    QHash<QString, QString> parameters;
+    parameters.insert(QStringLiteral("q"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
+    parameters.insert(QStringLiteral("filter"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
+    return parameters;
+}
+
 const QString &SearchParameters::query() const
 {
     return m_query;

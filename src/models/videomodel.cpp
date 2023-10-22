@@ -131,8 +131,8 @@ QUrl VideoItem::authorThumbnail(quint32 size) const
         if (thumb.width() >= size)
             return thumb.url();
     }
-    if (!authorThumbnails().isEmpty())
-        return authorThumbnails().constEnd()->url();
+    if (!authorThumbs.isEmpty())
+        return authorThumbs.last().url();
     return {};
 }
 

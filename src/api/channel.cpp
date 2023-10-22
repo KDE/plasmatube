@@ -9,7 +9,8 @@ using namespace Qt::StringLiterals;
 
 Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
 {
-    const bool isPeerTube = obj.contains("id"_L1);
+    const bool isPeerTube = obj.contains("id"_L1) && !obj.contains("nextpage"_L1);
+    const bool isPiped = obj.contains("id"_L1) && obj.contains("nextpage"_L1);
     if (isPeerTube) {
         channel.setName(obj["name"_L1].toString());
         channel.setDescription(obj["description"_L1].toString());
@@ -17,6 +18,12 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.setAvatar(obj["avatar"_L1].toObject()["path"_L1].toString());
         const QJsonValue firstBanners = obj["banners"_L1].toArray().first();
         channel.setBanner(firstBanners.toObject()["path"_L1].toString());
+    } else if (isPiped) {
+        channel.setName(obj["name"_L1].toString());
+        channel.setAvatar(obj["avatarUrl"_L1].toString());
+        channel.setBanner(obj["bannerUrl"_L1].toString());
+        channel.setDescription(obj["description"_L1].toString());
+        channel.setSubCount(obj["subscriberCount"_L1].toInt());
     } else {
         channel.setName(obj["author"_L1].toString());
         const QJsonValue firstAvatar = obj["authorThumbnails"_L1].toArray().first();

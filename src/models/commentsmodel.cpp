@@ -82,24 +82,27 @@ void CommentsModel::fill()
     if (m_loading) {
         return;
     }
+
     setLoading(true);
 
-    m_futureWatcher = new QFutureWatcher<QInvidious::CommentsResult>();
-
     auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestComments(m_videoId, m_continuation);
+
+    m_futureWatcher = new QFutureWatcher<QInvidious::CommentsResult>();
     m_futureWatcher->setFuture(future);
 
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
-        auto result = m_futureWatcher->result();
-        if (auto comments = std::get_if<QInvidious::Comments>(&result)) {
-            const auto rows = rowCount({});
-            beginInsertRows({}, rows, rows + comments->comments.size() - 1);
-            m_comments << (*comments).comments;
-            endInsertRows();
+        if (m_futureWatcher->future().resultCount() != 0) {
+            auto result = m_futureWatcher->result();
+            if (auto comments = std::get_if<QInvidious::Comments>(&result)) {
+                const auto rows = rowCount({});
+                beginInsertRows({}, rows, rows + comments->comments.size() - 1);
+                m_comments << (*comments).comments;
+                endInsertRows();
 
-            m_continuation = comments->continuation;
-        } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            // TODO: Log error
+                m_continuation = comments->continuation;
+            } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
+                // TODO: Log error
+            }
         }
 
         m_futureWatcher->deleteLater();

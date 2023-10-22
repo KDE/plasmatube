@@ -11,26 +11,47 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
 {
     VideoBasicInfo::fromJson(obj, video);
 
-    parseArray(obj.value("keywords"_L1), video.m_keywords);
-    video.setLikeCount(obj.value("likeCount"_L1).toInt());
-    video.setDislikeCount(obj.value("dislikeCount"_L1).toInt());
-    video.setIsFamilyFriendly(obj.value("isFamilyFriendly"_L1).toBool(true));
-    parseArray(obj.value("allowedRegions"_L1), video.m_allowedRegions);
-    video.setGenre(obj.value("genre"_L1).toString());
-    video.setGenreUrl(obj.value("genreUrl"_L1).toString());
-    parseArray(obj.value("authorThumbnails"_L1), video.m_authorThumbnails);
-    video.setSubCountText(obj.value("subCountText"_L1).toString());
-    video.setAllowRatings(obj.value("allowRatings"_L1).toBool(true));
-    video.setRating(obj.value("rating"_L1).toDouble(5.0));
-    video.setIsListed(obj.value("isListed"_L1).toBool(true));
-    parseArray(obj.value("recommendedVideos"_L1), video.m_recommendedVideos);
-    if (obj.contains(u"premiereTimestamp")) {
-        video.setPremiereTimestamp(QDateTime::fromMSecsSinceEpoch(obj.value(u"premiereTimestamp").toInt()));
+    const bool isPeerTube = obj.contains("id"_L1);
+    const bool isInvidious = obj.contains("videoId"_L1);
+
+    if (isInvidious) {
+        parseArray(obj.value("keywords"_L1), video.m_keywords);
+        video.setLikeCount(obj.value("likeCount"_L1).toInt());
+        video.setDislikeCount(obj.value("dislikeCount"_L1).toInt());
+        video.setIsFamilyFriendly(obj.value("isFamilyFriendly"_L1).toBool(true));
+        parseArray(obj.value("allowedRegions"_L1), video.m_allowedRegions);
+        video.setGenre(obj.value("genre"_L1).toString());
+        video.setGenreUrl(obj.value("genreUrl"_L1).toString());
+        parseArray(obj.value("authorThumbnails"_L1), video.m_authorThumbnails);
+        video.setSubCountText(obj.value("subCountText"_L1).toString());
+        video.setAllowRatings(obj.value("allowRatings"_L1).toBool(true));
+        video.setRating(obj.value("rating"_L1).toDouble(5.0));
+        video.setIsListed(obj.value("isListed"_L1).toBool(true));
+        parseArray(obj.value("recommendedVideos"_L1), video.m_recommendedVideos);
+        if (obj.contains(u"premiereTimestamp")) {
+            video.setPremiereTimestamp(QDateTime::fromMSecsSinceEpoch(obj.value(u"premiereTimestamp").toInt()));
+        }
+        video.setHlsUrl(QUrl(obj.value(u"hlsUrl").toString()));
+        parseArray(obj.value(u"adaptiveFormats"), video.m_adaptiveFormats);
+        parseArray(obj.value(u"formatStreams"), video.m_combinedFormats);
+        parseArray(obj.value(u"captions"), video.m_captions);
+    } else if (isPeerTube) {
+        // TODO: peertube stub
+    } else {
+        video.setAuthor(obj.value("uploader"_L1).toString());
+        parseArray(obj.value("tags"_L1), video.m_keywords);
+        video.setLikeCount(obj.value("likes"_L1).toInt());
+        video.setDislikeCount(obj.value("dislikes"_L1).toInt());
+
+        VideoThumbnail thumbnail;
+        thumbnail.setUrl(QUrl(obj.value("uploaderAvatar"_L1).toString()));
+        video.m_authorThumbnails.push_back(thumbnail);
+
+        video.setSubCountText(QString::number(obj.value("uploaderSubscriberCount"_L1).toInt()));
+        parseArray(obj.value("relatedStreams"_L1), video.m_recommendedVideos);
+        video.setHlsUrl(QUrl(obj.value(u"hls").toString()));
     }
-    video.setHlsUrl(QUrl(obj.value(u"hlsUrl").toString()));
-    parseArray(obj.value(u"adaptiveFormats"), video.m_adaptiveFormats);
-    parseArray(obj.value(u"formatStreams"), video.m_combinedFormats);
-    parseArray(obj.value(u"captions"), video.m_captions);
+
     return video;
 }
 

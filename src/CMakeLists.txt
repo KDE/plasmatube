@@ -68,11 +68,13 @@ qt_target_qml_sources(plasmatube
 
         ui/loginflow/AddInvidiousPage.qml
         ui/loginflow/AddPeerTubePage.qml
+        ui/loginflow/AddPipedPage.qml
         ui/loginflow/WelcomePage.qml
 
         ui/settings/InvidiousSourcePage.qml
         ui/settings/NetworkProxyPage.qml
         ui/settings/PeerTubeSourcePage.qml
+        ui/settings/PipedSourcePage.qml
         ui/settings/SettingsPage.qml
 
         ui/videoplayer/MinimizedVideoPlayer.qml

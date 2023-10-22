@@ -8,6 +8,7 @@
 
 #include "invidious/invidiousapi.h"
 #include "peertube/peertubeapi.h"
+#include "piped/pipedapi.h"
 
 VideoSource::VideoSource(const QString &key, QObject *parent)
     : QObject(parent)
@@ -185,6 +186,9 @@ void VideoSource::createApi()
         break;
     case Type::PeerTube:
         m_api = new QInvidious::PeerTubeApi(new QNetworkAccessManager(this), this);
+        break;
+    case Type::Piped:
+        m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
         break;
     }
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);

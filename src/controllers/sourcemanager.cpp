@@ -127,6 +127,15 @@ void SourceManager::createPeerTubeSource(const QString &url)
     insertSource(source);
 }
 
+void SourceManager::createPipedSource(const QString &url)
+{
+    auto source = new VideoSource(QUuid::createUuid().toString(), this);
+    source->setType(VideoSource::Type::Piped);
+    source->setUrl(url);
+
+    insertSource(source);
+}
+
 void SourceManager::insertSource(VideoSource *pSource)
 {
     const int index = m_finishedSources.size();

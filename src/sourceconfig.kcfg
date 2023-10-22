@@ -20,6 +20,8 @@ SPDX-License-Identifier: CC0-1.0
           </choice>
           <choice name="PeerTube">
           </choice>
+          <choice name="Piped">
+          </choice>
         </choices>
       </entry>
       <entry name="username" type="string">

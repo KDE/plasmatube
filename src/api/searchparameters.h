@@ -55,6 +55,7 @@ public:
     void clear();
 
     QHash<QString, QString> toQueryParameters() const;
+    QHash<QString, QString> toPipedQueryParameters() const;
 
     const QString &query() const;
     void setQuery(const QString &query);

@@ -42,6 +42,8 @@ QQC2.Pane {
                                 return i18n("Invidious");
                             case VideoSource.PeerTube:
                                 return i18n("PeerTube");
+                            case VideoSource.Piped:
+                                return i18n("Piped");
                         }
                     }
                     subtitleItem.textFormat: Text.PlainText
