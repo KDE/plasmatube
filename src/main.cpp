@@ -67,10 +67,6 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.plasmatube")));
 
-    // Qt sets the locale in the QGuiApplication constructor, but libmpv
-    // requires the LC_NUMERIC category to be set to "C", so change it back.
-    setlocale(LC_NUMERIC, "C");
-
     QQmlApplicationEngine engine;
 
 #ifdef HAVE_KDBUSADDONS
@@ -106,6 +102,8 @@ int main(int argc, char **argv)
     PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
     qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", &settings);
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
+
+    qmlRegisterType<MpvObject>("org.kde.plasmatube.private", 1, 0, "MpvObject");
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("YouTube client"));

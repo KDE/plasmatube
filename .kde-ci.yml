@@ -12,4 +12,5 @@ Dependencies:
     'frameworks/kitemmodels': '@latest-kf6'
     'frameworks/purpose': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
+    'libraries/mpvqt': '@stable'
     'third-party/qtkeychain': '@latest'

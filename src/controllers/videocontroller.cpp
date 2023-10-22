@@ -62,7 +62,7 @@ void VideoController::togglePlaying()
 void VideoController::stop()
 {
     if (m_currentPlayer != nullptr) {
-        m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
+        Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
         videoModel()->clearVideo();
     }
 }
@@ -103,7 +103,7 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     if (mpvObject != m_currentPlayer) {
         // stop existing player
         if (m_currentPlayer != nullptr) {
-            m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
+            Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
             oldPosition = m_currentPlayer->position();
         }
 
@@ -111,25 +111,25 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
         Q_EMIT currentPlayerChanged();
     }
 
-    m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
+    Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
     // See https://github.com/mpv-player/mpv/issues/10029 why this is needed
     if (PlasmaTube::instance().selectedSource()->type() == VideoSource::Type::PeerTube) {
-        m_currentPlayer->setOption(QStringLiteral("stream-lavf-o"), QStringLiteral("seekable=0"));
+        m_currentPlayer->setProperty(QStringLiteral("stream-lavf-o"), QStringLiteral("seekable=0"));
     } else {
-        m_currentPlayer->setOption(QStringLiteral("stream-lavf-o"), QStringLiteral(""));
+        m_currentPlayer->setProperty(QStringLiteral("stream-lavf-o"), QStringLiteral(""));
     }
 
     PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
     if (settings.proxyType() == 1) {
         QString proxyString = QStringLiteral("http://%1:%2@%3:%4")
                                   .arg(settings.proxyUser(), settings.proxyPassword(), settings.proxyHost(), QString::number(settings.proxyPort()));
-        m_currentPlayer->setOption(QStringLiteral("http-proxy"), proxyString);
-        m_currentPlayer->setOption(QStringLiteral("ytdl-raw-options"), proxyString);
+        m_currentPlayer->setProperty(QStringLiteral("http-proxy"), proxyString);
+        m_currentPlayer->setProperty(QStringLiteral("ytdl-raw-options"), proxyString);
     }
 
-    m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
-                                           << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
-    m_currentPlayer->setOption(QStringLiteral("ytdl-format"), QStringLiteral("best"));
+    Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
+                                                  << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
+    m_currentPlayer->setProperty(QStringLiteral("ytdl-format"), QStringLiteral("best"));
 
     // Restore old position if we had an existing player
     if (oldPosition != std::nullopt) {

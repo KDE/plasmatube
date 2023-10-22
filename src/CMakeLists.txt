@@ -48,7 +48,6 @@ target_sources(plasmatube PRIVATE
 
         utils/mpvobject.cpp
         utils/mpvobject.h
-        utils/qthelper.hpp
 
         main.cpp
 )
@@ -121,9 +120,7 @@ target_include_directories(plasmatube PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/models
         ${CMAKE_CURRENT_SOURCE_DIR}/utils
 )
-target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain ${MPV_LIBRARIES})
-target_include_directories(plasmatube PUBLIC ${MPV_INCLUDE_DIRS})
-target_compile_options(plasmatube PUBLIC ${MPV_CFLAGS_OTHER} -fexceptions)
+target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain MpvQt::MpvQt)
 
 if (NOT ANDROID)
     target_link_libraries(plasmatube PRIVATE Qt::DBus)

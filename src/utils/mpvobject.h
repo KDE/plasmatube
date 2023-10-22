@@ -5,16 +5,10 @@
 
 #pragma once
 
+#include <MpvAbstractItem>
 #include <QQuickFramebufferObject>
-#include <QtQml/qqmlregistration.h>
 
-#include "qthelper.hpp"
-#include <mpv/client.h>
-#include <mpv/render_gl.h>
-
-class MpvRenderer;
-
-class MpvObject : public QQuickFramebufferObject
+class MpvObject : public MpvAbstractItem
 {
     Q_OBJECT
     QML_ELEMENT
@@ -24,17 +18,9 @@ class MpvObject : public QQuickFramebufferObject
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)
     Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
 
-    mpv_handle *mpv;
-    mpv_render_context *mpv_gl;
-
-    friend class MpvRenderer;
-
 public:
-    static void on_update(void *ctx);
-
-    MpvObject(QQuickItem *parent = nullptr);
-    virtual ~MpvObject();
-    Renderer *createRenderer() const override;
+    explicit MpvObject(QQuickItem *parent = nullptr);
+    ~MpvObject() = default;
 
     qreal position();
     qreal duration();
@@ -47,23 +33,16 @@ public Q_SLOTS:
     void stop();
     void setPosition(double value);
     void seek(qreal offset);
-    void command(const QVariant &params);
-    void setOption(const QString &name, const QVariant &value);
-    void setProperty(const QString &name, const QVariant &value);
-    QVariant getProperty(const QString &name);
 
 Q_SIGNALS:
     void positionChanged();
     void durationChanged();
     void pausedChanged();
-    void onUpdate();
     void stoppedChanged();
 
-private Q_SLOTS:
-    void onMpvEvents();
-    void doUpdate();
-
 private:
+    void onPropertyChanged(const QString &property, const QVariant &value);
+
     bool m_paused = true;
     qreal m_position = 0;
     qreal m_duration = 0;
