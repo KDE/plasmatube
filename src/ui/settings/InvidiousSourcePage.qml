@@ -127,7 +127,7 @@ FormCard.FormCardPage {
             visible: !page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
             text: i18n("Log in")
-            onClicked: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
+            onClicked: page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
         }
 
         FormCard.FormButtonDelegate {

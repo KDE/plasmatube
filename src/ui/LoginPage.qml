@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -27,7 +28,7 @@ FormCard.FormCardPage {
 
             onLoggedIn: {
                 applicationWindow().showPassiveNotification(i18n("Successfully logged in!"))
-                applicationWindow().pageStack.layers.pop()
+                root.Window.window.pageStack.layers.pop()
             }
 
             onErrorOccurred: (errorText) => {

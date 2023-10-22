@@ -26,7 +26,7 @@ void LogInController::logIn(const QString &username, const QString &password)
         m_watcher = nullptr;
     }
 
-    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->logIn(username, password);
+    auto future = m_source->api()->logIn(username, password);
 
     m_watcher = new QFutureWatcher<QInvidious::LogInResult>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
