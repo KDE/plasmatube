@@ -220,28 +220,33 @@ void VideoListModel::requestPlaylist(const QString &id)
 
 void VideoListModel::requestQuery(QueryType type)
 {
+    auto selectedSource = PlasmaTube::instance().selectedSource();
+    if (selectedSource == nullptr) {
+        return;
+    }
+
     m_searchParameters.clear();
     switch (type) {
     case Feed:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestFeed(), type);
+        handleQuery(selectedSource->api()->requestFeed(), type);
         break;
     case Top:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTop(), type);
+        handleQuery(selectedSource->api()->requestTop(), type);
         break;
     case Trending:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(), type);
+        handleQuery(selectedSource->api()->requestTrending(), type);
         break;
     case TrendingGaming:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Gaming), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Gaming), type);
         break;
     case TrendingMovies:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Movies), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Movies), type);
         break;
     case TrendingMusic:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::Music), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Music), type);
         break;
     case TrendingNews:
-        handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestTrending(QInvidious::News), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::News), type);
         break;
     case History:
         requestHistory();
