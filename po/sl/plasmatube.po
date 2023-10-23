@@ -6,30 +6,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
-"PO-Revision-Date: 2023-10-19 07:43+0200\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"PO-Revision-Date: 2023-10-22 07:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
-#: controllers/logincontroller.cpp:42
+#: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Uporabniško ime ali geslo je napačno."
 
 #: api/invidious/invidiousapi.cpp:306 api/peertube/peertubeapi.cpp:221
+#: api/piped/pipedapi.cpp:261
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Strežnik ni vrnil veljavne JSON."
 
 #: api/invidious/invidiousapi.cpp:315 api/peertube/peertubeapi.cpp:230
+#: api/piped/pipedapi.cpp:270
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Strežnik je vrnil statusno kodo %1"
@@ -132,8 +134,21 @@ msgstr "Zgodovina"
 msgid "Search results for \"%1\""
 msgstr "Zadetki iskanja za \"%1\""
 
-#: ui/ChannelPage.qml:176 ui/FeedPage.qml:96 ui/Main.qml:95
-#: ui/PlaylistPage.qml:88 ui/SearchPage.qml:209
+#: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
+#: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
+#, kde-format
+msgid "Proxy Settings"
+msgstr "Nastavitve poslednika"
+
+#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
+#: ui/SearchPage.qml:190
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your proxy settings."
+msgstr ""
+
+#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
+#: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -144,9 +159,9 @@ msgstr "Nalaganje…"
 msgid "Videos"
 msgstr "Video posnetki"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:30
-#: ui/loginflow/AddPeerTubePage.qml:30 ui/SearchPage.qml:17
-#: ui/SearchPage.qml:203
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
+#: ui/SearchPage.qml:18 ui/SearchPage.qml:219
 #, kde-format
 msgid "Search"
 msgstr "Išči"
@@ -211,22 +226,27 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
 msgid "PeerTube"
+msgstr "PeerTube"
+
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
+#, kde-format
+msgid "Piped"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:53
+#: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Preklopi vir"
 
-#: ui/components/SourceSwitcher.qml:87 ui/settings/SettingsPage.qml:81
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Dodaj vir"
 
-#: ui/components/SourceSwitcher.qml:91
+#: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Dodaj nov vir videa"
 
 #: ui/components/SubscriptionButton.qml:56
 #, kde-format
@@ -261,12 +281,12 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:25
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Predvajaj zdaj"
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Predvajaj sliko v sliki"
 
 #: ui/components/VideoMenu.qml:47
 #, kde-format
@@ -279,161 +299,180 @@ msgid "Mark as watched"
 msgstr "Označi kot ogledano"
 
 #: ui/components/VideoMenu.qml:60
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgid "Add to Playlist…"
-msgstr "Dodaj na seznam predvajanja"
+msgstr "Dodaj na seznam predvajanja…"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Remove from playlist"
+#, kde-format
 msgid "Remove from Playlist"
-msgstr "Odstrani iz seznama predvajanja"
+msgstr "Odstrani s seznama predvajanja"
 
-#: ui/FeedPage.qml:101
+#: ui/FeedPage.qml:117
 #, kde-format
 msgid "No videos"
 msgstr "Ni video posnetkov"
 
-#: ui/FeedPage.qml:127
+#: ui/FeedPage.qml:143
 #, kde-format
 msgid "Add to playlist"
 msgstr "Dodaj na seznam predvajanja"
 
-#: ui/loginflow/AddInvidiousPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#: ui/loginflow/AddInvidiousPage.qml:18
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Nevidni vrh"
+msgstr "Dodaj vir Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:24 ui/loginflow/AddPeerTubePage.qml:24
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
+#: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Izberi pojavek"
 
-#: ui/loginflow/AddInvidiousPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#: ui/loginflow/AddInvidiousPage.qml:35
+#, kde-format
 msgid "invidious.io"
-msgstr "Invidious"
+msgstr "invidious.io"
 
-#: ui/loginflow/AddInvidiousPage.qml:62 ui/loginflow/AddPeerTubePage.qml:59
+#: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "Ni najdenih javnih pojavkov."
 
-#: ui/loginflow/AddPeerTubePage.qml:17
+#: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Dodaj vir PeerTube"
 
-#: ui/loginflow/AddPeerTubePage.qml:31
+#: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
+msgstr "joinpeertube.org"
+
+#: ui/loginflow/AddPipedPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Add Source"
+msgctxt "@title:window"
+msgid "Add Piped Source"
+msgstr "Dodaj vir"
+
+#: ui/loginflow/AddPipedPage.qml:35
+#, kde-format
+msgid "pipedapi.kavin.rocks"
+msgstr ""
+
+#: ui/loginflow/AddPipedPage.qml:41
+#, kde-format
+msgctxt "Add instance"
+msgid "Add %1"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Dobrodošli"
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "O PlasmaTube"
+msgstr "Dobrodošli v PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube zahteva vsaj en vir videa."
 
 #: ui/loginflow/WelcomePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Nevidni vrh"
+msgstr "Dodaj vir Invidious"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Dodaj vir PeerTube"
 
-#: ui/LoginPage.qml:20
+#: ui/loginflow/WelcomePage.qml:66
+#, fuzzy, kde-format
+#| msgid "Add Source"
+msgid "Add Piped Source"
+msgstr "Dodaj vir"
+
+#: ui/LoginPage.qml:21
 #, kde-format
 msgid "Sign in"
 msgstr "Prijava"
 
-#: ui/LoginPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#: ui/LoginPage.qml:30
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "Uspešno prijavljeni kot %1."
+msgstr "Uspešno prijavljeni!"
 
-#: ui/LoginPage.qml:47 ui/LoginPage.qml:85
+#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
 #, kde-format
 msgid "Log in"
 msgstr "Prijavi se"
 
-#: ui/LoginPage.qml:56
+#: ui/LoginPage.qml:57
 #, kde-format
 msgid "Username"
 msgstr "Uporabniško ime"
 
-#: ui/LoginPage.qml:70 ui/settings/NetworkProxyPage.qml:89
+#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Password"
 msgstr "Geslo"
 
-#: ui/LoginPage.qml:92
+#: ui/LoginPage.qml:93
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "Uporabniško ime ne sme biti prazno!"
 
-#: ui/LoginPage.qml:97
+#: ui/LoginPage.qml:98
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Geslo ne sme biti prazno!"
 
-#: ui/SearchPage.qml:89
+#: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
 msgstr "Razvrsti po:"
 
-#: ui/SearchPage.qml:93
+#: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
 msgstr "Ocena"
 
-#: ui/SearchPage.qml:104
+#: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
 msgstr "Relevantnost"
 
-#: ui/SearchPage.qml:116
+#: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
 msgstr "Datum prenosa"
 
-#: ui/SearchPage.qml:127
+#: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
 msgstr "Število ogledov"
 
-#: ui/SearchPage.qml:203
+#: ui/SearchPage.qml:219
 #, kde-format
 msgid "No results"
 msgstr "Ni zadetkov"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
+#: ui/settings/PipedSourcePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Uredi vir"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -461,90 +500,83 @@ msgid "Log out"
 msgstr "Odjavi se"
 
 #: ui/settings/InvidiousSourcePage.qml:146
-#: ui/settings/PeerTubeSourcePage.qml:25
+#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Odstrani vir"
 
 #: ui/settings/InvidiousSourcePage.qml:147
-#: ui/settings/PeerTubeSourcePage.qml:26
+#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Ni mogoče odstraniti edinega vira."
 
 #: ui/settings/InvidiousSourcePage.qml:154
-#: ui/settings/PeerTubeSourcePage.qml:33
+#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Odstrani vir"
 
 #: ui/settings/InvidiousSourcePage.qml:155
-#: ui/settings/PeerTubeSourcePage.qml:34
+#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Ali ste prepričani, da želite odstraniti ta vir?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Mrežni poslednik"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Sistemsko privzeto"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
-
-#: ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgid "Proxy Settings"
-msgstr "Nastavitve"
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Gostitelj"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Vrata"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "Uporabniško ime"
+msgstr "Uporabnik"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Uveljavi"
 
 #: ui/settings/SettingsPage.qml:25
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Viri"
 
-#: ui/settings/SettingsPage.qml:90
+#: ui/settings/SettingsPage.qml:95
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Mrežni poslednik"
 
-#: ui/settings/SettingsPage.qml:99
+#: ui/settings/SettingsPage.qml:104
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "O PlasmaTube"
 
-#: ui/settings/SettingsPage.qml:114
+#: ui/settings/SettingsPage.qml:119
 #, kde-format
 msgid "About KDE"
 msgstr "O KDE"
@@ -558,7 +590,7 @@ msgstr "V trendu"
 #: ui/videoplayer/PictureInPictureVideo.qml:16
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Slika v sliki"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format

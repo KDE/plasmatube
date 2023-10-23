@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
 "PO-Revision-Date: 2023-04-26 10:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -20,17 +20,19 @@ msgstr ""
 "X-Generator: Lokalize 22.12.3\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
-#: controllers/logincontroller.cpp:42
+#: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Неверное имя пользователя или пароль."
 
 #: api/invidious/invidiousapi.cpp:306 api/peertube/peertubeapi.cpp:221
+#: api/piped/pipedapi.cpp:261
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "От сервера не получен корректный код JSON."
 
 #: api/invidious/invidiousapi.cpp:315 api/peertube/peertubeapi.cpp:230
+#: api/piped/pipedapi.cpp:270
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "От сервера получен код состояния %1"
@@ -133,8 +135,22 @@ msgstr ""
 msgid "Search results for \"%1\""
 msgstr "Результаты поиска «%1»"
 
-#: ui/ChannelPage.qml:176 ui/FeedPage.qml:96 ui/Main.qml:95
-#: ui/PlaylistPage.qml:88 ui/SearchPage.qml:209
+#: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
+#: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Proxy Settings"
+msgstr "Параметры"
+
+#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
+#: ui/SearchPage.qml:190
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your proxy settings."
+msgstr ""
+
+#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
+#: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -145,9 +161,9 @@ msgstr "Загрузка…"
 msgid "Videos"
 msgstr "Видеозаписи"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:30
-#: ui/loginflow/AddPeerTubePage.qml:30 ui/SearchPage.qml:17
-#: ui/SearchPage.qml:203
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
+#: ui/SearchPage.qml:18 ui/SearchPage.qml:219
 #, kde-format
 msgid "Search"
 msgstr "Поиск"
@@ -216,17 +232,22 @@ msgstr "Invidious"
 msgid "PeerTube"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:53
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
+#, kde-format
+msgid "Piped"
+msgstr ""
+
+#: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:87 ui/settings/SettingsPage.qml:81
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Add Source"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:91
+#: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
 msgstr ""
@@ -291,49 +312,68 @@ msgstr ""
 msgid "Remove from Playlist"
 msgstr ""
 
-#: ui/FeedPage.qml:101
+#: ui/FeedPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgid "No videos"
 msgstr "Видеозаписи"
 
-#: ui/FeedPage.qml:127
+#: ui/FeedPage.qml:143
 #, kde-format
 msgid "Add to playlist"
 msgstr ""
 
-#: ui/loginflow/AddInvidiousPage.qml:17
+#: ui/loginflow/AddInvidiousPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Invidious Top"
 msgctxt "@title:window"
 msgid "Add Invidious Source"
 msgstr "Топ Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:24 ui/loginflow/AddPeerTubePage.qml:24
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
+#: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
 msgstr ""
 
-#: ui/loginflow/AddInvidiousPage.qml:31
+#: ui/loginflow/AddInvidiousPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Invidious"
 msgid "invidious.io"
 msgstr "Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:62 ui/loginflow/AddPeerTubePage.qml:59
+#: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
 msgstr ""
 
-#: ui/loginflow/AddPeerTubePage.qml:17
+#: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
 msgstr ""
 
-#: ui/loginflow/AddPeerTubePage.qml:31
+#: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
+msgstr ""
+
+#: ui/loginflow/AddPipedPage.qml:18
+#, fuzzy, kde-format
+#| msgid "Invidious Top"
+msgctxt "@title:window"
+msgid "Add Piped Source"
+msgstr "Топ Invidious"
+
+#: ui/loginflow/AddPipedPage.qml:35
+#, kde-format
+msgid "pipedapi.kavin.rocks"
+msgstr ""
+
+#: ui/loginflow/AddPipedPage.qml:41
+#, kde-format
+msgctxt "Add instance"
+msgid "Add %1"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:15
@@ -364,74 +404,81 @@ msgstr "Топ Invidious"
 msgid "Add PeerTube Source"
 msgstr ""
 
-#: ui/LoginPage.qml:20
+#: ui/loginflow/WelcomePage.qml:66
+#, fuzzy, kde-format
+#| msgid "Invidious Top"
+msgid "Add Piped Source"
+msgstr "Топ Invidious"
+
+#: ui/LoginPage.qml:21
 #, kde-format
 msgid "Sign in"
 msgstr "Войти"
 
-#: ui/LoginPage.qml:29
+#: ui/LoginPage.qml:30
 #, fuzzy, kde-format
 #| msgid "Successfully logged in as %1."
 msgid "Successfully logged in!"
 msgstr "Выполнен успешный вход под учётной записью %1."
 
-#: ui/LoginPage.qml:47 ui/LoginPage.qml:85
+#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
 #, fuzzy, kde-format
 msgid "Log in"
 msgstr "Выйти"
 
-#: ui/LoginPage.qml:56
+#: ui/LoginPage.qml:57
 #, kde-format
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: ui/LoginPage.qml:70 ui/settings/NetworkProxyPage.qml:89
+#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Password"
 msgstr "Пароль"
 
-#: ui/LoginPage.qml:92
+#: ui/LoginPage.qml:93
 #, kde-format
 msgid "Username must not be empty!"
 msgstr ""
 
-#: ui/LoginPage.qml:97
+#: ui/LoginPage.qml:98
 #, kde-format
 msgid "Password must not be empty!"
 msgstr ""
 
-#: ui/SearchPage.qml:89
+#: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
 msgstr "Сортировка:"
 
-#: ui/SearchPage.qml:93
+#: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
 msgstr "Оценка"
 
-#: ui/SearchPage.qml:104
+#: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
 msgstr "Соответствие"
 
-#: ui/SearchPage.qml:116
+#: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
 msgstr "Дата отправки"
 
-#: ui/SearchPage.qml:127
+#: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
 msgstr "Количество просмотров"
 
-#: ui/SearchPage.qml:203
+#: ui/SearchPage.qml:219
 #, kde-format
 msgid "No results"
 msgstr "Нет результатов"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
+#: ui/settings/PipedSourcePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
@@ -463,26 +510,26 @@ msgid "Log out"
 msgstr "Выйти"
 
 #: ui/settings/InvidiousSourcePage.qml:146
-#: ui/settings/PeerTubeSourcePage.qml:25
+#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:147
-#: ui/settings/PeerTubeSourcePage.qml:26
+#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:154
-#: ui/settings/PeerTubeSourcePage.qml:33
+#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:155
-#: ui/settings/PeerTubeSourcePage.qml:34
+#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
@@ -503,12 +550,6 @@ msgstr ""
 #, kde-format
 msgid "HTTP"
 msgstr ""
-
-#: ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgid "Proxy Settings"
-msgstr "Параметры"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
@@ -536,17 +577,17 @@ msgstr ""
 msgid "Sources"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:90
+#: ui/settings/SettingsPage.qml:95
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:99
+#: ui/settings/SettingsPage.qml:104
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "О программе PlasmaTube"
 
-#: ui/settings/SettingsPage.qml:114
+#: ui/settings/SettingsPage.qml:119
 #, kde-format
 msgid "About KDE"
 msgstr ""
