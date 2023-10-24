@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-22 14:57+0200\n"
+"PO-Revision-Date: 2023-10-23 11:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -145,6 +145,7 @@ msgstr "Proxyinstellingen"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Contact maken met server is mislukt: %1. Controleer uw proxy-instellingen."
 
 #: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
@@ -228,7 +229,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
@@ -349,22 +350,21 @@ msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Bron toevoegen"
+msgstr "Piped bron toevoegen"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:41
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "%1 toevoegen"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
@@ -393,10 +393,9 @@ msgid "Add PeerTube Source"
 msgstr "PeerTube-bron toevoegen"
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Bron toevoegen"
+msgstr "Piped bron toevoegen"
 
 #: ui/LoginPage.qml:21
 #, kde-format

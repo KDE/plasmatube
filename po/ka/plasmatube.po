@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-19 06:15+0200\n"
+"PO-Revision-Date: 2023-10-23 06:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -136,10 +136,9 @@ msgstr "ძებნის შედეგები \"%1\"-სთვის"
 
 #: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "პარამეტრები"
+msgstr "პროქსის მორგება"
 
 #: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
 #: ui/SearchPage.qml:190
@@ -147,6 +146,7 @@ msgstr "პარამეტრები"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პროქსის პარამეტრები."
 
 #: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
@@ -225,27 +225,27 @@ msgstr "ცბიერი"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "გადმომისამართებული"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "წყაროს გადართვა"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "წყაროს დამატება"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "ახალი ვიდეოწყაროს დამატება"
 
 #: ui/components/SubscriptionButton.qml:56
 #, kde-format
@@ -280,12 +280,12 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:25
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "ახლავე დაკვრა"
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "დაკვრა სურათი-სურათში"
 
 #: ui/components/VideoMenu.qml:47
 #, kde-format
@@ -298,14 +298,12 @@ msgid "Mark as watched"
 msgstr "ნანახად მონიშვნა"
 
 #: ui/components/VideoMenu.qml:60
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgid "Add to Playlist…"
-msgstr "დასაკრავ სიაში დამატება"
+msgstr "დასაკრავ სიაში დამატება…"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Remove from playlist"
+#, kde-format
 msgid "Remove from Playlist"
 msgstr "დასაკრავი სიიდან წაშლა"
 
@@ -320,91 +318,85 @@ msgid "Add to playlist"
 msgstr "დასაკრავ სიაში დამატება"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "ცბიერი ზედა"
+msgstr "Invidious-ის წყაროს დამატება"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "აირჩიეთ ეგზემპლარი"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "ცბიერი"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "საჯარო გაშვებული ასლი ვერ ვიპოვე."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube-ის წყაროს დამატება"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "ცბიერი ზედა"
+msgstr "გადმოგზავნის წყაროს დამატება"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:41
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "%1-ის დამატება"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "კეთილი იყოს თქვენი მობრძანება"
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "PlasmaTube-ის შესახებ"
+msgstr "მოგესალმებათ PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube-ს, სულ ცოტა, ერთი ვიდეოს წყარო სჭირდება."
 
 #: ui/loginflow/WelcomePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "ცბიერი ზედა"
+msgstr "Invidious-ის წყაროს დამატება"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube-ის წყაროს დამატება"
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "ცბიერი ზედა"
+msgstr "გადმოგზავნის წყაროს დამატება"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -412,10 +404,9 @@ msgid "Sign in"
 msgstr "შესვლა"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "წარმატებით შეხვედით, როგორც %1."
+msgstr "წარმატებით შეხვედით!"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
@@ -478,7 +469,7 @@ msgstr "შედეგების გარეშე"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "წყაროს ჩასწორება"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -509,74 +500,73 @@ msgstr "გასვლა"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "წყაროს წაშლა"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "ერთად-ერთი წყაროს წაშლა შეუძლებელია."
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "წყაროს წაშლა"
 
 #: ui/settings/InvidiousSourcePage.qml:155
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "დარწმუნებული ბრძანდებით, რომ გნებავთ წაშალოთ ეს წყარო?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "ქსელის პროქსი"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "სისტემის ნაგულისხმები"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "ჰოსტი"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "პორტი"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "მომხმარებლის სახელი"
+msgstr "მომხმარებელი"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "გადატარება"
 
 #: ui/settings/SettingsPage.qml:25
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "წყაროები"
 
 #: ui/settings/SettingsPage.qml:95
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "ქსელის პროქსი"
 
 #: ui/settings/SettingsPage.qml:104
 #, kde-format
@@ -597,7 +587,7 @@ msgstr "ტრენდები"
 #: ui/videoplayer/PictureInPictureVideo.qml:16
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "სურათი სურათში"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format

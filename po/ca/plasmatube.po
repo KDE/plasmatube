@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-22 10:10+0200\n"
+"PO-Revision-Date: 2023-10-23 10:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
 #: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
@@ -148,6 +148,8 @@ msgstr "Configuració del servidor intermediari"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Ha fallat en contactar amb el servidor: %1. Reviseu la configuració del "
+"servidor intermediari."
 
 #: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
@@ -232,7 +234,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
@@ -355,22 +357,21 @@ msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Afegeix una font"
+msgstr "Afegeix una font de Piped"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:41
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Afegeix %1"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
@@ -400,10 +401,9 @@ msgid "Add PeerTube Source"
 msgstr "Afegeix una font de PeerTube"
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Afegeix una font"
+msgstr "Afegeix una font de Piped"
 
 #: ui/LoginPage.qml:21
 #, kde-format

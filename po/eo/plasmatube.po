@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-22 07:38+0100\n"
+"PO-Revision-Date: 2023-10-23 06:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -145,6 +145,7 @@ msgstr "Prokuril-Agordoj"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Malsukcesis kontakti servilon: %1. Bonvolu kontroli viajn prokurilajn metojn."
 
 #: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
@@ -228,7 +229,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Dukta"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
@@ -325,7 +326,7 @@ msgstr "Aldoni Invidious-fonton"
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Elekti instancon"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
@@ -349,22 +350,21 @@ msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Aldoni Fonton"
+msgstr "Aldoni Duktan Fonton"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:41
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Aldoni %1"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
@@ -393,10 +393,9 @@ msgid "Add PeerTube Source"
 msgstr "Aldoni PeerTube-fonton"
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Aldoni Fonton"
+msgstr "Aldoni Duktan Fonton"
 
 #: ui/LoginPage.qml:21
 #, kde-format
