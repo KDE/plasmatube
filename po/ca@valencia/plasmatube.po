@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-19 12:48+0200\n"
+"PO-Revision-Date: 2023-10-23 10:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -138,10 +138,9 @@ msgstr "Resultats de la busca de «%1»"
 
 #: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Configuració"
+msgstr "Configureu el servidor intermediari"
 
 #: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
 #: ui/SearchPage.qml:190
@@ -149,6 +148,8 @@ msgstr "Configuració"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració del "
+"servidor intermediari."
 
 #: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
@@ -228,27 +229,27 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Canvia la font"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Afig una font"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Afig una font nova de vídeos"
 
 #: ui/components/SubscriptionButton.qml:56
 #, kde-format
@@ -283,12 +284,12 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:25
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Reproduïx ara"
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Reproduïx la imatge en la imatge"
 
 #: ui/components/VideoMenu.qml:47
 #, kde-format
@@ -301,14 +302,12 @@ msgid "Mark as watched"
 msgstr "Marca com a vist"
 
 #: ui/components/VideoMenu.qml:60
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgid "Add to Playlist…"
-msgstr "Afig a la llista de reproducció"
+msgstr "Afig a la llista de reproducció…"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Remove from playlist"
+#, kde-format
 msgid "Remove from Playlist"
 msgstr "Elimina de la llista de reproducció"
 
@@ -324,95 +323,87 @@ msgstr "Afig a la llista de reproducció"
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr "Afig una font d'Invidious"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Seleccioneu una instància"
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "Invidious"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "No s'ha trobat cap instància pública."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Afig una font de PeerTube"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
-# És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "Afig una font de Piped"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:41
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Afig %1"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Us donem la benvinguda"
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "Quant a PlasmaTube"
+msgstr "Us donem la benvinguda a PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube necessita com a mínim una font de vídeo."
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/WelcomePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr "Afig una font d'Invidious"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Afig una font de PeerTube"
 
-# És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "Afig una font de Piped"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -420,10 +411,9 @@ msgid "Sign in"
 msgstr "Inicia la sessió"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "S'ha iniciat la sessió correctament com a %1."
+msgstr "La sessió s'ha iniciat correctament!"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
@@ -486,7 +476,7 @@ msgstr "Sense resultats"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Edita la font"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -517,74 +507,73 @@ msgstr "Eixida"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Elimina la font"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "No es pot eliminar la única font."
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Elimina la font"
 
 #: ui/settings/InvidiousSourcePage.qml:155
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Segur que voleu eliminar esta font?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Servidor intermediari de la xarxa"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Predeterminada del sistema"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Servidor"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "Nom d'usuari"
+msgstr "Usuari"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Aplica"
 
 #: ui/settings/SettingsPage.qml:25
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Fonts"
 
 #: ui/settings/SettingsPage.qml:95
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Servidor intermediari de la xarxa"
 
 #: ui/settings/SettingsPage.qml:104
 #, kde-format
@@ -605,7 +594,7 @@ msgstr "Tendències"
 #: ui/videoplayer/PictureInPictureVideo.qml:16
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Imatge en la imatge"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
@@ -616,15 +605,3 @@ msgstr "%1 vistes"
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 m'agrades"
-
-#~ msgid "Log in to an Invidious Account"
-#~ msgstr "Inici de sessió a un compte d'Invidious"
-
-#~ msgid "Instance Url"
-#~ msgstr "URL de la instància"
-
-#~ msgid "Instance URL must not be empty!"
-#~ msgstr "L'URL de la instància no pot estar buit!"
-
-#~ msgid "Instance"
-#~ msgstr "Instància"

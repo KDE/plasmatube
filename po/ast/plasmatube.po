@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-04-28 12:45+0200\n"
+"PO-Revision-Date: 2023-10-24 13:29+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
 #: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
@@ -135,10 +135,9 @@ msgstr ""
 
 #: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Configuración"
+msgstr ""
 
 #: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
 #: ui/SearchPage.qml:190
@@ -179,12 +178,11 @@ msgid "Load more"
 msgstr ""
 
 #: ui/components/PlaylistGridItem.qml:70
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "%1 visualizaciones"
-msgstr[1] "%1 visualizaciones"
+msgstr[0] "%1 videu"
+msgstr[1] "%1 vídeos"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -212,8 +210,7 @@ msgid "History"
 msgstr ""
 
 #: ui/components/Sidebar.qml:153
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuración"
@@ -309,10 +306,9 @@ msgid "Remove from Playlist"
 msgstr ""
 
 #: ui/FeedPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Vídeos"
+msgstr "Nun hai vídeos"
 
 #: ui/FeedPage.qml:143
 #, kde-format
@@ -320,11 +316,10 @@ msgid "Add to playlist"
 msgstr ""
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr ""
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
@@ -333,10 +328,9 @@ msgid "Select a instance"
 msgstr ""
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "Invidious"
+msgstr "Invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
@@ -355,11 +349,10 @@ msgid "joinpeertube.org"
 msgstr ""
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr ""
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
@@ -379,10 +372,9 @@ msgid "Welcome"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "Tocante a PlasmaTube"
+msgstr "Afáyate en PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
@@ -390,10 +382,9 @@ msgid "PlasmaTube requires at least one video source."
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
@@ -401,10 +392,9 @@ msgid "Add PeerTube Source"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr ""
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -544,17 +534,17 @@ msgstr ""
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Agospiador"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Puertu"
 
 #: ui/settings/NetworkProxyPage.qml:81
 #, kde-format
@@ -587,8 +577,7 @@ msgid "About KDE"
 msgstr ""
 
 #: ui/TrendingPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "En tendencia"
