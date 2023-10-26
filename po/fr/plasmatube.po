@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-20 12:40+0200\n"
+"PO-Revision-Date: 2023-10-23 12:25+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -133,10 +133,9 @@ msgstr "Rechercher des résultats pour « %1 »"
 
 #: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Configuration"
+msgstr "Configuration du serveur mandataire"
 
 #: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
 #: ui/SearchPage.qml:190
@@ -222,7 +221,7 @@ msgstr "Injuste"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
@@ -232,17 +231,17 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Basculer de source"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Ajouter une source"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Ajouter une nouvelle source vidéo"
 
 #: ui/components/SubscriptionButton.qml:56
 #, kde-format
@@ -277,12 +276,12 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:25
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Jouer maintenant"
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Lire dans une fenêtre « PIP »"
 
 #: ui/components/VideoMenu.qml:47
 #, kde-format
@@ -295,14 +294,12 @@ msgid "Mark as watched"
 msgstr "Marquer comme surveillé"
 
 #: ui/components/VideoMenu.qml:60
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgid "Add to Playlist…"
-msgstr "Ajouter à la liste de lecture"
+msgstr "Ajouter à la liste de lecture…"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Remove from playlist"
+#, kde-format
 msgid "Remove from Playlist"
 msgstr "Supprimer de la liste de lecture"
 
@@ -317,39 +314,37 @@ msgid "Add to playlist"
 msgstr "Ajouter à la liste de lecture"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Très injuste"
+msgstr "Ajouter une source « Invidious »"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Sélectionnez une instance"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "Injuste"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "Aucune instance publique trouvée."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Ajouter une source « PeerTube »"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, fuzzy, kde-format
@@ -373,29 +368,27 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenue"
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "À propos de PlasmaTube"
+msgstr "Bienvenue dans PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube nécessite au moins une source vidéo."
 
 #: ui/loginflow/WelcomePage.qml:44
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Très injuste"
+msgstr "Ajouter une source « Invidious »"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Ajouter une source « PeerTube »"
 
 #: ui/loginflow/WelcomePage.qml:66
 #, fuzzy, kde-format
@@ -409,10 +402,9 @@ msgid "Sign in"
 msgstr "S'inscrire"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "Connecté avec succès comme %1."
+msgstr "Connexion effectuée avec succès !"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
@@ -475,7 +467,7 @@ msgstr "Aucun résultat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Modifier une source"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -506,74 +498,73 @@ msgstr "Se déconnecter"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Supprimer une source"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Impossible de supprimer la seule source."
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Supprimer une source"
 
 #: ui/settings/InvidiousSourcePage.qml:155
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Voulez-vous vraiment supprimer cette source ?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Serveur mandataire du réseau"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Valeur par défaut du système"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Hôte"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "Nom d'utilisateur"
+msgstr "Utilisateur"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
 
 #: ui/settings/SettingsPage.qml:25
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Sources"
 
 #: ui/settings/SettingsPage.qml:95
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Serveur mandataire du réseau"
 
 #: ui/settings/SettingsPage.qml:104
 #, kde-format
@@ -594,7 +585,7 @@ msgstr "Tendance"
 #: ui/videoplayer/PictureInPictureVideo.qml:16
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Image dans l'image"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
