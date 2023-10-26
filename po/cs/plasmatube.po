@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-20 00:50+0000\n"
-"PO-Revision-Date: 2023-06-22 13:16+0200\n"
+"PO-Revision-Date: 2023-10-23 16:23+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -57,7 +57,7 @@ msgstr "Úspěšně přihlášeni jako %1."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Přihlaste se do účtu Invidious"
 
 #: contents/ui/LoginPage.qml:51
 #, kde-format
@@ -117,7 +117,7 @@ msgstr "Datum odeslání odesílání"
 #: contents/ui/SearchPage.qml:108
 #, kde-format
 msgid "View Count"
-msgstr "Zobrazit počet"
+msgstr "Počet zobrazení"
 
 #: contents/ui/SearchPage.qml:174
 #, kde-format
@@ -127,7 +127,7 @@ msgstr "Žádné výsledky"
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:29
 #, kde-format
