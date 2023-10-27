@@ -191,6 +191,7 @@ MouseArea {
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight
+                    visible: publishedText.length !== 0
                 }
             }
         }
