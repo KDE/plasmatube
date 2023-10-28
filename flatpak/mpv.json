@@ -11,6 +11,16 @@
         "python3 waf build",
         "python3 waf install"
     ],
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "version": "23.08",
+            "add-ld-path": "."
+        }
+    },
+    "cleanup-commands": [
+        "mkdir -p /app/lib/ffmpeg"
+    ],
     "sources": [
         {
             "type": "archive",
@@ -88,41 +98,6 @@
                 "type": "archive",
                 "url": "https://github.com/FFmpeg/nv-codec-headers/releases/download/n11.1.5.1/nv-codec-headers-11.1.5.1.tar.gz",
                 "sha256": "a28cdde3ac0e9e02c2dde7a1b4de5333b4ac6148a8332ca712da243a3361a0d9"
-                }
-            ]
-        },
-        {
-            "name": "ffmpeg",
-            "cleanup": [
-                "/include",
-                "/lib/pkgconfig",
-                "/share/ffmpeg/examples"
-            ],
-            "config-opts": [
-                "--enable-shared",
-                "--disable-static",
-                "--enable-gnutls",
-                "--enable-gpl",
-                "--disable-doc",
-                "--disable-programs",
-                "--disable-encoders",
-                "--disable-muxers",
-                "--enable-encoder=png,libwebp",
-                "--enable-libv4l2",
-                "--enable-libdav1d",
-                "--enable-libfontconfig",
-                "--enable-libfreetype",
-                "--enable-libopus",
-                "--enable-librsvg",
-                "--enable-libvpx",
-                "--enable-libmp3lame",
-                "--enable-libwebp"
-            ],
-            "sources": [
-                {
-                "type": "archive",
-                "url": "https://ffmpeg.org/releases/ffmpeg-5.1.tar.gz",
-                "sha256": "c0b2ec290abd5ad31b5e0a8c455c34f90306ecd2ede6ace5db5ca3a07f3b842f"
                 }
             ]
         },
