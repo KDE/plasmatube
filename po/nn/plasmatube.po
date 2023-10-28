@@ -616,27 +616,3 @@ msgstr "%1 visingar"
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 likarlikk"
-
-#~ msgid "Log in to an Invidious Account"
-#~ msgstr "Logg på Invidious-konto"
-
-#~ msgid "Instance Url"
-#~ msgstr "Instansadresse"
-
-#~ msgid "Instance URL must not be empty!"
-#~ msgstr "Instansadresse kan ikkje vera tom."
-
-#~ msgid "Instance"
-#~ msgstr "Instans"
-
-#~ msgid "Trending Gaming"
-#~ msgstr "Spel på veg opp"
-
-#~ msgid "Trending Movies"
-#~ msgstr "Filmar på veg opp"
-
-#~ msgid "Trending Music"
-#~ msgstr "Musikk på veg opp"
-
-#~ msgid "Trending News"
-#~ msgstr "Nyheiter på veg opp"
