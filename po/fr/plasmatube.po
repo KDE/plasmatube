@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-25 09:59+0200\n"
+"PO-Revision-Date: 2023-10-30 19:46+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
 #: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
@@ -218,7 +218,7 @@ msgstr "Configuration"
 #: ui/components/SourceSwitcher.qml:42 ui/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Invidious"
-msgstr "Injuste"
+msgstr "Invidious"
 
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
@@ -228,7 +228,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Canalisé"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
@@ -349,11 +349,10 @@ msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Très injuste"
+msgstr "Ajouter une source canalisée"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
@@ -393,10 +392,9 @@ msgid "Add PeerTube Source"
 msgstr "Ajouter une source « PeerTube »"
 
 #: ui/loginflow/WelcomePage.qml:66
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Très injuste"
+msgstr "Ajouter une source canalisée"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -457,7 +455,7 @@ msgstr "Date d'envoi"
 #: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
-msgstr "Compteur de vues"
+msgstr "Nombre de vues"
 
 #: ui/SearchPage.qml:219
 #, kde-format
@@ -479,7 +477,7 @@ msgstr "Compte"
 #: ui/settings/InvidiousSourcePage.qml:30
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr "Actuellement connecté comme %1."
+msgstr "Actuellement connecté en tant que %1."
 
 #: ui/settings/InvidiousSourcePage.qml:55
 #, kde-format
