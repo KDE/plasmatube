@@ -20,7 +20,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "Chargement en cours… "
+msgstr "Chargement…"
 
 #: contents/ui/components/BottomNavBar.qml:69
 #: contents/ui/components/Sidebar.qml:60
@@ -185,7 +185,7 @@ msgstr "S'abonner (%1)"
 #: contents/ui/videoplayer/VideoPlayer.qml:346
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr "Veuillez vous connecter pour souscrire à des canaux."
+msgstr "Veuillez vous connecter pour vous abonner à des chaînes."
 
 #: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
@@ -205,7 +205,7 @@ msgstr "Le nom d'utilisateur ou le mot de passe est incorrect."
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr "Cette instance a désactivé l'enregistrement."
+msgstr "Cette instance a désactivé les inscriptions."
 
 #: main.cpp:47
 #, kde-format
@@ -247,17 +247,17 @@ msgstr "xavier.besnard@neuf.fr"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "Le serveur a retourné un élément « JSON » non valable."
+msgstr "Le serveur n'a renvoyé aucun JSON valable."
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr "Le serveur a retourné un code d'état %1."
+msgstr "Le serveur a renvoyé un code d'état %1."
 
 #: videolistmodel.cpp:17
 #, kde-format
 msgid "Subscriptions"
-msgstr "Abonnements"
+msgstr "Inscriptions"
 
 #: videolistmodel.cpp:19
 #, kde-format
@@ -267,7 +267,7 @@ msgstr "Top Invidious"
 #: videolistmodel.cpp:21
 #, kde-format
 msgid "Trending"
-msgstr "A la mode"
+msgstr "En vogue"
 
 #: videolistmodel.cpp:23
 #, kde-format
@@ -287,7 +287,7 @@ msgstr "Musique en vogue"
 #: videolistmodel.cpp:29
 #, kde-format
 msgid "Trending News"
-msgstr "Actualités à la mode"
+msgstr "Actualités en vogue"
 
 #: videolistmodel.cpp:182
 #, kde-format
