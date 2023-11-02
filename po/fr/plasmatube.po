@@ -25,23 +25,23 @@ msgstr "Le nom d'utilisateur ou le mot de passe est incorrect."
 #: api/piped/pipedapi.cpp:261
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "Le serveur a retourné un élément « JSON » non valable."
+msgstr "Le serveur n'a renvoyé aucun JSON valable."
 
 #: api/invidious/invidiousapi.cpp:315 api/peertube/peertubeapi.cpp:230
 #: api/piped/pipedapi.cpp:270
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr "Le serveur a retourné un code d'état %1."
+msgstr "Le serveur a renvoyé un code d'état %1."
 
 #: controllers/logincontroller.cpp:45
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr "Cette instance a désactivé l'enregistrement."
+msgstr "Cette instance a désactivé les inscriptions."
 
 #: controllers/plasmatube.cpp:59
 #, kde-format
 msgid "Playing video"
-msgstr "Lecture d'une vidéo en cours"
+msgstr "Lecture d'une vidéo"
 
 #: main.cpp:57
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "xavier.besnard@neuf.fr"
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:107
 #, kde-format
 msgid "Subscriptions"
-msgstr "Abonnements"
+msgstr "Inscriptions"
 
 #: models/videolistmodel.cpp:20 ui/components/Sidebar.qml:79
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "Musique"
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr "Nouvelles"
+msgstr "Actualités"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
@@ -151,7 +151,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr "Chargement en cours… "
+msgstr "Chargement…"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "Configuration"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr "Charger plus"
+msgstr "En charger plus"
 
 #: ui/components/PlaylistGridItem.qml:70
 #, kde-format
@@ -187,7 +187,7 @@ msgstr[1] "%1 vidéos"
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr "Impossible de réaliser un partage"
+msgstr "Échec du partage"
 
 #: ui/components/ShareMenu.qml:17
 #, kde-format
@@ -197,7 +197,7 @@ msgstr "Partager"
 #: ui/components/Sidebar.qml:93
 #, kde-format
 msgid "Trending"
-msgstr "A la mode"
+msgstr "En vogue"
 
 #: ui/components/Sidebar.qml:122 ui/PlaylistsPage.qml:15
 #, kde-format
@@ -228,12 +228,12 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Piped"
-msgstr "Canalisé"
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr "Basculer de source"
+msgstr "Changer de source"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
 #, kde-format
@@ -258,7 +258,7 @@ msgstr "S'abonner (%1)"
 #: ui/components/SubscriptionButton.qml:68
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr "Veuillez vous connecter pour souscrire à des canaux."
+msgstr "Veuillez vous connecter pour vous abonner à des chaînes."
 
 #: ui/components/VideoGridItem.qml:187
 #, kde-format
@@ -278,7 +278,7 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:25
 #, kde-format
 msgid "Play Now"
-msgstr "Jouer maintenant"
+msgstr "Lire maintenant"
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
@@ -288,12 +288,12 @@ msgstr "Lire dans une fenêtre « PIP »"
 #: ui/components/VideoMenu.qml:47
 #, kde-format
 msgid "Mark as unwatched"
-msgstr "Marquer comme non surveillé"
+msgstr "Marquer comme non vu"
 
 #: ui/components/VideoMenu.qml:47
 #, kde-format
 msgid "Mark as watched"
-msgstr "Marquer comme surveillé"
+msgstr "Marquer comme vu"
 
 #: ui/components/VideoMenu.qml:60
 #, kde-format
@@ -325,7 +325,7 @@ msgstr "Ajouter une source « Invidious »"
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr "Sélectionnez une instance"
+msgstr "Sélectionner une instance"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
@@ -335,7 +335,7 @@ msgstr "invidious.io"
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #, kde-format
 msgid "No public instances found."
-msgstr "Aucune instance publique trouvée."
+msgstr "Impossible de trouver une instance publique."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
@@ -352,7 +352,7 @@ msgstr "joinpeertube.org"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Ajouter une source canalisée"
+msgstr "Ajouter une source « Piped »"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
@@ -394,7 +394,7 @@ msgstr "Ajouter une source « PeerTube »"
 #: ui/loginflow/WelcomePage.qml:66
 #, kde-format
 msgid "Add Piped Source"
-msgstr "Ajouter une source canalisée"
+msgstr "Ajouter une source « Piped »"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -504,7 +504,7 @@ msgstr "Supprimer une source"
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr "Impossible de supprimer la seule source."
+msgstr "Impossible de supprimer l'unique source."
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
@@ -580,12 +580,12 @@ msgstr "À propos de KDE"
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr "Tendance"
+msgstr "En vogue"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:16
 #, kde-format
 msgid "Picture in Picture"
-msgstr "Image dans l'image"
+msgstr "Image dans l'image (PIP)"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
