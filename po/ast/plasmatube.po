@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-24 13:29+0200\n"
+"PO-Revision-Date: 2023-11-03 22:56+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -102,25 +102,25 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Xuegos"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Filmes"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Música"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Noticies"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "Configuración"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Cargar más"
 
 #: ui/components/PlaylistGridItem.qml:70
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "En tendencia"
 #: ui/components/Sidebar.qml:122 ui/PlaylistsPage.qml:15
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Llistes de reproducción"
 
 #: ui/components/Sidebar.qml:137
 #, kde-format
@@ -223,7 +223,7 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
 #, kde-format
@@ -369,7 +369,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Acoyida"
 
 #: ui/loginflow/WelcomePage.qml:28
 #, kde-format
@@ -504,7 +504,7 @@ msgstr ""
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Nun se pue quitar la única fonte."
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
