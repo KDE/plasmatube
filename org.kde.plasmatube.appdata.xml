@@ -28,6 +28,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="hu">PlasmaTube</name>
   <name xml:lang="ia">PlasmaTube</name>
   <name xml:lang="id">PlasmaTube</name>
+  <name xml:lang="is">PlasmaTube</name>
   <name xml:lang="it">PlasmaTube</name>
   <name xml:lang="ka">PlasmaTube</name>
   <name xml:lang="ko">PlasmaTube</name>
@@ -67,6 +68,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="hu">YouTube videók lejátszása</summary>
   <summary xml:lang="ia">Guarda viodeos de YouTube</summary>
   <summary xml:lang="id">Tonton video YouTube</summary>
+  <summary xml:lang="is">Horfðu á YouTube-myndskeið</summary>
   <summary xml:lang="it">Guarda i video di YouTube</summary>
   <summary xml:lang="ka">უყურეთ ვიდეოებს YouTube-დან</summary>
   <summary xml:lang="ko">YouTube 동영상 보기</summary>
@@ -106,6 +108,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="hu">A PlasmaTube lehetővé teszi YouTube videók lejátszását a telefonján vagy a számítógépén egy, a Plasma többi részével integrálódó elegáns felhasználói felületen.</p>
     <p xml:lang="ia">PlasmaTube te permitte guardar videos de YouTUbe sur tu telephono o scriptorio usante unelegante interfacie de usator integrate con le resto de Plasma.</p>
     <p xml:lang="id">PlasmaTube memungkinkan Anda menonton video YouTube di ponsel atau desktop menggunakan antarmuka pengguna elegan yang terintegrasi dengan Plasma.</p>
+    <p xml:lang="is">Með PlasmaTube geturðu horft á YouTube-myndskeið í símanum eða tölvunni með þægilegu notandaviðmóti sem fellur vel inn í Plasma skjáborðsumhverfið.</p>
     <p xml:lang="it">PlasmaTube ti consente di guardare i video di YouTube sul tuo telefono o desktop utilizzando un'elegante interfaccia utente integrata con il resto di Plasma.</p>
     <p xml:lang="ka">PlasmaTube საშუალებას გაძლევთ უყუროთ ვიდეოებს YouTube-დან თქვენს ტელეფონზე ან კომპიუტერზე მომხმარებლის ელეგანტური ინტერფეისით, რომელიც Plasma-შია ინტეგრირებული.</p>
     <p xml:lang="ko">PlasmaTube를 사용하여 휴대폰에서 YouTube 동영상을 보거나 데스크톱에서 Plasma 인터페이스와 통합된 형태로 볼 수 있습니다.</p>
