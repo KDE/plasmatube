@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2023-10-23 10:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -151,7 +151,7 @@ msgstr ""
 "No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració del "
 "servidor intermediari."
 
-#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
+#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:94
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
 #, kde-format
 msgctxt "@info:status"

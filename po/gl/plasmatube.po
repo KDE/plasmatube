@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"POT-Creation-Date: 2023-11-10 01:47+0000\n"
 "PO-Revision-Date: 2023-10-28 10:51+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -147,7 +147,7 @@ msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "Fallou a conexión ao servidor: %1. Comproba a configuración do mandatario."
 
-#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:95
+#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:94
 #: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
 #, kde-format
 msgctxt "@info:status"
