@@ -58,7 +58,6 @@ Kirigami.ApplicationWindow {
         visible: active
         active: !root.isWidescreen && PlasmaTube.sourceManager.hasAnySources
         sourceComponent: BottomNavBar {
-            shadow: !videoPlayer.isVideoLoaded
             opacity: (videoPlayer.contentY === 0) ? 1 : 0
 
             Behavior on opacity {
