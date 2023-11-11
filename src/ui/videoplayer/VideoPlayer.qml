@@ -356,6 +356,19 @@ Kirigami.ScrollablePage {
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: 0
 
+            Kirigami.Heading {
+                text: i18n("Queue")
+            }
+
+            VideoQueueView {
+                Layout.fillWidth: true
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 15
+            }
+
+            Kirigami.Heading {
+                text: i18n("Recommended")
+            }
+
             Repeater {
                 model: video.recommendedVideosModel()
                 delegate: VideoListItem {

@@ -86,6 +86,7 @@ qt_target_qml_sources(plasmatube
         ui/videoplayer/VideoData.qml
         ui/videoplayer/VideoPlayer.qml
         ui/videoplayer/VideoPlayerParent.qml
+        ui/videoplayer/VideoQueueView.qml
 
         ui/ChannelPage.qml
         ui/FeedPage.qml
