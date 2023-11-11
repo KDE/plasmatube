@@ -172,12 +172,13 @@ QHash<int, QByteArray> VideoQueue::roleNames() const
             {PlayingRole, "playing"}};
 }
 
-void VideoQueue::setCurrentIndex(int newIndex)
+void VideoQueue::setCurrentIndex(const int newIndex)
 {
-    Q_EMIT dataChanged(index(m_currentIndex, 0), index(m_currentIndex, 0), {PlayingRole});
-
+    const int oldIndex = m_currentIndex;
     m_currentIndex = newIndex;
     Q_EMIT currentVideoChanged();
+
+    Q_EMIT dataChanged(index(oldIndex, 0), index(oldIndex, 0), {PlayingRole});
 
     Q_EMIT dataChanged(index(m_currentIndex, 0), index(m_currentIndex, 0), {PlayingRole});
 }
