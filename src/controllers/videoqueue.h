@@ -46,7 +46,8 @@ public:
         LiveNowRole,
         PaidRole,
         PremiumRole,
-        WatchedRole
+        WatchedRole,
+        PlayingRole
     };
 
     [[nodiscard]] int rowCount(const QModelIndex &index) const override;
@@ -59,6 +60,7 @@ Q_SIGNALS:
     void currentVideoChanged();
 
 private:
+    void setCurrentIndex(int newIndex);
     void requestMissingVideoInformation();
 
     QList<QString> m_videoIds;

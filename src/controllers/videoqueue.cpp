@@ -20,13 +20,12 @@ void VideoQueue::replace(const QStringList &videoIds)
 
     requestMissingVideoInformation();
 
-    m_currentIndex = 0;
-    Q_EMIT currentVideoChanged();
+    setCurrentIndex(0);
 }
 
 void VideoQueue::queueNext(const QString &videoId)
 {
-    beginInsertRows({}, m_videoIds.size(), m_videoIds.size() + 1);
+    beginInsertRows({}, m_videoIds.size(), m_videoIds.size());
     m_videoIds.push_back(videoId);
     m_videoInfo.push_back(std::nullopt);
     endInsertRows();
@@ -34,18 +33,16 @@ void VideoQueue::queueNext(const QString &videoId)
     requestMissingVideoInformation();
 }
 
-void VideoQueue::playInQueue(int index)
+void VideoQueue::playInQueue(const int videoIndex)
 {
     // TODO: protect against invalid indexes
-    m_currentIndex = index;
-    Q_EMIT currentVideoChanged();
+    setCurrentIndex(videoIndex);
 }
 
 void VideoQueue::next()
 {
     if (m_currentIndex + 1 < m_videoIds.size()) {
-        m_currentIndex++;
-        Q_EMIT currentVideoChanged();
+        setCurrentIndex(m_currentIndex + 1);
     }
 }
 
@@ -68,7 +65,6 @@ QString VideoQueue::getCurrentVideoId() const
 int VideoQueue::rowCount(const QModelIndex &index) const
 {
     Q_UNUSED(index);
-    qInfo() << "ROW COUNT:" << m_videoIds.size();
     return static_cast<int>(m_videoIds.size());
 }
 
@@ -81,6 +77,8 @@ QVariant VideoQueue::data(const QModelIndex &index, int role) const
     const int row = index.row();
     if (role == IdRole) {
         return m_videoIds[row];
+    } else if (role == PlayingRole) {
+        return row == m_currentIndex;
     }
 
     if (m_videoInfo[row] != std::nullopt) {
@@ -146,7 +144,18 @@ QHash<int, QByteArray> VideoQueue::roleNames() const
             {LiveNowRole, "liveNow"},
             {PaidRole, "paid"},
             {PremiumRole, "premium"},
-            {WatchedRole, "watched"}};
+            {WatchedRole, "watched"},
+            {PlayingRole, "playing"}};
+}
+
+void VideoQueue::setCurrentIndex(int newIndex)
+{
+    Q_EMIT dataChanged(index(m_currentIndex, 0), index(m_currentIndex, 0), {PlayingRole});
+
+    m_currentIndex = newIndex;
+    Q_EMIT currentVideoChanged();
+
+    Q_EMIT dataChanged(index(m_currentIndex, 0), index(m_currentIndex, 0), {PlayingRole});
 }
 
 void VideoQueue::requestMissingVideoInformation()
@@ -162,7 +171,6 @@ void VideoQueue::requestMissingVideoInformation()
                 auto result = m_watcher->result();
 
                 if (const auto video = std::get_if<QInvidious::Video>(&result)) {
-                    qInfo() << "Recieved video information!";
                     m_videoInfo[i] = *video;
                     Q_EMIT dataChanged(index(i, 0), index(i, 0));
                 } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {

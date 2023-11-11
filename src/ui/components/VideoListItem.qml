@@ -55,7 +55,7 @@ QQC2.ItemDelegate {
     background: Rectangle {
         anchors.fill: parent
         radius: Kirigami.Units.smallSpacing
-        visible: root.hovered || root.activeFocus
+        visible: root.hovered || root.activeFocus || root.highlighted
         color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, 0.2);
         border.color: Kirigami.Theme.hoverColor
         border.width: 1
