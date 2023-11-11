@@ -39,6 +39,30 @@ void VideoQueue::playInQueue(const int videoIndex)
     setCurrentIndex(videoIndex);
 }
 
+void VideoQueue::loadPlaylist(const QString &playlistId)
+{
+    auto playlistFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylist(playlistId);
+
+    auto playlistFutureWatcher = new QFutureWatcher<QInvidious::VideoListResult>(this);
+    connect(playlistFutureWatcher, &QFutureWatcherBase::finished, this, [this, playlistFutureWatcher] {
+        auto result = playlistFutureWatcher->result();
+
+        if (const auto videoList = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+            QStringList videoIdList;
+            std::transform(videoList->cbegin(), videoList->cend(), std::back_inserter(videoIdList), [](const auto &video) {
+                return video.videoId();
+            });
+
+            replace(videoIdList);
+        } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            qDebug() << "VideoQueue::loadPlaylist(): Error:" << error->second << error->first;
+        }
+
+        playlistFutureWatcher->deleteLater();
+    });
+    playlistFutureWatcher->setFuture(playlistFuture);
+}
+
 void VideoQueue::next()
 {
     if (m_currentIndex + 1 < m_videoIds.size()) {
@@ -166,9 +190,9 @@ void VideoQueue::requestMissingVideoInformation()
         if (video == std::nullopt) {
             auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestVideo(m_videoIds[i]);
 
-            m_watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
-            connect(m_watcher, &QFutureWatcherBase::finished, this, [this, i] {
-                auto result = m_watcher->result();
+            auto watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
+            connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, i] {
+                auto result = watcher->result();
 
                 if (const auto video = std::get_if<QInvidious::Video>(&result)) {
                     m_videoInfo[i] = *video;
@@ -177,10 +201,9 @@ void VideoQueue::requestMissingVideoInformation()
                     qDebug() << "VideoQueue::requestMissingVideoInformation(): Error:" << error->second << error->first;
                 }
 
-                m_watcher->deleteLater();
-                m_watcher = nullptr;
+                watcher->deleteLater();
             });
-            m_watcher->setFuture(future);
+            watcher->setFuture(future);
         }
         i++;
     }

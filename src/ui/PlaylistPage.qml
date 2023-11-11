@@ -42,6 +42,12 @@ Kirigami.ScrollablePage {
         }
     }
 
+    actions: Kirigami.Action {
+        text: i18nc("@action:button Play the playlist", "Play")
+        icon.name: "media-playback-start"
+        onTriggered: PlasmaTube.videoController.videoQueue.loadPlaylist(root.playlistId)
+    }
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     GridView {

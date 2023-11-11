@@ -23,6 +23,7 @@ public:
     void queueNext(const QString &videoId);
 
     Q_INVOKABLE void playInQueue(int index);
+    Q_INVOKABLE void loadPlaylist(const QString &playlistId);
 
     void next();
     void previous();
@@ -66,5 +67,4 @@ private:
     QList<QString> m_videoIds;
     QList<std::optional<QInvidious::VideoBasicInfo>> m_videoInfo;
     int m_currentIndex = 0;
-    QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;
 };
