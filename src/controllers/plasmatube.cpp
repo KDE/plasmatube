@@ -7,14 +7,16 @@
 #include "config.h"
 
 #include <KLocalizedString>
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <QDBusReply>
-#include <QFutureWatcher>
 #include <QGuiApplication>
 #include <QNetworkProxy>
 #include <QSettings>
 #include <QStringBuilder>
+
+#ifdef HAS_DBUS
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusReply>
+#endif
 
 PlasmaTube::PlasmaTube(QObject *parent)
     : QObject(parent)
