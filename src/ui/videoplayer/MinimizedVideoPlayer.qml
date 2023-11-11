@@ -21,6 +21,7 @@ Rectangle {
     signal toggleRequested()
     signal stopRequested()
     signal openRequested()
+    signal nextRequested()
 
     color: Kirigami.Theme.backgroundColor
 
@@ -101,6 +102,18 @@ Rectangle {
             icon.height: Kirigami.Units.iconSizes.small
             icon.width: Kirigami.Units.iconSizes.small
             onClicked: root.stopRequested()
+        }
+
+        QQC2.Button {
+            flat: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignVCenter
+            icon.name: "media-skip-forward"
+            icon.height: Kirigami.Units.iconSizes.small
+            icon.width: Kirigami.Units.iconSizes.small
+            onClicked: root.nextRequested()
         }
     }
 }

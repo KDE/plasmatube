@@ -10,9 +10,21 @@
 VideoController::VideoController(QObject *parent)
     : QObject(parent)
     , m_videoModel(new VideoModel(this))
+    , m_videoQueue(new VideoQueue(this))
 {
     connect(m_videoModel, &VideoModel::videoChanged, this, [this] {
         Q_EMIT currentVideoChanged();
+    });
+    connect(m_videoQueue, &VideoQueue::currentVideoChanged, this, [this] {
+        // If the user is attempting to "play" the same video, they probably meant to open the player
+        if (currentVideo() && currentVideo()->videoId() == m_videoQueue->getCurrentVideoId()) {
+            openPlayer();
+            return;
+        }
+
+        m_videoModel->fetch(m_videoQueue->getCurrentVideoId());
+
+        openPlayer();
     });
 }
 
@@ -23,15 +35,17 @@ void VideoController::play(const QString &videoId)
         return;
     }
 
-    // If the user is attempting to "play" the same video, they probably meant to open the player
-    if (currentVideo() && currentVideo()->videoId() == videoId) {
-        openPlayer();
+    m_videoQueue->replace({videoId});
+}
+
+void VideoController::queueNext(const QString &videoId)
+{
+    if (videoId.isEmpty()) {
+        qWarning() << "Not trying to queue an empty video id.";
         return;
     }
 
-    m_videoModel->fetch(videoId);
-
-    openPlayer();
+    m_videoQueue->queueNext(videoId);
 }
 
 void VideoController::togglePlaying()
@@ -51,6 +65,16 @@ void VideoController::stop()
         m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
         videoModel()->clearVideo();
     }
+}
+
+void VideoController::previous()
+{
+    m_videoQueue->previous();
+}
+
+void VideoController::next()
+{
+    m_videoQueue->next();
 }
 
 VideoController::VideoMode VideoController::videoMode() const

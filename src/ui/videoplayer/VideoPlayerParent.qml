@@ -142,6 +142,7 @@ Flickable {
                 onToggleRequested: PlasmaTube.videoController.togglePlaying()
                 onStopRequested: PlasmaTube.videoController.stop()
                 onOpenRequested: root.open()
+                onNextRequested: PlasmaTube.videoController.next()
             }
         }
 

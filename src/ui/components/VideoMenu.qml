@@ -32,6 +32,14 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
+        text: i18n("Play Next")
+        icon.name: "media-playback-start"
+        onTriggered: {
+            PlasmaTube.videoController.queueNext(root.videoId);
+        }
+    }
+
+    QQC2.MenuItem {
         text: i18n("Play in Picture-in-Picture")
         icon.name: "view-zoom-out-symbolic"
         onTriggered: {

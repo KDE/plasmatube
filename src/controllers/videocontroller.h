@@ -8,6 +8,7 @@
 #include <QQmlEngine>
 #include <QtQml/qqmlregistration.h>
 
+#include "controllers/videoqueue.h"
 #include "models/videomodel.h"
 #include "utils/mpvobject.h"
 
@@ -26,8 +27,12 @@ public:
     explicit VideoController(QObject *parent = nullptr);
 
     Q_INVOKABLE void play(const QString &videoId);
+    Q_INVOKABLE void queueNext(const QString &videoId);
+
     Q_INVOKABLE void togglePlaying();
     Q_INVOKABLE void stop();
+    Q_INVOKABLE void previous();
+    Q_INVOKABLE void next();
 
     enum VideoMode { Normal, PictureInPicture };
     Q_ENUM(VideoMode);
@@ -55,4 +60,5 @@ private:
     VideoMode m_videoMode = VideoMode::Normal;
     MpvObject *m_currentPlayer = nullptr;
     VideoModel *m_videoModel = nullptr;
+    VideoQueue *m_videoQueue = nullptr;
 };

@@ -41,6 +41,8 @@ target_sources(plasmatube PRIVATE
         controllers/subscriptioncontroller.h
         controllers/subscriptionwatcher.cpp
         controllers/subscriptionwatcher.h
+        controllers/videoqueue.cpp
+        controllers/videoqueue.h
         controllers/videocontroller.cpp
         controllers/videocontroller.h
 
