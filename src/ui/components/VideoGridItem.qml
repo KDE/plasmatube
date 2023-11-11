@@ -53,10 +53,17 @@ QQC2.ItemDelegate {
     }
 
     background: Rectangle {
-        anchors.fill: parent
+        anchors {
+            fill: parent
+            // TODO: switch to standard units
+            topMargin: 1
+            bottomMargin: 1
+            leftMargin: 1
+            rightMargin: 1
+        }
         radius: Kirigami.Units.smallSpacing
         visible: root.hovered || root.activeFocus
-        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, 0.2);
+        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, root.hovered ? 0.1 : 0.2);
         border.color: Kirigami.Theme.hoverColor
         border.width: 1
     }
