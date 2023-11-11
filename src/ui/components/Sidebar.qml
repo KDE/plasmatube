@@ -3,6 +3,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
@@ -22,7 +23,7 @@ Kirigami.OverlayDrawer {
     width: Kirigami.Units.gridUnit * 13
     height: applicationWindow().height
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    drawerOpen: !Kirigami.Settings.isMobile && enabled
+    drawerOpen: !Kirigami.Settings.isMobile && enabled && Window.visibility !== Window.FullScreen
     modal: !enabled || Kirigami.Settings.isMobile || Kirigami.Settings.tabletMode || (applicationWindow().width < Kirigami.Units.gridUnit * 50 && !collapsed) // Only modal when not collapsed, otherwise collapsed won't show.
 
     onModalChanged: drawerOpen = !modal
