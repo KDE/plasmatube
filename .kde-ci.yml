@@ -2,7 +2,11 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'frameworks/purpose': '@latest-kf6'
+
+- 'on': ['Linux', 'FreeBSD', 'Android']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
@@ -10,7 +14,6 @@ Dependencies:
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/kitemmodels': '@latest-kf6'
-    'frameworks/purpose': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
     'libraries/mpvqt': '@latest'
     'third-party/qtkeychain': '@latest'
