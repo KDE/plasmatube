@@ -114,6 +114,8 @@ MpvObject::MpvObject(QQuickItem * parent)
 
     // enable console output
     mpv_set_option_string(mpv, "terminal", "yes");
+    mpv_set_property_string(mpv, "audio-client-name", "org.kde.plasmatube");
+    mpv_set_property_string(mpv, "wayland-app-id", "org.kde.plasmatube");
 
     if (mpv_initialize(mpv) < 0)
         throw std::runtime_error("could not initialize mpv context");
