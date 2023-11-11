@@ -153,6 +153,11 @@ VideoModel *VideoController::videoModel() const
     return m_videoModel;
 }
 
+VideoQueue *VideoController::videoQueue() const
+{
+    return m_videoQueue;
+}
+
 void VideoController::openPlayer()
 {
     if (m_videoMode == VideoMode::Normal) {

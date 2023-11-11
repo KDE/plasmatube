@@ -22,6 +22,7 @@ class VideoController : public QObject
     Q_PROPERTY(MpvObject *currentPlayer READ currentPlayer WRITE setCurrentPlayer NOTIFY currentPlayerChanged)
     Q_PROPERTY(VideoItem *currentVideo READ currentVideo NOTIFY currentVideoChanged)
     Q_PROPERTY(VideoModel *videoModel READ videoModel CONSTANT)
+    Q_PROPERTY(VideoQueue *videoQueue READ videoQueue CONSTANT)
 
 public:
     explicit VideoController(QObject *parent = nullptr);
@@ -46,6 +47,7 @@ public:
     VideoItem *currentVideo() const;
 
     VideoModel *videoModel() const;
+    VideoQueue *videoQueue() const;
 
 Q_SIGNALS:
     void videoModeChanged();
