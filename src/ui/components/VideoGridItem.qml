@@ -31,6 +31,7 @@ MouseArea {
     property string publishedText
     property bool watched
 
+    hoverEnabled: true
     acceptedButtons: Qt.LeftButton | Qt.RightButton
 
     property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
@@ -46,6 +47,15 @@ MouseArea {
         origin.y: root.height / 2;
         xScale: root.zoomScale
         yScale: root.zoomScale
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        radius: Kirigami.Units.smallSpacing
+        visible: root.containsMouse
+        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, 0.2);
+        border.color: Kirigami.Theme.hoverColor
+        border.width: 1
     }
 
     ColumnLayout {
