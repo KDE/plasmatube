@@ -22,6 +22,8 @@ public:
     void replace(const QStringList &videoIds);
     void queueNext(const QString &videoId);
 
+    Q_INVOKABLE void playInQueue(int index);
+
     void next();
     void previous();
 

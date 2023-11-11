@@ -34,6 +34,13 @@ void VideoQueue::queueNext(const QString &videoId)
     requestMissingVideoInformation();
 }
 
+void VideoQueue::playInQueue(int index)
+{
+    // TODO: protect against invalid indexes
+    m_currentIndex = index;
+    Q_EMIT currentVideoChanged();
+}
+
 void VideoQueue::next()
 {
     if (m_currentIndex + 1 < m_videoIds.size()) {

@@ -34,5 +34,7 @@ ListView {
         viewCount: model.viewCount
         publishedText: model.publishedText
         watched: model.watched
+
+        onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
     }
 }
