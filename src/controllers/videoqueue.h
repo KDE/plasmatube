@@ -4,7 +4,11 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QFutureWatcher>
 #include <QtQml/qqmlregistration.h>
+
+#include "abstractapi.h"
+#include "videobasicinfo.h"
 
 class VideoQueue : public QAbstractListModel
 {
@@ -23,8 +27,24 @@ public:
 
     QString getCurrentVideoId() const;
 
-    enum CustomRoles {
-        VideoIdRole = Qt::UserRole,
+    // TODO: we should have an AbstractVideoListModel, and combine these roles with VideoLisTModel
+    enum Roles : int {
+        IdRole = Qt::UserRole + 1,
+        TitleRole,
+        ThumbnailRole,
+        LengthRole,
+        ViewCountRole,
+        AuthorRole,
+        AuthorIdRole,
+        AuthorUrlRole,
+        PublishedRole,
+        PublishedTextRole,
+        DescriptionRole,
+        DescriptionHtmlRole,
+        LiveNowRole,
+        PaidRole,
+        PremiumRole,
+        WatchedRole
     };
 
     [[nodiscard]] int rowCount(const QModelIndex &index) const override;
@@ -37,6 +57,10 @@ Q_SIGNALS:
     void currentVideoChanged();
 
 private:
+    void requestMissingVideoInformation();
+
     QList<QString> m_videoIds;
+    QList<std::optional<QInvidious::VideoBasicInfo>> m_videoInfo;
     int m_currentIndex = 0;
+    QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;
 };
