@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-10 01:47+0000\n"
-"PO-Revision-Date: 2023-10-23 16:23+0200\n"
+"PO-Revision-Date: 2023-11-02 13:40+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -364,7 +364,7 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Přidat %1"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
