@@ -139,4 +139,10 @@ if(PLASMATUBE_FLATPAK)
     target_compile_definitions(plasmatube PUBLIC PLASMATUBE_FLATPAK)
 endif()
 
+if (NOT ANDROID)
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/actions)
+else()
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
+endif()
+
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -42,6 +42,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: invidiousButton
             text: i18n("Add Invidious Source")
+            icon.name: "plasmatube-invidious"
             onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddInvidiousPage"))
         }
 
@@ -53,6 +54,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: peerTubeButton
             text: i18n("Add PeerTube Source")
+            icon.name: "plasmatube-peertube"
             onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPeerTubePage"))
         }
 
@@ -64,6 +66,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: pipedButton
             text: i18n("Add Piped Source")
+            icon.name: "plasmatube-piped"
             onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPipedPage"))
         }
     }

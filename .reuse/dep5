@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: PlasmaTube
+Upstream-Contact: Linus Jahn <lnj@kaidan.im>
+Source: https://invent.kde.org/multimedia/plasmatube
+
+
+Files: src/icons/*
+Copyright: Joshua Goins <josh@redstrate.com>
+License: CC-BY-SA-4.0

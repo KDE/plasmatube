@@ -45,6 +45,17 @@ FormCard.FormCardPage {
                 FormCard.FormButtonDelegate {
                     text: source.url
 
+                    icon.name: {
+                        switch (source.type) {
+                            case VideoSource.Invidious:
+                                return "plasmatube-invidious";
+                            case VideoSource.PeerTube:
+                                return "plasmatube-peertube";
+                            case VideoSource.Piped:
+                                return "plasmatube-piped";
+                        }
+                    }
+
                     description: {
                         switch (source.type) {
                             case VideoSource.Invidious:
@@ -84,6 +95,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             text: i18n("Add Source")
+            icon.name: "list-add"
             onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"))
         }
     }
