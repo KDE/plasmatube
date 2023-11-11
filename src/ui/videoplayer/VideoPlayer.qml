@@ -374,17 +374,17 @@ Kirigami.ScrollablePage {
                     publishedText: model.publishedText
                     watched: model.watched
 
-                    onClicked: (mouse) => {
-                        if (mouse.button === Qt.LeftButton) {
-                            video.recommendedVideosModel().markAsWatched(index);
-                            PlasmaTube.videoController.play(vid);
-                        } else {
-                            currentVideoId = vid;
-                            currentVideoIndex = index;
-                            currentVideoTitle = title;
-                            videoMenu.isWatched = watched;
-                            videoMenu.popup();
-                        }
+                    onPressed: {
+                        video.recommendedVideosModel().markAsWatched(index);
+                        PlasmaTube.videoController.play(vid);
+                    }
+
+                    onContextMenuRequested: {
+                        currentVideoId = vid;
+                        currentVideoIndex = index;
+                        currentVideoTitle = title;
+                        videoMenu.isWatched = watched;
+                        videoMenu.popup();
                     }
                 }
             }

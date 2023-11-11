@@ -12,15 +12,8 @@ import org.kde.kirigami as Kirigami
 
 import "utils.js" as Utils
 
-MouseArea {
+QQC2.ItemDelegate {
     id: root
-    implicitWidth: gridLayout.implicitWidth + leftPadding + rightPadding
-    implicitHeight: gridLayout.implicitHeight + topPadding + bottomPadding
-
-    property real leftPadding: Kirigami.Units.largeSpacing
-    property real rightPadding: Kirigami.Units.largeSpacing
-    property real topPadding: Kirigami.Units.largeSpacing
-    property real bottomPadding: Kirigami.Units.largeSpacing
 
     property string vid
     property url thumbnail
@@ -34,10 +27,17 @@ MouseArea {
     property string publishedText
     property bool watched
 
-    hoverEnabled: true
-    acceptedButtons: Qt.LeftButton | Qt.RightButton
+    signal contextMenuRequested
 
-    property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
+    leftPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+
+    hoverEnabled: true
+    onPressAndHold: contextMenuRequested()
+
+    property real zoomScale: pressed ? 0.9 : 1
     Behavior on zoomScale {
         NumberAnimation {
             duration: 200
@@ -52,16 +52,16 @@ MouseArea {
         yScale: root.zoomScale
     }
 
-    Rectangle {
+    background: Rectangle {
         anchors.fill: parent
         radius: Kirigami.Units.smallSpacing
-        visible: root.containsMouse
+        visible: root.hovered || root.activeFocus
         color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, 0.2);
         border.color: Kirigami.Theme.hoverColor
         border.width: 1
     }
 
-    RowLayout {
+    contentItem: RowLayout {
         id: gridLayout
         anchors.top: parent.top
         anchors.topMargin: root.topPadding
@@ -71,6 +71,11 @@ MouseArea {
         anchors.rightMargin: root.rightPadding
 
         spacing: Kirigami.Units.largeSpacing
+
+        TapHandler {
+            acceptedButtons: Qt.RightButton
+            onTapped: root.contextMenuRequested()
+        }
 
         Image {
             id: thumb
@@ -133,13 +138,6 @@ MouseArea {
                     height: 3
                 }
             }
-
-            MouseArea {
-                id: thumbnailMouseArea
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: (mouse) => root.clicked(mouse)
-            }
         }
 
         ColumnLayout {
@@ -157,13 +155,6 @@ MouseArea {
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
                 elide: Text.ElideRight
-
-                MouseArea {
-                    id: titleMouseArea
-                    anchors.fill: parent
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: (mouse) => root.clicked(mouse)
-                }
             }
 
             Flow {
@@ -175,16 +166,6 @@ MouseArea {
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 2
                     elide: Text.ElideRight
-
-                    MouseArea {
-                        id: mouseArea
-                        cursorShape: Qt.PointingHandCursor
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: {
-                            pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author, authorId})
-                        }
-                    }
                 }
 
                 QQC2.Label {

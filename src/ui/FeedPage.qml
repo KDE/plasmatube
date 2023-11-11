@@ -74,6 +74,7 @@ Kirigami.ScrollablePage {
         readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
         readonly property int columns: Math.floor(effectiveWidth / targetDelegateWidth)
 
+        keyNavigationEnabled: true
         cellWidth: effectiveWidth / columns
         cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
 
@@ -93,17 +94,17 @@ Kirigami.ScrollablePage {
             publishedText: model.publishedText
             watched: model.watched
 
-            onClicked: (mouse) => {
-                if (mouse.button === Qt.LeftButton) {
-                    videoModel.markAsWatched(index);
-                    PlasmaTube.videoController.play(vid);
-                } else {
-                    currentVideoId = vid;
-                    currentVideoIndex = index;
-                    currentVideoTitle = title;
-                    videoMenu.isWatched = watched;
-                    videoMenu.popup();
-                }
+            onPressed: {
+                videoModel.markAsWatched(index);
+                PlasmaTube.videoController.play(vid);
+            }
+
+            onContextMenuRequested: {
+                currentVideoId = vid;
+                currentVideoIndex = index;
+                currentVideoTitle = title;
+                videoMenu.isWatched = watched;
+                videoMenu.popup();
             }
         }
 
