@@ -33,7 +33,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         text: i18n("Play Next")
-        icon.name: "media-playback-start"
+        icon.name: "media-playlist-append"
         onTriggered: {
             PlasmaTube.videoController.queueNext(root.videoId);
         }
