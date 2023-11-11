@@ -21,6 +21,7 @@ public:
 
     void replace(const QStringList &videoIds);
     void queueNext(const QString &videoId);
+    Q_INVOKABLE void clear();
 
     Q_INVOKABLE void playInQueue(int index);
     Q_INVOKABLE void loadPlaylist(const QString &playlistId);

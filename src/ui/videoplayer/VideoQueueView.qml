@@ -12,30 +12,53 @@ import "../components/utils.js" as Utils
 import "../"
 import "../components"
 
-ListView {
-    id: root
+QQC2.Control {
+    contentItem: ColumnLayout {
+        spacing: 0
 
-    model: PlasmaTube.videoController.videoQueue
+        QQC2.ToolBar {
+            Layout.fillWidth: true
 
-    delegate: VideoListItem {
-        id: videoDelegate
+            QQC2.ToolButton {
+                text: i18nc("@action:button Clear playlist", "Clear")
+                onClicked: {
+                    PlasmaTube.videoController.videoQueue.clear();
+                    applicationWindow().closePlayer();
+                }
+            }
+        }
 
-        width: ListView.view.width
-        height: implicitHeight
+        QQC2.ScrollView {
+            id: root
 
-        vid: model.id
-        thumbnail: model.thumbnail
-        liveNow: model.liveNow
-        length: model.length
-        title: model.title
-        author: model.author
-        authorId: model.authorId
-        description: model.description
-        viewCount: model.viewCount
-        publishedText: model.publishedText
-        watched: model.watched
-        highlighted: model.playing
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-        onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
+            ListView {
+                model: PlasmaTube.videoController.videoQueue
+
+                delegate: VideoListItem {
+                    id: videoDelegate
+
+                    width: ListView.view.width
+                    height: implicitHeight
+
+                    vid: model.id
+                    thumbnail: model.thumbnail
+                    liveNow: model.liveNow
+                    length: model.length
+                    title: model.title
+                    author: model.author
+                    authorId: model.authorId
+                    description: model.description
+                    viewCount: model.viewCount
+                    publishedText: model.publishedText
+                    watched: model.watched
+                    highlighted: model.playing
+
+                    onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
+                }
+            }
+        }
     }
 }

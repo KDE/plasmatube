@@ -33,6 +33,16 @@ void VideoQueue::queueNext(const QString &videoId)
     requestMissingVideoInformation();
 }
 
+void VideoQueue::clear()
+{
+    beginResetModel();
+    m_videoIds.clear();
+    m_videoInfo.clear();
+    endResetModel();
+
+    setCurrentIndex(0);
+}
+
 void VideoQueue::playInQueue(const int videoIndex)
 {
     // TODO: protect against invalid indexes
