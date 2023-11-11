@@ -13,6 +13,12 @@ import org.kde.plasmatube
 Kirigami.OverlayDrawer {
     id: root
 
+    property alias popularDelegate: popularDelegate
+    property alias trendingDelegate: trendingDelegate
+    property alias subscriptionsDelegate: subscriptionsDelegate
+    property alias playslistsDelegate: playslistsDelegate
+    property alias historyDelegate: historyDelegate
+
     width: Kirigami.Units.gridUnit * 13
     height: applicationWindow().height
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
@@ -72,6 +78,8 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
+            id: popularDelegate
+
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
@@ -86,6 +94,8 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
+            id: trendingDelegate
+
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
@@ -100,6 +110,8 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
+            id: subscriptionsDelegate
+
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
@@ -115,6 +127,8 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
+            id: playslistsDelegate
+
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
@@ -130,6 +144,8 @@ Kirigami.OverlayDrawer {
         }
 
         Delegates.RoundedItemDelegate {
+            id: historyDelegate
+
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 

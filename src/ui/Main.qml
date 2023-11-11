@@ -50,6 +50,7 @@ Kirigami.ApplicationWindow {
     }
 
     globalDrawer: Sidebar {
+        id: sidebar
         enabled: PlasmaTube.sourceManager.hasAnySources && root.finishedLoading
     }
 
@@ -167,18 +168,23 @@ Kirigami.ApplicationWindow {
         switch (defaultHome) {
             case "Search":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SearchPage"));
+                sidebar.searchDelegate.checked = true;
                 break;
             case "Popular":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
+                sidebar.popularDelegate.checked = true;
                 break;
             case "Trending":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
+                sidebar.trendingDelegate.checked = true;
                 break;
             case "Subscriptions":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage"));
+                sidebar.subscriptionsDelegate.checked = true;
                 break;
             case "Playlists":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "PlaylistsPage"));
+                sidebar.playslistsDelegate.checked = true;
                 break;
         }
     }
