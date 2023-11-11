@@ -13,6 +13,21 @@ import "../"
 import "../components"
 
 QQC2.Control {
+    id: root
+
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
+
+    background: Rectangle {
+        anchors.fill: parent
+        color: Kirigami.Theme.backgroundColor
+    }
+
     contentItem: ColumnLayout {
         spacing: 0
 
@@ -29,8 +44,6 @@ QQC2.Control {
         }
 
         QQC2.ScrollView {
-            id: root
-
             Layout.fillWidth: true
             Layout.fillHeight: true
 
