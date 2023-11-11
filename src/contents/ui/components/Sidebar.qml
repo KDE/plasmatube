@@ -3,6 +3,7 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
+import QtQuick.Window 2.2
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 
@@ -11,6 +12,7 @@ Kirigami.OverlayDrawer {
     modal: false
     width: 100
     height: applicationWindow().height
+    drawerOpen: Window.visibility !== Window.FullScreen
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
