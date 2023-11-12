@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 01:47+0000\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
 "PO-Revision-Date: 2021-06-29 17:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "This instance has disabled the registration."
 msgstr ""
 
-#: controllers/plasmatube.cpp:59
+#: controllers/plasmatube.cpp:61
 #, kde-format
 msgid "Playing video"
 msgstr ""
@@ -50,7 +50,7 @@ msgstr ""
 msgid "PlasmaTube"
 msgstr ""
 
-#: main.cpp:59 main.cpp:111
+#: main.cpp:59 main.cpp:109
 #, kde-format
 msgid "YouTube client"
 msgstr ""
@@ -82,12 +82,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:107
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:120
 #, kde-format
 msgid "Subscriptions"
 msgstr ""
 
-#: models/videolistmodel.cpp:20 ui/components/Sidebar.qml:79
+#: models/videolistmodel.cpp:20 ui/components/Sidebar.qml:88
 #, kde-format
 msgid "Popular"
 msgstr ""
@@ -139,15 +139,15 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr ""
 
-#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:68
+#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:74
 #: ui/SearchPage.qml:190
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: ui/ChannelPage.qml:191 ui/FeedPage.qml:112 ui/Main.qml:94
-#: ui/PlaylistPage.qml:104 ui/SearchPage.qml:225
+#: ui/ChannelPage.qml:191 ui/FeedPage.qml:113 ui/Main.qml:95
+#: ui/PlaylistPage.qml:110 ui/SearchPage.qml:225
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
@@ -194,38 +194,38 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: ui/components/Sidebar.qml:93
+#: ui/components/Sidebar.qml:104
 #, kde-format
 msgid "Trending"
 msgstr ""
 
-#: ui/components/Sidebar.qml:122 ui/PlaylistsPage.qml:15
+#: ui/components/Sidebar.qml:137 ui/PlaylistsPage.qml:15
 #, kde-format
 msgid "Playlists"
 msgstr ""
 
-#: ui/components/Sidebar.qml:137
+#: ui/components/Sidebar.qml:154
 #, kde-format
 msgid "History"
 msgstr ""
 
-#: ui/components/Sidebar.qml:153
+#: ui/components/Sidebar.qml:170
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:42 ui/settings/SettingsPage.qml:51
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SettingsPage.qml:62
 #, kde-format
 msgid "Invidious"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:53
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:64
 #, kde-format
 msgid "PeerTube"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:55
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:66
 #, kde-format
 msgid "Piped"
 msgstr ""
@@ -235,7 +235,7 @@ msgstr ""
 msgid "Switch Source"
 msgstr ""
 
-#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:86
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:97
 #, kde-format
 msgid "Add Source"
 msgstr ""
@@ -260,17 +260,17 @@ msgstr ""
 msgid "Please log in to subscribe to channels."
 msgstr ""
 
-#: ui/components/VideoGridItem.qml:187
+#: ui/components/VideoGridItem.qml:188
 #, kde-format
 msgid "• %1 views • %2"
 msgstr ""
 
-#: ui/components/VideoListItem.qml:182
+#: ui/components/VideoListItem.qml:173
 #, kde-format
 msgid " • %1 views"
 msgstr ""
 
-#: ui/components/VideoListItem.qml:190
+#: ui/components/VideoListItem.qml:181
 #, kde-format
 msgid " • %1"
 msgstr ""
@@ -282,35 +282,40 @@ msgstr ""
 
 #: ui/components/VideoMenu.qml:35
 #, kde-format
+msgid "Play Next"
+msgstr ""
+
+#: ui/components/VideoMenu.qml:43
+#, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:47
+#: ui/components/VideoMenu.qml:55
 #, kde-format
 msgid "Mark as unwatched"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:47
+#: ui/components/VideoMenu.qml:55
 #, kde-format
 msgid "Mark as watched"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:60
+#: ui/components/VideoMenu.qml:68
 #, kde-format
 msgid "Add to Playlist…"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:67
+#: ui/components/VideoMenu.qml:75
 #, kde-format
 msgid "Remove from Playlist"
 msgstr ""
 
-#: ui/FeedPage.qml:117
+#: ui/FeedPage.qml:118
 #, kde-format
 msgid "No videos"
 msgstr ""
 
-#: ui/FeedPage.qml:143
+#: ui/FeedPage.qml:144
 #, kde-format
 msgid "Add to playlist"
 msgstr ""
@@ -386,12 +391,12 @@ msgstr ""
 msgid "Add Invidious Source"
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:55
+#: ui/loginflow/WelcomePage.qml:56
 #, kde-format
 msgid "Add PeerTube Source"
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:66
+#: ui/loginflow/WelcomePage.qml:68
 #, kde-format
 msgid "Add Piped Source"
 msgstr ""
@@ -430,6 +435,12 @@ msgstr ""
 #: ui/LoginPage.qml:98
 #, kde-format
 msgid "Password must not be empty!"
+msgstr ""
+
+#: ui/PlaylistPage.qml:46
+#, kde-format
+msgctxt "@action:button Play the playlist"
+msgid "Play"
 msgstr ""
 
 #: ui/SearchPage.qml:90
@@ -561,17 +572,17 @@ msgstr ""
 msgid "Sources"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:95
+#: ui/settings/SettingsPage.qml:107
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:104
+#: ui/settings/SettingsPage.qml:116
 #, kde-format
 msgid "About PlasmaTube"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:119
+#: ui/settings/SettingsPage.qml:131
 #, kde-format
 msgid "About KDE"
 msgstr ""
@@ -595,6 +606,22 @@ msgstr ""
 #: ui/videoplayer/VideoPlayer.qml:295
 #, kde-format
 msgid "%1 Likes"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:360
+#, kde-format
+msgid "Queue"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:369
+#, kde-format
+msgid "Recommended"
+msgstr ""
+
+#: ui/videoplayer/VideoQueueView.qml:38
+#, kde-format
+msgctxt "@action:button Clear playlist"
+msgid "Clear"
 msgstr ""
 
 #~ msgid "Fullscreen"
