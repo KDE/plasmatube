@@ -6,7 +6,7 @@ SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 SPDX-License-Identifier: CC0-1.0
 -->
 
-# PlasmaTube
+# <img src="org.kde.plasmatube.svg" width="40"/> PlasmaTube
 
 YouTube video player based on [mpv](https://mpv.io/), [yt-dlp](https://github.com/yt-dlp/yt-dlp), and [Invidious](https://github.com/iv-org/invidious).
 
