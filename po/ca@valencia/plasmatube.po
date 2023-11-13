@@ -4,12 +4,13 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
+# Josep M. Ferrer <txemaq@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-10-23 10:30+0200\n"
+"PO-Revision-Date: 2023-11-12 16:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -287,10 +288,9 @@ msgid "Play Now"
 msgstr "Reproduïx ara"
 
 #: ui/components/VideoMenu.qml:35
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Reproduïx ara"
+msgstr "Reproduïx el següent"
 
 #: ui/components/VideoMenu.qml:43
 #, kde-format
@@ -448,11 +448,10 @@ msgid "Password must not be empty!"
 msgstr "La contrasenya no pot estar buida!"
 
 #: ui/PlaylistPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Reproduïx ara"
+msgstr "Reproduïx"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -622,15 +621,15 @@ msgstr "%1 m'agrades"
 #: ui/videoplayer/VideoPlayer.qml:360
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Cua"
 
 #: ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Recomanats"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Neteja"

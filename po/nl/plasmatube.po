@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-10-23 11:38+0200\n"
+"PO-Revision-Date: 2023-11-12 13:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -282,10 +282,9 @@ msgid "Play Now"
 msgstr "Nu afspelen"
 
 #: ui/components/VideoMenu.qml:35
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Nu afspelen"
+msgstr "Volgende afspelen"
 
 #: ui/components/VideoMenu.qml:43
 #, kde-format
@@ -440,11 +439,10 @@ msgid "Password must not be empty!"
 msgstr "Wachtwoord mag niet leeg zijn!"
 
 #: ui/PlaylistPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Nu afspelen"
+msgstr "Afspelen"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -614,18 +612,18 @@ msgstr "%1 Likes"
 #: ui/videoplayer/VideoPlayer.qml:360
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Wachtrij"
 
 #: ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Aanbevolen"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Wissen"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "Aanmelden bij een gevaarlijk account"

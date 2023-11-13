@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-10-23 08:49+0200\n"
+"PO-Revision-Date: 2023-11-12 18:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
 #: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
@@ -284,10 +284,9 @@ msgid "Play Now"
 msgstr "Reproduce nunc"
 
 #: ui/components/VideoMenu.qml:35
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Reproduce nunc"
+msgstr "Reproduce proxime"
 
 #: ui/components/VideoMenu.qml:43
 #, kde-format
@@ -442,11 +441,10 @@ msgid "Password must not be empty!"
 msgstr "Contrasigno nonpote esser vacue!"
 
 #: ui/PlaylistPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Reproduce nunc"
+msgstr "Reproduce"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -616,18 +614,18 @@ msgstr "%1 Likes (place me)"
 #: ui/videoplayer/VideoPlayer.qml:360
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Cauda"
 
 #: ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Recommendate"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Netta"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "Accede a un conto invidiose"
