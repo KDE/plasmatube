@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:37+0000\n"
-"PO-Revision-Date: 2023-10-23 06:30+0200\n"
+"PO-Revision-Date: 2023-11-13 10:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
 #: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
@@ -283,10 +283,9 @@ msgid "Play Now"
 msgstr "ახლავე დაკვრა"
 
 #: ui/components/VideoMenu.qml:35
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "ახლავე დაკვრა"
+msgstr "შემდეგის დაკვრა"
 
 #: ui/components/VideoMenu.qml:43
 #, kde-format
@@ -441,11 +440,10 @@ msgid "Password must not be empty!"
 msgstr "პაროლი ცარიელი არ შეიძლება, იყოს!"
 
 #: ui/PlaylistPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "ახლავე დაკვრა"
+msgstr "დაკვრა"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -615,18 +613,18 @@ msgstr "%1 მოწონება"
 #: ui/videoplayer/VideoPlayer.qml:360
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "რიგი"
 
 #: ui/videoplayer/VideoPlayer.qml:369
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "რეკომენდებულია"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "გასუფთავება"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "შედით საეჭვო ანგარიშში"
