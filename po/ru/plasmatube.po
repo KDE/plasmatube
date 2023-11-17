@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 02:46+0000\n"
-"PO-Revision-Date: 2023-04-26 10:50+0300\n"
+"PO-Revision-Date: 2023-11-16 10:53+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -59,12 +59,12 @@ msgstr "Выполнен успешный вход под учётной зап�
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr ""
+msgstr "Вход в учётную запись Invidious"
 
 #: contents/ui/LoginPage.qml:51
-#, fuzzy, kde-format
+#, kde-format
 msgid "Instance Url"
-msgstr "Экземпляр"
+msgstr "URL-адрес экземпляра"
 
 #: contents/ui/LoginPage.qml:63
 #, kde-format
@@ -77,24 +77,24 @@ msgid "Password"
 msgstr "Пароль"
 
 #: contents/ui/LoginPage.qml:86 contents/ui/SettingsPage.qml:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "Log in"
-msgstr "Выйти"
+msgstr "Войти"
 
 #: contents/ui/LoginPage.qml:93
 #, kde-format
 msgid "Instance URL must not be empty!"
-msgstr ""
+msgstr "URL-адрес экземпляра не может быть пустым!"
 
 #: contents/ui/LoginPage.qml:98
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Имя пользователя не может быть пустым!"
 
 #: contents/ui/LoginPage.qml:103
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Пароль не может быть пустым!"
 
 #: contents/ui/SearchPage.qml:70
 #, kde-format
@@ -159,7 +159,7 @@ msgstr "О программе PlasmaTube"
 #: contents/ui/SettingsPage.qml:108
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "О KDE"
 
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
