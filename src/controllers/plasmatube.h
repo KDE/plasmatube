@@ -4,13 +4,14 @@
 
 #pragma once
 
-#include <QObject>
-#include <QQmlEngine>
-#include <QtQml/qqmlregistration.h>
-#include <optional>
-
 #include "sourcemanager.h"
 #include "videocontroller.h"
+
+#include <QObject>
+#include <QQmlEngine>
+#include <QtQml>
+
+#include <optional>
 
 class PlasmaTube : public QObject
 {

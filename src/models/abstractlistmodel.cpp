@@ -3,13 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "abstractlistmodel.h"
-#include "controllers/plasmatube.h"
 
-#include <QFutureWatcher>
-#include <QNetworkReply>
-#include <QtConcurrent>
+#include "plasmatube.h"
 
 #include <KLocalizedString>
+
+#include <QFutureWatcher>
+#include <QtConcurrent>
 
 AbstractListModel::AbstractListModel(QObject *parent)
     : QAbstractListModel(parent)

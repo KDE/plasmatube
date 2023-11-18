@@ -4,11 +4,12 @@
 
 #pragma once
 
+#include "qinvidiousglobal.h"
+
 #include <QDateTime>
 #include <QUrl>
-#include <cstdint>
 
-#include "qinvidiousglobal.h"
+#include <cstdint>
 
 namespace QInvidious
 {

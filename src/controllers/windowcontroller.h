@@ -5,7 +5,7 @@
 
 #include <QObject>
 #include <QQuickWindow>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class Identity;
 class Post;

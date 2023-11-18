@@ -3,7 +3,7 @@
 
 #include "invidiousinstancesmodel.h"
 
-#include "controllers/plasmatube.h"
+#include "plasmatube.h"
 
 using namespace Qt::Literals::StringLiterals;
 

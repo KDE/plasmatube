@@ -153,13 +153,29 @@ target_include_directories(plasmatube PRIVATE
         ${CMAKE_BINARY_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/controllers
         ${CMAKE_CURRENT_SOURCE_DIR}/models
+        ${CMAKE_CURRENT_SOURCE_DIR}/mpris
         ${CMAKE_CURRENT_SOURCE_DIR}/utils
 )
-target_link_libraries(plasmatube PRIVATE qinvidious qinvidiousplugin Qt::Core Qt::Qml Qt::Quick Qt::QuickControls2 Qt::Svg Qt::Widgets Qt::Concurrent KF6::CoreAddons KF6::ConfigCore KF6::ConfigGui KF6::I18n Qt6Keychain::Qt6Keychain MpvQt::MpvQt)
+target_link_libraries(plasmatube PRIVATE
+        qinvidious
+        qinvidiousplugin
+        Qt::Core
+        Qt::Qml
+        Qt::Quick
+        Qt::QuickControls2
+        Qt::Concurrent
+        KF6::CoreAddons
+        KF6::ConfigCore
+        KF6::ConfigGui
+        KF6::I18n
+        Qt6Keychain::Qt6Keychain
+        MpvQt::MpvQt)
 
 if (NOT ANDROID)
-    target_link_libraries(plasmatube PRIVATE Qt::DBus)
+    target_link_libraries(plasmatube PRIVATE Qt::DBus Qt::Widgets)
     target_compile_options(plasmatube PUBLIC -DHAS_DBUS)
+else()
+    target_link_libraries(plasmatube PRIVATE Qt::Svg)
 endif()
 
 if (TARGET KF6::DBusAddons)

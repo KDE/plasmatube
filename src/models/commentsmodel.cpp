@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "commentsmodel.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -45,7 +46,7 @@ void CommentsModel::setLoading(bool loading)
 
 int CommentsModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : m_comments.size();
+    return parent.isValid() ? 0 : static_cast<int>(m_comments.size());
 }
 
 QHash<int, QByteArray> CommentsModel::roleNames() const
@@ -95,7 +96,7 @@ void CommentsModel::fill()
             auto result = m_futureWatcher->result();
             if (auto comments = std::get_if<QInvidious::Comments>(&result)) {
                 const auto rows = rowCount({});
-                beginInsertRows({}, rows, rows + comments->comments.size() - 1);
+                beginInsertRows({}, rows, rows + static_cast<int>(comments->comments.size()) - 1);
                 m_comments << (*comments).comments;
                 endInsertRows();
 

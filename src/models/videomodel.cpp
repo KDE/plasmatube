@@ -3,13 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videomodel.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
 #include "videolistmodel.h"
 
 #include <QFutureWatcher>
 #include <QJsonArray>
 #include <QJsonDocument>
-#include <QNetworkReply>
 #include <QProcess>
 
 using namespace Qt::StringLiterals;
@@ -67,7 +67,7 @@ void VideoModel::fetch(const QString &videoId)
     QString youtubeDl = QStringLiteral("yt-dlp");
     QStringList arguments;
     arguments << QLatin1String("--dump-json") << m_videoId;
-    QProcess *process = new QProcess();
+    auto process = new QProcess();
     process->setReadChannel(QProcess::StandardOutput);
     process->start(youtubeDl, arguments);
 

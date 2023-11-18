@@ -45,12 +45,6 @@ void AbstractApi::setCredentials(const Credentials &credentials)
     Q_EMIT credentialsChanged();
 }
 
-void AbstractApi::setCredentials(const QString &apiInstance)
-{
-    m_credentials = Credentials();
-    Q_EMIT credentialsChanged();
-}
-
 QNetworkAccessManager *AbstractApi::net() const
 {
     return m_netManager;

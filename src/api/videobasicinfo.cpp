@@ -120,7 +120,7 @@ VideoThumbnail VideoBasicInfo::thumbnail(const QString &quality) const
     // didn't found requested quality
     if (!m_videoThumbnails.isEmpty())
         return m_videoThumbnails.last();
-    return VideoThumbnail();
+    return {};
 }
 
 QTime VideoBasicInfo::length() const

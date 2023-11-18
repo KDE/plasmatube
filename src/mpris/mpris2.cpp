@@ -9,9 +9,10 @@
  */
 
 #include "mpris2.h"
-#include "mpris2logging.h"
 
-#include <QDebug>
+#include "mpris2logging.h"
+#include "videocontroller.h"
+
 #if !defined Q_OS_ANDROID
 #include <QDBusConnection>
 #endif
@@ -26,8 +27,6 @@
 #include "mediaplayer2.h"
 #include "mediaplayer2player.h"
 #endif
-
-#include "videocontroller.h"
 
 Mpris2::Mpris2(QObject *parent)
     : QObject(parent)

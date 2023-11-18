@@ -4,11 +4,11 @@
 #include "videosource.h"
 
 #include <QFutureWatcher>
-#include <qt6keychain/keychain.h>
 
-#include "invidious/invidiousapi.h"
-#include "peertube/peertubeapi.h"
-#include "piped/pipedapi.h"
+#include <invidious/invidiousapi.h>
+#include <peertube/peertubeapi.h>
+#include <piped/pipedapi.h>
+#include <qt6keychain/keychain.h>
 
 VideoSource::VideoSource(const QString &key, QObject *parent)
     : QObject(parent)
@@ -25,7 +25,7 @@ VideoSource::VideoSource(const QString &key, QObject *parent)
 
     QString value;
 
-    QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [loop, job, &value](QKeychain::Job *j) {
+    QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [loop, job, &value](QKeychain::Job *) {
         value = job->textData();
         loop->quit();
     });

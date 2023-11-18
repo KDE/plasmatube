@@ -6,6 +6,7 @@
 #include "mpvobject.h"
 
 #include <MpvController>
+
 #include <QDir>
 #include <QOpenGLContext>
 #include <QOpenGLFramebufferObject>
@@ -27,17 +28,17 @@ MpvObject::MpvObject(QQuickItem *parent)
     connect(mpvController(), &MpvController::propertyChanged, this, &MpvObject::onPropertyChanged, Qt::QueuedConnection);
 }
 
-qreal MpvObject::position()
+qreal MpvObject::position() const
 {
     return m_position;
 }
 
-qreal MpvObject::duration()
+qreal MpvObject::duration() const
 {
     return m_duration;
 }
 
-bool MpvObject::paused()
+bool MpvObject::paused() const
 {
     return m_paused;
 }
@@ -82,7 +83,7 @@ void MpvObject::seek(qreal offset)
     Q_EMIT command(QStringList() << QStringLiteral("add") << QStringLiteral("time-pos") << QString::number(offset));
 }
 
-bool MpvObject::stopped()
+bool MpvObject::stopped() const
 {
     return m_stopped;
 }

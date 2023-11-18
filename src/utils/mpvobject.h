@@ -6,6 +6,7 @@
 #pragma once
 
 #include <MpvAbstractItem>
+
 #include <QQuickFramebufferObject>
 
 class MpvObject : public MpvAbstractItem
@@ -22,10 +23,10 @@ public:
     explicit MpvObject(QQuickItem *parent = nullptr);
     ~MpvObject() = default;
 
-    qreal position();
-    qreal duration();
-    bool paused();
-    bool stopped();
+    qreal position() const;
+    qreal duration() const;
+    bool paused() const;
+    bool stopped() const;
 
 public Q_SLOTS:
     void play();

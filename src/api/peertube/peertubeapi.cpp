@@ -4,14 +4,14 @@
 
 #include "peertubeapi.h"
 
+#include <KLocalizedString>
+
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStringBuilder>
 #include <QUrl>
 #include <QUrlQuery>
-
-#include <KLocalizedString>
 
 const QString API_VIDEOS = QStringLiteral("/api/v1/videos");
 const QString API_CHANNEL = QStringLiteral("/api/v1/video-channels");
@@ -28,7 +28,6 @@ bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
     case PopularPage:
-        return false;
     case TrendingCategories:
         return false;
     }
@@ -78,6 +77,7 @@ QString PeerTubeApi::resolveVideoUrl(QStringView videoId)
 QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters)
 {
     // return requestVideoList(Search, QStringLiteral(""), parameters.toQueryParameters());
+    Q_UNUSED(parameters)
     return {};
 }
 
@@ -151,21 +151,26 @@ QFuture<Result> PeerTubeApi::unsubscribeFromChannel(QStringView channel)
 
 QFuture<HistoryResult> PeerTubeApi::requestHistory(qint32 page)
 {
+    Q_UNUSED(page)
     return {};
 }
 
 QFuture<Result> PeerTubeApi::markWatched(const QString &videoId)
 {
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<Result> PeerTubeApi::markUnwatched(const QString &videoId)
 {
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, const QString &continuation)
 {
+    Q_UNUSED(continuation)
+
     QUrl url = apiUrl(API_VIDEOS % u'/' % videoId % u"/comment-threads");
 
     return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
@@ -196,11 +201,13 @@ QFuture<PreferencesResult> PeerTubeApi::requestPreferences()
 
 QFuture<Result> PeerTubeApi::setPreferences(const QInvidious::Preferences &preferences)
 {
+    Q_UNUSED(preferences)
     return {};
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestPlaylist(const QString &plid)
 {
+    Q_UNUSED(plid)
     return {};
 }
 
@@ -221,17 +228,21 @@ QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(QStringView queryd)
 
 QFuture<Result> PeerTubeApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
+    Q_UNUSED(plid)
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<Result> PeerTubeApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
 {
+    Q_UNUSED(plid)
+    Q_UNUSED(indexId)
     return {};
 }
 
 Error PeerTubeApi::invalidJsonError()
 {
-    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));
+    return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};
 }
 
 Result PeerTubeApi::checkIsReplyOk(QNetworkReply *reply)
@@ -336,6 +347,7 @@ QUrl PeerTubeApi::subscriptionsUrl() const
 
 QUrl PeerTubeApi::subscribeUrl(QStringView channelId) const
 {
+    Q_UNUSED(channelId)
     return {};
 }
 

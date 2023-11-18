@@ -6,6 +6,7 @@
  */
 
 #include "metadata.h"
+
 #include "mpris2logging.h"
 
 #include <QTimer>

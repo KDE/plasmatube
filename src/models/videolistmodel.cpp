@@ -3,13 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videolistmodel.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
+
+#include <KLocalizedString>
 
 #include <QFutureWatcher>
 #include <QNetworkReply>
 #include <QtConcurrent>
-
-#include <KLocalizedString>
 
 QString VideoListModel::queryTypeString(QueryType type)
 {
@@ -67,7 +68,6 @@ VideoListModel::VideoListModel(QObject *parent)
 
 VideoListModel::VideoListModel(const QList<QInvidious::VideoBasicInfo> &list, QObject *parent)
     : AbstractListModel(parent)
-    , m_constant(true)
     , m_results(list)
 {
 }
@@ -76,7 +76,7 @@ int VideoListModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid())
         return 0;
-    return m_results.size();
+    return static_cast<int>(m_results.size());
 }
 
 QVariant VideoListModel::data(const QModelIndex &index, int role) const
@@ -125,6 +125,8 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
         return video.premium();
     case WatchedRole:
         return PlasmaTube::instance().selectedSource()->isVideoWatched(video.videoId());
+    default:
+        break;
     }
     return {};
 }
@@ -156,11 +158,6 @@ void VideoListModel::fetchMore(const QModelIndex &index)
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
     return !m_historyPageWatcher && !m_futureWatcher && (m_queryType == Search || m_queryType == Channel || m_queryType == Feed || m_queryType == History);
-}
-
-bool VideoListModel::isLoading() const
-{
-    return m_futureWatcher != nullptr;
 }
 
 QString VideoListModel::title() const

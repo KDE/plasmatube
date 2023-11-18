@@ -4,11 +4,11 @@
 
 #pragma once
 
-#include <QDateTime>
-#include <QUrl>
-
 #include "qinvidiousglobal.h"
 #include "videothumbnail.h"
+
+#include <QDateTime>
+#include <QUrl>
 
 namespace QInvidious
 {

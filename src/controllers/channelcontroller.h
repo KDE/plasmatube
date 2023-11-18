@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "api/invidious/invidiousapi.h"
+#include <invidious/invidiousapi.h>
 
 template<typename T>
 class QFutureWatcher;
@@ -23,7 +23,7 @@ class ChannelController : public QObject
 public:
     explicit ChannelController(QObject *parent = nullptr);
 
-    Q_INVOKABLE void loadChannel(QString channelId);
+    Q_INVOKABLE void loadChannel(const QString &channelId);
 
     QString name() const;
     QString banner() const;
@@ -35,6 +35,6 @@ Q_SIGNALS:
     void channelLoaded();
 
 private:
-    QFutureWatcher<QInvidious::ChannelResult> *m_watcher;
+    QFutureWatcher<QInvidious::ChannelResult> *m_watcher = nullptr;
     QInvidious::Channel m_channel;
 };

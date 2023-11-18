@@ -2,7 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "playlistsmodel.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
 
 using namespace Qt::Literals::StringLiterals;
 

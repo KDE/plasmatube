@@ -10,10 +10,10 @@
 
 #pragma once
 
-#include <memory>
-
 #include <QObject>
 #include <QSharedPointer>
+
+#include <memory>
 
 #if !defined Q_OS_ANDROID
 class MediaPlayer2Player;

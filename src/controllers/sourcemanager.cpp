@@ -31,7 +31,7 @@ void SourceManager::load()
 
 int SourceManager::rowCount(const QModelIndex &index) const
 {
-    Q_UNUSED(index);
+    Q_UNUSED(index)
     return static_cast<int>(m_sources.size());
 }
 
@@ -164,7 +164,7 @@ void SourceManager::insertSource(VideoSource *pSource)
 void SourceManager::checkIfFinishedLoading()
 {
     const bool didFinish = std::all_of(m_finishedSources.cbegin(), m_finishedSources.cend(), [](bool b) {
-        return b == true;
+        return b;
     });
 
     if (didFinish != m_finishedLoading) {

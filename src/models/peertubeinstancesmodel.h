@@ -7,7 +7,7 @@
 #include <QDateTime>
 #include <QNetworkAccessManager>
 #include <QUrl>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class PeerTubeInstancesModel : public QAbstractListModel
 {

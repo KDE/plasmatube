@@ -4,13 +4,12 @@
 
 #pragma once
 
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
-
 #include <QHash>
+#include <QObject>
 #include <QString>
 #include <QUrl>
 #include <QVector>
+#include <QtQml>
 
 class SearchParameters : public QObject
 {
@@ -41,10 +40,7 @@ public:
     enum class Feature { Hd, Subtitles, CreativeCommons, ThreeD, Live, Purchased, FourK, ThreeSixty, Location, Hdr };
     Q_ENUM(Feature)
 
-    SearchParameters()
-    {
-    }
-
+    SearchParameters() = default;
     explicit SearchParameters(const QString &query, unsigned int page = 0)
         : m_query(query)
         , m_page(page)

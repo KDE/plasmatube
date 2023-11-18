@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include <QDir>
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
-
 #include "preferences.h"
 #include "sourceconfig.h"
+
+#include <QDir>
+#include <QObject>
+#include <QtQml>
 
 namespace QInvidious
 {
@@ -91,7 +91,7 @@ private:
 
     SourceConfig m_config;
     QString m_key;
-    QInvidious::AbstractApi *m_api;
+    QInvidious::AbstractApi *m_api = nullptr;
     QString m_cookie;
     QInvidious::Preferences m_preferences;
     std::optional<QList<QString>> m_subscriptions;

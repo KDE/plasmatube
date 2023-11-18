@@ -104,14 +104,14 @@ bool VideoQueue::canGoPrevious() const
 QString VideoQueue::getCurrentVideoId() const
 {
     if (m_videoIds.isEmpty()) {
-        return QString();
+        return {};
     }
     return m_videoIds[m_currentIndex];
 }
 
 int VideoQueue::rowCount(const QModelIndex &index) const
 {
-    Q_UNUSED(index);
+    Q_UNUSED(index)
     return static_cast<int>(m_videoIds.size());
 }
 
@@ -209,7 +209,7 @@ void VideoQueue::setCurrentIndex(const int newIndex)
 void VideoQueue::requestMissingVideoInformation()
 {
     size_t i = 0;
-    for (auto video : m_videoInfo) {
+    for (const auto &video : m_videoInfo) {
         // TODO: this doesn't cover the case where we could add another video while it's still fetchibng
         if (video == std::nullopt) {
             auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestVideo(m_videoIds[i]);

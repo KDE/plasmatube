@@ -4,14 +4,14 @@
 
 #include "invidiousapi.h"
 
+#include <KLocalizedString>
+
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStringBuilder>
 #include <QUrl>
 #include <QUrlQuery>
-
-#include <KLocalizedString>
 
 const QString API_FEED = QStringLiteral("/api/v1/auth/feed");
 const QString API_LOGIN = QStringLiteral("/login");
@@ -357,9 +357,6 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
 
                 // add videos marked as notification
                 auto results = VideoBasicInfo::fromJson(obj.value("notifications"_L1).toArray());
-                for (auto &video : results) {
-                    // video.setIsNotification(true);
-                }
 
                 // add the rest
                 results << VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());

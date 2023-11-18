@@ -9,8 +9,8 @@
  */
 
 #include "mediaplayer2player.h"
-#include "mpris2logging.h"
 
+#include "mpris2logging.h"
 #include "videocontroller.h"
 
 #include <QCryptographicHash>
@@ -234,7 +234,7 @@ void MediaPlayer2Player::SetPosition(const QDBusObjectPath &trackId, qlonglong p
 void MediaPlayer2Player::OpenUri(const QString &uri)
 {
     qCDebug(Mpris2Log) << "MediaPlayer2Player::OpenUri(" << uri << ")";
-    Q_UNUSED(uri);
+    Q_UNUSED(uri)
 }
 
 void MediaPlayer2Player::playerPlaybackStateChanged()

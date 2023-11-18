@@ -27,7 +27,7 @@ private:
     QString m_id;
     QString m_title;
     QString m_thumbnail;
-    int m_videoCount;
+    int m_videoCount = 0;
 };
 
 }

@@ -3,14 +3,15 @@
 
 #pragma once
 
+#include "comment.h"
+
+#include <abstractapi.h>
+
 #include <QAbstractListModel>
 #include <QDateTime>
 #include <QFutureWatcher>
 #include <QUrl>
-#include <QtQml/qqmlregistration.h>
-
-#include "abstractapi.h"
-#include "comment.h"
+#include <QtQml>
 
 class CommentsModel : public QAbstractListModel
 {

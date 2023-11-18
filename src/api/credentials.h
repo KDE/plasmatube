@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QNetworkCookie>
+
 #include <optional>
 
 namespace QInvidious

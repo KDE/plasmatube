@@ -4,10 +4,11 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "abstractapi.h"
-#include "api/video.h"
+
+#include <video.h>
+
+#include <QtQml>
 
 template<typename T>
 class QFutureWatcher;
@@ -45,8 +46,8 @@ class VideoItem : public QObject, public QInvidious::Video
     Q_PROPERTY(bool isListed READ isListed CONSTANT)
 
 public:
-    VideoItem(QObject *parent = nullptr);
-    VideoItem(const QInvidious::Video &, QObject *parent = nullptr);
+    explicit VideoItem(QObject *parent = nullptr);
+    explicit VideoItem(const QInvidious::Video &, QObject *parent = nullptr);
 
     bool isLoaded() const;
     Q_INVOKABLE QUrl thumbnailUrl(const QString &quality) const;

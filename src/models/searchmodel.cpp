@@ -3,13 +3,14 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "searchmodel.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
+
+#include <KLocalizedString>
 
 #include <QFutureWatcher>
 #include <QNetworkReply>
 #include <QtConcurrent>
-
-#include <KLocalizedString>
 
 SearchModel::SearchModel(QObject *parent)
     : AbstractListModel(parent)
@@ -71,6 +72,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
             return video.premium();
         case WatchedRole:
             return PlasmaTube::instance().selectedSource()->isVideoWatched(video.videoId());
+        default:
+            break;
         }
     } else if (result.type() == QInvidious::SearchResult::Type::Channel) {
         auto &channel = result.channel();
@@ -83,6 +86,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
             return channel.name();
         case ChannelAvatarRole:
             return channel.avatar();
+        default:
+            break;
         }
     } else if (result.type() == QInvidious::SearchResult::Type::Playlist) {
         auto &playlist = result.playlist();
@@ -97,6 +102,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
             return playlist.videoCount();
         case ThumbnailRole:
             return playlist.thumbnail();
+        default:
+            break;
         }
     }
 
@@ -114,11 +121,6 @@ void SearchModel::fetchMore(const QModelIndex &index)
 bool SearchModel::canFetchMore(const QModelIndex &) const
 {
     return !m_futureWatcher;
-}
-
-bool SearchModel::isLoading() const
-{
-    return m_futureWatcher != nullptr;
 }
 
 void SearchModel::request(const SearchParameters *searchParameters)
@@ -140,14 +142,18 @@ void SearchModel::refresh()
 
 void SearchModel::markAsWatched(int index)
 {
+    Q_UNUSED(index)
 }
 
 void SearchModel::markAsUnwatched(int index)
 {
+    Q_UNUSED(index)
 }
 
 void SearchModel::removeFromPlaylist(const QString &plid, int index)
 {
+    Q_UNUSED(plid)
+    Q_UNUSED(index)
 }
 
 void SearchModel::performSearch()

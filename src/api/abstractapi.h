@@ -5,14 +5,6 @@
 
 #pragma once
 
-#include <variant>
-
-#include <QFuture>
-#include <QHash>
-#include <QNetworkCookie>
-#include <QNetworkReply>
-#include <QObject>
-
 #include "channel.h"
 #include "comment.h"
 #include "credentials.h"
@@ -21,6 +13,14 @@
 #include "searchparameters.h"
 #include "searchresult.h"
 #include "video.h"
+
+#include <QFuture>
+#include <QHash>
+#include <QNetworkCookie>
+#include <QNetworkReply>
+#include <QObject>
+
+#include <variant>
 
 class QNetworkAccessManager;
 
@@ -68,7 +68,6 @@ public:
 
     Credentials credentials() const;
     void setCredentials(const Credentials &credentials);
-    void setCredentials(const QString &apiInstance);
 
     QNetworkAccessManager *net() const;
 

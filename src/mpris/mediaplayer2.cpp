@@ -9,12 +9,13 @@
  */
 
 #include "mediaplayer2.h"
+
 #include "mpris2logging.h"
+
+#include <KAboutData>
 
 #include <QCoreApplication>
 #include <QDebug>
-
-#include <KAboutData>
 
 MediaPlayer2::MediaPlayer2(VideoController *audioPlayer, QObject *parent)
     : QDBusAbstractAdaptor(parent)

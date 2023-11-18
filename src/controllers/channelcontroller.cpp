@@ -4,16 +4,16 @@
 
 #include "channelcontroller.h"
 
-#include <QFutureWatcher>
+#include "plasmatube.h"
 
-#include "controllers/plasmatube.h"
+#include <QFutureWatcher>
 
 ChannelController::ChannelController(QObject *parent)
     : QObject(parent)
 {
 }
 
-void ChannelController::loadChannel(QString channelId)
+void ChannelController::loadChannel(const QString &channelId)
 {
     m_watcher = new QFutureWatcher<QInvidious::ChannelResult>();
 

@@ -4,14 +4,14 @@
 
 #pragma once
 
-#include "abstractapi.h"
-#include "api/searchparameters.h"
-#include "api/videobasicinfo.h"
+#include <abstractapi.h>
+#include <searchparameters.h>
+#include <videobasicinfo.h>
+
 #include <QAbstractListModel>
 #include <QFutureSynchronizer>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
-class InvidiousManager;
 class QNetworkReply;
 
 class AbstractListModel : public QAbstractListModel
@@ -61,14 +61,21 @@ public Q_SLOTS:
     virtual void refresh()
     {
     }
+
     virtual void markAsWatched(int index)
     {
+        Q_UNUSED(index)
     }
+
     virtual void markAsUnwatched(int index)
     {
+        Q_UNUSED(index)
     }
+
     virtual void removeFromPlaylist(const QString &plid, int index)
     {
+        Q_UNUSED(plid)
+        Q_UNUSED(index)
     }
 
 Q_SIGNALS:

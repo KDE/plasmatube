@@ -8,13 +8,10 @@
 #include "models/videolistmodel.h"
 #include "models/videomodel.h"
 
-#include <clocale>
-
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QIcon>
 #include <QQmlApplicationEngine>
-#include <QQmlContext>
 #include <QQuickStyle>
 #include <QQuickWindow>
 
@@ -28,7 +25,6 @@
 #endif
 
 #include "controllers/windowcontroller.h"
-#include "models/playlistsmodel.h"
 #include "plasmatube-version.h"
 
 std::optional<QString> parseVideoString(const QString &vid)

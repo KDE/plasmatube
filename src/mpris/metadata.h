@@ -22,7 +22,7 @@ class MetaData : public QObject
 
 public:
     explicit MetaData(QObject *parent = nullptr);
-    ~MetaData();
+    ~MetaData() override;
 
     QString title() const;
     QString artist() const;

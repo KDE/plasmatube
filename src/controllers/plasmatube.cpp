@@ -7,6 +7,7 @@
 #include "config.h"
 
 #include <KLocalizedString>
+
 #include <QGuiApplication>
 #include <QNetworkProxy>
 #include <QSettings>

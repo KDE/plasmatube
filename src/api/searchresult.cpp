@@ -9,22 +9,21 @@ using namespace Qt::StringLiterals;
 
 SearchResult SearchResult::fromJson(const QJsonObject &obj, SearchResult &info)
 {
-    SearchResult result;
     // Piped calls regular videos "streams" for some reason
     if (obj["type"_L1] == "video"_L1 || obj["type"_L1] == "stream"_L1) {
-        result.m_type = Type::Video;
-        result.m_videoBasicInfo = VideoBasicInfo::fromJson(obj);
+        info.m_type = Type::Video;
+        info.m_videoBasicInfo = VideoBasicInfo::fromJson(obj);
     } else if (obj["type"_L1] == "channel"_L1) {
-        result.m_type = Type::Channel;
-        result.m_channel = Channel::fromJson(obj);
+        info.m_type = Type::Channel;
+        info.m_channel = Channel::fromJson(obj);
     } else if (obj["type"_L1] == "playlist"_L1) {
-        result.m_type = Type::Playlist;
-        result.m_playlist = Playlist::fromJson(obj);
+        info.m_type = Type::Playlist;
+        info.m_playlist = Playlist::fromJson(obj);
     } else {
         qWarning() << "Cannot handle unknown result type" << obj["type"_L1].toString();
     }
 
-    return result;
+    return info;
 }
 
 SearchResult::Type SearchResult::type() const

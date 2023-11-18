@@ -4,14 +4,14 @@
 
 #pragma once
 
+#include "mpris2.h"
+#include "mpvobject.h"
+#include "videomodel.h"
+#include "videoqueue.h"
+
 #include <QObject>
 #include <QQmlEngine>
-#include <QtQml/qqmlregistration.h>
-
-#include "controllers/videoqueue.h"
-#include "models/videomodel.h"
-#include "mpris/mpris2.h"
-#include "utils/mpvobject.h"
+#include <QtQml>
 
 class VideoController : public QObject
 {

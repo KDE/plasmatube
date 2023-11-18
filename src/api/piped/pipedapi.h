@@ -4,14 +4,6 @@
 
 #pragma once
 
-#include <variant>
-
-#include <QFuture>
-#include <QHash>
-#include <QNetworkCookie>
-#include <QNetworkReply>
-#include <QObject>
-
 #include "abstractapi.h"
 #include "channel.h"
 #include "comment.h"
@@ -20,6 +12,14 @@
 #include "preferences.h"
 #include "searchparameters.h"
 #include "video.h"
+
+#include <QFuture>
+#include <QHash>
+#include <QNetworkCookie>
+#include <QNetworkReply>
+#include <QObject>
+
+#include <variant>
 
 class QNetworkAccessManager;
 
@@ -57,7 +57,7 @@ public:
     QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) override;
 
 private:
-    enum VideoListType { Search, Trending, Top, Feed, Channel };
+    enum VideoListType { Search, Trending, Channel };
 
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);

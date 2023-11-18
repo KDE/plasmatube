@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include <QtQml/qqmlregistration.h>
-
 #include "abstractapi.h"
 #include "subscriptionwatcher.h"
+
+#include <QtQml>
 
 template<typename T>
 class QFutureWatcher;

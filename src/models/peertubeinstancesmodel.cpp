@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "peertubeinstancesmodel.h"
-#include <QUrlQuery>
 
-#include "controllers/plasmatube.h"
+#include "plasmatube.h"
+
+#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -44,7 +45,7 @@ void PeerTubeInstancesModel::setLoading(bool loading)
 
 int PeerTubeInstancesModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : m_instances.size();
+    return parent.isValid() ? 0 : static_cast<int>(m_instances.size());
 }
 
 QHash<int, QByteArray> PeerTubeInstancesModel::roleNames() const

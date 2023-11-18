@@ -6,11 +6,13 @@
 
 #include "abstractapi.h"
 #include "abstractlistmodel.h"
-#include "api/searchparameters.h"
-#include "api/videobasicinfo.h"
+
+#include <searchparameters.h>
+#include <videobasicinfo.h>
+
 #include <QAbstractListModel>
 #include <QFutureSynchronizer>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
 class InvidiousManager;
 class QNetworkReply;
@@ -43,15 +45,13 @@ public:
     Q_INVOKABLE static QString queryTypeString(QueryType);
     Q_INVOKABLE static QString queryTypeIcon(QueryType);
 
-    VideoListModel(QObject *parent = nullptr);
-    VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
+    explicit VideoListModel(QObject *parent = nullptr);
+    explicit VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
-
-    bool isLoading() const;
 
     QString title() const;
 
@@ -72,8 +72,6 @@ private:
 
     void setQueryType(QueryType);
     void clearAll();
-
-    bool m_constant = false;
 
     QueryType m_queryType = NoQuery;
     qint32 m_currentPage = 1;

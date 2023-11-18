@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "pipedinstancesmodel.h"
-#include <QUrlQuery>
 
-#include "controllers/plasmatube.h"
+#include "plasmatube.h"
+
+#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -46,7 +47,7 @@ void PipedInstancesModel::setLoading(bool loading)
 
 int PipedInstancesModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : m_instances.size();
+    return parent.isValid() ? 0 : static_cast<int>(m_instances.size());
 }
 
 QHash<int, QByteArray> PipedInstancesModel::roleNames() const

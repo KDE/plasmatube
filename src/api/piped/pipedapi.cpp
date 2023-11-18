@@ -4,14 +4,14 @@
 
 #include "pipedapi.h"
 
+#include <KLocalizedString>
+
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStringBuilder>
 #include <QUrl>
 #include <QUrlQuery>
-
-#include <KLocalizedString>
 
 const QString API_FEED = QStringLiteral("/feed");
 const QString API_LOGIN = QStringLiteral("/login");
@@ -35,7 +35,6 @@ bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
     case PopularPage:
-        return false;
     case TrendingCategories:
         return false;
     }
@@ -117,12 +116,13 @@ QFuture<VideoListResult> PipedApi::requestFeed(qint32 page)
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("page"), QString::number(page));
 
-    return requestVideoList(Feed, QStringLiteral(""), parameters);
+    // TODO: piped stub
+    return {};
 }
 
 QFuture<VideoListResult> PipedApi::requestTop()
 {
-    return requestVideoList(Top);
+    return {};
 }
 
 QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic)
@@ -149,6 +149,7 @@ QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic)
 
 QFuture<VideoListResult> PipedApi::requestChannel(QStringView query, qint32 page)
 {
+    Q_UNUSED(page)
     return requestVideoList(Channel, query.toString(), {});
 }
 
@@ -161,35 +162,42 @@ QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
 QFuture<Result> PipedApi::subscribeToChannel(QStringView channel)
 {
     // TODO: piped stub
+    Q_UNUSED(channel)
     return {};
 }
 
 QFuture<Result> PipedApi::unsubscribeFromChannel(QStringView channel)
 {
     // TODO: piped stub
+    Q_UNUSED(channel)
     return {};
 }
 
 QFuture<HistoryResult> PipedApi::requestHistory(qint32 page)
 {
     // TODO: piped stub
+    Q_UNUSED(page)
     return {};
 }
 
 QFuture<Result> PipedApi::markWatched(const QString &videoId)
 {
     // TODO: piped stub
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<Result> PipedApi::markUnwatched(const QString &videoId)
 {
     // TODO: piped stub
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<CommentsResult> PipedApi::requestComments(const QString &videoId, const QString &continuation)
 {
+    Q_UNUSED(continuation)
+
     if (videoId.isEmpty()) {
         qWarning() << "Not trying to load comments for an empty video id.";
         return {};
@@ -242,6 +250,7 @@ QFuture<PreferencesResult> PipedApi::requestPreferences()
 QFuture<Result> PipedApi::setPreferences(const QInvidious::Preferences &preferences)
 {
     // TODO: piped stub
+    Q_UNUSED(preferences)
     return {};
 }
 
@@ -277,18 +286,22 @@ QFuture<ChannelResult> PipedApi::requestChannelInfo(QStringView queryd)
 QFuture<Result> PipedApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
     // TODO: piped stub
+    Q_UNUSED(plid)
+    Q_UNUSED(videoId)
     return {};
 }
 
 QFuture<Result> PipedApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
 {
     // TODO: piped stub
+    Q_UNUSED(plid)
+    Q_UNUSED(indexId)
     return {};
 }
 
 Error PipedApi::invalidJsonError()
 {
-    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));
+    return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};
 }
 
 Result PipedApi::checkIsReplyOk(QNetworkReply *reply)
@@ -304,14 +317,11 @@ QFuture<VideoListResult> PipedApi::requestVideoList(VideoListType queryType, con
 {
     auto url = videoListUrl(queryType, urlExtension, parameters);
     // Feed requests require to be authenticated
-    auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url)) : QNetworkRequest(url);
+    auto request = QNetworkRequest(url);
 
     return get<VideoListResult>(std::move(request), [=](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            if (queryType == Feed) {
-                // TODO: piped stub
-                return {};
-            } else if (queryType == Channel) {
+            if (queryType == Channel) {
                 const auto obj = doc.object();
 
                 auto results = VideoBasicInfo::fromJson(obj.value("relatedStreams"_L1).toArray());
@@ -382,9 +392,6 @@ QUrl PipedApi::videoListUrl(VideoListType queryType, const QString &urlExtension
         break;
     case Trending:
         urlString.append(API_TRENDING);
-        break;
-    case Feed:
-        urlString.append(API_FEED);
         break;
     case Channel:
         urlString.append(API_CHANNELS);

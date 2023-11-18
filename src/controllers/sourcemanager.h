@@ -3,10 +3,10 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QtQml/qqmlregistration.h>
-
 #include "videosource.h"
+
+#include <QAbstractListModel>
+#include <QtQml>
 
 class SourceManager : public QAbstractListModel
 {

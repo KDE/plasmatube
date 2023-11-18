@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include <QUrl>
-
 #include "qinvidiousglobal.h"
+
+#include <QUrl>
 
 namespace QInvidious
 {

@@ -3,12 +3,13 @@
 
 #pragma once
 
+#include "videobasicinfo.h"
+
 #include <QAbstractListModel>
 #include <QFutureWatcher>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml>
 
-#include "abstractapi.h"
-#include "videobasicinfo.h"
+#include <abstractapi.h>
 
 class VideoQueue : public QAbstractListModel
 {

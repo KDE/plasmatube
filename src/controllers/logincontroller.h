@@ -4,11 +4,12 @@
 
 #pragma once
 
-#include <QObject>
-#include <QtQml/qqmlregistration.h>
-
-#include "api/abstractapi.h"
 #include "videosource.h"
+
+#include <QObject>
+#include <QtQml>
+
+#include <abstractapi.h>
 
 class LogInController : public QObject
 {

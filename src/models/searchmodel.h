@@ -5,15 +5,15 @@
 #pragma once
 
 #include "abstractapi.h"
-#include "api/searchparameters.h"
-#include "api/videobasicinfo.h"
-#include <QAbstractListModel>
-#include <QFutureSynchronizer>
-#include <QtQml/qqmlregistration.h>
-
 #include "abstractlistmodel.h"
 
-class InvidiousManager;
+#include <searchparameters.h>
+#include <videobasicinfo.h>
+
+#include <QAbstractListModel>
+#include <QFutureSynchronizer>
+#include <QtQml>
+
 class QNetworkReply;
 
 class SearchModel : public AbstractListModel
@@ -28,8 +28,6 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     void fetchMore(const QModelIndex &parent) override;
     bool canFetchMore(const QModelIndex &parent) const override;
-
-    bool isLoading() const;
 
 public Q_SLOTS:
     void request(const SearchParameters *searchParameters);

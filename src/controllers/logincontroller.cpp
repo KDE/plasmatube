@@ -3,7 +3,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "logincontroller.h"
-#include "controllers/plasmatube.h"
+
+#include "plasmatube.h"
 
 #include <KLocalizedString>
 #include <QFutureWatcher>

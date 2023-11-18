@@ -4,9 +4,9 @@
 
 #include "subscriptioncontroller.h"
 
-#include <QFutureWatcher>
-
 #include "plasmatube.h"
+
+#include <QFutureWatcher>
 
 SubscriptionController::SubscriptionController(QObject *parent)
     : SubscriptionWatcher(parent)
