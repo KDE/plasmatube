@@ -12,8 +12,6 @@ import org.kde.plasmatube
 
 Kirigami.ScrollablePage {
     required property string playlistId
-    property string currentVideoId
-    property int currentVideoIndex
 
     id: root
     leftPadding: 0
@@ -56,18 +54,6 @@ Kirigami.ScrollablePage {
         model: VideoListModel {
             id: videoModel
         }
-    }
-
-    VideoMenu {
-        id: videoMenu
-
-        videoId: currentVideoId
-        shouldRemoveFromPlaylist: true
-
-        onMarkWatched: videoModel.markAsWatched(currentVideoIndex)
-        onMarkUnwatched: videoModel.markAsUnwatched(currentVideoIndex)
-
-        onRemoveFromPlaylist: videoModel.removeFromPlaylist(root.playlistId, root.currentVideoIndex)
     }
 
     Component.onCompleted: videoModel.requestPlaylist(playlistId)
