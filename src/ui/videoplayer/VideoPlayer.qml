@@ -97,7 +97,6 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             Item {
-
                 Layout.margins: widescreen? Kirigami.Units.largeSpacing * 2 : 0
                 id: inlineVideoContainer
                 Layout.fillWidth: true
@@ -122,6 +121,13 @@ Kirigami.ScrollablePage {
                         } else {
                             showControls = true;
                             controlTimer.restart();
+                        }
+                    }
+                    onDoubleClicked: {
+                        if (root.inFullScreen) {
+                            root.exitFullScreen();
+                        } else {
+                            root.openFullScreen();
                         }
                     }
 
@@ -194,8 +200,6 @@ Kirigami.ScrollablePage {
                             NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
                         }
                     }
-
-
                 }
             }
 
