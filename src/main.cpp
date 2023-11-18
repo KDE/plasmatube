@@ -8,7 +8,11 @@
 #include "models/videolistmodel.h"
 #include "models/videomodel.h"
 
+#ifdef Q_OS_ANDROID
+#include <QGuiApplication>
+#else
 #include <QApplication>
+#endif
 #include <QCommandLineParser>
 #include <QIcon>
 #include <QQmlApplicationEngine>
@@ -40,11 +44,15 @@ std::optional<QString> parseVideoString(const QString &vid)
 
 int main(int argc, char **argv)
 {
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+#else
     QApplication app(argc, argv);
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE") && QQuickStyle::name().isEmpty()) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
+#endif
 
     KLocalizedString::setApplicationDomain("plasmatube");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
@@ -115,7 +123,7 @@ int main(int argc, char **argv)
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    if (QApplication::arguments().length() > 1) {
+    if (QCoreApplication::arguments().length() > 1) {
         if (const auto videoUrl = parseVideoString(app.arguments()[1])) {
             PlasmaTube::instance().openVideo(*videoUrl);
         }
