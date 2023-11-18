@@ -17,9 +17,9 @@ MouseArea {
     property real topPadding: Kirigami.Units.largeSpacing
     property real bottomPadding: Kirigami.Units.largeSpacing
 
-    required property string title
-    required property string thumbnail
-    required property int videoCount
+    property string title
+    property string thumbnail
+    property int videoCount
 
     property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
     Behavior on zoomScale {

@@ -5,6 +5,7 @@
 #pragma once
 
 #include "abstractapi.h"
+#include "abstractlistmodel.h"
 #include "api/searchparameters.h"
 #include "api/videobasicinfo.h"
 #include <QAbstractListModel>
@@ -14,34 +15,14 @@
 class InvidiousManager;
 class QNetworkReply;
 
-class VideoListModel : public QAbstractListModel
+class VideoListModel : public AbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(bool isLoading READ isLoading NOTIFY isLoadingChanged)
     Q_PROPERTY(QString title READ title NOTIFY titleChanged)
 
 public:
-    enum Roles : int {
-        IdRole = Qt::UserRole + 1,
-        TitleRole,
-        ThumbnailRole,
-        LengthRole,
-        ViewCountRole,
-        AuthorRole,
-        AuthorIdRole,
-        AuthorUrlRole,
-        PublishedRole,
-        PublishedTextRole,
-        DescriptionRole,
-        DescriptionHtmlRole,
-        LiveNowRole,
-        PaidRole,
-        PremiumRole,
-        WatchedRole
-    };
-
     enum QueryType : quint8 {
         NoQuery,
         Feed,
@@ -65,31 +46,26 @@ public:
     VideoListModel(QObject *parent = nullptr);
     VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
 
-    QHash<int, QByteArray> roleNames() const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    Q_INVOKABLE void fetchMore(const QModelIndex &parent) override;
-    Q_INVOKABLE bool canFetchMore(const QModelIndex &parent) const override;
-
-    Q_INVOKABLE void requestSearchResults(const SearchParameters *searchParameters);
-    Q_INVOKABLE void requestChannel(const QString &ucid);
-    Q_INVOKABLE void requestQuery(QueryType type);
-    Q_INVOKABLE void requestPlaylist(const QString &id);
-    Q_INVOKABLE void refresh();
+    void fetchMore(const QModelIndex &parent) override;
+    bool canFetchMore(const QModelIndex &parent) const override;
 
     bool isLoading() const;
 
     QString title() const;
 
-    Q_INVOKABLE void markAsWatched(int index);
-    Q_INVOKABLE void markAsUnwatched(int index);
-
-    Q_INVOKABLE void removeFromPlaylist(const QString &plid, int index);
+public Q_SLOTS:
+    void requestChannel(const QString &ucid);
+    void requestQuery(VideoListModel::QueryType type);
+    void requestPlaylist(const QString &id);
+    void refresh() override;
+    void markAsWatched(int index) override;
+    void markAsUnwatched(int index) override;
+    void removeFromPlaylist(const QString &plid, int index) override;
 
 Q_SIGNALS:
-    void isLoadingChanged();
     void titleChanged();
-    void errorOccured(const QString &error);
 
 private:
     void handleQuery(QFuture<QInvidious::VideoListResult> future, QueryType, bool reset = true);

@@ -15,6 +15,8 @@ public:
     FROM_JSON_OVERLOADS(Channel)
     static Channel fromJson(const QJsonObject &, Channel &);
 
+    QString id() const;
+
     QString name() const;
     void setName(const QString &name);
 
@@ -31,6 +33,7 @@ public:
     void setSubCount(int count);
 
 private:
+    QString m_id;
     QString m_name;
     QString m_banner;
     QString m_avatar;

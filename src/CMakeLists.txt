@@ -22,6 +22,8 @@ target_sources(plasmatube PRIVATE
         controllers/windowcontroller.cpp
         controllers/windowcontroller.h
 
+        models/abstractlistmodel.cpp
+        models/abstractlistmodel.h
         models/commentsmodel.cpp
         models/commentsmodel.h
         models/invidiousinstancesmodel.cpp
@@ -30,6 +32,8 @@ target_sources(plasmatube PRIVATE
         models/peertubeinstancesmodel.h
         models/playlistsmodel.cpp
         models/playlistsmodel.h
+        models/searchmodel.cpp
+        models/searchmodel.h
         models/videolistmodel.cpp
         models/videolistmodel.h
         models/videomodel.cpp
@@ -55,6 +59,7 @@ target_sources(plasmatube PRIVATE
 qt_target_qml_sources(plasmatube
     QML_FILES
         ui/components/BottomNavBar.qml
+        ui/components/ChannelGridItem.qml
         ui/components/Comments.qml
         ui/components/PlaylistGridItem.qml
         ui/components/ShareDialog.qml

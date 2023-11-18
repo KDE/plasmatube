@@ -61,35 +61,15 @@ QString VideoListModel::queryTypeIcon(QueryType type)
 }
 
 VideoListModel::VideoListModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractListModel(parent)
 {
 }
 
 VideoListModel::VideoListModel(const QList<QInvidious::VideoBasicInfo> &list, QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractListModel(parent)
     , m_constant(true)
     , m_results(list)
 {
-}
-
-QHash<int, QByteArray> VideoListModel::roleNames() const
-{
-    return {{IdRole, "id"},
-            {TitleRole, "title"},
-            {ThumbnailRole, "thumbnail"},
-            {LengthRole, "length"},
-            {ViewCountRole, "viewCount"},
-            {AuthorRole, "author"},
-            {AuthorIdRole, "authorId"},
-            {AuthorUrlRole, "authorUrl"},
-            {PublishedRole, "published"},
-            {PublishedTextRole, "publishedText"},
-            {DescriptionRole, "description"},
-            {DescriptionHtmlRole, "descriptionHtml"},
-            {LiveNowRole, "liveNow"},
-            {PaidRole, "paid"},
-            {PremiumRole, "premium"},
-            {WatchedRole, "watched"}};
 }
 
 int VideoListModel::rowCount(const QModelIndex &parent) const
@@ -156,12 +136,6 @@ void VideoListModel::fetchMore(const QModelIndex &index)
             handleQuery(future, Feed, false);
             break;
         }
-        case Search: {
-            m_searchParameters.setPage(++m_currentPage);
-            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSearchResults(m_searchParameters);
-            handleQuery(future, Search, false);
-            break;
-        }
         case Channel: {
             auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(m_channel, ++m_currentPage);
             handleQuery(future, Channel, false);
@@ -195,13 +169,6 @@ QString VideoListModel::title() const
     default:
         return queryTypeString(m_queryType);
     }
-}
-
-void VideoListModel::requestSearchResults(const SearchParameters *searchParameters)
-{
-    m_searchParameters.fill(*searchParameters);
-    m_currentPage = 1;
-    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestSearchResults(m_searchParameters), Search);
 }
 
 void VideoListModel::requestChannel(const QString &ucid)
@@ -260,9 +227,6 @@ void VideoListModel::refresh()
 {
     if (!isLoading() && m_queryType != NoQuery) {
         switch (m_queryType) {
-        case Search:
-            requestSearchResults(&m_searchParameters);
-            break;
         case Channel:
             requestChannel(m_channel);
             break;

@@ -81,9 +81,26 @@ QString InvidiousApi::resolveVideoUrl(QStringView videoId)
     return QStringLiteral("ytdl://%1").arg(videoId);
 }
 
-QFuture<VideoListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
+QFuture<SearchListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
 {
-    return requestVideoList(Search, QStringLiteral(""), parameters.toQueryParameters());
+    auto url = videoListUrl(Search, QStringLiteral(""), parameters.toQueryParameters());
+    auto request = QNetworkRequest(url);
+
+    return get<SearchListResult>(std::move(request), [=](QNetworkReply *reply) -> SearchListResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto obj = doc.object();
+
+            QList<SearchResult> results;
+            for (auto value : doc.array()) {
+                if (value.isObject()) {
+                    results << SearchResult::fromJson(value.toObject());
+                }
+            }
+
+            return results;
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page)

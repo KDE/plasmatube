@@ -45,7 +45,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.setAuthorUrl(obj.value("authorUrl"_L1).toString());
         // FIXME: 2038 problem (timestamp is only 32 bit long)
         info.setPublished(QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt()));
-        info.setPublishedText(obj.value("publishedText"_L1).toString());
+        info.setPublishedText(info.published().toString());
         info.setDescription(obj.value("description"_L1).toString());
         info.setDescriptionHtml(obj.value("descriptionHtml"_L1).toString());
         info.setLiveNow(obj.value("liveNow"_L1).toBool(false));

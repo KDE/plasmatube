@@ -78,9 +78,10 @@ QString PipedApi::resolveVideoUrl(QStringView videoId)
     return QStringLiteral("ytdl://%1").arg(videoId);
 }
 
-QFuture<VideoListResult> PipedApi::requestSearchResults(const SearchParameters &parameters)
+QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters &parameters)
 {
-    return requestVideoList(Search, QStringLiteral(""), parameters.toPipedQueryParameters());
+    // return requestVideoList(Search, QStringLiteral(""), parameters.toPipedQueryParameters());
+    return {};
 }
 
 QFuture<VideoListResult> PipedApi::requestFeed(qint32 page)

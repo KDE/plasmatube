@@ -19,6 +19,7 @@
 #include "playlist.h"
 #include "preferences.h"
 #include "searchparameters.h"
+#include "searchresult.h"
 #include "video.h"
 
 class QNetworkAccessManager;
@@ -43,6 +44,7 @@ using CommentsResult = std::variant<Comments, Error>;
 using PlaylistsResult = std::variant<QList<Playlist>, Error>;
 using PreferencesResult = std::variant<Preferences, Error>;
 using ChannelResult = std::variant<QInvidious::Channel, Error>;
+using SearchListResult = std::variant<QList<SearchResult>, Error>;
 
 enum TrendingTopic : quint8 { Main, Music, Gaming, Movies, News };
 
@@ -71,7 +73,7 @@ public:
     virtual QFuture<LogInResult> logIn(QStringView username, QStringView password) = 0;
     virtual QFuture<VideoResult> requestVideo(QStringView videoId) = 0;
     virtual QString resolveVideoUrl(QStringView videoId) = 0;
-    virtual QFuture<VideoListResult> requestSearchResults(const SearchParameters &parameters) = 0;
+    virtual QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) = 0;
     virtual QFuture<VideoListResult> requestFeed(qint32 page = 1) = 0;
     virtual QFuture<VideoListResult> requestTop() = 0;
     virtual QFuture<VideoListResult> requestTrending(TrendingTopic = Main) = 0;

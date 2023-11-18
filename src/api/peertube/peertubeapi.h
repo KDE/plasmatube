@@ -36,7 +36,7 @@ public:
     QFuture<LogInResult> logIn(QStringView username, QStringView password) override;
     QFuture<VideoResult> requestVideo(QStringView videoId) override;
     QString resolveVideoUrl(QStringView videoId) override;
-    QFuture<VideoListResult> requestSearchResults(const SearchParameters &parameters) override;
+    QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) override;
     QFuture<VideoListResult> requestFeed(qint32 page = 1) override;
     QFuture<VideoListResult> requestTop() override;
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main) override;

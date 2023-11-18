@@ -6,6 +6,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import Qt.labs.qmlmodels
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
@@ -65,8 +66,8 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
 
                     onAccepted: {
-                        searchParameters.query = text
-                        videoModel.requestSearchResults(searchParameters)
+                        searchParameters.query = text;
+                        videoModel.request(searchParameters);
                     }
                 }
 
@@ -181,7 +182,7 @@ Kirigami.ScrollablePage {
         cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
 
         currentIndex: -1
-        model: VideoListModel {
+        model: SearchModel {
             id: videoModel
             onIsLoadingChanged: {
                 root.refreshing = isLoading
@@ -191,25 +192,64 @@ Kirigami.ScrollablePage {
                 message.visible = true;
             }
         }
-        delegate: VideoGridItem {
-            width: gridView.cellWidth
-            height: gridView.cellHeight
+        delegate: DelegateChooser {
+            role: "type"
 
-            vid: model.id
-            thumbnail: model.thumbnail
-            liveNow: model.liveNow
-            length: model.length
-            title: model.title
-            author: model.author
-            authorId: model.authorId
-            description: model.description
-            viewCount: model.viewCount
-            publishedText: model.publishedText
-            watched: model.watched
+            DelegateChoice {
+                roleValue: "video"
 
-            onPressed: {
-                videoModel.markAsWatched(index);
-                PlasmaTube.videoController.play(vid);
+                VideoGridItem {
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    vid: model.id
+                    thumbnail: model.thumbnail
+                    liveNow: model.liveNow
+                    length: model.length
+                    title: model.title
+                    author: model.author
+                    authorId: model.authorId
+                    description: model.description
+                    viewCount: model.viewCount
+                    publishedText: model.publishedText
+                    watched: model.watched
+
+                    onPressed: {
+                        videoModel.markAsWatched(index);
+                        PlasmaTube.videoController.play(vid);
+                    }
+                }
+            }
+            DelegateChoice {
+                roleValue: "channel"
+
+                ChannelGridItem {
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    name: model.channelName
+                    avatarUrl: model.channelAvatar
+
+                    onClicked: {
+                        pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: model.channelName, authorId: model.id});
+                    }
+                }
+            }
+            DelegateChoice {
+                roleValue: "playlist"
+
+                PlaylistGridItem {
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    title: model.title
+                    thumbnail: model.thumbnail
+                    videoCount: model.videoCount
+
+                    onClicked: {
+                        pageStack.push(Qt.createComponent("org.kde.plasmatube", "PlaylistPage"), {playlistId: model.id, title: model.title})
+                    }
+                }
             }
         }
         

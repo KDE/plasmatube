@@ -37,6 +37,8 @@ target_sources(qinvidious PRIVATE
         qinvidiousglobal.h
         searchparameters.cpp
         searchparameters.h
+        searchresult.cpp
+        searchresult.h
         video.cpp
         video.h
         videobasicinfo.cpp

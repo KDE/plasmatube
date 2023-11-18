@@ -25,6 +25,7 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.setDescription(obj["description"_L1].toString());
         channel.setSubCount(obj["subscriberCount"_L1].toInt());
     } else {
+        channel.m_id = obj["authorId"_L1].toString();
         channel.setName(obj["author"_L1].toString());
         const QJsonValue firstAvatar = obj["authorThumbnails"_L1].toArray().first();
         channel.setAvatar(firstAvatar.toObject()["url"_L1].toString());
@@ -35,6 +36,11 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
     }
 
     return channel;
+}
+
+QString Channel::id() const
+{
+    return m_id;
 }
 
 QString Channel::name() const
