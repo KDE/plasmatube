@@ -9,34 +9,14 @@ import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 
-MouseArea {
+BaseGridItem {
     id: root
-
-    property real leftPadding: Kirigami.Units.largeSpacing
-    property real rightPadding: Kirigami.Units.largeSpacing
-    property real topPadding: Kirigami.Units.largeSpacing
-    property real bottomPadding: Kirigami.Units.largeSpacing
 
     property string title
     property string thumbnail
     property int videoCount
 
-    property real zoomScale: (root.pressed || thumbnailMouseArea.pressed || titleMouseArea.pressed) ? 0.9 : 1
-    Behavior on zoomScale {
-        NumberAnimation {
-            duration: 200
-            easing.type: Easing.OutExpo
-        }
-    }
-
-    transform: Scale {
-        origin.x: root.width / 2;
-        origin.y: root.height / 2;
-        xScale: root.zoomScale
-        yScale: root.zoomScale
-    }
-
-    ColumnLayout {
+    contentItem: ColumnLayout {
         id: column
         anchors.fill: parent
         anchors.topMargin: root.topPadding
