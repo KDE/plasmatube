@@ -90,6 +90,7 @@ Kirigami.OverlayDrawer {
                 applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
                 checked = true;
             }
+            visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.supportsPopularPage()
 
             QQC2.ButtonGroup.group: pageButtonGroup
         }

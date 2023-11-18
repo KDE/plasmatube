@@ -299,4 +299,14 @@ void VideoSource::addToPlaylist(const QString &plid, const QString &videoId)
     m_api->addVideoToPlaylist(plid, videoId);
 }
 
+bool VideoSource::supportsPopularPage() const
+{
+    return m_api->supportsFeature(QInvidious::AbstractApi::PopularPage);
+}
+
+bool VideoSource::supportsTrendingCategories() const
+{
+    return m_api->supportsFeature(QInvidious::AbstractApi::TrendingCategories);
+}
+
 #include "moc_videosource.cpp"

@@ -62,6 +62,8 @@ private:
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
 
+    bool supportsFeature(SupportedFeature feature) override;
+
     QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;

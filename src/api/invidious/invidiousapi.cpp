@@ -36,6 +36,16 @@ InvidiousApi::InvidiousApi(QNetworkAccessManager *netManager, QObject *parent)
 {
 }
 
+bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
+{
+    switch (feature) {
+    case PopularPage:
+        return true;
+    case TrendingCategories:
+        return true;
+    }
+}
+
 QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;

@@ -16,6 +16,7 @@ FeedPage {
     title: i18nc("@title Trending videos", "Trending")
 
     header: Kirigami.NavigationTabBar {
+        visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.supportsTrendingCategories()
         width: parent.width
         actions: [
             VideoListAction {

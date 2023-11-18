@@ -55,6 +55,11 @@ class AbstractApi : public QObject
 public:
     explicit AbstractApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
 
+    enum SupportedFeature { PopularPage, TrendingCategories };
+    Q_ENUM(SupportedFeature);
+
+    virtual bool supportsFeature(SupportedFeature feature) = 0;
+
     QString region() const;
     void setRegion(const QString &region);
 

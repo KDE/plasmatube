@@ -24,6 +24,16 @@ PeerTubeApi::PeerTubeApi(QNetworkAccessManager *netManager, QObject *parent)
 {
 }
 
+bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
+{
+    switch (feature) {
+    case PopularPage:
+        return false;
+    case TrendingCategories:
+        return false;
+    }
+}
+
 QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;

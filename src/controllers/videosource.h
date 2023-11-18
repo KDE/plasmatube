@@ -65,6 +65,9 @@ public:
 
     QInvidious::AbstractApi *api() const;
 
+    Q_INVOKABLE bool supportsPopularPage() const;
+    Q_INVOKABLE bool supportsTrendingCategories() const;
+
 Q_SIGNALS:
     void urlChanged();
     void typeChanged();

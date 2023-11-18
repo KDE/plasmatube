@@ -31,6 +31,16 @@ PipedApi::PipedApi(QNetworkAccessManager *netManager, QObject *parent)
 {
 }
 
+bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
+{
+    switch (feature) {
+    case PopularPage:
+        return false;
+    case TrendingCategories:
+        return false;
+    }
+}
+
 QFuture<LogInResult> PipedApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;

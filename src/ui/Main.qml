@@ -162,6 +162,8 @@ Kirigami.ApplicationWindow {
         if (PlasmaTube.sourceManager.selectedSource !== null) {
             if (PlasmaTube.sourceManager.selectedSource.preferences.defaultHome.length !== 0) {
                 defaultHome = PlasmaTube.sourceManager.selectedSource.preferences.defaultHome;
+            } else if(!PlasmaTube.sourceManager.selectedSource.supportsPopularPage()) {
+                defaultHome = "Trending";
             }
         }
 
