@@ -10,7 +10,8 @@ using namespace Qt::StringLiterals;
 SearchResult SearchResult::fromJson(const QJsonObject &obj, SearchResult &info)
 {
     SearchResult result;
-    if (obj["type"_L1] == "video"_L1) {
+    // Piped calls regular videos "streams" for some reason
+    if (obj["type"_L1] == "video"_L1 || obj["type"_L1] == "stream"_L1) {
         result.m_type = Type::Video;
         result.m_videoBasicInfo = VideoBasicInfo::fromJson(obj);
     } else if (obj["type"_L1] == "channel"_L1) {

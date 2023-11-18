@@ -20,7 +20,7 @@ const QString API_TRENDING = QStringLiteral("/trending");
 const QString API_VIDEOS = QStringLiteral("/streams");
 const QString API_CHANNELS = QStringLiteral("/channel");
 const QString API_COMMENTS = QStringLiteral("/comments");
-const QString API_PLAYLISTS = QStringLiteral("/users/playlists");
+const QString API_PLAYLISTS = QStringLiteral("/playlists");
 const QString API_CHANNEL_INFO = QStringLiteral("/channel");
 
 using namespace QInvidious;
@@ -90,8 +90,24 @@ QString PipedApi::resolveVideoUrl(QStringView videoId)
 
 QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters &parameters)
 {
-    // return requestVideoList(Search, QStringLiteral(""), parameters.toPipedQueryParameters());
-    return {};
+    auto url = videoListUrl(Search, QStringLiteral(""), parameters.toPipedQueryParameters());
+    auto request = QNetworkRequest(url);
+
+    return get<SearchListResult>(std::move(request), [=](QNetworkReply *reply) -> SearchListResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto obj = doc.object();
+
+            QList<SearchResult> results;
+            for (auto value : doc["items"_L1].toArray()) {
+                if (value.isObject()) {
+                    results << SearchResult::fromJson(value.toObject());
+                }
+            }
+
+            return results;
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<VideoListResult> PipedApi::requestFeed(qint32 page)
@@ -235,7 +251,8 @@ QFuture<VideoListResult> PipedApi::requestPlaylist(const QString &plid)
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             const auto obj = doc.object();
 
-            return VideoBasicInfo::fromJson(obj.value("videos"_L1).toArray());
+            // TODO: handle pagination
+            return VideoBasicInfo::fromJson(obj.value("relatedStreams"_L1).toArray());
         }
         return invalidJsonError();
     });

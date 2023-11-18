@@ -10,20 +10,21 @@ using namespace Qt::StringLiterals;
 Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
 {
     const bool isPeerTube = obj.contains("id"_L1) && !obj.contains("nextpage"_L1);
-    const bool isPiped = obj.contains("id"_L1) && obj.contains("nextpage"_L1);
-    if (isPeerTube) {
+    const bool isPiped = obj.contains("url"_L1) || obj.contains("nextpage"_L1);
+    if (isPiped) {
+        channel.m_id = obj["url"_L1].toString().remove(QStringLiteral("/channel/"));
+        channel.setName(obj["name"_L1].toString());
+        channel.setAvatar(obj["avatarUrl"_L1].toString());
+        channel.setBanner(obj["bannerUrl"_L1].toString());
+        channel.setDescription(obj["description"_L1].toString());
+        channel.setSubCount(obj["subscriberCount"_L1].toInt());
+    } else if (isPeerTube) {
         channel.setName(obj["name"_L1].toString());
         channel.setDescription(obj["description"_L1].toString());
         channel.setSubCount(obj["followersCount"_L1].toInt());
         channel.setAvatar(obj["avatar"_L1].toObject()["path"_L1].toString());
         const QJsonValue firstBanners = obj["banners"_L1].toArray().first();
         channel.setBanner(firstBanners.toObject()["path"_L1].toString());
-    } else if (isPiped) {
-        channel.setName(obj["name"_L1].toString());
-        channel.setAvatar(obj["avatarUrl"_L1].toString());
-        channel.setBanner(obj["bannerUrl"_L1].toString());
-        channel.setDescription(obj["description"_L1].toString());
-        channel.setSubCount(obj["subscriberCount"_L1].toInt());
     } else {
         channel.m_id = obj["authorId"_L1].toString();
         channel.setName(obj["author"_L1].toString());
