@@ -30,6 +30,8 @@ target_sources(plasmatube PRIVATE
         models/invidiousinstancesmodel.h
         models/peertubeinstancesmodel.cpp
         models/peertubeinstancesmodel.h
+        models/pipedinstancesmodel.cpp
+        models/pipedinstancesmodel.h
         models/playlistsmodel.cpp
         models/playlistsmodel.h
         models/searchmodel.cpp

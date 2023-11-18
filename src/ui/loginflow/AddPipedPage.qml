@@ -37,6 +37,39 @@ FormCard.FormCardPage {
 
         FormCard.FormDelegateSeparator {}
 
+        Repeater {
+            model: KItemModels.KSortFilterProxyModel {
+                id: filterModel
+
+                sourceModel: PipedInstancesModel {}
+
+                filterString: searchDelegate.text
+                filterRoleName: "url"
+            }
+
+            delegate: ColumnLayout {
+                required property int index
+                required property string name
+                required property string url
+
+                FormCard.FormDelegateSeparator {
+                    visible: index !== 0
+                }
+
+                FormCard.FormButtonDelegate {
+                    text: name
+                    onClicked: root.addSource(url)
+                }
+            }
+        }
+
+        FormCard.FormTextDelegate {
+            text: i18n("No public instances found.")
+            visible: filterModel.count === 0
+        }
+
+        FormCard.FormDelegateSeparator {}
+
         FormCard.FormButtonDelegate {
             text: i18nc("Add instance", "Add %1", searchDelegate.text)
             visible: searchDelegate.text.length !== 0
