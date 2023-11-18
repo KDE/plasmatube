@@ -32,6 +32,8 @@ bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
     case TrendingCategories:
         return false;
     }
+
+    return false;
 }
 
 QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView password)

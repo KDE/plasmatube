@@ -44,6 +44,8 @@ bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
     case TrendingCategories:
         return true;
     }
+
+    return false;
 }
 
 QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView password)
