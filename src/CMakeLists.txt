@@ -59,6 +59,7 @@ target_sources(plasmatube PRIVATE
 qt_target_qml_sources(plasmatube
     QML_FILES
         ui/components/BaseGridItem.qml
+        ui/components/BaseGridView.qml
         ui/components/BottomNavBar.qml
         ui/components/ChannelGridItem.qml
         ui/components/Comments.qml

@@ -88,6 +88,8 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
     switch (role) {
     case IdRole:
         return video.videoId();
+    case TypeRole:
+        return QStringLiteral("video");
     case TitleRole:
         return video.title();
     case ThumbnailRole: {

@@ -7,7 +7,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 PlaylistsModel::PlaylistsModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractListModel(parent)
 {
     fill();
 }
@@ -19,8 +19,10 @@ QVariant PlaylistsModel::data(const QModelIndex &index, int role) const
     const auto &comment = m_playlists[index.row()];
 
     switch (role) {
-    case PlaylistIdRole:
+    case IdRole:
         return comment.id();
+    case TypeRole:
+        return QStringLiteral("playlist");
     case TitleRole:
         return comment.title();
     case ThumbnailRole:
@@ -32,38 +34,14 @@ QVariant PlaylistsModel::data(const QModelIndex &index, int role) const
     }
 }
 
-bool PlaylistsModel::loading() const
-{
-    return m_loading;
-}
-
-void PlaylistsModel::setLoading(bool loading)
-{
-    if (m_loading == loading) {
-        return;
-    }
-    m_loading = loading;
-    Q_EMIT loadingChanged();
-}
-
 int PlaylistsModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : m_playlists.size();
 }
 
-QHash<int, QByteArray> PlaylistsModel::roleNames() const
-{
-    return {
-        {PlaylistIdRole, "playlistId"},
-        {TitleRole, "title"},
-        {ThumbnailRole, "thumbnail"},
-        {VideoCountRole, "videoCount"},
-    };
-}
-
 void PlaylistsModel::fill()
 {
-    if (m_loading) {
+    if (isLoading()) {
         return;
     }
     setLoading(true);

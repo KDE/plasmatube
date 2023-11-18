@@ -21,33 +21,11 @@ Kirigami.ScrollablePage {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
-    GridView {
+    BaseGridView {
         id: gridView
-        topMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
-        bottomMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
-        leftMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
-        rightMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
 
-        readonly property real effectiveWidth: width - leftMargin - rightMargin
-        readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
-        readonly property int columns: Math.floor(effectiveWidth / targetDelegateWidth)
-
-        cellWidth: effectiveWidth / columns
-        cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
-
-        currentIndex: -1
         model: PlaylistsModel {
             id: videoModel
-        }
-        delegate: PlaylistGridItem {
-            required property string playlistId
-
-            width: gridView.cellWidth
-            height: gridView.cellHeight
-
-            onClicked: {
-                pageStack.push(Qt.createComponent("org.kde.plasmatube", "PlaylistPage"), {playlistId, title})
-            }
         }
     }
 }
