@@ -4,6 +4,13 @@
 
 add_subdirectory(api)
 
+ecm_qt_declare_logging_category(plasmatube_srcs
+    HEADER "mpris2logging.h"
+    IDENTIFIER "Mpris2Log"
+    CATEGORY_NAME "org.kde.plasmatube.mpris2"
+    DEFAULT_SEVERITY Info
+)
+
 add_executable(plasmatube)
 
 qt_add_qml_module(plasmatube
@@ -11,6 +18,8 @@ qt_add_qml_module(plasmatube
         VERSION 1.0)
 
 target_sources(plasmatube PRIVATE
+        ${plasmatube_srcs}
+
         controllers/channelcontroller.cpp
         controllers/channelcontroller.h
         controllers/plasmatube.cpp
@@ -41,6 +50,9 @@ target_sources(plasmatube PRIVATE
         models/videomodel.cpp
         models/videomodel.h
 
+        mpris/mpris2.cpp
+        mpris/mpris2.h
+
         controllers/sourcemanager.cpp
         controllers/sourcemanager.h
         controllers/subscriptioncontroller.cpp
@@ -57,6 +69,17 @@ target_sources(plasmatube PRIVATE
 
         main.cpp
 )
+
+if (NOT ANDROID)
+    target_sources(plasmatube PRIVATE
+            mpris/mediaplayer2.h
+            mpris/mediaplayer2.cpp
+            mpris/mediaplayer2player.cpp
+            mpris/mediaplayer2player.h
+            mpris/metadata.cpp
+            mpris/metadata.h
+    )
+endif()
 
 qt_target_qml_sources(plasmatube
     QML_FILES

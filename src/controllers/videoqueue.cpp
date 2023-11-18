@@ -17,6 +17,7 @@ void VideoQueue::replace(const QStringList &videoIds)
     m_videoInfo.clear();
     m_videoInfo.resize(videoIds.size());
     endResetModel();
+    Q_EMIT queueChanged();
 
     requestMissingVideoInformation();
 
@@ -29,6 +30,7 @@ void VideoQueue::queueNext(const QString &videoId)
     m_videoIds.push_back(videoId);
     m_videoInfo.push_back(std::nullopt);
     endInsertRows();
+    Q_EMIT queueChanged();
 
     requestMissingVideoInformation();
 }
@@ -39,6 +41,7 @@ void VideoQueue::clear()
     m_videoIds.clear();
     m_videoInfo.clear();
     endResetModel();
+    Q_EMIT queueChanged();
 
     setCurrentIndex(0);
 }
@@ -75,17 +78,27 @@ void VideoQueue::loadPlaylist(const QString &playlistId)
 
 void VideoQueue::next()
 {
-    if (m_currentIndex + 1 < m_videoIds.size()) {
+    if (canGoNext()) {
         setCurrentIndex(m_currentIndex + 1);
     }
 }
 
+bool VideoQueue::canGoNext() const
+{
+    return m_currentIndex + 1 < m_videoIds.size();
+}
+
 void VideoQueue::previous()
 {
-    if (m_currentIndex - 1 > 0) {
+    if (canGoPrevious()) {
         m_currentIndex--;
         Q_EMIT currentVideoChanged();
     }
+}
+
+bool VideoQueue::canGoPrevious() const
+{
+    return (m_currentIndex - 1) >= 0;
 }
 
 QString VideoQueue::getCurrentVideoId() const

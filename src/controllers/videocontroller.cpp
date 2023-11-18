@@ -11,6 +11,7 @@ VideoController::VideoController(QObject *parent)
     : QObject(parent)
     , m_videoModel(new VideoModel(this))
     , m_videoQueue(new VideoQueue(this))
+    , m_mpris(new Mpris2(this))
 {
     connect(m_videoModel, &VideoModel::videoChanged, this, [this] {
         Q_EMIT currentVideoChanged();
@@ -107,6 +108,8 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
             oldPosition = m_currentPlayer->position();
         }
 
+        m_currentPlayer->disconnect(this);
+
         m_currentPlayer = mpvObject;
         Q_EMIT currentPlayerChanged();
     }
@@ -130,6 +133,11 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
     Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
                                                   << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
     m_currentPlayer->setProperty(QStringLiteral("ytdl-format"), QStringLiteral("best"));
+
+    connect(m_currentPlayer, &MpvObject::positionChanged, this, &VideoController::positionChanged);
+    connect(m_currentPlayer, &MpvObject::durationChanged, this, &VideoController::durationChanged);
+    connect(m_currentPlayer, &MpvObject::pausedChanged, this, &VideoController::playbackStateChanged);
+    connect(m_currentPlayer, &MpvObject::stoppedChanged, this, &VideoController::playbackStateChanged);
 
     // Restore old position if we had an existing player
     if (oldPosition != std::nullopt) {
@@ -165,6 +173,46 @@ void VideoController::openPlayer()
     } else {
         Q_EMIT openPiPPlayer();
     }
+}
+
+qreal VideoController::position() const
+{
+    return m_currentPlayer->position();
+}
+
+void VideoController::setPosition(qreal position)
+{
+    return m_currentPlayer->setPosition(position);
+}
+
+qreal VideoController::duration() const
+{
+    return m_currentPlayer->duration();
+}
+
+bool VideoController::paused() const
+{
+    return m_currentPlayer->paused();
+}
+
+void VideoController::pause()
+{
+    return m_currentPlayer->pause();
+}
+
+void VideoController::play()
+{
+    return m_currentPlayer->play();
+}
+
+bool VideoController::stopped() const
+{
+    return m_currentPlayer->stopped();
+}
+
+bool VideoController::hasVideo() const
+{
+    return m_currentPlayer != nullptr && currentVideo() != nullptr && currentVideo()->isLoaded();
 }
 
 #include "moc_videocontroller.cpp"

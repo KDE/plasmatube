@@ -10,6 +10,7 @@
 
 #include "controllers/videoqueue.h"
 #include "models/videomodel.h"
+#include "mpris/mpris2.h"
 #include "utils/mpvobject.h"
 
 class VideoController : public QObject
@@ -49,12 +50,28 @@ public:
     VideoModel *videoModel() const;
     VideoQueue *videoQueue() const;
 
+    qreal position() const;
+    void setPosition(qreal position);
+
+    qreal duration() const;
+
+    bool paused() const;
+    void pause();
+    void play();
+
+    bool stopped() const;
+    bool hasVideo() const;
+
 Q_SIGNALS:
     void videoModeChanged();
     void currentPlayerChanged();
     void currentVideoChanged();
     void openNormalPlayer();
     void openPiPPlayer();
+
+    void positionChanged();
+    void durationChanged();
+    void playbackStateChanged();
 
 private:
     void openPlayer();
@@ -63,4 +80,5 @@ private:
     MpvObject *m_currentPlayer = nullptr;
     VideoModel *m_videoModel = nullptr;
     VideoQueue *m_videoQueue = nullptr;
+    Mpris2 *m_mpris = nullptr;
 };

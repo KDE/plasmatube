@@ -27,7 +27,10 @@ public:
     Q_INVOKABLE void loadPlaylist(const QString &playlistId);
 
     void next();
+    bool canGoNext() const;
+
     void previous();
+    bool canGoPrevious() const;
 
     QString getCurrentVideoId() const;
 
@@ -60,6 +63,7 @@ public:
 
 Q_SIGNALS:
     void currentVideoChanged();
+    void queueChanged();
 
 private:
     void setCurrentIndex(int newIndex);
