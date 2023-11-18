@@ -1,12 +1,9 @@
-/**
- * SPDX-FileCopyrightText: 2014 Sujith Haridasan <sujith.haridasan@kdemail.net>
- * SPDX-FileCopyrightText: 2014 Ashish Madeti <ashishmadeti@gmail.com>
- * SPDX-FileCopyrightText: 2016 Matthieu Gallien <matthieu_gallien@yahoo.fr>
- * SPDX-FileCopyrightText: 2022-2023 Bart De Vries <bart@mogwai.be>
- * SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+// SPDX-FileCopyrightText: 2014 Sujith Haridasan <sujith.haridasan@kdemail.net>
+// SPDX-FileCopyrightText: 2014 Ashish Madeti <ashishmadeti@gmail.com>
+// SPDX-FileCopyrightText: 2016 Matthieu Gallien <matthieu_gallien@yahoo.fr>
+// SPDX-FileCopyrightText: 2022-2023 Bart De Vries <bart@mogwai.be>
+// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "mediaplayer2player.h"
 

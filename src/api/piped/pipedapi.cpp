@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: 2021 Linus Jahn <lnj@kaidan.im>
-//
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "pipedapi.h"

@@ -1,5 +1,4 @@
 // SPDX-FileCopyrightText: none
-//
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "searchparameters.h"

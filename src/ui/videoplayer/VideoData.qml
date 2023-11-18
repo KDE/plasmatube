@@ -1,6 +1,5 @@
 // SPDX-FileCopyrightText: 2020 Carson Black <uhhadd@gmail.com>
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
-//
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
