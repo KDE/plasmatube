@@ -105,6 +105,17 @@ Kirigami.ScrollablePage {
             }
         }
     }
+
+    Keys.onLeftPressed: (event) => {
+        PlasmaTube.videoController.currentPlayer.seek(-5);
+        event.accepted = true;
+    }
+
+    Keys.onRightPressed: (event) => {
+        PlasmaTube.videoController.currentPlayer.seek(5);
+        event.accepted = true;
+    }
+
     GridLayout {
         columns: root.widescreen ? 2 : 1
         rowSpacing: 0
@@ -212,6 +223,8 @@ Kirigami.ScrollablePage {
                         Behavior on opacity {
                             NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
                         }
+
+                        Keys.forwardTo: [root]
                     }
                 }
             }

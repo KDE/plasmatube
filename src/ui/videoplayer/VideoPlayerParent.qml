@@ -24,12 +24,12 @@ Flickable {
 
     function open() {
         toOpen.restart();
-        maximized = true
+        maximized = true;
     }
 
     function close() {
         toClose.restart();
-        maximized = false
+        maximized = false;
     }
 
     function resetToBoundsOnFlick() {
@@ -63,6 +63,10 @@ Flickable {
         duration: Kirigami.Units.longDuration * 2
         easing.type: Easing.OutCubic
         running: false
+        onFinished: {
+            videoPlayer.forceActiveFocus(Qt.PopupFocusReason);
+            console.log("Setting active focus...");
+        }
     }
     NumberAnimation on contentY {
         id: toClose
