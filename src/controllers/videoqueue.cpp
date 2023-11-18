@@ -233,4 +233,9 @@ void VideoQueue::requestMissingVideoInformation()
     }
 }
 
+bool VideoQueue::shouldBeVisible() const
+{
+    return m_videoIds.size() > 1;
+}
+
 #include "moc_videoqueue.cpp"

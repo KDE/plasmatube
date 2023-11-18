@@ -389,15 +389,17 @@ Kirigami.ScrollablePage {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
-            spacing: 0
+            spacing: Kirigami.Units.largeSpacing
 
             Kirigami.Heading {
                 text: i18n("Queue")
+                visible: PlasmaTube.videoController.videoQueue.shouldBeVisible
             }
 
             VideoQueueView {
                 Layout.fillWidth: true
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 15
+                visible: PlasmaTube.videoController.videoQueue.shouldBeVisible
             }
 
             Kirigami.Heading {

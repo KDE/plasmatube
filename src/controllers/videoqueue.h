@@ -17,6 +17,8 @@ class VideoQueue : public QAbstractListModel
     QML_ELEMENT
     QML_UNCREATABLE("Use PlasmaTube.videoController")
 
+    Q_PROPERTY(bool shouldBeVisible READ shouldBeVisible NOTIFY queueChanged)
+
 public:
     explicit VideoQueue(QObject *parent = nullptr);
 
@@ -26,6 +28,8 @@ public:
 
     Q_INVOKABLE void playInQueue(int index);
     Q_INVOKABLE void loadPlaylist(const QString &playlistId);
+
+    bool shouldBeVisible() const;
 
     void next();
     bool canGoNext() const;
