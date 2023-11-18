@@ -116,6 +116,12 @@ Kirigami.ScrollablePage {
         event.accepted = true;
     }
 
+    Keys.onEscapePressed: (event) => {
+        if (root.inFullScreen) {
+            root.exitFullScreen();
+        }
+    }
+
     GridLayout {
         columns: root.widescreen ? 2 : 1
         rowSpacing: 0
