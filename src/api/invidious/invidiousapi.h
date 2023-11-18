@@ -73,4 +73,4 @@ private:
     QUrl subscribeUrl(QStringView channelId) const;
 };
 
-};
+}

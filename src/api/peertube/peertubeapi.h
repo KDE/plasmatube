@@ -76,4 +76,4 @@ private:
     void fixupChannel(QInvidious::Channel &channel);
 };
 
-};
+}

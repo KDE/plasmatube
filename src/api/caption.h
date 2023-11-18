@@ -17,16 +17,11 @@ public:
     FROM_JSON_OVERLOADS(Caption)
     static Caption fromJson(const QJsonObject &obj, Caption &);
 
-    Caption();
-
     QString label() const;
-    void setLabel(const QString &label);
 
     QString languageCode() const;
-    void setLanguageCode(const QString &languageCode);
 
     QUrl url() const;
-    void setUrl(const QUrl &url);
 
 private:
     QString m_label;

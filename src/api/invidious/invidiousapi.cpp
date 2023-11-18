@@ -358,7 +358,7 @@ QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType,
                 // add videos marked as notification
                 auto results = VideoBasicInfo::fromJson(obj.value("notifications"_L1).toArray());
                 for (auto &video : results) {
-                    video.setIsNotification(true);
+                    // video.setIsNotification(true);
                 }
 
                 // add the rest

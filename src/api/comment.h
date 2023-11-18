@@ -16,13 +16,10 @@ public:
     static Comment fromJson(const QJsonObject &, Comment &);
 
     QString author() const;
-    void setAuthor(const QString &name);
 
     QString authorAvatar() const;
-    void setAuthorAvatar(const QString &url);
 
     QString content() const;
-    void setContent(const QString &content);
 
 private:
     QString m_author;

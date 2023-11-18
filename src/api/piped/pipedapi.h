@@ -71,4 +71,4 @@ private:
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
 };
 
-};
+}

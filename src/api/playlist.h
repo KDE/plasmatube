@@ -16,16 +16,12 @@ public:
     static Playlist fromJson(const QJsonObject &, Playlist &);
 
     QString id() const;
-    void setId(const QString &id);
 
     QString title() const;
-    void setTitle(const QString &name);
 
     QString thumbnail() const;
-    void setThumbnail(const QString &name);
 
     int videoCount() const;
-    void setVideoCount(int count);
 
 private:
     QString m_id;

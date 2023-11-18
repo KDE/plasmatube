@@ -149,4 +149,4 @@ protected:
     Credentials m_credentials;
 };
 
-};
+}

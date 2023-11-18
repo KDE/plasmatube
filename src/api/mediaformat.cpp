@@ -55,18 +55,9 @@ MediaFormatBase MediaFormatBase::fromJson(const QJsonObject &obj, MediaFormatBas
     return format;
 }
 
-MediaFormatBase::MediaFormatBase()
-{
-}
-
 QUrl MediaFormatBase::url() const
 {
     return m_url;
-}
-
-void MediaFormatBase::setUrl(const QUrl &url)
-{
-    m_url = url;
 }
 
 uint16_t MediaFormatBase::formatId() const
@@ -74,19 +65,9 @@ uint16_t MediaFormatBase::formatId() const
     return m_formatId;
 }
 
-void MediaFormatBase::setFormatId(uint16_t formatId)
-{
-    m_formatId = formatId;
-}
-
 uint8_t MediaFormatBase::fps() const
 {
     return m_fps;
-}
-
-void MediaFormatBase::setFps(uint8_t fps)
-{
-    m_fps = fps;
 }
 
 uint16_t MediaFormatBase::resolution() const
@@ -94,19 +75,9 @@ uint16_t MediaFormatBase::resolution() const
     return m_resolution;
 }
 
-void MediaFormatBase::setResolution(uint16_t resolution)
-{
-    m_resolution = resolution;
-}
-
 auto MediaFormatBase::container() const -> Container
 {
     return m_container;
-}
-
-void MediaFormatBase::setContainer(Container container)
-{
-    m_container = container;
 }
 
 MediaFormat MediaFormat::fromJson(const QJsonObject &obj, MediaFormat &format)

@@ -19,82 +19,62 @@ public:
     FROM_JSON_OVERLOADS(Video)
     static Video fromJson(const QJsonObject &, Video &);
 
-    Video();
-
     QStringList keywords() const;
-    void setKeywords(const QStringList &);
 
     qint32 likeCount() const;
-    void setLikeCount(qint32);
 
     qint32 dislikeCount() const;
-    void setDislikeCount(qint32);
 
     bool isFamilyFriendly() const;
-    void setIsFamilyFriendly(bool);
 
     QStringList allowedRegions() const;
-    void setAllowedRegions(const QStringList &);
 
     QString genre() const;
-    void setGenre(const QString &);
 
     QString genreUrl() const;
-    void setGenreUrl(const QString &);
 
     QList<VideoThumbnail> authorThumbnails() const;
-    void setAuthorThumbnails(const QList<VideoThumbnail> &);
 
     QString subCountText() const;
-    void setSubCountText(const QString &);
 
     bool allowRatings() const;
-    void setAllowRatings(bool);
 
     double rating() const;
-    void setRating(double);
 
     bool isListed() const;
-    void setIsListed(bool);
 
     QList<VideoBasicInfo> recommendedVideos() const;
-    void setRecommendedVideos(const QList<VideoBasicInfo> &);
 
     std::optional<QDateTime> premiereTimestamp() const;
-    void setPremiereTimestamp(const std::optional<QDateTime> &premiereTimestamp);
 
     QUrl hlsUrl() const;
-    void setHlsUrl(const QUrl &hlsUrl);
 
     QList<MediaFormat> adaptiveFormats() const;
-    void setAdaptiveFormats(const QList<MediaFormat> &adaptiveFormats);
 
     QList<MediaFormatCombined> combinedFormats() const;
-    void setCombinedFormats(const QList<MediaFormatCombined> &combinedFormats);
 
     QList<Caption> captions() const;
-    void setCaptions(const QList<Caption> &captions);
 
 private:
     QStringList m_keywords;
     QString m_viewCountText;
-    qint32 m_likeCount;
-    qint32 m_dislikeCount;
+    qint32 m_likeCount = 0;
+    qint32 m_dislikeCount = 0;
     QStringList m_allowedRegions;
     QString m_genre;
     QString m_genreUrl;
     QList<VideoThumbnail> m_authorThumbnails;
     QString m_subCountText;
-    double m_rating;
+    double m_rating = 1.0;
     QList<VideoBasicInfo> m_recommendedVideos;
     std::optional<QDateTime> m_premiereTimestamp;
     QUrl m_hlsUrl;
     QList<MediaFormat> m_adaptiveFormats;
     QList<MediaFormatCombined> m_combinedFormats;
     QList<Caption> m_captions;
-    bool m_isFamilyFriendly;
-    bool m_allowRatings;
-    bool m_isListed;
+    bool m_isFamilyFriendly = false;
+    bool m_allowRatings = false;
+    bool m_isListed = false;
 };
 
-};
+}

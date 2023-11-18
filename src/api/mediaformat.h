@@ -35,22 +35,15 @@ public:
     FROM_JSON_OVERLOADS(MediaFormatBase)
     static MediaFormatBase fromJson(const QJsonObject &obj, MediaFormatBase &);
 
-    MediaFormatBase();
-
     QUrl url() const;
-    void setUrl(const QUrl &url);
 
     uint16_t formatId() const;
-    void setFormatId(uint16_t formatId);
 
     uint8_t fps() const;
-    void setFps(uint8_t fps);
 
     uint16_t resolution() const;
-    void setResolution(uint16_t resolution);
 
     Container container() const;
-    void setContainer(Container container);
 
 private:
     QUrl m_url;
@@ -110,4 +103,4 @@ private:
     Codec m_videoCodec = InvalidCodec;
 };
 
-};
+}

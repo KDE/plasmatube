@@ -30,4 +30,4 @@ private:
     std::optional<QNetworkCookie> m_cookie;
 };
 
-};
+}

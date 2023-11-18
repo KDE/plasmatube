@@ -18,7 +18,6 @@ public:
     QString id() const;
 
     QString name() const;
-    void setName(const QString &name);
 
     QString banner() const;
     void setBanner(const QString &banner);
@@ -27,10 +26,8 @@ public:
     void setAvatar(const QString &avatar);
 
     QString description() const;
-    void setDescription(const QString &description);
 
     int subCount() const;
-    void setSubCount(int count);
 
 private:
     QString m_id;
