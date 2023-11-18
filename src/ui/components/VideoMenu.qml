@@ -49,11 +49,14 @@ QQC2.Menu {
         }
     }
 
-    QQC2.MenuSeparator {}
+    QQC2.MenuSeparator {
+        visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
+    }
 
     QQC2.MenuItem {
         text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
         icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
+        visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
         onTriggered: {
             if (root.isWatched) {
                 root.markUnwatched();
@@ -68,14 +71,14 @@ QQC2.Menu {
         text: i18n("Add to Playlist…")
         icon.name: "media-playlist-append"
         onTriggered: root.addToPlaylist()
-        visible: !root.shouldRemoveFromPlaylist
+        visible: !root.shouldRemoveFromPlaylist && (PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn)
     }
 
     QQC2.MenuItem {
         text: i18n("Remove from Playlist")
         icon.name: "remove"
         onTriggered: root.removeFromPlaylist()
-        visible: root.shouldRemoveFromPlaylist
+        visible: root.shouldRemoveFromPlaylist && (PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn)
     }
 
     QQC2.MenuSeparator {}
