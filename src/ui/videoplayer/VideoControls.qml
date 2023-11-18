@@ -24,6 +24,7 @@ QQC2.Control {
     property bool showPresentationControls: true
 
     signal requestFullScreen()
+    signal startStop()
 
     Rectangle {
         height: parent.children[1].height * 3
@@ -153,17 +154,7 @@ QQC2.Control {
                         id: playPauseButton
                         implicitHeight: 40
                         implicitWidth: 60
-                        onClicked: {
-                            if (root.currentPlayer.paused) {
-                                if (root.atEnd) {
-                                    root.currentPlayer.setPosition(0);
-                                }
-
-                                root.currentPlayer.play();
-                            } else {
-                                root.currentPlayer.pause();
-                            }
-                        }
+                        onClicked: root.startStop()
                         contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent

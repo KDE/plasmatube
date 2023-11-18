@@ -44,12 +44,32 @@ Kirigami.ScrollablePage {
 
     signal requestClosePlayer()
 
+    function startStop() {
+        if (PlasmaTube.videoController.currentPlayer.paused) {
+            if (root.atEnd) {
+                PlasmaTube.videoController.currentPlayer.setPosition(0);
+            }
+
+            PlasmaTube.videoController.currentPlayer.play();
+        } else {
+            PlasmaTube.videoController.currentPlayer.pause();
+        }
+    }
+
     function goToChannel() {
         const author = video.author;
         const authorId = video.authorId;
         pageStack.pop();
         pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author, authorId});
         root.requestClosePlayer();
+    }
+
+    function toggleFullscreen() {
+        if (root.inFullScreen) {
+            root.exitFullScreen();
+        } else {
+            root.openFullScreen();
+        }
     }
 
     function openFullScreen() {
@@ -114,22 +134,20 @@ Kirigami.ScrollablePage {
                     Kirigami.Theme.inherit: false
 
                     property bool showControls: false
-                    onClicked: {
-                        if (showControls) {
-                            controlTimer.stop();
-                            videoContainer.showControls = false;
-                        } else {
+                    onEntered: {
+                        if (!showControls) {
                             showControls = true;
                             controlTimer.restart();
                         }
                     }
-                    onDoubleClicked: {
-                        if (root.inFullScreen) {
-                            root.exitFullScreen();
-                        } else {
-                            root.openFullScreen();
+                    onExited: {
+                        if (showControls) {
+                            controlTimer.stop();
+                            videoContainer.showControls = false;
                         }
                     }
+                    onClicked: root.startStop()
+                    onDoubleClicked: root.toggleFullscreen()
 
                     hoverEnabled: !Kirigami.Settings.tabletMode
                     onContainsMouseChanged: {
@@ -186,13 +204,8 @@ Kirigami.ScrollablePage {
                         inFullScreen: root.inFullScreen
                         anchors.fill: parent
 
-                        onRequestFullScreen: {
-                            if (root.inFullScreen) {
-                                root.exitFullScreen();
-                            } else {
-                                root.openFullScreen();
-                            }
-                        }
+                        onRequestFullScreen: root.toggleFullscreen()
+                        onStartStop: root.startStop()
 
                         visible: opacity > 0
                         opacity: videoContainer.showControls ? 1 : 0
