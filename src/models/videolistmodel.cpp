@@ -155,7 +155,7 @@ void VideoListModel::fetchMore(const QModelIndex &index)
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
-    return !m_futureWatcher && (m_queryType == Search || m_queryType == Channel || m_queryType == Feed || m_queryType == History);
+    return !m_historyPageWatcher && !m_futureWatcher && (m_queryType == Search || m_queryType == Channel || m_queryType == Feed || m_queryType == History);
 }
 
 bool VideoListModel::isLoading() const
