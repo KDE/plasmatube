@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2023-11-13 10:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
-#: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
 
-#: api/invidious/invidiousapi.cpp:306 api/peertube/peertubeapi.cpp:221
-#: api/piped/pipedapi.cpp:261
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
-#: api/invidious/invidiousapi.cpp:315 api/peertube/peertubeapi.cpp:230
-#: api/piped/pipedapi.cpp:270
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "სერვერის დაბრუნებული სტატუსის კოდია %1"
@@ -46,44 +46,44 @@ msgstr "გაშვებულმა ასლმა რეგისტრა�
 msgid "Playing video"
 msgstr "მიმდინარეობს ვიდეოს დაკვრა"
 
-#: main.cpp:57
+#: main.cpp:61
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:59 main.cpp:109
+#: main.cpp:63 main.cpp:113
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-ის კლიენტი"
 
-#: main.cpp:61
+#: main.cpp:65
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© ლინუს იანი"
 
-#: main.cpp:62
+#: main.cpp:66
 #, kde-format
 msgid "Linus Jahn"
 msgstr "ლინუს იანი"
 
-#: main.cpp:62
+#: main.cpp:66
 #, kde-format
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: main.cpp:63
+#: main.cpp:67
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:63
+#: main.cpp:67
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:120
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:121
 #, kde-format
 msgid "Subscriptions"
 msgstr "გამოწერები"
@@ -129,31 +129,39 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "ისტორია"
 
-#: models/videolistmodel.cpp:194
+#: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "ძებნის შედეგები \"%1\"-სთვის"
 
-#: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
+#: ui/ChannelPage.qml:43 ui/FeedPage.qml:42 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
 msgstr "პროქსის მორგება"
 
-#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:74
-#: ui/SearchPage.qml:190
+#: ui/components/BaseGridView.qml:46
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პროქსის პარამეტრები."
 
-#: ui/ChannelPage.qml:191 ui/FeedPage.qml:113 ui/Main.qml:95
-#: ui/PlaylistPage.qml:110 ui/SearchPage.qml:225
+#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "ჩატვირთვა…"
+
+#: ui/components/BaseGridView.qml:128
+#, kde-format
+msgid "No videos"
+msgstr "ვიდეოების გარეშე"
+
+#: ui/components/BaseGridView.qml:153
+#, kde-format
+msgid "Add to playlist"
+msgstr "დასაკრავ სიაში დამატება"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -162,13 +170,12 @@ msgstr "ვიდეო"
 
 #: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
 #: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
-#: ui/SearchPage.qml:18 ui/SearchPage.qml:219
+#: ui/SearchPage.qml:18
 #, kde-format
 msgid "Search"
 msgstr "ძებნა"
 
-#: ui/components/BottomNavBar.qml:93 ui/settings/SettingsPage.qml:22
-#: ui/videoplayer/VideoControls.qml:273
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
 #, kde-format
 msgid "Settings"
 msgstr "პარამეტრები"
@@ -179,7 +186,7 @@ msgctxt "@action:button Load more comments"
 msgid "Load more"
 msgstr "მეტის ჩატვირთვა"
 
-#: ui/components/PlaylistGridItem.qml:70
+#: ui/components/PlaylistGridItem.qml:49
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
@@ -196,38 +203,38 @@ msgstr "გაზიარების შეცდომა"
 msgid "Share"
 msgstr "გაზიარება"
 
-#: ui/components/Sidebar.qml:104
+#: ui/components/Sidebar.qml:105
 #, kde-format
 msgid "Trending"
 msgstr "ტრენდები"
 
-#: ui/components/Sidebar.qml:137 ui/PlaylistsPage.qml:15
+#: ui/components/Sidebar.qml:138 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
 msgstr "დასაკრავი სიები"
 
-#: ui/components/Sidebar.qml:154
+#: ui/components/Sidebar.qml:155
 #, kde-format
 msgid "History"
 msgstr "ისტორია"
 
-#: ui/components/Sidebar.qml:170
+#: ui/components/Sidebar.qml:171
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "მორგება"
 
-#: ui/components/SourceSwitcher.qml:42 ui/settings/SettingsPage.qml:62
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
 #, kde-format
 msgid "Invidious"
 msgstr "ცბიერი"
 
-#: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:64
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:66
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
 msgstr "გადმომისამართებული"
@@ -237,7 +244,7 @@ msgstr "გადმომისამართებული"
 msgid "Switch Source"
 msgstr "წყაროს გადართვა"
 
-#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:97
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
 msgstr "წყაროს დამატება"
@@ -247,80 +254,70 @@ msgstr "წყაროს დამატება"
 msgid "Add a new video source"
 msgstr "ახალი ვიდეოწყაროს დამატება"
 
-#: ui/components/SubscriptionButton.qml:56
+#: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "გამოწერის გაუქმება (%1)"
 
-#: ui/components/SubscriptionButton.qml:58
+#: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "გამოწერა (%1)"
 
-#: ui/components/SubscriptionButton.qml:68
+#: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "არხების გამოსაწერად საჭიროა სისტემაში შეხვიდეთ."
 
-#: ui/components/VideoGridItem.qml:188
+#: ui/components/VideoGridItem.qml:146
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 ნახვა • %2"
 
-#: ui/components/VideoListItem.qml:173
+#: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 ნახვა"
 
-#: ui/components/VideoListItem.qml:181
+#: ui/components/VideoListItem.qml:180
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:25
+#: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
 msgstr "ახლავე დაკვრა"
 
-#: ui/components/VideoMenu.qml:35
+#: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
 msgstr "შემდეგის დაკვრა"
 
-#: ui/components/VideoMenu.qml:43
+#: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "დაკვრა სურათი-სურათში"
 
-#: ui/components/VideoMenu.qml:55
+#: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as unwatched"
 msgstr "უნახავად მონიშვნა"
 
-#: ui/components/VideoMenu.qml:55
+#: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as watched"
 msgstr "ნანახად მონიშვნა"
 
-#: ui/components/VideoMenu.qml:68
+#: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "დასაკრავ სიაში დამატება…"
 
-#: ui/components/VideoMenu.qml:75
+#: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "დასაკრავი სიიდან წაშლა"
-
-#: ui/FeedPage.qml:118
-#, kde-format
-msgid "No videos"
-msgstr "ვიდეოების გარეშე"
-
-#: ui/FeedPage.qml:144
-#, kde-format
-msgid "Add to playlist"
-msgstr "დასაკრავ სიაში დამატება"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
@@ -340,6 +337,7 @@ msgid "invidious.io"
 msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
+#: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
 msgstr "საჯარო გაშვებული ასლი ვერ ვიპოვე."
@@ -366,7 +364,7 @@ msgstr "გადმოგზავნის წყაროს დამატ�
 msgid "pipedapi.kavin.rocks"
 msgstr "pipedapi.kavin.rocks"
 
-#: ui/loginflow/AddPipedPage.qml:41
+#: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
@@ -439,7 +437,7 @@ msgstr "მომხმარებლის სახელი ცარიე�
 msgid "Password must not be empty!"
 msgstr "პაროლი ცარიელი არ შეიძლება, იყოს!"
 
-#: ui/PlaylistPage.qml:46
+#: ui/PlaylistPage.qml:43
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
@@ -469,11 +467,6 @@ msgstr "ატვირთვის თარიღი"
 #, kde-format
 msgid "View Count"
 msgstr "ნახვების რაოდენობა"
-
-#: ui/SearchPage.qml:219
-#, kde-format
-msgid "No results"
-msgstr "შედეგების გარეშე"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -569,53 +562,53 @@ msgstr "მომხმარებელი"
 msgid "Apply"
 msgstr "გადატარება"
 
-#: ui/settings/SettingsPage.qml:25
+#: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "წყაროები"
 
-#: ui/settings/SettingsPage.qml:107
+#: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
 msgstr "ქსელის პროქსი"
 
-#: ui/settings/SettingsPage.qml:116
+#: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "PlasmaTube-ის შესახებ"
 
-#: ui/settings/SettingsPage.qml:131
+#: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About KDE"
 msgstr "KDE-ს შესახებ"
 
-#: ui/TrendingPage.qml:16
+#: ui/TrendingPage.qml:15
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "ტრენდები"
 
-#: ui/videoplayer/PictureInPictureVideo.qml:16
+#: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
 msgstr "სურათი სურათში"
 
-#: ui/videoplayer/VideoPlayer.qml:287
+#: ui/videoplayer/VideoPlayer.qml:322
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ნახვა"
 
-#: ui/videoplayer/VideoPlayer.qml:295
+#: ui/videoplayer/VideoPlayer.qml:330
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
 
-#: ui/videoplayer/VideoPlayer.qml:360
+#: ui/videoplayer/VideoPlayer.qml:395
 #, kde-format
 msgid "Queue"
 msgstr "რიგი"
 
-#: ui/videoplayer/VideoPlayer.qml:369
+#: ui/videoplayer/VideoPlayer.qml:406
 #, kde-format
 msgid "Recommended"
 msgstr "რეკომენდებულია"
@@ -625,6 +618,9 @@ msgstr "რეკომენდებულია"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "გასუფთავება"
+
+#~ msgid "No results"
+#~ msgstr "შედეგების გარეშე"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "შედით საეჭვო ანგარიშში"

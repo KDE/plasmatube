@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2023-11-12 14:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: api/invidious/invidiousapi.cpp:65 api/peertube/peertubeapi.cpp:47
-#: api/piped/pipedapi.cpp:60 controllers/logincontroller.cpp:42
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Помилкове ім'я користувача або пароль."
 
-#: api/invidious/invidiousapi.cpp:306 api/peertube/peertubeapi.cpp:221
-#: api/piped/pipedapi.cpp:261
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Сервером не повернуто коректного коду JSON."
 
-#: api/invidious/invidiousapi.cpp:315 api/peertube/peertubeapi.cpp:230
-#: api/piped/pipedapi.cpp:270
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Сервером повернуто код стану %1"
@@ -46,44 +46,44 @@ msgstr "У цьому екземплярі реєстрацію вимкнено
 msgid "Playing video"
 msgstr "Відтворення відео"
 
-#: main.cpp:57
+#: main.cpp:61
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:59 main.cpp:109
+#: main.cpp:63 main.cpp:113
 #, kde-format
 msgid "YouTube client"
 msgstr "Клієнт YouTube"
 
-#: main.cpp:61
+#: main.cpp:65
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:62
+#: main.cpp:66
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:62
+#: main.cpp:66
 #, kde-format
 msgid "Creator"
 msgstr "Автор"
 
-#: main.cpp:63
+#: main.cpp:67
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:63
+#: main.cpp:67
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:120
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:121
 #, kde-format
 msgid "Subscriptions"
 msgstr "Підписки"
@@ -129,19 +129,18 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "Журнал"
 
-#: models/videolistmodel.cpp:194
+#: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Результати пошуку для «%1»"
 
-#: ui/ChannelPage.qml:44 ui/FeedPage.qml:46 ui/PlaylistPage.qml:39
+#: ui/ChannelPage.qml:43 ui/FeedPage.qml:42 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Параметри проксі"
 
-#: ui/ChannelPage.qml:162 ui/FeedPage.qml:68 ui/PlaylistPage.qml:74
-#: ui/SearchPage.qml:190
+#: ui/components/BaseGridView.qml:46
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -149,12 +148,21 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри проксі."
 
-#: ui/ChannelPage.qml:191 ui/FeedPage.qml:113 ui/Main.qml:95
-#: ui/PlaylistPage.qml:110 ui/SearchPage.qml:225
+#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Завантаження…"
+
+#: ui/components/BaseGridView.qml:128
+#, kde-format
+msgid "No videos"
+msgstr "Немає відео"
+
+#: ui/components/BaseGridView.qml:153
+#, kde-format
+msgid "Add to playlist"
+msgstr "Додати до списку відтворення"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -163,13 +171,12 @@ msgstr "Відео"
 
 #: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
 #: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
-#: ui/SearchPage.qml:18 ui/SearchPage.qml:219
+#: ui/SearchPage.qml:18
 #, kde-format
 msgid "Search"
 msgstr "Пошук"
 
-#: ui/components/BottomNavBar.qml:93 ui/settings/SettingsPage.qml:22
-#: ui/videoplayer/VideoControls.qml:273
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
@@ -180,7 +187,7 @@ msgctxt "@action:button Load more comments"
 msgid "Load more"
 msgstr "Завантажити більше"
 
-#: ui/components/PlaylistGridItem.qml:70
+#: ui/components/PlaylistGridItem.qml:49
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
@@ -199,38 +206,38 @@ msgstr "Не вдалося оприлюднити"
 msgid "Share"
 msgstr "Оприлюднити"
 
-#: ui/components/Sidebar.qml:104
+#: ui/components/Sidebar.qml:105
 #, kde-format
 msgid "Trending"
 msgstr "Тренди"
 
-#: ui/components/Sidebar.qml:137 ui/PlaylistsPage.qml:15
+#: ui/components/Sidebar.qml:138 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
 msgstr "Списки відтворення"
 
-#: ui/components/Sidebar.qml:154
+#: ui/components/Sidebar.qml:155
 #, kde-format
 msgid "History"
 msgstr "Журнал"
 
-#: ui/components/Sidebar.qml:170
+#: ui/components/Sidebar.qml:171
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметри"
 
-#: ui/components/SourceSwitcher.qml:42 ui/settings/SettingsPage.qml:62
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:44 ui/settings/SettingsPage.qml:64
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:46 ui/settings/SettingsPage.qml:66
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
 msgstr "Piped"
@@ -240,7 +247,7 @@ msgstr "Piped"
 msgid "Switch Source"
 msgstr "Перемкнути джерело"
 
-#: ui/components/SourceSwitcher.qml:89 ui/settings/SettingsPage.qml:97
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
 msgstr "Додати джерело"
@@ -250,80 +257,70 @@ msgstr "Додати джерело"
 msgid "Add a new video source"
 msgstr "Додати нове джерело відео"
 
-#: ui/components/SubscriptionButton.qml:56
+#: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
 msgstr "Скасувати підписку (%1)"
 
-#: ui/components/SubscriptionButton.qml:58
+#: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
 msgstr "Підписатися (%1)"
 
-#: ui/components/SubscriptionButton.qml:68
+#: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
 msgstr "Будь ласка, увійдіть до системи, щоб підписатися на канали."
 
-#: ui/components/VideoGridItem.qml:188
+#: ui/components/VideoGridItem.qml:146
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 переглядів • %2"
 
-#: ui/components/VideoListItem.qml:173
+#: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 переглядів"
 
-#: ui/components/VideoListItem.qml:181
+#: ui/components/VideoListItem.qml:180
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:25
+#: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
 msgstr "Відтворити"
 
-#: ui/components/VideoMenu.qml:35
+#: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
 msgstr "Відтворити наступну"
 
-#: ui/components/VideoMenu.qml:43
+#: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Відтворити у зображенні-у-зображенні"
 
-#: ui/components/VideoMenu.qml:55
+#: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as unwatched"
 msgstr "Позначити як непереглянуте"
 
-#: ui/components/VideoMenu.qml:55
+#: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as watched"
 msgstr "Позначити як переглянуте"
 
-#: ui/components/VideoMenu.qml:68
+#: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Додати до списку композицій…"
 
-#: ui/components/VideoMenu.qml:75
+#: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Вилучити зі списку"
-
-#: ui/FeedPage.qml:118
-#, kde-format
-msgid "No videos"
-msgstr "Немає відео"
-
-#: ui/FeedPage.qml:144
-#, kde-format
-msgid "Add to playlist"
-msgstr "Додати до списку відтворення"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
@@ -343,6 +340,7 @@ msgid "invidious.io"
 msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
+#: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
 msgstr "Немає загальнодоступних екземплярів."
@@ -369,7 +367,7 @@ msgstr "Додавання джерела Piped"
 msgid "pipedapi.kavin.rocks"
 msgstr "pipedapi.kavin.rocks"
 
-#: ui/loginflow/AddPipedPage.qml:41
+#: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
@@ -442,7 +440,7 @@ msgstr "Ім'я користувача має бути непорожнім!"
 msgid "Password must not be empty!"
 msgstr "Пароль має бути непорожнім!"
 
-#: ui/PlaylistPage.qml:46
+#: ui/PlaylistPage.qml:43
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
@@ -472,11 +470,6 @@ msgstr "Дата вивантаження"
 #, kde-format
 msgid "View Count"
 msgstr "Кількість переглядів"
-
-#: ui/SearchPage.qml:219
-#, kde-format
-msgid "No results"
-msgstr "Нічого не знайдено"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -572,53 +565,53 @@ msgstr "Користувач"
 msgid "Apply"
 msgstr "Застосувати"
 
-#: ui/settings/SettingsPage.qml:25
+#: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "Джерела"
 
-#: ui/settings/SettingsPage.qml:107
+#: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
 msgstr "Проксі-сервер мережі"
 
-#: ui/settings/SettingsPage.qml:116
+#: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Про PlasmaTube"
 
-#: ui/settings/SettingsPage.qml:131
+#: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About KDE"
 msgstr "Про KDE"
 
-#: ui/TrendingPage.qml:16
+#: ui/TrendingPage.qml:15
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "Тренди"
 
-#: ui/videoplayer/PictureInPictureVideo.qml:16
+#: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
 msgstr "Зображення у зображенні"
 
-#: ui/videoplayer/VideoPlayer.qml:287
+#: ui/videoplayer/VideoPlayer.qml:322
 #, kde-format
 msgid "%1 views"
 msgstr "%1 переглядів"
 
-#: ui/videoplayer/VideoPlayer.qml:295
+#: ui/videoplayer/VideoPlayer.qml:330
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 уподобань"
 
-#: ui/videoplayer/VideoPlayer.qml:360
+#: ui/videoplayer/VideoPlayer.qml:395
 #, kde-format
 msgid "Queue"
 msgstr "Додати до черги"
 
-#: ui/videoplayer/VideoPlayer.qml:369
+#: ui/videoplayer/VideoPlayer.qml:406
 #, kde-format
 msgid "Recommended"
 msgstr "Рекомендовано"
@@ -628,6 +621,9 @@ msgstr "Рекомендовано"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Спорожнити"
+
+#~ msgid "No results"
+#~ msgstr "Нічого не знайдено"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "Вхід до індивідуального облікового запису"
