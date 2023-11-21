@@ -4,7 +4,6 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
-# Josep M. Ferrer <txemaq@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
@@ -626,6 +625,3 @@ msgstr "Recomanats"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Neteja"
-
-#~ msgid "No results"
-#~ msgstr "Sense resultats"
