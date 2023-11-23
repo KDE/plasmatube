@@ -636,6 +636,3 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
-
-#~ msgid "No results"
-#~ msgstr "Ingen søkjetreff"
