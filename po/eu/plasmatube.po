@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-10-24 21:28+0200\n"
+"PO-Revision-Date: 2023-11-26 01:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -293,10 +293,9 @@ msgid "Play Now"
 msgstr "Jo orain"
 
 #: ui/components/VideoMenu.qml:34
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Jo orain"
+msgstr "Jo hurrengoa"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
@@ -442,11 +441,10 @@ msgid "Password must not be empty!"
 msgstr "Pasahitza ez da hutsik egon behar!"
 
 #: ui/PlaylistPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Jo orain"
+msgstr "Jo"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -611,18 +609,18 @@ msgstr "%1 atsegin"
 #: ui/videoplayer/VideoPlayer.qml:395
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Ipini ilaran"
 
 #: ui/videoplayer/VideoPlayer.qml:406
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Gomendatuta"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Hustu"
 
 #~ msgid "No results"
 #~ msgstr "Emaitzarik gabe"

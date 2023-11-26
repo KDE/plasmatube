@@ -1,11 +1,11 @@
-# maboroshini <pc.genkaku.in>, 2023.
+# maboroshin <pc.genkaku.in>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-07-01 16:06-0700\n"
+"PO-Revision-Date: 2023-11-24 22:02-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -26,7 +27,7 @@ msgstr "ユーザ名かパスワードが誤っています。"
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "JSON ファイルが正しくないとサーバが返しました。"
+msgstr "サーバが 無効な JSON ファイルを返しました。"
 
 #: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
 #: api/piped/pipedapi.cpp:312
@@ -37,12 +38,12 @@ msgstr "ステータスコード %1 をサーバが返しました。"
 #: controllers/logincontroller.cpp:45
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr "このインスタンスは登録を許可していません。"
+msgstr "このインスタンスはユーザ登録機能なし。"
 
 #: controllers/plasmatube.cpp:61
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "動画を再生"
 
 #: main.cpp:61
 #, kde-format
@@ -89,43 +90,43 @@ msgstr "登録チャンネル"
 #: models/videolistmodel.cpp:20 ui/components/Sidebar.qml:88
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "人気"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "すべて"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "ゲーム"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "映画"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "音楽"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "ニュース"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "履歴"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
@@ -134,16 +135,15 @@ msgstr "「%1」の検索結果"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:42 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "設定"
+msgstr "プロキシ設定"
 
 #: ui/components/BaseGridView.qml:46
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr ""
+msgstr "サーバとの通信に失敗: %1. プロキシの設定を確認してください。"
 
 #: ui/components/BaseGridView.qml:122 ui/Main.qml:94
 #, kde-format
@@ -152,15 +152,14 @@ msgid "Loading…"
 msgstr "読み込み中..."
 
 #: ui/components/BaseGridView.qml:128
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "動画"
+msgstr "動画なし"
 
 #: ui/components/BaseGridView.qml:153
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "再生リストに追加"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -183,24 +182,23 @@ msgstr "設定"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "もっと見る"
 
 #: ui/components/PlaylistGridItem.qml:49
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "%1 回視聴"
+msgstr[0] "%1 本の動画"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "共有に失敗"
 
 #: ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "共有"
 
 #: ui/components/Sidebar.qml:105
 #, kde-format
@@ -210,16 +208,15 @@ msgstr "急上昇"
 #: ui/components/Sidebar.qml:138 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "再生リスト"
 
 #: ui/components/Sidebar.qml:155
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "履歴"
 
 #: ui/components/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "設定"
@@ -242,17 +239,17 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "提供元の切り替え"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "提供元を追加"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "動画の提供元を追加"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
@@ -287,49 +284,49 @@ msgstr ""
 #: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "今すぐ再生"
 
 #: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "次に再生"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "ピクチャインピクチャで再生"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "未視聴にする"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "視聴済みにする"
 
 #: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "再生リストに追加…"
 
 #: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "再生リストから削除"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Invidious のサーバを追加"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "インスタンスの選択"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
@@ -340,13 +337,13 @@ msgstr ""
 #: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "公開インスタンスが見つかりません。"
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube のサーバを追加"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
@@ -357,7 +354,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Piped のサーバを追加"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
@@ -368,39 +365,38 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "追加 %1"
 
 #: ui/loginflow/WelcomePage.qml:15
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "ようこそ"
 
 #: ui/loginflow/WelcomePage.qml:28
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "PlasmaTube について"
+msgstr "PlasmaTube にようこそ"
 
 #: ui/loginflow/WelcomePage.qml:34
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube に動画の提供元を登録してください。"
 
 #: ui/loginflow/WelcomePage.qml:44
 #, kde-format
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Invidious のサーバを追加"
 
 #: ui/loginflow/WelcomePage.qml:56
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube のサーバを追加"
 
 #: ui/loginflow/WelcomePage.qml:68
 #, kde-format
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Piped のサーバを追加"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -408,10 +404,9 @@ msgid "Sign in"
 msgstr "サインイン"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "%1 として正常にログインしました。"
+msgstr "正常にログインしました！"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:129
@@ -443,7 +438,7 @@ msgstr "パスワードが空欄です！"
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "再生"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -475,7 +470,7 @@ msgstr "視聴回数"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "サーバの編集"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -490,12 +485,12 @@ msgstr "%1 でログイン中です。"
 #: ui/settings/InvidiousSourcePage.qml:55
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "自動再生"
 
 #: ui/settings/InvidiousSourcePage.qml:69
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "標準のホームページ"
 
 #: ui/settings/InvidiousSourcePage.qml:136
 #, kde-format
@@ -506,38 +501,38 @@ msgstr "ログアウト"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "サーバを削除"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "最後の1つのサーバは削除できません。"
 
 #: ui/settings/InvidiousSourcePage.qml:154
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "サーバの削除"
 
 #: ui/settings/InvidiousSourcePage.qml:155
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "このサーバを削除しますか？"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "ネットワークプロキシ"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "システムの既定"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
@@ -547,33 +542,32 @@ msgstr ""
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "ホスト"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "ポート番号"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
 msgstr "ユーザ名"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "適用"
 
 #: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "提供元"
 
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "ネットワークプロキシ"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
@@ -586,8 +580,7 @@ msgid "About KDE"
 msgstr "KDE について"
 
 #: ui/TrendingPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "急上昇"
@@ -595,7 +588,7 @@ msgstr "急上昇"
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "ピクチャインピクチャ"
 
 #: ui/videoplayer/VideoPlayer.qml:322
 #, kde-format
@@ -610,42 +603,15 @@ msgstr "%1 高評価"
 #: ui/videoplayer/VideoPlayer.qml:395
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "キュー"
 
 #: ui/videoplayer/VideoPlayer.qml:406
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "おすすめ"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
-
-#~ msgid "No results"
-#~ msgstr "見つかりません"
-
-#~ msgid "Log in to an Invidious Account"
-#~ msgstr "Invidious アカウントにログイン"
-
-#~ msgid "Instance Url"
-#~ msgstr "インスタンスの URL"
-
-#~ msgid "Instance URL must not be empty!"
-#~ msgstr "インスタンスの URL が空欄です！"
-
-#~ msgid "Instance"
-#~ msgstr "インスタンス"
-
-#~ msgid "Trending Gaming"
-#~ msgstr "急上昇のゲーム動画"
-
-#~ msgid "Trending Movies"
-#~ msgstr "急上昇の映画"
-
-#~ msgid "Trending Music"
-#~ msgstr "急上昇の音楽"
-
-#~ msgid "Trending News"
-#~ msgstr "急上昇のニュース"
+msgstr "消去"
