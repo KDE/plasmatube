@@ -1,11 +1,11 @@
-# maboroshini <pc.genkaku.in>, 2023.
+# maboroshin <pc.genkaku.in>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 02:46+0000\n"
-"PO-Revision-Date: 2023-07-01 16:06-0700\n"
+"PO-Revision-Date: 2023-11-24 22:02-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: contents/ui/ChannelPage.qml:82 contents/ui/SearchPage.qml:180
 #: contents/ui/TrendingPage.qml:123
@@ -206,7 +207,7 @@ msgstr "ユーザ名かパスワードが誤っています。"
 #: logincontroller.cpp:49
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr "このインスタンスは登録を許可していません。"
+msgstr "このインスタンスはユーザ登録機能なし。"
 
 #: main.cpp:47
 #, kde-format
@@ -248,7 +249,7 @@ msgstr "pc.genkaku.in"
 #: qinvidious/invidiousapi.cpp:187
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "JSON ファイルが正しくないとサーバが返しました。"
+msgstr "サーバが 無効な JSON ファイルを返しました。"
 
 #: qinvidious/invidiousapi.cpp:196
 #, kde-format
