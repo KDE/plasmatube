@@ -91,7 +91,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18n("Add Source")
             icon.name: "list-add"
-            onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"))
+            onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"), {}, { title: i18nc("@title:window", "Welcome") })
         }
     }
 }
