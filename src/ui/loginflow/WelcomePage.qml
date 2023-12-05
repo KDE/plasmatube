@@ -14,14 +14,13 @@ FormCard.FormCardPage {
 
     title: i18nc("@title:window", "Welcome")
 
-    Image {
-        source: "qrc:/org.kde.plasmatube.svg"
+    Kirigami.Icon {
+        source: "org.kde.plasmatube"
 
-        fillMode: Image.PreserveAspectFit
-
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        Layout.margins: Kirigami.Units.largeSpacing * 3
+        Layout.alignment: Qt.AlignHCenter
+        Layout.topMargin: Kirigami.Units.largeSpacing
+        implicitWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+        implicitHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
     }
 
     FormCard.FormHeader {
