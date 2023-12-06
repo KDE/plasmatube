@@ -241,6 +241,7 @@ Kirigami.ScrollablePage {
 
             // extra layout to make all details invisible while loading
             ColumnLayout {
+                Layout.topMargin: root.widescreen ? 0 : Kirigami.Units.gridUnit
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
