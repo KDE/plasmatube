@@ -237,7 +237,6 @@ Kirigami.ScrollablePage {
 
             // extra layout to make all details invisible while loading
             ColumnLayout {
-                Layout.topMargin: Kirigami.Units.gridUnit
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
@@ -334,6 +333,8 @@ Kirigami.ScrollablePage {
                 // video description
                 QQC2.TextArea {
                     readonly property var linkRegex: /(href=["'])?(\b(https?):\/\/[^\s\<\>\"\'\\\?\:\)\(]+(\(.*?\))*(\?(?=[a-z])[^\s\\\)]+|$)?)/g
+
+                    Layout.preferredHeight: video.description.length > 0 ? implicitHeight : 0
 
                     text: video.description.replace(linkRegex, function() {
                         if (arguments[1]) {
