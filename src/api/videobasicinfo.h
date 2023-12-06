@@ -66,7 +66,6 @@ protected:
     QString m_authorId;
     QString m_authorUrl;
     QDateTime m_published;
-    QString m_publishedText;
     QString m_description;
     QString m_descriptionHtml;
     bool m_liveNow = false;

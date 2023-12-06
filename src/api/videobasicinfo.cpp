@@ -23,7 +23,6 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_authorUrl = channel.value("url"_L1).toString();
         // FIXME: 2038 problem (timestamp is only 32 bit long)
         info.m_published = QDateTime::fromSecsSinceEpoch(obj.value("publishedAt"_L1).toInt());
-        info.m_publishedText = info.published().toString();
         info.m_description = obj.value("description"_L1).toString();
         info.m_descriptionHtml = obj.value("description"_L1).toString();
         info.m_liveNow = obj.value("isLive"_L1).toBool(false);
@@ -43,8 +42,9 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_authorId = obj.value("authorId"_L1).toString();
         info.m_authorUrl = obj.value("authorUrl"_L1).toString();
         // FIXME: 2038 problem (timestamp is only 32 bit long)
-        info.m_published = QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt());
-        info.m_publishedText = info.published().toString();
+        if (obj.contains("published"_L1)) {
+            info.m_published = QDateTime::fromSecsSinceEpoch(obj.value("published"_L1).toInt());
+        }
         info.m_description = obj.value("description"_L1).toString();
         info.m_descriptionHtml = obj.value("descriptionHtml"_L1).toString();
         info.m_liveNow = obj.value("liveNow"_L1).toBool(false);
@@ -65,7 +65,6 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_authorId = obj.value("uploaderUrl"_L1).toString().remove(QStringLiteral("/channel/"));
         // FIXME: 2038 problem (timestamp is only 32 bit long)
         info.m_published = QDateTime::fromSecsSinceEpoch(obj.value("uploaded"_L1).toInt());
-        info.m_publishedText = obj.value("uploadedDate"_L1).toString();
         if (obj.contains("description"_L1)) {
             info.m_description = obj.value("description"_L1).toString();
             info.m_descriptionHtml = obj.value("description"_L1).toString();
@@ -154,7 +153,7 @@ QDateTime VideoBasicInfo::published() const
 
 QString VideoBasicInfo::publishedText() const
 {
-    return m_publishedText;
+    return m_published.toString();
 }
 
 QString VideoBasicInfo::description() const
