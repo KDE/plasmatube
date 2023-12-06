@@ -51,7 +51,7 @@ void Mpris2::initDBusService()
     // following:
     if (!success) {
 #if defined Q_OS_WIN
-       tryPlayerName = tryPlayerName + QLatin1String("".instance") + QString::number(GetCurrentProcessId());
+        tryPlayerName = tryPlayerName + QLatin1String("".instance) + QString::number(GetCurrentProcessId());
 #else
         tryPlayerName = tryPlayerName + QLatin1String(".instance") + QString::number(getpid());
 #endif
