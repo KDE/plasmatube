@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-12-06 01:37+0000\n"
 "PO-Revision-Date: 2023-11-12 14:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -373,33 +373,33 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr "Додати %1"
 
-#: ui/loginflow/WelcomePage.qml:15
+#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Вітаємо"
 
-#: ui/loginflow/WelcomePage.qml:28
+#: ui/loginflow/WelcomePage.qml:27
 #, kde-format
 msgid "Welcome to PlasmaTube"
 msgstr "Вітаємо у PlasmaTube"
 
-#: ui/loginflow/WelcomePage.qml:34
+#: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
 msgstr "PlasmaTube потребує принаймні одного джерела відео."
 
-#: ui/loginflow/WelcomePage.qml:44
+#: ui/loginflow/WelcomePage.qml:43
 #, kde-format
 msgid "Add Invidious Source"
 msgstr "Додати джерело Invidious"
 
-#: ui/loginflow/WelcomePage.qml:56
+#: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
 msgstr "Додати джерело PeerTube"
 
-#: ui/loginflow/WelcomePage.qml:68
+#: ui/loginflow/WelcomePage.qml:67
 #, kde-format
 msgid "Add Piped Source"
 msgstr "Додати джерело Piped"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-12-06 01:37+0000\n"
 "PO-Revision-Date: 2023-02-09 14:47\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -382,35 +382,35 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:15
+#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:28
+#: ui/loginflow/WelcomePage.qml:27
 #, fuzzy, kde-format
 #| msgid "About PlasmaTube"
 msgid "Welcome to PlasmaTube"
 msgstr "Пра PlasmaTube"
 
-#: ui/loginflow/WelcomePage.qml:34
+#: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:44
+#: ui/loginflow/WelcomePage.qml:43
 #, fuzzy, kde-format
 #| msgid "Invidious Top"
 msgid "Add Invidious Source"
 msgstr "Папуляранае на Invidious"
 
-#: ui/loginflow/WelcomePage.qml:56
+#: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:68
+#: ui/loginflow/WelcomePage.qml:67
 #, fuzzy, kde-format
 #| msgid "Invidious Top"
 msgid "Add Piped Source"
