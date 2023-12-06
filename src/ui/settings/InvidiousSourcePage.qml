@@ -75,9 +75,6 @@ FormCard.FormCardPage {
                             display: "Search"
                         }
                         ListElement {
-                            display: "Popular"
-                        }
-                        ListElement {
                             display: "Trending"
                         }
                         ListElement {
@@ -93,9 +90,7 @@ FormCard.FormCardPage {
                             case "Search":
                                 currentIndex = 0;
                                 break;
-                            case "Popular":
-                                currentIndex = 1;
-                                break;
+                            // Popular would take index 1
                             case "Trending":
                                 currentIndex = 2;
                                 break;

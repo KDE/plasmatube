@@ -128,7 +128,6 @@ qt_target_qml_sources(plasmatube
         ui/Main.qml
         ui/PlaylistPage.qml
         ui/PlaylistsPage.qml
-        ui/PopularPage.qml
         ui/SearchPage.qml
         ui/SubscriptionsPage.qml
         ui/TrendingPage.qml

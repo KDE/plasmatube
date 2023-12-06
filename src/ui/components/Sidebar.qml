@@ -14,7 +14,6 @@ import org.kde.plasmatube
 Kirigami.OverlayDrawer {
     id: root
 
-    property alias popularDelegate: popularDelegate
     property alias trendingDelegate: trendingDelegate
     property alias subscriptionsDelegate: subscriptionsDelegate
     property alias playslistsDelegate: playslistsDelegate
@@ -76,23 +75,6 @@ Kirigami.OverlayDrawer {
 
         QQC2.ButtonGroup {
             id: pageButtonGroup
-        }
-
-        Delegates.RoundedItemDelegate {
-            id: popularDelegate
-
-            Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
-            icon.name: "arrow-up-double"
-            text: i18n("Popular")
-            onClicked: {
-                applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
-                checked = true;
-            }
-            visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.supportsPopularPage()
-
-            QQC2.ButtonGroup.group: pageButtonGroup
         }
 
         Delegates.RoundedItemDelegate {

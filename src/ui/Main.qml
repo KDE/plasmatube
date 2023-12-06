@@ -156,13 +156,11 @@ Kirigami.ApplicationWindow {
             return;
         }
 
-        let defaultHome = "Popular";
+        let defaultHome = "Trending";
 
         if (PlasmaTube.sourceManager.selectedSource !== null) {
             if (PlasmaTube.sourceManager.selectedSource.preferences.defaultHome.length !== 0) {
                 defaultHome = PlasmaTube.sourceManager.selectedSource.preferences.defaultHome;
-            } else if(!PlasmaTube.sourceManager.selectedSource.supportsPopularPage()) {
-                defaultHome = "Trending";
             }
         }
 
@@ -170,10 +168,6 @@ Kirigami.ApplicationWindow {
             case "Search":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SearchPage"));
                 sidebar.searchDelegate.checked = true;
-                break;
-            case "Popular":
-                root.switchToPage(Qt.createComponent("org.kde.plasmatube", "PopularPage"));
-                sidebar.popularDelegate.checked = true;
                 break;
             case "Trending":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
