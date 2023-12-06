@@ -386,7 +386,7 @@ Kirigami.ScrollablePage {
 
         ColumnLayout {
             Layout.alignment: Qt.AlignTop
-            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.margins: Kirigami.Units.largeSpacing * 2
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: Kirigami.Units.largeSpacing
