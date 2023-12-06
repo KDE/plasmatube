@@ -95,7 +95,7 @@ QQC2.ItemDelegate {
                 visible: false
             }
             Text {
-                visible: !liveNow
+                visible: !liveNow && text !== "00:00"
                 text: Utils.formatTime(length)
                 color: "white"
 

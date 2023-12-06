@@ -62,7 +62,7 @@ BaseGridItem {
             }
 
             Text {
-                visible: !liveNow
+                visible: !liveNow && text !== "00:00"
                 text: Utils.formatTime(length)
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
