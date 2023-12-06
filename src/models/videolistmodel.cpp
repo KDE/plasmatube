@@ -264,12 +264,12 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
 
         m_futureWatcher->deleteLater();
         m_futureWatcher = nullptr;
-        Q_EMIT isLoadingChanged();
+        setLoading(false);
     });
 
     setQueryType(type);
     m_futureWatcher->setFuture(future);
-    Q_EMIT isLoadingChanged();
+    setLoading(true);
 }
 
 void VideoListModel::setQueryType(QueryType type)
@@ -290,6 +290,8 @@ void VideoListModel::clearAll()
 
 void VideoListModel::requestHistory()
 {
+    setLoading(true);
+
     auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(m_currentPage);
 
     m_historyPageWatcher = new QFutureWatcher<QInvidious::HistoryResult>();
@@ -340,7 +342,7 @@ void VideoListModel::processHistoryResult(const QList<QString> &result)
 
         m_historyFetchFinishWatcher->deleteLater();
         m_historyFetchFinishWatcher = nullptr;
-        Q_EMIT isLoadingChanged();
+        setLoading(false);
     });
 }
 
