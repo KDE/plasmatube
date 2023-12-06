@@ -153,7 +153,7 @@ QDateTime VideoBasicInfo::published() const
 
 QString VideoBasicInfo::publishedText() const
 {
-    return m_published.toString();
+    return m_published.date().toString();
 }
 
 QString VideoBasicInfo::description() const
