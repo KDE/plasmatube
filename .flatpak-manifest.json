@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasmatube",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "6.6",
     "sdk": "org.kde.Sdk",
     "command": "plasmatube",
     "tags": ["nightly"],
@@ -17,9 +17,61 @@
     "separate-locales": false,
 
     "modules": [
+        "flatpak/kf6.json",
         "flatpak/kirigami-addons.json",
         "flatpak/mpv.json",
         "flatpak/python3-yt-dlp.json",
+        {
+            "name": "mpvqt",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/mpvqt",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libsecret",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dmanpage=false",
+                "-Dvapi=false",
+                "-Dgtk_doc=false",
+                "-Dintrospection=false",
+                "-Dgcrypt=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
+                    "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libsecret",
+                        "stable-only": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "qtkeychain",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_WITH_QT6=ON",
+                "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+                "-DLIB_INSTALL_DIR=/app/lib",
+                "-DBUILD_TRANSLATIONS=NO"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.14.1.tar.gz",
+                    "sha256": "afb2d120722141aca85f8144c4ef017bd74977ed45b80e5d9e9614015dadd60c"
+                }
+            ]
+        },
         {
             "name": "plasmatube",
             "buildsystem": "cmake-ninja",

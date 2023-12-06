@@ -121,8 +121,8 @@
             "sources": [
                 {
                 "type": "archive",
-                "url": "https://ffmpeg.org/releases/ffmpeg-5.1.tar.gz",
-                "sha256": "c0b2ec290abd5ad31b5e0a8c455c34f90306ecd2ede6ace5db5ca3a07f3b842f"
+                "url": "https://ffmpeg.org/releases/ffmpeg-6.1.tar.gz",
+                "sha256": "938dd778baa04d353163ca5cb06c909c918850055f549205b29b1224e45a5316"
                 }
             ]
         },
