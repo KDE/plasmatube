@@ -155,26 +155,21 @@ Kirigami.ScrollablePage {
 
                     property bool showControls: false
                     onEntered: {
-                        if (!showControls) {
-                            showControls = true;
-                            controlTimer.restart();
-                        }
+                        videoContainer.showControls = true;
+                        controlTimer.restart();
+                    }
+                    onPositionChanged: {
+                        videoContainer.showControls = true;
+                        controlTimer.restart();
                     }
                     onExited: {
-                        if (showControls) {
-                            controlTimer.stop();
-                            videoContainer.showControls = false;
-                        }
+                        controlTimer.stop();
+                        videoContainer.showControls = false;
                     }
                     onClicked: root.startStop()
                     onDoubleClicked: root.toggleFullscreen()
 
                     hoverEnabled: !Kirigami.Settings.tabletMode
-                    onContainsMouseChanged: {
-                        if (!pressed && hoverEnabled) {
-                            videoContainer.showControls = containsMouse;
-                        }
-                    }
 
                     Timer {
                         id: controlTimer
