@@ -33,9 +33,8 @@ Kirigami.ScrollablePage {
 
     header: Components.Banner {
         id: message
-        type: Kirigami.MessageType.Error
-        width: parent.width
 
+        type: Kirigami.MessageType.Error
         showCloseButton: true
 
         actions: Kirigami.Action {
