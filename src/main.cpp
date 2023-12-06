@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 {
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
 
