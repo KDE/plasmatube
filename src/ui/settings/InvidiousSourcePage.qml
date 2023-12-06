@@ -89,16 +89,14 @@ FormCard.FormCardPage {
                         switch (defaultHome) {
                             case "Search":
                                 currentIndex = 0;
-                                break;
-                            // Popular would take index 1
                             case "Trending":
-                                currentIndex = 2;
+                                currentIndex = 1;
                                 break;
                             case "Subscriptions":
-                                currentIndex = 3;
+                                currentIndex = 2;
                                 break;
                             case "Playlists":
-                                currentIndex = 4;
+                                currentIndex = 3;
                                 break;
                         }
                     }
