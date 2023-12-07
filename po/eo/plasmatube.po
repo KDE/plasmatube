@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-06 01:37+0000\n"
+"POT-Creation-Date: 2023-12-07 01:41+0000\n"
 "PO-Revision-Date: 2023-11-12 08:26+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -45,49 +45,49 @@ msgstr "Ĉi tiu instanco malŝaltis la registradon."
 msgid "Playing video"
 msgstr "Ludado de video"
 
-#: main.cpp:61
+#: main.cpp:62
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:63 main.cpp:113
+#: main.cpp:64 main.cpp:114
 #, kde-format
 msgid "YouTube client"
 msgstr "Jutuba kliento"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "© Linus Jahn"
 msgstr "© Linus Jahn"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Creator"
 msgstr "Kreinto"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Oliver Kellogg"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:121
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
 msgstr "Abonoj"
 
-#: models/videolistmodel.cpp:20 ui/components/Sidebar.qml:88
+#: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
 msgstr "Popularaj"
@@ -133,7 +133,7 @@ msgstr "Historio"
 msgid "Search results for \"%1\""
 msgstr "Serĉrezultoj por \"%1\""
 
-#: ui/ChannelPage.qml:43 ui/FeedPage.qml:42 ui/PlaylistPage.qml:36
+#: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
@@ -202,22 +202,22 @@ msgstr "Kundividado malsukcesis"
 msgid "Share"
 msgstr "Kundivi"
 
-#: ui/components/Sidebar.qml:105
+#: ui/components/Sidebar.qml:87
 #, kde-format
 msgid "Trending"
 msgstr "Tendencaj"
 
-#: ui/components/Sidebar.qml:138 ui/PlaylistsPage.qml:14
+#: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
 msgstr "Ludlistoj"
 
-#: ui/components/Sidebar.qml:155
+#: ui/components/Sidebar.qml:137
 #, kde-format
 msgid "History"
 msgstr "Historio"
 
-#: ui/components/Sidebar.qml:171
+#: ui/components/Sidebar.qml:153
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
@@ -411,7 +411,7 @@ msgid "Successfully logged in!"
 msgstr "Sukcese ensalutinta!"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
-#: ui/settings/InvidiousSourcePage.qml:129
+#: ui/settings/InvidiousSourcePage.qml:122
 #, kde-format
 msgid "Log in"
 msgstr "Ensaluti"
@@ -494,31 +494,31 @@ msgstr "Aŭtomata ludado"
 msgid "Default homepage"
 msgstr "Defaŭlta hejmpaĝo"
 
-#: ui/settings/InvidiousSourcePage.qml:136
+#: ui/settings/InvidiousSourcePage.qml:129
 #, kde-format
 msgid "Log out"
 msgstr "Elsaluti"
 
-#: ui/settings/InvidiousSourcePage.qml:146
+#: ui/settings/InvidiousSourcePage.qml:139
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
 msgstr "Forigi Fonton"
 
-#: ui/settings/InvidiousSourcePage.qml:147
+#: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
 msgstr "Ne eblas forigi la ununuran fonnton."
 
-#: ui/settings/InvidiousSourcePage.qml:154
+#: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
 msgstr "Forigi Fonton"
 
-#: ui/settings/InvidiousSourcePage.qml:155
+#: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
@@ -592,22 +592,22 @@ msgstr "Tendencaj"
 msgid "Picture in Picture"
 msgstr "Bild-en-Bildo"
 
-#: ui/videoplayer/VideoPlayer.qml:322
+#: ui/videoplayer/VideoPlayer.qml:321
 #, kde-format
 msgid "%1 views"
 msgstr "%1 vidoj"
 
-#: ui/videoplayer/VideoPlayer.qml:330
+#: ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Ŝatoj"
 
-#: ui/videoplayer/VideoPlayer.qml:395
+#: ui/videoplayer/VideoPlayer.qml:396
 #, kde-format
 msgid "Queue"
 msgstr "Vico"
 
-#: ui/videoplayer/VideoPlayer.qml:406
+#: ui/videoplayer/VideoPlayer.qml:407
 #, kde-format
 msgid "Recommended"
 msgstr "Rekomendita"
