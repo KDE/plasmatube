@@ -70,7 +70,7 @@ GridView {
                 publishedText: model.publishedText
                 watched: model.watched
 
-                onPressed: {
+                onClicked: {
                     videoModel.markAsWatched(index);
                     PlasmaTube.videoController.play(vid);
                 }
