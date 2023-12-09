@@ -48,7 +48,6 @@ void MpvObject::play()
         return;
     }
     setProperty(QStringLiteral("pause"), false);
-    Q_EMIT pausedChanged();
 }
 
 void MpvObject::pause()
@@ -57,7 +56,6 @@ void MpvObject::pause()
         return;
     }
     setProperty(QStringLiteral("pause"), true);
-    Q_EMIT pausedChanged();
 }
 
 void MpvObject::stop()
