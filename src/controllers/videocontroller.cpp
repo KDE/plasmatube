@@ -6,6 +6,14 @@
 #include "config.h"
 #include "plasmatube.h"
 
+#ifdef HAS_DBUS
+#include <KLocalizedString>
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusReply>
+#include <QGuiApplication>
+#endif
+
 VideoController::VideoController(QObject *parent)
     : QObject(parent)
     , m_videoModel(new VideoModel(this))
@@ -25,6 +33,37 @@ VideoController::VideoController(QObject *parent)
         m_videoModel->fetch(m_videoQueue->getCurrentVideoId());
 
         openPlayer();
+    });
+    connect(this, &VideoController::playbackStateChanged, this, [this] {
+        const bool shouldInhibit = currentPlayer() && !currentPlayer()->paused();
+
+        qInfo() << "Inhibiting sleep:" << shouldInhibit;
+
+#ifdef HAS_DBUS
+        if (shouldInhibit) {
+            QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                                  QStringLiteral("/ScreenSaver"),
+                                                                  QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                                  QStringLiteral("Inhibit"));
+            message << QGuiApplication::desktopFileName();
+            message << i18n("Playing video");
+
+            QDBusReply<uint> reply = QDBusConnection::sessionBus().call(message);
+            if (reply.isValid()) {
+                screenSaverDbusCookie = reply.value();
+            }
+        } else {
+            if (screenSaverDbusCookie != 0) {
+                QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                                      QStringLiteral("/ScreenSaver"),
+                                                                      QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                                      QStringLiteral("UnInhibit"));
+                message << static_cast<uint>(screenSaverDbusCookie);
+                screenSaverDbusCookie = 0;
+                QDBusConnection::sessionBus().send(message);
+            }
+        }
+#endif
     });
 }
 

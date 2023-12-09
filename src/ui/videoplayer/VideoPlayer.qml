@@ -76,7 +76,6 @@ Kirigami.ScrollablePage {
         videoContainer.anchors.fill = QQC2.Overlay.overlay;
         root.inFullScreen = true;
         applicationWindow().globalDrawer.close();
-        PlasmaTube.setInhibitSleep(true);
         applicationWindow().showFullScreen();
     }
 
@@ -87,7 +86,6 @@ Kirigami.ScrollablePage {
         if (!applicationWindow().globalDrawer.modal) {
             applicationWindow().globalDrawer.open();
         }
-        PlasmaTube.setInhibitSleep(false);
         applicationWindow().showNormal();
     }
 

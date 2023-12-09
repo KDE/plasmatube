@@ -37,7 +37,6 @@ public:
 
     VideoSource *selectedSource();
 
-    Q_INVOKABLE void setInhibitSleep(bool inhibit);
     Q_INVOKABLE void setApplicationProxy();
 
 Q_SIGNALS:
@@ -49,7 +48,6 @@ Q_SIGNALS:
 private:
     explicit PlasmaTube(QObject *parent = nullptr);
 
-    unsigned int screenSaverDbusCookie = 0;
     VideoController *m_controller = nullptr;
     SourceManager *m_sourceManager = nullptr;
 };

@@ -80,4 +80,5 @@ private:
     VideoModel *m_videoModel = nullptr;
     VideoQueue *m_videoQueue = nullptr;
     Mpris2 *m_mpris = nullptr;
+    unsigned int screenSaverDbusCookie = 0;
 };

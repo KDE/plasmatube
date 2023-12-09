@@ -12,12 +12,6 @@
 #include <QSettings>
 #include <QStringBuilder>
 
-#ifdef HAS_DBUS
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <QDBusReply>
-#endif
-
 PlasmaTube::PlasmaTube(QObject *parent)
     : QObject(parent)
     , m_controller(new VideoController(this))
@@ -47,35 +41,6 @@ SourceManager *PlasmaTube::sourceManager() const
 VideoSource *PlasmaTube::selectedSource()
 {
     return m_sourceManager->selectedSource();
-}
-
-void PlasmaTube::setInhibitSleep(const bool inhibit)
-{
-#ifdef HAS_DBUS
-    if (inhibit) {
-        QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                              QStringLiteral("/ScreenSaver"),
-                                                              QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                              QStringLiteral("Inhibit"));
-        message << QGuiApplication::desktopFileName();
-        message << i18n("Playing video");
-
-        QDBusReply<uint> reply = QDBusConnection::sessionBus().call(message);
-        if (reply.isValid()) {
-            screenSaverDbusCookie = reply.value();
-        }
-    } else {
-        if (screenSaverDbusCookie != 0) {
-            QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                                  QStringLiteral("/ScreenSaver"),
-                                                                  QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                                  QStringLiteral("UnInhibit"));
-            message << static_cast<uint>(screenSaverDbusCookie);
-            screenSaverDbusCookie = 0;
-            QDBusConnection::sessionBus().send(message);
-        }
-    }
-#endif
 }
 
 void PlasmaTube::setApplicationProxy()
