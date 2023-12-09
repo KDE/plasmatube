@@ -35,6 +35,14 @@ VideoController::VideoController(QObject *parent)
         openPlayer();
     });
     connect(this, &VideoController::playbackStateChanged, this, [this] {
+        const bool paused = m_currentPlayer->paused();
+        const bool durationMatchesPosition = abs(m_currentPlayer->duration() - m_currentPlayer->position()) < 0.1;
+        const bool notAtBeginning = m_currentPlayer->position() > 1;
+
+        if (paused && durationMatchesPosition && notAtBeginning) {
+            m_videoQueue->next();
+        }
+
         const bool shouldInhibit = currentPlayer() && !currentPlayer()->paused();
 
 #ifdef HAS_DBUS
