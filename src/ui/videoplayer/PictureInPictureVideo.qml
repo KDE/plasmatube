@@ -133,7 +133,6 @@ Kirigami.ApplicationWindow {
     }
 
     DragHandler {
-        acceptedDevices: PointerDevice.GenericPointer
         grabPermissions:  PointerHandler.CanTakeOverFromItems | PointerHandler.CanTakeOverFromHandlersOfDifferentType | PointerHandler.ApprovesTakeOverByAnything
         onActiveChanged: {
             if (active) {
