@@ -88,6 +88,10 @@ void VideoController::queueNext(const QString &videoId)
 void VideoController::togglePlaying()
 {
     if (m_currentPlayer != nullptr) {
+        if (m_currentPlayer->paused() && (abs(m_currentPlayer->duration() - m_currentPlayer->position()) < 0.1)) {
+            m_currentPlayer->setPosition(0);
+        }
+
         if (m_currentPlayer->paused()) {
             m_currentPlayer->play();
         } else {

@@ -23,7 +23,6 @@ QQC2.Control {
     property bool showPresentationControls: true
 
     signal requestFullScreen()
-    signal startStop()
 
     Rectangle {
         height: parent.children[1].height * 3
@@ -153,7 +152,7 @@ QQC2.Control {
                         id: playPauseButton
                         implicitHeight: 40
                         implicitWidth: 60
-                        onClicked: root.startStop()
+                        onClicked: PlasmaTube.videoController.togglePlaying()
                         contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent

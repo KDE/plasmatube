@@ -92,7 +92,7 @@ Kirigami.ApplicationWindow {
             inFullScreen: false
             anchors.fill: parent
             showPresentationControls: false
-
+            
             visible: opacity > 0
             opacity: videoContainer.showControls ? 1 : 0
             Behavior on opacity {

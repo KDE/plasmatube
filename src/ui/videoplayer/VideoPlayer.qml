@@ -43,18 +43,6 @@ Kirigami.ScrollablePage {
 
     signal requestClosePlayer()
 
-    function startStop() {
-        if (PlasmaTube.videoController.currentPlayer.paused) {
-            if (root.atEnd) {
-                PlasmaTube.videoController.currentPlayer.setPosition(0);
-            }
-
-            PlasmaTube.videoController.currentPlayer.play();
-        } else {
-            PlasmaTube.videoController.currentPlayer.pause();
-        }
-    }
-
     function goToChannel() {
         const author = video.author;
         const authorId = video.authorId;
@@ -164,7 +152,7 @@ Kirigami.ScrollablePage {
                         controlTimer.stop();
                         videoContainer.showControls = false;
                     }
-                    onClicked: root.startStop()
+                    onClicked: PlasmaTube.videoController.togglePlaying()
                     onDoubleClicked: root.toggleFullscreen()
 
                     hoverEnabled: !Kirigami.Settings.tabletMode
@@ -218,7 +206,6 @@ Kirigami.ScrollablePage {
                         anchors.fill: parent
 
                         onRequestFullScreen: root.toggleFullscreen()
-                        onStartStop: root.startStop()
 
                         visible: opacity > 0
                         opacity: videoContainer.showControls ? 1 : 0
