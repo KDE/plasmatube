@@ -163,7 +163,7 @@ qlonglong MediaPlayer2Player::Position() const
 {
     qCDebug(Mpris2Log) << "MediaPlayer2Player::Position()";
     if (m_audioPlayer->hasVideo()) {
-        return qlonglong(m_audioPlayer->position()) * 1000;
+        return qlonglong(m_audioPlayer->position()) * 1000000;
     } else {
         return 0.0;
     }
@@ -251,7 +251,7 @@ void MediaPlayer2Player::playerPlaybackRateChanged()
 void MediaPlayer2Player::playerSeeked(qint64 position)
 {
     qCDebug(Mpris2Log) << "MediaPlayer2Player::playerSeeked(" << position << ")";
-    Q_EMIT Seeked(position * 1000);
+    Q_EMIT Seeked(position * 1000000);
 }
 
 void MediaPlayer2Player::audioPositionChanged()
@@ -387,7 +387,7 @@ void MediaPlayer2Player::setPropertyPosition(int newPositionInMs)
 {
     qCDebug(Mpris2Log) << "MediaPlayer2Player::setPropertyPosition(" << newPositionInMs << ")";
     // only needed for progressbar on taskbar (?)
-    m_position = qlonglong(newPositionInMs) * 1000;
+    m_position = qlonglong(newPositionInMs) * 1000000;
 }
 
 void MediaPlayer2Player::signalPropertiesChange(const QString &property, const QVariant &value)
