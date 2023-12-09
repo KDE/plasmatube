@@ -17,7 +17,10 @@ QQC2.Control {
     readonly property var currentVideo: PlasmaTube.videoController.currentVideo
     readonly property var currentPlayer: PlasmaTube.videoController.currentPlayer
 
-    readonly property bool atEnd: currentPlayer !== null && currentPlayer.paused ? (Math.abs(currentPlayer.duration - currentPlayer.position) < 0.1) : false
+    // TODO: move completely to C++
+    readonly property bool videoLoaded: currentPlayer.duration > 0
+    readonly property bool durationMatchesPosition: Math.abs(currentPlayer.duration - currentPlayer.position) < 0.1
+    readonly property bool atEnd: currentPlayer !== null && currentPlayer.paused && videoLoaded && durationMatchesPosition
 
     property bool inFullScreen: false
     property bool showPresentationControls: true
