@@ -29,7 +29,8 @@ GridView {
     rightMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
 
     currentIndex: -1
-
+    // TODO: look into this assumption if we ever want to use gridview in the video player
+    enabled: !applicationWindow().videoPlayerOpen
 
     keyNavigationEnabled: true
     cellWidth: effectiveWidth / columns

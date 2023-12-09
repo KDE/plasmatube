@@ -43,6 +43,7 @@ Kirigami.ApplicationWindow {
     readonly property real wideScreenThreshold: Kirigami.Units.gridUnit * 40
     readonly property bool isWidescreen: (root.width >= wideScreenThreshold) && root.wideScreen
     readonly property bool finishedLoading: PlasmaTube.sourceManager.hasAnySources ? PlasmaTube.sourceManager.finishedLoading : true
+    readonly property bool videoPlayerOpen: videoPlayer.maximized
 
     function closePlayer() {
         videoPlayer.close();
