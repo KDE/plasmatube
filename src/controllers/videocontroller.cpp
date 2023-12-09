@@ -37,8 +37,6 @@ VideoController::VideoController(QObject *parent)
     connect(this, &VideoController::playbackStateChanged, this, [this] {
         const bool shouldInhibit = currentPlayer() && !currentPlayer()->paused();
 
-        qInfo() << "Inhibiting sleep:" << shouldInhibit;
-
 #ifdef HAS_DBUS
         if (shouldInhibit) {
             QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
