@@ -158,6 +158,8 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
         Q_EMIT currentPlayerChanged();
     }
 
+    m_currentPlayer->setProperty(QStringLiteral("pause"), !PlasmaTube::instance().selectedSource()->preferences().autoPlay());
+
     Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
     // See https://github.com/mpv-player/mpv/issues/10029 why this is needed
     if (PlasmaTube::instance().selectedSource()->type() == VideoSource::Type::PeerTube) {
