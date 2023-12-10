@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-07 01:41+0000\n"
+"POT-Creation-Date: 2023-12-10 01:57+0000\n"
 "PO-Revision-Date: 2023-10-21 18:06+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -43,7 +43,7 @@ msgstr "伺服器回傳狀態碼 %1"
 msgid "This instance has disabled the registration."
 msgstr "這個實體已停用註冊功能。"
 
-#: controllers/plasmatube.cpp:61
+#: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
 msgstr "正在播放影片"
@@ -143,24 +143,24 @@ msgstr "「%1」的搜尋結果"
 msgid "Proxy Settings"
 msgstr "設定"
 
-#: ui/components/BaseGridView.qml:46
+#: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
+#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "載入中…"
 
-#: ui/components/BaseGridView.qml:128
+#: ui/components/BaseGridView.qml:129
 #, kde-format
 msgid "No videos"
 msgstr "沒有影片"
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
 msgstr "新增至播放清單"
@@ -177,7 +177,7 @@ msgstr "影片"
 msgid "Search"
 msgstr "搜尋"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
 msgstr "設定"
@@ -606,22 +606,22 @@ msgstr "發燒影片"
 msgid "Picture in Picture"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
 msgstr "觀看次數：%1"
 
-#: ui/videoplayer/VideoPlayer.qml:329
+#: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 個喜歡"
 
-#: ui/videoplayer/VideoPlayer.qml:396
+#: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:407
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
 msgstr ""

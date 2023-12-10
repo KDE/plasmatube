@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-07 01:41+0000\n"
+"POT-Creation-Date: 2023-12-10 01:57+0000\n"
 "PO-Revision-Date: 2023-11-13 09:35+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Il server ha restituito il codice di stato %1"
 msgid "This instance has disabled the registration."
 msgstr "Questa istanza ha disabilitato la registrazione."
 
-#: controllers/plasmatube.cpp:61
+#: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
 msgstr "Riproduzione video"
@@ -139,7 +139,7 @@ msgstr "Risultati della ricerca di «%1»"
 msgid "Proxy Settings"
 msgstr "Impostazioni del proxy"
 
-#: ui/components/BaseGridView.qml:46
+#: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -147,18 +147,18 @@ msgstr ""
 "Impossibile contattare il server: %1. Controlla le tue impostazioni del "
 "proxy."
 
-#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
+#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Caricamento…"
 
-#: ui/components/BaseGridView.qml:128
+#: ui/components/BaseGridView.qml:129
 #, kde-format
 msgid "No videos"
 msgstr "Nessun video"
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
 msgstr "Aggiungi alla scaletta"
@@ -175,7 +175,7 @@ msgstr "Video"
 msgid "Search"
 msgstr "Cerca"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
 msgstr "Impostazioni"
@@ -593,22 +593,22 @@ msgstr "Di tendenza"
 msgid "Picture in Picture"
 msgstr "Picture in Picture"
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizzazioni"
 
-#: ui/videoplayer/VideoPlayer.qml:329
+#: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Mi piace"
 
-#: ui/videoplayer/VideoPlayer.qml:396
+#: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
 msgstr "Accoda"
 
-#: ui/videoplayer/VideoPlayer.qml:407
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
 msgstr "Raccomandato"

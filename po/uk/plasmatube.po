@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-07 01:41+0000\n"
+"POT-Creation-Date: 2023-12-10 01:57+0000\n"
 "PO-Revision-Date: 2023-11-12 14:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -41,7 +41,7 @@ msgstr "Сервером повернуто код стану %1"
 msgid "This instance has disabled the registration."
 msgstr "У цьому екземплярі реєстрацію вимкнено."
 
-#: controllers/plasmatube.cpp:61
+#: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
 msgstr "Відтворення відео"
@@ -140,7 +140,7 @@ msgstr "Результати пошуку для «%1»"
 msgid "Proxy Settings"
 msgstr "Параметри проксі"
 
-#: ui/components/BaseGridView.qml:46
+#: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -148,18 +148,18 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри проксі."
 
-#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
+#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Завантаження…"
 
-#: ui/components/BaseGridView.qml:128
+#: ui/components/BaseGridView.qml:129
 #, kde-format
 msgid "No videos"
 msgstr "Немає відео"
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
 msgstr "Додати до списку відтворення"
@@ -176,7 +176,7 @@ msgstr "Відео"
 msgid "Search"
 msgstr "Пошук"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
@@ -596,22 +596,22 @@ msgstr "Тренди"
 msgid "Picture in Picture"
 msgstr "Зображення у зображенні"
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
 msgstr "%1 переглядів"
 
-#: ui/videoplayer/VideoPlayer.qml:329
+#: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 уподобань"
 
-#: ui/videoplayer/VideoPlayer.qml:396
+#: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
 msgstr "Додати до черги"
 
-#: ui/videoplayer/VideoPlayer.qml:407
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
 msgstr "Рекомендовано"

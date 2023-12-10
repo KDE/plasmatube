@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-07 01:41+0000\n"
+"POT-Creation-Date: 2023-12-10 01:57+0000\n"
 "PO-Revision-Date: 2023-11-26 01:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -43,7 +43,7 @@ msgstr "Zerbitzariak %1 egoera kodea itzuli du"
 msgid "This instance has disabled the registration."
 msgstr "Instantzia honek erregistratzea ezgaitu du."
 
-#: controllers/plasmatube.cpp:61
+#: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
 msgstr "Bideoa jotzen"
@@ -142,7 +142,7 @@ msgstr "«%1» bilatzearen emaitzak"
 msgid "Proxy Settings"
 msgstr "Ordezkariaren ezarpenak"
 
-#: ui/components/BaseGridView.qml:46
+#: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -150,18 +150,18 @@ msgstr ""
 "Zerbitzariarekin kontaktatzea huts egin du: %1. Mesedez, egiaztatu "
 "ordezkariaren zure ezarpenak."
 
-#: ui/components/BaseGridView.qml:122 ui/Main.qml:94
+#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Zamatzen…"
 
-#: ui/components/BaseGridView.qml:128
+#: ui/components/BaseGridView.qml:129
 #, kde-format
 msgid "No videos"
 msgstr "Bideorik ez"
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
 msgstr "Gehitu jotze-zerrendara"
@@ -178,7 +178,7 @@ msgstr "Bideoak"
 msgid "Search"
 msgstr "Bilatu"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:263
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -596,22 +596,22 @@ msgstr "Joera"
 msgid "Picture in Picture"
 msgstr "Irudiz-irudi"
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ikustaldi"
 
-#: ui/videoplayer/VideoPlayer.qml:329
+#: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 atsegin"
 
-#: ui/videoplayer/VideoPlayer.qml:396
+#: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
 msgstr "Ipini ilaran"
 
-#: ui/videoplayer/VideoPlayer.qml:407
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
 msgstr "Gomendatuta"
