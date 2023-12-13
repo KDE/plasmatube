@@ -1,18 +1,18 @@
 # translation of plasmatube.po to Slovak
-# Roman Paholík <wizzardsk@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Roman Paholík <wizzardsk@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2022-04-15 19:19+0200\n"
+"PO-Revision-Date: 2023-12-12 19:20+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
@@ -46,7 +46,7 @@ msgstr ""
 #: main.cpp:62
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:64 main.cpp:114
 #, kde-format
@@ -66,77 +66,76 @@ msgstr ""
 #: main.cpp:67
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "Tvorca"
 
 #: main.cpp:68
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Roman Paholík"
 
 #: main.cpp:68
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "wizzardsk@gmail.com"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Odbery"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Populárne"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "Všetko"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Hry"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Filmy"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Hudba"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Novinky"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "História"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Výsledky hľadania pre \"%1\""
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Nastavenia"
+msgstr "Nastavenia proxy"
 
 #: ui/components/BaseGridView.qml:47
 #, kde-format
@@ -148,18 +147,17 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "Načítava sa…"
 
 #: ui/components/BaseGridView.qml:129
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Videá"
+msgstr "Žiadne videá"
 
 #: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "Pridať do zoznamu skladieb"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -185,23 +183,22 @@ msgid "Load more"
 msgstr ""
 
 #: ui/components/PlaylistGridItem.qml:49
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "Videá"
-msgstr[1] "Videá"
-msgstr[2] "Videá"
+msgstr[0] "%1 video"
+msgstr[1] "%1 videá"
+msgstr[2] "%1 videí"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Zdieľanie zlyhalo"
 
 #: ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Zdieľať"
 
 #: ui/components/Sidebar.qml:87
 #, kde-format
@@ -211,16 +208,15 @@ msgstr ""
 #: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Zoznamy skladieb"
 
 #: ui/components/Sidebar.qml:137
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "História"
 
 #: ui/components/Sidebar.qml:153
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavenia"
@@ -233,7 +229,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
@@ -248,7 +244,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Pridať zdroj"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
@@ -258,12 +254,12 @@ msgstr ""
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Odhlásiť (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Prihlásiť sa (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
@@ -273,17 +269,17 @@ msgstr ""
 #: ui/components/VideoGridItem.qml:146
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 pohľady • %2"
 
 #: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 pohľady"
 
 #: ui/components/VideoListItem.qml:180
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: ui/components/VideoMenu.qml:24
 #, kde-format
@@ -313,12 +309,12 @@ msgstr ""
 #: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Pridať do zoznamu skladieb..."
 
 #: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Odstrániť zo zoznamu skladieb"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
@@ -369,13 +365,13 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Pridať %1"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Vitajte"
 
 #: ui/loginflow/WelcomePage.qml:27
 #, kde-format
@@ -414,10 +410,9 @@ msgstr ""
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Odhlásiť sa"
+msgstr "Prihlásenie"
 
 #: ui/LoginPage.qml:57
 #, kde-format
@@ -427,7 +422,7 @@ msgstr "Používateľské meno"
 #: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: ui/LoginPage.qml:93
 #, kde-format
@@ -443,22 +438,22 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "Prehrať"
 
 #: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Zoradiť podľa:"
 
 #: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Hodnotenie"
 
 #: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Relevancia"
 
 #: ui/SearchPage.qml:117
 #, kde-format
@@ -475,7 +470,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Upraviť zdroj"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -506,7 +501,7 @@ msgstr "Odhlásiť sa"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Odstrániť zdroj"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
@@ -519,7 +514,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Odstrániť zdroj"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
@@ -537,38 +532,37 @@ msgstr ""
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Predvolené systémom"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Hostiteľ"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "Používateľské meno"
+msgstr "Používateľ"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Použiť"
 
 #: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Zdroje"
 
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
@@ -583,7 +577,7 @@ msgstr ""
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Informácie o KDE"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -599,7 +593,7 @@ msgstr ""
 #: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 zobrazení"
 
 #: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
@@ -609,18 +603,18 @@ msgstr ""
 #: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Fronta"
 
 #: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Odporúčané"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Vyčistiť"
 
 #~ msgid "No results"
 #~ msgstr "Žiadne výsledky"
