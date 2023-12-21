@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the plasmatube package.
 #
 # Automatically generated, 2022.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2023-10-21 18:06+0900\n"
+"PO-Revision-Date: 2023-12-20 17:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -138,16 +138,15 @@ msgstr "「%1」的搜尋結果"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "設定"
+msgstr "代理伺服器設定"
 
 #: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr ""
+msgstr "伺服器連線失敗：%1。請檢查您的代理伺服器設定。"
 
 #: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
@@ -233,27 +232,27 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "切換來源"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "新增來源"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "新增影片來源"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
@@ -289,17 +288,17 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "現在播放"
 
 #: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "接下來播放"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "在子母畫面中播放"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
@@ -312,104 +311,96 @@ msgid "Mark as watched"
 msgstr "標記為已觀看"
 
 #: ui/components/VideoMenu.qml:70
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgid "Add to Playlist…"
-msgstr "新增至播放清單"
+msgstr "新增至播放清單…"
 
 #: ui/components/VideoMenu.qml:77
-#, fuzzy, kde-format
-#| msgid "Remove from playlist"
+#, kde-format
 msgid "Remove from Playlist"
 msgstr "從播放清單中移除"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr "新增 Invidious 來源"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "選取一個實體"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "Invidious"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "找不到公開實體。"
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "新增 PeerTube 來源"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "新增 Piped 來源"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "新增 %1"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "歡迎"
 
 #: ui/loginflow/WelcomePage.qml:27
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "關於 PlasmaTube"
+msgstr "歡迎來到 PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube 需要至少有一個影片來源。"
 
 #: ui/loginflow/WelcomePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Invidious"
+msgstr "新增 Invidious 來源"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "新增 PeerTube 來源"
 
 #: ui/loginflow/WelcomePage.qml:67
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "新增 Piped 來源"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -417,10 +408,9 @@ msgid "Sign in"
 msgstr "登入"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "已成功登入為 %1。"
+msgstr "已成功登入！"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:122
@@ -449,11 +439,10 @@ msgid "Password must not be empty!"
 msgstr "密碼不能是空白的！"
 
 #: ui/PlaylistPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "播放清單"
+msgstr "播放"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -485,7 +474,7 @@ msgstr "觀看次數"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "編輯來源"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -516,74 +505,73 @@ msgstr "登出"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "移除來源"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "無法移除唯一的來源。"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "移除來源"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "您確定要移除這個來源嗎？"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "網路代理伺服器"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "系統預設值"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "主機"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "連接埠"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "使用者名稱"
+msgstr "使用者"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "套用"
 
 #: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "來源"
 
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "網路代理伺服器"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
@@ -604,7 +592,7 @@ msgstr "發燒影片"
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "子母畫面"
 
 #: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
@@ -619,18 +607,18 @@ msgstr "%1 個喜歡"
 #: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "待播清單"
 
 #: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "建議"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #~ msgid "No results"
 #~ msgstr "沒有結果"
