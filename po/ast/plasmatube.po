@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2023-11-03 22:56+0100\n"
+"PO-Revision-Date: 2023-12-15 14:10+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -27,7 +27,7 @@ msgstr ""
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "El sirvidor devolvió un ficheru JSON que nun ye válidu."
+msgstr "El sirvidor devolvió un ficheru JSON que ye inválidu."
 
 #: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
 #: api/piped/pipedapi.cpp:312
@@ -349,7 +349,7 @@ msgstr ""
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
@@ -436,11 +436,10 @@ msgid "Password must not be empty!"
 msgstr ""
 
 #: ui/PlaylistPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Llistes de reproducción"
+msgstr ""
 
 #: ui/SearchPage.qml:90
 #, kde-format
