@@ -1,14 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2023-10-28 09:28+0200\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"PO-Revision-Date: 2023-12-23 11:53+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -292,15 +292,14 @@ msgid "Play Now"
 msgstr "Odtwórz teraz"
 
 #: ui/components/VideoMenu.qml:34
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Odtwórz teraz"
+msgstr "Odtwórz następny"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr "Odtwarzaj Obraz-w-Obrazie"
+msgstr "Odtwórz obraz-w-obrazie"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
@@ -441,11 +440,10 @@ msgid "Password must not be empty!"
 msgstr "Hasło nie może być puste!"
 
 #: ui/PlaylistPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Odtwórz teraz"
+msgstr "Odtwórz"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -610,18 +608,18 @@ msgstr "%1 polubienia"
 #: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Do kolejki"
 
 #: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Zalecane"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Wyczyść"
 
 #~ msgid "No results"
 #~ msgstr "Nie ma żadnych wyników"
