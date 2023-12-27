@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasmatube",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.6",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "plasmatube",
     "tags": ["nightly"],
@@ -17,7 +17,6 @@
     "separate-locales": false,
 
     "modules": [
-        "flatpak/kf6.json",
         "flatpak/kirigami-addons.json",
         "flatpak/mpv.json",
         "flatpak/python3-yt-dlp.json",
