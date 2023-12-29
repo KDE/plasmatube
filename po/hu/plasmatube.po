@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2023-12-26 17:47+0100\n"
+"PO-Revision-Date: 2023-12-28 11:03+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -131,36 +131,37 @@ msgstr "Előzmények"
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Keresési eredmények - „%1”"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Proxybeállítások"
 
 #: ui/components/BaseGridView.qml:47
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Nem sikerült kapcsolódni a kiszolgálóhoz: %1. Ellenőrizze a "
+"proxybeállításokat."
 
 #: ui/components/BaseGridView.qml:123 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "Betöltés…"
 
 #: ui/components/BaseGridView.qml:129
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "Videók"
+msgstr "Nincsenek videók"
 
 #: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "Hozzáadás a lejátszólistához"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -177,229 +178,228 @@ msgstr "Keresés"
 #: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: ui/components/Comments.qml:91
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Több betöltése"
 
 #: ui/components/PlaylistGridItem.qml:49
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "Videók"
-msgstr[1] "Videók"
+msgstr[0] "%1 videó"
+msgstr[1] "%1 videó"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Megosztás sikertelen"
 
 #: ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: ui/components/Sidebar.qml:87
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Népszerű"
 
 #: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Lejátszólisták"
 
 #: ui/components/Sidebar.qml:137
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Előzmények"
 
 #: ui/components/Sidebar.qml:153
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "Invidious"
 
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Forrásváltás"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Forrás hozzáadása"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Új videóforrás hozzáadása"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Leiratkozás (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Feliratkozás (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Jelentkezzen be, hogy feliratkozhasson csatornákra."
 
 #: ui/components/VideoGridItem.qml:146
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 megtekintés • %2"
 
 #: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 megtekintés"
 
 #: ui/components/VideoListItem.qml:180
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Lejátszás most"
 
 #: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "Következő lejátszása"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Lejátszás kép a képben módban"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "Megjelölés meg nem nézettként"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "Megjelölés megnézettként"
 
 #: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Hozzáadás a lejátszólistához…"
 
 #: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Eltávolítás a lejátszólistáról"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Invidious forrás hozzáadása"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Válasszon egy példányt"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
 msgid "invidious.io"
-msgstr ""
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "Nem találhatók nyilvános példányok."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube forrás hozzáadása"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Piped forrás hozzáadása"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "%1 hozzáadása"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Üdvözöljük"
 
 #: ui/loginflow/WelcomePage.qml:27
 #, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr ""
+msgstr "Üdvözli a PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "A PlasmaTube használatához legalább egy videóforrás szükséges."
 
 #: ui/loginflow/WelcomePage.qml:43
 #, kde-format
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Invidious forrás hozzáadása"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "PeerTube forrás hozzáadása"
 
 #: ui/loginflow/WelcomePage.qml:67
 #, kde-format
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Piped forrás hozzáadása"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -407,17 +407,15 @@ msgid "Sign in"
 msgstr "Bejelentkezés"
 
 #: ui/LoginPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
+#, kde-format
 msgid "Successfully logged in!"
-msgstr "Sikeres bejelentkezés, mint %1."
+msgstr "Sikeres bejelentkezés."
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgid "Log in"
-msgstr "Kijelentkezés"
+msgstr "Bejelentkezés"
 
 #: ui/LoginPage.qml:57
 #, kde-format
@@ -427,55 +425,55 @@ msgstr "Felhasználónév"
 #: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Jelszó"
 
 #: ui/LoginPage.qml:93
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "A felhasználónév nem lehet üres."
 
 #: ui/LoginPage.qml:98
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "A jelszó nem lehet üres."
 
 #: ui/PlaylistPage.qml:43
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "Lejátszás"
 
 #: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Rendezés:"
 
 #: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Értékelés"
 
 #: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Relevancia"
 
 #: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Feltöltés dátuma"
 
 #: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Megtekintésszám"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Forrás szerkesztése"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -490,12 +488,12 @@ msgstr "Jelenleg bejelentkezve, mint %1."
 #: ui/settings/InvidiousSourcePage.qml:55
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Automatikus lejátszás"
 
 #: ui/settings/InvidiousSourcePage.qml:69
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "Alapértelmezett honlap"
 
 #: ui/settings/InvidiousSourcePage.qml:129
 #, kde-format
@@ -506,27 +504,27 @@ msgstr "Kijelentkezés"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Forrás eltávolítása"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Nem lehet eltávolítani az egyetlen forrást."
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Forrás eltávolítása"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Biztosan el szeretné távolítani ezt a forrást?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -588,27 +586,27 @@ msgstr "A KDE névjegye"
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr ""
+msgstr "Népszerű"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Kép a képben"
 
 #: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 megtekintés"
 
 #: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 kedvelés"
 
 #: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Lejátszási sor"
 
 #: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
