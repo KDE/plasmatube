@@ -3,14 +3,14 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022, 2023.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
+# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 #
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2023-12-18 01:45+0100\n"
+"PO-Revision-Date: 2023-12-21 18:59+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -30,13 +30,13 @@ msgstr "Der Benutzername oder das Passwort ist falsch."
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "Der Server meldete ungültiges JSON."
+msgstr "Der Server meldet ungültiges JSON."
 
 #: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr "Der Server meldete den Statuscode %1 zurück"
+msgstr "Der Server meldet den Statuscode %1"
 
 #: controllers/logincontroller.cpp:45
 #, kde-format
@@ -77,23 +77,23 @@ msgstr "Ersteller"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Johannes Obermayr"
 
 #: main.cpp:68
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "johannesobermayr@gmx.de"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Abonnements"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr "Populär"
+msgstr "Beliebt"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
@@ -129,12 +129,12 @@ msgstr "Nachrichten"
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr "Verlauf"
+msgstr "Geschichte"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "Suchergebnisse für „\"%1“"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
@@ -162,7 +162,7 @@ msgstr "Keine Videos"
 #: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "Zur Wiedergabeliste hinzufügen"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -207,7 +207,7 @@ msgstr "Teilen"
 #: ui/components/Sidebar.qml:87
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Aktuelle Trends"
 
 #: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
@@ -233,7 +233,7 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
@@ -258,12 +258,12 @@ msgstr ""
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Kündigen (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Abonnieren (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
@@ -293,7 +293,7 @@ msgstr "Jetzt wiedergeben"
 #: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
-msgstr "Nächstes wiedergeben"
+msgstr "Nächste wiedergeben"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
@@ -318,7 +318,7 @@ msgstr "Zur Wiedergabeliste hinzufügen …"
 #: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Aus Wiedergabeliste entfernen"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
@@ -352,7 +352,7 @@ msgstr "PeerTube-Quelle hinzufügen"
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, fuzzy, kde-format
@@ -364,7 +364,7 @@ msgstr "Invidious"
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
@@ -491,7 +491,7 @@ msgstr "Aktuell angemeldet als %1."
 #: ui/settings/InvidiousSourcePage.qml:55
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "Automatische Wiedergabe"
 
 #: ui/settings/InvidiousSourcePage.qml:69
 #, kde-format
@@ -507,7 +507,7 @@ msgstr "Abmelden"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "Quelle entfernen"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
@@ -517,7 +517,9 @@ msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Remove Source"
 msgctxt "@title"
 msgid "Remove Source"
 msgstr "Quelle entfernen"
@@ -548,7 +550,7 @@ msgstr "HTTP"
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Rechner"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
@@ -573,7 +575,7 @@ msgstr "Quellen"
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
-msgstr "Netzwerkproxy"
+msgstr "Netzwerk-Proxy"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
@@ -589,7 +591,7 @@ msgstr "Über KDE"
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr ""
+msgstr "Angesagt"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
@@ -620,7 +622,7 @@ msgstr "Empfohlen"
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Leeren"
 
 #~ msgid "No results"
 #~ msgstr "Keine Ergebnisse"
