@@ -113,7 +113,7 @@ protected:
             reply->deleteLater();
         });
         connect(reply, &QNetworkReply::errorOccurred, this, [=](QNetworkReply::NetworkError error) {
-            qWarning() << "Error for" << reply->url() << reply->errorString();
+            qWarning() << "Error for" << error << reply->url() << reply->errorString();
             interface->reportResult(std::pair(error, reply->errorString()));
             interface->reportFinished();
             reply->deleteLater();

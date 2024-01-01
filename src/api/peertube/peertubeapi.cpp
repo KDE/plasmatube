@@ -14,6 +14,9 @@
 
 const QString API_VIDEOS = QStringLiteral("/api/v1/videos");
 const QString API_CHANNEL = QStringLiteral("/api/v1/video-channels");
+const QString API_SEARCH_VIDEOS = QStringLiteral("/api/v1/search/videos");
+const QString API_SEARCH_VIDEO_CHANNELS = QStringLiteral("/api/v1/search/video-channels");
+const QString API_SEARCH_VIDEO_PLAYLISTS = QStringLiteral("/api/v1/search/video-playlists");
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -75,9 +78,43 @@ QString PeerTubeApi::resolveVideoUrl(QStringView videoId)
 
 QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters)
 {
-    // return requestVideoList(Search, QStringLiteral(""), parameters.toQueryParameters());
-    Q_UNUSED(parameters)
-    return {};
+    QHash<QString, QString> searchParameters = {
+        {u"search"_s, parameters.query()},
+        {u"start"_s, QString::number(parameters.page())},
+    };
+
+    if (parameters.sortBy() == SearchParameters::SortBy::UploadDate) {
+        searchParameters[u"sort"_s] = u"-createdAt"_s;
+    }
+    auto url = videoListUrl(Search, QString(), searchParameters);
+
+    auto request = QNetworkRequest(url);
+
+    return get<SearchListResult>(std::move(request), [=](QNetworkReply *reply) -> SearchListResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto obj = doc.object();
+
+            QList<SearchResult> results;
+            const auto resultsJson = obj["data"_L1].toArray();
+            for (auto value : resultsJson) {
+                if (value.isObject()) {
+                    auto result = SearchResult::fromJson(value.toObject());
+
+                    auto video = result.video();
+                    auto newThumbnails = video.videoThumbnails();
+                    for (auto &thumbnail : newThumbnails) {
+                        thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
+                    }
+                    video.setVideoThumbnails(newThumbnails);
+                    result.setVideo(video);
+                    results << result;
+                }
+            }
+
+            return results;
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestFeed(qint32 page)
@@ -318,8 +355,17 @@ QUrl PeerTubeApi::videoUrl(QStringView videoId) const
 
 QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters) const
 {
-    // TODO: implement other query types
-    QString urlString = API_VIDEOS;
+    QString urlString;
+    switch (queryType) {
+    case Search:
+        urlString = API_SEARCH_VIDEOS;
+        break;
+    default:
+        // TODO: implement other query types
+        urlString = API_VIDEOS;
+        break;
+    }
+
     auto query = genericUrlQuery();
 
     if (!urlExtension.isEmpty()) {

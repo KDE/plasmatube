@@ -8,8 +8,10 @@ using namespace Qt::StringLiterals;
 
 SearchResult SearchResult::fromJson(const QJsonObject &obj, SearchResult &info)
 {
+    const bool isPeerTube = obj.contains("shortUUID"_L1);
+
     // Piped calls regular videos "streams" for some reason
-    if (obj["type"_L1] == "video"_L1 || obj["type"_L1] == "stream"_L1) {
+    if (isPeerTube || obj["type"_L1] == "video"_L1 || obj["type"_L1] == "stream"_L1) {
         info.m_type = Type::Video;
         info.m_videoBasicInfo = VideoBasicInfo::fromJson(obj);
     } else if (obj["type"_L1] == "channel"_L1) {
@@ -34,6 +36,11 @@ VideoBasicInfo const &SearchResult::video() const
 {
     Q_ASSERT(m_type == Type::Video);
     return *m_videoBasicInfo;
+}
+
+void SearchResult::setVideo(const VideoBasicInfo &video)
+{
+    m_videoBasicInfo = video;
 }
 
 Channel const &SearchResult::channel() const

@@ -27,6 +27,7 @@ public:
     Type type() const;
 
     VideoBasicInfo const &video() const;
+    void setVideo(const VideoBasicInfo &video);
 
     Channel const &channel() const;
 

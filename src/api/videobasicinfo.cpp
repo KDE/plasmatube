@@ -21,8 +21,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_author = channel.value("displayName"_L1).toString();
         info.m_authorId = channel.value("name"_L1).toString();
         info.m_authorUrl = channel.value("url"_L1).toString();
-        // FIXME: 2038 problem (timestamp is only 32 bit long)
-        info.m_published = QDateTime::fromSecsSinceEpoch(obj.value("publishedAt"_L1).toInt());
+        info.m_published = QDateTime::fromString(obj.value("createdAt"_L1).toString(), Qt::ISODate);
         info.m_description = obj.value("description"_L1).toString();
         info.m_descriptionHtml = obj.value("description"_L1).toString();
         info.m_liveNow = obj.value("isLive"_L1).toBool(false);
@@ -31,7 +30,12 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_upcoming = false;
 
         VideoThumbnail thumbnail;
-        thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnailPath"_L1).toString()));
+        const auto thumbnailPath = obj.value("thumbnailPath"_L1).toString();
+        if (thumbnailPath.startsWith(u'/')) {
+            thumbnail.setUrl(QUrl(obj.value("thumbnailPath"_L1).toString()));
+        } else {
+            thumbnail.setUrl(QUrl::fromUserInput(thumbnailPath));
+        }
         info.m_videoThumbnails.push_back(thumbnail);
     } else if (isInvidious) {
         info.m_videoId = obj.value("videoId"_L1).toString();
