@@ -1,27 +1,27 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# A S Alam <aalam@satluj.org>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 A S Alam <aalam@satluj.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-10 01:57+0000\n"
-"PO-Revision-Date: 2021-06-21 08:15-0700\n"
-"Last-Translator: A S Alam <aalam@satluj.org>\n"
-"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2024-01-01 09:35-0600\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ ਜਾਂ ਪਾਸਵਰਡ ਗਲਤ ਹੈ।"
 
 #: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
 #: api/piped/pipedapi.cpp:303
@@ -43,101 +43,101 @@ msgstr ""
 #: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਚਲਾਈ ਜਾ ਰਹੀ ਹੈ"
 
 #: main.cpp:62
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ"
 
 #: main.cpp:64 main.cpp:114
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "ਯੂਟਿਊਬ ਕਲਾਈਂਟ"
 
 #: main.cpp:66
 #, kde-format
 msgid "© Linus Jahn"
-msgstr ""
+msgstr "© Linus Jahn"
 
 #: main.cpp:67
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "ਲੀਨਕਸ ਜਾਨ"
 
 #: main.cpp:67
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "ਨਿਰਮਾਤਾ"
 
 #: main.cpp:68
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ ੨੦੨੪"
 
 #: main.cpp:68
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "aalam@punlinux.org"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "ਮੈਂਬਰੀ"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "ਹਰਮਨਪਿਆਰੇ"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "ਸਭ"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "ਖੇਡਾਂ"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "ਫਿਲਮਾਂ"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "ਸੰਗੀਤ"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "ਖ਼ਬਰਾਂ"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "ਅਤੀਤ"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "\"%1\" ਲਈ ਖੋਜ ਨਤੀਜੇ"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
-msgstr ""
+msgstr "ਪਰਾਕਸੀ ਸੈਟਿੰਗਾਂ"
 
 #: ui/components/BaseGridView.qml:47
 #, kde-format
@@ -149,57 +149,57 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
-msgstr ""
+msgstr "…ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ui/components/BaseGridView.qml:129
 #, kde-format
 msgid "No videos"
-msgstr ""
+msgstr "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ"
 
 #: ui/components/BaseGridView.qml:154
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "ਪਲੇਅਲਿਸਟ ਵਿੱਚ ਜੋੜੋ"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "ਵੀਡੀਓ"
 
 #: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
 #: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
 #: ui/SearchPage.qml:18
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "ਖੋਜੋ"
 
 #: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: ui/components/Comments.qml:91
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "ਹੋਰ ਲੋਡ ਕਰੋ"
 
 #: ui/components/PlaylistGridItem.qml:49
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ਵੀਡੀਓ"
+msgstr[1] "%1 ਵੀਡੀਓ"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "ਸਾਂਝਾ ਕਰਨਾ ਅਸਫ਼ਲ ਹੈ"
 
 #: ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "ਸਾਂਝਾ ਕਰੋ"
 
 #: ui/components/Sidebar.qml:87
 #, kde-format
@@ -209,18 +209,18 @@ msgstr ""
 #: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "ਪਲੇਅਲਿਸਟਾਂ"
 
 #: ui/components/Sidebar.qml:137
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "ਅਤੀਤ"
 
 #: ui/components/Sidebar.qml:153
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
 #, kde-format
@@ -230,7 +230,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "ਪੀਅਰ-ਟਿਊਬ"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
@@ -240,82 +240,82 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "ਸਰੋਤ ਬਦਲੋ"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "ਸਰੋਤ ਜੋੜੋ"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "ਨਵਾਂ ਵੀਡੀਓ ਸਰੋਤ ਜੋੜੋ"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "ਮੈਂਬਰੀ ਹਟਾਓ (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "ਮੈਂਬਰ ਬਣੋ (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "ਚੈਨਲਾਂ ਲਈ ਮੈਂਬਰ ਬਣਨ ਵਾਸਤੇ ਲਾਗਇਨ ਕਰੋ।"
 
 #: ui/components/VideoGridItem.qml:146
 #, kde-format
 msgid "• %1 views • %2"
-msgstr ""
+msgstr "• %1 ਝਲਕਾਂ • %2"
 
 #: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
-msgstr ""
+msgstr " • %1 ਝਲਕਾਂ"
 
 #: ui/components/VideoListItem.qml:180
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: ui/components/VideoMenu.qml:24
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "ਹੁਣ ਚਲਾਓ"
 
 #: ui/components/VideoMenu.qml:34
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "ਅੱਗੇ ਚਲਾਓ"
 
 #: ui/components/VideoMenu.qml:42
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "ਤਸਵੀਰ-ਵਿੱਚ-ਤਸਵੀਰ ਵਜੋਂ ਚਲਾਓ"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "ਨਾ-ਵੇਖੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
 #: ui/components/VideoMenu.qml:56
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "ਵੇਖੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
 #: ui/components/VideoMenu.qml:70
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "…ਪਲੇਅਲਿਸਟ ਵਿੱਚ ਜੋੜੋ"
 
 #: ui/components/VideoMenu.qml:77
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "ਪਲੇਅ-ਲਿਸਟ 'ਚੋਂ ਹਟਾਓ"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
@@ -332,7 +332,7 @@ msgstr ""
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
 msgid "invidious.io"
-msgstr ""
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #: ui/loginflow/AddPipedPage.qml:67
@@ -349,7 +349,7 @@ msgstr ""
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
@@ -366,23 +366,23 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "%1 ਨੂੰ ਜੋੜੋ"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "ਜੀ ਆਇਆਂ ਨੂੰ"
 
 #: ui/loginflow/WelcomePage.qml:27
 #, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr ""
+msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵੀਡੀਓ ਸਰੋਤ ਚਾਹੀਦਾ ਹੈ।"
 
 #: ui/loginflow/WelcomePage.qml:43
 #, kde-format
@@ -402,220 +402,220 @@ msgstr ""
 #: ui/LoginPage.qml:21
 #, kde-format
 msgid "Sign in"
-msgstr ""
+msgstr "ਸਾਈਨ ਇਨ"
 
 #: ui/LoginPage.qml:30
 #, kde-format
 msgid "Successfully logged in!"
-msgstr ""
+msgstr "ਕਾਮਯਾਬੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕੀਤਾ!"
 
 #: ui/LoginPage.qml:48 ui/LoginPage.qml:86
 #: ui/settings/InvidiousSourcePage.qml:122
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "ਲਾਗ ਇਨ"
 
 #: ui/LoginPage.qml:57
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ"
 
 #: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ"
 
 #: ui/LoginPage.qml:93
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ!"
 
 #: ui/LoginPage.qml:98
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ!"
 
 #: ui/PlaylistPage.qml:43
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "ਚਲਾਓ"
 
 #: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "ਲੜੀਬੱਧ:"
 
 #: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "ਰੇਟਿੰਗ"
 
 #: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "ਢੁੱਕਵਾਂ"
 
 #: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "ਅੱਪਲੋਡ ਦੀ ਤਾਰੀਖ"
 
 #: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "ਵੇਖਣ ਦੀ ਗਿਣਤੀ"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "ਸਰੋਤ ਨੂੰ ਸੋਧੋ"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "ਖਾਤਾ"
 
 #: ui/settings/InvidiousSourcePage.qml:30
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr ""
+msgstr "ਇਸ ਵੇਲੇ %1 ਵਜੋਂ ਲਾਗਇਨ ਹੋ।"
 
 #: ui/settings/InvidiousSourcePage.qml:55
 #, kde-format
 msgid "Autoplay"
-msgstr ""
+msgstr "ਆਪੇ-ਚਲਾਓ"
 
 #: ui/settings/InvidiousSourcePage.qml:69
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "ਮੂਲ ਮੁੱਖ-ਸਫ਼ਾ"
 
 #: ui/settings/InvidiousSourcePage.qml:129
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "ਲਾਗ ਆਉਟ"
 
 #: ui/settings/InvidiousSourcePage.qml:139
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "ਸਰੋਤ ਨੂੰ ਹਟਾਓ"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "ਆਖਰੀ ਸਰੋਤ ਨੂੰ ਹਟਾਇਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ।"
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "ਸਰੋਤ ਨੂੰ ਹਟਾਓ"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "ਕੀ ਤੁਸੀਂ ਇਸ ਸਰੋਤ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਪਰਾਕਸੀ"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "ਸਿਸਟਮ ਮੂਲ"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "ਹੋਸਟ"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "ਪੋਰਟ"
 
 #: ui/settings/NetworkProxyPage.qml:81
 #, kde-format
 msgid "User"
-msgstr ""
+msgstr "ਵਰਤੋਂਕਾਰ"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "ਲਾਗੂ ਕਰੋ"
 
 #: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "ਸਰੋਤ"
 
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਪਰਾਕਸੀ"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਬਾਰੇ"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "ਕੇਡੀਈ ਬਾਰੇ"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr ""
+msgstr "ਰੁਝਾਨ"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "ਤਸਵੀਰ-ਵਿੱਚ-ਤਸਵੀਰ"
 
 #: ui/videoplayer/VideoPlayer.qml:306
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "%1 ਵਾਰ ਵੇਖਿਆ"
 
 #: ui/videoplayer/VideoPlayer.qml:314
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 ਪਸੰਦ"
 
 #: ui/videoplayer/VideoPlayer.qml:381
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "ਕਤਾਰ"
 
 #: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "ਸਿਫਾਰਸ਼ੀ"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "ਮਿਟਾਓ"
 
 #~ msgid "Fullscreen"
 #~ msgstr "ਪੂਰੀ ਸਕਰੀਨ"
