@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-10 01:57+0000\n"
+"POT-Creation-Date: 2024-01-04 01:34+0000\n"
 "PO-Revision-Date: 2023-10-08 23:55+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "사용자 이름이나 암호가 잘못되었습니다."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "서버에서 올바른 JSON을 반환하지 않았습니다."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"

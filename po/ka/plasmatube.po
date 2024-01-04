@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-10 01:57+0000\n"
+"POT-Creation-Date: 2024-01-04 01:34+0000\n"
 "PO-Revision-Date: 2023-11-13 10:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"

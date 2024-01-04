@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-10 01:57+0000\n"
+"POT-Creation-Date: 2024-01-04 01:34+0000\n"
 "PO-Revision-Date: 2023-12-20 17:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.4\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "使用者名稱或密碼錯誤。"
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "伺服器沒有回傳有效的 JSON。"
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"

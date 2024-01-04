@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-10 01:57+0000\n"
+"POT-Creation-Date: 2024-01-04 01:34+0000\n"
 "PO-Revision-Date: 2023-02-09 14:47\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Crowdin-File: /main/be/plasmatube/plasmatube.po\n"
 "X-Crowdin-File-ID: 8964\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:57
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Няправільнае імя карыстальніка або пароль."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:244
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Сервер вярнуў несапраўдны JSON."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:253
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"
