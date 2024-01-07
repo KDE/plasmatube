@@ -13,6 +13,8 @@ import org.kde.plasmatube
 ColumnLayout {
     id: root
 
+    spacing: Kirigami.Units.mediumSpacing
+
     function loadComments(vid) {
         commentsModel.fillComments(vid)
     }
@@ -46,9 +48,8 @@ ColumnLayout {
                 id: layout
 
                 Layout.fillWidth: true
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
 
-                spacing: 0
+                spacing: Kirigami.Units.mediumSpacing
                 clip: true
 
                 Kirigami.Heading {
@@ -68,6 +69,7 @@ ColumnLayout {
                     text: content
                     verticalAlignment: Text.AlignTop
                     wrapMode: Text.WordWrap
+                    textFormat: Text.RichText
 
                     onHoveredLinkChanged: if (hoveredLink.length > 0 && hoveredLink !== "1") {
                         applicationWindow().hoverLinkIndicator.text = hoveredLink;
