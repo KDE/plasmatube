@@ -11,6 +11,8 @@ QQC2.Menu {
 
     property bool isWatched
     required property string videoId
+    required property string channelName
+    required property string channelId
     property bool shouldRemoveFromPlaylist
 
     signal markWatched()
@@ -78,6 +80,14 @@ QQC2.Menu {
         icon.name: "remove"
         onTriggered: root.removeFromPlaylist()
         visible: root.shouldRemoveFromPlaylist && (PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn)
+    }
+
+    QQC2.MenuSeparator {}
+
+    QQC2.MenuItem {
+        text: root.channelName
+        icon.name: "user"
+        onTriggered: pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: root.channelName, authorId: root.channelId});
     }
 
     QQC2.MenuSeparator {}

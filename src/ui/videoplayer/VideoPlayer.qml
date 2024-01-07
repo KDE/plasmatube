@@ -33,6 +33,8 @@ Kirigami.ScrollablePage {
     property string currentVideoId
     property int currentVideoIndex
     property string currentVideoTitle
+    property string currentChannelName
+    property string currentChannelId
 
     readonly property string videoName: video.title
     readonly property string channelName: video.author
@@ -419,6 +421,8 @@ Kirigami.ScrollablePage {
                         currentVideoId = vid;
                         currentVideoIndex = index;
                         currentVideoTitle = title;
+                        currentChannelName = author;
+                        currentChannelId = authorId;
                         videoMenu.isWatched = watched;
                         videoMenu.popup();
                     }
@@ -431,6 +435,8 @@ Kirigami.ScrollablePage {
         id: videoMenu
 
         videoId: currentVideoId
+        channelName: currentChannelName
+        channelId: currentChannelId
 
         onMarkWatched: video.recommendedVideosModel().markAsWatched(currentVideoIndex)
         onMarkUnwatched: video.recommendedVideosModel().markAsUnwatched(currentVideoIndex)

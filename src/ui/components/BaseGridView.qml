@@ -18,6 +18,8 @@ GridView {
     property string currentVideoId
     property int currentVideoIndex
     property string currentVideoTitle
+    property string currentChannelName
+    property string currentChannelId
 
     readonly property real effectiveWidth: width - leftMargin - rightMargin
     readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
@@ -80,6 +82,8 @@ GridView {
                     currentVideoId = vid;
                     currentVideoIndex = index;
                     currentVideoTitle = title;
+                    currentChannelName = author;
+                    currentChannelId = authorId;
                     videoMenu.isWatched = watched;
                     videoMenu.popup();
                 }
@@ -134,6 +138,8 @@ GridView {
         id: videoMenu
 
         videoId: currentVideoId
+        channelName: currentChannelName
+        channelId: currentChannelId
 
         onMarkWatched: videoModel.markAsWatched(currentVideoIndex)
         onMarkUnwatched: videoModel.markAsUnwatched(currentVideoIndex)
