@@ -39,6 +39,7 @@ VideoSource::VideoSource(const QString &key, QObject *parent)
 
     fetchPreferences();
     fetchHistory();
+    fetchSubscriptions();
 }
 
 QString VideoSource::uuid() const
@@ -219,6 +220,10 @@ std::optional<bool> VideoSource::isSubscribedToChannel(const QString &jid) const
 
 void VideoSource::fetchSubscriptions()
 {
+    if (!loggedIn()) {
+        return;
+    }
+
     auto *watcher = new QFutureWatcher<QInvidious::SubscriptionsResult>();
     connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
         auto result = watcher->result();
