@@ -61,6 +61,30 @@ BaseGridItem {
                 visible: false
             }
 
+            Rectangle {
+                anchors.fill: parent
+                color: "darkgray"
+                visible: thumb.status !== Image.Ready
+
+                Row {
+                    anchors.centerIn: parent
+
+                    spacing: Kirigami.Units.mediumSpacing
+
+                    Repeater {
+                        model: 3
+
+                        delegate: Rectangle {
+                            width: 10
+                            height: 10
+                            radius: 10
+
+                            color: "gray"
+                        }
+                    }
+                }
+            }
+
             Text {
                 visible: !liveNow && text !== "00:00"
                 text: Utils.formatTime(length)
