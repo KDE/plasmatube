@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-08 01:35+0000\n"
 "PO-Revision-Date: 2024-01-01 09:35-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -139,24 +139,24 @@ msgstr "\"%1\" ਲਈ ਖੋਜ ਨਤੀਜੇ"
 msgid "Proxy Settings"
 msgstr "ਪਰਾਕਸੀ ਸੈਟਿੰਗਾਂ"
 
-#: ui/components/BaseGridView.qml:47
+#: ui/components/BaseGridView.qml:49
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
+#: ui/components/BaseGridView.qml:127 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "…ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ui/components/BaseGridView.qml:129
+#: ui/components/BaseGridView.qml:133
 #, kde-format
 msgid "No videos"
 msgstr "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ"
 
-#: ui/components/BaseGridView.qml:154
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "Add to playlist"
 msgstr "ਪਲੇਅਲਿਸਟ ਵਿੱਚ ਜੋੜੋ"
@@ -178,7 +178,7 @@ msgstr "ਖੋਜੋ"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: ui/components/Comments.qml:91
+#: ui/components/Comments.qml:93
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
@@ -267,7 +267,7 @@ msgstr "ਮੈਂਬਰ ਬਣੋ (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "ਚੈਨਲਾਂ ਲਈ ਮੈਂਬਰ ਬਣਨ ਵਾਸਤੇ ਲਾਗਇਨ ਕਰੋ।"
 
-#: ui/components/VideoGridItem.qml:146
+#: ui/components/VideoGridItem.qml:170
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 ਝਲਕਾਂ • %2"
@@ -282,37 +282,37 @@ msgstr " • %1 ਝਲਕਾਂ"
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:24
+#: ui/components/VideoMenu.qml:26
 #, kde-format
 msgid "Play Now"
 msgstr "ਹੁਣ ਚਲਾਓ"
 
-#: ui/components/VideoMenu.qml:34
+#: ui/components/VideoMenu.qml:36
 #, kde-format
 msgid "Play Next"
 msgstr "ਅੱਗੇ ਚਲਾਓ"
 
-#: ui/components/VideoMenu.qml:42
+#: ui/components/VideoMenu.qml:44
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "ਤਸਵੀਰ-ਵਿੱਚ-ਤਸਵੀਰ ਵਜੋਂ ਚਲਾਓ"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as unwatched"
 msgstr "ਨਾ-ਵੇਖੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as watched"
 msgstr "ਵੇਖੇ ਵਜੋਂ ਨਿਸ਼ਾਨ ਲਾਓ"
 
-#: ui/components/VideoMenu.qml:70
+#: ui/components/VideoMenu.qml:72
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "…ਪਲੇਅਲਿਸਟ ਵਿੱਚ ਜੋੜੋ"
 
-#: ui/components/VideoMenu.qml:77
+#: ui/components/VideoMenu.qml:79
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "ਪਲੇਅ-ਲਿਸਟ 'ਚੋਂ ਹਟਾਓ"
@@ -591,22 +591,22 @@ msgstr "ਰੁਝਾਨ"
 msgid "Picture in Picture"
 msgstr "ਤਸਵੀਰ-ਵਿੱਚ-ਤਸਵੀਰ"
 
-#: ui/videoplayer/VideoPlayer.qml:306
+#: ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ਵਾਰ ਵੇਖਿਆ"
 
-#: ui/videoplayer/VideoPlayer.qml:314
+#: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 ਪਸੰਦ"
 
-#: ui/videoplayer/VideoPlayer.qml:381
+#: ui/videoplayer/VideoPlayer.qml:383
 #, kde-format
 msgid "Queue"
 msgstr "ਕਤਾਰ"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:394
 #, kde-format
 msgid "Recommended"
 msgstr "ਸਿਫਾਰਸ਼ੀ"

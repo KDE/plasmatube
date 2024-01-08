@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-08 01:35+0000\n"
 "PO-Revision-Date: 2023-11-12 08:26+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -139,25 +139,25 @@ msgstr "Serĉrezultoj por \"%1\""
 msgid "Proxy Settings"
 msgstr "Prokuril-Agordoj"
 
-#: ui/components/BaseGridView.qml:47
+#: ui/components/BaseGridView.qml:49
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "Malsukcesis kontakti servilon: %1. Bonvolu kontroli viajn prokurilajn metojn."
 
-#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
+#: ui/components/BaseGridView.qml:127 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Ŝargante…"
 
-#: ui/components/BaseGridView.qml:129
+#: ui/components/BaseGridView.qml:133
 #, kde-format
 msgid "No videos"
 msgstr "Neniuj filmetoj"
 
-#: ui/components/BaseGridView.qml:154
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "Add to playlist"
 msgstr "Aldoni al ludlisto"
@@ -179,7 +179,7 @@ msgstr "Serĉi"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: ui/components/Comments.qml:91
+#: ui/components/Comments.qml:93
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
@@ -268,7 +268,7 @@ msgstr "Aboni (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Bonvolu ensaluti por aboni kanalojn."
 
-#: ui/components/VideoGridItem.qml:146
+#: ui/components/VideoGridItem.qml:170
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 rigardoj • %2"
@@ -283,37 +283,37 @@ msgstr " • %1 vidoj"
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:24
+#: ui/components/VideoMenu.qml:26
 #, kde-format
 msgid "Play Now"
 msgstr "Ludi Nun"
 
-#: ui/components/VideoMenu.qml:34
+#: ui/components/VideoMenu.qml:36
 #, kde-format
 msgid "Play Next"
 msgstr "Ludi Sekvantan"
 
-#: ui/components/VideoMenu.qml:42
+#: ui/components/VideoMenu.qml:44
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Ludi Bild-en-Bilde"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as unwatched"
 msgstr "Marki kiel neobservita"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as watched"
 msgstr "Marki kiel observita"
 
-#: ui/components/VideoMenu.qml:70
+#: ui/components/VideoMenu.qml:72
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Aldoni al Ludlisto…"
 
-#: ui/components/VideoMenu.qml:77
+#: ui/components/VideoMenu.qml:79
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Forigi el Ludlisto"
@@ -592,22 +592,22 @@ msgstr "Tendencaj"
 msgid "Picture in Picture"
 msgstr "Bild-en-Bildo"
 
-#: ui/videoplayer/VideoPlayer.qml:306
+#: ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "%1 views"
 msgstr "%1 vidoj"
 
-#: ui/videoplayer/VideoPlayer.qml:314
+#: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Ŝatoj"
 
-#: ui/videoplayer/VideoPlayer.qml:381
+#: ui/videoplayer/VideoPlayer.qml:383
 #, kde-format
 msgid "Queue"
 msgstr "Vico"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:394
 #, kde-format
 msgid "Recommended"
 msgstr "Rekomendita"

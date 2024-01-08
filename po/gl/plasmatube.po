@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-08 01:35+0000\n"
 "PO-Revision-Date: 2023-11-15 18:40+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -139,25 +139,25 @@ msgstr "Resultados da busca de «%1»."
 msgid "Proxy Settings"
 msgstr "Configuración do mandatario"
 
-#: ui/components/BaseGridView.qml:47
+#: ui/components/BaseGridView.qml:49
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "Fallou a conexión ao servidor: %1. Comproba a configuración do mandatario."
 
-#: ui/components/BaseGridView.qml:123 ui/Main.qml:95
+#: ui/components/BaseGridView.qml:127 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ui/components/BaseGridView.qml:129
+#: ui/components/BaseGridView.qml:133
 #, kde-format
 msgid "No videos"
 msgstr "Non hai vídeos."
 
-#: ui/components/BaseGridView.qml:154
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "Add to playlist"
 msgstr "Engadir á lista de reprodución"
@@ -179,7 +179,7 @@ msgstr "Buscar"
 msgid "Settings"
 msgstr "Configuración"
 
-#: ui/components/Comments.qml:91
+#: ui/components/Comments.qml:93
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
@@ -268,7 +268,7 @@ msgstr "Subscribirse (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Identifíquese para subscribirse a canles."
 
-#: ui/components/VideoGridItem.qml:146
+#: ui/components/VideoGridItem.qml:170
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 visualizacións • %2"
@@ -283,37 +283,37 @@ msgstr " • %1 visualizacións"
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:24
+#: ui/components/VideoMenu.qml:26
 #, kde-format
 msgid "Play Now"
 msgstr "Reproducir"
 
-#: ui/components/VideoMenu.qml:34
+#: ui/components/VideoMenu.qml:36
 #, kde-format
 msgid "Play Next"
 msgstr "Reproducir a seguinte"
 
-#: ui/components/VideoMenu.qml:42
+#: ui/components/VideoMenu.qml:44
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Reproducir en imaxe sobre imaxe"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as unwatched"
 msgstr "Marcar como non visto"
 
-#: ui/components/VideoMenu.qml:56
+#: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as watched"
 msgstr "Marcar como visto"
 
-#: ui/components/VideoMenu.qml:70
+#: ui/components/VideoMenu.qml:72
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Engadir á lista de reprodución…"
 
-#: ui/components/VideoMenu.qml:77
+#: ui/components/VideoMenu.qml:79
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Retirar da lista de reprodución"
@@ -592,22 +592,22 @@ msgstr "Tendencia"
 msgid "Picture in Picture"
 msgstr "Imaxe sobre imaxe"
 
-#: ui/videoplayer/VideoPlayer.qml:306
+#: ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizacións"
 
-#: ui/videoplayer/VideoPlayer.qml:314
+#: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 gústames"
 
-#: ui/videoplayer/VideoPlayer.qml:381
+#: ui/videoplayer/VideoPlayer.qml:383
 #, kde-format
 msgid "Queue"
 msgstr "Cola"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:394
 #, kde-format
 msgid "Recommended"
 msgstr "Recomendacións"
