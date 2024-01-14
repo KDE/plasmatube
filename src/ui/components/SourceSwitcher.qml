@@ -24,7 +24,7 @@ QQC2.Pane {
 
         spacing: 0
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: currentSourceDelegate
 
             text: root.selectedSource?.url
@@ -77,6 +77,7 @@ QQC2.Pane {
             header: Kirigami.Separator {}
 
             footer: Delegates.RoundedItemDelegate {
+            footer: QQC2.ItemDelegate {
                 id: addSourceDelegate
 
                 width: parent.width
@@ -137,13 +138,14 @@ QQC2.Pane {
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
 
-            delegate: Delegates.RoundedItemDelegate {
+            delegate: QQC2.ItemDelegate {
                 id: sourceDelegate
 
                 required property int index
                 required property var source
 
                 text: source.url
+                width: ListView.view.width
 
                 onClicked: {
                     if (PlasmaTube.sourceManager.selectedSource !== sourceDelegate.source) {

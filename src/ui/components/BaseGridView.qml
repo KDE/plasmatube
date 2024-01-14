@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import Qt.labs.qmlmodels
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
@@ -169,7 +168,7 @@ GridView {
                         id: playlistsModel
                     }
 
-                    delegate: Delegates.RoundedItemDelegate {
+                    delegate: QQC2.ItemDelegate {
                         text: model.title
 
                         Layout.fillWidth: true

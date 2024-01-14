@@ -7,7 +7,6 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.plasmatube
 
@@ -77,7 +76,7 @@ Kirigami.OverlayDrawer {
             id: pageButtonGroup
         }
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: trendingDelegate
 
             Layout.fillWidth: true
@@ -89,11 +88,12 @@ Kirigami.OverlayDrawer {
                 applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
                 checked = true;
             }
+            highlighted: checked
 
             QQC2.ButtonGroup.group: pageButtonGroup
         }
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: subscriptionsDelegate
 
             Layout.fillWidth: true
@@ -106,11 +106,12 @@ Kirigami.OverlayDrawer {
                 applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "SubscriptionsPage"));
                 checked = true;
             }
+            highlighted: checked
 
             QQC2.ButtonGroup.group: pageButtonGroup
         }
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: playslistsDelegate
 
             Layout.fillWidth: true
@@ -123,11 +124,12 @@ Kirigami.OverlayDrawer {
                 applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "PlaylistsPage"));
                 checked = true;
             }
+            highlighted: checked
 
             QQC2.ButtonGroup.group: pageButtonGroup
         }
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             id: historyDelegate
 
             Layout.fillWidth: true
@@ -140,6 +142,7 @@ Kirigami.OverlayDrawer {
                 applicationWindow().switchToPage(Qt.createComponent("org.kde.plasmatube", "HistoryPage"));
                 checked = true;
             }
+            highlighted: checked
 
             QQC2.ButtonGroup.group: pageButtonGroup
         }
@@ -148,7 +151,7 @@ Kirigami.OverlayDrawer {
             Layout.fillHeight: true
         }
 
-        Delegates.RoundedItemDelegate {
+        QQC2.ItemDelegate {
             icon.name: "settings-configure"
             text: i18nc("@action:button Open settings dialog", "Settings")
             padding: Kirigami.Units.largeSpacing

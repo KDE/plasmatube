@@ -28,37 +28,8 @@ QQC2.ItemDelegate {
 
     signal contextMenuRequested
 
-    leftPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing
-    topPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
-
     hoverEnabled: true
     onPressAndHold: contextMenuRequested()
-
-    property real zoomScale: pressed ? 0.9 : 1
-    Behavior on zoomScale {
-        NumberAnimation {
-            duration: 200
-            easing.type: Easing.OutExpo
-        }
-    }
-
-    transform: Scale {
-        origin.x: root.width / 2;
-        origin.y: root.height / 2;
-        xScale: root.zoomScale
-        yScale: root.zoomScale
-    }
-
-    background: Rectangle {
-        anchors.fill: parent
-        radius: Kirigami.Units.smallSpacing
-        visible: root.hovered || root.activeFocus || root.highlighted
-        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor, Kirigami.Theme.hoverColor, 0.2);
-        border.color: Kirigami.Theme.hoverColor
-        border.width: 1
-    }
 
     contentItem: RowLayout {
         id: gridLayout
