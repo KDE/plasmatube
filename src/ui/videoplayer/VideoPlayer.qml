@@ -294,6 +294,22 @@ Kirigami.ScrollablePage {
                     Item {
                         Layout.fillWidth: true
                     }
+
+                    QQC2.Button {
+                        text: i18n("Share")
+                        icon.name: "emblem-shared-symbolic"
+
+                        Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+
+                        onClicked: shareMenu.popup()
+
+                        ShareMenu {
+                            id: shareMenu
+
+                            url: "https://youtube.com/watch?=" + video.videoId
+                            shareTitle: video.title
+                        }
+                    }
                 }
 
                 RowLayout {
