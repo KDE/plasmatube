@@ -87,6 +87,7 @@ qt_target_qml_sources(plasmatube
         ui/components/BottomNavBar.qml
         ui/components/ChannelGridItem.qml
         ui/components/Comments.qml
+        ui/components/PlaceholderItem.qml
         ui/components/PlaylistGridItem.qml
         ui/components/ShareDialog.qml
         ui/components/ShareMenu.qml

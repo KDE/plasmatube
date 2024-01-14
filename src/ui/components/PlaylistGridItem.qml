@@ -45,6 +45,11 @@ BaseGridItem {
                 visible: false
             }
 
+            PlaceholderItem {
+                anchors.fill: parent
+                visible: thumb.status !== Image.Ready
+            }
+
             Text {
                 text: i18np("%1 video", "%1 videos", videoCount)
                 color: "white"

@@ -65,6 +65,10 @@ QQC2.ItemDelegate {
                 anchors.fill: thumb
                 visible: false
             }
+            PlaceholderItem {
+                anchors.fill: parent
+                visible: thumb.status !== Image.Ready
+            }
             Text {
                 visible: !liveNow && text !== "00:00"
                 text: Utils.formatTime(length)
