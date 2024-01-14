@@ -76,7 +76,11 @@ QQC2.Pane {
 
             header: Kirigami.Separator {}
 
-            footer: Delegates.RoundedItemDelegate {
+                    right: parent.right
+                    rightMargin: Kirigami.Units.smallSpacing
+                }
+            }
+
             footer: QQC2.ItemDelegate {
                 id: addSourceDelegate
 

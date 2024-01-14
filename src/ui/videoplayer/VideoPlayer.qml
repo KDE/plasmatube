@@ -359,6 +359,10 @@ Kirigami.ScrollablePage {
                     selectByMouse: !Kirigami.Settings.isMobile
                 }
 
+                Kirigami.Heading {
+                    text: i18n("Comments")
+                }
+
                 Comments {
                     id: comments
                     Layout.fillWidth: true
