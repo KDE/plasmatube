@@ -74,7 +74,10 @@ QQC2.Pane {
             model: PlasmaTube.sourceManager
             currentIndex: PlasmaTube.sourceManager.selectedIndex
 
-            header: Kirigami.Separator {}
+            header: Kirigami.Separator {
+                anchors {
+                    left: parent.left
+                    leftMargin: Kirigami.Units.smallSpacing
 
                     right: parent.right
                     rightMargin: Kirigami.Units.smallSpacing
@@ -141,6 +144,7 @@ QQC2.Pane {
 
             Layout.fillWidth: true
             Layout.preferredHeight: contentHeight
+            Layout.topMargin: Kirigami.Units.smallSpacing
 
             delegate: QQC2.ItemDelegate {
                 id: sourceDelegate
