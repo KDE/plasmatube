@@ -338,6 +338,7 @@ Kirigami.ScrollablePage {
                         labelItem.color: Kirigami.Theme.disabledTextColor
                         labelItem.font.weight: Font.Bold
                         text: i18n("%1 Likes", Utils.formatCount(video.likeCount))
+                        visible: video.likeCount > 0 // hide like count when we don't know/there is none
                     }
                 }
 
