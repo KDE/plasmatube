@@ -30,8 +30,8 @@ BaseGridItem {
             Layout.alignment: Qt.AlignTop
             Layout.preferredWidth: column.width
             Layout.maximumWidth: column.width
-            Layout.preferredHeight: column.width / 16 * 8
-            Layout.maximumHeight: column.width / 16 * 8
+            Layout.preferredHeight: column.width / 16 * 9
+            Layout.maximumHeight: column.width / 16 * 9
             layer.enabled: true
             layer.effect: OpacityMask {
                 maskSource: mask

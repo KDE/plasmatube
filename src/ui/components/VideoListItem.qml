@@ -131,20 +131,20 @@ QQC2.ItemDelegate {
                 elide: Text.ElideRight
             }
 
-            Flow {
-                Layout.fillWidth: true
+            QQC2.Label {
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                text: author
+                color: Kirigami.Theme.disabledTextColor
+                maximumLineCount: 2
+                elide: Text.ElideRight
+            }
+
+            Row {
+                spacing: 0
 
                 QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: author
-                    color: Kirigami.Theme.disabledTextColor
-                    maximumLineCount: 2
-                    elide: Text.ElideRight
-                }
-
-                QQC2.Label {
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n(" \u2022 %1 views", Utils.formatCount(viewCount))
+                    text: i18n("%1 views", Utils.formatCount(viewCount))
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight

@@ -35,7 +35,7 @@ GridView {
 
     keyNavigationEnabled: true
     cellWidth: effectiveWidth / columns
-    cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 4
+    cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 5 + Kirigami.Units.mediumSpacing
 
     Connections {
         target: model

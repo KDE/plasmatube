@@ -34,7 +34,7 @@ BaseGridItem {
         anchors.leftMargin: root.leftPadding
         anchors.rightMargin: root.rightPadding
 
-        spacing: 0
+        spacing: Kirigami.Units.largeSpacing
 
         TapHandler {
             acceptedButtons: Qt.RightButton
@@ -46,8 +46,8 @@ BaseGridItem {
             Layout.alignment: Qt.AlignTop
             Layout.preferredWidth: column.width
             Layout.maximumWidth: column.width
-            Layout.preferredHeight: column.width / 16 * 8
-            Layout.maximumHeight: column.width / 16 * 8
+            Layout.preferredHeight: column.width / 16 * 9
+            Layout.maximumHeight: column.width / 16 * 9
             layer.enabled: true
             layer.effect: OpacityMask {
                 maskSource: mask
@@ -118,8 +118,7 @@ BaseGridItem {
             id: videoInfo
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
-            Layout.topMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-            spacing: Kirigami.Units.largeSpacing
+            spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Heading {
                 Layout.alignment: Qt.AlignTop
@@ -132,27 +131,20 @@ BaseGridItem {
                 elide: Text.ElideRight
             }
 
-            Flow {
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignTop
+            QQC2.Label {
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                text: author
+                color: Kirigami.Theme.disabledTextColor
+                maximumLineCount: 2
+                elide: Text.ElideRight
+            }
 
-                spacing: Kirigami.Units.smallSpacing
-
-                QQC2.Label {
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: author
-                    color: Kirigami.Theme.disabledTextColor
-                    maximumLineCount: 2
-                    elide: Text.ElideRight
-                }
-
-                QQC2.Label {
-                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n("\u2022 %1 views \u2022 %2", Utils.formatCount(viewCount), liveNow ? "<i>live now</i>" : publishedText)
-                    color: Kirigami.Theme.disabledTextColor
-                    maximumLineCount: 1
-                    elide: Text.ElideRight
-                }
+            QQC2.Label {
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                text: i18n("%1 views \u2022 %2", Utils.formatCount(viewCount), liveNow ? "<i>live now</i>" : publishedText)
+                color: Kirigami.Theme.disabledTextColor
+                maximumLineCount: 1
+                elide: Text.ElideRight
             }
         }
 
