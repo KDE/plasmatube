@@ -182,6 +182,7 @@ Kirigami.ScrollablePage {
 
                             anchors.fill: parent
                             source: video.thumbnailUrl("high")
+                            fillMode: Image.PreserveAspectCrop
                         }
 
                         QQC2.BusyIndicator {
