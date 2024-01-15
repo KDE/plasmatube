@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 01:35+0000\n"
+"POT-Creation-Date: 2024-01-15 00:37+0000\n"
 "PO-Revision-Date: 2023-11-14 17:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -135,13 +135,13 @@ msgstr "Historia"
 msgid "Search results for \"%1\""
 msgstr "Resultado de la búsqueda de «%1»"
 
-#: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
+#: ui/ChannelPage.qml:43 ui/FeedPage.qml:40 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Preferencias del proxy"
 
-#: ui/components/BaseGridView.qml:49
+#: ui/components/BaseGridView.qml:48
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -149,18 +149,18 @@ msgstr ""
 "No se ha podido contactar con el servidor: %1. Compruebe las preferencias "
 "del proxy."
 
-#: ui/components/BaseGridView.qml:127 ui/Main.qml:95
+#: ui/components/BaseGridView.qml:126 ui/Main.qml:95
 #, kde-format
 msgctxt "@info:status"
 msgid "Loading…"
 msgstr "Cargando..."
 
-#: ui/components/BaseGridView.qml:133
+#: ui/components/BaseGridView.qml:132
 #, kde-format
 msgid "No videos"
 msgstr "No hay vídeos"
 
-#: ui/components/BaseGridView.qml:160
+#: ui/components/BaseGridView.qml:159
 #, kde-format
 msgid "Add to playlist"
 msgstr "Añadir a la lista de reproducción"
@@ -188,7 +188,7 @@ msgctxt "@action:button Load more comments"
 msgid "Load more"
 msgstr "Cargar más"
 
-#: ui/components/PlaylistGridItem.qml:49
+#: ui/components/PlaylistGridItem.qml:54
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
@@ -200,27 +200,27 @@ msgstr[1] "%1 vídeos"
 msgid "Sharing failed"
 msgstr "No se ha podido compartir"
 
-#: ui/components/ShareMenu.qml:17
+#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:300
 #, kde-format
 msgid "Share"
 msgstr "Compartir"
 
-#: ui/components/Sidebar.qml:87
+#: ui/components/Sidebar.qml:86
 #, kde-format
 msgid "Trending"
 msgstr "Tendencias"
 
-#: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
+#: ui/components/Sidebar.qml:121 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
 msgstr "Listas de reproducción"
 
-#: ui/components/Sidebar.qml:137
+#: ui/components/Sidebar.qml:139
 #, kde-format
 msgid "History"
 msgstr "Historial"
 
-#: ui/components/Sidebar.qml:153
+#: ui/components/Sidebar.qml:156
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
@@ -246,12 +246,12 @@ msgstr "Piped"
 msgid "Switch Source"
 msgstr "Cambiar fuente"
 
-#: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
+#: ui/components/SourceSwitcher.qml:97 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
 msgstr "Añadir fuente"
 
-#: ui/components/SourceSwitcher.qml:93
+#: ui/components/SourceSwitcher.qml:101
 #, kde-format
 msgid "Add a new video source"
 msgstr "Añadir una nueva fuente de vídeo"
@@ -271,17 +271,18 @@ msgstr "Suscribirse (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Inicie sesión para suscribirse a canales."
 
-#: ui/components/VideoGridItem.qml:170
-#, kde-format
-msgid "• %1 views • %2"
+#: ui/components/VideoGridItem.qml:144
+#, fuzzy, kde-format
+#| msgid "• %1 views • %2"
+msgid "%1 views • %2"
 msgstr "• %1 visualizaciones • %2"
 
-#: ui/components/VideoListItem.qml:172
+#: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
-msgid " • %1 views"
-msgstr " • %1 visualizaciones"
+msgid "%1 views"
+msgstr "%1 visualizaciones"
 
-#: ui/components/VideoListItem.qml:180
+#: ui/components/VideoListItem.qml:155
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -595,22 +596,22 @@ msgstr "Tendencias"
 msgid "Picture in Picture"
 msgstr "Imagen dentro de imagen"
 
-#: ui/videoplayer/VideoPlayer.qml:308
-#, kde-format
-msgid "%1 views"
-msgstr "%1 visualizaciones"
-
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:341
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 me gusta"
 
-#: ui/videoplayer/VideoPlayer.qml:383
+#: ui/videoplayer/VideoPlayer.qml:389
+#, kde-format
+msgid "Comments"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:413
 #, kde-format
 msgid "Queue"
 msgstr "Cola"
 
-#: ui/videoplayer/VideoPlayer.qml:394
+#: ui/videoplayer/VideoPlayer.qml:424
 #, kde-format
 msgid "Recommended"
 msgstr "Recomendado"
@@ -620,6 +621,9 @@ msgstr "Recomendado"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Limpiar"
+
+#~ msgid " • %1 views"
+#~ msgstr " • %1 visualizaciones"
 
 #~ msgid "No results"
 #~ msgstr "Sin resultado"
