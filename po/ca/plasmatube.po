@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-08 01:35+0000\n"
-"PO-Revision-Date: 2024-01-14 16:58+0100\n"
+"PO-Revision-Date: 2024-01-15 10:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -276,12 +276,12 @@ msgstr "Inicieu la sessió per a subscriure's als canals."
 #: ui/components/VideoGridItem.qml:170
 #, kde-format
 msgid "• %1 views • %2"
-msgstr "• %1 vistes • %2"
+msgstr "• %1 visualitzacions • %2"
 
 #: ui/components/VideoListItem.qml:172
 #, kde-format
 msgid " • %1 views"
-msgstr " • %1 vistes"
+msgstr " • %1 visualitzacions"
 
 #: ui/components/VideoListItem.qml:180
 #, kde-format
@@ -603,7 +603,7 @@ msgstr "Imatge en la imatge"
 #: ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "%1 views"
-msgstr "%1 vistes"
+msgstr "%1 visualitzacions"
 
 #: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
