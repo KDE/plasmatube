@@ -1,15 +1,15 @@
 # Translation of plasmatube.po to Catalan (Valencian)
-# Copyright (C) 2021-2023 This_file_is_part_of_KDE
+# Copyright (C) 2021-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 02:46+0000\n"
-"PO-Revision-Date: 2023-06-20 09:47+0200\n"
+"PO-Revision-Date: 2024-01-15 10:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -166,12 +166,12 @@ msgstr "Quant a KDE"
 #: contents/ui/VideoGridItem.qml:162
 #, kde-format
 msgid "• %1 views • %2"
-msgstr "• %1 vistes • %2"
+msgstr "• %1 visualitzacions • %2"
 
 #: contents/ui/VideoListItem.qml:157
 #, kde-format
 msgid " • %1 views"
-msgstr " • %1 vistes"
+msgstr " • %1 visualitzacions"
 
 #: contents/ui/VideoListItem.qml:165
 #, kde-format
@@ -196,7 +196,7 @@ msgstr "Inicieu la sessió per a subscriure's als canals."
 #: contents/ui/videoplayer/VideoPlayer.qml:367
 #, kde-format
 msgid "%1 views"
-msgstr "%1 vistes"
+msgstr "%1 visualitzacions"
 
 #: contents/ui/videoplayer/VideoPlayer.qml:375
 #, kde-format
