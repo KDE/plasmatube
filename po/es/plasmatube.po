@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the plasmatube package.
 #
 # Automatically generated, 2021.
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-15 00:37+0000\n"
-"PO-Revision-Date: 2023-11-14 17:52+0100\n"
+"PO-Revision-Date: 2024-01-15 03:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -272,10 +272,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "Inicie sesión para suscribirse a canales."
 
 #: ui/components/VideoGridItem.qml:144
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 visualizaciones • %2"
+msgstr "%1 visualizaciones • %2"
 
 #: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
@@ -604,7 +603,7 @@ msgstr "%1 me gusta"
 #: ui/videoplayer/VideoPlayer.qml:389
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #: ui/videoplayer/VideoPlayer.qml:413
 #, kde-format

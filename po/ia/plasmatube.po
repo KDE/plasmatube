@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the plasmatube package.
 #
 # SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
-# giovanni <g.sora@tiscali.it>, 2023.
+# giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-15 00:37+0000\n"
-"PO-Revision-Date: 2023-11-12 18:02+0100\n"
+"PO-Revision-Date: 2024-01-15 18:20+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -271,10 +271,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "Pro favor tu accede pro subscriber a canales."
 
 #: ui/components/VideoGridItem.qml:144
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 vistas • %2"
+msgstr "%1 vistas • %2"
 
 #: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
@@ -603,7 +602,7 @@ msgstr "%1 Likes (place me)"
 #: ui/videoplayer/VideoPlayer.qml:389
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Commentos"
 
 #: ui/videoplayer/VideoPlayer.qml:413
 #, kde-format
