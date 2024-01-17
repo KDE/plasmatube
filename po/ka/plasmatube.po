@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-15 00:37+0000\n"
-"PO-Revision-Date: 2023-11-13 10:58+0100\n"
+"PO-Revision-Date: 2024-01-16 02:57+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -270,10 +270,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "არხების გამოსაწერად საჭიროა სისტემაში შეხვიდეთ."
 
 #: ui/components/VideoGridItem.qml:144
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 ნახვა • %2"
+msgstr "%1 ნახვა • %2"
 
 #: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
@@ -602,7 +601,7 @@ msgstr "%1 მოწონება"
 #: ui/videoplayer/VideoPlayer.qml:389
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "კომენტარები"
 
 #: ui/videoplayer/VideoPlayer.qml:413
 #, kde-format

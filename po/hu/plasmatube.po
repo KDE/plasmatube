@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-15 00:37+0000\n"
-"PO-Revision-Date: 2023-12-28 11:03+0100\n"
+"PO-Revision-Date: 2024-01-16 20:51+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -270,10 +270,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "Jelentkezzen be, hogy feliratkozhasson csatornákra."
 
 #: ui/components/VideoGridItem.qml:144
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 megtekintés • %2"
+msgstr "%1 megtekintés • %2"
 
 #: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
 #, kde-format
@@ -602,7 +601,7 @@ msgstr "%1 kedvelés"
 #: ui/videoplayer/VideoPlayer.qml:389
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Megjegyzések"
 
 #: ui/videoplayer/VideoPlayer.qml:413
 #, kde-format
