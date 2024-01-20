@@ -421,7 +421,7 @@ Kirigami.ScrollablePage {
                     publishedText: model.publishedText
                     watched: model.watched
 
-                    onPressed: {
+                    onClicked: {
                         video.recommendedVideosModel().markAsWatched(index);
                         PlasmaTube.videoController.play(vid);
                     }

@@ -33,7 +33,7 @@ QQC2.ItemDelegate {
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
 
-    hoverEnabled: true
+    hoverEnabled: !Kirigami.Settings.hasTransientTouchInput
     onPressAndHold: contextMenuRequested()
 
     property real zoomScale: pressed ? 0.9 : 1
@@ -72,6 +72,7 @@ QQC2.ItemDelegate {
         spacing: Kirigami.Units.largeSpacing
 
         TapHandler {
+            acceptedDevices: Qt.Mouse | Qt.TouchPad
             acceptedButtons: Qt.RightButton
             onTapped: root.contextMenuRequested()
         }
