@@ -12,6 +12,6 @@ QQC2.ItemDelegate {
 
     signal contextMenuRequested
 
-    hoverEnabled: true
+    hoverEnabled: !Kirigami.Settings.hasTransientTouchInput
     onPressAndHold: contextMenuRequested()
 }
