@@ -17,7 +17,7 @@ QQC2.ItemDelegate {
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
 
-    hoverEnabled: true
+    hoverEnabled: !Kirigami.Settings.hasTransientTouchInput
     onPressAndHold: contextMenuRequested()
 
     property real zoomScale: pressed ? 0.9 : 1
