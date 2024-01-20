@@ -217,6 +217,15 @@ Kirigami.ScrollablePage {
 
                         Keys.forwardTo: [root]
                     }
+
+                    // TODO: this whole thing could probably be a taphandler...
+                    TapHandler {
+                        acceptedDevices: Qt.TouchScreen
+                        onTapped: {
+                            videoContainer.showControls = true;
+                            controlTimer.restart();
+                        }
+                    }
                 }
             }
 
