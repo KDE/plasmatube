@@ -28,7 +28,7 @@ QQC2.ItemDelegate {
 
     signal contextMenuRequested
 
-    hoverEnabled: true
+    hoverEnabled: !Kirigami.Settings.hasTransientTouchInput
     onPressAndHold: contextMenuRequested()
 
     contentItem: RowLayout {
@@ -43,6 +43,7 @@ QQC2.ItemDelegate {
         spacing: Kirigami.Units.largeSpacing
 
         TapHandler {
+            acceptedDevices: Qt.Mouse | Qt.TouchPad
             acceptedButtons: Qt.RightButton
             onTapped: root.contextMenuRequested()
         }
