@@ -37,6 +37,7 @@ BaseGridItem {
         spacing: Kirigami.Units.largeSpacing
 
         TapHandler {
+            acceptedDevices: Qt.Mouse | Qt.TouchPad
             acceptedButtons: Qt.RightButton
             onTapped: root.contextMenuRequested()
         }
