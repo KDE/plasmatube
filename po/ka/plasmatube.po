@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-15 00:37+0000\n"
+"POT-Creation-Date: 2024-01-21 00:36+0000\n"
 "PO-Revision-Date: 2024-01-16 02:57+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -198,7 +198,7 @@ msgstr[1] "%1 ვიდეო"
 msgid "Sharing failed"
 msgstr "გაზიარების შეცდომა"
 
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:300
+#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Share"
 msgstr "გაზიარება"
@@ -269,17 +269,17 @@ msgstr "გამოწერა (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "არხების გამოსაწერად საჭიროა სისტემაში შეხვიდეთ."
 
-#: ui/components/VideoGridItem.qml:144
+#: ui/components/VideoGridItem.qml:145
 #, kde-format
 msgid "%1 views • %2"
 msgstr "%1 ნახვა • %2"
 
-#: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:342
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ნახვა"
 
-#: ui/components/VideoListItem.qml:155
+#: ui/components/VideoListItem.qml:156
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -593,22 +593,22 @@ msgstr "ტრენდები"
 msgid "Picture in Picture"
 msgstr "სურათი სურათში"
 
-#: ui/videoplayer/VideoPlayer.qml:341
+#: ui/videoplayer/VideoPlayer.qml:350
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
 
-#: ui/videoplayer/VideoPlayer.qml:389
+#: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
 msgstr "კომენტარები"
 
-#: ui/videoplayer/VideoPlayer.qml:413
+#: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
 msgid "Queue"
 msgstr "რიგი"
 
-#: ui/videoplayer/VideoPlayer.qml:424
+#: ui/videoplayer/VideoPlayer.qml:433
 #, kde-format
 msgid "Recommended"
 msgstr "რეკომენდებულია"

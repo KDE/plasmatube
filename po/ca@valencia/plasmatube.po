@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-15 00:37+0000\n"
+"POT-Creation-Date: 2024-01-21 00:36+0000\n"
 "PO-Revision-Date: 2024-01-15 10:09+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -201,7 +201,7 @@ msgstr[1] "%1 vídeos"
 msgid "Sharing failed"
 msgstr "Ha fallat la compartició"
 
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:300
+#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:309
 #, kde-format
 msgid "Share"
 msgstr "Compartix"
@@ -273,17 +273,17 @@ msgstr "Subscriu (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Inicieu la sessió per a subscriure's als canals."
 
-#: ui/components/VideoGridItem.qml:144
+#: ui/components/VideoGridItem.qml:145
 #, kde-format
 msgid "%1 views • %2"
 msgstr "%1 visualitzacions • %2"
 
-#: ui/components/VideoListItem.qml:147 ui/videoplayer/VideoPlayer.qml:333
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:342
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualitzacions"
 
-#: ui/components/VideoListItem.qml:155
+#: ui/components/VideoListItem.qml:156
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -600,22 +600,22 @@ msgstr "Tendències"
 msgid "Picture in Picture"
 msgstr "Imatge en la imatge"
 
-#: ui/videoplayer/VideoPlayer.qml:341
+#: ui/videoplayer/VideoPlayer.qml:350
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 m'agrades"
 
-#: ui/videoplayer/VideoPlayer.qml:389
+#: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
 msgstr "Comentaris"
 
-#: ui/videoplayer/VideoPlayer.qml:413
+#: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
 msgid "Queue"
 msgstr "Cua"
 
-#: ui/videoplayer/VideoPlayer.qml:424
+#: ui/videoplayer/VideoPlayer.qml:433
 #, kde-format
 msgid "Recommended"
 msgstr "Recomanats"
