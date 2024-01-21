@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 01:35+0000\n"
+"POT-Creation-Date: 2024-01-21 02:22+0000\n"
 "PO-Revision-Date: 2023-12-23 11:53+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -271,17 +271,17 @@ msgstr "Zacznij śledzić (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Zaloguj się, aby móc śledzić kanały."
 
-#: ui/components/VideoGridItem.qml:170
+#: ui/components/VideoGridItem.qml:171
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 odwiedziny • %2"
 
-#: ui/components/VideoListItem.qml:172
+#: ui/components/VideoListItem.qml:173
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 odwiedziny"
 
-#: ui/components/VideoListItem.qml:180
+#: ui/components/VideoListItem.qml:181
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -595,22 +595,22 @@ msgstr "Na czasie"
 msgid "Picture in Picture"
 msgstr "Obraz w Obrazie"
 
-#: ui/videoplayer/VideoPlayer.qml:308
+#: ui/videoplayer/VideoPlayer.qml:317
 #, kde-format
 msgid "%1 views"
 msgstr "%1 odwiedziny"
 
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:325
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 polubienia"
 
-#: ui/videoplayer/VideoPlayer.qml:383
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr "Do kolejki"
 
-#: ui/videoplayer/VideoPlayer.qml:394
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr "Zalecane"

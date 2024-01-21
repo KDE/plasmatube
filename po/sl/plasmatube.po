@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 01:35+0000\n"
+"POT-Creation-Date: 2024-01-21 02:22+0000\n"
 "PO-Revision-Date: 2023-11-12 10:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -272,17 +272,17 @@ msgstr "Naroči se (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Prijavite se, da se naročite na kanale."
 
-#: ui/components/VideoGridItem.qml:170
+#: ui/components/VideoGridItem.qml:171
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 pogledi • %2"
 
-#: ui/components/VideoListItem.qml:172
+#: ui/components/VideoListItem.qml:173
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 pogledi"
 
-#: ui/components/VideoListItem.qml:180
+#: ui/components/VideoListItem.qml:181
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -596,22 +596,22 @@ msgstr "V trendu"
 msgid "Picture in Picture"
 msgstr "Slika v sliki"
 
-#: ui/videoplayer/VideoPlayer.qml:308
+#: ui/videoplayer/VideoPlayer.qml:317
 #, kde-format
 msgid "%1 views"
 msgstr "%1 pogledi"
 
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:325
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Všečkov"
 
-#: ui/videoplayer/VideoPlayer.qml:383
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr "Čakalna vrsta"
 
-#: ui/videoplayer/VideoPlayer.qml:394
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr "Priporočeno"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-08 01:35+0000\n"
+"POT-Creation-Date: 2024-01-21 02:22+0000\n"
 "PO-Revision-Date: 2023-11-08 21:32+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -267,17 +267,17 @@ msgstr "Gerast áskrifandi (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Skráðu þig inn til að gerast áskrifandi að rásum"
 
-#: ui/components/VideoGridItem.qml:170
+#: ui/components/VideoGridItem.qml:171
 #, kde-format
 msgid "• %1 views • %2"
 msgstr "• %1 áhorf • %2"
 
-#: ui/components/VideoListItem.qml:172
+#: ui/components/VideoListItem.qml:173
 #, kde-format
 msgid " • %1 views"
 msgstr " • %1 áhorf"
 
-#: ui/components/VideoListItem.qml:180
+#: ui/components/VideoListItem.qml:181
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
@@ -595,22 +595,22 @@ msgstr "Á uppleið"
 msgid "Picture in Picture"
 msgstr "Mynd í mynd"
 
-#: ui/videoplayer/VideoPlayer.qml:308
+#: ui/videoplayer/VideoPlayer.qml:317
 #, kde-format
 msgid "%1 views"
 msgstr "%1 áhorf"
 
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:325
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 líkar þetta"
 
-#: ui/videoplayer/VideoPlayer.qml:383
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:394
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr ""
