@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-21 00:36+0000\n"
-"PO-Revision-Date: 2023-11-12 08:26+0100\n"
+"PO-Revision-Date: 2024-01-21 17:22+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -269,10 +269,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "Bonvolu ensaluti por aboni kanalojn."
 
 #: ui/components/VideoGridItem.qml:145
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 rigardoj • %2"
+msgstr "%1 rigardoj • %2"
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:342
 #, kde-format
@@ -601,7 +600,7 @@ msgstr "%1 Ŝatoj"
 #: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Komentoj"
 
 #: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
@@ -618,9 +617,3 @@ msgstr "Rekomendita"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Forviŝi"
-
-#~ msgid " • %1 views"
-#~ msgstr " • %1 vidoj"
-
-#~ msgid "No results"
-#~ msgstr "Neniuj rezultoj"

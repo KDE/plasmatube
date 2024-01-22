@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-21 00:36+0000\n"
-"PO-Revision-Date: 2024-01-13 05:59\n"
+"PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -267,10 +267,9 @@ msgid "Please log in to subscribe to channels."
 msgstr ""
 
 #: ui/components/VideoGridItem.qml:145
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 次观看 • %2"
+msgstr ""
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:342
 #, kde-format
@@ -616,6 +615,3 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
-
-#~ msgid " • %1 views"
-#~ msgstr " • %1 次观看"
