@@ -616,6 +616,3 @@ msgstr "おすすめ"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "消去"
-
-#~ msgid " • %1 views"
-#~ msgstr " • %1 回視聴"

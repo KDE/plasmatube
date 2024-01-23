@@ -637,6 +637,3 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
-
-#~ msgid " • %1 views"
-#~ msgstr " • %1 visingar"
