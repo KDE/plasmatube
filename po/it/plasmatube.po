@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-21 00:36+0000\n"
-"PO-Revision-Date: 2024-01-15 22:01+0100\n"
+"PO-Revision-Date: 2024-01-16 09:26+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -601,7 +601,7 @@ msgstr "%1 Mi piace"
 #: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Commenti"
 
 #: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
