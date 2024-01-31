@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 02:46+0000\n"
-"PO-Revision-Date: 2023-07-04 21:34+0300\n"
+"PO-Revision-Date: 2023-12-27 16:20+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -57,7 +57,7 @@ msgstr "Kirjautuminen tunnuksella %1 onnistui."
 #: contents/ui/LoginPage.qml:46
 #, kde-format
 msgid "Log in to an Invidious Account"
-msgstr "Kirjaudu vihamieliselle tilille"
+msgstr "Kirjaudu Invidious-tilille"
 
 #: contents/ui/LoginPage.qml:51
 #, kde-format
@@ -127,7 +127,7 @@ msgstr "Ei tuloksia"
 #: contents/ui/SettingsPage.qml:25
 #, kde-format
 msgid "Invidious"
-msgstr "Vihamielinen"
+msgstr "Invidious"
 
 #: contents/ui/SettingsPage.qml:29
 #, kde-format
