@@ -154,7 +154,6 @@ Kirigami.ScrollablePage {
                         controlTimer.stop();
                         videoContainer.showControls = false;
                     }
-                    onClicked: PlasmaTube.videoController.togglePlaying()
                     onDoubleClicked: root.toggleFullscreen()
 
                     hoverEnabled: !Kirigami.Settings.tabletMode
