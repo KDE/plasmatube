@@ -37,7 +37,7 @@ BaseGridItem {
         spacing: 0
 
         TapHandler {
-            acceptedDevices: Qt.Mouse | Qt.TouchPad
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
             acceptedButtons: Qt.RightButton
             onTapped: root.contextMenuRequested()
         }
