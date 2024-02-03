@@ -24,6 +24,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="fi">PlasmaTube</name>
   <name xml:lang="fr">PlasmaTube</name>
   <name xml:lang="gl">PlasmaTube</name>
+  <name xml:lang="he">PlasmaTube</name>
   <name xml:lang="hi">प्लाज़्माट्यूब</name>
   <name xml:lang="hu">PlasmaTube</name>
   <name xml:lang="ia">PlasmaTube</name>
@@ -64,6 +65,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="fi">Katso YouTube-videoita</summary>
   <summary xml:lang="fr">Regarder des vidéos sur YouTube</summary>
   <summary xml:lang="gl">Vexa vídeos de YouTube.</summary>
+  <summary xml:lang="he">צפייה בסרטוני YouTube</summary>
   <summary xml:lang="hi">वीडियो (यूट्यूब) देखिए</summary>
   <summary xml:lang="hu">YouTube videók lejátszása</summary>
   <summary xml:lang="ia">Guarda viodeos de YouTube</summary>
@@ -105,6 +107,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="fi">PlasmaTubella voi YouTube-videoita katsella puhelimelta tai tietokoneelta tyylikkäässä muuhun Plasmaan sopivassa käyttöliittymässä.</p>
     <p xml:lang="fr">PlasmaTube vous permet de regarder des vidéos YouTube sur votre téléphone ou votre bureau à l'aide d'une interface utilisateur élégante intégrée au reste de Plasma.</p>
     <p xml:lang="gl">PlasmaTube permítelle ver vídeos de YouTube no teléfono ou no escritorio cunha interface elegante integrada co resto de Plasma.</p>
+    <p xml:lang="he">PlasmaTube מאפשר לך לצפות בסרטוני YouTube בטלפון או המחשב שלך עם ממשק משתמש אלגנטי שמשתלב עם שאר סביבת העבודה של פלזמה..</p>
     <p xml:lang="hi">प्लाज़्माट्यूबe आपको शेष प्लाज़्मा के साथ एकीकृत एक सुंदर उपयोक्ता इंटरफ़ेस का उपयोग करके अपने फ़ोन या डेस्कटॉप पर यूट्यूब वीडियो देखने की अनुमति देता है।</p>
     <p xml:lang="hu">A PlasmaTube lehetővé teszi YouTube videók lejátszását a telefonján vagy a számítógépén egy, a Plasma többi részével integrálódó elegáns felhasználói felületen.</p>
     <p xml:lang="ia">PlasmaTube te permitte guardar videos de YouTUbe sur tu telephono o scriptorio usante unelegante interfacie de usator integrate con le resto de Plasma.</p>
