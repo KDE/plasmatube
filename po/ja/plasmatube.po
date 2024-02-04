@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 00:36+0000\n"
+"POT-Creation-Date: 2024-02-04 00:37+0000\n"
 "PO-Revision-Date: 2023-11-24 22:02-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -195,7 +195,7 @@ msgstr[0] "%1 本の動画"
 msgid "Sharing failed"
 msgstr "共有に失敗"
 
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:309
+#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "Share"
 msgstr "共有"
@@ -272,7 +272,7 @@ msgstr "チャンネルを購読するにはログインしてください。"
 msgid "%1 views • %2"
 msgstr "• %1 回視聴 • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:342
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
 #, kde-format
 msgid "%1 views"
 msgstr "%1 回視聴"
@@ -591,22 +591,22 @@ msgstr "急上昇"
 msgid "Picture in Picture"
 msgstr "ピクチャインピクチャ"
 
-#: ui/videoplayer/VideoPlayer.qml:350
+#: ui/videoplayer/VideoPlayer.qml:349
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 高評価"
 
-#: ui/videoplayer/VideoPlayer.qml:398
+#: ui/videoplayer/VideoPlayer.qml:397
 #, kde-format
 msgid "Comments"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:422
+#: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Queue"
 msgstr "キュー"
 
-#: ui/videoplayer/VideoPlayer.qml:433
+#: ui/videoplayer/VideoPlayer.qml:432
 #, kde-format
 msgid "Recommended"
 msgstr "おすすめ"
