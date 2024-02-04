@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 02:22+0000\n"
+"POT-Creation-Date: 2024-02-04 02:26+0000\n"
 "PO-Revision-Date: 2023-11-12 14:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -596,22 +596,22 @@ msgstr "Тренди"
 msgid "Picture in Picture"
 msgstr "Зображення у зображенні"
 
-#: ui/videoplayer/VideoPlayer.qml:317
+#: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
 msgid "%1 views"
 msgstr "%1 переглядів"
 
-#: ui/videoplayer/VideoPlayer.qml:325
+#: ui/videoplayer/VideoPlayer.qml:324
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 уподобань"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:391
 #, kde-format
 msgid "Queue"
 msgstr "Додати до черги"
 
-#: ui/videoplayer/VideoPlayer.qml:403
+#: ui/videoplayer/VideoPlayer.qml:402
 #, kde-format
 msgid "Recommended"
 msgstr "Рекомендовано"

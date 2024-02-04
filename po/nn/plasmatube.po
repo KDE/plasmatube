@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-21 02:22+0000\n"
+"POT-Creation-Date: 2024-02-04 02:26+0000\n"
 "PO-Revision-Date: 2023-07-15 13:52+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -611,22 +611,22 @@ msgstr "På veg opp"
 msgid "Picture in Picture"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:317
+#: ui/videoplayer/VideoPlayer.qml:316
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visingar"
 
-#: ui/videoplayer/VideoPlayer.qml:325
+#: ui/videoplayer/VideoPlayer.qml:324
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 likarlikk"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:391
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:403
+#: ui/videoplayer/VideoPlayer.qml:402
 #, kde-format
 msgid "Recommended"
 msgstr ""
