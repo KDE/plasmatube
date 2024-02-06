@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-04 00:37+0000\n"
-"PO-Revision-Date: 2024-01-01 09:35-0600\n"
+"PO-Revision-Date: 2024-02-05 07:54-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -268,10 +268,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "ਚੈਨਲਾਂ ਲਈ ਮੈਂਬਰ ਬਣਨ ਵਾਸਤੇ ਲਾਗਇਨ ਕਰੋ।"
 
 #: ui/components/VideoGridItem.qml:145
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 ਝਲਕਾਂ • %2"
+msgstr "%1 ਝਲਕਾਂ • %2"
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
 #, kde-format
