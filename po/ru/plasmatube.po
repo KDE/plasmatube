@@ -1,23 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Alexander Yavorsky <kekcuha@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2024 Alexander Yavorsky <kekcuha@gmail.com>
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-04 02:26+0000\n"
-"PO-Revision-Date: 2023-04-26 10:50+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2024-02-10 13:48+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -45,7 +45,7 @@ msgstr "В этом экземпляре отключена регистраци
 #: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Воспроизведение видео"
 
 #: main.cpp:62
 #, kde-format
@@ -92,43 +92,43 @@ msgstr "Подписки"
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Популярные"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Игры"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Фильмы"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Музыка"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Новости"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "История"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
@@ -137,10 +137,9 @@ msgstr "Результаты поиска «%1»"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Параметры"
+msgstr "Параметры прокси"
 
 #: ui/components/BaseGridView.qml:49
 #, kde-format
@@ -163,7 +162,7 @@ msgstr "Видеозаписи"
 #: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "Добавить в список воспроизведения"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -216,16 +215,15 @@ msgstr "Тренды"
 #: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Списки воспроизведения"
 
 #: ui/components/Sidebar.qml:137
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Журнал"
 
 #: ui/components/Sidebar.qml:153
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметры"
@@ -238,7 +236,7 @@ msgstr "Invidious"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
@@ -253,7 +251,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Добавить источник"
 
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
@@ -293,12 +291,12 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:26
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Воспроизвести сейчас"
 
 #: ui/components/VideoMenu.qml:36
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "Воспроизвести следующим"
 
 #: ui/components/VideoMenu.qml:44
 #, kde-format
@@ -308,22 +306,22 @@ msgstr ""
 #: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "Отметить как непросмотренное"
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "Отметить как просмотренное"
 
 #: ui/components/VideoMenu.qml:72
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Добавить в список воспроизведения…"
 
 #: ui/components/VideoMenu.qml:79
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Удалить из списка воспроизведения"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, fuzzy, kde-format
