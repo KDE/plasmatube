@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-04 00:37+0000\n"
-"PO-Revision-Date: 2023-06-22 09:35+0400\n"
+"PO-Revision-Date: 2024-02-12 21:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -91,43 +91,43 @@ msgstr "الاشتراكات"
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "الرائج"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "الكلّ"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "ألعاب"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "الأفلام"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "الموسيقى"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "الأخبار"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "التاريخ"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
@@ -136,10 +136,9 @@ msgstr "نتائج البحث عن \"%1\""
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:40 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "الإعدادات"
+msgstr "إعدادت الوسيط"
 
 #: ui/components/BaseGridView.qml:48
 #, kde-format
@@ -154,15 +153,14 @@ msgid "Loading…"
 msgstr "يحمّل..."
 
 #: ui/components/BaseGridView.qml:132
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgid "No videos"
-msgstr "الفيديوهات"
+msgstr "لا يوجد شيء"
 
 #: ui/components/BaseGridView.qml:159
 #, kde-format
 msgid "Add to playlist"
-msgstr ""
+msgstr "أضف إلى قائمة التّشغيل"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -188,26 +186,25 @@ msgid "Load more"
 msgstr ""
 
 #: ui/components/PlaylistGridItem.qml:54
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "المشاهدات %1"
-msgstr[1] "المشاهدات %1"
-msgstr[2] "المشاهدات %1"
-msgstr[3] "المشاهدات %1"
-msgstr[4] "المشاهدات %1"
-msgstr[5] "المشاهدات %1"
+msgstr[0] "٠ فيديو"
+msgstr[1] "فيديو واحد"
+msgstr[2] "فيديوين"
+msgstr[3] "%1 فيديوات"
+msgstr[4] "%1 فيديو"
+msgstr[5] "%1 فيديو"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "فشلت المشاركة"
 
 #: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:308
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "شارك"
 
 #: ui/components/Sidebar.qml:86
 #, kde-format
@@ -217,19 +214,18 @@ msgstr "الرائج"
 #: ui/components/Sidebar.qml:121 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "قوائم التّشغيل"
 
 #: ui/components/Sidebar.qml:139
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "التاريخ"
 
 #: ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr "الإعدادات"
+msgstr "إعدادات"
 
 #: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
 #, kde-format
@@ -239,7 +235,7 @@ msgstr "فردي"
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "بيير تيوب"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
@@ -254,7 +250,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:97 ui/settings/SourcesPage.qml:92
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "أضف مصدرًا"
 
 #: ui/components/SourceSwitcher.qml:101
 #, kde-format
@@ -277,10 +273,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "من فضلك لج لتشترك في القنوات"
 
 #: ui/components/VideoGridItem.qml:145
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• المشاهدات %1 • %2"
+msgstr "المشاهدات %1 • %2"
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
 #, kde-format
@@ -300,7 +295,7 @@ msgstr ""
 #: ui/components/VideoMenu.qml:36
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "شغل التالي"
 
 #: ui/components/VideoMenu.qml:44
 #, kde-format
@@ -310,22 +305,22 @@ msgstr ""
 #: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as unwatched"
-msgstr ""
+msgstr "وضع علامة لم يتم مشاهدتها"
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
 msgid "Mark as watched"
-msgstr ""
+msgstr "أشر إليها على أنها شوهدت"
 
 #: ui/components/VideoMenu.qml:72
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "أضف إلى قائمة التّشغيل"
 
 #: ui/components/VideoMenu.qml:79
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "أزل من قائمة التّشغيل"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, fuzzy, kde-format
@@ -379,13 +374,13 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "أضف %1"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "مرحباً"
 
 #: ui/loginflow/WelcomePage.qml:27
 #, fuzzy, kde-format
@@ -456,7 +451,7 @@ msgstr "يجب ألا تكون كلمة السر فارغة!"
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "شغّل"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -488,7 +483,7 @@ msgstr "عدد المشاهدات"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "حرّر المصدر"
 
 #: ui/settings/InvidiousSourcePage.qml:21
 #, kde-format
@@ -519,7 +514,7 @@ msgstr "اخرج"
 #: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
 #, kde-format
 msgid "Remove Source"
-msgstr ""
+msgstr "أزل المصدر"
 
 #: ui/settings/InvidiousSourcePage.qml:140
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
@@ -529,10 +524,10 @@ msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "أزل المصدر"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
@@ -545,48 +540,47 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "وسيط الشّبكة"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "افتراضيات النظام"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:51
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "المضيف"
 
 #: ui/settings/NetworkProxyPage.qml:62
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "المنفذ"
 
 #: ui/settings/NetworkProxyPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "اسم المستخدم"
+msgstr "المستخدم"
 
 #: ui/settings/NetworkProxyPage.qml:105
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "طبّق"
 
 #: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "المصادر"
 
 #: ui/settings/SettingsPage.qml:21
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "وسيط الشّبكة"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
@@ -599,8 +593,7 @@ msgid "About KDE"
 msgstr "عن كِيدِي"
 
 #: ui/TrendingPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
 msgstr "الرائج"
@@ -608,7 +601,7 @@ msgstr "الرائج"
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "صورة في صورة"
 
 #: ui/videoplayer/VideoPlayer.qml:349
 #, kde-format
@@ -618,23 +611,23 @@ msgstr "الإعجابات %1"
 #: ui/videoplayer/VideoPlayer.qml:397
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "تعليقات"
 
 #: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "الصفّ"
 
 #: ui/videoplayer/VideoPlayer.qml:432
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "مستحسن"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "امسح"
 
 #~ msgid " • %1 views"
 #~ msgstr " • المشاهدات %1"
