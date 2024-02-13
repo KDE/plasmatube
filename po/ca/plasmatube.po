@@ -625,6 +625,3 @@ msgstr "Recomanats"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Neteja"
-
-#~ msgid "No results"
-#~ msgstr "Sense resultats"
