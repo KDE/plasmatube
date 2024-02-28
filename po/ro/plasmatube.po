@@ -1,0 +1,620 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasmatube package.
+# Sergiu Bivol <sergiu@cip.md>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmatube\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-04 02:26+0000\n"
+"PO-Revision-Date: 2024-02-25 19:08+0000\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
+#: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
+#, kde-format
+msgid "Username or password is wrong."
+msgstr "Utilizator sau parolă greșite."
+
+#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
+#: api/piped/pipedapi.cpp:303
+#, kde-format
+msgid "Server returned no valid JSON."
+msgstr "Serverul nu a returnat JSON valid."
+
+#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
+#: api/piped/pipedapi.cpp:312
+#, kde-format
+msgid "Server returned the status code %1"
+msgstr "Serverul a returnat codul de stare %1"
+
+#: controllers/logincontroller.cpp:45
+#, kde-format
+msgid "This instance has disabled the registration."
+msgstr "Această instanță a dezactivat înregistrarea."
+
+#: controllers/videocontroller.cpp:55
+#, kde-format
+msgid "Playing video"
+msgstr "Se redă un video"
+
+#: main.cpp:62
+#, kde-format
+msgid "PlasmaTube"
+msgstr "PlasmaTube"
+
+#: main.cpp:64 main.cpp:114
+#, kde-format
+msgid "YouTube client"
+msgstr "Client pentru YouTube"
+
+#: main.cpp:66
+#, kde-format
+msgid "© Linus Jahn"
+msgstr "© Linus Jahn"
+
+#: main.cpp:67
+#, kde-format
+msgid "Linus Jahn"
+msgstr "Linus Jahn"
+
+#: main.cpp:67
+#, kde-format
+msgid "Creator"
+msgstr "Creator"
+
+#: main.cpp:68
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#: main.cpp:68
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
+#, kde-format
+msgid "Subscriptions"
+msgstr "Abonamente"
+
+#: models/videolistmodel.cpp:20
+#, kde-format
+msgid "Popular"
+msgstr "Populare"
+
+#: models/videolistmodel.cpp:22
+#, kde-format
+msgctxt "@action:button All trending videos"
+msgid "All"
+msgstr "Toate"
+
+#: models/videolistmodel.cpp:24
+#, kde-format
+msgctxt "@action:button Trending gaming videos"
+msgid "Gaming"
+msgstr "Jocuri"
+
+#: models/videolistmodel.cpp:26
+#, kde-format
+msgctxt "@action:button Trending movie videos"
+msgid "Movies"
+msgstr "Filme"
+
+#: models/videolistmodel.cpp:28
+#, kde-format
+msgctxt "@action:button Trending music videos"
+msgid "Music"
+msgstr "Muzică"
+
+#: models/videolistmodel.cpp:30
+#, kde-format
+msgctxt "@action:button Trending news videos"
+msgid "News"
+msgstr "Știri"
+
+#: models/videolistmodel.cpp:32
+#, kde-format
+msgctxt "@action:button Video watch history"
+msgid "History"
+msgstr "Istoric"
+
+#: models/videolistmodel.cpp:166
+#, kde-format
+msgid "Search results for \"%1\""
+msgstr "Rezultatele căutării pentru ”%1”"
+
+#: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
+#: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
+#, kde-format
+msgid "Proxy Settings"
+msgstr "Configurări proxy"
+
+#: ui/components/BaseGridView.qml:49
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your proxy settings."
+msgstr "Contactarea serverului a eșuat: %1. Verificați configurările de proxy."
+
+#: ui/components/BaseGridView.qml:127 ui/Main.qml:95
+#, kde-format
+msgctxt "@info:status"
+msgid "Loading…"
+msgstr "Se încarcă…"
+
+#: ui/components/BaseGridView.qml:133
+#, kde-format
+msgid "No videos"
+msgstr "Niciun videoclip"
+
+#: ui/components/BaseGridView.qml:160
+#, kde-format
+msgid "Add to playlist"
+msgstr "Adaugă la lista de redare"
+
+#: ui/components/BottomNavBar.qml:70
+#, kde-format
+msgid "Videos"
+msgstr "Videoclipuri"
+
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
+#: ui/SearchPage.qml:18
+#, kde-format
+msgid "Search"
+msgstr "Caută"
+
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
+#, kde-format
+msgid "Settings"
+msgstr "Configurări"
+
+#: ui/components/Comments.qml:93
+#, kde-format
+msgctxt "@action:button Load more comments"
+msgid "Load more"
+msgstr "Încarcă mai multe"
+
+#: ui/components/PlaylistGridItem.qml:49
+#, kde-format
+msgid "%1 video"
+msgid_plural "%1 videos"
+msgstr[0] "%1 videoclip"
+msgstr[1] "%1 videoclipuri"
+msgstr[2] "%1 de videoclipuri"
+
+#: ui/components/ShareDialog.qml:33
+#, kde-format
+msgid "Sharing failed"
+msgstr "Partajarea a eșuat"
+
+#: ui/components/ShareMenu.qml:17
+#, kde-format
+msgid "Share"
+msgstr "Partajează"
+
+#: ui/components/Sidebar.qml:87
+#, kde-format
+msgid "Trending"
+msgstr "În vogă"
+
+#: ui/components/Sidebar.qml:120 ui/PlaylistsPage.qml:14
+#, kde-format
+msgid "Playlists"
+msgstr "Liste de redare"
+
+#: ui/components/Sidebar.qml:137
+#, kde-format
+msgid "History"
+msgstr "Istoric"
+
+#: ui/components/Sidebar.qml:153
+#, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "Configurări"
+
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
+#, kde-format
+msgid "Invidious"
+msgstr "Invidious"
+
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
+#, kde-format
+msgid "PeerTube"
+msgstr "PeerTube"
+
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
+#, kde-format
+msgid "Piped"
+msgstr "Piped"
+
+#: ui/components/SourceSwitcher.qml:55
+#, kde-format
+msgid "Switch Source"
+msgstr "Schimbă sursa"
+
+#: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
+#, kde-format
+msgid "Add Source"
+msgstr "Adaugă sursă"
+
+#: ui/components/SourceSwitcher.qml:93
+#, kde-format
+msgid "Add a new video source"
+msgstr "Adaugă o nouă sursă video"
+
+#: ui/components/SubscriptionButton.qml:55
+#, kde-format
+msgid "Unsubscribe (%1)"
+msgstr "Dezabonează (%1)"
+
+#: ui/components/SubscriptionButton.qml:57
+#, kde-format
+msgid "Subscribe (%1)"
+msgstr "Abonează (%1)"
+
+#: ui/components/SubscriptionButton.qml:67
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr "Autentificați-vă pentru a vă abona la canale."
+
+#: ui/components/VideoGridItem.qml:171
+#, kde-format
+msgid "• %1 views • %2"
+msgstr "• %1 vizualizări • %2"
+
+#: ui/components/VideoListItem.qml:173
+#, kde-format
+msgid " • %1 views"
+msgstr " • %1 vizualizări"
+
+#: ui/components/VideoListItem.qml:181
+#, kde-format
+msgid " • %1"
+msgstr " • %1"
+
+#: ui/components/VideoMenu.qml:26
+#, kde-format
+msgid "Play Now"
+msgstr "Redă acum"
+
+#: ui/components/VideoMenu.qml:36
+#, kde-format
+msgid "Play Next"
+msgstr "Redă următoarea"
+
+#: ui/components/VideoMenu.qml:44
+#, kde-format
+msgid "Play in Picture-in-Picture"
+msgstr "Redă imagine-în-imagine"
+
+#: ui/components/VideoMenu.qml:58
+#, kde-format
+msgid "Mark as unwatched"
+msgstr "Marchează ca nevizionat"
+
+#: ui/components/VideoMenu.qml:58
+#, kde-format
+msgid "Mark as watched"
+msgstr "Marchează ca vizionat"
+
+#: ui/components/VideoMenu.qml:72
+#, kde-format
+msgid "Add to Playlist…"
+msgstr "Adaugă la lista de redare…"
+
+#: ui/components/VideoMenu.qml:79
+#, kde-format
+msgid "Remove from Playlist"
+msgstr "Elimină din listă"
+
+#: ui/loginflow/AddInvidiousPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Invidious Source"
+msgstr "Adaugă sursă Invidious"
+
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
+#: ui/loginflow/AddPipedPage.qml:28
+#, kde-format
+msgid "Select a instance"
+msgstr "Alege o instanță"
+
+#: ui/loginflow/AddInvidiousPage.qml:35
+#, kde-format
+msgid "invidious.io"
+msgstr "invidious.io"
+
+#: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
+#: ui/loginflow/AddPipedPage.qml:67
+#, kde-format
+msgid "No public instances found."
+msgstr "Nicio instanță publică găsită."
+
+#: ui/loginflow/AddPeerTubePage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Add PeerTube Source"
+msgstr "Adaugă sursă PeerTube"
+
+#: ui/loginflow/AddPeerTubePage.qml:35
+#, kde-format
+msgid "joinpeertube.org"
+msgstr "joinpeertube.org"
+
+#: ui/loginflow/AddPipedPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Piped Source"
+msgstr "Adaugă sursă Piped"
+
+#: ui/loginflow/AddPipedPage.qml:35
+#, kde-format
+msgid "pipedapi.kavin.rocks"
+msgstr "pipedapi.kavin.rocks"
+
+#: ui/loginflow/AddPipedPage.qml:74
+#, kde-format
+msgctxt "Add instance"
+msgid "Add %1"
+msgstr "Adaugă %1"
+
+#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr "Bine ați venit"
+
+#: ui/loginflow/WelcomePage.qml:27
+#, kde-format
+msgid "Welcome to PlasmaTube"
+msgstr "Bun venit la PlasmaTube"
+
+#: ui/loginflow/WelcomePage.qml:33
+#, kde-format
+msgid "PlasmaTube requires at least one video source."
+msgstr "PlasmaTube necesită cel puțin o sursă video."
+
+#: ui/loginflow/WelcomePage.qml:43
+#, kde-format
+msgid "Add Invidious Source"
+msgstr "Adaugă sursă Invidious"
+
+#: ui/loginflow/WelcomePage.qml:55
+#, kde-format
+msgid "Add PeerTube Source"
+msgstr "Adaugă sursă PeerTube"
+
+#: ui/loginflow/WelcomePage.qml:67
+#, kde-format
+msgid "Add Piped Source"
+msgstr "Adaugă sursă Piped"
+
+#: ui/LoginPage.qml:21
+#, kde-format
+msgid "Sign in"
+msgstr "Autentificare"
+
+#: ui/LoginPage.qml:30
+#, kde-format
+msgid "Successfully logged in!"
+msgstr "Autentificare reușită!"
+
+#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
+#: ui/settings/InvidiousSourcePage.qml:122
+#, kde-format
+msgid "Log in"
+msgstr "Autentificare"
+
+#: ui/LoginPage.qml:57
+#, kde-format
+msgid "Username"
+msgstr "Utilizator"
+
+#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
+#, kde-format
+msgid "Password"
+msgstr "Parolă"
+
+#: ui/LoginPage.qml:93
+#, kde-format
+msgid "Username must not be empty!"
+msgstr "Utilizatorul nu poate fi gol!"
+
+#: ui/LoginPage.qml:98
+#, kde-format
+msgid "Password must not be empty!"
+msgstr "Parola nu poate fi goală!"
+
+#: ui/PlaylistPage.qml:43
+#, kde-format
+msgctxt "@action:button Play the playlist"
+msgid "Play"
+msgstr "Redă"
+
+#: ui/SearchPage.qml:90
+#, kde-format
+msgid "Sort By:"
+msgstr "Sortează după:"
+
+#: ui/SearchPage.qml:94
+#, kde-format
+msgid "Rating"
+msgstr "Evaluare"
+
+#: ui/SearchPage.qml:105
+#, kde-format
+msgid "Relevance"
+msgstr "Relevanță"
+
+#: ui/SearchPage.qml:117
+#, kde-format
+msgid "Upload Date"
+msgstr "Data încărcării"
+
+#: ui/SearchPage.qml:128
+#, kde-format
+msgid "View Count"
+msgstr "Contor vizualizări"
+
+#: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
+#: ui/settings/PipedSourcePage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Source"
+msgstr "Modifică sursa"
+
+#: ui/settings/InvidiousSourcePage.qml:21
+#, kde-format
+msgid "Account"
+msgstr "Cont"
+
+#: ui/settings/InvidiousSourcePage.qml:30
+#, kde-format
+msgid "Currently logged in as %1."
+msgstr "Autentificat ca %1."
+
+#: ui/settings/InvidiousSourcePage.qml:55
+#, kde-format
+msgid "Autoplay"
+msgstr "Redare automată"
+
+#: ui/settings/InvidiousSourcePage.qml:69
+#, kde-format
+msgid "Default homepage"
+msgstr "Pagina implicită"
+
+#: ui/settings/InvidiousSourcePage.qml:129
+#, kde-format
+msgid "Log out"
+msgstr "Ieși"
+
+#: ui/settings/InvidiousSourcePage.qml:139
+#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
+#, kde-format
+msgid "Remove Source"
+msgstr "Elimină sursa"
+
+#: ui/settings/InvidiousSourcePage.qml:140
+#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
+#, kde-format
+msgid "Cannot remove the only source."
+msgstr "Unica sursă nu poate fi eliminată."
+
+#: ui/settings/InvidiousSourcePage.qml:147
+#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
+#, kde-format
+msgctxt "@title"
+msgid "Remove Source"
+msgstr "Elimină sursa"
+
+#: ui/settings/InvidiousSourcePage.qml:148
+#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to remove this source?"
+msgstr "Sigur doriți să eliminați această sursă?"
+
+#: ui/settings/NetworkProxyPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Proxy"
+msgstr "Proxy de rețea"
+
+#: ui/settings/NetworkProxyPage.qml:27
+#, kde-format
+msgid "System Default"
+msgstr "Implicit de sistem"
+
+#: ui/settings/NetworkProxyPage.qml:37
+#, kde-format
+msgid "HTTP"
+msgstr "HTTP"
+
+#: ui/settings/NetworkProxyPage.qml:51
+#, kde-format
+msgid "Host"
+msgstr "Gazdă"
+
+#: ui/settings/NetworkProxyPage.qml:62
+#, kde-format
+msgid "Port"
+msgstr "Port"
+
+#: ui/settings/NetworkProxyPage.qml:81
+#, kde-format
+msgid "User"
+msgstr "Utilizator"
+
+#: ui/settings/NetworkProxyPage.qml:105
+#, kde-format
+msgid "Apply"
+msgstr "Aplică"
+
+#: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
+#, kde-format
+msgid "Sources"
+msgstr "Surse"
+
+#: ui/settings/SettingsPage.qml:21
+#, kde-format
+msgid "Network Proxy"
+msgstr "Proxy de rețea"
+
+#: ui/settings/SettingsPage.qml:27
+#, kde-format
+msgid "About PlasmaTube"
+msgstr "Despre PlasmaTube"
+
+#: ui/settings/SettingsPage.qml:33
+#, kde-format
+msgid "About KDE"
+msgstr "Despre KDE"
+
+#: ui/TrendingPage.qml:15
+#, kde-format
+msgctxt "@title Trending videos"
+msgid "Trending"
+msgstr "În vogă"
+
+#: ui/videoplayer/PictureInPictureVideo.qml:15
+#, kde-format
+msgid "Picture in Picture"
+msgstr "Imagine-în-imagine"
+
+#: ui/videoplayer/VideoPlayer.qml:316
+#, kde-format
+msgid "%1 views"
+msgstr "%1 vizualizări"
+
+#: ui/videoplayer/VideoPlayer.qml:324
+#, kde-format
+msgid "%1 Likes"
+msgstr "%1 aprecieri"
+
+#: ui/videoplayer/VideoPlayer.qml:391
+#, kde-format
+msgid "Queue"
+msgstr "Coadă"
+
+#: ui/videoplayer/VideoPlayer.qml:402
+#, kde-format
+msgid "Recommended"
+msgstr "Recomandat"
+
+#: ui/videoplayer/VideoQueueView.qml:38
+#, kde-format
+msgctxt "@action:button Clear playlist"
+msgid "Clear"
+msgstr "Curăță"
