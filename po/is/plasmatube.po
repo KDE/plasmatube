@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2023 Guðmundur Erlingsson <gudmundure@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-04 00:37+0000\n"
-"PO-Revision-Date: 2023-11-08 21:32+0000\n"
+"PO-Revision-Date: 2024-02-19 18:35+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -144,6 +144,7 @@ msgstr "Stillingar milliþjóns"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Mistókst að ná sambandi við þjón: %1. Athugaðu milliþjónsstillingarnar þínar."
 
 #: ui/components/BaseGridView.qml:126 ui/Main.qml:95
 #, kde-format
@@ -235,7 +236,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
@@ -268,10 +269,9 @@ msgid "Please log in to subscribe to channels."
 msgstr "Skráðu þig inn til að gerast áskrifandi að rásum"
 
 #: ui/components/VideoGridItem.qml:145
-#, fuzzy, kde-format
-#| msgid "• %1 views • %2"
+#, kde-format
 msgid "%1 views • %2"
-msgstr "• %1 áhorf • %2"
+msgstr "%1 áhorf • %2"
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
 #, kde-format
@@ -289,10 +289,9 @@ msgid "Play Now"
 msgstr "Spila núna"
 
 #: ui/components/VideoMenu.qml:36
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgid "Play Next"
-msgstr "Spila núna"
+msgstr "Spila næst"
 
 #: ui/components/VideoMenu.qml:44
 #, kde-format
@@ -354,22 +353,21 @@ msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Bæta við uppsprettu"
+msgstr "Bæta við Piped-uppsprettu"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Bæta við %1"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
 #, kde-format
@@ -398,10 +396,9 @@ msgid "Add PeerTube Source"
 msgstr "Bæta við PeerTube-uppsprettu"
 
 #: ui/loginflow/WelcomePage.qml:67
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Bæta við uppsprettu"
+msgstr "Bæta við Piped-uppsprettu"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -440,11 +437,10 @@ msgid "Password must not be empty!"
 msgstr "Lykilorðið má ekki vera autt!"
 
 #: ui/PlaylistPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Play Now"
+#, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr "Spila núna"
+msgstr "Spila"
 
 #: ui/SearchPage.qml:90
 #, kde-format
@@ -604,23 +600,23 @@ msgstr "%1 líkar þetta"
 #: ui/videoplayer/VideoPlayer.qml:397
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Athugasemdir"
 
 #: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Biðröð"
 
 #: ui/videoplayer/VideoPlayer.qml:432
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Mælt með"
 
 #: ui/videoplayer/VideoQueueView.qml:38
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Hreinsa"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 áhorf"
