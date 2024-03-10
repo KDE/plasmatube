@@ -5,6 +5,7 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD']
   'require':
     'frameworks/purpose': '@latest-kf6'
+    'frameworks/qqc2-desktop-style': '@latest-kf6'
 
 - 'on': ['Linux', 'FreeBSD', 'Android']
   'require':
