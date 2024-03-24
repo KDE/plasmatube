@@ -46,6 +46,8 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        enabled: currentType !== 0
+
         FormCard.FormTextFieldDelegate {
             id: hostField
             label: i18n("Host")
