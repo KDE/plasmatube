@@ -163,7 +163,7 @@ GridView {
         sourceComponent: Kirigami.PromptDialog {
             id: addToPlaylistDialog
 
-            title: i18n("Add to playlist")
+            title: i18nc("@title", "Add to Playlist")
 
             standardButtons: Kirigami.Dialog.NoButton
 
