@@ -11,6 +11,14 @@ KirigamiSettings.CategorizedSettings {
 
     actions: [
         KirigamiSettings.SettingAction {
+            actionName: "general"
+            text: i18n("General")
+            icon.name
+    :
+    "org.kde.plasmatube"
+    page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/plasmatube/ui/settings/GeneralPage.qml")
+},
+        KirigamiSettings.SettingAction {
             actionName: "sources"
             text: i18n("Sources")
             icon.name: "cloudstatus"

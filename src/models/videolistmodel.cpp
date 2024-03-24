@@ -254,6 +254,12 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
         auto result = m_futureWatcher->result();
         if (auto videos = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+            if (PlasmaTube::instance().settings()->hideShorts()) {
+                videos->removeIf([](const QInvidious::VideoBasicInfo &info) -> bool {
+                    return info.length() == QTime(0, 0, 0);
+                });
+            }
+
             const auto rows = rowCount();
             beginInsertRows({}, rows, rows + videos->size() - 1);
             m_results << *videos;

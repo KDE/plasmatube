@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "config.h"
 #include "sourcemanager.h"
 #include "videocontroller.h"
 
@@ -39,6 +40,8 @@ public:
 
     Q_INVOKABLE void setApplicationProxy();
 
+    PlasmaTubeSettings *settings();
+
 Q_SIGNALS:
     void openVideo(const QString &id);
     void errorOccurred(const QString &errorText);
@@ -50,4 +53,6 @@ private:
 
     VideoController *m_controller = nullptr;
     SourceManager *m_sourceManager = nullptr;
+
+    PlasmaTubeSettings m_settings;
 };

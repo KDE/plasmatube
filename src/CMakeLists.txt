@@ -106,6 +106,7 @@ qt_target_qml_sources(plasmatube
 
         ui/settings/AboutKDEPage.qml
         ui/settings/AboutPage.qml
+        ui/settings/GeneralPage.qml
         ui/settings/InvidiousSourcePage.qml
         ui/settings/NetworkProxyPage.qml
         ui/settings/PeerTubeSourcePage.qml

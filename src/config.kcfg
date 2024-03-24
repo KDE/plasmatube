@@ -4,6 +4,11 @@
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile arg="true" />
+  <group name="General">
+    <entry name="HideShorts" type="Bool">
+      <default>true</default>
+    </entry>
+  </group>
   <group name="NetworkProxy">
     <entry name="ProxyType" type="Enum">
       <label>The type of proxy used by the application.</label>

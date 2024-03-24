@@ -104,9 +104,9 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
-    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", &settings);
-    QObject::connect(&app, &QCoreApplication::aboutToQuit, &settings, &PlasmaTubeSettings::save);
+    auto &plasmatubeInstance = PlasmaTube::instance();
+    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", plasmatubeInstance.settings());
+    QObject::connect(&app, &QCoreApplication::aboutToQuit, plasmatubeInstance.settings(), &PlasmaTubeSettings::save);
 
     qmlRegisterType<MpvObject>("org.kde.plasmatube.private", 1, 0, "MpvObject");
 
