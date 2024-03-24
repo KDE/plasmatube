@@ -57,6 +57,8 @@ GridView {
             roleValue: "video"
 
             VideoGridItem {
+                id: videoItem
+
                 width: gridView.cellWidth
                 height: gridView.cellHeight
 
@@ -84,7 +86,12 @@ GridView {
                     currentChannelName = author;
                     currentChannelId = authorId;
                     videoMenu.isWatched = watched;
-                    videoMenu.popup();
+                    // If we don't set a position, QtQuick just throws it anywhere on the screen with a touch input
+                    if (Kirigami.Settings.hasTransientTouchInput) {
+                        videoMenu.popup(videoItem, videoItem.width / 2, videoItem.height / 2);
+                    } else {
+                        videoMenu.popup();
+                    }
                 }
             }
         }
