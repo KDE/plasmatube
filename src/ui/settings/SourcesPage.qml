@@ -20,6 +20,14 @@ FormCard.FormCardPage {
 
     title: i18n("Sources")
 
+    actions: [
+        Kirigami.Action {
+            text: i18nc("@action:button", "Add Source")
+            icon.name: "list-add"
+            onTriggered: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"), {}, {title: i18nc("@title:window", "Welcome")})
+        }
+    ]
+
     FormCard.FormCard {
         Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.largeSpacing
@@ -82,16 +90,6 @@ FormCard.FormCardPage {
                     }
                 }
             }
-        }
-    }
-
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.gridUnit
-
-        FormCard.FormButtonDelegate {
-            text: i18n("Add Source")
-            icon.name: "list-add"
-            onClicked: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"), {}, { title: i18nc("@title:window", "Welcome") })
         }
     }
 }
