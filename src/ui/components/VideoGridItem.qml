@@ -153,6 +153,7 @@ BaseGridItem {
             QQC2.Label {
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                 text: i18n("%1 views \u2022 %2", Utils.formatCount(viewCount), liveNow ? "<i>live now</i>" : publishedText)
+                visible: liveNow || viewCount !== 0
                 color: Kirigami.Theme.disabledTextColor
                 maximumLineCount: 1
                 elide: Text.ElideRight
