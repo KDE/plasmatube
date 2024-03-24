@@ -68,8 +68,18 @@ BaseGridItem {
             }
 
             Text {
-                visible: !liveNow && text !== "00:00"
-                text: Utils.formatTime(length)
+                text: {
+                    if (liveNow) {
+                        return i18nc("Short label for a livestream that's live", "Live");
+                    }
+
+                    const time = Utils.formatTime(length);
+                    if (time !== "00:00") {
+                        return time;
+                    } else {
+                        return i18nc("Short label for a short video", "Short");
+                    }
+                }
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
 
