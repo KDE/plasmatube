@@ -90,10 +90,14 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Kirigami.PlaceholderMessage {
+    Rectangle {
         anchors.fill: parent
-        text: i18nc("@info:status", "Loading…")
         visible: !root.finishedLoading
+        color: Kirigami.Theme.backgroundColor
+
+        Kirigami.LoadingPlaceholder {
+            anchors.centerIn: parent
+        }
     }
 
     function switchToPage(page, args) {

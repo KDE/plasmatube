@@ -128,10 +128,24 @@ GridView {
         }
     }
 
-    Kirigami.PlaceholderMessage {
+    footer: ColumnLayout {
+        width: parent.width
+        spacing: 0
+        visible: gridView.count > 0
+
+        QQC2.ProgressBar {
+            id: loadingBar
+
+            visible: gridView.model.isLoading
+            indeterminate: true
+
+            Layout.alignment: Qt.AlignHCenter
+        }
+    }
+
+    Kirigami.LoadingPlaceholder {
         anchors.centerIn: parent
-        text: i18nc("@info:status", "Loading…")
-        visible: gridView.model.isLoading
+        visible: gridView.model.isLoading && gridView.count === 0
     }
 
     Kirigami.PlaceholderMessage {
