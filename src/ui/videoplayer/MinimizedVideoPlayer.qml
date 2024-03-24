@@ -25,7 +25,7 @@ Rectangle {
 
     color: Kirigami.Theme.backgroundColor
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.colorSet: Kirigami.Theme.Header
     Kirigami.Theme.inherit: false
 
     RowLayout {
