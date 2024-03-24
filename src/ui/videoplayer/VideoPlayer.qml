@@ -373,6 +373,7 @@ Kirigami.ScrollablePage {
                     background: null
                     readOnly: true
                     padding: 0
+                    wrapMode: Text.WordWrap
 
                     Layout.topMargin: Kirigami.Units.gridUnit
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
