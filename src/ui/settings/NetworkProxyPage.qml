@@ -105,6 +105,7 @@ FormCard.FormCardPage {
 
             QQC2.Button  {
                 text: i18n("Apply")
+                icon.name: "dialog-ok-apply-symbolic"
                 enabled: currentType !== Settings.proxyType || proxyConfigChanged
                 onClicked: {
                     Settings.proxyType = currentType;
