@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 02:26+0000\n"
+"POT-Creation-Date: 2024-03-25 02:51+0000\n"
 "PO-Revision-Date: 2023-11-26 01:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -606,12 +606,12 @@ msgstr "%1 ikustaldi"
 msgid "%1 Likes"
 msgstr "%1 atsegin"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr "Ipini ilaran"
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr "Gomendatuta"

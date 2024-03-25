@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 02:26+0000\n"
+"POT-Creation-Date: 2024-03-25 02:51+0000\n"
 "PO-Revision-Date: 2023-12-28 11:03+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -603,12 +603,12 @@ msgstr "%1 megtekintés"
 msgid "%1 Likes"
 msgstr "%1 kedvelés"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr "Lejátszási sor"
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr "Ajánlott"

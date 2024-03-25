@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 02:26+0000\n"
+"POT-Creation-Date: 2024-03-25 02:51+0000\n"
 "PO-Revision-Date: 2023-11-12 13:59+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -602,12 +602,12 @@ msgstr "%1 weergaven"
 msgid "%1 Likes"
 msgstr "%1 Likes"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Queue"
 msgstr "Wachtrij"
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:403
 #, kde-format
 msgid "Recommended"
 msgstr "Aanbevolen"
