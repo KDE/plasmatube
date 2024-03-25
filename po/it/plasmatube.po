@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-25 00:37+0000\n"
 "PO-Revision-Date: 2024-01-16 09:26+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -147,20 +147,16 @@ msgstr ""
 "Impossibile contattare il server: %1. Controlla le tue impostazioni del "
 "proxy."
 
-#: ui/components/BaseGridView.qml:126 ui/Main.qml:95
-#, kde-format
-msgctxt "@info:status"
-msgid "Loading…"
-msgstr "Caricamento…"
-
-#: ui/components/BaseGridView.qml:132
+#: ui/components/BaseGridView.qml:153
 #, kde-format
 msgid "No videos"
 msgstr "Nessun video"
 
-#: ui/components/BaseGridView.qml:159
-#, kde-format
-msgid "Add to playlist"
+#: ui/components/BaseGridView.qml:180
+#, fuzzy, kde-format
+#| msgid "Add to playlist"
+msgctxt "@title"
+msgid "Add to Playlist"
 msgstr "Aggiungi alla scaletta"
 
 #: ui/components/BottomNavBar.qml:70
@@ -224,17 +220,17 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:69
 #, kde-format
 msgid "Piped"
 msgstr "Piped"
@@ -244,7 +240,7 @@ msgstr "Piped"
 msgid "Switch Source"
 msgstr "Cambia sorgente"
 
-#: ui/components/SourceSwitcher.qml:97 ui/settings/SourcesPage.qml:92
+#: ui/components/SourceSwitcher.qml:97
 #, kde-format
 msgid "Add Source"
 msgstr "Aggiungi sorgente"
@@ -269,7 +265,19 @@ msgstr "Iscriviti (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Accedi per iscriverti ai canali."
 
-#: ui/components/VideoGridItem.qml:145
+#: ui/components/VideoGridItem.qml:73
+#, kde-format
+msgctxt "Short label for a livestream that's live"
+msgid "Live"
+msgstr ""
+
+#: ui/components/VideoGridItem.qml:80
+#, kde-format
+msgctxt "Short label for a short video"
+msgid "Short"
+msgstr ""
+
+#: ui/components/VideoGridItem.qml:155
 #, kde-format
 msgid "%1 views • %2"
 msgstr "%1 visualizzazioni • %2"
@@ -370,7 +378,7 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr "Aggiungi %1"
 
-#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
+#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -422,7 +430,7 @@ msgstr "Accedi"
 msgid "Username"
 msgstr "Nome utente"
 
-#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
+#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
 msgstr "Password"
@@ -467,6 +475,17 @@ msgstr "Data di caricamento"
 #, kde-format
 msgid "View Count"
 msgstr "Numero di visualizzazioni"
+
+#: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:27
+#, kde-format
+msgctxt "@option:check Hide short-form videos"
+msgid "Hide Shorts"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -542,45 +561,52 @@ msgstr "Impostazioni predefinite di sistema"
 msgid "HTTP"
 msgstr "HTTP"
 
-#: ui/settings/NetworkProxyPage.qml:51
+#: ui/settings/NetworkProxyPage.qml:53
 #, kde-format
 msgid "Host"
 msgstr "Host"
 
-#: ui/settings/NetworkProxyPage.qml:62
+#: ui/settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Port"
 msgstr "Porta"
 
-#: ui/settings/NetworkProxyPage.qml:81
+#: ui/settings/NetworkProxyPage.qml:83
 #, kde-format
 msgid "User"
 msgstr "Utente"
 
-#: ui/settings/NetworkProxyPage.qml:105
+#: ui/settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Apply"
 msgstr "Applica"
 
-#: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
+#: ui/settings/SettingsPage.qml:23 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "Sorgenti"
 
-#: ui/settings/SettingsPage.qml:21
+#: ui/settings/SettingsPage.qml:29
 #, kde-format
 msgid "Network Proxy"
 msgstr "Proxy di rete"
 
-#: ui/settings/SettingsPage.qml:27
+#: ui/settings/SettingsPage.qml:35
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Informazioni su PlasmaTube"
 
-#: ui/settings/SettingsPage.qml:33
+#: ui/settings/SettingsPage.qml:41
 #, kde-format
 msgid "About KDE"
 msgstr "Informazioni su KDE"
+
+#: ui/settings/SourcesPage.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Source"
+msgctxt "@action:button"
+msgid "Add Source"
+msgstr "Aggiungi sorgente"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -598,17 +624,17 @@ msgstr "Picture in Picture"
 msgid "%1 Likes"
 msgstr "%1 Mi piace"
 
-#: ui/videoplayer/VideoPlayer.qml:397
+#: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
 msgstr "Commenti"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
 msgid "Queue"
 msgstr "Accoda"
 
-#: ui/videoplayer/VideoPlayer.qml:432
+#: ui/videoplayer/VideoPlayer.qml:433
 #, kde-format
 msgid "Recommended"
 msgstr "Raccomandato"
@@ -618,6 +644,10 @@ msgstr "Raccomandato"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Pulisci"
+
+#~ msgctxt "@info:status"
+#~ msgid "Loading…"
+#~ msgstr "Caricamento…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 visualizzazioni"

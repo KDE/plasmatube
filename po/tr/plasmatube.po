@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-04 00:37+0000\n"
+"POT-Creation-Date: 2024-03-25 00:37+0000\n"
 "PO-Revision-Date: 2024-01-15 10:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -145,20 +145,16 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Sunucuya bağlanamadı: %1. Lütfen vekil ayarlarınızı denetleyin."
 
-#: ui/components/BaseGridView.qml:126 ui/Main.qml:95
-#, kde-format
-msgctxt "@info:status"
-msgid "Loading…"
-msgstr "Yükleniyor…"
-
-#: ui/components/BaseGridView.qml:132
+#: ui/components/BaseGridView.qml:153
 #, kde-format
 msgid "No videos"
 msgstr "Video yok"
 
-#: ui/components/BaseGridView.qml:159
-#, kde-format
-msgid "Add to playlist"
+#: ui/components/BaseGridView.qml:180
+#, fuzzy, kde-format
+#| msgid "Add to playlist"
+msgctxt "@title"
+msgid "Add to Playlist"
 msgstr "Oynatma Listesine Ekle"
 
 #: ui/components/BottomNavBar.qml:70
@@ -222,17 +218,17 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:57
+#: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:59
+#: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
+#: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:69
 #, kde-format
 msgid "Piped"
 msgstr "Piped"
@@ -242,7 +238,7 @@ msgstr "Piped"
 msgid "Switch Source"
 msgstr "Kaynağı Değiştir"
 
-#: ui/components/SourceSwitcher.qml:97 ui/settings/SourcesPage.qml:92
+#: ui/components/SourceSwitcher.qml:97
 #, kde-format
 msgid "Add Source"
 msgstr "Kaynak Ekle"
@@ -267,7 +263,19 @@ msgstr "Abone Ol (%1)"
 msgid "Please log in to subscribe to channels."
 msgstr "Kanallara abone olmak için oturum açın."
 
-#: ui/components/VideoGridItem.qml:145
+#: ui/components/VideoGridItem.qml:73
+#, kde-format
+msgctxt "Short label for a livestream that's live"
+msgid "Live"
+msgstr ""
+
+#: ui/components/VideoGridItem.qml:80
+#, kde-format
+msgctxt "Short label for a short video"
+msgid "Short"
+msgstr ""
+
+#: ui/components/VideoGridItem.qml:155
 #, kde-format
 msgid "%1 views • %2"
 msgstr "%1 görüntülenme • %2"
@@ -368,7 +376,7 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr "Ekle: %1"
 
-#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:94
+#: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -420,7 +428,7 @@ msgstr "Oturum Aç"
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
-#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:89
+#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
 msgstr "Parola"
@@ -465,6 +473,17 @@ msgstr "Yüklenme Tarihi"
 #, kde-format
 msgid "View Count"
 msgstr "Görüntülenme Sayısı"
+
+#: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:27
+#, kde-format
+msgctxt "@option:check Hide short-form videos"
+msgid "Hide Shorts"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -540,45 +559,52 @@ msgstr "Sistem Öntanımlısı"
 msgid "HTTP"
 msgstr "HTTP"
 
-#: ui/settings/NetworkProxyPage.qml:51
+#: ui/settings/NetworkProxyPage.qml:53
 #, kde-format
 msgid "Host"
 msgstr "Makine"
 
-#: ui/settings/NetworkProxyPage.qml:62
+#: ui/settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Port"
 msgstr "Kapı"
 
-#: ui/settings/NetworkProxyPage.qml:81
+#: ui/settings/NetworkProxyPage.qml:83
 #, kde-format
 msgid "User"
 msgstr "Kullanıcı"
 
-#: ui/settings/NetworkProxyPage.qml:105
+#: ui/settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Apply"
 msgstr "Uygula"
 
-#: ui/settings/SettingsPage.qml:15 ui/settings/SourcesPage.qml:21
+#: ui/settings/SettingsPage.qml:23 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "Kaynaklar"
 
-#: ui/settings/SettingsPage.qml:21
+#: ui/settings/SettingsPage.qml:29
 #, kde-format
 msgid "Network Proxy"
 msgstr "Ağ Vekili"
 
-#: ui/settings/SettingsPage.qml:27
+#: ui/settings/SettingsPage.qml:35
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "PlasmaTube Hakkında"
 
-#: ui/settings/SettingsPage.qml:33
+#: ui/settings/SettingsPage.qml:41
 #, kde-format
 msgid "About KDE"
 msgstr "KDE Hakkında"
+
+#: ui/settings/SourcesPage.qml:25
+#, fuzzy, kde-format
+#| msgid "Add Source"
+msgctxt "@action:button"
+msgid "Add Source"
+msgstr "Kaynak Ekle"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -596,17 +622,17 @@ msgstr "Resim İçinde Resim"
 msgid "%1 Likes"
 msgstr "%1 beğeni"
 
-#: ui/videoplayer/VideoPlayer.qml:397
+#: ui/videoplayer/VideoPlayer.qml:398
 #, kde-format
 msgid "Comments"
 msgstr "Yorumlar"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:422
 #, kde-format
 msgid "Queue"
 msgstr "Kuyruk"
 
-#: ui/videoplayer/VideoPlayer.qml:432
+#: ui/videoplayer/VideoPlayer.qml:433
 #, kde-format
 msgid "Recommended"
 msgstr "Önerilen"
@@ -616,6 +642,10 @@ msgstr "Önerilen"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Temizle"
+
+#~ msgctxt "@info:status"
+#~ msgid "Loading…"
+#~ msgstr "Yükleniyor…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 görüntülenme"
