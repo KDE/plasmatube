@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 02:51+0000\n"
-"PO-Revision-Date: 2023-11-12 05:37+0300\n"
+"PO-Revision-Date: 2024-03-25 13:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -131,7 +131,7 @@ msgstr "Geçmiş"
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr "\"%1\" için arama sonuçları"
+msgstr "“%1” için arama sonuçları"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:41 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
@@ -295,7 +295,7 @@ msgstr "Sonrakini Oynat"
 #: ui/components/VideoMenu.qml:44
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr "Resim İçinde Resim'de Oynat"
+msgstr "Resim İçinde Resim’de Oynat"
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
@@ -377,7 +377,7 @@ msgstr "Hoş Geldiniz"
 #: ui/loginflow/WelcomePage.qml:27
 #, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "PlasmaTube'e hoş geldiniz"
+msgstr "PlasmaTube’a hoş geldiniz"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
