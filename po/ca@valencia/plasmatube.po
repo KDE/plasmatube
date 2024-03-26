@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 10:09+0100\n"
+"PO-Revision-Date: 2024-03-25 10:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -156,8 +156,7 @@ msgid "No videos"
 msgstr "Sense vídeos"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "Afig a la llista de reproducció"
@@ -273,13 +272,13 @@ msgstr "Inicieu la sessió per a subscriure's als canals."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "En directe"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Curt"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
@@ -486,13 +485,13 @@ msgstr "Comptador de visualitzacions"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Oculta els curts"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -609,8 +608,7 @@ msgid "About KDE"
 msgstr "Quant a KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source"
 msgstr "Afig una font"
@@ -651,7 +649,3 @@ msgstr "Recomanats"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Neteja"
-
-#~ msgctxt "@info:status"
-#~ msgid "Loading…"
-#~ msgstr "S'està carregant…"

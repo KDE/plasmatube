@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 09:14+0200\n"
+"PO-Revision-Date: 2024-03-25 17:52+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -154,8 +154,7 @@ msgid "No videos"
 msgstr "Немає відео"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "Додати до списку відтворення"
@@ -272,13 +271,13 @@ msgstr "Будь ласка, увійдіть до системи, щоб під
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Наживо"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Короткий"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
@@ -482,13 +481,13 @@ msgstr "Кількість переглядів"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Загальне"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Приховати Shorts"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -605,8 +604,7 @@ msgid "About KDE"
 msgstr "Про KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source"
 msgstr "Додати джерело"

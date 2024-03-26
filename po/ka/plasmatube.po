@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-16 02:57+0100\n"
+"PO-Revision-Date: 2024-03-25 04:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -153,8 +153,7 @@ msgid "No videos"
 msgstr "ვიდეოების გარეშე"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "დასაკრავ სიაში დამატება"
@@ -269,13 +268,13 @@ msgstr "არხების გამოსაწერად საჭირ�
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "ცოცხალი"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "მოკლე"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
@@ -479,13 +478,13 @@ msgstr "ნახვების რაოდენობა"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "ძირითადი"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "მოკლე ვიდეოების დამალვა"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -602,8 +601,7 @@ msgid "About KDE"
 msgstr "KDE-ს შესახებ"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source"
 msgstr "წყაროს დამატება"

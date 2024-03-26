@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-16 09:26+0100\n"
+"PO-Revision-Date: 2024-03-25 16:34+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -153,11 +153,10 @@ msgid "No videos"
 msgstr "Nessun video"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr "Aggiungi alla scaletta"
+msgstr "Aggiungi a scaletta"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -269,13 +268,13 @@ msgstr "Accedi per iscriverti ai canali."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Dal vivo"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Breve"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
@@ -479,13 +478,13 @@ msgstr "Numero di visualizzazioni"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Generale"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Nascondi Short"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -602,11 +601,10 @@ msgid "About KDE"
 msgstr "Informazioni su KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source"
-msgstr "Aggiungi sorgente"
+msgstr "Aggiungi fonte"
 
 #: ui/TrendingPage.qml:15
 #, kde-format

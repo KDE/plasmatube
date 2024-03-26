@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 21:24+0100\n"
+"PO-Revision-Date: 2024-03-25 11:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -156,8 +156,7 @@ msgid "No videos"
 msgstr "Bideorik ez"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "Gehitu jotze-zerrendara"
@@ -272,13 +271,13 @@ msgstr "Mesedez, saio-hasi kanaletan harpidetzeko."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Zuzenean"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Laburra"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
@@ -482,13 +481,13 @@ msgstr "Ikustaldi kopurua"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Orokorra"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Ezkutatu laburrak"
 
 #: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
 #: ui/settings/PipedSourcePage.qml:18
@@ -605,8 +604,7 @@ msgid "About KDE"
 msgstr "KDEri buruz"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source"
 msgstr "Gehitu sorburua"
