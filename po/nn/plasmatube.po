@@ -663,7 +663,3 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
-
-#~ msgctxt "@info:status"
-#~ msgid "Loading…"
-#~ msgstr "Lastar …"
