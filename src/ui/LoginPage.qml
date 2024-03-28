@@ -2,11 +2,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 import org.kde.plasmatube.private
@@ -18,7 +20,15 @@ FormCard.FormCardPage {
 
     readonly property bool isValid: usernameField.text.length !== 0 && passwordField.text.length !== 0
 
-    title: i18n("Sign in")
+    title: i18nc("@title:window", "Log in")
+
+    header: Components.Banner {
+        id: message
+        type: Kirigami.MessageType.Error
+        width: parent.width
+
+        showCloseButton: true
+    }
 
     data: [
         LogInController {
@@ -27,12 +37,12 @@ FormCard.FormCardPage {
             source: root.source
 
             onLoggedIn: {
-                applicationWindow().showPassiveNotification(i18n("Successfully logged in!"))
-                root.Window.window.pageStack.layers.pop()
+                root.Window.window.pageStack.layers.pop();
             }
 
             onErrorOccurred: (errorText) => {
-                applicationWindow().showPassiveNotification(errorText)
+                message.text = errorText;
+                message.visible = true;
             }
         },
         QQC2.BusyIndicator {
@@ -44,12 +54,9 @@ FormCard.FormCardPage {
 
     Component.onCompleted: usernameField.clicked()
 
-    FormCard.FormHeader {
-        title: i18n("Log in")
-        visible: !logInController.isLoading
-    }
-
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
         visible: !logInController.isLoading
 
         FormCard.FormTextFieldDelegate {
@@ -84,22 +91,23 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: logInButton
             text: i18n("Log in")
+            icon.name: "im-user"
             enabled: root.isValid
             onClicked: {
-                usernameField.statusMessage = ""
-                passwordField.statusMessage = ""
+                usernameField.statusMessage = "";
+                passwordField.statusMessage = "";
 
                 if (!usernameField.text) {
-                    usernameField.statusMessage = i18n("Username must not be empty!")
+                    usernameField.statusMessage = i18n("Username must not be empty!");
                     return;
                 }
 
                 if (!passwordField.text) {
-                    passwordField.statusMessage = i18n("Password must not be empty!")
+                    passwordField.statusMessage = i18n("Password must not be empty!");
                     return;
                 }
 
-                logInController.logIn(usernameField.text, passwordField.text)
+                logInController.logIn(usernameField.text, passwordField.text);
             }
         }
     }

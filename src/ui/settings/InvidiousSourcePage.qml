@@ -31,23 +31,51 @@ BaseSourcePage {
 
         FormCard.FormDelegateSeparator {
             above: isLoggedInLabel
+            below: loginButton
             visible: page.source.loggedIn
         }
 
-        Loader {
-            id: preferencesLoader
+        FormCard.FormButtonDelegate {
+            id: loginButton
 
-            active: page.source.loggedIn && page.source.preferences
+            text: {
+                if (page.source.loggedIn) {
+                    return i18nc("@action:button", "Log out")
+                } else {
+                    return i18nc("@action:button", "Log in")
+                }
+            }
+            icon.name: page.source.loggedIn ? "go-previous-symbolic" : "im-user"
+            description: !page.source.loggedIn ? i18n("Subscribe to channels, keep track of watched videos and more.") : ""
+            onClicked: {
+                if (page.source.loggedIn) {
+                    page.source.logOut();
+                } else {
+                    page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
+                }
+            }
+        }
+    }
 
-            Layout.fillWidth: true
+    Loader {
+        id: preferencesLoader
 
-            sourceComponent: ColumnLayout {
-                id: root
+        active: page.source.loggedIn && page.source.preferences
 
-                property var selectedSource
+        Layout.fillWidth: true
 
-                spacing: 0
+        sourceComponent: ColumnLayout {
+            id: root
 
+            property var selectedSource
+
+            spacing: 0
+
+            FormCard.FormHeader {
+                title: i18n("Preferences")
+            }
+
+            FormCard.FormCard {
                 FormCard.FormCheckDelegate {
                     text: i18n("Autoplay")
                     checked: root.selectedSource.preferences.autoPlay
@@ -58,7 +86,8 @@ BaseSourcePage {
                     }
                 }
 
-                FormCard.FormDelegateSeparator {}
+                FormCard.FormDelegateSeparator {
+                }
 
                 FormCard.FormComboBoxDelegate {
                     id: defaultHomepageDelegate
@@ -81,6 +110,7 @@ BaseSourcePage {
                             display: "Playlists"
                         }
                     }
+
                     function calculateIndex() {
                         let defaultHome = root.selectedSource.preferences.defaultHome;
                         switch (defaultHome) {
@@ -104,29 +134,11 @@ BaseSourcePage {
                         PlasmaTube.preferences = preferences;
                     }
                 }
-
-                FormCard.FormDelegateSeparator {}
-
-                onSelectedSourceChanged: defaultHomepageDelegate.calculateIndex()
             }
 
-            onLoaded: item.selectedSource = page.source
+            onSelectedSourceChanged: defaultHomepageDelegate.calculateIndex()
         }
 
-        FormCard.FormButtonDelegate {
-            visible: !page.source.loggedIn
-            Layout.alignment: Qt.AlignHCenter
-            text: i18n("Log in")
-            icon.name: "im-user"
-            description: i18n("Subscribe to channels, keep track of watched videos and more.")
-            onClicked: page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
-        }
-
-        FormCard.FormButtonDelegate {
-            visible: page.source.loggedIn
-            Layout.alignment: Qt.AlignHCenter
-            text: i18n("Log out")
-            onClicked: page.source.logOut()
-        }
+        onLoaded: item.selectedSource = page.source
     }
 }
