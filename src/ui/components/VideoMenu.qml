@@ -87,7 +87,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: root.channelName
         icon.name: "user"
-        onTriggered: pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: root.channelName, authorId: root.channelId});
+        onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: root.channelName, authorId: root.channelId});
     }
 
     QQC2.MenuSeparator {}
