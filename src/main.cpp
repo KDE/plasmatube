@@ -63,8 +63,13 @@ int main(int argc, char **argv)
                      QStringLiteral(PLASMATUBE_VERSION_STRING),
                      i18n("YouTube client"),
                      KAboutLicense::GPL_V3,
-                     i18n("© Linus Jahn"));
+                     i18n("© 2019-2024 Linus Jahn, 2019-2024 KDE Community"));
     about.addAuthor(i18n("Linus Jahn"), i18n("Creator"), QStringLiteral("lnj@kaidan.im"));
+    about.addAuthor(i18n("Joshua Goins"),
+                    i18n("Maintainer"),
+                    QStringLiteral("josh@redstrate.com"),
+                    QStringLiteral("https://redstrate.com/"),
+                    QUrl(QStringLiteral("https://redstrate.com/rss-image.png")));
     about.setTranslator(i18nc("NAME OF TRANSLATORS", "Your names"), i18nc("EMAIL OF TRANSLATORS", "Your emails"));
     about.setOrganizationDomain("kde.org");
     about.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=plasmatube");
