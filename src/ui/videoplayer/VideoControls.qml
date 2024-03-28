@@ -243,7 +243,7 @@ QQC2.Control {
                 QQC2.ToolButton {
                     width: Kirigami.Units.gridUnit * 3
                     height: width
-                    icon.name: "view-zoom-in-symbolic"
+                    icon.name: "window-duplicate-symbolic"
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium

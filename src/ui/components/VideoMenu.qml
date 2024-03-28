@@ -42,7 +42,7 @@ QQC2.Menu {
 
     QQC2.MenuItem {
         text: i18n("Play in Picture-in-Picture")
-        icon.name: "view-zoom-out-symbolic"
+        icon.name: "window-duplicate-symbolic"
         onTriggered: {
             root.markWatched();
             PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
