@@ -121,5 +121,8 @@ FormCard.FormCardPage {
         }
     }
 
-    Component.onCompleted: currentType = Settings.proxyType
+    Component.onCompleted: {
+        proxyConfigChanged = false; // Make doubly sure that stupid bindings haven't turned this on
+        currentType = Settings.proxyType;
+    }
 }
