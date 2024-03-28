@@ -89,6 +89,7 @@ qt_target_qml_sources(plasmatube
         ui/components/Comments.qml
         ui/components/PlaceholderItem.qml
         ui/components/PlaylistGridItem.qml
+        ui/components/ShareAction.qml
         ui/components/ShareDialog.qml
         ui/components/ShareMenu.qml
         ui/components/Sidebar.qml

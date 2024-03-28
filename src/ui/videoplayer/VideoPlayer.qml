@@ -79,20 +79,42 @@ Kirigami.ScrollablePage {
         applicationWindow().showNormal();
     }
 
-    header: Kirigami.AbstractApplicationHeader{
-        contentItem:
-            RowLayout{
-                QQC2.ToolButton {
+    header: Kirigami.AbstractApplicationHeader {
+        contentItem: RowLayout {
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+
+            spacing: Kirigami.Units.smallSpacing
+
+            QQC2.ToolButton {
                 id: closeButton
                 icon.name: "go-previous-view"
 
                 width: Kirigami.Units.gridUnit * 2
                 height: Kirigami.Units.gridUnit * 2
                 onClicked: root.requestClosePlayer();
-
             }
-            Kirigami.Heading{
+
+            Kirigami.Heading {
                 text: video.title
+            }
+
+            Kirigami.ActionToolBar {
+                Layout.alignment: Qt.AlignRight
+                alignment: Qt.AlignRight
+
+                actions: [
+                    ShareAction {
+                        id: shareAction
+
+                        inputData: {
+                            'urls': ["https://youtube.com/watch?=" + video.videoId],
+                            'title': video.title
+                        }
+                    }
+                ]
             }
         }
     }
@@ -296,26 +318,6 @@ Kirigami.ScrollablePage {
 
                             channelId: video.authorId
                             subCountText: video.subCountText
-                        }
-                    }
-
-                    Item {
-                        Layout.fillWidth: true
-                    }
-
-                    QQC2.Button {
-                        text: i18n("Share")
-                        icon.name: "emblem-shared-symbolic"
-
-                        Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-
-                        onClicked: shareMenu.popup()
-
-                        ShareMenu {
-                            id: shareMenu
-
-                            url: "https://youtube.com/watch?=" + video.videoId
-                            shareTitle: video.title
                         }
                     }
                 }
