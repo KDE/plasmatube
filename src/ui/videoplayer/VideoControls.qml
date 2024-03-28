@@ -95,31 +95,35 @@ QQC2.Control {
                 QQC2.ToolButton {
                     width: Kirigami.Units.gridUnit * 3
                     height: width
+                    text: i18nc("@action:button", "Video settings")
                     icon.name: "configure"
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium
+                    display: QQC2.AbstractButton.IconOnly
 
                     onClicked: {
                         configureDialog.open()
                     }
 
                     TabIndicator {}
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
 
-
                 RowLayout {
-
                     id: controlButtonBox
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     Layout.fillHeight: true
                     spacing: 2
 
-
                     QQC2.Button {
                         id: seekBackwardButton
                         implicitHeight: 40
                         implicitWidth: 40
+                        text: i18nc("@action:button", "Seek backward")
 
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
@@ -132,7 +136,6 @@ QQC2.Control {
                                 color: "white"
                                 width: Kirigami.Units.gridUnit
                                 height: Kirigami.Units.gridUnit
-
                             }
                         }
                         background: Kirigami.ShadowedRectangle{
@@ -149,6 +152,10 @@ QQC2.Control {
                                 }
                         }
                         TabIndicator {}
+
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
 
                     QQC2.Button {
@@ -156,6 +163,7 @@ QQC2.Control {
                         implicitHeight: 40
                         implicitWidth: 60
                         onClicked: PlasmaTube.videoController.togglePlaying()
+                        text: i18nc("@action:button", "Play")
                         contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent
@@ -185,6 +193,10 @@ QQC2.Control {
                                 }
                         }
                         TabIndicator {}
+
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
 
                     QQC2.Button {
@@ -192,6 +204,7 @@ QQC2.Control {
                         implicitHeight: 40
                         implicitWidth: 40
                         Layout.rightMargin:isWidescreen?0:10
+                        text: i18nc("@action:button", "Seek forward")
 
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                         Kirigami.Theme.inherit: false
@@ -220,6 +233,10 @@ QQC2.Control {
                                 }
                         }
                         TabIndicator {}
+
+                        QQC2.ToolTip.text: text
+                        QQC2.ToolTip.visible: hovered
+                        QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
                 }
 
@@ -230,6 +247,8 @@ QQC2.Control {
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium
+                    text: i18nc("@action:button", "Fullscreen")
+                    display: QQC2.AbstractButton.IconOnly
 
                     visible: root.showPresentationControls
 
@@ -238,6 +257,10 @@ QQC2.Control {
                     }
 
                     TabIndicator {}
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
 
                 QQC2.ToolButton {
@@ -247,12 +270,18 @@ QQC2.Control {
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
                     icon.height: Kirigami.Units.iconSizes.smallMedium
+                    text: i18nc("@action:button", "Picture-in-picture")
+                    display: QQC2.AbstractButton.IconOnly
 
                     visible: root.showPresentationControls
 
                     onClicked: PlasmaTube.videoController.videoMode = VideoController.PictureInPicture
 
                     TabIndicator {}
+
+                    QQC2.ToolTip.text: text
+                    QQC2.ToolTip.visible: hovered
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
             }
 
