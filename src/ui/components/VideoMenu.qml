@@ -55,7 +55,7 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        text: videoMenu.isWatched ? i18n("Mark as unwatched") : i18n("Mark as watched")
+        text: videoMenu.isWatched ? i18n("Mark as Unwatched") : i18n("Mark as Watched")
         icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
         visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
         onTriggered: {
