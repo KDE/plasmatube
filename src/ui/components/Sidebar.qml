@@ -157,7 +157,7 @@ Kirigami.OverlayDrawer {
             padding: Kirigami.Units.largeSpacing
 
             onClicked: {
-                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"));
+                applicationWindow().pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
             }
 
             Layout.fillWidth: true
