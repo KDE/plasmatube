@@ -117,6 +117,8 @@ BaseSourcePage {
             visible: !page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
             text: i18n("Log in")
+            icon.name: "im-user"
+            description: i18n("Subscribe to channels, keep track of watched videos and more.")
             onClicked: page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
         }
 
@@ -124,7 +126,7 @@ BaseSourcePage {
             visible: page.source.loggedIn
             Layout.alignment: Qt.AlignHCenter
             text: i18n("Log out")
-            onClicked: page.source.logOut();
+            onClicked: page.source.logOut()
         }
     }
 }
