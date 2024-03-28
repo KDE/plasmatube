@@ -282,6 +282,12 @@ QFuture<ChannelResult> PipedApi::requestChannelInfo(QStringView queryd)
     });
 }
 
+QFuture<PlaylistsResult> PipedApi::requestChannelPlaylists(const QString &channelId)
+{
+    // TODO: piped stub
+    return {};
+}
+
 QFuture<Result> PipedApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
     // TODO: piped stub

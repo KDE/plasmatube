@@ -106,7 +106,7 @@ GridView {
                 avatarUrl: model.channelAvatar
 
                 onClicked: {
-                    pageStack.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: model.channelName, authorId: model.id});
+                    pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: model.channelName, authorId: model.id});
                 }
             }
         }
@@ -122,7 +122,7 @@ GridView {
                 videoCount: model.videoCount
 
                 onClicked: {
-                    pageStack.push(Qt.createComponent("org.kde.plasmatube", "PlaylistPage"), {playlistId: model.id, title: model.title})
+                    pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "PlaylistPage"), {playlistId: model.id, title: model.title})
                 }
             }
         }

@@ -52,6 +52,7 @@ public:
     QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) override;
     QFuture<VideoListResult> requestPlaylist(const QString &plid) override;
     QFuture<ChannelResult> requestChannelInfo(QStringView queryd) override;
+    QFuture<PlaylistsResult> requestChannelPlaylists(const QString &channelId) override;
     QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId) override;
     QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) override;
 

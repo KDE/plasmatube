@@ -25,8 +25,11 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     int rowCount(const QModelIndex &parent) const override;
 
+    Q_INVOKABLE void loadUserPlaylists();
+    Q_INVOKABLE void loadChannelPlaylists(const QString &channelId);
+
 private:
-    void fill();
+    void fill(const QFuture<QInvidious::PlaylistsResult> &future);
 
     QFutureWatcher<QInvidious::PlaylistsResult> *m_futureWatcher = nullptr;
     QList<QInvidious::Playlist> m_playlists;

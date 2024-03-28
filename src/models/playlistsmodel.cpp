@@ -10,7 +10,6 @@ using namespace Qt::Literals::StringLiterals;
 PlaylistsModel::PlaylistsModel(QObject *parent)
     : AbstractListModel(parent)
 {
-    fill();
 }
 
 QVariant PlaylistsModel::data(const QModelIndex &index, int role) const
@@ -40,7 +39,7 @@ int PlaylistsModel::rowCount(const QModelIndex &parent) const
     return parent.isValid() ? 0 : m_playlists.size();
 }
 
-void PlaylistsModel::fill()
+void PlaylistsModel::fill(const QFuture<QInvidious::PlaylistsResult> &future)
 {
     if (isLoading()) {
         return;
@@ -48,8 +47,6 @@ void PlaylistsModel::fill()
     setLoading(true);
 
     m_futureWatcher = new QFutureWatcher<QInvidious::PlaylistsResult>();
-
-    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylists();
     m_futureWatcher->setFuture(future);
 
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
@@ -67,6 +64,16 @@ void PlaylistsModel::fill()
         m_futureWatcher = nullptr;
         setLoading(false);
     });
+}
+
+void PlaylistsModel::loadUserPlaylists()
+{
+    fill(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylists());
+}
+
+void PlaylistsModel::loadChannelPlaylists(const QString &channelId)
+{
+    fill(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannelPlaylists(channelId));
 }
 
 #include "moc_playlistsmodel.cpp"

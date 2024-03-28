@@ -262,6 +262,12 @@ QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(QStringView queryd)
     });
 }
 
+QFuture<PlaylistsResult> PeerTubeApi::requestChannelPlaylists(const QString &channelId)
+{
+    // TODO: peertube stub
+    return {};
+}
+
 QFuture<Result> PeerTubeApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
     Q_UNUSED(plid)

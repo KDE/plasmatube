@@ -24,7 +24,9 @@ Kirigami.ScrollablePage {
         id: gridView
 
         model: PlaylistsModel {
-            id: videoModel
+            id: playlistModel
         }
     }
+
+    Component.onCompleted: playlistModel.loadUserPlaylists()
 }

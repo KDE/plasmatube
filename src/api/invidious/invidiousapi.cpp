@@ -19,7 +19,8 @@ const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/auth/subscriptions");
 const QString API_TOP = QStringLiteral("/api/v1/top");
 const QString API_TRENDING = QStringLiteral("/api/v1/trending");
 const QString API_VIDEOS = QStringLiteral("/api/v1/videos");
-const QString API_CHANNELS = QStringLiteral("/api/v1/channels/videos");
+const QString API_CHANNEL_VIDEOS = QStringLiteral("/api/v1/channels/videos");
+const QString API_CHANNEL_PLAYLISTS = QStringLiteral("/api/v1/channels/playlists");
 const QString API_HISTORY = QStringLiteral("/api/v1/auth/history");
 const QString API_COMMENTS = QStringLiteral("/api/v1/comments");
 const QString API_LIST_PLAYLISTS = QStringLiteral("/api/v1/auth/playlists");
@@ -309,6 +310,26 @@ QFuture<ChannelResult> InvidiousApi::requestChannelInfo(QStringView queryd)
     });
 }
 
+QFuture<PlaylistsResult> InvidiousApi::requestChannelPlaylists(const QString &channelId)
+{
+    QUrl url = apiUrl(API_CHANNEL_PLAYLISTS % u'/' % channelId);
+
+    return get<PlaylistsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> PlaylistsResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            const auto array = doc["playlists"_L1].toArray();
+
+            QList<Playlist> playlists;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(playlists), [](const QJsonValue &val) {
+                Playlist playlist;
+                Playlist::fromJson(val.toObject(), playlist);
+                return playlist;
+            });
+            return playlists;
+        }
+        return invalidJsonError();
+    });
+}
+
 QFuture<Result> InvidiousApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
     QUrl url = apiUrl(API_LIST_PLAYLISTS % u'/' % plid % u"/videos");
@@ -428,7 +449,7 @@ QUrl InvidiousApi::videoListUrl(VideoListType queryType, const QString &urlExten
         urlString.append(API_FEED);
         break;
     case Channel:
-        urlString.append(API_CHANNELS);
+        urlString.append(API_CHANNEL_VIDEOS);
         break;
     }
 

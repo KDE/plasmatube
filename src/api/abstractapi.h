@@ -93,6 +93,7 @@ public:
     virtual QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) = 0;
     virtual QFuture<VideoListResult> requestPlaylist(const QString &plid) = 0;
     virtual QFuture<ChannelResult> requestChannelInfo(QStringView queryd) = 0;
+    virtual QFuture<PlaylistsResult> requestChannelPlaylists(const QString &channelId) = 0;
     virtual QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId) = 0;
     virtual QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) = 0;
 
