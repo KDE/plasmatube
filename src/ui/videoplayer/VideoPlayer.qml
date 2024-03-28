@@ -97,10 +97,6 @@ Kirigami.ScrollablePage {
                 onClicked: root.requestClosePlayer();
             }
 
-            Kirigami.Heading {
-                text: video.title
-            }
-
             Kirigami.ActionToolBar {
                 Layout.alignment: Qt.AlignRight
                 alignment: Qt.AlignRight
@@ -216,15 +212,6 @@ Kirigami.ScrollablePage {
                         anchors.fill: renderer
                         visible: false
                     }
-                    VideoData {
-                        title: video.title
-                        visible: opacity > 0
-                        opacity: videoContainer.showControls ? 1 : 0
-                        Behavior on opacity {
-                            NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
-                        }
-                    }
-
                     VideoControls {
                         inFullScreen: root.inFullScreen
                         anchors.fill: parent
