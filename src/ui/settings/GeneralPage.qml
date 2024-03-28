@@ -25,6 +25,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             text: i18nc("@option:check Hide short-form videos", "Hide Shorts")
+            description: i18n("Hide short-form videos designed for viewing on a mobile device.")
             checked: Settings.hideShorts
             enabled: !Settings.hideShortsImmutable
             onToggled: {

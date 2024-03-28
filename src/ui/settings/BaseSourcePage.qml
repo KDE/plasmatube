@@ -19,7 +19,7 @@ FormCard.FormCardPage {
 
     actions: [
         Kirigami.Action {
-            text: i18n("Remove Source")
+            text: i18n("Remove Source…")
             tooltip: !enabled ? i18n("Cannot remove the only source.") : ""
             icon.name: "delete"
             enabled: PlasmaTube.sourceManager.canRemove()

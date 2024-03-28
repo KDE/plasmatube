@@ -77,7 +77,8 @@ BaseSourcePage {
 
             FormCard.FormCard {
                 FormCard.FormCheckDelegate {
-                    text: i18n("Autoplay")
+                    text: i18n("Autoplay videos")
+                    description: i18n("Whether to start playing videos immediately, or wait until the play button is pressed.")
                     checked: root.selectedSource.preferences.autoPlay
                     onToggled: {
                         let preferences = root.selectedSource.preferences;
@@ -93,6 +94,7 @@ BaseSourcePage {
                     id: defaultHomepageDelegate
                     Layout.fillWidth: true
                     text: i18n("Default homepage")
+                    description: i18n("The default page to load when switching to this source.")
                     textRole: "display"
                     valueRole: "display"
                     // TODO: these need to be localized, but ListElement makes this difficult...

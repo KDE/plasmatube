@@ -22,7 +22,7 @@ FormCard.FormCardPage {
 
     actions: [
         Kirigami.Action {
-            text: i18nc("@action:button", "Add Source")
+            text: i18nc("@action:button", "Add Source…")
             icon.name: "list-add"
             onTriggered: root.Window.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"), {}, {title: i18nc("@title:window", "Welcome")})
         }
