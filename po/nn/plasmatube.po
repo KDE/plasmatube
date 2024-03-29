@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 00:37+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2023-07-15 13:52+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -52,15 +52,15 @@ msgstr ""
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:114
+#: main.cpp:64 main.cpp:119
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-klient"
 
 #: main.cpp:66
 #, kde-format
-msgid "© Linus Jahn"
-msgstr "© Linus Jahn"
+msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr ""
 
 #: main.cpp:67
 #, kde-format
@@ -74,11 +74,21 @@ msgstr "Opphavsperson"
 
 #: main.cpp:68
 #, kde-format
+msgid "Joshua Goins"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:73
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Karl Ove Hufthammer"
 
-#: main.cpp:68
+#: main.cpp:73
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -171,8 +181,15 @@ msgstr "Videoar"
 msgid "Search"
 msgstr "Søk"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
 #, kde-format
+msgid "Settings"
+msgstr "Innstillingar"
+
+#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Innstillingar"
 
@@ -190,14 +207,19 @@ msgid_plural "%1 videos"
 msgstr[0] "%1 visingar"
 msgstr[1] "%1 visingar"
 
+#: ui/components/ShareAction.qml:19 ui/components/ShareMenu.qml:17
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: ui/components/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
+
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
-
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:308
-#, kde-format
-msgid "Share"
 msgstr ""
 
 #: ui/components/Sidebar.qml:86
@@ -286,7 +308,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr "• %1 visingar • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visingar"
@@ -313,12 +335,12 @@ msgstr ""
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
-msgid "Mark as unwatched"
+msgid "Mark as Unwatched"
 msgstr ""
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
-msgid "Mark as watched"
+msgid "Mark as Watched"
 msgstr ""
 
 #: ui/components/VideoMenu.qml:72
@@ -424,39 +446,34 @@ msgstr ""
 msgid "Add Piped Source"
 msgstr "Invidious"
 
-#: ui/LoginPage.qml:21
-#, kde-format
-msgid "Sign in"
-msgstr "Logg inn"
-
-#: ui/LoginPage.qml:30
+#: ui/LoginPage.qml:23
 #, fuzzy, kde-format
-#| msgid "Successfully logged in as %1."
-msgid "Successfully logged in!"
-msgstr "Vart logga inn som %1."
-
-#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
-#: ui/settings/InvidiousSourcePage.qml:122
-#, kde-format
+#| msgid "Log in"
+msgctxt "@title:window"
 msgid "Log in"
 msgstr "Logg inn"
 
-#: ui/LoginPage.qml:57
+#: ui/LoginPage.qml:64
 #, kde-format
 msgid "Username"
 msgstr "Brukarnamn"
 
-#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:91
+#: ui/LoginPage.qml:78 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
 msgstr "Passord"
 
 #: ui/LoginPage.qml:93
 #, kde-format
+msgid "Log in"
+msgstr "Logg inn"
+
+#: ui/LoginPage.qml:101
+#, kde-format
 msgid "Username must not be empty!"
 msgstr "Brukarnamnet kan ikkje vera tomt."
 
-#: ui/LoginPage.qml:98
+#: ui/LoginPage.qml:106
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Passordet kan ikkje vera tomt."
@@ -492,6 +509,34 @@ msgstr "Opplastingsdato"
 msgid "View Count"
 msgstr "Visingar"
 
+#: ui/settings/BaseSourcePage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Source"
+msgstr ""
+
+#: ui/settings/BaseSourcePage.qml:22
+#, kde-format
+msgid "Remove Source…"
+msgstr ""
+
+#: ui/settings/BaseSourcePage.qml:23
+#, kde-format
+msgid "Cannot remove the only source."
+msgstr ""
+
+#: ui/settings/BaseSourcePage.qml:34
+#, kde-format
+msgctxt "@title"
+msgid "Remove Source"
+msgstr ""
+
+#: ui/settings/BaseSourcePage.qml:35
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to remove this source?"
+msgstr ""
+
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
@@ -503,62 +548,65 @@ msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
-#: ui/settings/PipedSourcePage.qml:18
+#: ui/settings/GeneralPage.qml:28
 #, kde-format
-msgctxt "@title:window"
-msgid "Edit Source"
+msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:21
+#: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
 msgid "Account"
 msgstr "Konto"
 
-#: ui/settings/InvidiousSourcePage.qml:30
+#: ui/settings/InvidiousSourcePage.qml:26
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "Er logga inn som %1."
 
-#: ui/settings/InvidiousSourcePage.qml:55
+#: ui/settings/InvidiousSourcePage.qml:43
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgctxt "@action:button"
+msgid "Log out"
+msgstr "Logg ut"
+
+#: ui/settings/InvidiousSourcePage.qml:45
+#, fuzzy, kde-format
+#| msgid "Log in"
+msgctxt "@action:button"
+msgid "Log in"
+msgstr "Logg inn"
+
+#: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
-msgid "Autoplay"
+msgid "Subscribe to channels, keep track of watched videos and more."
 msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:69
+#: ui/settings/InvidiousSourcePage.qml:75
+#, kde-format
+msgid "Preferences"
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:80
+#, kde-format
+msgid "Autoplay videos"
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:81
+#, kde-format
+msgid ""
+"Whether to start playing videos immediately, or wait until the play button "
+"is pressed."
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
 msgid "Default homepage"
 msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:129
+#: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
-msgid "Log out"
-msgstr "Logg ut"
-
-#: ui/settings/InvidiousSourcePage.qml:139
-#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
-#, kde-format
-msgid "Remove Source"
-msgstr ""
-
-#: ui/settings/InvidiousSourcePage.qml:140
-#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
-#, kde-format
-msgid "Cannot remove the only source."
-msgstr ""
-
-#: ui/settings/InvidiousSourcePage.qml:147
-#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
-#, kde-format
-msgctxt "@title"
-msgid "Remove Source"
-msgstr ""
-
-#: ui/settings/InvidiousSourcePage.qml:148
-#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to remove this source?"
+msgid "The default page to load when switching to this source."
 msgstr ""
 
 #: ui/settings/NetworkProxyPage.qml:17
@@ -623,7 +671,7 @@ msgstr "Om KDE"
 #, fuzzy, kde-format
 #| msgid "Invidious"
 msgctxt "@action:button"
-msgid "Add Source"
+msgid "Add Source…"
 msgstr "Invidious"
 
 #: ui/TrendingPage.qml:15
@@ -638,22 +686,59 @@ msgstr "På veg opp"
 msgid "Picture in Picture"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:349
+#: ui/videoplayer/VideoControls.qml:98
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button"
+msgid "Video settings"
+msgstr "Innstillingar"
+
+#: ui/videoplayer/VideoControls.qml:126
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek backward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:166
+#, kde-format
+msgctxt "@action:button"
+msgid "Play"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:207
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek forward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:250
+#, kde-format
+msgctxt "@action:button"
+msgid "Fullscreen"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:273
+#, kde-format
+msgctxt "@action:button"
+msgid "Picture-in-picture"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:337
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 likarlikk"
 
-#: ui/videoplayer/VideoPlayer.qml:398
+#: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
 msgid "Comments"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:422
+#: ui/videoplayer/VideoPlayer.qml:410
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:433
+#: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Recommended"
 msgstr ""
@@ -663,3 +748,14 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
+
+#~ msgid "© Linus Jahn"
+#~ msgstr "© Linus Jahn"
+
+#~ msgid "Sign in"
+#~ msgstr "Logg inn"
+
+#, fuzzy
+#~| msgid "Successfully logged in as %1."
+#~ msgid "Successfully logged in!"
+#~ msgstr "Vart logga inn som %1."

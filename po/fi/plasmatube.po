@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 00:37+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2024-02-14 00:12+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -52,15 +52,15 @@ msgstr "Toistetaan videota"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:114
+#: main.cpp:64 main.cpp:119
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-asiakas"
 
 #: main.cpp:66
 #, kde-format
-msgid "© Linus Jahn"
-msgstr "© Linus Jahn"
+msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr ""
 
 #: main.cpp:67
 #, kde-format
@@ -74,11 +74,21 @@ msgstr "Tekijä"
 
 #: main.cpp:68
 #, kde-format
+msgid "Joshua Goins"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:73
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Tommi Nieminen, Kimmo Kujansuu"
 
-#: main.cpp:68
+#: main.cpp:73
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -171,8 +181,15 @@ msgstr "Videot"
 msgid "Search"
 msgstr "Etsi"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
 #, kde-format
+msgid "Settings"
+msgstr "Asetukset"
+
+#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Asetukset"
 
@@ -189,15 +206,20 @@ msgid_plural "%1 videos"
 msgstr[0] "%1 video"
 msgstr[1] "%1 videota"
 
+#: ui/components/ShareAction.qml:19 ui/components/ShareMenu.qml:17
+#, kde-format
+msgid "Share"
+msgstr "Jaa"
+
+#: ui/components/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
+
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
 msgstr "Jakaminen epäonnistui"
-
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:308
-#, kde-format
-msgid "Share"
-msgstr "Jaa"
 
 #: ui/components/Sidebar.qml:86
 #, kde-format
@@ -282,7 +304,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr "%1 katselua • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
 msgstr "%1 katselua"
@@ -308,13 +330,15 @@ msgid "Play in Picture-in-Picture"
 msgstr "Toista kuva kuvassa"
 
 #: ui/components/VideoMenu.qml:58
-#, kde-format
-msgid "Mark as unwatched"
+#, fuzzy, kde-format
+#| msgid "Mark as unwatched"
+msgid "Mark as Unwatched"
 msgstr "Merkitse ei-katsotuksi"
 
 #: ui/components/VideoMenu.qml:58
-#, kde-format
-msgid "Mark as watched"
+#, fuzzy, kde-format
+#| msgid "Mark as watched"
+msgid "Mark as Watched"
 msgstr "Merkitse katsotuksi"
 
 #: ui/components/VideoMenu.qml:72
@@ -409,38 +433,34 @@ msgstr "Lisää PeerTube-lähde"
 msgid "Add Piped Source"
 msgstr "Lisää Piped-lähde"
 
-#: ui/LoginPage.qml:21
-#, kde-format
-msgid "Sign in"
-msgstr "Kirjaudu"
-
-#: ui/LoginPage.qml:30
-#, kde-format
-msgid "Successfully logged in!"
-msgstr "Kirjautuminen onnistui!"
-
-#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
-#: ui/settings/InvidiousSourcePage.qml:122
-#, kde-format
+#: ui/LoginPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Log in"
+msgctxt "@title:window"
 msgid "Log in"
 msgstr "Kirjaudu"
 
-#: ui/LoginPage.qml:57
+#: ui/LoginPage.qml:64
 #, kde-format
 msgid "Username"
 msgstr "Käyttäjätunnus"
 
-#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:91
+#: ui/LoginPage.qml:78 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
 msgstr "Salasana"
 
 #: ui/LoginPage.qml:93
 #, kde-format
+msgid "Log in"
+msgstr "Kirjaudu"
+
+#: ui/LoginPage.qml:101
+#, kde-format
 msgid "Username must not be empty!"
 msgstr "Käyttäjätunnus ei saa olla tyhjä!"
 
-#: ui/LoginPage.qml:98
+#: ui/LoginPage.qml:106
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Salasana ei saa olla tyhjä!"
@@ -476,6 +496,35 @@ msgstr "Lähetyspäivä"
 msgid "View Count"
 msgstr "Katselukertojen määrä"
 
+#: ui/settings/BaseSourcePage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Source"
+msgstr "Muokkaa lähdettä"
+
+#: ui/settings/BaseSourcePage.qml:22
+#, fuzzy, kde-format
+#| msgid "Remove Source"
+msgid "Remove Source…"
+msgstr "Poista lähde"
+
+#: ui/settings/BaseSourcePage.qml:23
+#, kde-format
+msgid "Cannot remove the only source."
+msgstr "Ainoaa lähdettä ei voi poistaa."
+
+#: ui/settings/BaseSourcePage.qml:34
+#, kde-format
+msgctxt "@title"
+msgid "Remove Source"
+msgstr "Poista lähde"
+
+#: ui/settings/BaseSourcePage.qml:35
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to remove this source?"
+msgstr "Haluatko varmasti poistaa tämän lähteen?"
+
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
@@ -487,63 +536,67 @@ msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
-#: ui/settings/PipedSourcePage.qml:18
+#: ui/settings/GeneralPage.qml:28
 #, kde-format
-msgctxt "@title:window"
-msgid "Edit Source"
-msgstr "Muokkaa lähdettä"
+msgid "Hide short-form videos designed for viewing on a mobile device."
+msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:21
+#: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
 msgid "Account"
 msgstr "Tili"
 
-#: ui/settings/InvidiousSourcePage.qml:30
+#: ui/settings/InvidiousSourcePage.qml:26
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "Kirjautuneena tunnuksella %1."
 
-#: ui/settings/InvidiousSourcePage.qml:55
+#: ui/settings/InvidiousSourcePage.qml:43
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgctxt "@action:button"
+msgid "Log out"
+msgstr "Kirjaudu ulos"
+
+#: ui/settings/InvidiousSourcePage.qml:45
+#, fuzzy, kde-format
+#| msgid "Log in"
+msgctxt "@action:button"
+msgid "Log in"
+msgstr "Kirjaudu"
+
+#: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
-msgid "Autoplay"
+msgid "Subscribe to channels, keep track of watched videos and more."
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:75
+#, kde-format
+msgid "Preferences"
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:80
+#, fuzzy, kde-format
+#| msgid "Autoplay"
+msgid "Autoplay videos"
 msgstr "Toista automaattisesti"
 
-#: ui/settings/InvidiousSourcePage.qml:69
+#: ui/settings/InvidiousSourcePage.qml:81
+#, kde-format
+msgid ""
+"Whether to start playing videos immediately, or wait until the play button "
+"is pressed."
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
 msgid "Default homepage"
 msgstr "Oletuskotisivu"
 
-#: ui/settings/InvidiousSourcePage.qml:129
+#: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
-msgid "Log out"
-msgstr "Kirjaudu ulos"
-
-#: ui/settings/InvidiousSourcePage.qml:139
-#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
-#, kde-format
-msgid "Remove Source"
-msgstr "Poista lähde"
-
-#: ui/settings/InvidiousSourcePage.qml:140
-#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
-#, kde-format
-msgid "Cannot remove the only source."
-msgstr "Ainoaa lähdettä ei voi poistaa."
-
-#: ui/settings/InvidiousSourcePage.qml:147
-#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
-#, kde-format
-msgctxt "@title"
-msgid "Remove Source"
-msgstr "Poista lähde"
-
-#: ui/settings/InvidiousSourcePage.qml:148
-#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to remove this source?"
-msgstr "Haluatko varmasti poistaa tämän lähteen?"
+msgid "The default page to load when switching to this source."
+msgstr ""
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -605,7 +658,7 @@ msgstr "Tietoa KDE:stä"
 #, fuzzy, kde-format
 #| msgid "Add Source"
 msgctxt "@action:button"
-msgid "Add Source"
+msgid "Add Source…"
 msgstr "Lisää lähde"
 
 #: ui/TrendingPage.qml:15
@@ -619,22 +672,63 @@ msgstr "Nousussa"
 msgid "Picture in Picture"
 msgstr "Kuva kuvassa"
 
-#: ui/videoplayer/VideoPlayer.qml:349
+#: ui/videoplayer/VideoControls.qml:98
+#, fuzzy, kde-format
+#| msgid "Proxy Settings"
+msgctxt "@action:button"
+msgid "Video settings"
+msgstr "Välityspalvelinasetukset"
+
+#: ui/videoplayer/VideoControls.qml:126
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek backward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:166
+#, fuzzy, kde-format
+#| msgctxt "@action:button Play the playlist"
+#| msgid "Play"
+msgctxt "@action:button"
+msgid "Play"
+msgstr "Toista"
+
+#: ui/videoplayer/VideoControls.qml:207
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek forward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:250
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@action:button"
+msgid "Fullscreen"
+msgstr "Koko näyttö"
+
+#: ui/videoplayer/VideoControls.qml:273
+#, fuzzy, kde-format
+#| msgid "Picture in Picture"
+msgctxt "@action:button"
+msgid "Picture-in-picture"
+msgstr "Kuva kuvassa"
+
+#: ui/videoplayer/VideoPlayer.qml:337
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 tykkäystä"
 
-#: ui/videoplayer/VideoPlayer.qml:398
+#: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
 msgid "Comments"
 msgstr "Kommentit"
 
-#: ui/videoplayer/VideoPlayer.qml:422
+#: ui/videoplayer/VideoPlayer.qml:410
 #, kde-format
 msgid "Queue"
 msgstr "Jono"
 
-#: ui/videoplayer/VideoPlayer.qml:433
+#: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Recommended"
 msgstr "Suositeltu"
@@ -644,6 +738,21 @@ msgstr "Suositeltu"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Tyhjennä"
+
+#~ msgid "© Linus Jahn"
+#~ msgstr "© Linus Jahn"
+
+#~ msgid "Sign in"
+#~ msgstr "Kirjaudu"
+
+#~ msgid "Successfully logged in!"
+#~ msgstr "Kirjautuminen onnistui!"
+
+#, fuzzy
+#~| msgid "Add Source"
+#~ msgctxt "@action:button"
+#~ msgid "Add Source"
+#~ msgstr "Lisää lähde"
 
 #~ msgctxt "@info:status"
 #~ msgid "Loading…"
@@ -691,9 +800,6 @@ msgstr "Tyhjennä"
 
 #~ msgid "Open Account Settings"
 #~ msgstr "Avaa tilin asetukset"
-
-#~ msgid "Fullscreen"
-#~ msgstr "Koko näyttö"
 
 #~ msgid "Restore"
 #~ msgstr "Palauta"

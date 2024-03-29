@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 00:37+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2024-03-25 13:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -50,15 +50,15 @@ msgstr "Video oynatılıyor"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:114
+#: main.cpp:64 main.cpp:119
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube istemcisi"
 
 #: main.cpp:66
 #, kde-format
-msgid "© Linus Jahn"
-msgstr "© Linus Jahn"
+msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr ""
 
 #: main.cpp:67
 #, kde-format
@@ -72,11 +72,21 @@ msgstr "Yaratıcı"
 
 #: main.cpp:68
 #, kde-format
+msgid "Joshua Goins"
+msgstr ""
+
+#: main.cpp:69
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:73
+#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Emir SARI"
 
-#: main.cpp:68
+#: main.cpp:73
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -168,8 +178,15 @@ msgstr "Videolar"
 msgid "Search"
 msgstr "Ara"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:265
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
 #, kde-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -186,15 +203,20 @@ msgid_plural "%1 videos"
 msgstr[0] "%1 video"
 msgstr[1] "%1 video"
 
+#: ui/components/ShareAction.qml:19 ui/components/ShareMenu.qml:17
+#, kde-format
+msgid "Share"
+msgstr "Paylaş"
+
+#: ui/components/ShareAction.qml:20
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
+
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
 msgstr "Paylaşma başarısız"
-
-#: ui/components/ShareMenu.qml:17 ui/videoplayer/VideoPlayer.qml:308
-#, kde-format
-msgid "Share"
-msgstr "Paylaş"
 
 #: ui/components/Sidebar.qml:86
 #, kde-format
@@ -279,7 +301,7 @@ msgstr "Kısa"
 msgid "%1 views • %2"
 msgstr "%1 görüntülenme • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:341
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
 #, kde-format
 msgid "%1 views"
 msgstr "%1 görüntüleme"
@@ -305,13 +327,15 @@ msgid "Play in Picture-in-Picture"
 msgstr "Resim İçinde Resim’de Oynat"
 
 #: ui/components/VideoMenu.qml:58
-#, kde-format
-msgid "Mark as unwatched"
+#, fuzzy, kde-format
+#| msgid "Mark as unwatched"
+msgid "Mark as Unwatched"
 msgstr "İzlenmedi Olarak İmle"
 
 #: ui/components/VideoMenu.qml:58
-#, kde-format
-msgid "Mark as watched"
+#, fuzzy, kde-format
+#| msgid "Mark as watched"
+msgid "Mark as Watched"
 msgstr "İzlendi Olarak İmle"
 
 #: ui/components/VideoMenu.qml:72
@@ -406,38 +430,34 @@ msgstr "PeerTube Kaynağı Ekle"
 msgid "Add Piped Source"
 msgstr "Piped Kaynağı Ekle"
 
-#: ui/LoginPage.qml:21
-#, kde-format
-msgid "Sign in"
-msgstr "Oturum Aç"
-
-#: ui/LoginPage.qml:30
-#, kde-format
-msgid "Successfully logged in!"
-msgstr "Başarıyla oturum açıldı!"
-
-#: ui/LoginPage.qml:48 ui/LoginPage.qml:86
-#: ui/settings/InvidiousSourcePage.qml:122
-#, kde-format
+#: ui/LoginPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Log in"
+msgctxt "@title:window"
 msgid "Log in"
 msgstr "Oturum Aç"
 
-#: ui/LoginPage.qml:57
+#: ui/LoginPage.qml:64
 #, kde-format
 msgid "Username"
 msgstr "Kullanıcı Adı"
 
-#: ui/LoginPage.qml:71 ui/settings/NetworkProxyPage.qml:91
+#: ui/LoginPage.qml:78 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
 msgstr "Parola"
 
 #: ui/LoginPage.qml:93
 #, kde-format
+msgid "Log in"
+msgstr "Oturum Aç"
+
+#: ui/LoginPage.qml:101
+#, kde-format
 msgid "Username must not be empty!"
 msgstr "Kullanıcı adı boş olmamalıdır!"
 
-#: ui/LoginPage.qml:98
+#: ui/LoginPage.qml:106
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Parola boş olmamalıdır!"
@@ -473,6 +493,35 @@ msgstr "Yüklenme Tarihi"
 msgid "View Count"
 msgstr "Görüntülenme Sayısı"
 
+#: ui/settings/BaseSourcePage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Source"
+msgstr "Kaynağı Düzenle"
+
+#: ui/settings/BaseSourcePage.qml:22
+#, fuzzy, kde-format
+#| msgid "Remove Source"
+msgid "Remove Source…"
+msgstr "Kaynağı Kaldır"
+
+#: ui/settings/BaseSourcePage.qml:23
+#, kde-format
+msgid "Cannot remove the only source."
+msgstr "Kalan tek kaynak kaldırılamaz."
+
+#: ui/settings/BaseSourcePage.qml:34
+#, kde-format
+msgctxt "@title"
+msgid "Remove Source"
+msgstr "Kaynağı Kaldır"
+
+#: ui/settings/BaseSourcePage.qml:35
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to remove this source?"
+msgstr "Bu kaynağı kaldırmak istediğinizden emin misiniz?"
+
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
@@ -484,63 +533,67 @@ msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr "Shorts’ları Gizle"
 
-#: ui/settings/InvidiousSourcePage.qml:18 ui/settings/PeerTubeSourcePage.qml:18
-#: ui/settings/PipedSourcePage.qml:18
+#: ui/settings/GeneralPage.qml:28
 #, kde-format
-msgctxt "@title:window"
-msgid "Edit Source"
-msgstr "Kaynağı Düzenle"
+msgid "Hide short-form videos designed for viewing on a mobile device."
+msgstr ""
 
-#: ui/settings/InvidiousSourcePage.qml:21
+#: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
 msgid "Account"
 msgstr "Hesap"
 
-#: ui/settings/InvidiousSourcePage.qml:30
+#: ui/settings/InvidiousSourcePage.qml:26
 #, kde-format
 msgid "Currently logged in as %1."
 msgstr "Şu anda %1 olarak oturum açıldı."
 
-#: ui/settings/InvidiousSourcePage.qml:55
+#: ui/settings/InvidiousSourcePage.qml:43
+#, fuzzy, kde-format
+#| msgid "Log out"
+msgctxt "@action:button"
+msgid "Log out"
+msgstr "Oturumu Kapat"
+
+#: ui/settings/InvidiousSourcePage.qml:45
+#, fuzzy, kde-format
+#| msgid "Log in"
+msgctxt "@action:button"
+msgid "Log in"
+msgstr "Oturum Aç"
+
+#: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
-msgid "Autoplay"
+msgid "Subscribe to channels, keep track of watched videos and more."
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:75
+#, kde-format
+msgid "Preferences"
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:80
+#, fuzzy, kde-format
+#| msgid "Autoplay"
+msgid "Autoplay videos"
 msgstr "Kendiliğinden oynat"
 
-#: ui/settings/InvidiousSourcePage.qml:69
+#: ui/settings/InvidiousSourcePage.qml:81
+#, kde-format
+msgid ""
+"Whether to start playing videos immediately, or wait until the play button "
+"is pressed."
+msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
 msgid "Default homepage"
 msgstr "Öntanımlı ana sayfa"
 
-#: ui/settings/InvidiousSourcePage.qml:129
+#: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
-msgid "Log out"
-msgstr "Oturumu Kapat"
-
-#: ui/settings/InvidiousSourcePage.qml:139
-#: ui/settings/PeerTubeSourcePage.qml:25 ui/settings/PipedSourcePage.qml:25
-#, kde-format
-msgid "Remove Source"
-msgstr "Kaynağı Kaldır"
-
-#: ui/settings/InvidiousSourcePage.qml:140
-#: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
-#, kde-format
-msgid "Cannot remove the only source."
-msgstr "Kalan tek kaynak kaldırılamaz."
-
-#: ui/settings/InvidiousSourcePage.qml:147
-#: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
-#, kde-format
-msgctxt "@title"
-msgid "Remove Source"
-msgstr "Kaynağı Kaldır"
-
-#: ui/settings/InvidiousSourcePage.qml:148
-#: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
-#, kde-format
-msgctxt "@label"
-msgid "Are you sure you want to remove this source?"
-msgstr "Bu kaynağı kaldırmak istediğinizden emin misiniz?"
+msgid "The default page to load when switching to this source."
+msgstr ""
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -599,9 +652,10 @@ msgid "About KDE"
 msgstr "KDE Hakkında"
 
 #: ui/settings/SourcesPage.qml:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add Source"
 msgctxt "@action:button"
-msgid "Add Source"
+msgid "Add Source…"
 msgstr "Kaynak Ekle"
 
 #: ui/TrendingPage.qml:15
@@ -615,22 +669,62 @@ msgstr "Trendler"
 msgid "Picture in Picture"
 msgstr "Resim İçinde Resim"
 
-#: ui/videoplayer/VideoPlayer.qml:349
+#: ui/videoplayer/VideoControls.qml:98
+#, fuzzy, kde-format
+#| msgid "Proxy Settings"
+msgctxt "@action:button"
+msgid "Video settings"
+msgstr "Vekil Ayarları"
+
+#: ui/videoplayer/VideoControls.qml:126
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek backward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:166
+#, fuzzy, kde-format
+#| msgctxt "@action:button Play the playlist"
+#| msgid "Play"
+msgctxt "@action:button"
+msgid "Play"
+msgstr "Oynat"
+
+#: ui/videoplayer/VideoControls.qml:207
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek forward"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:250
+#, kde-format
+msgctxt "@action:button"
+msgid "Fullscreen"
+msgstr ""
+
+#: ui/videoplayer/VideoControls.qml:273
+#, fuzzy, kde-format
+#| msgid "Picture in Picture"
+msgctxt "@action:button"
+msgid "Picture-in-picture"
+msgstr "Resim İçinde Resim"
+
+#: ui/videoplayer/VideoPlayer.qml:337
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 beğeni"
 
-#: ui/videoplayer/VideoPlayer.qml:398
+#: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
 msgid "Comments"
 msgstr "Yorumlar"
 
-#: ui/videoplayer/VideoPlayer.qml:422
+#: ui/videoplayer/VideoPlayer.qml:410
 #, kde-format
 msgid "Queue"
 msgstr "Kuyruk"
 
-#: ui/videoplayer/VideoPlayer.qml:433
+#: ui/videoplayer/VideoPlayer.qml:421
 #, kde-format
 msgid "Recommended"
 msgstr "Önerilen"
@@ -640,6 +734,19 @@ msgstr "Önerilen"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Temizle"
+
+#~ msgid "© Linus Jahn"
+#~ msgstr "© Linus Jahn"
+
+#~ msgid "Sign in"
+#~ msgstr "Oturum Aç"
+
+#~ msgid "Successfully logged in!"
+#~ msgstr "Başarıyla oturum açıldı!"
+
+#~ msgctxt "@action:button"
+#~ msgid "Add Source"
+#~ msgstr "Kaynak Ekle"
 
 #~ msgctxt "@info:status"
 #~ msgid "Loading…"
