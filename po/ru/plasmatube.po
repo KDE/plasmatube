@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 02:51+0000\n"
+"POT-Creation-Date: 2024-03-29 02:45+0000\n"
 "PO-Revision-Date: 2024-02-11 11:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -598,23 +598,23 @@ msgid "Picture in Picture"
 msgstr "Картинка-в-картинке"
 
 # BUGME: Please add plurals --ayavorsky 2024-02-11
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:315
 #, kde-format
 msgid "%1 views"
 msgstr "%1 просм."
 
 # BUGME: Please add plurals --ayavorsky 2024-02-11
-#: ui/videoplayer/VideoPlayer.qml:324
+#: ui/videoplayer/VideoPlayer.qml:323
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 отм. «нравится»"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:391
 #, kde-format
 msgid "Queue"
 msgstr "Очередь"
 
-#: ui/videoplayer/VideoPlayer.qml:403
+#: ui/videoplayer/VideoPlayer.qml:402
 #, kde-format
 msgid "Recommended"
 msgstr "Рекомендации"

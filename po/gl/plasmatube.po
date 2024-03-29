@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 02:51+0000\n"
+"POT-Creation-Date: 2024-03-29 02:45+0000\n"
 "PO-Revision-Date: 2023-11-15 18:40+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -592,22 +592,22 @@ msgstr "Tendencia"
 msgid "Picture in Picture"
 msgstr "Imaxe sobre imaxe"
 
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:315
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizacións"
 
-#: ui/videoplayer/VideoPlayer.qml:324
+#: ui/videoplayer/VideoPlayer.qml:323
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 gústames"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:391
 #, kde-format
 msgid "Queue"
 msgstr "Cola"
 
-#: ui/videoplayer/VideoPlayer.qml:403
+#: ui/videoplayer/VideoPlayer.qml:402
 #, kde-format
 msgid "Recommended"
 msgstr "Recomendacións"

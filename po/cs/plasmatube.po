@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-25 02:51+0000\n"
+"POT-Creation-Date: 2024-03-29 02:45+0000\n"
 "PO-Revision-Date: 2023-11-14 13:52+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -592,22 +592,22 @@ msgstr "Trendy"
 msgid "Picture in Picture"
 msgstr "Obrázek v obrázku (PiP)"
 
-#: ui/videoplayer/VideoPlayer.qml:316
+#: ui/videoplayer/VideoPlayer.qml:315
 #, kde-format
 msgid "%1 views"
 msgstr "%1 zobrazení"
 
-#: ui/videoplayer/VideoPlayer.qml:324
+#: ui/videoplayer/VideoPlayer.qml:323
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 se líbí"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:391
 #, kde-format
 msgid "Queue"
 msgstr "Fronta"
 
-#: ui/videoplayer/VideoPlayer.qml:403
+#: ui/videoplayer/VideoPlayer.qml:402
 #, kde-format
 msgid "Recommended"
 msgstr "Doporučeno"
