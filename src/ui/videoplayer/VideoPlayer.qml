@@ -83,18 +83,28 @@ Kirigami.ScrollablePage {
         contentItem: RowLayout {
             anchors {
                 left: parent.left
+                leftMargin: Kirigami.Units.smallSpacing
                 right: parent.right
+                rightMargin: Kirigami.Units.smallSpacing
             }
 
             spacing: Kirigami.Units.smallSpacing
 
             QQC2.ToolButton {
                 id: closeButton
-                icon.name: "go-previous-view"
+                icon.name: "arrow-down-symbolic"
+                text: i18nc("@action:button", "Hide player")
+                display: QQC2.AbstractButton.IconOnly
 
                 width: Kirigami.Units.gridUnit * 2
                 height: Kirigami.Units.gridUnit * 2
                 onClicked: root.requestClosePlayer();
+
+                Layout.leftMargin: applicationWindow().globalDrawer.modal ? width : 0
+
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.visible: hovered
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
 
             Kirigami.ActionToolBar {
