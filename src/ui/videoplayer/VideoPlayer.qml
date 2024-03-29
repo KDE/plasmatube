@@ -62,16 +62,16 @@ Kirigami.ScrollablePage {
     }
 
     function openFullScreen() {
-        videoContainer.parent = QQC2.Overlay.overlay;
-        videoContainer.anchors.fill = QQC2.Overlay.overlay;
+        inlineVideoContainer.parent = QQC2.Overlay.overlay;
+        inlineVideoContainer.anchors.fill = QQC2.Overlay.overlay;
         root.inFullScreen = true;
         applicationWindow().globalDrawer.close();
         applicationWindow().showFullScreen();
     }
 
     function exitFullScreen() {
-        videoContainer.parent = inlineVideoContainer;
-        videoContainer.anchors.fill = inlineVideoContainer;
+        inlineVideoContainer.parent = parentColumn;
+        inlineVideoContainer.anchors.fill = undefined;
         root.inFullScreen = false;
         if (!applicationWindow().globalDrawer.modal) {
             applicationWindow().globalDrawer.open();
@@ -153,8 +153,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             Item {
-                Layout.margins: widescreen? Kirigami.Units.largeSpacing * 2 : 0
                 id: inlineVideoContainer
+
+                property bool showControls: false
+
+                Layout.margins: widescreen? Kirigami.Units.largeSpacing * 2 : 0
                 Layout.fillWidth: true
                 Layout.preferredHeight: width / 16.0 * 9.0
                 Layout.maximumHeight: root.height
@@ -162,89 +165,82 @@ Kirigami.ScrollablePage {
                 layer.effect: OpacityMask {
                     maskSource: playerMask
                 }
-                MouseArea {
-                    id: videoContainer
+
+                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.inherit: false
+
+                Timer {
+                    id: controlTimer
+                    interval: 2000
+                    onTriggered: inlineVideoContainer.showControls = false
+                }
+
+                MpvObject {
+                    id: renderer
                     anchors.fill: parent
 
-                    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-                    Kirigami.Theme.inherit: false
+                    visible: !stopped
+                }
+                Rectangle {
+                    anchors.fill: renderer
 
-                    property bool showControls: false
-                    onEntered: {
-                        videoContainer.showControls = true;
-                        controlTimer.restart();
-                    }
-                    onPositionChanged: {
-                        videoContainer.showControls = true;
-                        controlTimer.restart();
-                    }
-                    onExited: {
-                        controlTimer.stop();
-                        videoContainer.showControls = false;
-                    }
-                    onDoubleClicked: root.toggleFullscreen()
+                    color: "black"
+                    visible: renderer.stopped
 
-                    hoverEnabled: !Kirigami.Settings.tabletMode
+                    Image {
+                        id: thumbnailImage
 
-                    Timer {
-                        id: controlTimer
-                        interval: 2000
-                        onTriggered: videoContainer.showControls = false
-                    }
-
-                    MpvObject {
-                        id: renderer
                         anchors.fill: parent
-
-                        visible: !stopped
+                        source: video.thumbnailUrl("high")
+                        fillMode: Image.PreserveAspectCrop
                     }
-                    Rectangle {
-                        anchors.fill: renderer
 
-                        color: "black"
-                        visible: renderer.stopped
+                    QQC2.BusyIndicator {
+                        anchors.centerIn: parent
+                    }
+                }
+                Rectangle {
+                    id: playerMask
+                    radius: widescreen ? 7 : 0
+                    anchors.fill: renderer
+                    visible: false
+                }
+                VideoControls {
+                    inFullScreen: root.inFullScreen
+                    anchors.fill: parent
 
-                        Image {
-                            id: thumbnailImage
+                    onRequestFullScreen: root.toggleFullscreen()
 
-                            anchors.fill: parent
-                            source: video.thumbnailUrl("high")
-                            fillMode: Image.PreserveAspectCrop
+                    visible: opacity > 0
+                    opacity: inlineVideoContainer.showControls ? 1 : 0
+                    Behavior on opacity {
+                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                    }
+
+                    Keys.forwardTo: [root]
+                }
+
+                HoverHandler {
+                    acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+
+                    onHoveredChanged: {
+                        if (hovered) {
+                            inlineVideoContainer.showControls = true;
+                            controlTimer.stop();
+                        } else {
+                            controlTimer.start();
                         }
-
-                        QQC2.BusyIndicator {
-                            anchors.centerIn: parent
-                        }
                     }
-                    Rectangle {
-                        id: playerMask
-                        radius: widescreen ? 7 : 0
-                        anchors.fill: renderer
-                        visible: false
-                    }
-                    VideoControls {
-                        inFullScreen: root.inFullScreen
-                        anchors.fill: parent
+                }
 
-                        onRequestFullScreen: root.toggleFullscreen()
-
-                        visible: opacity > 0
-                        opacity: videoContainer.showControls ? 1 : 0
-                        Behavior on opacity {
-                            NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
-                        }
-
-                        Keys.forwardTo: [root]
-                    }
-
-                    // TODO: this whole thing could probably be a taphandler...
-                    TapHandler {
-                        acceptedDevices: Qt.TouchScreen
-                        onTapped: {
-                            videoContainer.showControls = true;
+                TapHandler {
+                    onTapped: {
+                        if (Kirigami.Settings.hasTransientTouchInput) {
+                            inlineVideoContainer.showControls = true;
                             controlTimer.restart();
                         }
                     }
+                    onDoubleTapped: root.toggleFullscreen()
                 }
             }
 
