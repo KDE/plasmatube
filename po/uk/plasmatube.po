@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
-"PO-Revision-Date: 2024-03-25 17:52+0200\n"
+"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"PO-Revision-Date: 2024-03-29 08:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -59,7 +59,7 @@ msgstr "Клієнт YouTube"
 #: main.cpp:66
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© Linus Jahn, 2019–2024, Спільнота KDE, 2019–2024"
 
 #: main.cpp:67
 #, kde-format
@@ -74,12 +74,12 @@ msgstr "Автор"
 #: main.cpp:68
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Супровідник"
 
 #: main.cpp:73
 #, kde-format
@@ -187,8 +187,7 @@ msgid "Settings"
 msgstr "Параметри"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметри"
@@ -216,7 +215,7 @@ msgstr "Оприлюднити"
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Оприлюднити позначені мультимедійні дані"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -306,7 +305,7 @@ msgstr "Короткий"
 msgid "%1 views • %2"
 msgstr "%1 переглядів • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
 #, kde-format
 msgid "%1 views"
 msgstr "%1 переглядів"
@@ -332,14 +331,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "Відтворити у зображенні-у-зображенні"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "Позначити як непереглянуте"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "Позначити як переглянуте"
 
@@ -436,8 +433,7 @@ msgid "Add Piped Source"
 msgstr "Додати джерело Piped"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Увійти"
@@ -505,10 +501,9 @@ msgid "Edit Source"
 msgstr "Редагування джерела"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Вилучити джерело"
+msgstr "Вилучити джерело…"
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -542,6 +537,8 @@ msgstr "Приховати Shorts"
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
+"Приховати короткоформатні відео, розроблені для перегляду на мобільному "
+"пристрої."
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
@@ -554,15 +551,13 @@ msgid "Currently logged in as %1."
 msgstr "Зараз працюємо від імені облікового запису %1."
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Вийти"
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Увійти"
@@ -570,18 +565,17 @@ msgstr "Увійти"
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Підписатися на канали, стежити за переглянутими відео тощо."
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Налаштування"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Автовідтворення"
+msgstr "Автовідтворення відео"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
@@ -589,6 +583,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Визначає, слід розпочинати відтворення відео негайно чи чекати до натискання "
+"кнопки відтворення."
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
@@ -598,7 +594,7 @@ msgstr "Типова домашня сторінка"
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Типова сторінка для завантаження при перемиканні на це джерело."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -657,11 +653,10 @@ msgid "About KDE"
 msgstr "Про KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Додати джерело"
+msgstr "Додати джерело…"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -675,22 +670,19 @@ msgid "Picture in Picture"
 msgstr "Зображення у зображенні"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Параметри проксі"
+msgstr "Параметри відео"
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Перемотати назад"
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Відтворити"
@@ -699,38 +691,42 @@ msgstr "Відтворити"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Перемотати вперед"
 
 #: ui/videoplayer/VideoControls.qml:250
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "На весь екран"
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Зображення у зображенні"
 
-#: ui/videoplayer/VideoPlayer.qml:337
+#: ui/videoplayer/VideoPlayer.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide player"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 уподобань"
 
-#: ui/videoplayer/VideoPlayer.qml:386
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Comments"
 msgstr "Коментарі"
 
-#: ui/videoplayer/VideoPlayer.qml:410
+#: ui/videoplayer/VideoPlayer.qml:416
 #, kde-format
 msgid "Queue"
 msgstr "Додати до черги"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:427
 #, kde-format
 msgid "Recommended"
 msgstr "Рекомендовано"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
+"POT-Creation-Date: 2024-03-30 00:37+0000\n"
 "PO-Revision-Date: 2023-12-21 18:59+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -306,7 +306,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr "• %1 Ansichten • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
 #, kde-format
 msgid "%1 views"
 msgstr "%1 Ansichten"
@@ -719,22 +719,28 @@ msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Bild-in-Bild"
 
-#: ui/videoplayer/VideoPlayer.qml:337
+#: ui/videoplayer/VideoPlayer.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide player"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
 msgid "%1 Likes"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:386
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Comments"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:410
+#: ui/videoplayer/VideoPlayer.qml:416
 #, kde-format
 msgid "Queue"
 msgstr "Warteschlange"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:427
 #, kde-format
 msgid "Recommended"
 msgstr "Empfohlen"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 18:54+0900\n"
+"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"PO-Revision-Date: 2024-03-29 21:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.90\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -61,7 +61,7 @@ msgstr "YouTube 客戶端"
 #: main.cpp:66
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE 社群"
 
 #: main.cpp:67
 #, kde-format
@@ -76,12 +76,12 @@ msgstr "建立者"
 #: main.cpp:68
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "維護者"
 
 #: main.cpp:73
 #, kde-format
@@ -164,8 +164,7 @@ msgid "No videos"
 msgstr "沒有影片"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "新增至播放清單"
@@ -188,8 +187,7 @@ msgid "Settings"
 msgstr "設定"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "設定"
@@ -214,7 +212,7 @@ msgstr "分享"
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "分享選取的媒體"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -291,13 +289,13 @@ msgstr "請登入以訂閱頻道。"
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "直播中"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Shorts"
 
 # 跟隨 YouTube 介面的翻譯方式
 #: ui/components/VideoGridItem.qml:155
@@ -305,7 +303,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr "觀看次數：%1 • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
 #, kde-format
 msgid "%1 views"
 msgstr "觀看次數：%1"
@@ -331,14 +329,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "在子母畫面中播放"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "標記為未觀看"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "標記為已觀看"
 
@@ -435,8 +431,7 @@ msgid "Add Piped Source"
 msgstr "新增 Piped 來源"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "登入"
@@ -504,10 +499,9 @@ msgid "Edit Source"
 msgstr "編輯來源"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "移除來源"
+msgstr "移除來源…"
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -529,18 +523,18 @@ msgstr "您確定要移除這個來源嗎？"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "隱藏 Shorts"
 
 #: ui/settings/GeneralPage.qml:28
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "隱藏設計給手機觀看的短影音。"
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
@@ -553,15 +547,13 @@ msgid "Currently logged in as %1."
 msgstr "目前作為 %1 登入。"
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "登出"
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "登入"
@@ -569,25 +561,24 @@ msgstr "登入"
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "訂閱頻道、記住已觀看影片等等。"
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "偏好設定"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "自動播放"
+msgstr "自動播放影片"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
 msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
-msgstr ""
+msgstr "是否要馬上開始播放影片，還是要等到按下播放按鈕之後再開始。"
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
@@ -597,7 +588,7 @@ msgstr "預設首頁"
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "切換到此來源時預設要載入的頁面。"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -656,11 +647,10 @@ msgid "About KDE"
 msgstr "關於 KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "新增來源"
+msgstr "新增來源…"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -674,22 +664,19 @@ msgid "Picture in Picture"
 msgstr "子母畫面"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "代理伺服器設定"
+msgstr "影片設定"
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "倒轉"
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "播放"
@@ -698,37 +685,42 @@ msgstr "播放"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "快轉"
 
 #: ui/videoplayer/VideoControls.qml:250
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr ""
+msgstr "全螢幕"
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "子母畫面"
 
-#: ui/videoplayer/VideoPlayer.qml:337
+#: ui/videoplayer/VideoPlayer.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide player"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 個喜歡"
 
-#: ui/videoplayer/VideoPlayer.qml:386
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Comments"
 msgstr "評論"
 
-#: ui/videoplayer/VideoPlayer.qml:410
+#: ui/videoplayer/VideoPlayer.qml:416
 #, kde-format
 msgid "Queue"
 msgstr "待播清單"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:427
 #, kde-format
 msgid "Recommended"
 msgstr "建議"

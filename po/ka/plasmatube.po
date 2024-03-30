@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
-"PO-Revision-Date: 2024-03-25 04:59+0100\n"
+"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"PO-Revision-Date: 2024-03-29 05:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -59,7 +59,7 @@ msgstr "YouTube-ის კლიენტი"
 #: main.cpp:66
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-ის საზოგადოება"
 
 #: main.cpp:67
 #, kde-format
@@ -74,12 +74,12 @@ msgstr "შემქმნელი"
 #: main.cpp:68
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "ჯოშუა გოინსი"
 
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "წამყვანი პროგრამისტი"
 
 #: main.cpp:73
 #, kde-format
@@ -186,11 +186,10 @@ msgid "Settings"
 msgstr "პარამეტრები"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "პარამეტრები"
+msgstr "მორგება"
 
 #: ui/components/Comments.qml:93
 #, kde-format
@@ -213,7 +212,7 @@ msgstr "გაზიარება"
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "მონიშნული მედიის გაზიარება"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -303,7 +302,7 @@ msgstr "მოკლე"
 msgid "%1 views • %2"
 msgstr "%1 ნახვა • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:329
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ნახვა"
@@ -329,14 +328,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "დაკვრა სურათი-სურათში"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "უნახავად მონიშვნა"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "ნანახად მონიშვნა"
 
@@ -433,8 +430,7 @@ msgid "Add Piped Source"
 msgstr "გადმოგზავნის წყაროს დამატება"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "შესვლა"
@@ -502,10 +498,9 @@ msgid "Edit Source"
 msgstr "წყაროს ჩასწორება"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "წყაროს წაშლა"
+msgstr "წყაროს წაშლა…"
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -538,7 +533,7 @@ msgstr "მოკლე ვიდეოების დამალვა"
 #: ui/settings/GeneralPage.qml:28
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "მობილური მოწყობილობისთვის განკუთვნილი მოკლე ფორმის ვიდეოების დამალვა."
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
@@ -551,15 +546,13 @@ msgid "Currently logged in as %1."
 msgstr "ამჟამად შესული ბრძანდებით, როგორც %1."
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "გასვლა"
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "შესვლა"
@@ -567,18 +560,17 @@ msgstr "შესვლა"
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "გამოიწერეთ არხები, ადევნეთ თვალყური ვიდეოებს და სხვ."
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "მორგება"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "ავტომატური დაკვრა"
+msgstr "ვიდეოების ავტომატური დაკვრა"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
@@ -586,6 +578,7 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"დაიწყება ვიდეოების ავტომატური დაკვრა თუ დაველოდებით დაკვრის ღილაკზე დაჭერას."
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
@@ -595,7 +588,7 @@ msgstr "ნაგულისხმევი საწყისი გვერ�
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "ნაგულისხმევი გვერდი ჩასატვირთად ამ წყაროზე გადართვისას."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -654,11 +647,10 @@ msgid "About KDE"
 msgstr "KDE-ს შესახებ"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "წყაროს დამატება"
+msgstr "წყაროს დამატება…"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -672,22 +664,19 @@ msgid "Picture in Picture"
 msgstr "სურათი სურათში"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "პროქსის მორგება"
+msgstr "ვიდეოს პარამეტრები"
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "უკან გადახვევა"
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "დაკვრა"
@@ -696,38 +685,42 @@ msgstr "დაკვრა"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "წინ გადახვევა"
 
 #: ui/videoplayer/VideoControls.qml:250
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "მთელს ეკრანზე"
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "სურათი სურათში"
 
-#: ui/videoplayer/VideoPlayer.qml:337
+#: ui/videoplayer/VideoPlayer.qml:96
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide player"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
 
-#: ui/videoplayer/VideoPlayer.qml:386
+#: ui/videoplayer/VideoPlayer.qml:392
 #, kde-format
 msgid "Comments"
 msgstr "კომენტარები"
 
-#: ui/videoplayer/VideoPlayer.qml:410
+#: ui/videoplayer/VideoPlayer.qml:416
 #, kde-format
 msgid "Queue"
 msgstr "რიგი"
 
-#: ui/videoplayer/VideoPlayer.qml:421
+#: ui/videoplayer/VideoPlayer.qml:427
 #, kde-format
 msgid "Recommended"
 msgstr "რეკომენდებულია"
