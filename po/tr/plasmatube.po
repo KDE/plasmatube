@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-29 02:45+0000\n"
-"PO-Revision-Date: 2024-03-25 13:32+0300\n"
+"PO-Revision-Date: 2024-03-30 13:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -533,7 +533,7 @@ msgstr "Ağ Vekili"
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr "Sistem Öntanımlısı"
+msgstr "Sistem öntanımlısı"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
