@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:37+0000\n"
-"PO-Revision-Date: 2024-03-29 07:23+0100\n"
+"PO-Revision-Date: 2024-03-30 06:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -707,7 +707,7 @@ msgstr "Slika v sliki"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Skrij predvajalnik"
 
 #: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format

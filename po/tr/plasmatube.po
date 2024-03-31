@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:37+0000\n"
-"PO-Revision-Date: 2024-03-25 13:32+0300\n"
+"PO-Revision-Date: 2024-03-30 13:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -58,7 +58,7 @@ msgstr "YouTube istemcisi"
 #: main.cpp:66
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019–2024 Linus Jahn, 2019–2024 KDE Topluluğu"
 
 #: main.cpp:67
 #, kde-format
@@ -73,12 +73,12 @@ msgstr "Yaratıcı"
 #: main.cpp:68
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Bakımcı"
 
 #: main.cpp:73
 #, kde-format
@@ -184,8 +184,7 @@ msgid "Settings"
 msgstr "Ayarlar"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarlar"
@@ -211,7 +210,7 @@ msgstr "Paylaş"
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Seçili ortamı paylaş"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -327,14 +326,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "Resim İçinde Resim’de Oynat"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "İzlenmedi Olarak İmle"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "İzlendi Olarak İmle"
 
@@ -431,8 +428,7 @@ msgid "Add Piped Source"
 msgstr "Piped Kaynağı Ekle"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Oturum Aç"
@@ -500,10 +496,9 @@ msgid "Edit Source"
 msgstr "Kaynağı Düzenle"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Kaynağı Kaldır"
+msgstr "Kaynağı Kaldır…"
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -531,12 +526,14 @@ msgstr "Genel"
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr "Shorts’ları Gizle"
+msgstr "Shorts’ları gizle"
 
 #: ui/settings/GeneralPage.qml:28
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
+"Bir taşınabilir aygıtta görüntülenmek üzere tasarlanmış kısa biçimli "
+"videoları gizleyin."
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
@@ -549,15 +546,13 @@ msgid "Currently logged in as %1."
 msgstr "Şu anda %1 olarak oturum açıldı."
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Oturumu Kapat"
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Oturum Aç"
@@ -566,24 +561,25 @@ msgstr "Oturum Aç"
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
 msgstr ""
+"Kanallara abone olun, izlenen videoların takibini ve çok daha fazlasını "
+"yapın."
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Tercihler"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Kendiliğinden oynat"
+msgstr "Videoları kendiliğinden oynat"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
 msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
-msgstr ""
+msgstr "Videolar hemen oynatılmalı mı yoksa düğmeye basılması beklenmeli mi."
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
@@ -593,7 +589,7 @@ msgstr "Öntanımlı ana sayfa"
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Bu kaynağa geçildiğinde yüklenecek öntanımlı sayfa."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -604,7 +600,7 @@ msgstr "Ağ Vekili"
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr "Sistem Öntanımlısı"
+msgstr "Sistem öntanımlısı"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
@@ -652,11 +648,10 @@ msgid "About KDE"
 msgstr "KDE Hakkında"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Kaynak Ekle"
+msgstr "Kaynak Ekle…"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -670,22 +665,19 @@ msgid "Picture in Picture"
 msgstr "Resim İçinde Resim"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Vekil Ayarları"
+msgstr "Video ayarları"
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Geri sar"
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Oynat"
@@ -694,17 +686,16 @@ msgstr "Oynat"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "İleri sar"
 
 #: ui/videoplayer/VideoControls.qml:250
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Tam ekran"
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Resim İçinde Resim"
@@ -713,7 +704,7 @@ msgstr "Resim İçinde Resim"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Oynatıcıyı gizle"
 
 #: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
