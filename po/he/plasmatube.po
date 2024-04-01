@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:37+0000\n"
-"PO-Revision-Date: 2024-03-29 08:16+0300\n"
+"PO-Revision-Date: 2024-03-30 11:49+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -703,7 +703,7 @@ msgstr "חלונית צפה"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "הסתרת הנגן"
 
 #: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
