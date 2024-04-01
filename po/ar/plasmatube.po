@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-29 02:45+0000\n"
-"PO-Revision-Date: 2023-06-22 09:35+0400\n"
+"PO-Revision-Date: 2024-03-31 12:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -44,7 +44,7 @@ msgstr "عطلة هذه النسخة التسجيل"
 #: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "يشغل فيديو"
 
 #: main.cpp:62
 #, kde-format
@@ -145,7 +145,7 @@ msgstr "الإعدادات"
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr ""
+msgstr "فشل الاتصال بالخادم: %1. يرجى التحقق من إعدادات الوكيل الخاص بك."
 
 #: ui/components/BaseGridView.qml:127 ui/Main.qml:95
 #, kde-format
@@ -185,7 +185,7 @@ msgstr "الإعدادات"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "حمّل المزيد"
 
 #: ui/components/PlaylistGridItem.qml:49
 #, fuzzy, kde-format
@@ -244,12 +244,12 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:61
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "بايب"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "بدل المصدر"
 
 #: ui/components/SourceSwitcher.qml:89 ui/settings/SourcesPage.qml:92
 #, kde-format
@@ -259,7 +259,7 @@ msgstr ""
 #: ui/components/SourceSwitcher.qml:93
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "أضف مصدر فيديو جديداً"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
@@ -294,7 +294,7 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:26
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "شغّل الآن"
 
 #: ui/components/VideoMenu.qml:36
 #, kde-format
@@ -304,7 +304,7 @@ msgstr ""
 #: ui/components/VideoMenu.qml:44
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "شغل في صورة في صورة"
 
 #: ui/components/VideoMenu.qml:58
 #, kde-format
@@ -327,52 +327,49 @@ msgid "Remove from Playlist"
 msgstr ""
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "الأعلى في انفيديوس"
+msgstr "أضف مصدر انفيديوس"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "حدد واحد"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "فردي"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "لم يعثر على واحد عام"
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "أضف مصدر بيير تيوب"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "الأعلى في انفيديوس"
+msgstr "أضف مصدر بايب"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
@@ -387,32 +384,29 @@ msgid "Welcome"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:27
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "عن بلازما تيوب"
+msgstr "أهلا بك في بلازما تيوب"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "يتطلب بلازما تويب على مصدر واحد على الأقل."
 
 #: ui/loginflow/WelcomePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "الأعلى في انفيديوس"
+msgstr "أضف مصدر انفيديوس"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "أضف مصدر بيير تيوب"
 
 #: ui/loginflow/WelcomePage.qml:67
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "الأعلى في انفيديوس"
+msgstr "أضف مصدر بايب"
 
 #: ui/LoginPage.qml:21
 #, kde-format
@@ -507,7 +501,7 @@ msgstr ""
 #: ui/settings/InvidiousSourcePage.qml:69
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "الصّفحة الرّئيسيّة المبدئية"
 
 #: ui/settings/InvidiousSourcePage.qml:129
 #, kde-format
@@ -524,21 +518,21 @@ msgstr ""
 #: ui/settings/PeerTubeSourcePage.qml:26 ui/settings/PipedSourcePage.qml:26
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "تعذر إزالة المصدر الوحيد."
 
 #: ui/settings/InvidiousSourcePage.qml:147
 #: ui/settings/PeerTubeSourcePage.qml:33 ui/settings/PipedSourcePage.qml:33
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "أزل المصدر"
 
 #: ui/settings/InvidiousSourcePage.qml:148
 #: ui/settings/PeerTubeSourcePage.qml:34 ui/settings/PipedSourcePage.qml:34
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "أمتأكّد من إزالة هذه المصدر؟"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
