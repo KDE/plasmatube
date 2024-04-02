@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:37+0000\n"
-"PO-Revision-Date: 2024-03-25 11:14+0100\n"
+"PO-Revision-Date: 2024-04-01 19:28+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
@@ -61,7 +61,7 @@ msgstr "«YouTube»ren bezeroa"
 #: main.cpp:66
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE komunitatea"
 
 #: main.cpp:67
 #, kde-format
@@ -76,12 +76,12 @@ msgstr "Sortzailea"
 #: main.cpp:68
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Mantentzailea"
 
 #: main.cpp:73
 #, kde-format
@@ -189,8 +189,7 @@ msgid "Settings"
 msgstr "Ezarpenak"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -216,7 +215,7 @@ msgstr "Partekatu"
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Partekatu hautatutako hedabidea"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -332,14 +331,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "Jo irudiz-irudi"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "Markatu ikusi gabeko gisa"
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "Markatu ikusitako gisa"
 
@@ -436,8 +433,7 @@ msgid "Add Piped Source"
 msgstr "Gehitu hodi bidezko sorburua"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Saioa ireki"
@@ -455,7 +451,7 @@ msgstr "Pasahitza"
 #: ui/LoginPage.qml:93
 #, kde-format
 msgid "Log in"
-msgstr "Saioa ireki"
+msgstr "Saioan ireki"
 
 #: ui/LoginPage.qml:101
 #, kde-format
@@ -505,10 +501,9 @@ msgid "Edit Source"
 msgstr "Editatu sorburua"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Kendu sorburua"
+msgstr "Kendu sorburua..."
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -542,6 +537,7 @@ msgstr "Ezkutatu laburrak"
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
+"Ezkutatu gailu mugikorretan ikusteko diseinatutako formatu laburreko bideoak."
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
@@ -554,15 +550,13 @@ msgid "Currently logged in as %1."
 msgstr "Une honetan %1 erabiltzaile gisa saio-hasita."
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
-msgstr "Itxi saioa"
+msgstr "Saioa-itxi"
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Saioa ireki"
@@ -571,17 +565,17 @@ msgstr "Saioa ireki"
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
 msgstr ""
+"Kanaletara harpidetu, eraman ikusitako bideoen erregistroa eta gehiago."
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Hobespenak"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Automatikoki jotzea"
+msgstr "Bideoak automatikoki jotzea"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
@@ -589,6 +583,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Bideoak berehala jotzen hasi, edo jotzeko botoia sakatu arte itxoin behar "
+"den."
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
@@ -598,7 +594,7 @@ msgstr "Orri-nagusi lehenetsia"
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Sorburu honetara aldatzean zamatu beharreko orri lehenetsia."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -657,11 +653,10 @@ msgid "About KDE"
 msgstr "KDEri buruz"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Gehitu sorburua"
+msgstr "Gehitu sorburua..."
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -675,22 +670,19 @@ msgid "Picture in Picture"
 msgstr "Irudiz-irudi"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Ordezkariaren ezarpenak"
+msgstr "Bideo ezarpenak"
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Bilatu atzerantz"
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Jo"
@@ -699,18 +691,16 @@ msgstr "Jo"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Bilatu aurrerantz"
 
 #: ui/videoplayer/VideoControls.qml:250
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Pantaila-betea"
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Irudiz-irudi"
@@ -719,7 +709,7 @@ msgstr "Irudiz-irudi"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Ezkutatu jotzailea"
 
 #: ui/videoplayer/VideoPlayer.qml:343
 #, kde-format
