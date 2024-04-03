@@ -40,7 +40,7 @@ Kirigami.ApplicationWindow {
             return PlasmaTube.videoController.currentVideo.title;
         }
 
-        return pageStack.currentItem !== undefined ? pageStack.currentItem.title : "";
+        return pageStack.currentItem?.title ?? "";
     }
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
