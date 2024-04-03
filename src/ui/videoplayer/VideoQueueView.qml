@@ -76,18 +76,18 @@ QQC2.Control {
                     width: ListView.view.width
                     height: implicitHeight
 
-                    vid: model.id
-                    thumbnail: model.thumbnail
-                    liveNow: model.liveNow
-                    length: model.length
-                    title: model.title
-                    author: model.author
-                    authorId: model.authorId
-                    description: model.description
-                    viewCount: model.viewCount
-                    publishedText: model.publishedText
-                    watched: model.watched
-                    highlighted: model.playing
+                    vid: model?.id ?? ""
+                    thumbnail: model?.thumbnail ?? ""
+                    liveNow: model?.liveNow ?? false
+                    length: model?.length ?? new Date()
+                    title: model?.title ?? i18n("Loading…")
+                    author: model?.author ?? ""
+                    authorId: model?.authorId ??  ""
+                    description: model?.description ?? ""
+                    viewCount: model?.viewCount ?? 0
+                    publishedText: model?.publishedText ?? ""
+                    watched: model?.watched ?? false
+                    highlighted: model?.playing ?? false
 
                     onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
                 }
