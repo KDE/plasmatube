@@ -89,7 +89,7 @@ QQC2.Control {
                     watched: model?.watched ?? false
                     highlighted: model?.playing ?? false
 
-                    onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
+                    onClicked: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
                 }
             }
         }
