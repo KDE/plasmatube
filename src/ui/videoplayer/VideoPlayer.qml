@@ -65,16 +65,16 @@ Kirigami.ScrollablePage {
     }
 
     function openFullScreen() {
-        inlineVideoContainer.parent = QQC2.Overlay.overlay;
-        inlineVideoContainer.anchors.fill = QQC2.Overlay.overlay;
+        videoPlayer.parent = QQC2.Overlay.overlay;
+        videoPlayer.anchors.fill = QQC2.Overlay.overlay;
         root.inFullScreen = true;
         applicationWindow().globalDrawer.close();
         applicationWindow().showFullScreen();
     }
 
     function exitFullScreen() {
-        inlineVideoContainer.parent = parentColumn;
-        inlineVideoContainer.anchors.fill = undefined;
+        videoPlayer.parent = videoContainer;
+        videoPlayer.anchors.fill = videoContainer;
         root.inFullScreen = false;
         if (!applicationWindow().globalDrawer.modal) {
             applicationWindow().globalDrawer.open();
@@ -155,10 +155,11 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
 
+            // This is the overall video container.
+            // It's a container-inside-container detail, because... when we fullscreen a video it reparents the inner child.
+            // If we didn't have an outside container, we wouldn't know where to put it back.
             Item {
-                id: inlineVideoContainer
-
-                property bool showControls: false
+                id: videoContainer
 
                 Layout.margins: widescreen? Kirigami.Units.largeSpacing * 2 : 0
                 Layout.fillWidth: true
@@ -169,81 +170,89 @@ Kirigami.ScrollablePage {
                     maskSource: playerMask
                 }
 
-                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-                Kirigami.Theme.inherit: false
+                Item {
+                    id: videoPlayer
 
-                Timer {
-                    id: controlTimer
-                    interval: 2000
-                    onTriggered: inlineVideoContainer.showControls = false
-                }
-
-                MpvObject {
-                    id: renderer
                     anchors.fill: parent
 
-                    visible: !stopped
-                }
-                Rectangle {
-                    anchors.fill: renderer
+                    property bool showControls: false
 
-                    color: "black"
-                    visible: renderer.stopped
+                    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                    Kirigami.Theme.inherit: false
 
-                    Image {
-                        id: thumbnailImage
+                    Timer {
+                        id: controlTimer
+                        interval: 2000
+                        onTriggered: videoPlayer.showControls = false
+                    }
 
+                    MpvObject {
+                        id: renderer
                         anchors.fill: parent
-                        source: video.thumbnailUrl("high")
-                        fillMode: Image.PreserveAspectCrop
+
+                        visible: !stopped
                     }
+                    Rectangle {
+                        anchors.fill: renderer
 
-                    QQC2.BusyIndicator {
-                        anchors.centerIn: parent
-                    }
-                }
-                Rectangle {
-                    id: playerMask
-                    radius: widescreen ? 7 : 0
-                    anchors.fill: renderer
-                    visible: false
-                }
-                VideoControls {
-                    inFullScreen: root.inFullScreen
-                    anchors.fill: parent
+                        color: "black"
+                        visible: renderer.stopped
 
-                    onRequestFullScreen: root.toggleFullscreen()
+                        Image {
+                            id: thumbnailImage
 
-                    visible: opacity > 0
-                    opacity: inlineVideoContainer.showControls ? 1 : 0
-                    Behavior on opacity {
-                        NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
-                    }
+                            anchors.fill: parent
+                            source: video.thumbnailUrl("high")
+                            fillMode: Image.PreserveAspectCrop
+                        }
 
-                    Keys.forwardTo: [root]
-                }
-
-                HoverHandler {
-                    acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
-
-                    onHoveredChanged: {
-                        if (hovered) {
-                            inlineVideoContainer.showControls = true;
-                            controlTimer.stop();
-                        } else {
-                            controlTimer.start();
+                        QQC2.BusyIndicator {
+                            anchors.centerIn: parent
                         }
                     }
-                }
+                    Rectangle {
+                        id: playerMask
+                        radius: widescreen ? 7 : 0
+                        anchors.fill: renderer
+                        visible: false
+                    }
+                    VideoControls {
+                        inFullScreen: root.inFullScreen
+                        anchors.fill: parent
 
-                TapHandler {
-                    onTapped: {
-                        if (Kirigami.Settings.hasTransientTouchInput) {
-                            inlineVideoContainer.showControls = true;
-                            controlTimer.restart();
+                        onRequestFullScreen: root.toggleFullscreen()
+
+                        visible: opacity > 0
+                        opacity: videoPlayer.showControls ? 1 : 0
+                        Behavior on opacity {
+                            NumberAnimation { duration: Kirigami.Units.veryLongDuration; easing.type: Easing.InOutCubic }
+                        }
+
+                        Keys.forwardTo: [root]
+                    }
+
+                    HoverHandler {
+                        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+
+                        onHoveredChanged: {
+                            if (hovered) {
+                                videoPlayer.showControls = true;
+                                controlTimer.stop();
+                            } else {
+                                controlTimer.start();
+                            }
                         }
                     }
-                    onDoubleTapped: root.toggleFullscreen()
+
+                    TapHandler {
+                        onTapped: {
+                            if (Kirigami.Settings.hasTransientTouchInput) {
+                                videoPlayer.showControls = true;
+                                controlTimer.restart();
+                            }
+                        }
+                        onDoubleTapped: root.toggleFullscreen()
+                    }
                 }
             }
 
