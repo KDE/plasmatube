@@ -11,6 +11,9 @@ import org.kde.kirigami as Kirigami
 import org.kde.coreaddons as KCoreAddons
 import org.kde.plasmatube
 
+/*
+ * These are the video controls
+ */
 QQC2.Control {
     id: root
 

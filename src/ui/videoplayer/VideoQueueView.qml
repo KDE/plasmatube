@@ -12,6 +12,9 @@ import "../components/utils.js" as Utils
 import "../"
 import "../components"
 
+/*
+ * This is the video queue on the right side of the video player.
+ */
 QQC2.Control {
     id: root
 

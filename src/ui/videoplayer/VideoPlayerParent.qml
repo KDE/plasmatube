@@ -8,6 +8,9 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.plasmatube
 
+/*
+ * Holds the video player page together. It's twice the size of the window and just moves the page up and down.
+ */
 Flickable {
     id: root
     boundsBehavior: Flickable.StopAtBounds

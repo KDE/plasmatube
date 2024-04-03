@@ -13,6 +13,9 @@ import "../components/utils.js" as Utils
 import "../"
 import "../components"
 
+/*
+ * The actual video player page. Contains the video controls, information and other gubbins.
+ */
 Kirigami.ScrollablePage {
     id: root
 

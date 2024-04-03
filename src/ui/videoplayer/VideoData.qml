@@ -7,6 +7,9 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
+/*
+ * This is the header inside of the player that displays the title.
+ */
 Item {
     required property string title
     signal toggleDrawer()
