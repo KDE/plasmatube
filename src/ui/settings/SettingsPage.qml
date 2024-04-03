@@ -13,11 +13,9 @@ KirigamiSettings.CategorizedSettings {
         KirigamiSettings.SettingAction {
             actionName: "general"
             text: i18n("General")
-            icon.name
-    :
-    "org.kde.plasmatube"
-    page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/plasmatube/ui/settings/GeneralPage.qml")
-},
+            icon.name: "org.kde.plasmatube"
+            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/plasmatube/ui/settings/GeneralPage.qml")
+        },
         KirigamiSettings.SettingAction {
             actionName: "sources"
             text: i18n("Sources")
@@ -34,13 +32,13 @@ KirigamiSettings.CategorizedSettings {
             actionName: "about"
             text: i18n("About PlasmaTube")
             icon.name: "help-about"
-            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/plasmatube/ui/settings/AboutPage.qml")
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"))
         },
         KirigamiSettings.SettingAction {
             actionName: "aboutkde"
             text: i18n("About KDE")
             icon.name: "kde"
-            page: Qt.resolvedUrl("qrc:/qt/qml/org/kde/plasmatube/ui/settings/AboutKDEPage.qml")
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDE"))
         }
     ]
 }
