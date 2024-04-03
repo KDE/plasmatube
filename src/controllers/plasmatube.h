@@ -38,6 +38,7 @@ public:
     VideoSource *selectedSource();
 
     Q_INVOKABLE void setApplicationProxy();
+    Q_INVOKABLE void saveCurrentSource();
 
 Q_SIGNALS:
     void openVideo(const QString &id);

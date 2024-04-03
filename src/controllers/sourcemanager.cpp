@@ -23,8 +23,21 @@ void SourceManager::load()
         }
     }
 
-    // TODO: save last used source
     if (!m_sources.isEmpty()) {
+        // Load the last used source if saved
+        auto stateConfig = KSharedConfig::openStateConfig();
+        auto generalGroup = stateConfig->group(QStringLiteral("General"));
+        if (generalGroup.exists() && generalGroup.hasKey(QStringLiteral("LastSource"))) {
+            const QString lastSourceUUID = generalGroup.readEntry(QStringLiteral("LastSource"));
+            for (auto source : m_sources) {
+                if (source->uuid() == lastSourceUUID) {
+                    selectSource(source);
+                    return;
+                }
+            }
+        }
+
+        // Otherwise, pick the first one.
         selectSource(m_sources[0]);
     }
 }

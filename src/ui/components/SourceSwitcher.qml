@@ -149,6 +149,7 @@ QQC2.Pane {
                     if (PlasmaTube.sourceManager.selectedSource !== sourceDelegate.source) {
                         PlasmaTube.sourceManager.selectedSource = sourceDelegate.source;
                         sources.currentIndex = sourceDelegate.index;
+                        PlasmaTube.saveCurrentSource();
                     }
                     root.sourcesListVisible = false
                 }
