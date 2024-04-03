@@ -19,26 +19,34 @@ QQC2.Control {
     id: root
 
     topPadding: 0
-    bottomPadding: 0
+    bottomPadding: Kirigami.Units.mediumSpacing
     leftPadding: 0
     rightPadding: 0
-
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-    Kirigami.Theme.inherit: false
 
     background: Rectangle {
         anchors.fill: parent
         color: Kirigami.Theme.backgroundColor
+        radius: Kirigami.Units.mediumSpacing
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        Kirigami.Theme.inherit: false
     }
 
     contentItem: ColumnLayout {
         spacing: 0
+
+        Kirigami.Heading {
+            text: i18n("Queue")
+
+            Layout.margins: Kirigami.Units.largeSpacing
+        }
 
         QQC2.ToolBar {
             Layout.fillWidth: true
 
             QQC2.ToolButton {
                 text: i18nc("@action:button Clear playlist", "Clear")
+                icon.name: "edit-clear-all"
                 onClicked: {
                     PlasmaTube.videoController.videoQueue.clear();
                     applicationWindow().closePlayer();
@@ -49,6 +57,15 @@ QQC2.Control {
         QQC2.ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            clip: true
+
+            background: Rectangle {
+                color: Kirigami.Theme.alternateBackgroundColor
+
+                Kirigami.Theme.colorSet: Kirigami.Theme.View
+                Kirigami.Theme.inherit: false
+            }
 
             ListView {
                 model: PlasmaTube.videoController.videoQueue
@@ -75,6 +92,10 @@ QQC2.Control {
                     onPressed: PlasmaTube.videoController.videoQueue.playInQueue(model.index)
                 }
             }
+        }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
         }
     }
 }
