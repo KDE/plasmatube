@@ -15,6 +15,9 @@ QQC2.Menu {
     required property string channelId
     property bool shouldRemoveFromPlaylist
 
+    // Queue controls only make sense if you have a video loaded
+    readonly property bool shouldShowQueueControls: PlasmaTube.videoController.currentVideo.isLoaded
+
     signal markWatched()
     signal markUnwatched()
     signal addToPlaylist()
@@ -23,7 +26,7 @@ QQC2.Menu {
     modal: true
 
     QQC2.MenuItem {
-        text: i18n("Play Now")
+        text: shouldShowQueueControls ? i18n("Play Now") : i18n("Play")
         icon.name: "media-playback-start"
         onTriggered: {
             root.markWatched();
@@ -35,6 +38,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: i18n("Play Next")
         icon.name: "media-playlist-append"
+        visible: shouldShowQueueControls
         onTriggered: {
             PlasmaTube.videoController.queueNext(root.videoId);
         }
