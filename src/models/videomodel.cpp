@@ -19,7 +19,6 @@ VideoModel::VideoModel(QObject *parent)
 {
     connect(this, &VideoModel::videoIdChanged, this, [this] {
         m_remoteUrl.clear();
-        m_formatUrl.clear();
         Q_EMIT remoteUrlChanged();
     });
 }
@@ -71,11 +70,23 @@ void VideoModel::fetch(const QString &videoId)
     process->start(youtubeDl, arguments);
 
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [=](int, QProcess::ExitStatus) {
+        m_formatUrl.clear();
+
         const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
         const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
         for (const auto &value : formatsArray) {
             const auto format = value.toObject();
+
+            // FIXME: this filters out audio only, but we probably want to support that
+            if (format["vcodec"_L1].toString() == "none"_L1) {
+                continue;
+            }
+
             const auto formatNote = format["format_note"_L1].toString();
+            if (formatNote.isEmpty()) {
+                continue;
+            }
+
             if (formatNote == "medium"_L1) {
                 m_audioUrl = format["url"_L1].toString();
             } else {
@@ -155,7 +166,32 @@ QString VideoModel::audioUrl() const
 
 QStringList VideoModel::formatList() const
 {
-    return m_formatUrl.keys();
+    QStringList keys = m_formatUrl.keys();
+    std::sort(keys.begin(), keys.end(), [](const QString &a, const QString &b) -> bool {
+        const auto parseQuality = [](const QString &quality) -> std::pair<int, int> {
+            const QStringList parts = quality.split('p'_L1);
+            // 1080p
+            if (parts.length() == 2) {
+                const int resolution = parts[0].toInt();
+                return {resolution, 30}; // assume a framerate of 30
+            } else if (parts.length() == 3) {
+                // 1080p60
+                const int resolution = parts[0].toInt();
+                const int framerate = parts[2].toInt();
+                return {resolution, framerate};
+            } else {
+                // we don't know?
+                return {0, 0};
+            }
+        };
+
+        const auto aQuality = parseQuality(a);
+        const auto bQuality = parseQuality(b);
+
+        // FIXME: 720p shows up above 720p60
+        return aQuality.first > bQuality.first;
+    });
+    return keys;
 }
 
 QString VideoModel::selectedFormat() const
