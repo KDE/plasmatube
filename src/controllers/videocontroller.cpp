@@ -20,6 +20,9 @@ VideoController::VideoController(QObject *parent)
     , m_videoQueue(new VideoQueue(this))
     , m_mpris(new Mpris2(this))
 {
+    connect(m_videoModel, &VideoModel::remoteUrlChanged, this, [this] {
+        Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << m_videoModel->remoteUrl());
+    });
     connect(m_videoModel, &VideoModel::videoChanged, this, [this] {
         Q_EMIT currentVideoChanged();
     });
@@ -184,8 +187,7 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
         m_currentPlayer->setProperty(QStringLiteral("ytdl-raw-options"), proxyString);
     }
 
-    Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile")
-                                                  << PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoModel->videoId()));
+    Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << m_videoModel->remoteUrl());
     m_currentPlayer->setProperty(QStringLiteral("ytdl-format"), QStringLiteral("best"));
 
     connect(m_currentPlayer, &MpvObject::positionChanged, this, &VideoController::positionChanged);

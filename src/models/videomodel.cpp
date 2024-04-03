@@ -156,7 +156,7 @@ QString VideoModel::remoteUrl()
     if (!m_formatUrl.isEmpty() && m_formatUrl.contains(m_selectedFormat)) {
         return m_formatUrl[m_selectedFormat];
     }
-    return {};
+    return PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoId);
 }
 
 QString VideoModel::audioUrl() const
@@ -201,6 +201,7 @@ QString VideoModel::selectedFormat() const
 
 void VideoModel::setSelectedFormat(const QString &selectedFormat)
 {
+    qInfo() << "Setting selected format to " << selectedFormat;
     if (m_selectedFormat == selectedFormat) {
         return;
     }
