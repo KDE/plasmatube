@@ -39,6 +39,7 @@ public:
     VideoSource *selectedSource();
 
     Q_INVOKABLE void setApplicationProxy();
+    Q_INVOKABLE void saveCurrentSource();
 
     PlasmaTubeSettings *settings();
 

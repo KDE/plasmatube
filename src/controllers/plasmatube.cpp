@@ -73,4 +73,14 @@ PlasmaTubeSettings *PlasmaTube::settings()
     return &m_settings;
 }
 
+void PlasmaTube::saveCurrentSource()
+{
+    auto stateConfig = KSharedConfig::openStateConfig();
+    auto generalGroup = stateConfig->group(QStringLiteral("General"));
+
+    generalGroup.writeEntry(QStringLiteral("LastSource"), m_sourceManager->selectedSource()->uuid());
+
+    stateConfig->sync();
+}
+
 #include "moc_plasmatube.cpp"
