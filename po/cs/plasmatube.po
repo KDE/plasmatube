@@ -78,7 +78,7 @@ msgstr ""
 #: main.cpp:69
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Správce"
 
 #: main.cpp:73
 #, kde-format
@@ -161,11 +161,10 @@ msgid "No videos"
 msgstr "Žádná videa"
 
 #: ui/components/BaseGridView.qml:180
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr "Přidat do seznamu stop"
+msgstr ""
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -185,8 +184,7 @@ msgid "Settings"
 msgstr "Nastavení"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Nastavení"
@@ -329,16 +327,14 @@ msgid "Play in Picture-in-Picture"
 msgstr ""
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
-msgstr "Označit jako nezhlédnuté"
+msgstr ""
 
 #: ui/components/VideoMenu.qml:58
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
-msgstr "Označit jako zhlédnuté"
+msgstr ""
 
 #: ui/components/VideoMenu.qml:72
 #, kde-format
@@ -433,11 +429,10 @@ msgid "Add Piped Source"
 msgstr ""
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
-msgstr "Přihlásit"
+msgstr ""
 
 #: ui/LoginPage.qml:64
 #, kde-format
@@ -502,10 +497,9 @@ msgid "Edit Source"
 msgstr "Upravit zdroj"
 
 #: ui/settings/BaseSourcePage.qml:22
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Odstranit zdroj"
+msgstr ""
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
@@ -527,7 +521,7 @@ msgstr "Opravdu si přejete odstranit tento zdroj?"
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
@@ -551,18 +545,16 @@ msgid "Currently logged in as %1."
 msgstr "Nyní jste přihlášeni jako %1."
 
 #: ui/settings/InvidiousSourcePage.qml:43
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
-msgstr "Odhlásit se"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:45
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr "Přihlásit"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
@@ -572,13 +564,12 @@ msgstr ""
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Předvolby"
 
 #: ui/settings/InvidiousSourcePage.qml:80
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Automaticky přehrát"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
@@ -654,11 +645,10 @@ msgid "About KDE"
 msgstr "O prostředí KDE"
 
 #: ui/settings/SourcesPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Přidat zdroj"
+msgstr ""
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -672,11 +662,10 @@ msgid "Picture in Picture"
 msgstr "Obrázek v obrázku (PiP)"
 
 #: ui/videoplayer/VideoControls.qml:98
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Nastavení proxy"
+msgstr ""
 
 #: ui/videoplayer/VideoControls.qml:126
 #, kde-format
@@ -685,12 +674,10 @@ msgid "Seek backward"
 msgstr ""
 
 #: ui/videoplayer/VideoControls.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
-msgstr "Přehrát"
+msgstr ""
 
 #: ui/videoplayer/VideoControls.qml:207
 #, kde-format
@@ -705,11 +692,10 @@ msgid "Fullscreen"
 msgstr ""
 
 #: ui/videoplayer/VideoControls.qml:273
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Obrázek v obrázku (PiP)"
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:96
 #, kde-format
@@ -742,22 +728,3 @@ msgstr "Doporučeno"
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Vyprázdnit"
-
-#~ msgid "© Linus Jahn"
-#~ msgstr "© Linus Jahn"
-
-#~ msgid "Sign in"
-#~ msgstr "Přidat se"
-
-#~ msgid "Successfully logged in!"
-#~ msgstr "Úspěšně přihlášeni."
-
-#, fuzzy
-#~| msgid "Add Source"
-#~ msgctxt "@action:button"
-#~ msgid "Add Source"
-#~ msgstr "Přidat zdroj"
-
-#~ msgctxt "@info:status"
-#~ msgid "Loading…"
-#~ msgstr "Probíhá načítání…"

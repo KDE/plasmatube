@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 00:37+0000\n"
-"PO-Revision-Date: 2024-03-30 19:37\n"
+"PO-Revision-Date: 2024-04-01 14:44\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -21,39 +21,39 @@ msgstr ""
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "用户名或密码错误。"
 
 #: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
 #: api/piped/pipedapi.cpp:303
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "服务器没有返回有效的 JSON。"
 
 #: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
 #: api/piped/pipedapi.cpp:312
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "服务器返回了状态代码 %1"
 
 #: controllers/logincontroller.cpp:45
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "此实例已禁用注册。"
 
 #: controllers/videocontroller.cpp:55
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "播放视频"
 
 #: main.cpp:62
 #, kde-format
 msgid "PlasmaTube"
-msgstr ""
+msgstr "PlasmaTube"
 
 #: main.cpp:64 main.cpp:119
 #, kde-format
 msgid "YouTube client"
-msgstr ""
+msgstr "YouTube 客户端"
 
 #: main.cpp:66
 #, kde-format
@@ -63,12 +63,12 @@ msgstr ""
 #: main.cpp:67
 #, kde-format
 msgid "Linus Jahn"
-msgstr ""
+msgstr "Linus Jahn"
 
 #: main.cpp:67
 #, kde-format
 msgid "Creator"
-msgstr ""
+msgstr "创建者"
 
 #: main.cpp:68
 #, kde-format
@@ -84,23 +84,23 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "KDE China, Guo Yunhe"
 
 #: main.cpp:73
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "kde-china@kde.org, i@guoyunhe.me"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "订阅"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "热门"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
@@ -141,7 +141,7 @@ msgstr ""
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "“%1” 的搜索结果："
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:40 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
@@ -158,7 +158,7 @@ msgstr ""
 #: ui/components/BaseGridView.qml:153
 #, kde-format
 msgid "No videos"
-msgstr ""
+msgstr "没有视频"
 
 #: ui/components/BaseGridView.qml:180
 #, kde-format
@@ -219,7 +219,7 @@ msgstr ""
 #: ui/components/Sidebar.qml:86
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "当下流行"
 
 #: ui/components/Sidebar.qml:121 ui/PlaylistsPage.qml:14
 #, kde-format
@@ -270,17 +270,17 @@ msgstr ""
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "取消订阅 (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "订阅 (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "请登录以订阅频道。"
 
 #: ui/components/VideoGridItem.qml:73
 #, kde-format
@@ -430,7 +430,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Log in"
-msgstr ""
+msgstr "登录"
 
 #: ui/LoginPage.qml:64
 #, kde-format
@@ -440,22 +440,22 @@ msgstr "用户名"
 #: ui/LoginPage.qml:78 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: ui/LoginPage.qml:93
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "登录"
 
 #: ui/LoginPage.qml:101
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "用户名不能为空！"
 
 #: ui/LoginPage.qml:106
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "密码不能为空！"
 
 #: ui/PlaylistPage.qml:43
 #, kde-format
@@ -552,7 +552,7 @@ msgstr "注销"
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "登录"
 
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
@@ -635,12 +635,12 @@ msgstr ""
 #: ui/settings/SettingsPage.qml:35
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "关于 PlasmaTube"
 
 #: ui/settings/SettingsPage.qml:41
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "关于 KDE"
 
 #: ui/settings/SourcesPage.qml:25
 #, kde-format
@@ -652,7 +652,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr ""
+msgstr "当下流行"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format

@@ -754,14 +754,3 @@ msgstr ""
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr ""
-
-#~ msgid "© Linus Jahn"
-#~ msgstr "© Linus Jahn"
-
-#~ msgid "Sign in"
-#~ msgstr "Logg inn"
-
-#, fuzzy
-#~| msgid "Successfully logged in as %1."
-#~ msgid "Successfully logged in!"
-#~ msgstr "Vart logga inn som %1."
