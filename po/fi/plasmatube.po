@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"POT-Creation-Date: 2024-04-04 00:38+0000\n"
 "PO-Revision-Date: 2024-02-14 00:12+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -42,7 +42,7 @@ msgstr "Palvelin palautti tilakoodin %1"
 msgid "This instance has disabled the registration."
 msgstr "Tämä instanssi on poistanut rekisteröitymisen käytöstä."
 
-#: controllers/videocontroller.cpp:55
+#: controllers/videocontroller.cpp:58
 #, kde-format
 msgid "Playing video"
 msgstr "Toistetaan videota"
@@ -181,7 +181,7 @@ msgstr "Videot"
 msgid "Search"
 msgstr "Etsi"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:297
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
@@ -304,7 +304,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr "%1 katselua • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "%1 views"
 msgstr "%1 katselua"
@@ -314,39 +314,46 @@ msgstr "%1 katselua"
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:26
+#: ui/components/VideoMenu.qml:29
 #, kde-format
 msgid "Play Now"
 msgstr "Toista nyt"
 
-#: ui/components/VideoMenu.qml:36
+#: ui/components/VideoMenu.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@action:button Play the playlist"
+#| msgid "Play"
+msgid "Play"
+msgstr "Toista"
+
+#: ui/components/VideoMenu.qml:39
 #, kde-format
 msgid "Play Next"
 msgstr "Toista seuraava"
 
-#: ui/components/VideoMenu.qml:44
+#: ui/components/VideoMenu.qml:48
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Toista kuva kuvassa"
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, fuzzy, kde-format
 #| msgid "Mark as unwatched"
 msgid "Mark as Unwatched"
 msgstr "Merkitse ei-katsotuksi"
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, fuzzy, kde-format
 #| msgid "Mark as watched"
 msgid "Mark as Watched"
 msgstr "Merkitse katsotuksi"
 
-#: ui/components/VideoMenu.qml:72
+#: ui/components/VideoMenu.qml:76
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Lisää soittolistaan…"
 
-#: ui/components/VideoMenu.qml:79
+#: ui/components/VideoMenu.qml:83
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Poista soittolistalta"
@@ -634,22 +641,22 @@ msgstr "Käyttäjä"
 msgid "Apply"
 msgstr "Käytä"
 
-#: ui/settings/SettingsPage.qml:23 ui/settings/SourcesPage.qml:21
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "Lähteet"
 
-#: ui/settings/SettingsPage.qml:29
+#: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
 msgstr "Välityspalvelin"
 
-#: ui/settings/SettingsPage.qml:35
+#: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "Tietoa PlasmaTubesta"
 
-#: ui/settings/SettingsPage.qml:41
+#: ui/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About KDE"
 msgstr "Tietoa KDE:stä"
@@ -672,20 +679,20 @@ msgstr "Nousussa"
 msgid "Picture in Picture"
 msgstr "Kuva kuvassa"
 
-#: ui/videoplayer/VideoControls.qml:98
+#: ui/videoplayer/VideoControls.qml:101
 #, fuzzy, kde-format
 #| msgid "Proxy Settings"
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Välityspalvelinasetukset"
 
-#: ui/videoplayer/VideoControls.qml:126
+#: ui/videoplayer/VideoControls.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:166
+#: ui/videoplayer/VideoControls.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@action:button Play the playlist"
 #| msgid "Play"
@@ -693,57 +700,64 @@ msgctxt "@action:button"
 msgid "Play"
 msgstr "Toista"
 
-#: ui/videoplayer/VideoControls.qml:207
+#: ui/videoplayer/VideoControls.qml:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:250
+#: ui/videoplayer/VideoControls.qml:253
 #, fuzzy, kde-format
 #| msgid "Fullscreen"
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Koko näyttö"
 
-#: ui/videoplayer/VideoControls.qml:273
+#: ui/videoplayer/VideoControls.qml:276
 #, fuzzy, kde-format
 #| msgid "Picture in Picture"
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Kuva kuvassa"
 
-#: ui/videoplayer/VideoPlayer.qml:96
+#: ui/videoplayer/VideoPlayer.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:343
+#: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 tykkäystä"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:404
 #, kde-format
 msgid "Comments"
 msgstr "Kommentit"
 
-#: ui/videoplayer/VideoPlayer.qml:416
-#, kde-format
-msgid "Queue"
-msgstr "Jono"
-
-#: ui/videoplayer/VideoPlayer.qml:427
+#: ui/videoplayer/VideoPlayer.qml:434
 #, kde-format
 msgid "Recommended"
 msgstr "Suositeltu"
 
-#: ui/videoplayer/VideoQueueView.qml:38
+#: ui/videoplayer/VideoQueueView.qml:39
+#, kde-format
+msgid "Queue"
+msgstr "Jono"
+
+#: ui/videoplayer/VideoQueueView.qml:48
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Tyhjennä"
+
+#: ui/videoplayer/VideoQueueView.qml:83
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Loading…"
+msgid "Loading…"
+msgstr "Ladataan…"
 
 #~ msgid "© Linus Jahn"
 #~ msgstr "© Linus Jahn"
@@ -759,10 +773,6 @@ msgstr "Tyhjennä"
 #~ msgctxt "@action:button"
 #~ msgid "Add Source"
 #~ msgstr "Lisää lähde"
-
-#~ msgctxt "@info:status"
-#~ msgid "Loading…"
-#~ msgstr "Ladataan…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 katselua"

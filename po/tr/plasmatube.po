@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"POT-Creation-Date: 2024-04-04 00:38+0000\n"
 "PO-Revision-Date: 2024-03-30 13:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Sunucu, %1 durum kodunu döndürdü"
 msgid "This instance has disabled the registration."
 msgstr "Bu örnek, kaydı devre dışı bıraktı."
 
-#: controllers/videocontroller.cpp:55
+#: controllers/videocontroller.cpp:58
 #, kde-format
 msgid "Playing video"
 msgstr "Video oynatılıyor"
@@ -178,7 +178,7 @@ msgstr "Videolar"
 msgid "Search"
 msgstr "Ara"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:297
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
@@ -300,7 +300,7 @@ msgstr "Kısa"
 msgid "%1 views • %2"
 msgstr "%1 görüntülenme • %2"
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "%1 views"
 msgstr "%1 görüntüleme"
@@ -310,37 +310,44 @@ msgstr "%1 görüntüleme"
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:26
+#: ui/components/VideoMenu.qml:29
 #, kde-format
 msgid "Play Now"
 msgstr "Şimdi Oynat"
 
-#: ui/components/VideoMenu.qml:36
+#: ui/components/VideoMenu.qml:29
+#, fuzzy, kde-format
+#| msgctxt "@action:button Play the playlist"
+#| msgid "Play"
+msgid "Play"
+msgstr "Oynat"
+
+#: ui/components/VideoMenu.qml:39
 #, kde-format
 msgid "Play Next"
 msgstr "Sonrakini Oynat"
 
-#: ui/components/VideoMenu.qml:44
+#: ui/components/VideoMenu.qml:48
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Resim İçinde Resim’de Oynat"
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Unwatched"
 msgstr "İzlenmedi Olarak İmle"
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Watched"
 msgstr "İzlendi Olarak İmle"
 
-#: ui/components/VideoMenu.qml:72
+#: ui/components/VideoMenu.qml:76
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Oynatma Listesine Ekle…"
 
-#: ui/components/VideoMenu.qml:79
+#: ui/components/VideoMenu.qml:83
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Oynatma Listesinden Kaldır"
@@ -627,22 +634,22 @@ msgstr "Kullanıcı"
 msgid "Apply"
 msgstr "Uygula"
 
-#: ui/settings/SettingsPage.qml:23 ui/settings/SourcesPage.qml:21
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr "Kaynaklar"
 
-#: ui/settings/SettingsPage.qml:29
+#: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
 msgstr "Ağ Vekili"
 
-#: ui/settings/SettingsPage.qml:35
+#: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About PlasmaTube"
 msgstr "PlasmaTube Hakkında"
 
-#: ui/settings/SettingsPage.qml:41
+#: ui/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About KDE"
 msgstr "KDE Hakkında"
@@ -664,73 +671,80 @@ msgstr "Trendler"
 msgid "Picture in Picture"
 msgstr "Resim İçinde Resim"
 
-#: ui/videoplayer/VideoControls.qml:98
+#: ui/videoplayer/VideoControls.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Video ayarları"
 
-#: ui/videoplayer/VideoControls.qml:126
+#: ui/videoplayer/VideoControls.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "Geri sar"
 
-#: ui/videoplayer/VideoControls.qml:166
+#: ui/videoplayer/VideoControls.qml:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Oynat"
 
-#: ui/videoplayer/VideoControls.qml:207
+#: ui/videoplayer/VideoControls.qml:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "İleri sar"
 
-#: ui/videoplayer/VideoControls.qml:250
+#: ui/videoplayer/VideoControls.qml:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Tam ekran"
 
-#: ui/videoplayer/VideoControls.qml:273
+#: ui/videoplayer/VideoControls.qml:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Resim İçinde Resim"
 
-#: ui/videoplayer/VideoPlayer.qml:96
+#: ui/videoplayer/VideoPlayer.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
 msgstr "Oynatıcıyı gizle"
 
-#: ui/videoplayer/VideoPlayer.qml:343
+#: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 beğeni"
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:404
 #, kde-format
 msgid "Comments"
 msgstr "Yorumlar"
 
-#: ui/videoplayer/VideoPlayer.qml:416
-#, kde-format
-msgid "Queue"
-msgstr "Kuyruk"
-
-#: ui/videoplayer/VideoPlayer.qml:427
+#: ui/videoplayer/VideoPlayer.qml:434
 #, kde-format
 msgid "Recommended"
 msgstr "Önerilen"
 
-#: ui/videoplayer/VideoQueueView.qml:38
+#: ui/videoplayer/VideoQueueView.qml:39
+#, kde-format
+msgid "Queue"
+msgstr "Kuyruk"
+
+#: ui/videoplayer/VideoQueueView.qml:48
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
 msgstr "Temizle"
+
+#: ui/videoplayer/VideoQueueView.qml:83
+#, fuzzy, kde-format
+#| msgctxt "@info:status"
+#| msgid "Loading…"
+msgid "Loading…"
+msgstr "Yükleniyor…"
 
 #~ msgid "© Linus Jahn"
 #~ msgstr "© Linus Jahn"
@@ -744,10 +758,6 @@ msgstr "Temizle"
 #~ msgctxt "@action:button"
 #~ msgid "Add Source"
 #~ msgstr "Kaynak Ekle"
-
-#~ msgctxt "@info:status"
-#~ msgid "Loading…"
-#~ msgstr "Yükleniyor…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 görüntülenme"

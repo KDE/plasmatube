@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:37+0000\n"
+"POT-Creation-Date: 2024-04-04 00:38+0000\n"
 "PO-Revision-Date: 2022-03-27 18:26+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "This instance has disabled the registration."
 msgstr ""
 
-#: controllers/videocontroller.cpp:55
+#: controllers/videocontroller.cpp:58
 #, kde-format
 msgid "Playing video"
 msgstr ""
@@ -180,7 +180,7 @@ msgstr "Videolar"
 msgid "Search"
 msgstr "Axtarış"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:294
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:297
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
@@ -305,7 +305,7 @@ msgstr ""
 msgid "%1 views • %2"
 msgstr ""
 
-#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:335
+#: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "%1 views"
 msgstr ""
@@ -315,37 +315,42 @@ msgstr ""
 msgid " • %1"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:26
+#: ui/components/VideoMenu.qml:29
 #, kde-format
 msgid "Play Now"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:36
+#: ui/components/VideoMenu.qml:29
+#, kde-format
+msgid "Play"
+msgstr ""
+
+#: ui/components/VideoMenu.qml:39
 #, kde-format
 msgid "Play Next"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:44
+#: ui/components/VideoMenu.qml:48
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Unwatched"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:58
+#: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Watched"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:72
+#: ui/components/VideoMenu.qml:76
 #, kde-format
 msgid "Add to Playlist…"
 msgstr ""
 
-#: ui/components/VideoMenu.qml:79
+#: ui/components/VideoMenu.qml:83
 #, kde-format
 msgid "Remove from Playlist"
 msgstr ""
@@ -639,22 +644,22 @@ msgstr "İstifadəçi adı"
 msgid "Apply"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:23 ui/settings/SourcesPage.qml:21
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:29
+#: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:35
+#: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About PlasmaTube"
 msgstr ""
 
-#: ui/settings/SettingsPage.qml:41
+#: ui/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About KDE"
 msgstr ""
@@ -677,74 +682,79 @@ msgstr ""
 msgid "Picture in Picture"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:98
+#: ui/videoplayer/VideoControls.qml:101
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Ayarlar"
 
-#: ui/videoplayer/VideoControls.qml:126
+#: ui/videoplayer/VideoControls.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:166
+#: ui/videoplayer/VideoControls.qml:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:207
+#: ui/videoplayer/VideoControls.qml:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:250
+#: ui/videoplayer/VideoControls.qml:253
 #, fuzzy, kde-format
 #| msgid "Fullscreen"
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Tam ekran"
 
-#: ui/videoplayer/VideoControls.qml:273
+#: ui/videoplayer/VideoControls.qml:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:96
+#: ui/videoplayer/VideoPlayer.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:343
+#: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
 msgid "%1 Likes"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:392
+#: ui/videoplayer/VideoPlayer.qml:404
 #, kde-format
 msgid "Comments"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:416
-#, kde-format
-msgid "Queue"
-msgstr ""
-
-#: ui/videoplayer/VideoPlayer.qml:427
+#: ui/videoplayer/VideoPlayer.qml:434
 #, kde-format
 msgid "Recommended"
 msgstr ""
 
-#: ui/videoplayer/VideoQueueView.qml:38
+#: ui/videoplayer/VideoQueueView.qml:39
+#, kde-format
+msgid "Queue"
+msgstr ""
+
+#: ui/videoplayer/VideoQueueView.qml:48
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
+msgstr ""
+
+#: ui/videoplayer/VideoQueueView.qml:83
+#, kde-format
+msgid "Loading…"
 msgstr ""
 
 #~ msgid "Sign in"
