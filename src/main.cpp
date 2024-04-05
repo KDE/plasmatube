@@ -6,7 +6,6 @@
 #include "controllers/plasmatube.h"
 #include "controllers/subscriptioncontroller.h"
 #include "models/videolistmodel.h"
-#include "models/videomodel.h"
 #include "utils/linkparser.h"
 
 #ifdef Q_OS_ANDROID
@@ -102,8 +101,6 @@ int main(int argc, char **argv)
     auto &plasmatubeInstance = PlasmaTube::instance();
     qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", plasmatubeInstance.settings());
     QObject::connect(&app, &QCoreApplication::aboutToQuit, plasmatubeInstance.settings(), &PlasmaTubeSettings::save);
-
-    qmlRegisterType<MpvObject>("org.kde.plasmatube.private", 1, 0, "MpvObject");
 
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("YouTube client"));
