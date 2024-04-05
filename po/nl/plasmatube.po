@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-30 14:38+0100\n"
+"PO-Revision-Date: 2024-04-04 13:37+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -317,9 +317,7 @@ msgid "Play Now"
 msgstr "Nu afspelen"
 
 #: ui/components/VideoMenu.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Afspelen"
 
@@ -740,9 +738,7 @@ msgid "Clear"
 msgstr "Wissen"
 
 #: ui/videoplayer/VideoQueueView.qml:83
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Bezig met laden…"
 

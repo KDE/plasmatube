@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-30 13:58+0300\n"
+"PO-Revision-Date: 2024-04-04 15:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -316,9 +316,7 @@ msgid "Play Now"
 msgstr "Şimdi Oynat"
 
 #: ui/components/VideoMenu.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Oynat"
 
@@ -740,9 +738,7 @@ msgid "Clear"
 msgstr "Temizle"
 
 #: ui/videoplayer/VideoQueueView.qml:83
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Yükleniyor…"
 

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 21:41+0900\n"
+"PO-Revision-Date: 2024-04-04 19:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -319,9 +319,7 @@ msgid "Play Now"
 msgstr "現在播放"
 
 #: ui/components/VideoMenu.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "播放"
 
@@ -710,7 +708,7 @@ msgstr "子母畫面"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "隱藏播放器"
 
 #: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
@@ -739,9 +737,7 @@ msgid "Clear"
 msgstr "清除"
 
 #: ui/videoplayer/VideoQueueView.qml:83
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "載入中…"
 
