@@ -26,8 +26,20 @@ public:
     void queueNext(const QString &videoId);
     Q_INVOKABLE void clear();
 
+    /**
+     * @brief Plays the @p index video in the current queue.
+     */
     Q_INVOKABLE void playInQueue(int index);
+
+    /**
+     * @brief Replaces the queue with the videos from @p playlistId
+     */
     Q_INVOKABLE void loadPlaylist(const QString &playlistId);
+
+    /**
+     * @brief Replaces the queue with the videos from @p playlistId and then plays @p videoId
+     */
+    Q_INVOKABLE void loadPlaylistAndPlay(const QString &playlistId, const QString &videoId);
 
     bool shouldBeVisible() const;
 

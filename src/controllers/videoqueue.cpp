@@ -76,6 +76,34 @@ void VideoQueue::loadPlaylist(const QString &playlistId)
     playlistFutureWatcher->setFuture(playlistFuture);
 }
 
+void VideoQueue::loadPlaylistAndPlay(const QString &playlistId, const QString &videoId)
+{
+    // TODO: merge with loadPlaylist
+    auto playlistFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylist(playlistId);
+
+    auto playlistFutureWatcher = new QFutureWatcher<QInvidious::VideoListResult>(this);
+    connect(playlistFutureWatcher, &QFutureWatcherBase::finished, this, [this, videoId, playlistFutureWatcher] {
+        auto result = playlistFutureWatcher->result();
+
+        if (const auto videoList = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+            QStringList videoIdList;
+            std::transform(videoList->cbegin(), videoList->cend(), std::back_inserter(videoIdList), [](const auto &video) {
+                return video.videoId();
+            });
+
+            replace(videoIdList);
+
+            qsizetype index = videoIdList.indexOf(videoId);
+            playInQueue(index);
+        } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
+            qDebug() << "VideoQueue::loadPlaylist(): Error:" << error->second << error->first;
+        }
+
+        playlistFutureWatcher->deleteLater();
+    });
+    playlistFutureWatcher->setFuture(playlistFuture);
+}
+
 void VideoQueue::next()
 {
     if (canGoNext()) {

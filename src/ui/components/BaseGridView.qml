@@ -14,6 +14,9 @@ import org.kde.plasmatube
 GridView {
     id: gridView
 
+    // Optional, used on the playlist page to play the video
+    property string playlistId
+
     property string currentVideoId
     property int currentVideoIndex
     property string currentVideoTitle
@@ -76,7 +79,11 @@ GridView {
 
                 onClicked: {
                     videoModel.markAsWatched(index);
-                    PlasmaTube.videoController.play(vid);
+                    if (root.playlistId?.length > 0) {
+                        PlasmaTube.videoController.videoQueue.loadPlaylistAndPlay(root.playlistId, vid);
+                    } else {
+                        PlasmaTube.videoController.play(vid);
+                    }
                 }
 
                 onContextMenuRequested: {

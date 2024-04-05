@@ -50,6 +50,8 @@ Kirigami.ScrollablePage {
     BaseGridView {
         id: gridView
 
+        playlistId: root.playlistId
+
         model: VideoListModel {
             id: videoModel
         }
