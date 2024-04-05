@@ -27,6 +27,7 @@ include(KDEGitCommitHooks)
 include(FeatureSummary)
 include(ECMFindQmlModule)
 include(ECMQtDeclareLoggingCategory)
+include(ECMAddTests)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets Concurrent)
 qt_policy(SET QTP0001 NEW)

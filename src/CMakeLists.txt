@@ -10,6 +10,13 @@ ecm_qt_declare_logging_category(plasmatube_srcs
     DEFAULT_SEVERITY Info
 )
 
+add_library(plasmatube_static STATIC)
+target_sources(plasmatube_static PRIVATE
+        utils/linkparser.cpp
+        utils/linkparser.h
+)
+target_link_libraries(plasmatube_static PRIVATE Qt::Core)
+
 add_executable(plasmatube)
 
 qt_add_qml_module(plasmatube
@@ -157,9 +164,9 @@ target_include_directories(plasmatube PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/utils
 )
 target_link_libraries(plasmatube PRIVATE
+        plasmatube_static
         qinvidious
         qinvidiousplugin
-        Qt::Core
         Qt::Qml
         Qt::Quick
         Qt::QuickControls2
@@ -194,3 +201,7 @@ else()
 endif()
 
 install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+endif()

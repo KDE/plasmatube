@@ -7,6 +7,7 @@
 #include "controllers/subscriptioncontroller.h"
 #include "models/videolistmodel.h"
 #include "models/videomodel.h"
+#include "utils/linkparser.h"
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
@@ -30,17 +31,6 @@
 
 #include "controllers/windowcontroller.h"
 #include "plasmatube-version.h"
-
-std::optional<QString> parseVideoString(const QString &vid)
-{
-    const QRegularExpression exp(QStringLiteral(R"(https:\/\/[www.]*youtube.com\/watch\?v=(.*))"));
-    const auto match = exp.match(vid);
-    if (match.hasMatch()) {
-        return match.captured(1);
-    }
-
-    return std::nullopt;
-}
 
 int main(int argc, char **argv)
 {
@@ -96,7 +86,7 @@ int main(int argc, char **argv)
                 args.removeFirst();
 
                 if (arguments.length() >= 1) {
-                    if (const auto videoUrl = parseVideoString(args[0])) {
+                    if (const auto videoUrl = LinkParser::parseVideoString(args[0])) {
                         PlasmaTube::instance().openVideo(*videoUrl);
                     }
                 }
@@ -130,7 +120,7 @@ int main(int argc, char **argv)
         return -1;
 
     if (QCoreApplication::arguments().length() > 1) {
-        if (const auto videoUrl = parseVideoString(app.arguments()[1])) {
+        if (const auto videoUrl = LinkParser::parseVideoString(app.arguments()[1])) {
             PlasmaTube::instance().openVideo(*videoUrl);
         }
     }
