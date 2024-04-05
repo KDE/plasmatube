@@ -103,21 +103,18 @@ int main(int argc, char **argv)
     QObject::connect(&app, &QCoreApplication::aboutToQuit, plasmatubeInstance.settings(), &PlasmaTubeSettings::save);
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("YouTube client"));
-
     parser.addPositionalArgument(QStringLiteral("video-url"), QStringLiteral("YouTube video URL to play"));
 
     about.setupCommandLine(&parser);
     parser.process(app);
-    about.processCommandLine(&parser);
 
     engine.loadFromModule(QStringLiteral("org.kde.plasmatube"), QStringLiteral("Main"));
 
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    if (QCoreApplication::arguments().length() > 1) {
-        if (const auto videoUrl = LinkParser::parseVideoString(app.arguments()[1])) {
+    if (parser.positionalArguments().length() >= 1) {
+        if (const auto videoUrl = LinkParser::parseVideoString(parser.positionalArguments().first())) {
             PlasmaTube::instance().openVideo(*videoUrl);
         }
     }
@@ -141,5 +138,5 @@ int main(int argc, char **argv)
     }
 #endif
 
-    return app.exec();
+    return QCoreApplication::exec();
 }
