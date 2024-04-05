@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 02:45+0000\n"
+"POT-Creation-Date: 2024-04-05 02:42+0000\n"
 "PO-Revision-Date: 2023-12-21 18:59+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -43,7 +43,7 @@ msgstr "Der Server meldet den Statuscode %1"
 msgid "This instance has disabled the registration."
 msgstr ""
 
-#: controllers/videocontroller.cpp:55
+#: controllers/videocontroller.cpp:58
 #, kde-format
 msgid "Playing video"
 msgstr "Video wiedergeben"
