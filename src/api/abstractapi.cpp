@@ -34,16 +34,6 @@ void AbstractApi::setLanguage(const QString &language)
     m_language = language;
 }
 
-QString AbstractApi::username() const
-{
-    return m_username;
-}
-
-void AbstractApi::setUsername(const QString &username)
-{
-    m_username = username;
-}
-
 QNetworkAccessManager *AbstractApi::net() const
 {
     return m_netManager;
@@ -61,6 +51,7 @@ QUrl AbstractApi::apiUrl(const QString &path) const
 void AbstractApi::setApiHost(const QString &host)
 {
     m_apiHost = host;
+    Q_EMIT apiHostChanged();
 }
 
 QString AbstractApi::apiHost() const

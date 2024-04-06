@@ -32,10 +32,12 @@ public:
     explicit PeerTubeApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
 
     bool isLoggedIn() const override;
+    bool canLogIn() const override;
     void loadCredentials(const QString &prefix) override;
     void saveCredentials(const QString &prefix) override;
     void wipeCredentials(const QString &prefix) override;
 
+    void prepareLogIn() override;
     QFuture<LogInResult> logIn(QStringView username, QStringView password) override;
     QFuture<VideoResult> requestVideo(QStringView videoId) override;
     QString resolveVideoUrl(QStringView videoId) override;
@@ -79,6 +81,11 @@ private:
     void fixupVideoThumbnails(QList<VideoBasicInfo> &list) const;
     void fixupVideoThumbnail(VideoBasicInfo &video) const;
     void fixupChannel(QInvidious::Channel &channel);
+
+    QString m_clientId;
+    QString m_clientSecret;
+    QString m_accessToken;
+    QString m_refreshToken;
 };
 
 }

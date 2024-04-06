@@ -35,6 +35,11 @@ bool PipedApi::isLoggedIn() const
     return false;
 }
 
+bool PipedApi::canLogIn() const
+{
+    return false;
+}
+
 void PipedApi::loadCredentials(const QString &prefix)
 {
 }

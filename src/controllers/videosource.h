@@ -24,6 +24,7 @@ class VideoSource : public QObject
     Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
     Q_PROPERTY(Type type READ type WRITE setType NOTIFY typeChanged)
     Q_PROPERTY(bool loggedIn READ loggedIn NOTIFY credentialsChanged)
+    Q_PROPERTY(bool canLogIn READ canLogIn NOTIFY canLogInChanged)
     Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
 
@@ -42,6 +43,8 @@ public:
     void setType(Type type);
 
     bool loggedIn() const;
+    bool canLogIn() const;
+    Q_INVOKABLE void prepareLogIn();
     Q_INVOKABLE void logOut();
 
     void setUsername(const QString &username);
@@ -73,6 +76,7 @@ Q_SIGNALS:
     void preferencesChanged();
     void finishedLoading();
     void subscriptionsChanged();
+    void canLogInChanged();
 
 private:
     friend class SubscriptionController;

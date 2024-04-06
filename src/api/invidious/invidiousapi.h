@@ -32,6 +32,7 @@ public:
     explicit InvidiousApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
 
     bool isLoggedIn() const override;
+    bool canLogIn() const override;
     void loadCredentials(const QString &prefix) override;
     void saveCredentials(const QString &prefix) override;
     void wipeCredentials(const QString &prefix) override;

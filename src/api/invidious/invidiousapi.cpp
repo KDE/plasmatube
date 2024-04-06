@@ -38,7 +38,13 @@ InvidiousApi::InvidiousApi(QNetworkAccessManager *netManager, QObject *parent)
 
 bool InvidiousApi::isLoggedIn() const
 {
-    return m_cookie.has_value() && !m_username.isEmpty();
+    return m_cookie.has_value();
+}
+
+bool InvidiousApi::canLogIn() const
+{
+    // TODO: can we check if login is disabled, is that even an option?
+    return true;
 }
 
 void InvidiousApi::loadCredentials(const QString &prefix)
@@ -59,6 +65,8 @@ void InvidiousApi::saveCredentials(const QString &prefix)
 void InvidiousApi::wipeCredentials(const QString &prefix)
 {
     wipeKeychainValue(prefix, QStringLiteral("cookie"));
+    m_cookie = std::nullopt;
+    Q_EMIT credentialsChanged();
 }
 
 bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
@@ -94,8 +102,8 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
         const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
 
         if (!cookies.isEmpty()) {
-            m_username = username.toString();
             m_cookie = cookies.first();
+            Q_EMIT credentialsChanged();
             return std::nullopt;
         }
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));

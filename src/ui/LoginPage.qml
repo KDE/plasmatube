@@ -18,7 +18,7 @@ FormCard.FormCardPage {
 
     required property var source
 
-    readonly property bool isValid: usernameField.text.length !== 0 && passwordField.text.length !== 0
+    readonly property bool isValid: source.canLogIn && usernameField.text.length !== 0 && passwordField.text.length !== 0
 
     title: i18nc("@title:window", "Log in")
 
@@ -52,7 +52,11 @@ FormCard.FormCardPage {
         }
     ]
 
-    Component.onCompleted: usernameField.clicked()
+    Component.onCompleted: {
+        // TODO: have a message or other loading indicator while we wait for the server to respond
+        source.prepareLogIn();
+        usernameField.clicked();
+    }
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing

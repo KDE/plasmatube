@@ -67,10 +67,8 @@ public:
     QString language() const;
     void setLanguage(const QString &language);
 
-    void setUsername(const QString &username);
-    QString username() const;
-
     virtual bool isLoggedIn() const = 0;
+    virtual bool canLogIn() const = 0;
 
     /**
      * @brief Loads the credentials (if any) under @p prefix in secure storage.
@@ -93,6 +91,12 @@ public:
     void setApiHost(const QString &host);
     QString apiHost() const;
 
+    /**
+     * @brief Should be called once the login page is shown. Required by some API backends to prepare.
+     */
+    virtual void prepareLogIn()
+    {
+    }
     virtual QFuture<LogInResult> logIn(QStringView username, QStringView password) = 0;
     virtual QFuture<VideoResult> requestVideo(QStringView videoId) = 0;
     virtual QString resolveVideoUrl(QStringView videoId) = 0;
@@ -128,6 +132,8 @@ public:
 
 Q_SIGNALS:
     void credentialsChanged();
+    void apiHostChanged();
+    void canLogInChanged();
 
 protected:
     QUrl apiUrl(const QString &path) const;
@@ -186,7 +192,6 @@ protected:
     QString m_region;
     QString m_language;
     QString m_apiHost;
-    QString m_username;
 };
 
 }

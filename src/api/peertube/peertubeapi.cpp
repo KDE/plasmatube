@@ -17,7 +17,7 @@ const QString API_CHANNEL = QStringLiteral("/api/v1/video-channels");
 const QString API_SEARCH_VIDEOS = QStringLiteral("/api/v1/search/videos");
 const QString API_SEARCH_VIDEO_CHANNELS = QStringLiteral("/api/v1/search/video-channels");
 const QString API_SEARCH_VIDEO_PLAYLISTS = QStringLiteral("/api/v1/search/video-playlists");
-const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/users/token");
+const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/oauth-clients/local");
 const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
 
 using namespace QInvidious;
@@ -30,19 +30,60 @@ PeerTubeApi::PeerTubeApi(QNetworkAccessManager *netManager, QObject *parent)
 
 bool PeerTubeApi::isLoggedIn() const
 {
-    return false;
+    return !m_clientId.isEmpty() && !m_clientSecret.isEmpty() && !m_accessToken.isEmpty() && !m_refreshToken.isEmpty();
+}
+
+bool PeerTubeApi::canLogIn() const
+{
+    return !m_clientId.isEmpty() && !m_clientSecret.isEmpty();
 }
 
 void PeerTubeApi::loadCredentials(const QString &prefix)
 {
+    if (auto clientId = getKeychainValue(prefix, QStringLiteral("client-id"))) {
+        m_clientId = *clientId;
+    }
+    if (auto clientSecret = getKeychainValue(prefix, QStringLiteral("client-secret"))) {
+        m_clientSecret = *clientSecret;
+    }
+    if (auto accessToken = getKeychainValue(prefix, QStringLiteral("access-token"))) {
+        m_accessToken = *accessToken;
+    }
+    if (auto refreshToken = getKeychainValue(prefix, QStringLiteral("refresh-token"))) {
+        m_refreshToken = *refreshToken;
+    }
+    Q_EMIT credentialsChanged();
 }
 
 void PeerTubeApi::saveCredentials(const QString &prefix)
 {
+    if (!m_clientId.isEmpty()) {
+        setKeychainValue(prefix, QStringLiteral("client-id"), m_clientId);
+    }
+    if (!m_clientSecret.isEmpty()) {
+        setKeychainValue(prefix, QStringLiteral("client-secret"), m_clientSecret);
+    }
+    if (!m_accessToken.isEmpty()) {
+        setKeychainValue(prefix, QStringLiteral("access-token"), m_accessToken);
+    }
+    if (!m_refreshToken.isEmpty()) {
+        setKeychainValue(prefix, QStringLiteral("refresh-token"), m_refreshToken);
+    }
 }
 
 void PeerTubeApi::wipeCredentials(const QString &prefix)
 {
+    wipeKeychainValue(prefix, QStringLiteral("client-id"));
+    wipeKeychainValue(prefix, QStringLiteral("client-secret"));
+    wipeKeychainValue(prefix, QStringLiteral("access-token"));
+    wipeKeychainValue(prefix, QStringLiteral("refresh-token"));
+
+    m_clientId.clear();
+    m_clientSecret.clear();
+    m_accessToken.clear();
+    m_refreshToken.clear();
+
+    Q_EMIT credentialsChanged();
 }
 
 bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
@@ -56,21 +97,51 @@ bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
     return false;
 }
 
+void PeerTubeApi::prepareLogIn()
+{
+    QNetworkRequest request(apiUrl(API_OAUTH_TOKEN));
+    auto reply = m_netManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [this, reply] {
+        if (reply->error() == QNetworkReply::NoError) {
+            const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            auto obj = doc.object();
+            if (obj.contains("client_id"_L1)) {
+                m_clientId = obj["client_id"_L1].toString();
+            }
+            if (obj.contains("client_secret"_L1)) {
+                m_clientSecret = obj["client_secret"_L1].toString();
+            }
+            Q_EMIT canLogInChanged();
+        }
+    });
+}
+
 QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;
     params.addQueryItem(QStringLiteral("username"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
     params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
-    params.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("pasword"));
-    params.addQueryItem(QStringLiteral("client_id"), QStringLiteral("test"));
-    params.addQueryItem(QStringLiteral("client_secret"), QStringLiteral("test"));
+    params.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("password"));
+    params.addQueryItem(QStringLiteral("client_id"), m_clientId);
+    params.addQueryItem(QStringLiteral("client_secret"), m_clientSecret);
 
     QNetworkRequest request(apiUrl(API_LOGIN_TOKEN));
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
     return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
-        return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
+        if (reply->error() == QNetworkReply::NoError) {
+            const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            auto obj = doc.object();
+
+            m_accessToken = obj["access_token"_L1].toString();
+            m_refreshToken = obj["refresh_token"_L1].toString();
+            Q_EMIT credentialsChanged();
+
+            return std::nullopt;
+        } else {
+            return std::pair(reply->error(), reply->errorString());
+        }
     });
 }
 

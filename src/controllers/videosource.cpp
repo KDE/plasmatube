@@ -62,6 +62,16 @@ bool VideoSource::loggedIn() const
     return m_api->isLoggedIn();
 }
 
+bool VideoSource::canLogIn() const
+{
+    return m_api->canLogIn();
+}
+
+void VideoSource::prepareLogIn()
+{
+    m_api->prepareLogIn();
+}
+
 void VideoSource::logOut()
 {
     m_api->wipeCredentials(m_key);
@@ -108,21 +118,27 @@ void VideoSource::fetchPreferences()
         return;
     }
 
-    auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
-    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
-        auto result = watcher->result();
+    // Check if the API supports preferences
+    if (auto future = m_api->requestPreferences(); future.isValid()) {
+        auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
+        connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
+            auto result = watcher->result();
 
-        if (const auto prefs = std::get_if<QInvidious::Preferences>(&result)) {
-            m_preferences = *prefs;
-            Q_EMIT preferencesChanged();
-        }
+            if (const auto prefs = std::get_if<QInvidious::Preferences>(&result)) {
+                m_preferences = *prefs;
+                Q_EMIT preferencesChanged();
+            }
 
+            m_finishedLoading = true;
+            Q_EMIT finishedLoading();
+
+            watcher->deleteLater();
+        });
+        watcher->setFuture(future);
+    } else {
         m_finishedLoading = true;
         Q_EMIT finishedLoading();
-
-        watcher->deleteLater();
-    });
-    watcher->setFuture(m_api->requestPreferences());
+    }
 }
 
 bool VideoSource::hasFinishedLoading() const
@@ -149,8 +165,8 @@ void VideoSource::createApi()
         break;
     }
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);
+    connect(m_api, &QInvidious::AbstractApi::canLogInChanged, this, &VideoSource::canLogInChanged);
     m_api->setApiHost(m_config.url());
-    m_api->setUsername(m_config.username());
     m_api->loadCredentials(m_key);
 }
 
@@ -226,21 +242,23 @@ void VideoSource::fetchHistory(qint32 page)
         m_watchedVideos.clear();
     }
 
-    auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
-    connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
-        auto result = watcher->result();
+    if (auto future = m_api->requestHistory(page); future.isValid()) {
+        auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
+        connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
+            auto result = watcher->result();
 
-        if (const auto history = std::get_if<QList<QString>>(&result)) {
-            if (!history->isEmpty()) {
-                m_watchedVideos.append(*history);
+            if (const auto history = std::get_if<QList<QString>>(&result)) {
+                if (!history->isEmpty()) {
+                    m_watchedVideos.append(*history);
 
-                fetchHistory(page + 1);
+                    fetchHistory(page + 1);
+                }
             }
-        }
 
-        watcher->deleteLater();
-    });
-    watcher->setFuture(m_api->requestHistory(page));
+            watcher->deleteLater();
+        });
+        watcher->setFuture(future);
+    }
 }
 
 void VideoSource::addToPlaylist(const QString &plid, const QString &videoId)

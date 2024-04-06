@@ -43,7 +43,8 @@ void LogInController::logIn(const QString &username, const QString &password)
                 Q_EMIT errorOccurred(result.value().second);
             }
         } else {
-            m_source->setUsername(m_source->api()->username());
+            m_source->setUsername(username);
+            m_source->api()->saveCredentials(m_source->uuid());
             Q_EMIT loggedIn();
         }
 
