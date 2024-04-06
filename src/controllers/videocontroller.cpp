@@ -165,9 +165,9 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
         if (m_currentPlayer != nullptr) {
             Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("stop"));
             oldPosition = m_currentPlayer->position();
-        }
 
-        m_currentPlayer->disconnect(this);
+            m_currentPlayer->disconnect(this);
+        }
 
         m_currentPlayer = mpvObject;
         Q_EMIT currentPlayerChanged();
