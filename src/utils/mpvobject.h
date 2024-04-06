@@ -22,6 +22,8 @@ public:
     explicit MpvObject(QQuickItem *parent = nullptr);
     ~MpvObject() = default;
 
+    void setAudioUrl(const QString &audioUrl);
+
     qreal position() const;
     qreal duration() const;
     bool paused() const;
@@ -47,4 +49,5 @@ private:
     qreal m_position = 0;
     qreal m_duration = 0;
     bool m_stopped = true;
+    QString m_audioUrl;
 };

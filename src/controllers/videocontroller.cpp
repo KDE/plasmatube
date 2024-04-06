@@ -20,6 +20,9 @@ VideoController::VideoController(QObject *parent)
     , m_videoQueue(new VideoQueue(this))
     , m_mpris(new Mpris2(this))
 {
+    connect(m_videoModel, &VideoModel::audioUrlChanged, this, [this] {
+        m_currentPlayer->setAudioUrl(m_videoModel->audioUrl());
+    });
     connect(m_videoModel, &VideoModel::remoteUrlChanged, this, [this] {
         Q_EMIT m_currentPlayer->command(QStringList() << QStringLiteral("loadfile") << m_videoModel->remoteUrl());
     });
