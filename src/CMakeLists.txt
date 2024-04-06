@@ -124,6 +124,7 @@ qt_target_qml_sources(plasmatube
         ui/components/ShareMenu.qml
         ui/components/Sidebar.qml
         ui/components/SourceSwitcher.qml
+        ui/components/SourceSwitcherDialog.qml
         ui/components/SubscriptionButton.qml
         ui/components/VideoGridItem.qml
         ui/components/VideoListAction.qml
