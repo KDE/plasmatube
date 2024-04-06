@@ -109,8 +109,10 @@ protected:
         auto interface = std::make_shared<QFutureInterface<T>>(QFutureInterfaceBase::Started);
 
         connect(reply, &QNetworkReply::finished, this, [=]() {
-            interface->reportResult(processs(reply));
-            interface->reportFinished();
+            if (!interface->isCanceled()) {
+                interface->reportResult(processs(reply));
+                interface->reportFinished();
+            }
             reply->deleteLater();
         });
         connect(reply, &QNetworkReply::errorOccurred, this, [=](QNetworkReply::NetworkError error) {
