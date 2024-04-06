@@ -19,6 +19,7 @@ const QString API_SEARCH_VIDEO_CHANNELS = QStringLiteral("/api/v1/search/video-c
 const QString API_SEARCH_VIDEO_PLAYLISTS = QStringLiteral("/api/v1/search/video-playlists");
 const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/oauth-clients/local");
 const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
+const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/users/me/subscriptions/videos");
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -426,6 +427,9 @@ PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtensi
 QNetworkRequest PeerTubeApi::authenticatedNetworkRequest(QUrl &&url)
 {
     QNetworkRequest request(url);
+    if (isLoggedIn()) {
+        request.setRawHeader(QByteArrayLiteral("Authorization"), QStringLiteral("Bearer %1").arg(m_accessToken).toUtf8());
+    }
     return request;
 }
 
@@ -443,6 +447,9 @@ QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtens
 {
     QString urlString;
     switch (queryType) {
+    case Feed:
+        urlString = API_SUBSCRIPTIONS;
+        break;
     case Search:
         urlString = API_SEARCH_VIDEOS;
         break;
