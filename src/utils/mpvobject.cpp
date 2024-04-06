@@ -26,9 +26,11 @@ MpvObject::MpvObject(QQuickItem *parent)
 
     connect(mpvController(), &MpvController::propertyChanged, this, &MpvObject::onPropertyChanged, Qt::QueuedConnection);
     connect(mpvController(), &MpvController::fileLoaded, this, [=]() {
-        // Note that audio-add only works in a specific time, the best is right after the file is loaded.
-        // For more details on this issue, see https://github.com/flaviotordini/minitube/issues/155.
-        Q_EMIT command(QStringList() << QStringLiteral("audio-add") << m_audioUrl << QStringLiteral("select"));
+        if (!m_audioUrl.isEmpty()) {
+            // Note that audio-add only works in a specific time, the best is right after the file is loaded.
+            // For more details on this issue, see https://github.com/flaviotordini/minitube/issues/155.
+            Q_EMIT command(QStringList() << QStringLiteral("audio-add") << m_audioUrl << QStringLiteral("select"));
+        }
     });
 }
 
