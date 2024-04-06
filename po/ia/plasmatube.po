@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-29 10:01+0100\n"
+"POT-Creation-Date: 2024-04-06 00:37+0000\n"
+"PO-Revision-Date: 2024-04-05 18:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
+#: api/invidious/invidiousapi.cpp:77 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Nomine de usator o contrasigno es errate."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
-#: api/piped/pipedapi.cpp:303
+#: api/invidious/invidiousapi.cpp:355 api/peertube/peertubeapi.cpp:287
+#: api/piped/pipedapi.cpp:309
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Servitor retornava nulle valide JSON"
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
-#: api/piped/pipedapi.cpp:312
+#: api/invidious/invidiousapi.cpp:364 api/peertube/peertubeapi.cpp:296
+#: api/piped/pipedapi.cpp:318
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Servitor retornava le codice de stato %1"
@@ -46,48 +46,48 @@ msgstr "Iste instantia ha dishabilitate le registration."
 msgid "Playing video"
 msgstr "Reproducente video"
 
-#: main.cpp:62
+#: main.cpp:51
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:119
+#: main.cpp:53
 #, kde-format
 msgid "YouTube client"
 msgstr "Cliente de YouTube"
 
-#: main.cpp:66
+#: main.cpp:55
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 Communitate de KDE"
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Creator"
 msgstr "Creator"
 
-#: main.cpp:68
+#: main.cpp:57
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:69
+#: main.cpp:58
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenitor"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Giovanni Sora"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -150,7 +150,21 @@ msgstr "Resultatos de cerca per '\"%1\""
 msgid "Proxy Settings"
 msgstr "Preferentias de proxy"
 
-#: ui/components/BaseGridView.qml:48
+#: ui/ChannelPage.qml:149
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgctxt "@item:inmenu"
+msgid "Videos"
+msgstr "Videos"
+
+#: ui/ChannelPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@item:inmenu"
+msgid "Playlists"
+msgstr "Listas de reproduction"
+
+#: ui/components/BaseGridView.qml:51
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -158,12 +172,12 @@ msgstr ""
 "Il falleva a contactar servitor: %1. Pro favor tu verifica tu preferentias "
 "de proxy."
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "No videos"
 msgstr "Nulle Videos"
 
-#: ui/components/BaseGridView.qml:180
+#: ui/components/BaseGridView.qml:187
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
@@ -319,11 +333,9 @@ msgid "Play Now"
 msgstr "Reproduce nunc"
 
 #: ui/components/VideoMenu.qml:29
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
-msgstr "Reproduce"
+msgstr "Reproduce/Joca"
 
 #: ui/components/VideoMenu.qml:39
 #, kde-format
@@ -714,7 +726,7 @@ msgstr "Imagine in Imagine"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Cela jocator "
 
 #: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
@@ -743,9 +755,7 @@ msgid "Clear"
 msgstr "Netta"
 
 #: ui/videoplayer/VideoQueueView.qml:83
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Cargante..."
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2023-02-07 00:58+0000\n"
+"POT-Creation-Date: 2024-04-06 00:37+0000\n"
+"PO-Revision-Date: 2024-04-06 00:38+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,566 +17,585 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
+#: api/invidious/invidiousapi.cpp:77 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
-msgstr ""
+msgstr "Neteisingas naudotojo vardas ar slaptažodis."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
-#: api/piped/pipedapi.cpp:303
+#: api/invidious/invidiousapi.cpp:355 api/peertube/peertubeapi.cpp:287
+#: api/piped/pipedapi.cpp:309
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr ""
+msgstr "Serveris negrąžino jokio tinkamo JSON."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
-#: api/piped/pipedapi.cpp:312
+#: api/invidious/invidiousapi.cpp:364 api/peertube/peertubeapi.cpp:296
+#: api/piped/pipedapi.cpp:318
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr ""
+msgstr "Serveris grąžino būsenos kodą %1"
 
 #: controllers/logincontroller.cpp:45
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Šiame egzemplioriuje yra išjungta registracija."
 
 #: controllers/videocontroller.cpp:58
 #, kde-format
 msgid "Playing video"
-msgstr ""
+msgstr "Atkuriamas vaizdo įrašas"
+
+#: main.cpp:51
+#, kde-format
+msgid "PlasmaTube"
+msgstr "PlasmaTube"
+
+#: main.cpp:53
+#, kde-format
+msgid "YouTube client"
+msgstr "„YouTube“ kliento programa"
+
+#: main.cpp:55
+#, kde-format
+msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr "© 2019–2024 Linus Jahn, 2019–2024 KDE bendruomenė"
+
+#: main.cpp:56
+#, kde-format
+msgid "Linus Jahn"
+msgstr "Linus Jahn"
+
+#: main.cpp:56
+#, kde-format
+msgid "Creator"
+msgstr "Kūrėjas"
+
+#: main.cpp:57
+#, kde-format
+msgid "Joshua Goins"
+msgstr "Joshua Goins"
+
+#: main.cpp:58
+#, kde-format
+msgid "Maintainer"
+msgstr "Prižiūrėtojas"
 
 #: main.cpp:62
 #, kde-format
-msgid "PlasmaTube"
-msgstr ""
-
-#: main.cpp:64 main.cpp:119
-#, kde-format
-msgid "YouTube client"
-msgstr ""
-
-#: main.cpp:66
-#, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
-
-#: main.cpp:67
-#, kde-format
-msgid "Linus Jahn"
-msgstr ""
-
-#: main.cpp:67
-#, kde-format
-msgid "Creator"
-msgstr ""
-
-#: main.cpp:68
-#, kde-format
-msgid "Joshua Goins"
-msgstr ""
-
-#: main.cpp:69
-#, kde-format
-msgid "Maintainer"
-msgstr ""
-
-#: main.cpp:73
-#, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Moo"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "<>"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:103
 #, kde-format
 msgid "Subscriptions"
-msgstr ""
+msgstr "Prenumeratos"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
 msgid "Popular"
-msgstr ""
+msgstr "Populiarūs"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "Visi"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Žaidimai"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Filmai"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Muzika"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Naujienos"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "Istorija"
 
 #: models/videolistmodel.cpp:166
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr ""
+msgstr "„%1“ paieškos rezultatai"
 
 #: ui/ChannelPage.qml:43 ui/FeedPage.qml:40 ui/PlaylistPage.qml:36
 #: ui/SearchPage.qml:157 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Įgaliotojo serverio nuostatos"
 
-#: ui/components/BaseGridView.qml:48
+#: ui/ChannelPage.qml:149
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgctxt "@item:inmenu"
+msgid "Videos"
+msgstr "Vaizdo įrašai"
+
+#: ui/ChannelPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@item:inmenu"
+msgid "Playlists"
+msgstr "Grojaraščiai"
+
+#: ui/components/BaseGridView.qml:51
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Nepavyko susisiekti su serveriu: %1. Patikrinkite įgaliotojo serverio "
+"nuostatas."
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "No videos"
-msgstr ""
+msgstr "Nėra vaizdo įrašų"
 
-#: ui/components/BaseGridView.qml:180
+#: ui/components/BaseGridView.qml:187
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr ""
+msgstr "Pridėti į grojaraštį"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "Vaizdo įrašai"
 
 #: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
 #: ui/loginflow/AddPeerTubePage.qml:34 ui/loginflow/AddPipedPage.qml:34
 #: ui/SearchPage.qml:18
 #, kde-format
 msgid "Search"
-msgstr ""
+msgstr "Paieška"
 
 #: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:297
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:160
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: ui/components/Comments.qml:93
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Įkelti daugiau"
 
 #: ui/components/PlaylistGridItem.qml:54
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 vaizdo įrašas"
+msgstr[1] "%1 vaizdo įrašai"
+msgstr[2] "%1 vaizdo įrašų"
+msgstr[3] "%1 vaizdo įrašas"
 
 #: ui/components/ShareAction.qml:19 ui/components/ShareMenu.qml:17
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Bendrinti"
 
 #: ui/components/ShareAction.qml:20
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Bendrinti pasirinktą mediją"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Nepavyko bendrinti"
 
 #: ui/components/Sidebar.qml:86
 #, kde-format
 msgid "Trending"
-msgstr ""
+msgstr "Populiarėjantys"
 
 #: ui/components/Sidebar.qml:121 ui/PlaylistsPage.qml:14
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Grojaraščiai"
 
 #: ui/components/Sidebar.qml:139
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Istorija"
 
 #: ui/components/Sidebar.qml:156
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: ui/components/SourceSwitcher.qml:42 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "Invidious"
-msgstr ""
+msgstr "„Invidious“"
 
 #: ui/components/SourceSwitcher.qml:44 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "„PeerTube“"
 
 #: ui/components/SourceSwitcher.qml:46 ui/settings/SourcesPage.qml:69
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "„Piped“"
 
 #: ui/components/SourceSwitcher.qml:55
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Perjungti šaltinį"
 
 #: ui/components/SourceSwitcher.qml:97
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Pridėti šaltinį"
 
 #: ui/components/SourceSwitcher.qml:101
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Pridėti naują vaizdo įrašų šaltinį"
 
 #: ui/components/SubscriptionButton.qml:55
 #, kde-format
 msgid "Unsubscribe (%1)"
-msgstr ""
+msgstr "Atsisakyti prenumeratos (%1)"
 
 #: ui/components/SubscriptionButton.qml:57
 #, kde-format
 msgid "Subscribe (%1)"
-msgstr ""
+msgstr "Prenumeruoti (%1)"
 
 #: ui/components/SubscriptionButton.qml:67
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Prisijunkite norėdami prenumeruoti kanalus."
 
 #: ui/components/VideoGridItem.qml:73
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Tiesiogiai"
 
 #: ui/components/VideoGridItem.qml:80
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Trumpas"
 
 #: ui/components/VideoGridItem.qml:155
 #, kde-format
 msgid "%1 views • %2"
-msgstr ""
+msgstr "Peržiūrų: %1 • %2"
 
 #: ui/components/VideoListItem.qml:148 ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "%1 views"
-msgstr ""
+msgstr "Peržiūrų: %1"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
 msgid " • %1"
-msgstr ""
+msgstr " • %1"
 
 #: ui/components/VideoMenu.qml:29
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Atkurti dabar"
 
 #: ui/components/VideoMenu.qml:29
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "Atkurti"
 
 #: ui/components/VideoMenu.qml:39
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "Atkurti kitą"
 
 #: ui/components/VideoMenu.qml:48
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Atkurti vaizdą vaizde"
 
 #: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Unwatched"
-msgstr ""
+msgstr "Žymėti kaip nežiūrėtą"
 
 #: ui/components/VideoMenu.qml:62
 #, kde-format
 msgid "Mark as Watched"
-msgstr ""
+msgstr "Žymėti kaip žiūrėtą"
 
 #: ui/components/VideoMenu.qml:76
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Pridėti į grojaraštį…"
 
 #: ui/components/VideoMenu.qml:83
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Šalinti iš grojaraščio"
 
 #: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Pridėti „Invidious“ šaltinį"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:28
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Pasirinkite egzempliorių"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
 msgid "invidious.io"
-msgstr ""
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:66 ui/loginflow/AddPeerTubePage.qml:63
 #: ui/loginflow/AddPipedPage.qml:67
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "Nerasta jokių viešų egzempliorių."
 
 #: ui/loginflow/AddPeerTubePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Pridėti PeerTube šaltinį"
 
 #: ui/loginflow/AddPeerTubePage.qml:35
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Pridėti „Piped“ šaltinį"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:74
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Pridėti %1"
 
 #: ui/loginflow/WelcomePage.qml:15 ui/settings/SourcesPage.qml:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Sveiki"
 
 #: ui/loginflow/WelcomePage.qml:27
 #, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr ""
+msgstr "Jus sveikina PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:33
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube reikalauja bent vieno vaizdo įrašų šaltinio."
 
 #: ui/loginflow/WelcomePage.qml:43
 #, kde-format
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "Pridėti „Invidious“ šaltinį"
 
 #: ui/loginflow/WelcomePage.qml:55
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Pridėti „PeerTube“ šaltinį"
 
 #: ui/loginflow/WelcomePage.qml:67
 #, kde-format
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Pridėti „Piped“ šaltinį"
 
 #: ui/LoginPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Log in"
-msgstr ""
+msgstr "Prisijungti"
 
 #: ui/LoginPage.qml:64
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Naudotojo vardas"
 
 #: ui/LoginPage.qml:78 ui/settings/NetworkProxyPage.qml:91
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Slaptažodis"
 
 #: ui/LoginPage.qml:93
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Prisijungti"
 
 #: ui/LoginPage.qml:101
 #, kde-format
 msgid "Username must not be empty!"
-msgstr ""
+msgstr "Naudotojo vardas negali būti tuščias!"
 
 #: ui/LoginPage.qml:106
 #, kde-format
 msgid "Password must not be empty!"
-msgstr ""
+msgstr "Slaptažodis negali būti tuščias!"
 
 #: ui/PlaylistPage.qml:43
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "Atkurti"
 
 #: ui/SearchPage.qml:90
 #, kde-format
 msgid "Sort By:"
-msgstr ""
+msgstr "Rikiuoti pagal:"
 
 #: ui/SearchPage.qml:94
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Įvertinimas"
 
 #: ui/SearchPage.qml:105
 #, kde-format
 msgid "Relevance"
-msgstr ""
+msgstr "Atitikimas"
 
 #: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
-msgstr ""
+msgstr "Įkėlimo data"
 
 #: ui/SearchPage.qml:128
 #, kde-format
 msgid "View Count"
-msgstr ""
+msgstr "Peržiūrų skaičius"
 
 #: ui/settings/BaseSourcePage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Taisyti šaltinį"
 
 #: ui/settings/BaseSourcePage.qml:22
 #, kde-format
 msgid "Remove Source…"
-msgstr ""
+msgstr "Šalinti šaltinį…"
 
 #: ui/settings/BaseSourcePage.qml:23
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Negalima pašalinti vienintelio šaltinio."
 
 #: ui/settings/BaseSourcePage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Šalinti šaltinį"
 
 #: ui/settings/BaseSourcePage.qml:35
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Ar tikrai norite pašalinti šį šaltinį?"
 
 #: ui/settings/GeneralPage.qml:20 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Bendra"
 
 #: ui/settings/GeneralPage.qml:27
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Slėpti „Shorts“"
 
 #: ui/settings/GeneralPage.qml:28
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
+"Slėpti trumpos formos vaizdo įrašus, sukurtus peržiūrai mobiliuosiuose "
+"įrenginiuose."
 
 #: ui/settings/InvidiousSourcePage.qml:17
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "Paskyra"
 
 #: ui/settings/InvidiousSourcePage.qml:26
 #, kde-format
 msgid "Currently logged in as %1."
-msgstr ""
+msgstr "Šiuo metu prisijungta kaip %1."
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Log out"
-msgstr ""
+msgstr "Atsijungti"
 
 #: ui/settings/InvidiousSourcePage.qml:45
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Prisijungti"
 
 #: ui/settings/InvidiousSourcePage.qml:49
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Prenumeruoti kanalus, pasižymėti peržiūrėtus vaizdo įrašus ir kt."
 
 #: ui/settings/InvidiousSourcePage.qml:75
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Nuostatos"
 
 #: ui/settings/InvidiousSourcePage.qml:80
 #, kde-format
 msgid "Autoplay videos"
-msgstr ""
+msgstr "Automatinis vaizdo įrašų atkūrimas"
 
 #: ui/settings/InvidiousSourcePage.qml:81
 #, kde-format
@@ -584,159 +603,161 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Ar nedelsiant pradėti vaizdo įrašų atkūrimą, ar laukti, kol bus paspaustas "
+"atkūrimo mygtukas."
 
 #: ui/settings/InvidiousSourcePage.qml:96
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "Numatytasis pradžios puslapis"
 
 #: ui/settings/InvidiousSourcePage.qml:97
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Numatytasis puslapis, kurį įkelti, kai perjungiama į šį šaltinį."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Įgaliotasis tinklo serveris"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Sistemos numatytasis"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:53
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Mazgas"
 
 #: ui/settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Prievadas"
 
 #: ui/settings/NetworkProxyPage.qml:83
 #, kde-format
 msgid "User"
-msgstr ""
+msgstr "Naudotojas"
 
 #: ui/settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Taikyti"
 
 #: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:21
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Šaltiniai"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Įgaliotasis tinklo serveris"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
 msgid "About PlasmaTube"
-msgstr ""
+msgstr "Apie PlasmaTube"
 
 #: ui/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Apie KDE"
 
 #: ui/settings/SourcesPage.qml:25
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr ""
+msgstr "Pridėti šaltinį…"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr ""
+msgstr "Populiarėjantys"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:15
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Vaizdas vaizde"
 
 #: ui/videoplayer/VideoControls.qml:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr ""
+msgstr "Vaizdo įrašo nuostatos"
 
 #: ui/videoplayer/VideoControls.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Atsukti atgal"
 
 #: ui/videoplayer/VideoControls.qml:169
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
-msgstr ""
+msgstr "Atkurti"
 
 #: ui/videoplayer/VideoControls.qml:210
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Persukti pirmyn"
 
 #: ui/videoplayer/VideoControls.qml:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Visas ekranas"
 
 #: ui/videoplayer/VideoControls.qml:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr ""
+msgstr "Vaizdas vaizde"
 
 #: ui/videoplayer/VideoPlayer.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Slėpti grotuvą"
 
 #: ui/videoplayer/VideoPlayer.qml:355
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "Patinka: %1"
 
 #: ui/videoplayer/VideoPlayer.qml:404
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Komentarai"
 
 #: ui/videoplayer/VideoPlayer.qml:434
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Rekomenduojama"
 
 #: ui/videoplayer/VideoQueueView.qml:39
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Eilė"
 
 #: ui/videoplayer/VideoQueueView.qml:48
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Išvalyti"
 
 #: ui/videoplayer/VideoQueueView.qml:83
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Įkeliama…"

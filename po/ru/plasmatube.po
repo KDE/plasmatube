@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-06 00:37+0000\n"
 "PO-Revision-Date: 2024-02-11 11:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,20 +19,20 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.08.4\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
+#: api/invidious/invidiousapi.cpp:77 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Неверное имя пользователя или пароль."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
-#: api/piped/pipedapi.cpp:303
+#: api/invidious/invidiousapi.cpp:355 api/peertube/peertubeapi.cpp:287
+#: api/piped/pipedapi.cpp:309
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "От сервера не получен корректный код JSON."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
-#: api/piped/pipedapi.cpp:312
+#: api/invidious/invidiousapi.cpp:364 api/peertube/peertubeapi.cpp:296
+#: api/piped/pipedapi.cpp:318
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "От сервера получен код состояния %1"
@@ -47,48 +47,48 @@ msgstr "В этом экземпляре отключена регистраци
 msgid "Playing video"
 msgstr "Воспроизведение видео"
 
-#: main.cpp:62
+#: main.cpp:51
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:119
+#: main.cpp:53
 #, kde-format
 msgid "YouTube client"
 msgstr "Клиент YouTube"
 
-#: main.cpp:66
+#: main.cpp:55
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Creator"
 msgstr "Создатель"
 
-#: main.cpp:68
+#: main.cpp:57
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:69
+#: main.cpp:58
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Олеся Герасименко"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -151,19 +151,33 @@ msgstr "Результаты поиска «%1»"
 msgid "Proxy Settings"
 msgstr "Параметры прокси"
 
-#: ui/components/BaseGridView.qml:48
+#: ui/ChannelPage.qml:149
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgctxt "@item:inmenu"
+msgid "Videos"
+msgstr "Видеозаписи"
+
+#: ui/ChannelPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@item:inmenu"
+msgid "Playlists"
+msgstr "Списки воспроизведения"
+
+#: ui/components/BaseGridView.qml:51
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "Не удалось подключиться к серверу: %1. Проверьте параметры прокси-сервера."
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "No videos"
 msgstr "Нет ни одного видео"
 
-#: ui/components/BaseGridView.qml:180
+#: ui/components/BaseGridView.qml:187
 #, fuzzy, kde-format
 #| msgid "Add to playlist"
 msgctxt "@title"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-06 00:37+0000\n"
 "PO-Revision-Date: 2024-04-04 08:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: api/invidious/invidiousapi.cpp:76 api/peertube/peertubeapi.cpp:60
+#: api/invidious/invidiousapi.cpp:77 api/peertube/peertubeapi.cpp:60
 #: api/piped/pipedapi.cpp:70 controllers/logincontroller.cpp:42
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
 
-#: api/invidious/invidiousapi.cpp:334 api/peertube/peertubeapi.cpp:281
-#: api/piped/pipedapi.cpp:303
+#: api/invidious/invidiousapi.cpp:355 api/peertube/peertubeapi.cpp:287
+#: api/piped/pipedapi.cpp:309
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
-#: api/invidious/invidiousapi.cpp:343 api/peertube/peertubeapi.cpp:290
-#: api/piped/pipedapi.cpp:312
+#: api/invidious/invidiousapi.cpp:364 api/peertube/peertubeapi.cpp:296
+#: api/piped/pipedapi.cpp:318
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "სერვერის დაბრუნებული სტატუსის კოდია %1"
@@ -46,48 +46,48 @@ msgstr "გაშვებულმა ასლმა რეგისტრა�
 msgid "Playing video"
 msgstr "მიმდინარეობს ვიდეოს დაკვრა"
 
-#: main.cpp:62
+#: main.cpp:51
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:64 main.cpp:119
+#: main.cpp:53
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-ის კლიენტი"
 
-#: main.cpp:66
+#: main.cpp:55
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-ის საზოგადოება"
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Linus Jahn"
 msgstr "ლინუს იანი"
 
-#: main.cpp:67
+#: main.cpp:56
 #, kde-format
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: main.cpp:68
+#: main.cpp:57
 #, kde-format
 msgid "Joshua Goins"
 msgstr "ჯოშუა გოინსი"
 
-#: main.cpp:69
+#: main.cpp:58
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:73
+#: main.cpp:62
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -150,19 +150,33 @@ msgstr "ძებნის შედეგები \"%1\"-სთვის"
 msgid "Proxy Settings"
 msgstr "პროქსის მორგება"
 
-#: ui/components/BaseGridView.qml:48
+#: ui/ChannelPage.qml:149
+#, fuzzy, kde-format
+#| msgid "Videos"
+msgctxt "@item:inmenu"
+msgid "Videos"
+msgstr "ვიდეო"
+
+#: ui/ChannelPage.qml:155
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@item:inmenu"
+msgid "Playlists"
+msgstr "დასაკრავი სიები"
+
+#: ui/components/BaseGridView.qml:51
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 "სერვერთან დაკავშირების შეცდომა: %1. შეამოწმეთ თქვენი პროქსის პარამეტრები."
 
-#: ui/components/BaseGridView.qml:153
+#: ui/components/BaseGridView.qml:160
 #, kde-format
 msgid "No videos"
 msgstr "ვიდეოების გარეშე"
 
-#: ui/components/BaseGridView.qml:180
+#: ui/components/BaseGridView.qml:187
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
