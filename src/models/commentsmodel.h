@@ -44,6 +44,6 @@ private:
     QFutureWatcher<QInvidious::CommentsResult> *m_futureWatcher = nullptr;
     QList<QInvidious::Comment> m_comments;
     bool m_loading = false;
-    Paginator m_paginator;
+    QInvidious::Paginator m_paginator;
     QString m_videoId;
 };

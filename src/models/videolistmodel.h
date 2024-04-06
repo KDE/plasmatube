@@ -74,7 +74,7 @@ private:
     void clearAll();
 
     QueryType m_queryType = NoQuery;
-    Paginator m_paginator;
+    QInvidious::Paginator m_paginator;
     SearchParameters m_searchParameters;
     QString m_channel;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;

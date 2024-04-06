@@ -10,7 +10,6 @@ namespace QInvidious
 class InvidiousApi;
 class PeerTubeApi;
 class PipedApi;
-}
 
 class Paginator : public QObject
 {
@@ -60,3 +59,5 @@ protected:
     friend class QInvidious::PeerTubeApi;
     friend class QInvidious::PipedApi;
 };
+
+}

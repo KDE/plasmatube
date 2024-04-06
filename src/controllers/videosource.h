@@ -97,5 +97,5 @@ private:
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
     bool m_finishedLoading = false;
-    Paginator m_historyPagination;
+    QInvidious::Paginator m_historyPagination;
 };

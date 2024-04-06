@@ -3,6 +3,8 @@
 
 #include "paginator.h"
 
+using namespace QInvidious;
+
 Paginator::Paginator(QObject *parent)
     : QObject(parent)
 {
