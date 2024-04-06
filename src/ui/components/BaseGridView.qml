@@ -212,5 +212,5 @@ GridView {
         }
     }
 
-    Component.onCompleted: videoModel.requestQuery(initialQuery)
+    Component.onCompleted: videoModel?.requestQuery(initialQuery)
 }
