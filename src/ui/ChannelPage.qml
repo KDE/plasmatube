@@ -12,7 +12,7 @@ import org.kde.plasmatube
 import "components/utils.js" as Utils
 import "components"
 
-Kirigami.ScrollablePage {
+Kirigami.Page {
     id: root
 
     required property string author
@@ -24,13 +24,6 @@ Kirigami.ScrollablePage {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
-
-    supportsRefreshing: true
-    onRefreshingChanged: {
-        if (refreshing && !videoModel.isLoading) {
-            videoModel.refresh();
-        }
-    }
 
     header: KirigamiComponents.Banner {
         id: message
@@ -148,18 +141,20 @@ Kirigami.ScrollablePage {
             QQC2.TabButton {
                 text: i18nc("@item:inmenu", "Videos")
 
-                implicitWidth: bar.width / 2
+                implicitWidth: bar.parent.width / 2
             }
 
             QQC2.TabButton {
                 text: i18nc("@item:inmenu", "Playlists")
 
-                implicitWidth: bar.width / 2
+                implicitWidth: bar.parent.width / 2
             }
         }
 
         StackLayout {
-            width: parent.width
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
             currentIndex: bar.currentIndex
 
             onCurrentIndexChanged: {
@@ -170,19 +165,35 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            BaseGridView {
-                id: videoGridView
+            QQC2.ScrollView {
+                clip: true
+                
+                QQC2.ScrollBar.horizontal: QQC2.ScrollBar {
+                    policy: QQC2.ScrollBar.AlwaysOff
+                }
 
-                model: VideoListModel {
-                    id: videoModel
+                BaseGridView {
+                    id: videoGridView
+
+                    model: VideoListModel {
+                        id: videoModel
+                    }
                 }
             }
 
-            BaseGridView {
-                id: playlistsGridView
+            QQC2.ScrollView {
+                clip: true
 
-                model: PlaylistsModel {
-                    id: playlistModel
+                QQC2.ScrollBar.horizontal: QQC2.ScrollBar {
+                    policy: QQC2.ScrollBar.AlwaysOff
+                }
+
+                BaseGridView {
+                    id: playlistsGridView
+
+                    model: PlaylistsModel {
+                        id: playlistModel
+                    }
                 }
             }
         }

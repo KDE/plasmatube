@@ -27,10 +27,10 @@ GridView {
     readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
     readonly property int columns: Math.floor(effectiveWidth / targetDelegateWidth)
 
-    topMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
-    bottomMargin: root.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
-    leftMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
-    rightMargin: root.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
+    topMargin: gridView.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
+    bottomMargin: gridView.width > 900 ? Kirigami.Units.gridUnit * 2 : Kirigami.Units.largeSpacing
+    leftMargin: gridView.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
+    rightMargin: gridView.width > 900 ? Kirigami.Units.gridUnit * 4 : Kirigami.Units.largeSpacing
 
     currentIndex: -1
     // TODO: look into this assumption if we ever want to use gridview in the video player
@@ -42,10 +42,6 @@ GridView {
 
     Connections {
         target: model
-
-        function onIsLoadingChanged() {
-            root.refreshing = gridView.model.isLoading;
-        }
 
         function onErrorOccured(errorText) {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
