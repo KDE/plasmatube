@@ -90,6 +90,7 @@ Q_SIGNALS:
     void isLoadingChanged();
     void videoIdChanged();
     void videoChanged();
+    void audioUrlChanged();
     void remoteUrlChanged();
     void formatListChanged();
     void selectedFormatChanged();

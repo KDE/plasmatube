@@ -76,22 +76,22 @@ void VideoModel::fetch(const QString &videoId)
         const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
         for (const auto &value : formatsArray) {
             const auto format = value.toObject();
+            const auto formatNote = format["format_note"_L1].toString();
 
-            // FIXME: this filters out audio only, but we probably want to support that
             if (format["vcodec"_L1].toString() == "none"_L1) {
+                // TODO: implement some more smarts about which audio URL to pick
+                if (!format["acodec"_L1].toString().isEmpty()) {
+                    m_audioUrl = format["url"_L1].toString();
+                    Q_EMIT audioUrlChanged();
+                }
                 continue;
             }
 
-            const auto formatNote = format["format_note"_L1].toString();
             if (formatNote.isEmpty()) {
                 continue;
             }
 
-            if (formatNote == "medium"_L1) {
-                m_audioUrl = format["url"_L1].toString();
-            } else {
-                m_formatUrl[formatNote] = format["url"_L1].toString();
-            }
+            m_formatUrl[formatNote] = format["url"_L1].toString();
         }
         Q_EMIT remoteUrlChanged();
         Q_EMIT formatListChanged();
@@ -161,6 +161,7 @@ QString VideoModel::remoteUrl()
 
 QString VideoModel::audioUrl() const
 {
+    qInfo() << "Returning" << m_audioUrl;
     return m_audioUrl;
 }
 
