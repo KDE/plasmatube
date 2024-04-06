@@ -37,17 +37,17 @@ public:
     void saveCredentials(const QString &prefix) override;
     void wipeCredentials(const QString &prefix) override;
 
-    QFuture<LogInResult> logIn(QStringView username, QStringView password) override;
-    QFuture<VideoResult> requestVideo(QStringView videoId) override;
-    QString resolveVideoUrl(QStringView videoId) override;
+    QFuture<LogInResult> logIn(const QString &username, const QString &password) override;
+    QFuture<VideoResult> requestVideo(const QString &videoId) override;
+    QString resolveVideoUrl(const QString &videoId) override;
     QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) override;
     QFuture<VideoListResult> requestFeed(Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestTop() override;
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator *paginator = nullptr) override;
-    QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 1) override;
+    QFuture<VideoListResult> requestChannel(const QString &query, qint32 page = 1) override;
     QFuture<SubscriptionsResult> requestSubscriptions() override;
-    QFuture<Result> subscribeToChannel(QStringView channel) override;
-    QFuture<Result> unsubscribeFromChannel(QStringView channel) override;
+    QFuture<Result> subscribeToChannel(const QString &channel) override;
+    QFuture<Result> unsubscribeFromChannel(const QString &channel) override;
     QFuture<HistoryResult> requestHistory(qint32 page = 1) override;
     QFuture<Result> markWatched(const QString &videoId) override;
     QFuture<Result> markUnwatched(const QString &videoId) override;
@@ -56,7 +56,7 @@ public:
     QFuture<PreferencesResult> requestPreferences() override;
     QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) override;
     QFuture<VideoListResult> requestPlaylist(const QString &plid) override;
-    QFuture<ChannelResult> requestChannelInfo(QStringView queryd) override;
+    QFuture<ChannelResult> requestChannelInfo(const QString &queryd) override;
     QFuture<PlaylistsResult> requestChannelPlaylists(const QString &channelId) override;
     QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId) override;
     QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) override;
@@ -72,7 +72,7 @@ private:
     QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {});
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
-    QUrl videoUrl(QStringView videoId) const;
+    QUrl videoUrl(const QString &videoId) const;
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
 };
 

@@ -95,9 +95,9 @@ public:
     virtual void prepareLogIn()
     {
     }
-    virtual QFuture<LogInResult> logIn(QStringView username, QStringView password) = 0;
-    virtual QFuture<VideoResult> requestVideo(QStringView videoId) = 0;
-    virtual QString resolveVideoUrl(QStringView videoId) = 0;
+    virtual QFuture<LogInResult> logIn(const QString &username, const QString &password) = 0;
+    virtual QFuture<VideoResult> requestVideo(const QString &videoId) = 0;
+    virtual QString resolveVideoUrl(const QString &videoId) = 0;
     virtual QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) = 0;
     /**
      * @brief Request the subscription feed, only works if logged in.
@@ -111,10 +111,10 @@ public:
      * @return Use a @c Paginator if you wish to paginate through the results, otherwise returns the first page of results.
      */
     virtual QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator * = nullptr) = 0;
-    virtual QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 1) = 0;
+    virtual QFuture<VideoListResult> requestChannel(const QString &query, qint32 page = 1) = 0;
     virtual QFuture<SubscriptionsResult> requestSubscriptions() = 0;
-    virtual QFuture<Result> subscribeToChannel(QStringView channel) = 0;
-    virtual QFuture<Result> unsubscribeFromChannel(QStringView channel) = 0;
+    virtual QFuture<Result> subscribeToChannel(const QString &channel) = 0;
+    virtual QFuture<Result> unsubscribeFromChannel(const QString &channel) = 0;
     virtual QFuture<HistoryResult> requestHistory(qint32 page = 1) = 0;
     virtual QFuture<Result> markWatched(const QString &videoId) = 0;
     virtual QFuture<Result> markUnwatched(const QString &videoId) = 0;
@@ -123,7 +123,7 @@ public:
     virtual QFuture<PreferencesResult> requestPreferences() = 0;
     virtual QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) = 0;
     virtual QFuture<VideoListResult> requestPlaylist(const QString &plid) = 0;
-    virtual QFuture<ChannelResult> requestChannelInfo(QStringView queryd) = 0;
+    virtual QFuture<ChannelResult> requestChannelInfo(const QString &queryd) = 0;
     virtual QFuture<PlaylistsResult> requestChannelPlaylists(const QString &channelId) = 0;
     virtual QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId) = 0;
     virtual QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) = 0;

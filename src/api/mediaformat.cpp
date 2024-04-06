@@ -7,7 +7,7 @@
 
 using namespace QInvidious;
 
-MediaFormatBase::Container containerFromString(QStringView container)
+MediaFormatBase::Container containerFromString(const QString &container)
 {
     if (container == u"webm") {
         return MediaFormatBase::WebM;
@@ -21,7 +21,7 @@ MediaFormatBase::Container containerFromString(QStringView container)
     return MediaFormatBase::InvalidContainer;
 }
 
-MediaFormatBase::Codec codecFromString(QStringView codec)
+MediaFormatBase::Codec codecFromString(const QString &codec)
 {
     if (codec == u"opus") {
         return MediaFormatBase::Opus;
@@ -86,7 +86,7 @@ MediaFormat MediaFormat::fromJson(const QJsonObject &obj, MediaFormat &format)
     format.m_size = obj.value(u"clen").toInt();
     format.m_codec = codecFromString(obj.value(u"encoding").toString());
     // the value is provided as a string and in nanoseconds
-    format.m_createdTimestamp = QDateTime::fromMSecsSinceEpoch(QStringView(obj.value(u"lmt").toString()).toULongLong() / 1000);
+    format.m_createdTimestamp = QDateTime::fromMSecsSinceEpoch(QString(obj.value(u"lmt").toString()).toULongLong() / 1000);
     return format;
 }
 
@@ -151,10 +151,10 @@ MediaFormatCombined MediaFormatCombined::fromJson(const QJsonObject &obj, MediaF
     MediaFormatBase::fromJson(obj, format);
     // something like: "video/mp4; codecs=\"avc1.42001E, mp4a.40.2\""
     const auto codecsStr = obj.value(u"format").toString();
-    const QStringView codecs = codecsStr;
+    const const QString &codecs = codecsStr;
     const auto codecsStart = codecs.indexOf(u'"');
     const auto codecsLength = codecsStart - codecs.indexOf(u'"', codecsStart);
-    const auto codecList = codecs.mid(codecsStart, codecsLength).split(u", ");
+    const auto codecList = codecs.mid(codecsStart, codecsLength).split(QLatin1String(", "));
     if (codecList.size() >= 1) {
         format.m_videoCodec = codecFromString(codecList[0]);
         if (codecList.size() >= 2) {

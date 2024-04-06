@@ -63,11 +63,11 @@ bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
     return false;
 }
 
-QFuture<LogInResult> PipedApi::logIn(QStringView username, QStringView password)
+QFuture<LogInResult> PipedApi::logIn(const QString &username, const QString &password)
 {
     QUrlQuery params;
-    params.addQueryItem(QStringLiteral("email"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
-    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
+    params.addQueryItem(QStringLiteral("email"), QString::fromUtf8(QUrl::toPercentEncoding(username)));
+    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password)));
     params.addQueryItem(QStringLiteral("action"), QStringLiteral("signin"));
 
     QUrl url = apiUrl(API_LOGIN);
@@ -85,19 +85,19 @@ QFuture<LogInResult> PipedApi::logIn(QStringView username, QStringView password)
     });
 }
 
-QFuture<VideoResult> PipedApi::requestVideo(QStringView videoId)
+QFuture<VideoResult> PipedApi::requestVideo(const QString &videoId)
 {
     return get<VideoResult>(QNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto video = Video::fromJson(doc);
-            video.setVideoId(videoId.toString()); // Piped doesn't give us the video id in the respone...
+            video.setVideoId(videoId); // Piped doesn't give us the video id in the respone...
             return video;
         }
         return invalidJsonError();
     });
 }
 
-QString PipedApi::resolveVideoUrl(QStringView videoId)
+QString PipedApi::resolveVideoUrl(const QString &videoId)
 {
     return QStringLiteral("ytdl://%1").arg(videoId);
 }
@@ -157,10 +157,10 @@ QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginato
     return requestVideoList(Trending, QStringLiteral(""), parameters);
 }
 
-QFuture<VideoListResult> PipedApi::requestChannel(QStringView query, qint32 page)
+QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, qint32 page)
 {
     Q_UNUSED(page)
-    return requestVideoList(Channel, query.toString(), {});
+    return requestVideoList(Channel, query, {});
 }
 
 QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
@@ -169,14 +169,14 @@ QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
     return {};
 }
 
-QFuture<Result> PipedApi::subscribeToChannel(QStringView channel)
+QFuture<Result> PipedApi::subscribeToChannel(const QString &channel)
 {
     // TODO: piped stub
     Q_UNUSED(channel)
     return {};
 }
 
-QFuture<Result> PipedApi::unsubscribeFromChannel(QStringView channel)
+QFuture<Result> PipedApi::unsubscribeFromChannel(const QString &channel)
 {
     // TODO: piped stub
     Q_UNUSED(channel)
@@ -279,7 +279,7 @@ QFuture<VideoListResult> PipedApi::requestPlaylist(const QString &plid)
     });
 }
 
-QFuture<ChannelResult> PipedApi::requestChannelInfo(QStringView queryd)
+QFuture<ChannelResult> PipedApi::requestChannelInfo(const QString &queryd)
 {
     QUrl url = apiUrl(API_CHANNEL_INFO % u'/' % queryd);
 
@@ -386,7 +386,7 @@ QUrlQuery PipedApi::genericUrlQuery() const
     return query;
 }
 
-QUrl PipedApi::videoUrl(QStringView videoId) const
+QUrl PipedApi::videoUrl(const QString &videoId) const
 {
     return apiUrl(API_VIDEOS % u'/' % videoId);
 }

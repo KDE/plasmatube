@@ -122,11 +122,11 @@ void PeerTubeApi::prepareLogIn()
     });
 }
 
-QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView password)
+QFuture<LogInResult> PeerTubeApi::logIn(const QString &username, const QString &password)
 {
     QUrlQuery params;
-    params.addQueryItem(QStringLiteral("username"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
-    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
+    params.addQueryItem(QStringLiteral("username"), QString::fromUtf8(QUrl::toPercentEncoding(username)));
+    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password)));
     params.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("password"));
     params.addQueryItem(QStringLiteral("client_id"), m_clientId);
     params.addQueryItem(QStringLiteral("client_secret"), m_clientSecret);
@@ -151,7 +151,7 @@ QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView passwo
     });
 }
 
-QFuture<VideoResult> PeerTubeApi::requestVideo(QStringView videoId)
+QFuture<VideoResult> PeerTubeApi::requestVideo(const QString &videoId)
 {
     return get<VideoResult>(QNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -161,7 +161,7 @@ QFuture<VideoResult> PeerTubeApi::requestVideo(QStringView videoId)
     });
 }
 
-QString PeerTubeApi::resolveVideoUrl(QStringView videoId)
+QString PeerTubeApi::resolveVideoUrl(const QString &videoId)
 {
     return QStringLiteral("https://%1/videos/watch/%2").arg(m_apiHost, videoId);
 }
@@ -234,11 +234,11 @@ QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic, Pagin
     return requestVideoList(Trending, QStringLiteral(""), parameters, paginator);
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestChannel(QStringView query, qint32 page)
+QFuture<VideoListResult> PeerTubeApi::requestChannel(const QString &query, qint32 page)
 {
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("page"), QString::number(page));
-    return requestVideoList(Channel, query.toString(), parameters);
+    return requestVideoList(Channel, query, parameters);
 }
 
 QFuture<SubscriptionsResult> PeerTubeApi::requestSubscriptions()
@@ -257,12 +257,12 @@ QFuture<SubscriptionsResult> PeerTubeApi::requestSubscriptions()
     });
 }
 
-QFuture<Result> PeerTubeApi::subscribeToChannel(QStringView channel)
+QFuture<Result> PeerTubeApi::subscribeToChannel(const QString &channel)
 {
     return post<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), {}, checkIsReplyOk);
 }
 
-QFuture<Result> PeerTubeApi::unsubscribeFromChannel(QStringView channel)
+QFuture<Result> PeerTubeApi::unsubscribeFromChannel(const QString &channel)
 {
     return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
 }
@@ -329,7 +329,7 @@ QFuture<VideoListResult> PeerTubeApi::requestPlaylist(const QString &plid)
     return {};
 }
 
-QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(QStringView queryd)
+QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(const QString &queryd)
 {
     QUrl url = apiUrl(API_CHANNEL % u'/' % queryd);
 
@@ -443,7 +443,7 @@ QUrlQuery PeerTubeApi::genericUrlQuery() const
     return {};
 }
 
-QUrl PeerTubeApi::videoUrl(QStringView videoId) const
+QUrl PeerTubeApi::videoUrl(const QString &videoId) const
 {
     return apiUrl(API_VIDEOS % u'/' % videoId);
 }
@@ -488,7 +488,7 @@ QUrl PeerTubeApi::subscriptionsUrl() const
     return {};
 }
 
-QUrl PeerTubeApi::subscribeUrl(QStringView channelId) const
+QUrl PeerTubeApi::subscribeUrl(const QString &channelId) const
 {
     Q_UNUSED(channelId)
     return {};
