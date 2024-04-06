@@ -7,7 +7,7 @@
 
 #include "mediaplayer2.h"
 
-#include "mpris2logging.h"
+#include "mpris2_logging.h"
 
 #include <KAboutData>
 
@@ -18,7 +18,7 @@ MediaPlayer2::MediaPlayer2(VideoController *audioPlayer, QObject *parent)
     : QDBusAbstractAdaptor(parent)
     , m_audioPlayer(audioPlayer)
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::MediaPlayer2()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::MediaPlayer2()";
 
     // TODO: implement
     // connect(this, &MediaPlayer2::raisePlayer, audioPlayer, &VideoController::raiseWindowRequested);
@@ -27,58 +27,58 @@ MediaPlayer2::MediaPlayer2(VideoController *audioPlayer, QObject *parent)
 
 MediaPlayer2::~MediaPlayer2()
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::~MediaPlayer2()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::~MediaPlayer2()";
 }
 
 bool MediaPlayer2::CanQuit() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::CanQuit()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::CanQuit()";
     return true;
 }
 
 bool MediaPlayer2::CanRaise() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::CanRaise()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::CanRaise()";
     return true;
 }
 bool MediaPlayer2::HasTrackList() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::HasTrackList()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::HasTrackList()";
     return false;
 }
 
 void MediaPlayer2::Quit()
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::Quit()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::Quit()";
     Q_EMIT quitPlayer();
 }
 
 void MediaPlayer2::Raise()
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::Raise()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::Raise()";
     Q_EMIT raisePlayer();
 }
 
 QString MediaPlayer2::Identity() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::Identity()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::Identity()";
     return QStringLiteral("PlasmaTube");
 }
 
 QString MediaPlayer2::DesktopEntry() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::DesktopEntry()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::DesktopEntry()";
     return QLatin1String("org.kde.plasmatube");
 }
 
 QStringList MediaPlayer2::SupportedUriSchemes() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::SupportedUriSchemes()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::SupportedUriSchemes()";
     return QStringList() << QStringLiteral("file");
 }
 
 QStringList MediaPlayer2::SupportedMimeTypes() const
 {
-    qCDebug(Mpris2Log) << "MediaPlayer2::SupportedMimeTypes()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MediaPlayer2::SupportedMimeTypes()";
     return {};
 }

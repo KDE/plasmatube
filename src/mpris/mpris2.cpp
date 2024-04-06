@@ -7,7 +7,7 @@
 
 #include "mpris2.h"
 
-#include "mpris2logging.h"
+#include "mpris2_logging.h"
 #include "videocontroller.h"
 
 #if !defined Q_OS_ANDROID
@@ -29,7 +29,7 @@ Mpris2::Mpris2(QObject *parent)
     : QObject(parent)
     , m_audioPlayer(dynamic_cast<VideoController *>(parent))
 {
-    qCDebug(Mpris2Log) << "Mpris2::Mpris2()";
+    qCDebug(PLASMATUBE_MPRIS2) << "Mpris2::Mpris2()";
 
 #if !defined Q_OS_ANDROID
     initDBusService();
@@ -38,7 +38,7 @@ Mpris2::Mpris2(QObject *parent)
 
 void Mpris2::initDBusService()
 {
-    qCDebug(Mpris2Log) << "Mpris2::initDBusService()";
+    qCDebug(PLASMATUBE_MPRIS2) << "Mpris2::initDBusService()";
 #if !defined Q_OS_ANDROID
 
     QString tryPlayerName = QStringLiteral("PlasmaTube");
@@ -66,7 +66,7 @@ void Mpris2::initDBusService()
         }
 
         QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/mpris/MediaPlayer2"), this, QDBusConnection::ExportAdaptors);
-        qCDebug(Mpris2Log) << "Mpris2::initDBusService() success";
+        qCDebug(PLASMATUBE_MPRIS2) << "Mpris2::initDBusService() success";
     }
 #endif
 }
@@ -87,6 +87,6 @@ bool Mpris2::unregisterDBusService()
 
 Mpris2::~Mpris2()
 {
-    qCDebug(Mpris2Log) << "Mpris2::~Mpris2()";
+    qCDebug(PLASMATUBE_MPRIS2) << "Mpris2::~Mpris2()";
     unregisterDBusService();
 }

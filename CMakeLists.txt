@@ -69,6 +69,12 @@ install(FILES org.kde.plasmatube.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.plasmatube.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.plasmatube.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
 
+ecm_qt_install_logging_categories(
+        EXPORT PLASMATUBE
+        FILE plasmatube.categories
+        SORT DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES src/*.cpp src/*.h)

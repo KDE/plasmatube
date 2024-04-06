@@ -3,6 +3,8 @@
 
 #include "sourcemanager.h"
 
+#include "general_logging.h"
+
 #include <KSharedConfig>
 
 SourceManager::SourceManager(QObject *parent)
@@ -16,7 +18,7 @@ void SourceManager::load()
     for (const auto &id : config->groupList()) {
         if (id.contains(QLatin1String("source-"))) {
             const QString uuid = QString(id).remove(QLatin1String("source-"));
-            qInfo() << "Loading source" << uuid;
+            qCInfo(PLASMATUBE_GENERAL) << "Loading source" << uuid;
 
             auto source = new VideoSource(uuid, this);
             insertSource(source);

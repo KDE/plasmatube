@@ -3,14 +3,35 @@
 
 add_subdirectory(api)
 
-ecm_qt_declare_logging_category(plasmatube_srcs
-    HEADER "mpris2logging.h"
-    IDENTIFIER "Mpris2Log"
-    CATEGORY_NAME "org.kde.plasmatube.mpris2"
-    DEFAULT_SEVERITY Info
+add_library(plasmatube_static STATIC)
+
+ecm_qt_declare_logging_category(plasmatube_static
+        HEADER "mpris2_logging.h"
+        IDENTIFIER "PLASMATUBE_MPRIS2"
+        CATEGORY_NAME "org.kde.plasmatube.mpris2"
+        DESCRIPTION "PlasmaTube (MPRIS2)"
+        DEFAULT_SEVERITY Info
+        EXPORT PLASMATUBE
 )
 
-add_library(plasmatube_static STATIC)
+ecm_qt_declare_logging_category(plasmatube_static
+        HEADER "network_logging.h"
+        IDENTIFIER "PLASMATUBE_NETWORK"
+        CATEGORY_NAME "org.kde.plasmatube.network"
+        DESCRIPTION "PlasmaTube (Network)"
+        DEFAULT_SEVERITY Info
+        EXPORT PLASMATUBE
+)
+
+ecm_qt_declare_logging_category(plasmatube_static
+        HEADER "general_logging.h"
+        IDENTIFIER "PLASMATUBE_GENERAL"
+        CATEGORY_NAME "org.kde.plasmatube"
+        DESCRIPTION "PlasmaTube"
+        DEFAULT_SEVERITY Info
+        EXPORT PLASMATUBE
+)
+
 target_sources(plasmatube_static PRIVATE
         utils/linkparser.cpp
         utils/linkparser.h
@@ -200,7 +221,7 @@ else()
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
 endif()
 
-install(TARGETS plasmatube ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmatube ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if (BUILD_TESTING)
     add_subdirectory(autotests)

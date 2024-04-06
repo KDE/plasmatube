@@ -4,14 +4,14 @@
 
 #include "metadata.h"
 
-#include "mpris2logging.h"
+#include "mpris2_logging.h"
 
 #include <QTimer>
 
 MetaData::MetaData(QObject *parent)
     : QObject(parent)
 {
-    qCDebug(Mpris2Log) << "MetaData::MetaData begin";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::MetaData begin";
     connect(this, &MetaData::titleChanged, this, &MetaData::signalMetaDataChanged);
     connect(this, &MetaData::artistChanged, this, &MetaData::signalMetaDataChanged);
     connect(this, &MetaData::albumChanged, this, &MetaData::signalMetaDataChanged);
@@ -20,36 +20,36 @@ MetaData::MetaData(QObject *parent)
 
 MetaData::~MetaData()
 {
-    qCDebug(Mpris2Log) << "MetaData::~MetaData";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::~MetaData";
 }
 
 QString MetaData::title() const
 {
-    qCDebug(Mpris2Log) << "MetaData::title()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::title()";
     return m_title;
 }
 
 QString MetaData::artist() const
 {
-    qCDebug(Mpris2Log) << "MetaData::artist()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::artist()";
     return m_artist;
 }
 
 QString MetaData::album() const
 {
-    qCDebug(Mpris2Log) << "MetaData::album()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::album()";
     return m_album;
 }
 
 QUrl MetaData::artworkUrl() const
 {
-    qCDebug(Mpris2Log) << "MetaData::artworkUrl()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::artworkUrl()";
     return m_artworkUrl;
 }
 
 void MetaData::setTitle(const QString &title)
 {
-    qCDebug(Mpris2Log) << "MetaData::setTitle(" << title << ")";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::setTitle(" << title << ")";
     if (title != m_title) {
         m_title = title;
         Q_EMIT titleChanged(title);
@@ -58,7 +58,7 @@ void MetaData::setTitle(const QString &title)
 
 void MetaData::setArtist(const QString &artist)
 {
-    qCDebug(Mpris2Log) << "MetaData::setArtist(" << artist << ")";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::setArtist(" << artist << ")";
     if (artist != m_artist) {
         m_artist = artist;
         Q_EMIT artistChanged(artist);
@@ -67,7 +67,7 @@ void MetaData::setArtist(const QString &artist)
 
 void MetaData::setAlbum(const QString &album)
 {
-    qCDebug(Mpris2Log) << "MetaData::setAlbum(" << album << ")";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::setAlbum(" << album << ")";
     if (album != m_album) {
         m_album = album;
         Q_EMIT albumChanged(album);
@@ -76,7 +76,7 @@ void MetaData::setAlbum(const QString &album)
 
 void MetaData::setArtworkUrl(const QUrl &artworkUrl)
 {
-    qCDebug(Mpris2Log) << "MetaData::setArtworkUrl(" << artworkUrl << ")";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::setArtworkUrl(" << artworkUrl << ")";
     if (artworkUrl != m_artworkUrl) {
         m_artworkUrl = artworkUrl;
         Q_EMIT artworkUrlChanged(artworkUrl);
@@ -85,7 +85,7 @@ void MetaData::setArtworkUrl(const QUrl &artworkUrl)
 
 void MetaData::clear()
 {
-    qCDebug(Mpris2Log) << "MetaData::clear()";
+    qCDebug(PLASMATUBE_MPRIS2) << "MetaData::clear()";
     m_title.clear();
     m_artist.clear();
     m_album.clear();

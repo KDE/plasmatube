@@ -4,6 +4,7 @@
 #include "videocontroller.h"
 
 #include "config.h"
+#include "general_logging.h"
 #include "plasmatube.h"
 
 #ifdef HAS_DBUS
@@ -79,7 +80,7 @@ VideoController::VideoController(QObject *parent)
 void VideoController::play(const QString &videoId)
 {
     if (videoId.isEmpty()) {
-        qWarning() << "Not trying to play an empty video id.";
+        qCWarning(PLASMATUBE_GENERAL) << "Not trying to play an empty video id.";
         return;
     }
 
@@ -89,7 +90,7 @@ void VideoController::play(const QString &videoId)
 void VideoController::queueNext(const QString &videoId)
 {
     if (videoId.isEmpty()) {
-        qWarning() << "Not trying to queue an empty video id.";
+        qCWarning(PLASMATUBE_GENERAL) << "Not trying to queue an empty video id.";
         return;
     }
 

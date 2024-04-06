@@ -201,7 +201,6 @@ QString VideoModel::selectedFormat() const
 
 void VideoModel::setSelectedFormat(const QString &selectedFormat)
 {
-    qInfo() << "Setting selected format to " << selectedFormat;
     if (m_selectedFormat == selectedFormat) {
         return;
     }
