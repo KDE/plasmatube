@@ -86,8 +86,6 @@ public:
      */
     virtual void wipeCredentials(const QString &prefix) = 0;
 
-    QNetworkAccessManager *net() const;
-
     void setApiHost(const QString &host);
     QString apiHost() const;
 

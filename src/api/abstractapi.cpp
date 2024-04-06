@@ -34,11 +34,6 @@ void AbstractApi::setLanguage(const QString &language)
     m_language = language;
 }
 
-QNetworkAccessManager *AbstractApi::net() const
-{
-    return m_netManager;
-}
-
 QUrl AbstractApi::apiUrl(const QString &path) const
 {
     QUrl url = QUrl::fromUserInput(m_apiHost);
