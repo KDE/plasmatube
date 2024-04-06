@@ -151,7 +151,7 @@ MediaFormatCombined MediaFormatCombined::fromJson(const QJsonObject &obj, MediaF
     MediaFormatBase::fromJson(obj, format);
     // something like: "video/mp4; codecs=\"avc1.42001E, mp4a.40.2\""
     const auto codecsStr = obj.value(u"format").toString();
-    const const QString &codecs = codecsStr;
+    const QString &codecs = codecsStr;
     const auto codecsStart = codecs.indexOf(u'"');
     const auto codecsLength = codecsStart - codecs.indexOf(u'"', codecsStart);
     const auto codecList = codecs.mid(codecsStart, codecsLength).split(QLatin1String(", "));
