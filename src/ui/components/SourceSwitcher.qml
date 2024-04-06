@@ -24,31 +24,44 @@ QQC2.Pane {
 
         spacing: 0
 
-        QQC2.ItemDelegate {
+        QQC2.Control {
             id: currentSourceDelegate
-
-            text: root.selectedSource?.url
 
             Layout.fillWidth: true
 
             contentItem: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+                spacing: 0
 
-                Delegates.SubtitleContentItem {
-                    itemDelegate: currentSourceDelegate
-                    subtitle: {
-                        switch (root.selectedSource?.type) {
-                            case VideoSource.Invidious:
-                                return i18n("Invidious");
-                            case VideoSource.PeerTube:
-                                return i18n("PeerTube");
-                            case VideoSource.Piped:
-                                return i18n("Piped");
-                        }
+                ColumnLayout {
+                    spacing: 0
+
+                    QQC2.Label {
+                        id: labelItem
+
+                        text: root.selectedSource?.url
+                        horizontalAlignment: Text.AlignLeft
+                        textFormat: Text.PlainText
                     }
-                    subtitleItem.textFormat: Text.PlainText
 
-                    Layout.fillWidth: true
+                    QQC2.Label {
+                        id: subtitleItem
+
+                        text: {
+                            switch (root.selectedSource?.type) {
+                                case VideoSource.Invidious:
+                                    return i18n("Invidious");
+                                case VideoSource.PeerTube:
+                                    return i18n("PeerTube");
+                                case VideoSource.Piped:
+                                    return i18n("Piped");
+                            }
+                        }
+                        font: Kirigami.Theme.smallFont
+                        color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.textColor, Kirigami.Theme.backgroundColor, 0.3)
+                        visible: text.length > 0
+                        horizontalAlignment: Text.AlignLeft
+                        textFormat: Text.PlainText
+                    }
                 }
 
                 QQC2.ToolButton {
@@ -64,6 +77,7 @@ QQC2.Pane {
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 
                     Layout.minimumWidth: Layout.preferredWidth
+                    Layout.alignment: Qt.AlignRight
                 }
             }
         }
