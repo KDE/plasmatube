@@ -26,11 +26,6 @@ class QNetworkAccessManager;
 namespace QInvidious
 {
 
-struct Comments {
-    QList<Comment> comments;
-    QString continuation;
-};
-
 using VideoList = QList<VideoBasicInfo>;
 
 using Error = std::pair<QNetworkReply::NetworkError, QString>;
@@ -41,7 +36,7 @@ using VideoListResult = std::variant<VideoList, Error>;
 using SubscriptionsResult = std::variant<QList<QString>, Error>;
 using Result = std::variant<Success, Error>;
 using HistoryResult = std::variant<QList<QString>, Error>;
-using CommentsResult = std::variant<Comments, Error>;
+using CommentsResult = std::variant<QList<Comment>, Error>;
 using PlaylistsResult = std::variant<QList<Playlist>, Error>;
 using PreferencesResult = std::variant<Preferences, Error>;
 using ChannelResult = std::variant<QInvidious::Channel, Error>;
@@ -111,14 +106,14 @@ public:
      * @return Use a @c Paginator if you wish to paginate through the results, otherwise returns the first page of results.
      */
     virtual QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator * = nullptr) = 0;
-    virtual QFuture<VideoListResult> requestChannel(const QString &query, qint32 page = 1) = 0;
+    virtual QFuture<VideoListResult> requestChannel(const QString &query, Paginator *) = 0;
     virtual QFuture<SubscriptionsResult> requestSubscriptions() = 0;
     virtual QFuture<Result> subscribeToChannel(const QString &channel) = 0;
     virtual QFuture<Result> unsubscribeFromChannel(const QString &channel) = 0;
-    virtual QFuture<HistoryResult> requestHistory(qint32 page = 1) = 0;
+    virtual QFuture<HistoryResult> requestHistory(Paginator *) = 0;
     virtual QFuture<Result> markWatched(const QString &videoId) = 0;
     virtual QFuture<Result> markUnwatched(const QString &videoId) = 0;
-    virtual QFuture<CommentsResult> requestComments(const QString &videoId, const QString &continuation = {}) = 0;
+    virtual QFuture<CommentsResult> requestComments(const QString &videoId, Paginator *) = 0;
     virtual QFuture<PlaylistsResult> requestPlaylists() = 0;
     virtual QFuture<PreferencesResult> requestPreferences() = 0;
     virtual QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) = 0;

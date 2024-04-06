@@ -58,6 +58,9 @@ protected:
     qsizetype m_count = 0;
     qsizetype m_total = 0;
 
+    // Pagination
+    QString m_continuation;
+
     friend class QInvidious::InvidiousApi;
     friend class QInvidious::PeerTubeApi;
     friend class QInvidious::PipedApi;

@@ -9,6 +9,7 @@ using namespace Qt::Literals::StringLiterals;
 
 CommentsModel::CommentsModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_paginator(this)
 {
 }
 
@@ -66,14 +67,15 @@ void CommentsModel::fillComments(const QString &videoId)
         endResetModel();
     }
 
-    m_continuation.clear();
+    m_paginator.reset();
     m_videoId = videoId;
     fill();
 }
 
 void CommentsModel::loadMore()
 {
-    if (!m_continuation.isEmpty()) {
+    if (m_paginator.hasMore()) {
+        m_paginator.next();
         fill();
     }
 }
@@ -86,7 +88,7 @@ void CommentsModel::fill()
 
     setLoading(true);
 
-    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestComments(m_videoId, m_continuation);
+    auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestComments(m_videoId, &m_paginator);
 
     m_futureWatcher = new QFutureWatcher<QInvidious::CommentsResult>();
     m_futureWatcher->setFuture(future);
@@ -94,13 +96,11 @@ void CommentsModel::fill()
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
         if (m_futureWatcher->future().resultCount() != 0) {
             auto result = m_futureWatcher->result();
-            if (auto comments = std::get_if<QInvidious::Comments>(&result)) {
+            if (auto comments = std::get_if<QList<QInvidious::Comment>>(&result)) {
                 const auto rows = rowCount({});
-                beginInsertRows({}, rows, rows + static_cast<int>(comments->comments.size()) - 1);
-                m_comments << (*comments).comments;
+                beginInsertRows({}, rows, rows + static_cast<int>(comments->size()) - 1);
+                m_comments << *comments;
                 endInsertRows();
-
-                m_continuation = comments->continuation;
             } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
                 // TODO: Log error
             }

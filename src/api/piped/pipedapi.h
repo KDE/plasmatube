@@ -44,14 +44,14 @@ public:
     QFuture<VideoListResult> requestFeed(Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestTop() override;
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator *paginator = nullptr) override;
-    QFuture<VideoListResult> requestChannel(const QString &query, qint32 page = 1) override;
+    QFuture<VideoListResult> requestChannel(const QString &query, Paginator *paginator = nullptr) override;
     QFuture<SubscriptionsResult> requestSubscriptions() override;
     QFuture<Result> subscribeToChannel(const QString &channel) override;
     QFuture<Result> unsubscribeFromChannel(const QString &channel) override;
-    QFuture<HistoryResult> requestHistory(qint32 page = 1) override;
+    QFuture<HistoryResult> requestHistory(Paginator *paginator = nullptr) override;
     QFuture<Result> markWatched(const QString &videoId) override;
     QFuture<Result> markUnwatched(const QString &videoId) override;
-    QFuture<CommentsResult> requestComments(const QString &videoId, const QString &continuation = {}) override;
+    QFuture<CommentsResult> requestComments(const QString &videoId, Paginator *paginator = nullptr) override;
     QFuture<PlaylistsResult> requestPlaylists() override;
     QFuture<PreferencesResult> requestPreferences() override;
     QFuture<Result> setPreferences(const QInvidious::Preferences &preferences) override;

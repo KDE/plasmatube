@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "paginator.h"
 #include "preferences.h"
 #include "sourceconfig.h"
 
@@ -86,7 +87,7 @@ private:
     void createApi();
     void fetchPreferences();
     void fetchSubscriptions();
-    void fetchHistory(qint32 page = 1);
+    void fetchHistory();
     void setSubscriptions(const QList<QString> &subscriptions);
 
     SourceConfig m_config;
@@ -96,4 +97,5 @@ private:
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;
     bool m_finishedLoading = false;
+    Paginator m_historyPagination;
 };

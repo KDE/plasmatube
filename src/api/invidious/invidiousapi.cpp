@@ -180,11 +180,9 @@ QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic, Pagi
     return requestVideoList(Trending, QStringLiteral(""), parameters, paginator);
 }
 
-QFuture<VideoListResult> InvidiousApi::requestChannel(const QString &query, qint32 page)
+QFuture<VideoListResult> InvidiousApi::requestChannel(const QString &query, Paginator *paginator)
 {
-    QHash<QString, QString> parameters;
-    parameters.insert(QStringLiteral("page"), QString::number(page));
-    return requestVideoList(Channel, query, parameters);
+    return requestVideoList(Channel, query, {}, paginator);
 }
 
 QFuture<SubscriptionsResult> InvidiousApi::requestSubscriptions()
@@ -213,10 +211,13 @@ QFuture<Result> InvidiousApi::unsubscribeFromChannel(const QString &channel)
     return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
 }
 
-QFuture<HistoryResult> InvidiousApi::requestHistory(qint32 page)
+QFuture<HistoryResult> InvidiousApi::requestHistory(Paginator *paginator)
 {
+    paginator->setType(Paginator::Type::Page);
+    paginator->m_maxPage = std::numeric_limits<qsizetype>::max();
+
     QUrlQuery parameters;
-    parameters.addQueryItem(QStringLiteral("page"), QString::number(page));
+    parameters.addQueryItem(QStringLiteral("page"), QString::number(paginator->m_page + 1));
 
     QUrl url = apiUrl(API_HISTORY);
     url.setQuery(parameters);
@@ -245,11 +246,13 @@ QFuture<Result> InvidiousApi::markUnwatched(const QString &videoId)
     return deleteResource<Result>(authenticatedNetworkRequest(apiUrl(API_HISTORY % u'/' % videoId)), checkIsReplyOk);
 }
 
-QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, const QString &continuation)
+QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, Paginator *paginator)
 {
+    paginator->setType(Paginator::Type::Continuation);
+
     QUrlQuery parameters;
-    if (!continuation.isEmpty()) {
-        parameters.addQueryItem(QStringLiteral("continuation"), continuation);
+    if (!paginator->m_continuation.isEmpty()) {
+        parameters.addQueryItem(QStringLiteral("continuation"), paginator->m_continuation);
     }
 
     QUrl url = apiUrl(API_COMMENTS % u'/' % videoId);
@@ -265,7 +268,10 @@ QFuture<CommentsResult> InvidiousApi::requestComments(const QString &videoId, co
                 Comment::fromJson(val.toObject(), comment);
                 return comment;
             });
-            return Comments{comments, doc[u"continuation"].toString()};
+
+            paginator->m_continuation = doc[u"continuation"].toString();
+
+            return comments;
         }
         return invalidJsonError();
     });

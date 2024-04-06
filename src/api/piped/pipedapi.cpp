@@ -157,9 +157,8 @@ QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginato
     return requestVideoList(Trending, QStringLiteral(""), parameters);
 }
 
-QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, qint32 page)
+QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, Paginator *paginator)
 {
-    Q_UNUSED(page)
     return requestVideoList(Channel, query, {});
 }
 
@@ -183,10 +182,9 @@ QFuture<Result> PipedApi::unsubscribeFromChannel(const QString &channel)
     return {};
 }
 
-QFuture<HistoryResult> PipedApi::requestHistory(qint32 page)
+QFuture<HistoryResult> PipedApi::requestHistory(Paginator *paginator)
 {
     // TODO: piped stub
-    Q_UNUSED(page)
     return {};
 }
 
@@ -204,9 +202,9 @@ QFuture<Result> PipedApi::markUnwatched(const QString &videoId)
     return {};
 }
 
-QFuture<CommentsResult> PipedApi::requestComments(const QString &videoId, const QString &continuation)
+QFuture<CommentsResult> PipedApi::requestComments(const QString &videoId, Paginator *paginator)
 {
-    Q_UNUSED(continuation)
+    Q_UNUSED(paginator)
 
     if (videoId.isEmpty()) {
         qWarning() << "Not trying to load comments for an empty video id.";
@@ -225,7 +223,7 @@ QFuture<CommentsResult> PipedApi::requestComments(const QString &videoId, const 
                 Comment::fromJson(val.toObject(), comment);
                 return comment;
             });
-            return Comments{comments, {}};
+            return comments;
         }
         return invalidJsonError();
     });

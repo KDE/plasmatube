@@ -14,6 +14,7 @@ VideoSource::VideoSource(const QString &key, QObject *parent)
     : QObject(parent)
     , m_config(key)
     , m_key(key)
+    , m_historyPagination(this)
 {
     createApi();
     fetchPreferences();
@@ -232,26 +233,23 @@ void VideoSource::markVideoUnwatched(const QString &videoId)
     }
 }
 
-void VideoSource::fetchHistory(qint32 page)
+void VideoSource::fetchHistory()
 {
     if (!loggedIn()) {
         return;
     }
 
-    if (page == 1) {
-        m_watchedVideos.clear();
-    }
-
-    if (auto future = m_api->requestHistory(page); !future.isCanceled()) {
+    if (auto future = m_api->requestHistory(&m_historyPagination); !future.isCanceled()) {
         auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
-        connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
+        connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
             auto result = watcher->result();
 
             if (const auto history = std::get_if<QList<QString>>(&result)) {
                 if (!history->isEmpty()) {
                     m_watchedVideos.append(*history);
 
-                    fetchHistory(page + 1);
+                    m_historyPagination.next();
+                    fetchHistory();
                 }
             }
 

@@ -11,6 +11,8 @@ Paginator::Paginator(QObject *parent)
 void Paginator::reset()
 {
     m_page = 0;
+    m_startIndex = 0;
+    m_continuation.clear();
 }
 
 void Paginator::next()

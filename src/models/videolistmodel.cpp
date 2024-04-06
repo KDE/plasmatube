@@ -165,7 +165,7 @@ void VideoListModel::requestChannel(const QString &ucid)
 {
     m_channel = ucid;
     m_paginator.reset();
-    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(ucid /*m_currentPage*/), Channel);
+    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(ucid, &m_paginator), Channel);
 }
 
 void VideoListModel::requestPlaylist(const QString &id)
@@ -291,7 +291,7 @@ void VideoListModel::requestHistory()
 {
     setLoading(true);
 
-    auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(/*m_currentPage*/);
+    auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(&m_paginator);
 
     m_historyPageWatcher = new QFutureWatcher<QInvidious::HistoryResult>();
     m_historyPageWatcher->setFuture(pageFuture);

@@ -234,11 +234,9 @@ QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic, Pagin
     return requestVideoList(Trending, QStringLiteral(""), parameters, paginator);
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestChannel(const QString &query, qint32 page)
+QFuture<VideoListResult> PeerTubeApi::requestChannel(const QString &query, Paginator *paginator)
 {
-    QHash<QString, QString> parameters;
-    parameters.insert(QStringLiteral("page"), QString::number(page));
-    return requestVideoList(Channel, query, parameters);
+    return requestVideoList(Channel, query, {}, paginator);
 }
 
 QFuture<SubscriptionsResult> PeerTubeApi::requestSubscriptions()
@@ -267,9 +265,9 @@ QFuture<Result> PeerTubeApi::unsubscribeFromChannel(const QString &channel)
     return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
 }
 
-QFuture<HistoryResult> PeerTubeApi::requestHistory(qint32 page)
+QFuture<HistoryResult> PeerTubeApi::requestHistory(Paginator *paginator)
 {
-    Q_UNUSED(page)
+    Q_UNUSED(paginator)
     return {};
 }
 
@@ -285,9 +283,9 @@ QFuture<Result> PeerTubeApi::markUnwatched(const QString &videoId)
     return {};
 }
 
-QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, const QString &continuation)
+QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, Paginator *paginator)
 {
-    Q_UNUSED(continuation)
+    Q_UNUSED(paginator)
 
     QUrl url = apiUrl(API_VIDEOS % u'/' % videoId % u"/comment-threads");
 
@@ -301,7 +299,7 @@ QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, con
                 Comment::fromJson(val.toObject(), comment);
                 return comment;
             });
-            return Comments{comments, {}};
+            return comments;
         }
         return invalidJsonError();
     });
