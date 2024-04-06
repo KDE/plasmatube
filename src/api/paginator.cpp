@@ -29,10 +29,6 @@ void Paginator::next()
     }
 }
 
-void Paginator::previous()
-{
-}
-
 bool Paginator::hasMore() const
 {
     switch (m_type) {

@@ -29,11 +29,6 @@ public:
     void next();
 
     /**
-     * @brief Goes to the previous page, or it's equivalent depending on the paginator type.
-     */
-    void previous();
-
-    /**
      * @return If there's any more pages to paginate through.
      */
     bool hasMore() const;
