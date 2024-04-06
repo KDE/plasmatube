@@ -17,6 +17,8 @@ const QString API_CHANNEL = QStringLiteral("/api/v1/video-channels");
 const QString API_SEARCH_VIDEOS = QStringLiteral("/api/v1/search/videos");
 const QString API_SEARCH_VIDEO_CHANNELS = QStringLiteral("/api/v1/search/video-channels");
 const QString API_SEARCH_VIDEO_PLAYLISTS = QStringLiteral("/api/v1/search/video-playlists");
+const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/users/token");
+const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
 
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
@@ -40,11 +42,13 @@ bool PeerTubeApi::supportsFeature(AbstractApi::SupportedFeature feature)
 QFuture<LogInResult> PeerTubeApi::logIn(QStringView username, QStringView password)
 {
     QUrlQuery params;
-    params.addQueryItem(QStringLiteral("email"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
+    params.addQueryItem(QStringLiteral("username"), QString::fromUtf8(QUrl::toPercentEncoding(username.toString())));
     params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password.toString())));
-    params.addQueryItem(QStringLiteral("action"), QStringLiteral("signin"));
+    params.addQueryItem(QStringLiteral("grant_type"), QStringLiteral("pasword"));
+    params.addQueryItem(QStringLiteral("client_id"), QStringLiteral("test"));
+    params.addQueryItem(QStringLiteral("client_secret"), QStringLiteral("test"));
 
-    QNetworkRequest request(logInUrl());
+    QNetworkRequest request(apiUrl(API_LOGIN_TOKEN));
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
@@ -352,11 +356,6 @@ QNetworkRequest PeerTubeApi::authenticatedNetworkRequest(QUrl &&url)
 }
 
 QUrlQuery PeerTubeApi::genericUrlQuery() const
-{
-    return {};
-}
-
-QUrl PeerTubeApi::logInUrl() const
 {
     return {};
 }
