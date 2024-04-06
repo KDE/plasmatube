@@ -161,7 +161,6 @@ QString VideoModel::remoteUrl()
 
 QString VideoModel::audioUrl() const
 {
-    qInfo() << "Returning" << m_audioUrl;
     return m_audioUrl;
 }
 
