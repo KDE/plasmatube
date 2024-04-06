@@ -47,9 +47,6 @@ public:
     void setUsername(const QString &username);
     QString username() const;
 
-    void setCookie(const QString &cookie);
-    QString cookie() const;
-
     QInvidious::Preferences preferences();
     void setPreferences(const QInvidious::Preferences &preferences);
 
@@ -81,8 +78,6 @@ private:
     friend class SubscriptionController;
 
     void createApi();
-    void setApiCookie();
-    QString cookieKey();
     void fetchPreferences();
     void fetchSubscriptions();
     void fetchHistory(qint32 page = 1);
@@ -92,7 +87,6 @@ private:
     SourceConfig m_config;
     QString m_key;
     QInvidious::AbstractApi *m_api = nullptr;
-    QString m_cookie;
     QInvidious::Preferences m_preferences;
     std::optional<QList<QString>> m_subscriptions;
     QList<QString> m_watchedVideos;

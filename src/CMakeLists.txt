@@ -197,7 +197,6 @@ target_link_libraries(plasmatube PRIVATE
         KF6::ConfigCore
         KF6::ConfigGui
         KF6::I18n
-        Qt6Keychain::Qt6Keychain
         MpvQt::MpvQt)
 
 if (NOT ANDROID)

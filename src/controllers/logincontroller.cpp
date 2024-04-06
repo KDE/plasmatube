@@ -31,13 +31,8 @@ void LogInController::logIn(const QString &username, const QString &password)
     m_watcher = new QFutureWatcher<QInvidious::LogInResult>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
         auto result = m_watcher->result();
-
-        if (const auto credentials = std::get_if<QInvidious::Credentials>(&result)) {
-            m_source->setUsername(username);
-            m_source->setCookie(QString::fromUtf8(credentials->cookie()->toRawForm()));
-            Q_EMIT loggedIn();
-        } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
-            switch (error->first) {
+        if (result.has_value()) {
+            switch (result.value().first) {
             case QNetworkReply::AuthenticationRequiredError:
                 Q_EMIT errorOccurred(i18n("Username or password is wrong."));
                 break;
@@ -45,8 +40,11 @@ void LogInController::logIn(const QString &username, const QString &password)
                 Q_EMIT errorOccurred(i18n("This instance has disabled the registration."));
                 break;
             default:
-                Q_EMIT errorOccurred(error->second);
+                Q_EMIT errorOccurred(result.value().second);
             }
+        } else {
+            m_source->setUsername(m_source->api()->username());
+            Q_EMIT loggedIn();
         }
 
         m_watcher->deleteLater();

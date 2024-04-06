@@ -6,7 +6,6 @@
 #include "abstractapi.h"
 #include "channel.h"
 #include "comment.h"
-#include "credentials.h"
 #include "playlist.h"
 #include "preferences.h"
 #include "searchparameters.h"
@@ -31,6 +30,11 @@ class InvidiousApi : public AbstractApi
 
 public:
     explicit InvidiousApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
+
+    bool isLoggedIn() const override;
+    void loadCredentials(const QString &prefix) override;
+    void saveCredentials(const QString &prefix) override;
+    void wipeCredentials(const QString &prefix) override;
 
     QFuture<LogInResult> logIn(QStringView username, QStringView password) override;
     QFuture<VideoResult> requestVideo(QStringView videoId) override;
@@ -72,6 +76,8 @@ private:
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
     QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(QStringView channelId) const;
+
+    std::optional<QNetworkCookie> m_cookie;
 };
 
 }

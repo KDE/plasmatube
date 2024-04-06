@@ -30,6 +30,23 @@ PipedApi::PipedApi(QNetworkAccessManager *netManager, QObject *parent)
 {
 }
 
+bool PipedApi::isLoggedIn() const
+{
+    return false;
+}
+
+void PipedApi::loadCredentials(const QString &prefix)
+{
+}
+
+void PipedApi::saveCredentials(const QString &prefix)
+{
+}
+
+void PipedApi::wipeCredentials(const QString &prefix)
+{
+}
+
 bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
@@ -59,14 +76,6 @@ QFuture<LogInResult> PipedApi::logIn(QStringView username, QStringView password)
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
     return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
-        const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
-
-        if (!cookies.isEmpty()) {
-            m_credentials.setUsername(username);
-            m_credentials.setCookie(cookies.first());
-            Q_EMIT credentialsChanged();
-            return m_credentials;
-        }
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
     });
 }
@@ -358,12 +367,6 @@ QFuture<VideoListResult> PipedApi::requestVideoList(VideoListType queryType, con
 QNetworkRequest PipedApi::authenticatedNetworkRequest(QUrl &&url)
 {
     QNetworkRequest request(url);
-    if (!m_credentials.isAnonymous()) {
-        const QList<QNetworkCookie> cookies{m_credentials.cookie().value()};
-        request.setHeader(QNetworkRequest::CookieHeader, QVariant::fromValue(cookies));
-    }
-    // some invidious instances redirect some calls using reverse proxies
-    request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     return request;
 }
 

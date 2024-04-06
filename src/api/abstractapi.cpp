@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "abstractapi.h"
+#include <qt6keychain/keychain.h>
 
 namespace QInvidious
 {
@@ -33,15 +34,14 @@ void AbstractApi::setLanguage(const QString &language)
     m_language = language;
 }
 
-Credentials AbstractApi::credentials() const
+QString AbstractApi::username() const
 {
-    return m_credentials;
+    return m_username;
 }
 
-void AbstractApi::setCredentials(const Credentials &credentials)
+void AbstractApi::setUsername(const QString &username)
 {
-    m_credentials = credentials;
-    Q_EMIT credentialsChanged();
+    m_username = username;
 }
 
 QNetworkAccessManager *AbstractApi::net() const
@@ -66,5 +66,53 @@ void AbstractApi::setApiHost(const QString &host)
 QString AbstractApi::apiHost() const
 {
     return m_apiHost;
+}
+
+std::optional<QString> AbstractApi::getKeychainValue(const QString &prefix, const QString &key)
+{
+    auto loop = new QEventLoop();
+
+    auto job = new QKeychain::ReadPasswordJob(QStringLiteral("PlasmaTube"));
+    job->setKey(transformKey(prefix, key));
+    job->start();
+
+    QString value;
+
+    QObject::connect(job, &QKeychain::ReadPasswordJob::finished, [loop, job, &value](QKeychain::Job *) {
+        value = job->textData();
+        loop->quit();
+    });
+
+    loop->exec();
+
+    if (!value.isEmpty()) {
+        return value;
+    }
+
+    return std::nullopt;
+}
+
+void AbstractApi::setKeychainValue(const QString &prefix, const QString &key, const QString &value)
+{
+    auto cookieJob = new QKeychain::WritePasswordJob{QStringLiteral("PlasmaTube"), this};
+    cookieJob->setKey(transformKey(prefix, key));
+    cookieJob->setTextData(value);
+    cookieJob->start();
+}
+
+void AbstractApi::wipeKeychainValue(const QString &prefix, const QString &key)
+{
+    auto cookieDeleteJob = new QKeychain::DeletePasswordJob{QStringLiteral("PlasmaTube"), this};
+    cookieDeleteJob->setKey(transformKey(prefix, key));
+    cookieDeleteJob->start();
+}
+
+QString AbstractApi::transformKey(const QString &prefix, const QString &key)
+{
+#ifdef PLASMATUBE_FLATPAK
+    return QStringLiteral("%1-%2-flatpak").arg(prefix, key);
+#else
+    return QStringLiteral("%1-%2").arg(prefix, key);
+#endif
 }
 }

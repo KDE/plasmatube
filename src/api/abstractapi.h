@@ -6,7 +6,6 @@
 
 #include "channel.h"
 #include "comment.h"
-#include "credentials.h"
 #include "paginator.h"
 #include "playlist.h"
 #include "preferences.h"
@@ -36,7 +35,7 @@ using VideoList = QList<VideoBasicInfo>;
 
 using Error = std::pair<QNetworkReply::NetworkError, QString>;
 using Success = std::monostate;
-using LogInResult = std::variant<Credentials, Error>;
+using LogInResult = std::optional<Error>;
 using VideoResult = std::variant<Video, Error>;
 using VideoListResult = std::variant<VideoList, Error>;
 using SubscriptionsResult = std::variant<QList<QString>, Error>;
@@ -68,8 +67,26 @@ public:
     QString language() const;
     void setLanguage(const QString &language);
 
-    Credentials credentials() const;
-    void setCredentials(const Credentials &credentials);
+    void setUsername(const QString &username);
+    QString username() const;
+
+    virtual bool isLoggedIn() const = 0;
+
+    /**
+     * @brief Loads the credentials (if any) under @p prefix in secure storage.
+     */
+    virtual void loadCredentials(const QString &prefix) = 0;
+
+    // TODO: should this be public API? it seems you should be using logIn()
+    /**
+     * @brief Stores the credentials (if any) under @p prefix in secure storage.
+     */
+    virtual void saveCredentials(const QString &prefix) = 0;
+
+    /**
+     * @brief Wipe all credentials (if any) under @p prefix in secure storage.
+     */
+    virtual void wipeCredentials(const QString &prefix) = 0;
 
     QNetworkAccessManager *net() const;
 
@@ -155,11 +172,21 @@ protected:
         return reportResults<T>(m_netManager->deleteResource(request), std::move(processs));
     }
 
+    std::optional<QString> getKeychainValue(const QString &prefix, const QString &key);
+    void setKeychainValue(const QString &prefix, const QString &key, const QString &value);
+    void wipeKeychainValue(const QString &prefix, const QString &key);
+
+    /**
+     * @brief Puts flatpak in the key name to prevent possible collisions.
+     * @note Not necessary if using @f getKeychainValue or @f setKeychainValue, they call this internally.
+     */
+    QString transformKey(const QString &prefix, const QString &key);
+
     QNetworkAccessManager *m_netManager;
     QString m_region;
     QString m_language;
     QString m_apiHost;
-    Credentials m_credentials;
+    QString m_username;
 };
 
 }

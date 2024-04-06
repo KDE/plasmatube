@@ -6,7 +6,6 @@
 #include "abstractapi.h"
 #include "channel.h"
 #include "comment.h"
-#include "credentials.h"
 #include "playlist.h"
 #include "preferences.h"
 #include "searchparameters.h"
@@ -31,6 +30,11 @@ class PipedApi : public AbstractApi
 
 public:
     explicit PipedApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
+
+    bool isLoggedIn() const override;
+    void loadCredentials(const QString &prefix) override;
+    void saveCredentials(const QString &prefix) override;
+    void wipeCredentials(const QString &prefix) override;
 
     QFuture<LogInResult> logIn(QStringView username, QStringView password) override;
     QFuture<VideoResult> requestVideo(QStringView videoId) override;

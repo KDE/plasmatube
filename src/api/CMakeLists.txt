@@ -25,8 +25,6 @@ target_sources(qinvidious PRIVATE
         channel.h
         comment.cpp
         comment.h
-        credentials.cpp
-        credentials.h
         mediaformat.cpp
         mediaformat.h
         paginator.cpp
@@ -48,4 +46,8 @@ target_sources(qinvidious PRIVATE
         videothumbnail.h
 )
 
-target_link_libraries(qinvidious PRIVATE Qt::Core Qt::Network KF6::I18n)
+target_link_libraries(qinvidious PRIVATE Qt::Core Qt::Network KF6::I18n Qt6Keychain::Qt6Keychain)
+
+if(PLASMATUBE_FLATPAK)
+    target_compile_definitions(qinvidious PUBLIC PLASMATUBE_FLATPAK)
+endif()

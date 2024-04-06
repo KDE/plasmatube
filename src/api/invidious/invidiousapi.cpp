@@ -36,6 +36,31 @@ InvidiousApi::InvidiousApi(QNetworkAccessManager *netManager, QObject *parent)
 {
 }
 
+bool InvidiousApi::isLoggedIn() const
+{
+    return m_cookie.has_value() && !m_username.isEmpty();
+}
+
+void InvidiousApi::loadCredentials(const QString &prefix)
+{
+    if (auto cookie = getKeychainValue(prefix, QStringLiteral("cookie"))) {
+        m_cookie = QNetworkCookie(cookie->toUtf8());
+    }
+    Q_EMIT credentialsChanged();
+}
+
+void InvidiousApi::saveCredentials(const QString &prefix)
+{
+    if (auto cookie = m_cookie) {
+        setKeychainValue(prefix, QStringLiteral("cookie"), QString::fromUtf8(cookie->toRawForm()));
+    }
+}
+
+void InvidiousApi::wipeCredentials(const QString &prefix)
+{
+    wipeKeychainValue(prefix, QStringLiteral("cookie"));
+}
+
 bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
@@ -69,10 +94,9 @@ QFuture<LogInResult> InvidiousApi::logIn(QStringView username, QStringView passw
         const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
 
         if (!cookies.isEmpty()) {
-            m_credentials.setUsername(username);
-            m_credentials.setCookie(cookies.first());
-            Q_EMIT credentialsChanged();
-            return m_credentials;
+            m_username = username.toString();
+            m_cookie = cookies.first();
+            return std::nullopt;
         }
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
     });
@@ -419,8 +443,8 @@ InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtens
 QNetworkRequest InvidiousApi::authenticatedNetworkRequest(QUrl &&url)
 {
     QNetworkRequest request(url);
-    if (!m_credentials.isAnonymous()) {
-        const QList<QNetworkCookie> cookies{m_credentials.cookie().value()};
+    if (isLoggedIn()) {
+        const QList<QNetworkCookie> cookies{m_cookie.value()};
         request.setHeader(QNetworkRequest::CookieHeader, QVariant::fromValue(cookies));
     }
     // some invidious instances redirect some calls using reverse proxies
