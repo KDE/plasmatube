@@ -99,13 +99,8 @@ QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParamete
             for (auto value : resultsJson) {
                 if (value.isObject()) {
                     auto result = SearchResult::fromJson(value.toObject());
-
                     auto video = result.video();
-                    auto newThumbnails = video.videoThumbnails();
-                    for (auto &thumbnail : newThumbnails) {
-                        thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
-                    }
-                    video.setVideoThumbnails(newThumbnails);
+                    fixupVideoThumbnail(video);
                     result.setVideo(video);
                     results << result;
                 }
@@ -416,14 +411,21 @@ QUrl PeerTubeApi::subscribeUrl(QStringView channelId) const
 
 void PeerTubeApi::fixupVideoThumbnails(QList<VideoBasicInfo> &list) const
 {
-    // PeerTube gives us relative URLs for thumbnails (why?) so we need to attach the api instance
     for (auto &video : list) {
-        auto newThumbnails = video.videoThumbnails();
-        for (auto &thumbnail : newThumbnails) {
+        fixupVideoThumbnail(video);
+    }
+}
+
+void PeerTubeApi::fixupVideoThumbnail(VideoBasicInfo &video) const
+{
+    auto newThumbnails = video.videoThumbnails();
+    for (auto &thumbnail : newThumbnails) {
+        // If the URL is relative, attach the server URL
+        if (thumbnail.url().isRelative()) {
             thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
         }
-        video.setVideoThumbnails(newThumbnails);
     }
+    video.setVideoThumbnails(newThumbnails);
 }
 
 void PeerTubeApi::fixupChannel(QInvidious::Channel &channel)

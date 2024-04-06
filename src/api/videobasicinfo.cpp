@@ -30,11 +30,16 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_upcoming = false;
 
         VideoThumbnail thumbnail;
-        const auto thumbnailPath = obj.value("thumbnailPath"_L1).toString();
-        if (thumbnailPath.startsWith(u'/')) {
-            thumbnail.setUrl(QUrl(obj.value("thumbnailPath"_L1).toString()));
-        } else {
-            thumbnail.setUrl(QUrl::fromUserInput(thumbnailPath));
+        // If we have a thumbnail URL, prefer that
+        if (obj.contains("thumbnailUrl"_L1)) {
+            thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnailUrl"_L1).toString()));
+        } else if (obj.contains("thumbnailPath"_L1)) {
+            const auto thumbnailPath = obj.value("thumbnailPath"_L1).toString();
+            if (thumbnailPath.startsWith(u'/')) {
+                thumbnail.setUrl(QUrl(obj.value("thumbnailPath"_L1).toString()));
+            } else {
+                thumbnail.setUrl(QUrl::fromUserInput(thumbnailPath));
+            }
         }
         info.m_videoThumbnails.push_back(thumbnail);
     } else if (isInvidious) {

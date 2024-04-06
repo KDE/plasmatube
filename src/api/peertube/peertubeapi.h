@@ -74,6 +74,7 @@ private:
     QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(QStringView channelId) const;
     void fixupVideoThumbnails(QList<VideoBasicInfo> &list) const;
+    void fixupVideoThumbnail(VideoBasicInfo &video) const;
     void fixupChannel(QInvidious::Channel &channel);
 };
 
