@@ -119,7 +119,7 @@ void VideoSource::fetchPreferences()
     }
 
     // Check if the API supports preferences
-    if (auto future = m_api->requestPreferences(); future.isValid()) {
+    if (auto future = m_api->requestPreferences(); !future.isCanceled()) {
         auto *watcher = new QFutureWatcher<QInvidious::PreferencesResult>();
         connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher] {
             auto result = watcher->result();
@@ -242,7 +242,7 @@ void VideoSource::fetchHistory(qint32 page)
         m_watchedVideos.clear();
     }
 
-    if (auto future = m_api->requestHistory(page); future.isValid()) {
+    if (auto future = m_api->requestHistory(page); !future.isCanceled()) {
         auto *watcher = new QFutureWatcher<QInvidious::HistoryResult>();
         connect(watcher, &QFutureWatcherBase::finished, this, [this, watcher, page] {
             auto result = watcher->result();
