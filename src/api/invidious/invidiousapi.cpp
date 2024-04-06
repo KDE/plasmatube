@@ -28,6 +28,8 @@ const QString API_PREFERENCES = QStringLiteral("/api/v1/auth/preferences");
 const QString API_PLAYLISTS = QStringLiteral("/api/v1/playlists");
 const QString API_CHANNEL_INFO = QStringLiteral("/api/v1/channels");
 
+const QString COOKIE_KEY = QStringLiteral("cookie");
+
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
 
@@ -49,7 +51,7 @@ bool InvidiousApi::canLogIn() const
 
 void InvidiousApi::loadCredentials(const QString &prefix)
 {
-    if (auto cookie = getKeychainValue(prefix, QStringLiteral("cookie"))) {
+    if (auto cookie = getKeychainValue(prefix, COOKIE_KEY)) {
         m_cookie = QNetworkCookie(cookie->toUtf8());
     }
     Q_EMIT credentialsChanged();
@@ -58,13 +60,13 @@ void InvidiousApi::loadCredentials(const QString &prefix)
 void InvidiousApi::saveCredentials(const QString &prefix)
 {
     if (auto cookie = m_cookie) {
-        setKeychainValue(prefix, QStringLiteral("cookie"), QString::fromUtf8(cookie->toRawForm()));
+        setKeychainValue(prefix, COOKIE_KEY, QString::fromUtf8(cookie->toRawForm()));
     }
 }
 
 void InvidiousApi::wipeCredentials(const QString &prefix)
 {
-    wipeKeychainValue(prefix, QStringLiteral("cookie"));
+    wipeKeychainValue(prefix, COOKIE_KEY);
     m_cookie = std::nullopt;
     Q_EMIT credentialsChanged();
 }
@@ -73,7 +75,6 @@ bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
     case PopularPage:
-        return true;
     case TrendingCategories:
         return true;
     }

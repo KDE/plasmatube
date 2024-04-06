@@ -21,6 +21,11 @@ const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/oauth-clients/local");
 const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
 const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/users/me/subscriptions/videos");
 
+const QString CLIENT_ID_KEY = QStringLiteral("client-id");
+const QString CLIENT_SECRET_KEY = QStringLiteral("client-secret");
+const QString ACCESS_TOKEN_KEY = QStringLiteral("access-token");
+const QString REFRESH_TOKEN_KEY = QStringLiteral("refresh-token");
+
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
 
@@ -41,16 +46,16 @@ bool PeerTubeApi::canLogIn() const
 
 void PeerTubeApi::loadCredentials(const QString &prefix)
 {
-    if (auto clientId = getKeychainValue(prefix, QStringLiteral("client-id"))) {
+    if (auto clientId = getKeychainValue(prefix, CLIENT_ID_KEY)) {
         m_clientId = *clientId;
     }
-    if (auto clientSecret = getKeychainValue(prefix, QStringLiteral("client-secret"))) {
+    if (auto clientSecret = getKeychainValue(prefix, CLIENT_SECRET_KEY)) {
         m_clientSecret = *clientSecret;
     }
-    if (auto accessToken = getKeychainValue(prefix, QStringLiteral("access-token"))) {
+    if (auto accessToken = getKeychainValue(prefix, ACCESS_TOKEN_KEY)) {
         m_accessToken = *accessToken;
     }
-    if (auto refreshToken = getKeychainValue(prefix, QStringLiteral("refresh-token"))) {
+    if (auto refreshToken = getKeychainValue(prefix, REFRESH_TOKEN_KEY)) {
         m_refreshToken = *refreshToken;
     }
     Q_EMIT credentialsChanged();
@@ -59,25 +64,25 @@ void PeerTubeApi::loadCredentials(const QString &prefix)
 void PeerTubeApi::saveCredentials(const QString &prefix)
 {
     if (!m_clientId.isEmpty()) {
-        setKeychainValue(prefix, QStringLiteral("client-id"), m_clientId);
+        setKeychainValue(prefix, CLIENT_ID_KEY, m_clientId);
     }
     if (!m_clientSecret.isEmpty()) {
-        setKeychainValue(prefix, QStringLiteral("client-secret"), m_clientSecret);
+        setKeychainValue(prefix, CLIENT_SECRET_KEY, m_clientSecret);
     }
     if (!m_accessToken.isEmpty()) {
-        setKeychainValue(prefix, QStringLiteral("access-token"), m_accessToken);
+        setKeychainValue(prefix, ACCESS_TOKEN_KEY, m_accessToken);
     }
     if (!m_refreshToken.isEmpty()) {
-        setKeychainValue(prefix, QStringLiteral("refresh-token"), m_refreshToken);
+        setKeychainValue(prefix, REFRESH_TOKEN_KEY, m_refreshToken);
     }
 }
 
 void PeerTubeApi::wipeCredentials(const QString &prefix)
 {
-    wipeKeychainValue(prefix, QStringLiteral("client-id"));
-    wipeKeychainValue(prefix, QStringLiteral("client-secret"));
-    wipeKeychainValue(prefix, QStringLiteral("access-token"));
-    wipeKeychainValue(prefix, QStringLiteral("refresh-token"));
+    wipeKeychainValue(prefix, CLIENT_ID_KEY);
+    wipeKeychainValue(prefix, CLIENT_SECRET_KEY);
+    wipeKeychainValue(prefix, ACCESS_TOKEN_KEY);
+    wipeKeychainValue(prefix, REFRESH_TOKEN_KEY);
 
     m_clientId.clear();
     m_clientSecret.clear();
