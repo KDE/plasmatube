@@ -167,45 +167,7 @@ GridView {
         onMarkWatched: videoModel.markAsWatched(currentVideoIndex)
         onMarkUnwatched: videoModel.markAsUnwatched(currentVideoIndex)
 
-        onAddToPlaylist: {
-            addToPlaylistLoader.active = true;
-            addToPlaylistLoader.item.open();
-        }
-    }
-
-    Loader {
-        id: addToPlaylistLoader
-
-        active: false
-        sourceComponent: Kirigami.PromptDialog {
-            id: addToPlaylistDialog
-
-            title: i18nc("@title", "Add to Playlist")
-
-            standardButtons: Kirigami.Dialog.NoButton
-
-            mainItem: ColumnLayout {
-                Repeater {
-                    id: playlists
-
-                    model: PlaylistsModel {
-                        id: playlistsModel
-                    }
-
-                    delegate: QQC2.ItemDelegate {
-                        text: model.title
-
-                        Layout.fillWidth: true
-
-                        onClicked: {
-                            PlasmaTube.selectedSource.addToPlaylist(model.id, currentVideoId);
-                            addToPlaylistDialog.close();
-                        }
-                    }
-                }
-            }
-            onClosed: addToPlaylistLoader.active = false
-        }
+        onAddToPlaylist: applicationWindow().openAddToPlaylistMenu()
     }
 
     Component.onCompleted: videoModel?.requestQuery(initialQuery)

@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
@@ -198,6 +199,48 @@ Kirigami.ApplicationWindow {
                 sidebar.playslistsDelegate.checked = true;
                 break;
         }
+    }
+
+    Loader {
+        id: addToPlaylistLoader
+
+        active: false
+        sourceComponent: Kirigami.PromptDialog {
+            id: addToPlaylistDialog
+
+            title: i18nc("@title", "Add to Playlist")
+
+            standardButtons: Kirigami.Dialog.NoButton
+
+            mainItem: ColumnLayout {
+                Repeater {
+                    id: playlists
+
+                    model: PlaylistsModel {
+                        id: playlistsModel
+
+                        Component.onCompleted: loadUserPlaylists()
+                    }
+
+                    delegate: QQC2.ItemDelegate {
+                        text: model.title
+
+                        Layout.fillWidth: true
+
+                        onClicked: {
+                            PlasmaTube.selectedSource.addToPlaylist(model.id, currentVideoId);
+                            addToPlaylistDialog.close();
+                        }
+                    }
+                }
+            }
+            onClosed: addToPlaylistLoader.active = false
+        }
+    }
+
+    function openAddToPlaylistMenu() {
+        addToPlaylistLoader.active = true;
+        addToPlaylistLoader.item.open();
     }
 
     // This timer allows to batch update the window size change to reduce

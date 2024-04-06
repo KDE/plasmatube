@@ -480,6 +480,8 @@ Kirigami.ScrollablePage {
 
         onMarkWatched: video.recommendedVideosModel().markAsWatched(currentVideoIndex)
         onMarkUnwatched: video.recommendedVideosModel().markAsUnwatched(currentVideoIndex)
+
+        onAddToPlaylist: applicationWindow().openAddToPlaylistMenu()
     }
 
     Connections {
