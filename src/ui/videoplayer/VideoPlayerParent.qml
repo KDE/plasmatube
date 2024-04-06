@@ -66,10 +66,7 @@ Flickable {
         duration: Kirigami.Units.longDuration * 2
         easing.type: Easing.OutCubic
         running: false
-        onFinished: {
-            videoPlayer.forceActiveFocus(Qt.PopupFocusReason);
-            console.log("Setting active focus...");
-        }
+        onFinished: videoPlayer.forceActiveFocus(Qt.PopupFocusReason)
     }
     NumberAnimation on contentY {
         id: toClose
