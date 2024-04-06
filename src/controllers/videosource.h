@@ -68,6 +68,8 @@ public:
     Q_INVOKABLE bool supportsPopularPage() const;
     Q_INVOKABLE bool supportsTrendingCategories() const;
 
+    std::optional<QList<QString>> &subscriptions();
+
 Q_SIGNALS:
     void urlChanged();
     void typeChanged();
@@ -86,7 +88,6 @@ private:
     void fetchSubscriptions();
     void fetchHistory(qint32 page = 1);
     void setSubscriptions(const QList<QString> &subscriptions);
-    std::optional<QList<QString>> &subscriptions();
 
     SourceConfig m_config;
     QString m_key;

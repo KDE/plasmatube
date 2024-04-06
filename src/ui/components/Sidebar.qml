@@ -99,7 +99,7 @@ Kirigami.OverlayDrawer {
             Layout.fillWidth: true
             width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
-            icon.name: "videoclip-amarok"
+            icon.name: "rss-symbolic"
             text: i18n("Subscriptions")
             enabled: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
             onClicked: {

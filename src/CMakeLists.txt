@@ -72,6 +72,8 @@ target_sources(plasmatube PRIVATE
         models/playlistsmodel.h
         models/searchmodel.cpp
         models/searchmodel.h
+        models/subscriptionlistmodel.cpp
+        models/subscriptionlistmodel.h
         models/videolistmodel.cpp
         models/videolistmodel.h
         models/videomodel.cpp
@@ -160,6 +162,7 @@ qt_target_qml_sources(plasmatube
         ui/PlaylistPage.qml
         ui/PlaylistsPage.qml
         ui/SearchPage.qml
+        ui/SubscriptionListPage.qml
         ui/SubscriptionsPage.qml
         ui/TrendingPage.qml
     RESOURCES
