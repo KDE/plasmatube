@@ -12,4 +12,10 @@ import org.kde.plasmatube
 
 BaseSourcePage {
     id: page
+
+    FormCard.FormHeader {
+        title: i18n("Account")
+    }
+
+    AccountCard {}
 }

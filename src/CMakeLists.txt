@@ -133,6 +133,7 @@ qt_target_qml_sources(plasmatube
         ui/loginflow/AddPipedPage.qml
         ui/loginflow/WelcomePage.qml
 
+        ui/settings/AccountCard.qml
         ui/settings/BaseSourcePage.qml
         ui/settings/GeneralPage.qml
         ui/settings/InvidiousSourcePage.qml
