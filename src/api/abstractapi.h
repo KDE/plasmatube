@@ -7,6 +7,7 @@
 #include "channel.h"
 #include "comment.h"
 #include "credentials.h"
+#include "paginator.h"
 #include "playlist.h"
 #include "preferences.h"
 #include "searchparameters.h"
@@ -31,11 +32,13 @@ struct Comments {
     QString continuation;
 };
 
+using VideoList = QList<VideoBasicInfo>;
+
 using Error = std::pair<QNetworkReply::NetworkError, QString>;
 using Success = std::monostate;
 using LogInResult = std::variant<Credentials, Error>;
 using VideoResult = std::variant<Video, Error>;
-using VideoListResult = std::variant<QList<VideoBasicInfo>, Error>;
+using VideoListResult = std::variant<VideoList, Error>;
 using SubscriptionsResult = std::variant<QList<QString>, Error>;
 using Result = std::variant<Success, Error>;
 using HistoryResult = std::variant<QList<QString>, Error>;
@@ -77,9 +80,18 @@ public:
     virtual QFuture<VideoResult> requestVideo(QStringView videoId) = 0;
     virtual QString resolveVideoUrl(QStringView videoId) = 0;
     virtual QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) = 0;
-    virtual QFuture<VideoListResult> requestFeed(qint32 page = 1) = 0;
+    /**
+     * @brief Request the subscription feed, only works if logged in.
+     * @return Use a @c Paginator if you wish to paginate through the results, otherwise returns the first page of results.
+     */
+    virtual QFuture<VideoListResult> requestFeed(Paginator * = nullptr) = 0;
     virtual QFuture<VideoListResult> requestTop() = 0;
-    virtual QFuture<VideoListResult> requestTrending(TrendingTopic = Main) = 0;
+    /**
+     * @brief Request the trending videos on this server, if available.
+     * @note The trending topic may be ignored if this API does not support it. Check this feature by calling supportsFeature().
+     * @return Use a @c Paginator if you wish to paginate through the results, otherwise returns the first page of results.
+     */
+    virtual QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator * = nullptr) = 0;
     virtual QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 1) = 0;
     virtual QFuture<SubscriptionsResult> requestSubscriptions() = 0;
     virtual QFuture<Result> subscribeToChannel(QStringView channel) = 0;

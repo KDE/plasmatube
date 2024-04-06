@@ -29,6 +29,8 @@ target_sources(qinvidious PRIVATE
         credentials.h
         mediaformat.cpp
         mediaformat.h
+        paginator.cpp
+        paginator.h
         playlist.cpp
         playlist.h
         preferences.cpp

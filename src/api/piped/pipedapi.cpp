@@ -110,11 +110,8 @@ QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters 
     });
 }
 
-QFuture<VideoListResult> PipedApi::requestFeed(qint32 page)
+QFuture<VideoListResult> PipedApi::requestFeed(Paginator *paginator)
 {
-    QHash<QString, QString> parameters;
-    parameters.insert(QStringLiteral("page"), QString::number(page));
-
     // TODO: piped stub
     return {};
 }
@@ -124,7 +121,7 @@ QFuture<VideoListResult> PipedApi::requestTop()
     return {};
 }
 
-QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic)
+QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     QHash<QString, QString> parameters;
     switch (topic) {

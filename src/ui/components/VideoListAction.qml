@@ -14,6 +14,6 @@ Kirigami.Action {
     text: videoModel ? videoModel.queryTypeString(queryType) : ""
     icon.name: videoModel ? videoModel.queryTypeIcon(queryType) : ""
     onTriggered: {
-        videoModel.requestQuery(queryType)
+        videoModel.requestQuery(queryType, true)
     }
 }

@@ -60,7 +60,7 @@ void VideoQueue::loadPlaylist(const QString &playlistId)
     connect(playlistFutureWatcher, &QFutureWatcherBase::finished, this, [this, playlistFutureWatcher] {
         auto result = playlistFutureWatcher->result();
 
-        if (const auto videoList = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+        if (const auto videoList = std::get_if<QInvidious::VideoList>(&result)) {
             QStringList videoIdList;
             std::transform(videoList->cbegin(), videoList->cend(), std::back_inserter(videoIdList), [](const auto &video) {
                 return video.videoId();
@@ -85,7 +85,7 @@ void VideoQueue::loadPlaylistAndPlay(const QString &playlistId, const QString &v
     connect(playlistFutureWatcher, &QFutureWatcherBase::finished, this, [this, videoId, playlistFutureWatcher] {
         auto result = playlistFutureWatcher->result();
 
-        if (const auto videoList = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+        if (const auto videoList = std::get_if<QInvidious::VideoList>(&result)) {
             QStringList videoIdList;
             std::transform(videoList->cbegin(), videoList->cend(), std::back_inserter(videoIdList), [](const auto &video) {
                 return video.videoId();

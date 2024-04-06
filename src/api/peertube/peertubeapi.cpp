@@ -117,12 +117,9 @@ QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParamete
     });
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestFeed(qint32 page)
+QFuture<VideoListResult> PeerTubeApi::requestFeed(Paginator *paginator)
 {
-    QHash<QString, QString> parameters;
-    parameters.insert(QStringLiteral("page"), QString::number(page));
-
-    return requestVideoList(Feed, QStringLiteral(""), parameters);
+    return requestVideoList(Feed, QStringLiteral(""), {}, paginator);
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestTop()
@@ -130,7 +127,7 @@ QFuture<VideoListResult> PeerTubeApi::requestTop()
     return requestVideoList(Top);
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic)
+QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     QHash<QString, QString> parameters;
     switch (topic) {
@@ -149,7 +146,7 @@ QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic)
     case Main:
         break;
     }
-    return requestVideoList(Trending, QStringLiteral(""), parameters);
+    return requestVideoList(Trending, QStringLiteral(""), parameters, paginator);
 }
 
 QFuture<VideoListResult> PeerTubeApi::requestChannel(QStringView query, qint32 page)
@@ -296,23 +293,38 @@ Result PeerTubeApi::checkIsReplyOk(QNetworkReply *reply)
     return std::pair(QNetworkReply::InternalServerError, i18n("Server returned the status code %1", QString::number(status)));
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters)
+QFuture<VideoListResult>
+PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters, Paginator *paginator)
 {
-    auto url = videoListUrl(queryType, urlExtension, parameters);
+    // TODO: we should really make the parameter copy, instead of doing it here?
+    QHash<QString, QString> finalParameters = parameters;
+
+    // PeerTube uses the startIndex for paging video requests
+    if (paginator != nullptr) {
+        paginator->setType(Paginator::Type::StartIndex);
+        finalParameters.insert(QStringLiteral("start"), QString::number(paginator->m_startIndex));
+    }
+
+    auto url = videoListUrl(queryType, urlExtension, finalParameters);
     // Feed requests require to be authenticated
     auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url)) : QNetworkRequest(url);
 
     return get<VideoListResult>(std::move(request), [=](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            if (queryType == Feed) {
-                const auto obj = doc.object();
+            auto obj = doc.object();
+            if (paginator != nullptr && obj.contains("total"_L1)) {
+                paginator->m_total = obj["total"_L1].toInt();
+            }
 
+            if (paginator != nullptr && obj.contains("data"_L1) && obj["data"_L1].isArray()) {
+                paginator->m_count = obj["data"_L1].toArray().size();
+            }
+
+            if (queryType == Feed) {
                 auto results = VideoBasicInfo::fromJson(obj.value("data"_L1).toArray());
                 fixupVideoThumbnails(results);
                 return results;
             } else if (queryType == Channel) {
-                const auto obj = doc.object();
-
                 auto results = VideoBasicInfo::fromJson(obj.value("data"_L1).toArray());
                 fixupVideoThumbnails(results);
                 return results;

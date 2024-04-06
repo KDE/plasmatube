@@ -170,5 +170,5 @@ GridView {
         onAddToPlaylist: applicationWindow().openAddToPlaylistMenu()
     }
 
-    Component.onCompleted: videoModel?.requestQuery(initialQuery)
+    Component.onCompleted: videoModel?.requestQuery(initialQuery, true)
 }

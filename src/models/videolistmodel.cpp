@@ -62,13 +62,21 @@ QString VideoListModel::queryTypeIcon(QueryType type)
 
 VideoListModel::VideoListModel(QObject *parent)
     : AbstractListModel(parent)
+    , m_paginator(this)
 {
 }
 
 VideoListModel::VideoListModel(const QList<QInvidious::VideoBasicInfo> &list, QObject *parent)
-    : AbstractListModel(parent)
-    , m_results(list)
+    : VideoListModel(parent)
 {
+    m_results = list;
+}
+
+VideoListModel::~VideoListModel()
+{
+    if (m_futureWatcher != nullptr) {
+        m_futureWatcher->cancel();
+    }
 }
 
 int VideoListModel::rowCount(const QModelIndex &parent) const
@@ -133,30 +141,14 @@ QVariant VideoListModel::data(const QModelIndex &index, int role) const
 void VideoListModel::fetchMore(const QModelIndex &index)
 {
     if (canFetchMore(index)) {
-        switch (m_queryType) {
-        case Feed: {
-            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestFeed(++m_currentPage);
-            handleQuery(future, Feed, false);
-            break;
-        }
-        case Channel: {
-            auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(m_channel, ++m_currentPage);
-            handleQuery(future, Channel, false);
-            break;
-        }
-        case History: {
-            m_currentPage++;
-            requestQuery(History);
-        } break;
-        default: {
-        }
-        }
+        m_paginator.next();
+        requestQuery(m_queryType, false);
     }
 }
 
 bool VideoListModel::canFetchMore(const QModelIndex &) const
 {
-    return !m_historyPageWatcher && !m_futureWatcher && (m_queryType == Search || m_queryType == Channel || m_queryType == Feed || m_queryType == History);
+    return !m_historyPageWatcher && !m_futureWatcher && m_paginator.hasMore();
 }
 
 QString VideoListModel::title() const
@@ -172,18 +164,18 @@ QString VideoListModel::title() const
 void VideoListModel::requestChannel(const QString &ucid)
 {
     m_channel = ucid;
-    m_currentPage = 1;
-    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(ucid, m_currentPage), Channel);
+    m_paginator.reset();
+    handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannel(ucid /*m_currentPage*/), Channel);
 }
 
 void VideoListModel::requestPlaylist(const QString &id)
 {
     m_playlist = id;
-    m_currentPage = 1;
+    m_paginator.reset();
     handleQuery(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestPlaylist(id), Playlist);
 }
 
-void VideoListModel::requestQuery(QueryType type)
+void VideoListModel::requestQuery(QueryType type, bool reset)
 {
     auto selectedSource = PlasmaTube::instance().selectedSource();
     if (selectedSource == nullptr) {
@@ -193,25 +185,26 @@ void VideoListModel::requestQuery(QueryType type)
     m_searchParameters.clear();
     switch (type) {
     case Feed:
-        handleQuery(selectedSource->api()->requestFeed(), type);
+        handleQuery(selectedSource->api()->requestFeed(&m_paginator), type, reset);
         break;
     case Top:
-        handleQuery(selectedSource->api()->requestTop(), type);
+        // TODO: remove?
+        handleQuery(selectedSource->api()->requestTop(), type, reset);
         break;
     case Trending:
-        handleQuery(selectedSource->api()->requestTrending(), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Main, &m_paginator), type, reset);
         break;
     case TrendingGaming:
-        handleQuery(selectedSource->api()->requestTrending(QInvidious::Gaming), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Gaming, &m_paginator), type, reset);
         break;
     case TrendingMovies:
-        handleQuery(selectedSource->api()->requestTrending(QInvidious::Movies), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Movies, &m_paginator), type, reset);
         break;
     case TrendingMusic:
-        handleQuery(selectedSource->api()->requestTrending(QInvidious::Music), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::Music, &m_paginator), type, reset);
         break;
     case TrendingNews:
-        handleQuery(selectedSource->api()->requestTrending(QInvidious::News), type);
+        handleQuery(selectedSource->api()->requestTrending(QInvidious::News, &m_paginator), type, reset);
         break;
     case History:
         requestHistory();
@@ -229,7 +222,7 @@ void VideoListModel::refresh()
             requestChannel(m_channel);
             break;
         default:
-            requestQuery(m_queryType);
+            requestQuery(m_queryType, true);
         }
     }
 }
@@ -250,10 +243,10 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
     }
 
     // set up new task
-    m_futureWatcher = new QFutureWatcher<QInvidious::VideoListResult>();
+    m_futureWatcher = new QFutureWatcher<QInvidious::VideoListResult>(this);
     connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
         auto result = m_futureWatcher->result();
-        if (auto videos = std::get_if<QList<QInvidious::VideoBasicInfo>>(&result)) {
+        if (auto videos = std::get_if<QInvidious::VideoList>(&result)) {
             if (PlasmaTube::instance().settings()->hideShorts()) {
                 videos->removeIf([](const QInvidious::VideoBasicInfo &info) -> bool {
                     return info.length() == QTime(0, 0, 0);
@@ -298,7 +291,7 @@ void VideoListModel::requestHistory()
 {
     setLoading(true);
 
-    auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(m_currentPage);
+    auto pageFuture = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestHistory(/*m_currentPage*/);
 
     m_historyPageWatcher = new QFutureWatcher<QInvidious::HistoryResult>();
     m_historyPageWatcher->setFuture(pageFuture);

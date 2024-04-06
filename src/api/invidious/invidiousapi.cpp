@@ -115,12 +115,9 @@ QFuture<SearchListResult> InvidiousApi::requestSearchResults(const SearchParamet
     });
 }
 
-QFuture<VideoListResult> InvidiousApi::requestFeed(qint32 page)
+QFuture<VideoListResult> InvidiousApi::requestFeed(Paginator *paginator)
 {
-    QHash<QString, QString> parameters;
-    parameters.insert(QStringLiteral("page"), QString::number(page));
-
-    return requestVideoList(Feed, QStringLiteral(""), parameters);
+    return requestVideoList(Feed, QStringLiteral(""), {}, paginator);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestTop()
@@ -128,7 +125,7 @@ QFuture<VideoListResult> InvidiousApi::requestTop()
     return requestVideoList(Top);
 }
 
-QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
+QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     QHash<QString, QString> parameters;
     switch (topic) {
@@ -147,7 +144,7 @@ QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic)
     case Main:
         break;
     }
-    return requestVideoList(Trending, QStringLiteral(""), parameters);
+    return requestVideoList(Trending, QStringLiteral(""), parameters, paginator);
 }
 
 QFuture<VideoListResult> InvidiousApi::requestChannel(QStringView query, qint32 page)
@@ -364,9 +361,27 @@ Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)
     return std::pair(QNetworkReply::InternalServerError, i18n("Server returned the status code %1", QString::number(status)));
 }
 
-QFuture<VideoListResult> InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters)
+QFuture<VideoListResult>
+InvidiousApi::requestVideoList(VideoListType queryType, const QString &urlExtension, const QHash<QString, QString> &parameters, Paginator *paginator)
 {
-    auto url = videoListUrl(queryType, urlExtension, parameters);
+    // TODO: we should really make the parameter copy, instead of doing it here?
+    QHash<QString, QString> finalParameters = parameters;
+
+    // Invidious uses pages for all of its video results
+    if (paginator != nullptr) {
+        paginator->setType(Paginator::Type::Page);
+
+        // Invidious doesn't support paginating through the Trending section.
+        if (queryType == Trending) {
+            paginator->m_maxPage = 0;
+        } else {
+            paginator->m_maxPage = std::numeric_limits<qsizetype>::max();
+            // TODO: Invidious pages start at 1. I wonder if we should bake this into the Paginator API?
+            finalParameters.insert(QStringLiteral("page"), QString::number(paginator->m_page + 1));
+        }
+    }
+
+    auto url = videoListUrl(queryType, urlExtension, finalParameters);
     // Feed requests require to be authenticated
     auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url)) : QNetworkRequest(url);
 

@@ -46,6 +46,7 @@ public:
 
     explicit VideoListModel(QObject *parent = nullptr);
     explicit VideoListModel(const QList<QInvidious::VideoBasicInfo> &, QObject *parent = nullptr);
+    ~VideoListModel() override;
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
@@ -56,7 +57,7 @@ public:
 
 public Q_SLOTS:
     void requestChannel(const QString &ucid);
-    void requestQuery(VideoListModel::QueryType type);
+    void requestQuery(VideoListModel::QueryType type, bool reset);
     void requestPlaylist(const QString &id);
     void refresh() override;
     void markAsWatched(int index) override;
@@ -73,7 +74,7 @@ private:
     void clearAll();
 
     QueryType m_queryType = NoQuery;
-    qint32 m_currentPage = 1;
+    Paginator m_paginator;
     SearchParameters m_searchParameters;
     QString m_channel;
     QFutureWatcher<QInvidious::VideoListResult> *m_futureWatcher = nullptr;

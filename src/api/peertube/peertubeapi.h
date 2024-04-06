@@ -36,9 +36,9 @@ public:
     QFuture<VideoResult> requestVideo(QStringView videoId) override;
     QString resolveVideoUrl(QStringView videoId) override;
     QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) override;
-    QFuture<VideoListResult> requestFeed(qint32 page = 1) override;
+    QFuture<VideoListResult> requestFeed(Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestTop() override;
-    QFuture<VideoListResult> requestTrending(TrendingTopic = Main) override;
+    QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestChannel(QStringView query, qint32 page = 1) override;
     QFuture<SubscriptionsResult> requestSubscriptions() override;
     QFuture<Result> subscribeToChannel(QStringView channel) override;
@@ -64,7 +64,8 @@ private:
 
     bool supportsFeature(SupportedFeature feature) override;
 
-    QFuture<VideoListResult> requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {});
+    QFuture<VideoListResult>
+    requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}, Paginator *paginator = nullptr);
     QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
     QUrlQuery genericUrlQuery() const;
     QUrl logInUrl() const;
