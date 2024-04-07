@@ -8,15 +8,18 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.plasmatube
 
 FormCard.FormCard {
+    id: root
+
+    required property var source
+
     QQC2.Label {
         id: isLoggedInLabel
 
-        visible: page.source.loggedIn
+        visible: root.source.loggedIn
         Layout.fillWidth: true
-        text: i18n("Currently logged in as %1.", page.source.username)
+        text: i18n("Currently logged in as %1.", root.source.username)
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
         padding: Kirigami.Units.largeSpacing
@@ -25,26 +28,26 @@ FormCard.FormCard {
     FormCard.FormDelegateSeparator {
         above: isLoggedInLabel
         below: loginButton
-        visible: page.source.loggedIn
+        visible: root.source.loggedIn
     }
 
     FormCard.FormButtonDelegate {
         id: loginButton
 
         text: {
-            if (page.source.loggedIn) {
+            if (root.source.loggedIn) {
                 return i18nc("@action:button", "Log out")
             } else {
                 return i18nc("@action:button", "Log in")
             }
         }
-        icon.name: page.source.loggedIn ? "go-previous-symbolic" : "im-user"
-        description: !page.source.loggedIn ? i18n("Subscribe to channels, keep track of watched videos and more.") : ""
+        icon.name: root.source.loggedIn ? "go-previous-symbolic" : "im-user"
+        description: !root.source.loggedIn ? i18n("Subscribe to channels, keep track of watched videos and more.") : ""
         onClicked: {
-            if (page.source.loggedIn) {
-                page.source.logOut();
+            if (root.source.loggedIn) {
+                root.source.logOut();
             } else {
-                page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: page.source});
+                page.Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), {source: root.source});
             }
         }
     }

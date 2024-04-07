@@ -16,6 +16,7 @@ class VideoListModel;
 class VideoItem : public QObject, public QInvidious::Video
 {
     Q_OBJECT
+    QML_ANONYMOUS
 
     Q_PROPERTY(bool isLoaded READ isLoaded CONSTANT)
     Q_PROPERTY(QString videoId READ videoId CONSTANT)

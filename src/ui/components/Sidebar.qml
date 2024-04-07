@@ -80,7 +80,6 @@ Kirigami.OverlayDrawer {
             id: trendingDelegate
 
             Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "favorite"
             text: i18n("Trending")
@@ -97,7 +96,6 @@ Kirigami.OverlayDrawer {
             id: subscriptionsDelegate
 
             Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "rss-symbolic"
             text: i18n("Subscriptions")
@@ -115,7 +113,6 @@ Kirigami.OverlayDrawer {
             id: playslistsDelegate
 
             Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "view-media-playlist"
             text: i18n("Playlists")
@@ -133,7 +130,6 @@ Kirigami.OverlayDrawer {
             id: historyDelegate
 
             Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
             icon.name: "view-history"
             text: i18n("History")

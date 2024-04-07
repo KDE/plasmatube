@@ -3,7 +3,6 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 
@@ -69,7 +68,7 @@ Kirigami.ApplicationWindow {
                 id: thumbnailImage
 
                 anchors.fill: parent
-                source: video.thumbnailUrl("high")
+                source: root.video.thumbnailUrl("high")
             }
 
             QQC2.BusyIndicator {
@@ -78,7 +77,7 @@ Kirigami.ApplicationWindow {
         }
 
         VideoData {
-            title: video.title
+            title: root.video.title
             visible: opacity > 0
             opacity: videoContainer.showControls ? 1 : 0
             Behavior on opacity {

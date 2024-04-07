@@ -62,8 +62,8 @@ QQC2.Button {
     onClicked: {
         if (subscriptionController.canToggleSubscription()) {
             subscriptionController.toggleSubscription()
-        } else if (!PlasmaTube.isLoggedIn) {
-            root.requestClosePlayer();
+        } else if (!PlasmaTube.selectedSource.loggedIn) {
+            applicationWindow().closePlayer();
             showPassiveNotification(i18n("Please log in to subscribe to channels."));
             pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"));
         }

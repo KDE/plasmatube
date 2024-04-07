@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -54,7 +56,7 @@ QQC2.ItemDelegate {
             Layout.preferredHeight: root.width < 500 ? Kirigami.Units.gridUnit * 4.5 : Kirigami.Units.gridUnit * 6.75
             Layout.maximumWidth: root.width < 500 ? Kirigami.Units.gridUnit * 8 : Kirigami.Units.gridUnit * 12
             Layout.maximumHeight: root.width < 500 ? Kirigami.Units.gridUnit * 4.5 : Kirigami.Units.gridUnit * 6.75
-            source: thumbnail
+            source: root.thumbnail
             fillMode: Image.PreserveAspectCrop
             layer.enabled: true
             layer.effect: OpacityMask {
@@ -71,8 +73,8 @@ QQC2.ItemDelegate {
                 visible: thumb.status !== Image.Ready
             }
             Text {
-                visible: !liveNow && text !== "00:00"
-                text: Utils.formatTime(length)
+                visible: !root.liveNow && text !== "00:00"
+                text: Utils.formatTime(root.length)
                 color: "white"
 
                 anchors.right: parent.right
@@ -125,7 +127,7 @@ QQC2.ItemDelegate {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
-                text: title
+                text: root.title
                 level: 4
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
@@ -134,7 +136,7 @@ QQC2.ItemDelegate {
 
             QQC2.Label {
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
-                text: author
+                text: root.author
                 color: Kirigami.Theme.disabledTextColor
                 maximumLineCount: 2
                 elide: Text.ElideRight
@@ -145,7 +147,7 @@ QQC2.ItemDelegate {
 
                 QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n("%1 views", Utils.formatCount(viewCount))
+                    text: i18n("%1 views", Utils.formatCount(root.viewCount))
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight
@@ -153,11 +155,11 @@ QQC2.ItemDelegate {
 
                 QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n(" \u2022 %1", liveNow ? "<i>live now</i>" : publishedText)
+                    text: i18n(" \u2022 %1", root.liveNow ? "<i>live now</i>" : root.publishedText)
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight
-                    visible: publishedText.length !== 0
+                    visible: root.publishedText.length !== 0
                 }
             }
         }

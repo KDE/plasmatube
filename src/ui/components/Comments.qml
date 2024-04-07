@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -30,6 +32,8 @@ ColumnLayout {
         }
 
         delegate: RowLayout {
+            id: delegate
+
             width: commentsRepeater.width
 
             required property string author
@@ -37,9 +41,9 @@ ColumnLayout {
             required property string content
 
             KirigamiComponents.Avatar {
-                source: authorAvatar
+                source: delegate.authorAvatar
                 cache: true
-                name: author
+                name: delegate.author
 
                 Layout.alignment: Qt.AlignTop
             }
@@ -54,9 +58,9 @@ ColumnLayout {
 
                 Kirigami.Heading {
                     level: 4
-                    text: author
+                    text: delegate.author
                     type: Kirigami.Heading.Type.Primary
-                    color: root.secondary ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    color: Kirigami.Theme.textColor
                     verticalAlignment: Text.AlignTop
                     elide: Text.ElideRight
                     textFormat: Text.RichText
@@ -66,7 +70,7 @@ ColumnLayout {
 
                 QQC2.Label {
                     color: Kirigami.Theme.disabledTextColor
-                    text: content
+                    text: delegate.content
                     verticalAlignment: Text.AlignTop
                     wrapMode: Text.WordWrap
                     textFormat: Text.RichText

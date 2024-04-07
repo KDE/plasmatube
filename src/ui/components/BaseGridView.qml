@@ -1,13 +1,14 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import Qt.labs.qmlmodels
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 
@@ -41,7 +42,7 @@ GridView {
     cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 5 + Kirigami.Units.mediumSpacing
 
     Connections {
-        target: model
+        target: gridView.model
 
         function onErrorOccured(errorText) {
             message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
@@ -57,6 +58,9 @@ GridView {
 
             VideoGridItem {
                 id: videoItem
+
+                required property int index
+                required property var model
 
                 width: gridView.cellWidth
                 height: gridView.cellHeight
@@ -74,8 +78,8 @@ GridView {
                 watched: model.watched
 
                 onClicked: {
-                    videoModel.markAsWatched(index);
-                    if (root.playlistId?.length > 0) {
+                    gridView.model.markAsWatched(videoItem.index);
+                    if (gridView.playlistId?.length > 0) {
                         PlasmaTube.videoController.videoQueue.loadPlaylistAndPlay(root.playlistId, vid);
                     } else {
                         PlasmaTube.videoController.play(vid);
@@ -83,8 +87,8 @@ GridView {
                 }
 
                 onContextMenuRequested: {
-                    currentVideoId = vid;
-                    currentVideoIndex = index;
+                    currentVideoId = model.id;
+                    currentVideoIndex = videoItem.index;
                     currentVideoTitle = title;
                     currentChannelName = author;
                     currentChannelId = authorId;
@@ -102,6 +106,8 @@ GridView {
             roleValue: "channel"
 
             ChannelGridItem {
+                required property var model
+
                 width: gridView.cellWidth
                 height: gridView.cellHeight
 
@@ -117,6 +123,8 @@ GridView {
             roleValue: "playlist"
 
             PlaylistGridItem {
+                required property var model
+
                 width: gridView.cellWidth
                 height: gridView.cellHeight
 
@@ -160,15 +168,16 @@ GridView {
     VideoMenu {
         id: videoMenu
 
-        videoId: currentVideoId
-        channelName: currentChannelName
-        channelId: currentChannelId
+        videoId: gridView.currentVideoId
+        videoTitle: gridView.currentVideoTitle
+        channelName: gridView.currentChannelName
+        channelId: gridView.currentChannelId
 
-        onMarkWatched: videoModel.markAsWatched(currentVideoIndex)
-        onMarkUnwatched: videoModel.markAsUnwatched(currentVideoIndex)
+        onMarkWatched: gridView.model.markAsWatched(gridView.currentVideoIndex)
+        onMarkUnwatched: gridView.model.markAsUnwatched(gridView.currentVideoIndex)
 
         onAddToPlaylist: applicationWindow().openAddToPlaylistMenu()
     }
 
-    Component.onCompleted: videoModel?.requestQuery(initialQuery, true)
+    Component.onCompleted: gridView.model?.requestQuery(initialQuery, true)
 }

@@ -11,6 +11,7 @@ QQC2.Menu {
 
     property bool isWatched
     required property string videoId
+    required property string videoTitle
     required property string channelName
     required property string channelId
     property bool shouldRemoveFromPlaylist
@@ -26,7 +27,7 @@ QQC2.Menu {
     modal: true
 
     QQC2.MenuItem {
-        text: shouldShowQueueControls ? i18n("Play Now") : i18n("Play")
+        text: root.shouldShowQueueControls ? i18n("Play Now") : i18n("Play")
         icon.name: "media-playback-start"
         onTriggered: {
             root.markWatched();
@@ -38,7 +39,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: i18n("Play Next")
         icon.name: "media-playlist-append"
-        visible: shouldShowQueueControls
+        visible: root.shouldShowQueueControls
         onTriggered: {
             PlasmaTube.videoController.queueNext(root.videoId);
         }
@@ -59,8 +60,8 @@ QQC2.Menu {
     }
 
     QQC2.MenuItem {
-        text: videoMenu.isWatched ? i18n("Mark as Unwatched") : i18n("Mark as Watched")
-        icon.name: videoMenu.isWatched ? "view-hidden" : "view-visible"
+        text: root.isWatched ? i18n("Mark as Unwatched") : i18n("Mark as Watched")
+        icon.name: root.isWatched ? "view-hidden" : "view-visible"
         visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
         onTriggered: {
             if (root.isWatched) {
@@ -97,7 +98,7 @@ QQC2.Menu {
     QQC2.MenuSeparator {}
 
     ShareMenu {
-        url: "https://youtube.com/watch?=" + currentVideoId
-        shareTitle: currentVideoTitle
+        url: "https://youtube.com/watch?=" + root.videoId
+        shareTitle: root.videoTitle
     }
 }

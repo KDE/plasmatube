@@ -11,7 +11,10 @@ import org.kde.kirigami as Kirigami
  * This is the header inside of the player that displays the title.
  */
 Item {
+    id: root
+
     required property string title
+
     signal toggleDrawer()
 
     anchors.fill: parent
@@ -40,13 +43,13 @@ Item {
             right: parent.right
             rightMargin: Kirigami.Units.largeSpacing
         }
-        Item { height: Kirigami.Units.largeSpacing }
         Item {
             Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
             implicitHeight: childrenRect.height
             Kirigami.Heading {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: title // todo also handle metadata title
+                text: root.title // todo also handle metadata title
                 level: 3
             }
         }

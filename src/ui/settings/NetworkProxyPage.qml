@@ -25,9 +25,9 @@ FormCard.FormCardPage {
         FormCard.FormRadioDelegate {
             id: systemDefault
             text: i18n("System Default")
-            checked: currentType === 0
+            checked: root.currentType === 0
             enabled: !Settings.isProxyTypeImmutable
-            onToggled: currentType = 0
+            onToggled: root.currentType = 0
         }
 
         FormCard.FormDelegateSeparator { below: systemDefault; above: http }
@@ -35,9 +35,9 @@ FormCard.FormCardPage {
         FormCard.FormRadioDelegate {
             id: http
             text: i18n("HTTP")
-            checked: currentType === 1
+            checked: root.currentType === 1
             enabled: !Settings.isProxyTypeImmutable
-            onToggled: currentType = 1
+            onToggled: root.currentType = 1
         }
     }
 
@@ -46,14 +46,14 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        enabled: currentType !== 0
+        enabled: root.currentType !== 0
 
         FormCard.FormTextFieldDelegate {
             id: hostField
             label: i18n("Host")
             text: Settings.proxyHost
             inputMethodHints: Qt.ImhUrlCharactersOnly
-            onEditingFinished: proxyConfigChanged = true
+            onEditingFinished: root.proxyConfigChanged = true
         }
         FormCard.FormDelegateSeparator { below: hostField; above: portField }
         // we probably still need a FormSpinBoxDelegate
@@ -73,7 +73,7 @@ FormCard.FormCardPage {
                     textFromValue: function(value, locale) {
                         return value; // it will add a thousands separator if we don't do this, not sure why
                     }
-                    onValueChanged: proxyConfigChanged = true
+                    onValueChanged: root.proxyConfigChanged = true
                 }
             }
         }
@@ -83,7 +83,7 @@ FormCard.FormCardPage {
             label: i18n("User")
             text: Settings.proxyUser
             inputMethodHints: Qt.ImhUrlCharactersOnly
-            onEditingFinished: proxySettingsChanged = true
+            onEditingFinished: root.proxySettingsChanged = true
         }
         FormCard.FormDelegateSeparator { below: userField; above: passwordField }
         FormCard.FormTextFieldDelegate {
@@ -92,7 +92,7 @@ FormCard.FormCardPage {
             text: Settings.proxyPassword
             echoMode: TextInput.Password
             inputMethodHints: Qt.ImhUrlCharactersOnly
-            onEditingFinished: proxyConfigChanged = true
+            onEditingFinished: root.proxyConfigChanged = true
         }
     }
 
@@ -106,7 +106,7 @@ FormCard.FormCardPage {
             QQC2.Button  {
                 text: i18n("Apply")
                 icon.name: "dialog-ok-apply-symbolic"
-                enabled: currentType !== Settings.proxyType || proxyConfigChanged
+                enabled: root.currentType !== Settings.proxyType || proxyConfigChanged
                 onClicked: {
                     Settings.proxyType = currentType;
                     Settings.proxyHost = hostField.text;

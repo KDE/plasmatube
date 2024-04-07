@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -15,9 +17,11 @@ Kirigami.ApplicationWindow {
     id: root
 
     property Item hoverLinkIndicator: QQC2.Control {
-        property string text
+        id: linkIndicator
 
-        parent: overlay.parent
+        property alias text: linkText.text
+
+        parent: root.overlay.parent
         opacity: linkText.text.length > 0 ? 1 : 0
 
         x: 0
@@ -26,7 +30,6 @@ Kirigami.ApplicationWindow {
 
         contentItem: QQC2.Label {
             id: linkText
-            text: parent.text
         }
 
         background: Rectangle {
@@ -153,12 +156,12 @@ Kirigami.ApplicationWindow {
 
         function onSourceSelected() {
             if (PlasmaTube.sourceManager.finishedLoading) {
-                loadDefaultPage();
+                root.loadDefaultPage();
             }
         }
 
         function onFinishedLoading() {
-            loadDefaultPage();
+            root.loadDefaultPage();
         }
     }
 
@@ -184,7 +187,6 @@ Kirigami.ApplicationWindow {
         switch (defaultHome) {
             case "Search":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "SearchPage"));
-                sidebar.searchDelegate.checked = true;
                 break;
             case "Trending":
                 root.switchToPage(Qt.createComponent("org.kde.plasmatube", "TrendingPage"));
@@ -223,6 +225,8 @@ Kirigami.ApplicationWindow {
                     }
 
                     delegate: QQC2.ItemDelegate {
+                        required property var model
+
                         text: model.title
 
                         Layout.fillWidth: true

@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -8,8 +10,6 @@ import QtQuick.Window
 import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 import org.kde.plasmatube.private
@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
                     Layout.preferredHeight: 50
                     Layout.preferredWidth: 50
                     fillMode: Image.PreserveAspectFit
-                    source: avatar
+                    source: delegate.avatar
                     layer.enabled: true
                     layer.effect: OpacityMask {
                         maskSource: mask
@@ -62,12 +62,12 @@ Kirigami.ScrollablePage {
                     MouseArea {
                         anchors.fill: parent
                         cursorShape: Qt.PointingHandCursor
-                        onClicked: root.goToChannel()
+                        onClicked: delegate.clicked()
                     }
                 }
 
                 QQC2.Label {
-                    text: name
+                    text: delegate.name
                     font.weight: Font.Bold
                 }
 
@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
                     id: subscribeButton
 
                     channelId: delegate.channelId
-                    subCountText: subCount
+                    subCountText: delegate.subCount
                 }
             }
         }

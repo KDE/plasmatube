@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include <QtQml>
+
 #include "qinvidiousglobal.h"
 
 namespace QInvidious
@@ -11,6 +13,7 @@ namespace QInvidious
 class Preferences
 {
     Q_GADGET
+    QML_ANONYMOUS
 
     Q_PROPERTY(bool autoPlay MEMBER m_autoPlay)
     Q_PROPERTY(QString defaultHome MEMBER m_defaultHome)

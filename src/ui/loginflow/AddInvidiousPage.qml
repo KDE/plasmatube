@@ -1,15 +1,14 @@
 // SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import QtQuick.Window
-import QtQml.Models
 
-import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.kitemmodels as KItemModels
+
 import org.kde.plasmatube
 
 FormCard.FormCardPage {
@@ -48,16 +47,18 @@ FormCard.FormCardPage {
             }
 
             delegate: ColumnLayout {
+                id: delegate
+
                 required property int index
                 required property string url
 
                 FormCard.FormDelegateSeparator {
-                    visible: index !== 0
+                    visible: delegate.index !== 0
                 }
 
                 FormCard.FormButtonDelegate {
-                    text: url
-                    onClicked: root.addSource(url)
+                    text: delegate.url
+                    onClicked: root.addSource(delegate.url)
                 }
             }
         }

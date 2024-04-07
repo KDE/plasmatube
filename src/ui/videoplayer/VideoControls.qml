@@ -3,6 +3,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -124,6 +126,7 @@ QQC2.Control {
 
                     QQC2.Button {
                         id: seekBackwardButton
+
                         implicitHeight: 40
                         implicitWidth: 40
                         text: i18nc("@action:button", "Seek backward")
@@ -145,14 +148,15 @@ QQC2.Control {
                             corners.topLeftRadius: 7
                             corners.bottomLeftRadius: 7
 
-
-                            color: if (parent.down){
+                            color: {
+                                if (seekBackwardButton. down) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
-                                }else if(parent.hovered){
+                                } else if (parent.hovered) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
-                                }else{
+                                } else {
                                     Qt.rgba(1, 1, 1, 0.3)
                                 }
+                            }
                         }
                         TabIndicator {}
 
@@ -187,13 +191,15 @@ QQC2.Control {
                             }
                         }
                         background: Kirigami.ShadowedRectangle{
-                            color: if (parent.down){
+                            color: {
+                                if (playPauseButton.down) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
-                                }else if(parent.hovered){
+                                } else if (parent.hovered) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
-                                }else{
+                                } else {
                                     Qt.rgba(1, 1, 1, 0.3)
                                 }
+                            }
                         }
                         TabIndicator {}
 
@@ -204,9 +210,10 @@ QQC2.Control {
 
                     QQC2.Button {
                         id: seekForwardButton
+
                         implicitHeight: 40
                         implicitWidth: 40
-                        Layout.rightMargin:isWidescreen?0:10
+
                         text: i18nc("@action:button", "Seek forward")
 
                         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
@@ -214,26 +221,28 @@ QQC2.Control {
 
                         onClicked: root.currentPlayer.seek(5)
 
-                        contentItem: Item{
+                        contentItem: Item {
                             Kirigami.Icon {
                                 anchors.centerIn:parent
                                 source:"media-seek-forward"
                                 color: "white"
                                 width: Kirigami.Units.gridUnit
                                 height: Kirigami.Units.gridUnit
-
                             }
                         }
+
                         background: Kirigami.ShadowedRectangle{
                             corners.topRightRadius: 7
                             corners.bottomRightRadius: 7
-                            color: if (parent.down){
+                            color: {
+                                if (seekForwardButton.down) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.3)
-                                }else if(parent.hovered){
+                                } else if (parent.hovered) {
                                     Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.7)
-                                }else{
+                                } else {
                                     Qt.rgba(1, 1, 1, 0.3)
                                 }
+                            }
                         }
                         TabIndicator {}
 
@@ -244,8 +253,8 @@ QQC2.Control {
                 }
 
                 QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
-                    height: width
+                    implicitWidth: 40
+                    implicitHeight: implicitWidth
                     icon.name: "view-fullscreen"
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
@@ -267,8 +276,8 @@ QQC2.Control {
                 }
 
                 QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
-                    height: width
+                    implicitWidth: 40
+                    implicitHeight: implicitWidth
                     icon.name: "window-duplicate-symbolic"
                     icon.color: "white"
                     icon.width: Kirigami.Units.iconSizes.smallMedium
@@ -307,13 +316,17 @@ QQC2.Control {
             Repeater {
                 model: PlasmaTube.videoController.videoModel.formatList
                 delegate: QQC2.RadioDelegate {
+                    id: delegate
+
+                    required property var modelData
+
                     Layout.fillWidth: true
                     checked: PlasmaTube.videoController.videoModel.selectedFormat === modelData
                     text: modelData
                     QQC2.ButtonGroup.group: radioGroup
                     onCheckedChanged: {
                         if (checked) {
-                            PlasmaTube.videoController.videoModel.selectedFormat = modelData
+                            PlasmaTube.videoController.videoModel.selectedFormat = delegate.modelData;
                         }
                     }
                 }

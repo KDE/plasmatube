@@ -39,10 +39,13 @@ target_sources(plasmatube_static PRIVATE
 target_link_libraries(plasmatube_static PRIVATE Qt::Core)
 
 add_executable(plasmatube)
-
-qt_add_qml_module(plasmatube
+ecm_add_qml_module(plasmatube
         URI org.kde.plasmatube
-        VERSION 1.0)
+        VERSION 1.0
+        DEPENDENCIES
+        "QtQuick.Controls"
+        "org.kde.plasmatube.invidious"
+        GENERATE_PLUGIN_SOURCE)
 
 target_sources(plasmatube PRIVATE
         ${plasmatube_srcs}

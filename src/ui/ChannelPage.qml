@@ -161,7 +161,7 @@ Kirigami.Page {
                 // TODO: This depends on the channel actually having any playlists.
                 // I guess it's harmless to call this twice, but it really shouldn't happen.
                 if (currentIndex === 1 && playlistModel.rowCount() === 0) {
-                    playlistModel.loadChannelPlaylists(authorId);
+                    playlistModel.loadChannelPlaylists(root.authorId);
                 }
             }
 

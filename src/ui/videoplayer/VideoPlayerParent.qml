@@ -61,8 +61,8 @@ Flickable {
 
     NumberAnimation on contentY {
         id: toOpen
-        from: contentY
-        to: contentHeight / 2
+        from: root.contentY
+        to: root.contentHeight / 2
         duration: Kirigami.Units.longDuration * 2
         easing.type: Easing.OutCubic
         running: false
@@ -70,7 +70,7 @@ Flickable {
     }
     NumberAnimation on contentY {
         id: toClose
-        from: contentY
+        from: root.contentY
         to: 0
         duration: Kirigami.Units.longDuration * 2
         easing.type: Easing.OutCubic
@@ -100,7 +100,7 @@ Flickable {
         target: applicationWindow()
 
         function onHeightChanged() {
-            resetToBoundsOnResize()
+            root.resetToBoundsOnResize();
         }
     }
 

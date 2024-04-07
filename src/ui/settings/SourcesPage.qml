@@ -5,15 +5,12 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Window
-import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
-import org.kde.coreaddons as KCoreAddons
 
 import org.kde.plasmatube
 import org.kde.plasmatube.private
-import org.kde.plasmatube.invidious
 
 FormCard.FormCardPage {
     id: root
@@ -36,20 +33,22 @@ FormCard.FormCardPage {
             model: PlasmaTube.sourceManager
 
             ColumnLayout {
+                id: sourceDelegate
+
                 required property var source
                 required property int index
 
                 spacing: 0
 
                 FormCard.FormDelegateSeparator {
-                    visible: index !== 0
+                    visible: sourceDelegate.index !== 0
                 }
 
                 FormCard.FormButtonDelegate {
-                    text: source.url
+                    text: sourceDelegate.source.url
 
                     icon.name: {
-                        switch (source.type) {
+                        switch (sourceDelegate.source.type) {
                             case VideoSource.Invidious:
                                 return "plasmatube-invidious";
                             case VideoSource.PeerTube:
@@ -60,7 +59,7 @@ FormCard.FormCardPage {
                     }
 
                     description: {
-                        switch (source.type) {
+                        switch (sourceDelegate.source.type) {
                             case VideoSource.Invidious:
                                 return i18n("Invidious");
                             case VideoSource.PeerTube:
@@ -72,7 +71,7 @@ FormCard.FormCardPage {
 
                     onClicked: {
                         let pageName;
-                        switch (source.type) {
+                        switch (sourceDelegate.source.type) {
                             case VideoSource.Invidious:
                                 pageName = "InvidiousSourcePage";
                                 break;

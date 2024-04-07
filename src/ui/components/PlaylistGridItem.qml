@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
@@ -36,7 +38,7 @@ BaseGridItem {
             layer.effect: OpacityMask {
                 maskSource: mask
             }
-            source: thumbnail
+            source: root.thumbnail
             fillMode: Image.PreserveAspectCrop
             Rectangle {
                 id: mask
@@ -51,7 +53,7 @@ BaseGridItem {
             }
 
             Text {
-                text: i18np("%1 video", "%1 videos", videoCount)
+                text: i18np("%1 video", "%1 videos", root.videoCount)
                 color: "white"
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
 
@@ -95,7 +97,7 @@ BaseGridItem {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
-                text: title
+                text: root.title
                 level: 4
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
@@ -105,7 +107,7 @@ BaseGridItem {
                     id: titleMouseArea
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
-                    onClicked: root.clicked(mouse)
+                    onClicked: mouse => root.clicked(mouse)
                 }
             }
         }

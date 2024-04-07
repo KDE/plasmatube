@@ -5,12 +5,8 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
 
 import org.kde.plasmatube
-import "../components/utils.js" as Utils
-import "../"
-import "../components"
 
 /*
  * This is the video queue on the right side of the video player.
@@ -72,6 +68,8 @@ QQC2.Control {
 
                 delegate: VideoListItem {
                     id: videoDelegate
+
+                    required property var model
 
                     width: ListView.view.width
                     height: implicitHeight

@@ -2,6 +2,8 @@
 // SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -53,7 +55,7 @@ BaseGridItem {
             layer.effect: OpacityMask {
                 maskSource: mask
             }
-            source: thumbnail
+            source: root.thumbnail
             fillMode: Image.PreserveAspectCrop
             Rectangle {
                 id: mask
@@ -69,7 +71,7 @@ BaseGridItem {
 
             Text {
                 text: {
-                    if (liveNow) {
+                    if (root.liveNow) {
                         return i18nc("Short label for a livestream that's live", "Live");
                     }
 
@@ -135,7 +137,7 @@ BaseGridItem {
                 Layout.alignment: Qt.AlignTop
                 Layout.fillWidth: true
 
-                text: title
+                text: root.title
                 level: 4
                 maximumLineCount: 2
                 wrapMode: Text.Wrap
@@ -144,7 +146,7 @@ BaseGridItem {
 
             QQC2.Label {
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
-                text: author
+                text: root.author
                 color: Kirigami.Theme.disabledTextColor
                 maximumLineCount: 2
                 elide: Text.ElideRight
@@ -152,8 +154,8 @@ BaseGridItem {
 
             QQC2.Label {
                 font.pointSize: Kirigami.Theme.smallFont.pointSize
-                text: i18n("%1 views \u2022 %2", Utils.formatCount(viewCount), liveNow ? "<i>live now</i>" : publishedText)
-                visible: liveNow || viewCount !== 0
+                text: i18n("%1 views \u2022 %2", Utils.formatCount(root.viewCount), liveNow ? "<i>live now</i>" : publishedText)
+                visible: root.liveNow || root.viewCount !== 0
                 color: Kirigami.Theme.disabledTextColor
                 maximumLineCount: 1
                 elide: Text.ElideRight

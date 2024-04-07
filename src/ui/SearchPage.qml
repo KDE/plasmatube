@@ -5,7 +5,6 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.qmlmodels
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
@@ -94,11 +93,12 @@ Kirigami.ScrollablePage {
                     text: i18n("Rating")
                     checkable: true
                     QQC2.ButtonGroup.group: sortGroup
-                    onCheckedChanged:
+                    onCheckedChanged: {
                         if (checked) {
-                            searchParameters.sortBy = SearchParameters.SortBy.Rating
-                            videoModel.requestSearchResults(searchParameters)
+                            searchParameters.sortBy = SearchParameters.SortBy.Rating;
+                            videoModel.request(searchParameters);
                         }
+                    }
                 }
 
                 QQC2.RadioButton {
@@ -106,33 +106,36 @@ Kirigami.ScrollablePage {
                     checkable: true
                     checked: true
                     QQC2.ButtonGroup.group: sortGroup
-                    onCheckedChanged:
+                    onCheckedChanged: {
                         if (checked) {
-                            searchParameters.sortBy = SearchParameters.SortBy.Relevance
-                            videoModel.requestSearchResults(searchParameters)
+                            searchParameters.sortBy = SearchParameters.SortBy.Relevance;
+                            videoModel.request(searchParameters);
                         }
+                    }
                 }
 
                 QQC2.RadioButton {
                     text: i18n("Upload Date")
                     checkable: true
                     QQC2.ButtonGroup.group: sortGroup
-                    onCheckedChanged:
+                    onCheckedChanged: {
                         if (checked) {
-                            searchParameters.sortBy = SearchParameters.SortBy.UploadDate
-                            videoModel.requestSearchResults(searchParameters)
+                            searchParameters.sortBy = SearchParameters.SortBy.UploadDate;
+                            videoModel.request(searchParameters);
                         }
+                    }
                 }
 
                 QQC2.RadioButton {
                     text: i18n("View Count")
                     checkable: true
                     QQC2.ButtonGroup.group: sortGroup
-                    onCheckedChanged:
+                    onCheckedChanged: {
                         if (checked) {
-                            searchParameters.sortBy = SearchParameters.SortBy.ViewCount
-                            videoModel.requestSearchResults(searchParameters)
+                            searchParameters.sortBy = SearchParameters.SortBy.ViewCount;
+                            videoModel.request(searchParameters);
                         }
+                    }
                 }
             }
         }
