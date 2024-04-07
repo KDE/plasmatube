@@ -45,6 +45,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
             }
             return thumbnailUrl;
         }
+        case UrlRole:
+            return video.url();
         case LengthRole:
             return video.length();
         case ViewCountRole:

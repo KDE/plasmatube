@@ -26,6 +26,7 @@ public:
         TypeRole,
         TitleRole,
         ThumbnailRole,
+        UrlRole,
 
         // Video roles
         LengthRole,

@@ -44,6 +44,7 @@ class VideoItem : public QObject, public QInvidious::Video
     Q_PROPERTY(bool allowRatings READ allowRatings CONSTANT)
     Q_PROPERTY(double rating READ rating CONSTANT)
     Q_PROPERTY(bool isListed READ isListed CONSTANT)
+    Q_PROPERTY(QString url READ url CONSTANT)
 
 public:
     explicit VideoItem(QObject *parent = nullptr);

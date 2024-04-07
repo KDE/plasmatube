@@ -11,6 +11,7 @@ QQC2.Menu {
 
     property bool isWatched
     required property string videoId
+    required property string videoUrl
     required property string videoTitle
     required property string channelName
     required property string channelId
@@ -98,7 +99,7 @@ QQC2.Menu {
     QQC2.MenuSeparator {}
 
     ShareMenu {
-        url: "https://youtube.com/watch?=" + root.videoId
+        url: root.videoUrl
         shareTitle: root.videoTitle
     }
 }

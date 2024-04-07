@@ -38,6 +38,7 @@ Kirigami.ScrollablePage {
     property string currentVideoId
     property int currentVideoIndex
     property string currentVideoTitle
+    property string currentVideoUrl
     property string currentChannelName
     property string currentChannelId
 
@@ -129,7 +130,7 @@ Kirigami.ScrollablePage {
                         id: shareAction
 
                         inputData: {
-                            'urls': ["https://youtube.com/watch?=" + root.video.videoId],
+                            'urls': [root.video.url],
                             'title': video.title
                         }
                     }
@@ -476,6 +477,7 @@ Kirigami.ScrollablePage {
                         currentVideoId = model.id;
                         currentVideoIndex = index;
                         currentVideoTitle = title;
+                        currentVideoTitle = model.url;
                         currentChannelName = author;
                         currentChannelId = authorId;
                         videoMenu.isWatched = watched;
@@ -491,6 +493,7 @@ Kirigami.ScrollablePage {
 
         videoId: root.currentVideoId
         videoTitle: root.currentVideoTitle
+        videoUrl: root.currentVideoUrl
         channelName: root.currentChannelName
         channelId: root.currentChannelId
 

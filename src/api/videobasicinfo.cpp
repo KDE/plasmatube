@@ -28,6 +28,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_paid = false;
         info.m_premium = false;
         info.m_upcoming = false;
+        info.m_url = obj.value("url"_L1).toString();
 
         VideoThumbnail thumbnail;
         // If we have a thumbnail URL, prefer that
@@ -64,6 +65,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         if (obj.contains("indexId"_L1)) {
             info.m_indexId = obj.value("indexId"_L1).toString();
         }
+        info.m_url = QStringLiteral("https://youtube.com/watch?=%1").arg(info.m_videoId);
     } else {
         info.m_videoId = obj.value("url"_L1).toString().remove(QStringLiteral("/watch?v="));
         info.m_title = obj.value("title"_L1).toString();
@@ -85,6 +87,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         info.m_paid = false;
         info.m_premium = false;
         info.m_upcoming = false;
+        info.m_url = QStringLiteral("https://youtube.com%1").arg(obj.value("url"_L1).toString());
 
         VideoThumbnail thumbnail;
         thumbnail.setUrl(QUrl::fromUserInput(obj.value("thumbnail"_L1).toString()));
@@ -198,4 +201,9 @@ bool VideoBasicInfo::upcoming() const
 QString VideoBasicInfo::indexId() const
 {
     return m_indexId;
+}
+
+QString VideoBasicInfo::url() const
+{
+    return m_url;
 }

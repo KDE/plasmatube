@@ -56,6 +56,8 @@ public:
 
     QString indexId() const;
 
+    QString url() const;
+
 protected:
     QString m_videoId;
     QString m_title;
@@ -73,6 +75,7 @@ protected:
     bool m_premium = false;
     bool m_upcoming = false;
     QString m_indexId;
+    QString m_url;
 };
 
 }

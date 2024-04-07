@@ -21,6 +21,7 @@ QHash<int, QByteArray> AbstractListModel::roleNames() const
             {TypeRole, "type"},
             {TitleRole, "title"},
             {ThumbnailRole, "thumbnail"},
+            {UrlRole, "url"},
             {LengthRole, "length"},
             {ViewCountRole, "viewCount"},
             {AuthorRole, "author"},

@@ -21,6 +21,7 @@ GridView {
     property string currentVideoId
     property int currentVideoIndex
     property string currentVideoTitle
+    property string currentVideoUrl
     property string currentChannelName
     property string currentChannelId
 
@@ -90,6 +91,7 @@ GridView {
                     currentVideoId = model.id;
                     currentVideoIndex = videoItem.index;
                     currentVideoTitle = title;
+                    currentVideoUrl = model.url;
                     currentChannelName = author;
                     currentChannelId = authorId;
                     videoMenu.isWatched = watched;
@@ -170,6 +172,7 @@ GridView {
 
         videoId: gridView.currentVideoId
         videoTitle: gridView.currentVideoTitle
+        videoUrl: gridView.currentVideoUrl
         channelName: gridView.currentChannelName
         channelId: gridView.currentChannelId
 
