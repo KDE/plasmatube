@@ -148,7 +148,13 @@ QQC2.ItemDelegate {
 
                 QQC2.Label {
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
-                    text: i18n("%1 views", Utils.formatCount(root.viewCount))
+                    text: {
+                        if (root.viewCount === 0) {
+                            return i18n("No views");
+                        } else {
+                            return i18n("%1 views", Utils.formatCount(root.viewCount));
+                        }
+                    }
                     color: Kirigami.Theme.disabledTextColor
                     maximumLineCount: 1
                     elide: Text.ElideRight
