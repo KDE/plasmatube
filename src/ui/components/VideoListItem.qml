@@ -20,7 +20,7 @@ QQC2.ItemDelegate {
     property string vid
     property url thumbnail
     property bool liveNow
-    property date length
+    property int length
     property string title
     property string author
     property string authorId
@@ -75,7 +75,7 @@ QQC2.ItemDelegate {
             }
             Text {
                 visible: !root.liveNow && text !== "00:00"
-                text: KCoreAddons.Format.formatDuration(rootlength * 1000)
+                text: KCoreAddons.Format.formatDuration(root.length * 1000)
                 color: "white"
 
                 anchors.right: parent.right

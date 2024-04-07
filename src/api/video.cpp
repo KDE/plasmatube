@@ -22,7 +22,18 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         video.m_genre = obj.value("genre"_L1).toString();
         video.m_genreUrl = obj.value("genreUrl"_L1).toString();
         parseArray(obj.value("authorThumbnails"_L1), video.m_authorThumbnails);
-        video.m_subCountText = obj.value("subCountText"_L1).toString();
+
+        // Invidious does this really stupid thing where it gives us /text/ for the sub count here.
+        // We need to parse it into some kind of number.
+        QString subCountText = obj.value("subCountText"_L1).toString();
+        if (subCountText.endsWith(QLatin1Char('M'))) {
+            video.m_subCount = subCountText.left(subCountText.length() - 1).toInt() * 1000000;
+        } else if (subCountText.endsWith(QLatin1Char('K'))) {
+            video.m_subCount = subCountText.left(subCountText.length() - 1).toInt() * 1000;
+        } else {
+            video.m_subCount = subCountText.toInt();
+        }
+
         video.m_allowRatings = obj.value("allowRatings"_L1).toBool(true);
         video.m_rating = obj.value("rating"_L1).toDouble(5.0);
         video.m_isListed = obj.value("isListed"_L1).toBool(true);
@@ -46,7 +57,7 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         thumbnail.setUrl(QUrl(obj.value("uploaderAvatar"_L1).toString()));
         video.m_authorThumbnails.push_back(thumbnail);
 
-        video.m_subCountText = QString::number(obj.value("uploaderSubscriberCount"_L1).toInt());
+        video.m_subCount = obj.value("uploaderSubscriberCount"_L1).toInt();
         parseArray(obj.value("relatedStreams"_L1), video.m_recommendedVideos);
         video.m_hlsUrl = QUrl(obj.value(u"hls").toString());
     }
@@ -94,9 +105,9 @@ QList<VideoThumbnail> Video::authorThumbnails() const
     return m_authorThumbnails;
 }
 
-QString Video::subCountText() const
+qint32 Video::subCount() const
 {
-    return m_subCountText;
+    return m_subCount;
 }
 
 bool Video::allowRatings() const

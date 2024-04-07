@@ -90,7 +90,7 @@ Kirigami.Page {
 
             SubscriptionButton {
                 channelId: root.authorId
-                subCountText: Utils.formatCount(channelController.subCount)
+                subCount: channelController.subCount
             }
         }
 

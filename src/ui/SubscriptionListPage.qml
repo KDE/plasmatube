@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
                     id: subscribeButton
 
                     channelId: delegate.channelId
-                    subCountText: delegate.subCount
+                    subCount: delegate.subCount
                 }
             }
         }

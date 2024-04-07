@@ -40,7 +40,7 @@ class VideoItem : public QObject, public QInvidious::Video
     Q_PROPERTY(QStringList allowedRegions READ allowedRegions CONSTANT)
     Q_PROPERTY(QString genre READ genre CONSTANT)
     Q_PROPERTY(QString genreUrl READ genreUrl CONSTANT)
-    Q_PROPERTY(QString subCountText READ subCountText CONSTANT)
+    Q_PROPERTY(qint32 subCount READ subCount CONSTANT)
     Q_PROPERTY(bool allowRatings READ allowRatings CONSTANT)
     Q_PROPERTY(double rating READ rating CONSTANT)
     Q_PROPERTY(bool isListed READ isListed CONSTANT)

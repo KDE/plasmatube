@@ -324,7 +324,7 @@ Kirigami.ScrollablePage {
                             id: subscribeButton
 
                             channelId: root.video.authorId
-                            subCountText: root.video.subCountText
+                            subCount: root.video.subCount
                         }
                     }
                 }

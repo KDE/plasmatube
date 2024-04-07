@@ -34,7 +34,7 @@ public:
 
     QList<VideoThumbnail> authorThumbnails() const;
 
-    QString subCountText() const;
+    qint32 subCount() const;
 
     bool allowRatings() const;
 
@@ -63,7 +63,7 @@ private:
     QString m_genre;
     QString m_genreUrl;
     QList<VideoThumbnail> m_authorThumbnails;
-    QString m_subCountText;
+    qint32 m_subCount = 0;
     double m_rating = 1.0;
     QList<VideoBasicInfo> m_recommendedVideos;
     std::optional<QDateTime> m_premiereTimestamp;

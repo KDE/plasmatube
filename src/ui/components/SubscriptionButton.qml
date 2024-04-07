@@ -9,13 +9,14 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 import org.kde.plasmatube
+import "utils.js" as Utils
 
 QQC2.Button {
     id: subscribeButton
     Layout.topMargin: Kirigami.Units.smallSpacing
 
     property alias channelId: subscriptionController.channelId
-    property string subCountText
+    property int subCount
 
     SubscriptionController {
         id: subscriptionController
@@ -52,9 +53,9 @@ QQC2.Button {
             color: "white"
             text: {
                 if (subscriptionController.isSubscribed) {
-                    return i18n("Unsubscribe (%1)", subscribeButton.subCountText)
+                    return i18n("Unsubscribe (%1)", Utils.formatCount(subscribeButton.subCount))
                 }
-                return i18n("Subscribe (%1)", subscribeButton.subCountText)
+                return i18n("Subscribe (%1)", Utils.formatCount(subscribeButton.subCount))
             }
         }
     }
@@ -64,7 +65,7 @@ QQC2.Button {
             subscriptionController.toggleSubscription()
         } else if (!PlasmaTube.selectedSource.loggedIn) {
             applicationWindow().closePlayer();
-            showPassiveNotification(i18n("Please log in to subscribe to channels."));
+            showPassiveNotificaftion(i18n("Please log in to subscribe to channels."));
             pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"));
         }
     }
