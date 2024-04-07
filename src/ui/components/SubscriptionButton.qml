@@ -52,15 +52,15 @@ QQC2.Button {
         QQC2.Label {
             color: "white"
             text: {
-                let suffix;
+                let suffix = "";
                 if (subscribeButton.subCount > 0) {
-                    suffix = "(" + Utils.formatCount(subscribeButton.subCount) + ")";
+                    suffix = " (" + Utils.formatCount(subscribeButton.subCount) + ")";
                 }
 
                 if (subscriptionController.isSubscribed) {
-                    return i18n("Unsubscribe %1", suffix);
+                    return i18nc("@action:button Unsubscribe to this channel, %1 is the sub count if provided", "Unsubscribe%1", suffix);
                 }
-                return i18n("Subscribe %1", suffix);
+                return i18nc("@action:button Subscribe to this channel, %1 is the sub count if provided","Subscribe%1", suffix);
             }
         }
     }
