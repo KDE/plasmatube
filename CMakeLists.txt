@@ -36,9 +36,28 @@ if (BUILD_TESTING)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
 endif()
 
+set_package_properties(Qt6 PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Required application components"
+)
+
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami I18n)
+set_package_properties(KF6 PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Required application components"
+)
+
 find_package(KF6KirigamiAddons 1.1.0 REQUIRED)
+set_package_properties(KF6KirigamiAddons PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Required application components and runtime dependency"
+)
+
 find_package(MpvQt REQUIRED)
+set_package_properties(MpvQt PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Video playback"
+)
 
 find_package(Qt6Keychain)
 set_package_properties(Qt6Keychain PROPERTIES
@@ -54,7 +73,13 @@ endif()
 
 if (NOT ANDROID AND NOT WIN32 AND NOT APPLE)
     find_package(KF6DBusAddons ${KF_MIN_VERSION} REQUIRED)
+    set_package_properties(KF6DBusAddons PROPERTIES
+            PURPOSE "Single application support"
+    )
     find_package(KF6WindowSystem ${KF_MIN_VERSION} REQUIRED)
+    set_package_properties(KF6WindowSystem PROPERTIES
+            PURPOSE "Misc windowing operations"
+    )
 endif ()
 
 set(CMAKE_CXX_STANDARD 20)
