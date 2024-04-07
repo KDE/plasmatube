@@ -15,6 +15,8 @@
 MpvObject::MpvObject(QQuickItem *parent)
     : MpvAbstractItem(parent)
 {
+    setProperty(QStringLiteral("hwdec"), QStringLiteral("auto-safe"));
+
     setProperty(QStringLiteral("terminal"), QStringLiteral("yes"));
     setProperty(QStringLiteral("keep-open"), QStringLiteral("always"));
     setProperty(QStringLiteral("audio-client-name"), QStringLiteral("org.kde.plasmatube"));
