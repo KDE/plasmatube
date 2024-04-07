@@ -4,6 +4,7 @@
 
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Window
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
@@ -42,6 +43,7 @@ Kirigami.ScrollablePage {
 
     readonly property bool widescreen: root.width > 1200
     property bool inFullScreen: false
+    property int oldVisibility
 
     signal requestClosePlayer()
 
@@ -66,6 +68,7 @@ Kirigami.ScrollablePage {
         videoContainer.anchors.fill = QQC2.Overlay.overlay;
         root.inFullScreen = true;
         applicationWindow().globalDrawer.close();
+        root.oldVisibility = applicationWindow().visibility;
         applicationWindow().showFullScreen();
     }
 
@@ -76,7 +79,13 @@ Kirigami.ScrollablePage {
         if (!applicationWindow().globalDrawer.modal) {
             applicationWindow().globalDrawer.open();
         }
-        applicationWindow().showNormal();
+        if (root.oldVisibility === Window.Maximized) {
+            // You need to show the window normally, then go maximized.
+            applicationWindow().showNormal();
+            applicationWindow().showMaximized();
+        } else {
+            applicationWindow().showNormal();
+        }
     }
 
     header: Kirigami.AbstractApplicationHeader{
