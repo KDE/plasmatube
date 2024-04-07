@@ -10,6 +10,7 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 
 import org.kde.plasmatube
 import "../components/utils.js" as Utils
@@ -289,6 +290,14 @@ Kirigami.ScrollablePage {
 
                         visible: false
                         modal: true
+
+                        QQC2.MenuItem {
+                            text: i18n("Copy Video URL")
+                            icon.name: "edit-copy-symbolic"
+                            onClicked: clipboard.content = root.video.url
+
+                            KQuickControlsAddons.Clipboard { id: clipboard }
+                        }
 
                         QQC2.MenuItem {
                             text: i18n("Video Statistics")
