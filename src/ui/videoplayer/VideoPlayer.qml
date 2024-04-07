@@ -126,6 +126,15 @@ Kirigami.ScrollablePage {
                 alignment: Qt.AlignRight
 
                 actions: [
+                    Kirigami.Action {
+                        id: addToPlaylistAction
+
+                        text: i18nc("@action:button", "Add to Playlist…")
+                        icon.name: "media-playlist-append"
+                        visible: PlasmaTube.selectedSource !== null && PlasmaTube.selectedSource.loggedIn
+
+                        onTriggered: applicationWindow().openAddToPlaylistMenu(root.video.videoId)
+                    },
                     ShareAction {
                         id: shareAction
 
