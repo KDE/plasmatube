@@ -33,6 +33,7 @@ public:
     QString genreUrl() const;
 
     QList<VideoThumbnail> authorThumbnails() const;
+    void setAuthorThumbnails(const QList<VideoThumbnail> &thumbnails);
 
     qint32 subCount() const;
 

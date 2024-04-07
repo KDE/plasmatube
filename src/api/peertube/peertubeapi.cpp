@@ -153,9 +153,12 @@ QFuture<LogInResult> PeerTubeApi::logIn(const QString &username, const QString &
 
 QFuture<VideoResult> PeerTubeApi::requestVideo(const QString &videoId)
 {
-    return get<VideoResult>(QNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
+    // This needs to be authenticated depending on where the video id is from (like subscriptions)
+    return get<VideoResult>(authenticatedNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            return Video::fromJson(doc);
+            auto video = Video::fromJson(doc);
+            fixupVideo(video);
+            return video;
         }
         return invalidJsonError();
     });
@@ -516,4 +519,16 @@ void PeerTubeApi::fixupChannel(QInvidious::Channel &channel)
     // PeerTube gives us relative URLs for avatar/banner
     channel.setAvatar(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.avatar()));
     channel.setBanner(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.banner()));
+}
+
+void PeerTubeApi::fixupVideo(Video &video)
+{
+    auto newThumbnails = video.authorThumbnails();
+    for (auto &thumbnail : newThumbnails) {
+        // If the URL is relative, attach the server URL
+        if (thumbnail.url().isRelative()) {
+            thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
+        }
+    }
+    video.setAuthorThumbnails(newThumbnails);
 }

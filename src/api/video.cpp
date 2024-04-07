@@ -46,7 +46,14 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         parseArray(obj.value(u"formatStreams"), video.m_combinedFormats);
         parseArray(obj.value(u"captions"), video.m_captions);
     } else if (isPeerTube) {
-        // TODO: peertube stub
+        auto account = obj.value("account"_L1).toObject();
+
+        VideoThumbnail thumbnail;
+        thumbnail.setUrl(QUrl(account["avatar"_L1].toObject()["path"_L1].toString()));
+        video.m_authorThumbnails.push_back(thumbnail);
+
+        video.m_dislikeCount = obj.value("dislikes"_L1).toInt();
+        video.m_likeCount = obj.value("likes"_L1).toInt();
     } else {
         video.m_author = obj.value("uploader"_L1).toString();
         parseArray(obj.value("tags"_L1), video.m_keywords);
@@ -103,6 +110,11 @@ QString Video::genreUrl() const
 QList<VideoThumbnail> Video::authorThumbnails() const
 {
     return m_authorThumbnails;
+}
+
+void Video::setAuthorThumbnails(const QList<QInvidious::VideoThumbnail> &thumbnails)
+{
+    m_authorThumbnails = thumbnails;
 }
 
 qint32 Video::subCount() const

@@ -81,6 +81,7 @@ private:
     void fixupVideoThumbnails(QList<VideoBasicInfo> &list) const;
     void fixupVideoThumbnail(VideoBasicInfo &video) const;
     void fixupChannel(QInvidious::Channel &channel);
+    void fixupVideo(QInvidious::Video &video);
 
     QString m_clientId;
     QString m_clientSecret;
