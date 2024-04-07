@@ -77,7 +77,7 @@ QQC2.Control {
                     vid: model?.id ?? ""
                     thumbnail: model?.thumbnail ?? ""
                     liveNow: model?.liveNow ?? false
-                    length: model?.length ?? new Date()
+                    length: model?.length ?? 0
                     title: model?.title ?? i18n("Loading…")
                     author: model?.author ?? ""
                     authorId: model?.authorId ??  ""
