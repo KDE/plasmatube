@@ -22,6 +22,8 @@ MpvObject::MpvObject(QQuickItem *parent)
     setProperty(QStringLiteral("audio-client-name"), QStringLiteral("org.kde.plasmatube"));
     setProperty(QStringLiteral("wayland-app-id"), QStringLiteral("org.kde.plasmatube"));
 
+    setProperty(QStringLiteral("msg-level"), QStringLiteral("all=warn"));
+
     observeProperty(QStringLiteral("duration"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("time-pos"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("pause"), MPV_FORMAT_FLAG);
