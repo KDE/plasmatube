@@ -210,6 +210,8 @@ Kirigami.ApplicationWindow {
         sourceComponent: Kirigami.PromptDialog {
             id: addToPlaylistDialog
 
+            property string currentVideoId
+
             title: i18nc("@title", "Add to Playlist")
 
             standardButtons: Kirigami.Dialog.NoButton
@@ -232,7 +234,7 @@ Kirigami.ApplicationWindow {
                         Layout.fillWidth: true
 
                         onClicked: {
-                            PlasmaTube.selectedSource.addToPlaylist(model.id, currentVideoId);
+                            PlasmaTube.selectedSource.addToPlaylist(model.id, addToPlaylistDialog.currentVideoId);
                             addToPlaylistDialog.close();
                         }
                     }
@@ -242,8 +244,9 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function openAddToPlaylistMenu() {
+    function openAddToPlaylistMenu(videoId: string): video {
         addToPlaylistLoader.active = true;
+        addToPlaylistLoader.item.currentVideoId = videoId;
         addToPlaylistLoader.item.open();
     }
 

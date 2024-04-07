@@ -179,7 +179,7 @@ GridView {
         onMarkWatched: gridView.model.markAsWatched(gridView.currentVideoIndex)
         onMarkUnwatched: gridView.model.markAsUnwatched(gridView.currentVideoIndex)
 
-        onAddToPlaylist: applicationWindow().openAddToPlaylistMenu()
+        onAddToPlaylist: applicationWindow().openAddToPlaylistMenu(gridView.currentVideoId)
     }
 
     Component.onCompleted: gridView.model?.requestQuery(initialQuery, true)
