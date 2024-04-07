@@ -16,7 +16,6 @@ class SearchParameters : public QObject
     QML_ELEMENT
 
     Q_PROPERTY(QString query READ query WRITE setQuery)
-    Q_PROPERTY(unsigned int page READ page WRITE setPage)
     Q_PROPERTY(SortBy sortBy READ sortBy WRITE setSortBy)
     Q_PROPERTY(Date date READ date WRITE setDate)
     Q_PROPERTY(Duration duration READ duration WRITE setDuration)
@@ -40,9 +39,8 @@ public:
     Q_ENUM(Feature)
 
     SearchParameters() = default;
-    explicit SearchParameters(const QString &query, unsigned int page = 0)
+    explicit SearchParameters(const QString &query)
         : m_query(query)
-        , m_page(page)
     {
     }
 
@@ -54,9 +52,6 @@ public:
 
     const QString &query() const;
     void setQuery(const QString &query);
-
-    unsigned int page() const;
-    void setPage(unsigned int page);
 
     SortBy sortBy() const;
     void setSortBy(SortBy sortBy);
@@ -75,7 +70,6 @@ public:
 
 private:
     QString m_query;
-    unsigned int m_page = 1;
     SortBy m_sortBy = SortBy::Default;
     Date m_date = Date::Default;
     Duration m_duration = Duration::Default;

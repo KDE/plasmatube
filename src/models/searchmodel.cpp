@@ -13,6 +13,7 @@
 
 SearchModel::SearchModel(QObject *parent)
     : AbstractListModel(parent)
+    , m_paginator(this)
 {
 }
 
@@ -113,8 +114,8 @@ QVariant SearchModel::data(const QModelIndex &index, int role) const
 
 void SearchModel::fetchMore(const QModelIndex &index)
 {
-    if (canFetchMore(index)) {
-        m_currentPage++;
+    if (canFetchMore(index) && m_paginator.hasMore()) {
+        m_paginator.next();
         performSearch();
     }
 }
@@ -132,7 +133,7 @@ void SearchModel::request(const SearchParameters *searchParameters)
         endResetModel();
     }
 
-    m_currentPage = 1;
+    m_paginator.reset();
     m_searchParameters.fill(*searchParameters);
     performSearch();
 }
@@ -164,8 +165,6 @@ void SearchModel::performSearch()
         return;
     }
 
-    m_searchParameters.setPage(m_currentPage);
-
     // stop running task
     if (m_futureWatcher) {
         // TODO: cancelling isn't implemented yet
@@ -192,7 +191,7 @@ void SearchModel::performSearch()
         setLoading(false);
     });
 
-    m_futureWatcher->setFuture(selectedSource->api()->requestSearchResults(m_searchParameters));
+    m_futureWatcher->setFuture(selectedSource->api()->requestSearchResults(m_searchParameters, &m_paginator));
     setLoading(true);
 }
 

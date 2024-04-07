@@ -6,7 +6,6 @@
 void SearchParameters::fill(const SearchParameters &other)
 {
     m_query = other.m_query;
-    m_page = other.m_page;
     m_sortBy = other.m_sortBy;
     m_date = other.m_date;
     m_duration = other.m_duration;
@@ -17,7 +16,6 @@ void SearchParameters::fill(const SearchParameters &other)
 void SearchParameters::clear()
 {
     m_query = QStringLiteral("");
-    m_page = 0;
     m_sortBy = SortBy::Default;
     m_date = Date::Default;
     m_duration = Duration::Default;
@@ -29,7 +27,6 @@ QHash<QString, QString> SearchParameters::toQueryParameters() const
 {
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("q"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
-    parameters.insert(QStringLiteral("page"), QString::number(m_page));
 
     switch (m_sortBy) {
     case SortBy::Default:
@@ -155,15 +152,6 @@ const QString &SearchParameters::query() const
 void SearchParameters::setQuery(const QString &query)
 {
     m_query = query;
-}
-
-unsigned int SearchParameters::page() const
-{
-    return m_page;
-}
-void SearchParameters::setPage(unsigned int page)
-{
-    m_page = page;
 }
 
 SearchParameters::SortBy SearchParameters::sortBy() const

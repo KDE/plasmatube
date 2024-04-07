@@ -41,7 +41,7 @@ public:
     QFuture<LogInResult> logIn(const QString &username, const QString &password) override;
     QFuture<VideoResult> requestVideo(const QString &videoId) override;
     QString resolveVideoUrl(const QString &videoId) override;
-    QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters) override;
+    QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters, Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestFeed(Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestTop() override;
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator *paginator = nullptr) override;

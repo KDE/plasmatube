@@ -38,7 +38,7 @@ public Q_SLOTS:
 private:
     void performSearch();
 
-    qint32 m_currentPage = 1;
+    QInvidious::Paginator m_paginator;
     SearchParameters m_searchParameters;
     QFutureWatcher<QInvidious::SearchListResult> *m_futureWatcher = nullptr;
 

@@ -126,9 +126,18 @@ QString InvidiousApi::resolveVideoUrl(const QString &videoId)
     return QStringLiteral("ytdl://%1").arg(videoId);
 }
 
-QFuture<SearchListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters)
+QFuture<SearchListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters, Paginator *paginator)
 {
-    auto url = videoListUrl(Search, QStringLiteral(""), parameters.toQueryParameters());
+    QHash<QString, QString> searchParameters = parameters.toQueryParameters();
+
+    // Invidious uses pages for all of its video results
+    if (paginator != nullptr) {
+        paginator->setType(Paginator::Type::Page);
+        paginator->m_maxPage = std::numeric_limits<qsizetype>::max();
+        searchParameters.insert(QStringLiteral("page"), QString::number(paginator->m_page + 1));
+    }
+
+    auto url = videoListUrl(Search, QStringLiteral(""), searchParameters);
     auto request = QNetworkRequest(url);
 
     return get<SearchListResult>(std::move(request), [=](QNetworkReply *reply) -> SearchListResult {

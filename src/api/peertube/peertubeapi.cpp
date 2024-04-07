@@ -170,12 +170,14 @@ QString PeerTubeApi::resolveVideoUrl(const QString &videoId)
     return QStringLiteral("https://%1/videos/watch/%2").arg(m_apiHost, videoId);
 }
 
-QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters)
+QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParameters &parameters, Paginator *paginator)
 {
-    QHash<QString, QString> searchParameters = {
-        {u"search"_s, parameters.query()},
-        {u"start"_s, QString::number(parameters.page())},
-    };
+    QHash<QString, QString> searchParameters = {{u"search"_s, parameters.query()}};
+
+    if (paginator != nullptr) {
+        paginator->setType(Paginator::Type::StartIndex);
+        searchParameters[u"start"_s] = QString::number(paginator->m_startIndex);
+    }
 
     if (parameters.sortBy() == SearchParameters::SortBy::UploadDate) {
         searchParameters[u"sort"_s] = u"-createdAt"_s;
@@ -199,6 +201,9 @@ QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParamete
                     results << result;
                 }
             }
+
+            paginator->m_total = obj["total"_L1].toInt();
+            paginator->m_count = resultsJson.size();
 
             return results;
         }
@@ -262,12 +267,14 @@ QFuture<SubscriptionsResult> PeerTubeApi::requestSubscriptions()
 
 QFuture<Result> PeerTubeApi::subscribeToChannel(const QString &channel)
 {
-    return post<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), {}, checkIsReplyOk);
+    const QJsonObject obj{{QStringLiteral("uri"), channel}};
+    const QJsonDocument doc = QJsonDocument(obj);
+    return post<Result>(authenticatedNetworkRequest(apiUrl(API_SUBSCRIPTIONS)), doc.toJson(), checkIsReplyOk);
 }
 
 QFuture<Result> PeerTubeApi::unsubscribeFromChannel(const QString &channel)
 {
-    return deleteResource<Result>(authenticatedNetworkRequest(subscribeUrl(channel)), checkIsReplyOk);
+    return deleteResource<Result>(authenticatedNetworkRequest(apiUrl(API_SUBSCRIPTIONS + u"/" + channel)), checkIsReplyOk);
 }
 
 QFuture<HistoryResult> PeerTubeApi::requestHistory(Paginator *paginator)
