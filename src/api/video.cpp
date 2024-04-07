@@ -27,9 +27,9 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         // We need to parse it into some kind of number.
         QString subCountText = obj.value("subCountText"_L1).toString();
         if (subCountText.endsWith(QLatin1Char('M'))) {
-            video.m_subCount = subCountText.left(subCountText.length() - 1).toInt() * 1000000;
+            video.m_subCount = subCountText.first(subCountText.length() - 1).toDouble() * 1000000;
         } else if (subCountText.endsWith(QLatin1Char('K'))) {
-            video.m_subCount = subCountText.left(subCountText.length() - 1).toInt() * 1000;
+            video.m_subCount = subCountText.first(subCountText.length() - 1).toDouble() * 1000;
         } else {
             video.m_subCount = subCountText.toInt();
         }
