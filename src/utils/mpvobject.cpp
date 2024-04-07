@@ -94,6 +94,11 @@ void MpvObject::seek(qreal offset)
     Q_EMIT command(QStringList() << QStringLiteral("add") << QStringLiteral("time-pos") << QString::number(offset));
 }
 
+void MpvObject::toggleStats()
+{
+    Q_EMIT command(QStringList() << QStringLiteral("script-binding") << QStringLiteral("stats/display-stats-toggle"));
+}
+
 bool MpvObject::stopped() const
 {
     return m_stopped;

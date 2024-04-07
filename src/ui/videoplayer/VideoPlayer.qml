@@ -266,13 +266,35 @@ Kirigami.ScrollablePage {
                     }
 
                     TapHandler {
-                        onTapped: {
+                        acceptedButtons: Qt.LeftButton | Qt.RightButton
+                        onTapped: (point, button) => {
                             if (Kirigami.Settings.hasTransientTouchInput) {
                                 videoPlayer.showControls = true;
                                 controlTimer.restart();
+                            } else {
+                                if (button === Qt.RightButton) {
+                                    videoControlsMenu.popup();
+                                }
                             }
                         }
-                        onDoubleTapped: root.toggleFullscreen()
+                        onDoubleTapped: (point, button) => {
+                            if (button === Qt.LeftButton) {
+                                root.toggleFullscreen();
+                            }
+                        }
+                    }
+
+                    QQC2.Menu {
+                        id: videoControlsMenu
+
+                        visible: false
+                        modal: true
+
+                        QQC2.MenuItem {
+                            text: i18n("Video Statistics")
+                            icon.name: "showinfo"
+                            onClicked: PlasmaTube.videoController.currentPlayer.toggleStats()
+                        }
                     }
                 }
             }

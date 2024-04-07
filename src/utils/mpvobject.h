@@ -35,6 +35,7 @@ public Q_SLOTS:
     void stop();
     void setPosition(double value);
     void seek(qreal offset);
+    void toggleStats();
 
 Q_SIGNALS:
     void positionChanged();
