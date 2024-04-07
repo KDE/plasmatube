@@ -27,10 +27,15 @@ include(KDEGitCommitHooks)
 include(FeatureSummary)
 include(ECMFindQmlModule)
 include(ECMQtDeclareLoggingCategory)
-include(ECMAddTests)
 include(ECMQmlModule)
 
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2 Widgets Concurrent)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Gui Svg QuickControls2 Widgets Concurrent)
+
+if (BUILD_TESTING)
+    include(ECMAddTests)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Test)
+endif()
+
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons Config Kirigami I18n)
 find_package(KF6KirigamiAddons 1.1.0 REQUIRED)
 find_package(MpvQt REQUIRED)
