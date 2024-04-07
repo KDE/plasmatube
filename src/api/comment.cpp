@@ -13,6 +13,7 @@ Comment Comment::fromJson(const QJsonObject &obj, Comment &comment)
     if (isPeerTube) {
         comment.m_author = obj["account"_L1].toObject()["displayName"_L1].toString();
         comment.m_content = obj["text"_L1].toString();
+        comment.m_authorAvatar = obj["account"_L1].toObject()["avatar"_L1].toObject()["path"_L1].toString();
     } else if (isPiped) {
         comment.m_author = obj["author"_L1].toString();
         comment.m_content = obj["commentText"_L1].toString();
@@ -34,6 +35,11 @@ QString Comment::author() const
 QString Comment::authorAvatar() const
 {
     return m_authorAvatar;
+}
+
+void Comment::setAuthorAvatar(const QString &avatar)
+{
+    m_authorAvatar = avatar;
 }
 
 QString Comment::content() const

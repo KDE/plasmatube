@@ -17,6 +17,7 @@ public:
     QString author() const;
 
     QString authorAvatar() const;
+    void setAuthorAvatar(const QString &avatar);
 
     QString content() const;
 

@@ -297,9 +297,10 @@ QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, Pag
             const auto array = doc[u"data"].toArray();
 
             QList<Comment> comments;
-            std::transform(array.cbegin(), array.cend(), std::back_inserter(comments), [](const QJsonValue &val) {
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(comments), [this](const QJsonValue &val) {
                 Comment comment;
                 Comment::fromJson(val.toObject(), comment);
+                fixupComment(comment);
                 return comment;
             });
             return comments;
@@ -531,4 +532,9 @@ void PeerTubeApi::fixupVideo(Video &video)
         }
     }
     video.setAuthorThumbnails(newThumbnails);
+}
+
+void PeerTubeApi::fixupComment(Comment &comment)
+{
+    comment.setAuthorAvatar(QStringLiteral("https://%1/%2").arg(m_apiHost, comment.authorAvatar()));
 }
