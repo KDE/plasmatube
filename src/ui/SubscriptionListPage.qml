@@ -135,7 +135,7 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
 
-            onClicked: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: name, authorId: channelId})
+            onClicked: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: delegate.name, authorId: delegate.channelId})
 
             contentItem: RowLayout {
                 spacing: Kirigami.Units.largeSpacing

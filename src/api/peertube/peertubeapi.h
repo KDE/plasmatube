@@ -76,7 +76,6 @@ private:
     QUrlQuery genericUrlQuery() const;
     QUrl videoUrl(const QString &videoId) const;
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;
-    QUrl subscriptionsUrl() const;
     QUrl subscribeUrl(const QString &channelId) const;
     void fixupVideoThumbnails(QList<VideoBasicInfo> &list) const;
     void fixupVideoThumbnail(VideoBasicInfo &video) const;

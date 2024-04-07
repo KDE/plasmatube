@@ -11,6 +11,7 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
     const bool isPeerTube = obj.contains("avatars"_L1);
     const bool isPiped = obj.contains("url"_L1) || obj.contains("nextpage"_L1);
     if (isPeerTube) {
+        channel.m_id = obj["name"_L1].toString() + u"@" + obj["host"_L1].toString();
         channel.m_name = obj["displayName"_L1].toString();
         channel.m_description = obj["description"_L1].toString();
         channel.m_subCount = obj["followersCount"_L1].toInt();

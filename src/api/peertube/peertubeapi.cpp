@@ -19,7 +19,8 @@ const QString API_SEARCH_VIDEO_CHANNELS = QStringLiteral("/api/v1/search/video-c
 const QString API_SEARCH_VIDEO_PLAYLISTS = QStringLiteral("/api/v1/search/video-playlists");
 const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/oauth-clients/local");
 const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
-const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/users/me/subscriptions/videos");
+const QString API_SUBSCRIPTION_VIDEOS = QStringLiteral("/api/v1/users/me/subscriptions/videos");
+const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/users/me/subscriptions");
 
 const QString CLIENT_ID_KEY = QStringLiteral("client-id");
 const QString CLIENT_SECRET_KEY = QStringLiteral("client-secret");
@@ -244,13 +245,14 @@ QFuture<VideoListResult> PeerTubeApi::requestChannel(const QString &query, Pagin
 
 QFuture<SubscriptionsResult> PeerTubeApi::requestSubscriptions()
 {
-    return get<SubscriptionsResult>(authenticatedNetworkRequest(subscriptionsUrl()), [=](QNetworkReply *reply) -> SubscriptionsResult {
+    // TODO: paginate!
+    return get<SubscriptionsResult>(authenticatedNetworkRequest(apiUrl(API_SUBSCRIPTIONS)), [=](QNetworkReply *reply) -> SubscriptionsResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
-            auto array = doc.array();
+            auto array = doc.object()["data"_L1].toArray();
 
             QList<QString> subscriptions;
             std::transform(array.cbegin(), array.cend(), std::back_inserter(subscriptions), [](const QJsonValue &val) {
-                return val.toObject().value(QStringLiteral("authorId")).toString();
+                return val.toObject().value(QStringLiteral("name")).toString() + QLatin1Char('@') + val.toObject().value(QStringLiteral("host")).toString();
             });
             return subscriptions;
         }
@@ -456,7 +458,7 @@ QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtens
     QString urlString;
     switch (queryType) {
     case Feed:
-        urlString = API_SUBSCRIPTIONS;
+        urlString = API_SUBSCRIPTION_VIDEOS;
         break;
     case Search:
         urlString = API_SEARCH_VIDEOS;
@@ -487,11 +489,6 @@ QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtens
     QUrl url = apiUrl(urlString);
     url.setQuery(query);
     return url;
-}
-
-QUrl PeerTubeApi::subscriptionsUrl() const
-{
-    return {};
 }
 
 QUrl PeerTubeApi::subscribeUrl(const QString &channelId) const
