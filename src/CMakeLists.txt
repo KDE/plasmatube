@@ -35,6 +35,8 @@ ecm_qt_declare_logging_category(plasmatube_static
 target_sources(plasmatube_static PRIVATE
         utils/linkparser.cpp
         utils/linkparser.h
+        utils/opmlparser.cpp
+        utils/opmlparser.h
 )
 target_link_libraries(plasmatube_static PRIVATE Qt::Core)
 

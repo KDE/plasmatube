@@ -5,12 +5,13 @@
 
 #include "abstractapi.h"
 #include "channel.h"
-#include "videosource.h"
 #include <QAbstractListModel>
 #include <QDateTime>
 #include <QNetworkAccessManager>
 #include <QUrl>
 #include <QtQml>
+
+class VideoSource;
 
 class SubscriptionListModel : public QAbstractListModel
 {
@@ -32,6 +33,8 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE void fill(VideoSource *source);
+
+    QList<QInvidious::Channel> channels() const;
 
 Q_SIGNALS:
     void loadingChanged();

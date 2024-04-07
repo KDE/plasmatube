@@ -6,6 +6,7 @@
 #include "paginator.h"
 #include "preferences.h"
 #include "sourceconfig.h"
+#include "subscriptionlistmodel.h"
 
 #include <QDir>
 #include <QObject>
@@ -71,6 +72,18 @@ public:
 
     std::optional<QList<QString>> &subscriptions();
 
+    // TODO: support PeerTube JSON (see https://github.com/Chocobozzz/PeerTube/pull/6215)
+    /**
+     * Imports subscriptions from @p filePath.
+     */
+    Q_INVOKABLE void importSubscriptions(const QString &filePath);
+
+    // TODO: we should really not attach this to the model, if we want to move the import/export button somewhere else later.
+    /**
+     * Exports subscriptions to @p filePath. Requires @p model to reuse the channel data.
+     */
+    Q_INVOKABLE void exportSubscriptions(SubscriptionListModel *model, const QString &filePath);
+
 Q_SIGNALS:
     void urlChanged();
     void typeChanged();
@@ -80,6 +93,8 @@ Q_SIGNALS:
     void finishedLoading();
     void subscriptionsChanged();
     void canLogInChanged();
+    void importExportCompleted(int numSubscriptions);
+    void importExportError(const QString &reason);
 
 private:
     friend class SubscriptionController;

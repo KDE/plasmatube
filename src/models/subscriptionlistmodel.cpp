@@ -4,6 +4,7 @@
 #include "subscriptionlistmodel.h"
 
 #include "plasmatube.h"
+#include "videosource.h"
 
 #include <QUrlQuery>
 #include <QtConcurrent>
@@ -95,6 +96,11 @@ void SubscriptionListModel::fill(VideoSource *source)
         m_historyFetchFinishWatcher = nullptr;
         setLoading(false);
     });
+}
+
+QList<QInvidious::Channel> SubscriptionListModel::channels() const
+{
+    return m_channels;
 }
 
 #include "moc_subscriptionlistmodel.cpp"

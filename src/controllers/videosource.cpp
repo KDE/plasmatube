@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "videosource.h"
+#include "opmlparser.h"
 
 #include <QFutureWatcher>
 
@@ -272,6 +273,35 @@ bool VideoSource::supportsPopularPage() const
 bool VideoSource::supportsTrendingCategories() const
 {
     return m_api->supportsFeature(QInvidious::AbstractApi::TrendingCategories);
+}
+
+void VideoSource::importSubscriptions(const QString &filePath)
+{
+    const auto result = OPMLParser::parseOPMLSubscriptions(filePath);
+    if (const auto channelIds = std::get_if<QList<QString>>(&result)) {
+        int newSubscriptions = 0;
+        for (const auto &id : *channelIds) {
+            if (!m_subscriptions->contains(id)) {
+                m_api->subscribeToChannel(id);
+                m_subscriptions->push_back(id);
+                newSubscriptions++;
+            }
+        }
+
+        Q_EMIT importExportCompleted(newSubscriptions);
+    } else if (const auto error = std::get_if<QString>(&result)) {
+        Q_EMIT importExportError(*error);
+    }
+}
+
+void VideoSource::exportSubscriptions(SubscriptionListModel *model, const QString &filePath)
+{
+    const auto result = OPMLParser::saveOPMLSubscriptions(model->channels(), filePath);
+    if (const auto error = result) {
+        Q_EMIT importExportError(*error);
+    } else {
+        Q_EMIT importExportCompleted(model->rowCount({}));
+    }
 }
 
 #include "moc_videosource.cpp"
