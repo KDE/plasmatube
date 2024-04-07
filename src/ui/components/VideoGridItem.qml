@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
+import org.kde.coreaddons as KCoreAddons
 
 import "utils.js" as Utils
 
@@ -19,7 +20,7 @@ BaseGridItem {
     property string vid
     property url thumbnail
     property bool liveNow
-    property date length
+    property int length
     property string title
     property string author
     property string authorId
@@ -75,7 +76,7 @@ BaseGridItem {
                         return i18nc("Short label for a livestream that's live", "Live");
                     }
 
-                    const time = Utils.formatTime(length);
+                    const time = KCoreAddons.Format.formatDuration(length * 1000);
                     if (time !== "00:00") {
                         return time;
                     } else {

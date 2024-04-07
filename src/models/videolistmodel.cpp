@@ -249,7 +249,7 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
         if (auto videos = std::get_if<QInvidious::VideoList>(&result)) {
             if (PlasmaTube::instance().settings()->hideShorts()) {
                 videos->removeIf([](const QInvidious::VideoBasicInfo &info) -> bool {
-                    return info.length() == QTime(0, 0, 0);
+                    return info.length() == 0;
                 });
             }
 

@@ -12,12 +12,3 @@ function formatCount(count, decimals) {
        i = Math.floor(Math.log(count) / Math.log(k));
    return parseFloat((count / Math.pow(k, i)).toFixed(dm)) + sizes[i];
 }
-
-function formatTime(time) {
-    if (Qt.formatTime(time, "hh") === "00")
-        return Qt.formatTime(time, "mm:ss")
-    else if (Qt.formatTime(time, "hh") < 10)
-        return Qt.formatTime(time, "h:mm:ss")
-    else
-        return Qt.formatTime(time, "hh:mm:ss")
-}

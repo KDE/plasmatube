@@ -21,7 +21,7 @@ class VideoItem : public QObject, public QInvidious::Video
     Q_PROPERTY(bool isLoaded READ isLoaded CONSTANT)
     Q_PROPERTY(QString videoId READ videoId CONSTANT)
     Q_PROPERTY(QString title READ title CONSTANT)
-    Q_PROPERTY(QTime length READ length CONSTANT)
+    Q_PROPERTY(qint64 length READ length CONSTANT)
     Q_PROPERTY(qint64 viewCount READ viewCount CONSTANT)
     Q_PROPERTY(QString author READ author CONSTANT)
     Q_PROPERTY(QString authorId READ authorId CONSTANT)

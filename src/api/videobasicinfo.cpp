@@ -13,7 +13,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     if (isPeerTube) {
         info.m_videoId = obj.value("uuid"_L1).toString();
         info.m_title = obj.value("name"_L1).toString();
-        info.m_length = QTime(0, 0).addSecs(obj.value("duration"_L1).toInt());
+        info.m_length = obj.value("duration"_L1).toInt();
         info.m_viewCount = obj.value("views"_L1).toInt();
 
         const auto channel = obj.value("channel"_L1).toObject();
@@ -45,7 +45,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     } else if (isInvidious) {
         info.m_videoId = obj.value("videoId"_L1).toString();
         info.m_title = obj.value("title"_L1).toString();
-        info.m_length = QTime(0, 0).addSecs(obj.value("lengthSeconds"_L1).toInt());
+        info.m_length = obj.value("lengthSeconds"_L1).toInt();
         info.m_viewCount = obj.value("viewCount"_L1).toInt();
         info.m_author = obj.value("author"_L1).toString();
         info.m_authorId = obj.value("authorId"_L1).toString();
@@ -67,7 +67,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
     } else {
         info.m_videoId = obj.value("url"_L1).toString().remove(QStringLiteral("/watch?v="));
         info.m_title = obj.value("title"_L1).toString();
-        info.m_length = QTime(0, 0).addSecs(obj.value("duration"_L1).toInt());
+        info.m_length = obj.value("duration"_L1).toInt();
         info.m_viewCount = obj.value("views"_L1).toInt();
         info.m_author = obj.value("uploaderName"_L1).toString();
         info.m_authorUrl = obj.value("uploaderUrl"_L1).toString();
@@ -130,7 +130,7 @@ VideoThumbnail VideoBasicInfo::thumbnail(const QString &quality) const
     return {};
 }
 
-QTime VideoBasicInfo::length() const
+qint64 VideoBasicInfo::length() const
 {
     return m_length;
 }

@@ -28,7 +28,7 @@ public:
 
     VideoThumbnail thumbnail(const QString &quality) const;
 
-    QTime length() const;
+    qint64 length() const;
 
     qint64 viewCount() const;
 
@@ -60,7 +60,7 @@ protected:
     QString m_videoId;
     QString m_title;
     QList<VideoThumbnail> m_videoThumbnails;
-    QTime m_length;
+    qint64 m_length = 0;
     qint64 m_viewCount = 0;
     QString m_author;
     QString m_authorId;

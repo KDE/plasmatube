@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
+import org.kde.coreaddons as KCoreAddons
 
 import "utils.js" as Utils
 
@@ -74,7 +75,7 @@ QQC2.ItemDelegate {
             }
             Text {
                 visible: !root.liveNow && text !== "00:00"
-                text: Utils.formatTime(root.length)
+                text: KCoreAddons.Format.formatDuration(rootlength * 1000)
                 color: "white"
 
                 anchors.right: parent.right
