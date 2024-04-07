@@ -393,8 +393,9 @@ PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtensi
     }
 
     auto url = videoListUrl(queryType, urlExtension, finalParameters);
-    // Feed requests require to be authenticated
-    auto request = queryType == Feed ? authenticatedNetworkRequest(std::move(url)) : QNetworkRequest(url);
+
+    // PeerTube requests should always be authenticated
+    auto request = authenticatedNetworkRequest(std::move(url));
 
     return get<VideoListResult>(std::move(request), [=](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
@@ -459,6 +460,9 @@ QUrl PeerTubeApi::videoListUrl(VideoListType queryType, const QString &urlExtens
         break;
     case Search:
         urlString = API_SEARCH_VIDEOS;
+        break;
+    case Channel:
+        urlString = API_CHANNEL;
         break;
     default:
         // TODO: implement other query types

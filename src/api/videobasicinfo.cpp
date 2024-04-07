@@ -19,7 +19,7 @@ VideoBasicInfo VideoBasicInfo::fromJson(const QJsonObject &obj, VideoBasicInfo &
         const auto channel = obj.value("channel"_L1).toObject();
 
         info.m_author = channel.value("displayName"_L1).toString();
-        info.m_authorId = channel.value("name"_L1).toString();
+        info.m_authorId = channel.value("name"_L1).toString() + u'@' + channel.value("host"_L1).toString();
         info.m_authorUrl = channel.value("url"_L1).toString();
         info.m_published = QDateTime::fromString(obj.value("createdAt"_L1).toString(), Qt::ISODate);
         info.m_description = obj.value("description"_L1).toString();
