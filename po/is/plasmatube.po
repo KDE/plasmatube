@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 02:42+0000\n"
+"POT-Creation-Date: 2024-04-07 02:45+0000\n"
 "PO-Revision-Date: 2023-11-08 21:32+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Þjónninn skilaði stöðukóðanum %1"
 msgid "This instance has disabled the registration."
 msgstr "Þetta tilvik hefur gert skráninguna óvirka."
 
-#: controllers/videocontroller.cpp:58
+#: controllers/videocontroller.cpp:61
 #, kde-format
 msgid "Playing video"
 msgstr "Spila myndskeið"
@@ -595,22 +595,22 @@ msgstr "Á uppleið"
 msgid "Picture in Picture"
 msgstr "Mynd í mynd"
 
-#: ui/videoplayer/VideoPlayer.qml:315
+#: ui/videoplayer/VideoPlayer.qml:331
 #, kde-format
 msgid "%1 views"
 msgstr "%1 áhorf"
 
-#: ui/videoplayer/VideoPlayer.qml:323
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 líkar þetta"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:407
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:418
 #, kde-format
 msgid "Recommended"
 msgstr ""

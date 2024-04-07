@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 02:42+0000\n"
+"POT-Creation-Date: 2024-04-07 02:45+0000\n"
 "PO-Revision-Date: 2024-02-14 00:12+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -42,7 +42,7 @@ msgstr "Palvelin palautti tilakoodin %1"
 msgid "This instance has disabled the registration."
 msgstr "Tämä instanssi on poistanut rekisteröitymisen käytöstä."
 
-#: controllers/videocontroller.cpp:58
+#: controllers/videocontroller.cpp:61
 #, kde-format
 msgid "Playing video"
 msgstr "Toistetaan videota"
@@ -593,22 +593,22 @@ msgstr "Nousussa"
 msgid "Picture in Picture"
 msgstr "Kuva kuvassa"
 
-#: ui/videoplayer/VideoPlayer.qml:315
+#: ui/videoplayer/VideoPlayer.qml:331
 #, kde-format
 msgid "%1 views"
 msgstr "%1 katselua"
 
-#: ui/videoplayer/VideoPlayer.qml:323
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 tykkäystä"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:407
 #, kde-format
 msgid "Queue"
 msgstr "Jono"
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:418
 #, kde-format
 msgid "Recommended"
 msgstr "Suositeltu"

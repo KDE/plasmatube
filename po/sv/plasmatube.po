@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 02:42+0000\n"
+"POT-Creation-Date: 2024-04-07 02:45+0000\n"
 "PO-Revision-Date: 2023-09-16 21:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Servern returnerade statuskod %1"
 msgid "This instance has disabled the registration."
 msgstr "Instansen har inaktiverat registrering."
 
-#: controllers/videocontroller.cpp:58
+#: controllers/videocontroller.cpp:61
 #, kde-format
 msgid "Playing video"
 msgstr "Spelar video"
@@ -603,22 +603,22 @@ msgstr "Trender"
 msgid "Picture in Picture"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:315
+#: ui/videoplayer/VideoPlayer.qml:331
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visningar"
 
-#: ui/videoplayer/VideoPlayer.qml:323
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 gillade"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:407
 #, kde-format
 msgid "Queue"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:418
 #, kde-format
 msgid "Recommended"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 02:42+0000\n"
+"POT-Creation-Date: 2024-04-07 02:45+0000\n"
 "PO-Revision-Date: 2024-02-25 19:08+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -41,7 +41,7 @@ msgstr "Serverul a returnat codul de stare %1"
 msgid "This instance has disabled the registration."
 msgstr "Această instanță a dezactivat înregistrarea."
 
-#: controllers/videocontroller.cpp:58
+#: controllers/videocontroller.cpp:61
 #, kde-format
 msgid "Playing video"
 msgstr "Se redă un video"
@@ -593,22 +593,22 @@ msgstr "În vogă"
 msgid "Picture in Picture"
 msgstr "Imagine-în-imagine"
 
-#: ui/videoplayer/VideoPlayer.qml:315
+#: ui/videoplayer/VideoPlayer.qml:331
 #, kde-format
 msgid "%1 views"
 msgstr "%1 vizualizări"
 
-#: ui/videoplayer/VideoPlayer.qml:323
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 aprecieri"
 
-#: ui/videoplayer/VideoPlayer.qml:391
+#: ui/videoplayer/VideoPlayer.qml:407
 #, kde-format
 msgid "Queue"
 msgstr "Coadă"
 
-#: ui/videoplayer/VideoPlayer.qml:402
+#: ui/videoplayer/VideoPlayer.qml:418
 #, kde-format
 msgid "Recommended"
 msgstr "Recomandat"
