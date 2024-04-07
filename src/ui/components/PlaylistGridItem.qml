@@ -6,7 +6,6 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 
@@ -35,9 +34,7 @@ BaseGridItem {
             Layout.preferredHeight: column.width / 16 * 9
             Layout.maximumHeight: column.width / 16 * 9
             layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: mask
-            }
+            layer.effect: RoundedEffect {}
             source: root.thumbnail
             fillMode: Image.PreserveAspectCrop
             Rectangle {

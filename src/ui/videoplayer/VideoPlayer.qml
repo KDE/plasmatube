@@ -9,8 +9,8 @@ import QtQuick.Layouts
 import QtQuick.Window
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.plasmatube
 import "../components/utils.js" as Utils
@@ -186,10 +186,8 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 Layout.preferredHeight: width / 16.0 * 9.0
                 Layout.maximumHeight: root.height
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: playerMask
-                }
+                layer.enabled: root.widescreen
+                layer.effect: RoundedEffect {}
 
                 Item {
                     id: videoPlayer
@@ -231,12 +229,6 @@ Kirigami.ScrollablePage {
                         QQC2.BusyIndicator {
                             anchors.centerIn: parent
                         }
-                    }
-                    Rectangle {
-                        id: playerMask
-                        radius: root.widescreen ? 7 : 0
-                        anchors.fill: renderer
-                        visible: false
                     }
                     VideoControls {
                         inFullScreen: root.inFullScreen
@@ -332,27 +324,14 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     spacing: Kirigami.Units.largeSpacing
 
-                    Image {
-                        id: chanelThumb
+                    KirigamiComponents.AvatarButton {
                         Layout.preferredHeight: 50
                         Layout.preferredWidth: 50
-                        fillMode: Image.PreserveAspectFit
+
+                        name: root.video.author
                         source: root.video.authorThumbnail(100)
-                        layer.enabled: true
-                        layer.effect: OpacityMask {
-                            maskSource: mask
-                        }
-                        Rectangle {
-                            id: mask
-                            radius: chanelThumb.height/2
-                            anchors.fill: chanelThumb
-                            visible: false
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
-                            onClicked: root.goToChannel()
-                        }
+
+                        onClicked: root.goToChannel()
                     }
 
                     ColumnLayout {

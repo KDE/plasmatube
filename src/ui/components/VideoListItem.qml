@@ -7,7 +7,6 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt5Compat.GraphicalEffects
 
 import org.kde.kirigami as Kirigami
 import org.kde.coreaddons as KCoreAddons
@@ -60,15 +59,7 @@ QQC2.ItemDelegate {
             source: root.thumbnail
             fillMode: Image.PreserveAspectCrop
             layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: mask
-            }
-            Rectangle {
-                id: mask
-                radius: 7
-                anchors.fill: thumb
-                visible: false
-            }
+            layer.effect: RoundedEffect {}
             PlaceholderItem {
                 anchors.fill: parent
                 visible: thumb.status !== Image.Ready

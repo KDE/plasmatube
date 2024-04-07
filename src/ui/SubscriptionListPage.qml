@@ -8,10 +8,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Window
-import Qt5Compat.GraphicalEffects
 import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.plasmatube
 import org.kde.plasmatube.private
@@ -140,27 +140,14 @@ Kirigami.ScrollablePage {
             contentItem: RowLayout {
                 spacing: Kirigami.Units.largeSpacing
 
-                Image {
-                    id: chanelThumb
+                KirigamiComponents.AvatarButton {
                     Layout.preferredHeight: 50
                     Layout.preferredWidth: 50
-                    fillMode: Image.PreserveAspectFit
+
+                    name: delegate.name
                     source: delegate.avatar
-                    layer.enabled: true
-                    layer.effect: OpacityMask {
-                        maskSource: mask
-                    }
-                    Rectangle {
-                        id: mask
-                        radius: chanelThumb.height/2
-                        anchors.fill: chanelThumb
-                        visible: false
-                    }
-                    MouseArea {
-                        anchors.fill: parent
-                        cursorShape: Qt.PointingHandCursor
-                        onClicked: delegate.clicked()
-                    }
+
+                    onClicked: delegate.clicked()
                 }
 
                 QQC2.Label {

@@ -4,7 +4,7 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 import org.kde.kirigami as Kirigami
 import org.kde.plasmatube
@@ -44,9 +44,8 @@ Rectangle {
                 anchors.fill: parent
 
                 // video preview
-                FastBlur {
+                MultiEffect {
                     id: blur
-                    radius: 0
                     Layout.fillHeight: true
                     implicitWidth: Kirigami.Units.gridUnit * 3
                 }
