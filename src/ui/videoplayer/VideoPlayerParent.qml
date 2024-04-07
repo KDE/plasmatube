@@ -75,6 +75,7 @@ Flickable {
         duration: Kirigami.Units.longDuration * 2
         easing.type: Easing.OutCubic
         running: false
+        onFinished: maximized = false
     }
 
     // snap to end
@@ -155,7 +156,7 @@ Flickable {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            onRequestClosePlayer: root.close();
+            onRequestClosePlayer: root.close()
         }
     }
 }
