@@ -152,16 +152,22 @@ Kirigami.ScrollablePage {
 
                     property bool showControls: false
                     onEntered: {
-                        videoContainer.showControls = true;
-                        controlTimer.restart();
+                        if (!Kirigami.Settings.hasTransientTouchInput) {
+                            videoContainer.showControls = true;
+                            controlTimer.restart();
+                        }
                     }
                     onPositionChanged: {
-                        videoContainer.showControls = true;
-                        controlTimer.restart();
+                        if (!Kirigami.Settings.hasTransientTouchInput) {
+                            videoContainer.showControls = true;
+                            controlTimer.restart();
+                        }
                     }
                     onExited: {
-                        controlTimer.stop();
-                        videoContainer.showControls = false;
+                        if (!Kirigami.Settings.hasTransientTouchInput) {
+                            controlTimer.stop();
+                            videoContainer.showControls = false;
+                        }
                     }
                     onDoubleClicked: root.toggleFullscreen()
 
@@ -230,6 +236,7 @@ Kirigami.ScrollablePage {
                     TapHandler {
                         acceptedDevices: Qt.TouchScreen
                         onTapped: {
+                            console.info("hello!");
                             videoContainer.showControls = true;
                             controlTimer.restart();
                         }
