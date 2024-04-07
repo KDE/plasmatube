@@ -42,15 +42,6 @@ GridView {
     cellWidth: effectiveWidth / columns
     cellHeight: (cellWidth / 16 * 9) + Kirigami.Units.gridUnit * 5 + Kirigami.Units.mediumSpacing
 
-    Connections {
-        target: gridView.model
-
-        function onErrorOccured(errorText) {
-            message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
-            message.visible = true;
-        }
-    }
-
     delegate: DelegateChooser {
         role: "type"
 
@@ -181,6 +172,4 @@ GridView {
 
         onAddToPlaylist: applicationWindow().openAddToPlaylistMenu(gridView.currentVideoId)
     }
-
-    Component.onCompleted: gridView.model?.requestQuery(initialQuery, true)
 }

@@ -28,6 +28,15 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Connections {
+        target: gridView.model
+
+        function onErrorOccured(errorText) {
+            message.text = i18nc("@info:status Network status", "Failed to contact server: %1. Please check your proxy settings.", errorText);
+            message.visible = true;
+        }
+    }
+
     header: Components.Banner {
         id: message
 
@@ -50,5 +59,7 @@ Kirigami.ScrollablePage {
             id: videoModel
         }
     }
+
+    Component.onCompleted: gridView.model?.requestQuery(initialQuery, true)
 }
 
