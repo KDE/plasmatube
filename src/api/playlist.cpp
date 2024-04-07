@@ -17,9 +17,16 @@ Playlist Playlist::fromJson(const QJsonObject &obj, Playlist &playlist)
     } else {
         playlist.m_id = obj["playlistId"_L1].toString();
         playlist.m_title = obj["title"_L1].toString();
-        const QJsonValue firstVideo = obj["videos"_L1].toArray().first();
-        const QJsonValue firstVideoThumb = firstVideo.toObject()["videoThumbnails"_L1].toArray().first();
-        playlist.m_thumbnail = firstVideoThumb.toObject()["url"_L1].toString();
+        if (obj.contains("playlistThumbnail"_L1)) {
+            const QJsonValue firstVideo = obj["videos"_L1].toArray().first();
+            const QJsonValue firstVideoThumb = firstVideo.toObject()["videoThumbnails"_L1].toArray().first();
+            playlist.m_thumbnail = obj["playlistThumbnail"_L1].toString();
+        } else {
+            const QJsonValue firstVideo = obj["videos"_L1].toArray().first();
+            const QJsonValue firstVideoThumb = firstVideo.toObject()["videoThumbnails"_L1].toArray().first();
+            playlist.m_thumbnail = firstVideoThumb.toObject()["url"_L1].toString();
+        }
+
         playlist.m_videoCount = obj["videoCount"_L1].toInt();
     }
 
