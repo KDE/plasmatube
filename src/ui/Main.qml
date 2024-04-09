@@ -244,7 +244,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function openAddToPlaylistMenu(videoId: string): video {
+    function openAddToPlaylistMenu(videoId: string): void {
         addToPlaylistLoader.active = true;
         addToPlaylistLoader.item.currentVideoId = videoId;
         addToPlaylistLoader.item.open();
