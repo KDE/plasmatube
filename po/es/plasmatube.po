@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-06 21:45+0200\n"
+"PO-Revision-Date: 2024-04-08 12:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -319,7 +319,7 @@ msgstr "%1 visualizaciones"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>en directo</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -689,108 +689,102 @@ msgid "Add Source…"
 msgstr "Añadir fuente..."
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Suscribirse (%1)"
+msgstr "Canales suscritos"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Importación terminada"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Exportación terminada"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Se ha importado %1 nueva suscripción."
+msgstr[1] "Se han importado %1 nuevas suscripciones."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Ya estaba suscrito a todos los canales importados."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Se ha exportado %1 suscripción."
+msgstr[1] "Se han exportado %1 suscripciones."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Importar..."
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Suscripciones"
+msgstr "Importar suscripciones OPML"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Importar"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Exportar..."
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Suscripciones"
+msgstr "Exportar suscripciones OPML"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Exportar"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Cargando..."
+msgstr "Importando..."
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Cargando..."
+msgstr "Exportando..."
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Ningún canal"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Suscribirse (%1)"
+msgstr "Canales suscritos"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -846,8 +840,7 @@ msgid "Hide player"
 msgstr "Ocultar el reproductor"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Añadir a la lista de reproducción..."
@@ -855,14 +848,12 @@ msgstr "Añadir a la lista de reproducción..."
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Copiar URL del vídeo"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Video settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Preferencias de vídeo"
+msgstr "Estadísticas del vídeo"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format

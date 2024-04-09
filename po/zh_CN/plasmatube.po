@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-07 19:29\n"
+"PO-Revision-Date: 2024-04-08 19:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -269,20 +269,18 @@ msgid "Add a new video source"
 msgstr ""
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "取消订阅 (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "订阅 (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -302,10 +300,9 @@ msgid "Short"
 msgstr ""
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "没有视频"
+msgstr ""
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -725,11 +722,10 @@ msgid "Import…"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "订阅"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
@@ -744,11 +740,10 @@ msgid "Export…"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "订阅"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
@@ -757,16 +752,14 @@ msgid "Export"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "正在加载…"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "正在加载…"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format

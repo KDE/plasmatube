@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-07 07:21+0200\n"
+"PO-Revision-Date: 2024-04-08 07:19+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -273,20 +273,18 @@ msgid "Add a new video source"
 msgstr "Dodaj nov vir videa"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Prekliči naročnino (%1)"
+msgstr "Odjavi naročnino%1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Naroči se (%1)"
+msgstr "Naroči se%1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -306,10 +304,9 @@ msgid "Short"
 msgstr "Kratko"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Ni video posnetkov"
+msgstr "Ni pogledov"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -320,7 +317,7 @@ msgstr "%1 pogledi"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>v živo zdaj</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -696,91 +693,87 @@ msgstr "Naročeni kanali"
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Uvoz dokončan"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Izvoz dokončan"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Uvoženo %1 novih naročnin."
+msgstr[1] "Uvožena %1 nova naročnina."
+msgstr[2] "Uvoženi %1 novi naročnini."
+msgstr[3] "Uvožene %1 nove naročnine."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Vsi uvoženi kanali so že bili naročeni."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Izvoženo %1 novih naročnin."
+msgstr[1] "Izvožena %1 nova naročnina."
+msgstr[2] "Izvoženi %1 novi naročnini."
+msgstr[3] "Izvožene %1 nove naročnine."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Napaka"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Uvoz…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Naročnine"
+msgstr "Uvoz naročnine OPML"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Uvoz"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Izvoz…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Naročnine"
+msgstr "Izvoz naročnin OPLM"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Izvoz"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Nalaganje…"
+msgstr "Uvažanje…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Nalaganje…"
+msgstr "Izvažanje…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
@@ -847,8 +840,7 @@ msgid "Hide player"
 msgstr "Skrij predvajalnik"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Dodaj na seznam predvajanja…"
@@ -856,14 +848,12 @@ msgstr "Dodaj na seznam predvajanja…"
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Kopiraj URL video posnetka"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Video settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Nastavitve videov"
+msgstr "Statistike videov"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format

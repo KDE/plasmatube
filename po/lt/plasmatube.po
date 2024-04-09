@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-06 00:38+0300\n"
+"PO-Revision-Date: 2024-04-08 20:09+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -152,15 +152,13 @@ msgid "Proxy Settings"
 msgstr "Įgaliotojo serverio nuostatos"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Vaizdo įrašai"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Grojaraščiai"
@@ -276,20 +274,18 @@ msgid "Add a new video source"
 msgstr "Pridėti naują vaizdo įrašų šaltinį"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Atsisakyti prenumeratos (%1)"
+msgstr "Atsisakyti prenumeratos %1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Prenumeruoti (%1)"
+msgstr "Prenumeruoti %1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -309,10 +305,9 @@ msgid "Short"
 msgstr "Trumpas"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Nėra vaizdo įrašų"
+msgstr "Nėra peržiūrų"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -323,7 +318,7 @@ msgstr "Peržiūrų: %1"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>dabar tiesiogiai</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -693,112 +688,106 @@ msgid "Add Source…"
 msgstr "Pridėti šaltinį…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Prenumeruoti (%1)"
+msgstr "Prenumeruoti kanalai"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Importavimas užbaigtas"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Eksportavimas užbaigtas"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Importuota %1 nauja prenumerata."
+msgstr[1] "Importuotos %1 naujos prenumeratos."
+msgstr[2] "Importuota %1 naujų prenumeratų."
+msgstr[3] "Importuota %1 nauja prenumerata."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Visi importuoti kanalai buvo sėkmingai užprenumeruoti."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Eksportuota %1 prenumerata."
+msgstr[1] "Eksportuotos %1 prenumeratos."
+msgstr[2] "Eksportuota %1 prenumeratų."
+msgstr[3] "Eksportuota %1 prenumerata."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Klaida"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Importuoti…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Prenumeratos"
+msgstr "Importuoti OPML prenumeratas"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Importuoti"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Eksportuoti…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Prenumeratos"
+msgstr "Eksportuoti OPML prenumeratas"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Eksportuoti"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Įkeliama…"
+msgstr "Importuojama…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Įkeliama…"
+msgstr "Eksportuojama…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Nėra kanalų"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Prenumeruoti (%1)"
+msgstr "Prenumeruoti kanalai"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -854,8 +843,7 @@ msgid "Hide player"
 msgstr "Slėpti grotuvą"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Pridėti į grojaraštį…"
@@ -863,14 +851,12 @@ msgstr "Pridėti į grojaraštį…"
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Kopijuoti vaizdo įrašo URL"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Video settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Vaizdo įrašo nuostatos"
+msgstr "Vaizdo įrašo statistika"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
