@@ -909,8 +909,3 @@ msgstr ""
 #, kde-format
 msgid "Loading…"
 msgstr ""
-
-#, fuzzy
-#~| msgid "• %1 views • %2"
-#~ msgid "%1 views • %2"
-#~ msgstr "• %1 visingar • %2"

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-07 10:02+0200\n"
+"PO-Revision-Date: 2024-04-08 09:35+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -685,11 +685,10 @@ msgid "Add Source…"
 msgstr "Ajouter une source..."
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "S'abonner (%1)"
+msgstr "Canaux abonnés"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
@@ -779,14 +778,13 @@ msgstr "Chargement en cours…"
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Aucun canal"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "S'abonner (%1)"
+msgstr "Canaux abonnés"
 
 #: ui/TrendingPage.qml:15
 #, kde-format

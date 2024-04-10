@@ -150,18 +150,16 @@ msgid "Proxy Settings"
 msgstr "Nastavení proxy"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
-msgstr "Videa"
+msgstr ""
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
-msgstr "Seznamy skladeb"
+msgstr ""
 
 #: ui/components/BaseGridView.qml:157
 #, kde-format
@@ -273,20 +271,18 @@ msgid "Add a new video source"
 msgstr "Přidat nový zdroj videa"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Odhlásit se (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Přihlásit se (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -306,10 +302,9 @@ msgid "Short"
 msgstr ""
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Žádná videa"
+msgstr ""
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -333,9 +328,7 @@ msgid "Play Now"
 msgstr "Přehrát nyní"
 
 #: ui/components/VideoMenu.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Přehrát"
 
@@ -686,11 +679,10 @@ msgid "Add Source…"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Přihlásit se (%1)"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
@@ -736,11 +728,10 @@ msgid "Import…"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Přihlášení"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
@@ -755,11 +746,10 @@ msgid "Export…"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Přihlášení"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
@@ -783,11 +773,10 @@ msgid "No channels"
 msgstr ""
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Přihlásit se (%1)"
+msgstr ""
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -843,11 +832,10 @@ msgid "Hide player"
 msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr "Přidat do seznamu videí..."
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
@@ -888,7 +876,4 @@ msgstr "Vyprázdnit"
 #: ui/videoplayer/VideoQueueView.qml:81
 #, kde-format
 msgid "Loading…"
-msgstr ""
-
-#~ msgid "%1 views • %2"
-#~ msgstr "%1 zobrazení • %2"
+msgstr "Probíhá načítání…"

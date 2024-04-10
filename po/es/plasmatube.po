@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-08 00:37+0000\n"
-"PO-Revision-Date: 2024-04-08 12:22+0200\n"
+"PO-Revision-Date: 2024-04-10 00:48+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -272,20 +272,18 @@ msgid "Add a new video source"
 msgstr "Añadir una nueva fuente de vídeo"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Darse de baja (%1)"
+msgstr "Darse de baja%1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Suscribirse (%1)"
+msgstr "Suscribirse%1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -305,10 +303,9 @@ msgid "Short"
 msgstr "Corto"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "No hay vídeos"
+msgstr "Sin visualizaciones"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -522,7 +519,7 @@ msgstr "Fecha de subida"
 #: ui/SearchPage.qml:130
 #, kde-format
 msgid "View Count"
-msgstr "Contador de vistas"
+msgstr "Contador de visualizaciones"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
