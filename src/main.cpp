@@ -31,6 +31,9 @@
 #include "controllers/windowcontroller.h"
 #include "plasmatube-version.h"
 
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char **argv)
 {
 #ifdef Q_OS_ANDROID
