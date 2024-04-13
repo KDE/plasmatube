@@ -7,3 +7,7 @@ Source: https://invent.kde.org/multimedia/plasmatube
 Files: src/icons/*
 Copyright: Joshua Goins <josh@redstrate.com>
 License: CC-BY-SA-4.0
+
+Files: android/res/drawable/plasmatube.png
+Copyright: 2021 Mathis Brüchert <mbblp@protonmail.ch>
+License: CC-BY-SA-4.0
