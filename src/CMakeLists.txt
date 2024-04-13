@@ -236,3 +236,8 @@ install(TARGETS plasmatube ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
 if (BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
+
+if (ANDROID)
+    ecm_add_android_apk(plasmatube ANDROID_DIR ${CMAKE_SOURCE_DIR}/android)
+endif()
+

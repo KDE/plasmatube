@@ -28,6 +28,7 @@ include(FeatureSummary)
 include(ECMFindQmlModule)
 include(ECMQtDeclareLoggingCategory)
 include(ECMQmlModule)
+include(ECMAddAndroidApk)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Gui Svg QuickControls2 Widgets Concurrent)
 
