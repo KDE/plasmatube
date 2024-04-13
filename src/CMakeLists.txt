@@ -125,9 +125,7 @@ qt_target_qml_sources(plasmatube
         ui/components/PlaceholderItem.qml
         ui/components/PlaylistGridItem.qml
         ui/components/RoundedEffect.qml
-        ui/components/ShareAction.qml
         ui/components/ShareDialog.qml
-        ui/components/ShareMenu.qml
         ui/components/Sidebar.qml
         ui/components/SourceSwitcher.qml
         ui/components/SourceSwitcherDialog.qml
@@ -186,6 +184,26 @@ qt_target_qml_sources(plasmatube
         ../org.kde.plasmatube.svg
 )
 
+if(ANDROID)
+    qt_target_qml_sources(plasmatube
+            QML_FILES
+            ui/android/ShareAction.qml
+            ui/android/ShareMenu.qml
+    )
+    set_source_files_properties(ui/android/ShareAction.qml PROPERTIES
+            QT_RESOURCE_ALIAS ui/components/ShareAction.qml
+    )
+    set_source_files_properties(ui/android/ShareMenu.qml PROPERTIES
+            QT_RESOURCE_ALIAS ui/components/ShareMenu.qml
+    )
+else()
+    qt_target_qml_sources(plasmatube
+            QML_FILES
+            ui/components/ShareAction.qml
+            ui/components/ShareMenu.qml
+    )
+endif()
+
 kconfig_add_kcfg_files(plasmatube config.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
 target_include_directories(plasmatube PRIVATE
@@ -228,7 +246,7 @@ endif()
 if (NOT ANDROID)
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/actions)
 else()
-    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/)
+    install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/)
 endif()
 
 install(TARGETS plasmatube ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})

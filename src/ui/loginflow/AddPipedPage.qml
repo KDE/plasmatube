@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Window
 
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kitemmodels as KItemModels
 
 import org.kde.plasmatube
 
