@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-08 00:37+0000\n"
+"POT-Creation-Date: 2024-04-14 00:38+0000\n"
 "PO-Revision-Date: 2023-01-13 08:37+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -45,48 +45,48 @@ msgstr ""
 msgid "Playing video"
 msgstr ""
 
-#: main.cpp:51
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr ""
 
-#: main.cpp:53
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr ""
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr ""
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr ""
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr ""
 
-#: main.cpp:57
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:58
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -143,6 +143,17 @@ msgstr ""
 msgid "Search results for \"%1\""
 msgstr ""
 
+#: ui/android/ShareAction.qml:15 ui/android/ShareMenu.qml:15
+#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
+#, kde-format
+msgid "Share the selected media"
+msgstr ""
+
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
 #, fuzzy, kde-format
@@ -174,8 +185,8 @@ msgstr "Video"
 msgid "Videos"
 msgstr "Video"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:33
-#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:33
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
 #: ui/SearchPage.qml:17
 #, kde-format
 msgid "Search"
@@ -206,16 +217,6 @@ msgid "%1 video"
 msgid_plural "%1 videos"
 msgstr[0] "%1 tampilan"
 msgstr[1] "%1 tampilan"
-
-#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
-#, kde-format
-msgid "Share"
-msgstr ""
-
-#: ui/components/ShareAction.qml:18
-#, kde-format
-msgid "Share the selected media"
-msgstr ""
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -374,27 +375,27 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: ui/loginflow/AddInvidiousPage.qml:17
+#: ui/loginflow/AddInvidiousPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Invidious"
 msgctxt "@title:window"
 msgid "Add Invidious Source"
 msgstr "Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:27 ui/loginflow/AddPeerTubePage.qml:27
-#: ui/loginflow/AddPipedPage.qml:27
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
+#: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
 msgstr ""
 
-#: ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddInvidiousPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Invidious"
 msgid "invidious.io"
 msgstr "Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:67 ui/loginflow/AddPeerTubePage.qml:64
-#: ui/loginflow/AddPipedPage.qml:68
+#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
+#: ui/loginflow/AddPipedPage.qml:69
 #, kde-format
 msgid "No public instances found."
 msgstr ""
@@ -410,19 +411,19 @@ msgstr ""
 msgid "joinpeertube.org"
 msgstr ""
 
-#: ui/loginflow/AddPipedPage.qml:17
+#: ui/loginflow/AddPipedPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Invidious"
 msgctxt "@title:window"
 msgid "Add Piped Source"
 msgstr "Invidious"
 
-#: ui/loginflow/AddPipedPage.qml:34
+#: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
 msgstr ""
 
-#: ui/loginflow/AddPipedPage.qml:75
+#: ui/loginflow/AddPipedPage.qml:76
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-08 00:37+0000\n"
+"POT-Creation-Date: 2024-04-14 00:38+0000\n"
 "PO-Revision-Date: 2024-04-08 08:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -46,48 +46,48 @@ msgstr "У цьому екземплярі реєстрацію вимкнено
 msgid "Playing video"
 msgstr "Відтворення відео"
 
-#: main.cpp:51
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:53
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "Клієнт YouTube"
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© Linus Jahn, 2019–2024, Спільнота KDE, 2019–2024"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Автор"
 
-#: main.cpp:57
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:58
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровідник"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Юрій Чорноіван"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -144,6 +144,17 @@ msgstr "Журнал"
 msgid "Search results for \"%1\""
 msgstr "Результати пошуку для «%1»"
 
+#: ui/android/ShareAction.qml:15 ui/android/ShareMenu.qml:15
+#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr "Оприлюднити"
+
+#: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
+#, kde-format
+msgid "Share the selected media"
+msgstr "Оприлюднити позначені мультимедійні дані"
+
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
@@ -172,8 +183,8 @@ msgstr "Немає відео"
 msgid "Videos"
 msgstr "Відео"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:33
-#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:33
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
 #: ui/SearchPage.qml:17
 #, kde-format
 msgid "Search"
@@ -204,16 +215,6 @@ msgstr[0] "%1 відео"
 msgstr[1] "%1 відео"
 msgstr[2] "%1 відео"
 msgstr[3] "%1 відео"
-
-#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
-#, kde-format
-msgid "Share"
-msgstr "Оприлюднити"
-
-#: ui/components/ShareAction.qml:18
-#, kde-format
-msgid "Share the selected media"
-msgstr "Оприлюднити позначені мультимедійні дані"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -372,25 +373,25 @@ msgstr ""
 "Не вдалося зв'язатися з сервером: %1. Будь ласка, перевірте, чи правильно "
 "задано параметри проксі."
 
-#: ui/loginflow/AddInvidiousPage.qml:17
+#: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
 msgstr "Додати джерело Invidious"
 
-#: ui/loginflow/AddInvidiousPage.qml:27 ui/loginflow/AddPeerTubePage.qml:27
-#: ui/loginflow/AddPipedPage.qml:27
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
+#: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
 msgstr "Виберіть екземпляр"
 
-#: ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
 msgid "invidious.io"
 msgstr "invidious.io"
 
-#: ui/loginflow/AddInvidiousPage.qml:67 ui/loginflow/AddPeerTubePage.qml:64
-#: ui/loginflow/AddPipedPage.qml:68
+#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
+#: ui/loginflow/AddPipedPage.qml:69
 #, kde-format
 msgid "No public instances found."
 msgstr "Немає загальнодоступних екземплярів."
@@ -406,18 +407,18 @@ msgstr "Додати джерело PeerTube"
 msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
-#: ui/loginflow/AddPipedPage.qml:17
+#: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
 msgstr "Додавання джерела Piped"
 
-#: ui/loginflow/AddPipedPage.qml:34
+#: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
 msgstr "pipedapi.kavin.rocks"
 
-#: ui/loginflow/AddPipedPage.qml:75
+#: ui/loginflow/AddPipedPage.qml:76
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-08 00:37+0000\n"
+"POT-Creation-Date: 2024-04-14 00:38+0000\n"
 "PO-Revision-Date: 2024-04-04 20:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -48,48 +48,48 @@ msgstr "Instantzia honek erregistratzea ezgaitu du."
 msgid "Playing video"
 msgstr "Bideoa jotzen"
 
-#: main.cpp:51
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:53
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "«YouTube»ren bezeroa"
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE komunitatea"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Sortzailea"
 
-#: main.cpp:57
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:58
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantentzailea"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñigo Salvador Azurmendi"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -146,6 +146,17 @@ msgstr "Historia"
 msgid "Search results for \"%1\""
 msgstr "«%1» bilatzearen emaitzak"
 
+#: ui/android/ShareAction.qml:15 ui/android/ShareMenu.qml:15
+#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr "Partekatu"
+
+#: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
+#, kde-format
+msgid "Share the selected media"
+msgstr "Partekatu hautatutako hedabidea"
+
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
 #, kde-format
@@ -176,8 +187,8 @@ msgstr "Bideorik ez"
 msgid "Videos"
 msgstr "Bideoak"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:33
-#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:33
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
 #: ui/SearchPage.qml:17
 #, kde-format
 msgid "Search"
@@ -206,16 +217,6 @@ msgid "%1 video"
 msgid_plural "%1 videos"
 msgstr[0] "bideo %1"
 msgstr[1] "%1 bideo"
-
-#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
-#, kde-format
-msgid "Share"
-msgstr "Partekatu"
-
-#: ui/components/ShareAction.qml:18
-#, kde-format
-msgid "Share the selected media"
-msgstr "Partekatu hautatutako hedabidea"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
@@ -377,25 +378,25 @@ msgstr ""
 "Zerbitzariarekin kontaktatzea huts egin du: %1. Mesedez, egiaztatu "
 "ordezkariaren zure ezarpenak."
 
-#: ui/loginflow/AddInvidiousPage.qml:17
+#: ui/loginflow/AddInvidiousPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
 msgstr "Gehitu «Invidious» sorburua"
 
-#: ui/loginflow/AddInvidiousPage.qml:27 ui/loginflow/AddPeerTubePage.qml:27
-#: ui/loginflow/AddPipedPage.qml:27
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
+#: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
 msgstr "Hautatu instantzia bat"
 
-#: ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
 msgid "invidious.io"
 msgstr "invidious.io"
 
-#: ui/loginflow/AddInvidiousPage.qml:67 ui/loginflow/AddPeerTubePage.qml:64
-#: ui/loginflow/AddPipedPage.qml:68
+#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
+#: ui/loginflow/AddPipedPage.qml:69
 #, kde-format
 msgid "No public instances found."
 msgstr "Ez da instantzia publikorik aurkitu"
@@ -411,18 +412,18 @@ msgstr "Gehitu «PeerTube» sorburua"
 msgid "joinpeertube.org"
 msgstr "joinpeertube.org"
 
-#: ui/loginflow/AddPipedPage.qml:17
+#: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
 msgstr "Gehitu hodi bidezko sorburua"
 
-#: ui/loginflow/AddPipedPage.qml:34
+#: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
 msgstr "pipedapi.kavin.rocks"
 
-#: ui/loginflow/AddPipedPage.qml:75
+#: ui/loginflow/AddPipedPage.qml:76
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
