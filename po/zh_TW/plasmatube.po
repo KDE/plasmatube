@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 19:34+0900\n"
+"PO-Revision-Date: 2024-04-16 18:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -164,15 +164,13 @@ msgid "Proxy Settings"
 msgstr "代理伺服器設定"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "影片"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "播放清單"
@@ -275,20 +273,18 @@ msgid "Add a new video source"
 msgstr "新增影片來源"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "取消訂閱 (%1)"
+msgstr "取消訂閱%1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "訂閱 (%1)"
+msgstr "訂閱%1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -308,10 +304,9 @@ msgid "Short"
 msgstr "Shorts"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "沒有影片"
+msgstr "無觀看次數"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -322,7 +317,7 @@ msgstr "觀看次數：%1"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>直播中</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -686,106 +681,100 @@ msgid "Add Source…"
 msgstr "新增來源…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "訂閱 (%1)"
+msgstr "已訂閱頻道"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "匯入已完成"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "匯出已完成"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
+msgstr[0] "已匯入 %1 個新訂閱。"
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "所有匯入的頻道原先皆已訂閱。"
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
+msgstr[0] "已匯出 %1 個訂閱頻道。"
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "匯入…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "訂閱內容"
+msgstr "匯入 OPML 訂閱內容"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "匯入"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "匯出…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "訂閱內容"
+msgstr "匯出 OPML 訂閱內容"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "匯出"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "載入中…"
+msgstr "匯入中…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "載入中…"
+msgstr "匯出中…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "沒有頻道"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "訂閱 (%1)"
+msgstr "已訂閱頻道"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -841,8 +830,7 @@ msgid "Hide player"
 msgstr "隱藏播放器"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "新增至播放清單…"
@@ -850,14 +838,12 @@ msgstr "新增至播放清單…"
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "複製影片網址"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Video settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "影片設定"
+msgstr "影片統計資料"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
