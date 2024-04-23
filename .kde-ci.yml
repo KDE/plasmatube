@@ -18,3 +18,6 @@ Dependencies:
     'libraries/kirigami-addons': '@latest-kf6'
     'libraries/mpvqt': '@latest'
     'third-party/qtkeychain': '@latest'
+
+Options:
+  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
