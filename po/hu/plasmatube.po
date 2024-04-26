@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-16 20:51+0100\n"
+"PO-Revision-Date: 2024-04-25 13:30+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: api/invidious/invidiousapi.cpp:110 api/piped/pipedapi.cpp:84
 #: controllers/logincontroller.cpp:37
@@ -59,6 +59,8 @@ msgstr "YouTube kliens"
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr ""
+"© Linus Jahn, 2019-2024.\n"
+"© A KDE közösség, 2019-2024."
 
 #: main.cpp:59
 #, kde-format
@@ -73,12 +75,12 @@ msgstr "Szerző"
 #: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Karbantartó"
 
 #: main.cpp:65
 #, kde-format
@@ -161,15 +163,13 @@ msgid "Proxy Settings"
 msgstr "Proxybeállítások"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videók"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Lejátszólisták"
@@ -197,8 +197,7 @@ msgid "Settings"
 msgstr "Beállítások"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Beállítások"
@@ -274,16 +273,14 @@ msgid "Add a new video source"
 msgstr "Új videóforrás hozzáadása"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
 msgstr "Leiratkozás (%1)"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
@@ -298,19 +295,18 @@ msgstr "Jelentkezzen be, hogy feliratkozhasson csatornákra."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Élő"
 
 #: ui/components/VideoGridItem.qml:74
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Rövid"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Nincsenek videók"
+msgstr "Nincsenek megtekintések"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -321,7 +317,7 @@ msgstr "%1 megtekintés"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>élőben</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -334,9 +330,7 @@ msgid "Play Now"
 msgstr "Lejátszás most"
 
 #: ui/components/VideoMenu.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Lejátszás"
 
@@ -351,14 +345,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "Lejátszás kép a képben módban"
 
 #: ui/components/VideoMenu.qml:64
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "Megjelölés meg nem nézettként"
 
 #: ui/components/VideoMenu.qml:64
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "Megjelölés megnézettként"
 
@@ -463,8 +455,7 @@ msgid "Add Piped Source"
 msgstr "Piped forrás hozzáadása"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Bejelentkezés"
@@ -495,11 +486,10 @@ msgid "Password must not be empty!"
 msgstr "A jelszó nem lehet üres."
 
 #: ui/Main.qml:215
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr "Hozzáadás a lejátszólistához"
+msgstr "Hozzáadás lejátszólistához"
 
 #: ui/PlaylistPage.qml:42
 #, kde-format
@@ -538,15 +528,13 @@ msgid "Currently logged in as %1."
 msgstr "Jelenleg bejelentkezve, mint %1."
 
 #: ui/settings/AccountCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Kijelentkezés"
 
 #: ui/settings/AccountCard.qml:41
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Bejelentkezés"
