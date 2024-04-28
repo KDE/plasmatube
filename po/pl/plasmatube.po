@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-13 19:43+0200\n"
+"PO-Revision-Date: 2024-04-27 10:36+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -162,15 +162,13 @@ msgid "Proxy Settings"
 msgstr "Ustawienia pośrednika"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Filmy"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Listy odtwarzania"
@@ -198,8 +196,7 @@ msgid "Settings"
 msgstr "Ustawienia"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ustawienia"
@@ -276,12 +273,11 @@ msgid "Add a new video source"
 msgstr "Dodaj nowe źródło filmu"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Przestań śledzić (%1)"
+msgstr "Przestań śledzić%1"
 
 #: ui/components/SubscriptionButton.qml:63
 #, kde-format
@@ -765,33 +761,28 @@ msgstr "Wyeksportuj śledzonych OPML"
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Wyeksportuj"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Wczytywanie…"
+msgstr "Importowanie…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Wczytywanie…"
+msgstr "Eksportowanie…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Bez kanałów"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Zacznij śledzić (%1)"
+msgstr "Śledzone kanały"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -805,22 +796,19 @@ msgid "Picture in Picture"
 msgstr "Obraz w Obrazie"
 
 #: ui/videoplayer/VideoControls.qml:103
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Ustawienia pośrednika"
+msgstr "Ustawienia obrazu"
 
 #: ui/videoplayer/VideoControls.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Przewiń wstecz"
 
 #: ui/videoplayer/VideoControls.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Odtwórz"
@@ -829,45 +817,41 @@ msgstr "Odtwórz"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Szukaj w przód"
 
 #: ui/videoplayer/VideoControls.qml:262
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr "Pełny ekran"
+msgstr "Cały ekran"
 
 #: ui/videoplayer/VideoControls.qml:285
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Obraz w Obrazie"
+msgstr "Obraz-w-obrazie"
 
 #: ui/videoplayer/VideoPlayer.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Ukryj odtwarzacz"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr "Dodaj do listy utworów…"
+msgstr "Dodaj do listy odtwarzania…"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Skopiuj adres URL filmu"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Ustawienia pośrednika"
+msgstr "Statystyki obrazu"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
@@ -896,9 +880,7 @@ msgid "Clear"
 msgstr "Wyczyść"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
