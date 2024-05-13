@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-25 13:30+0200\n"
+"PO-Revision-Date: 2024-05-12 14:46+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: api/invidious/invidiousapi.cpp:110 api/piped/pipedapi.cpp:84
 #: controllers/logincontroller.cpp:37
@@ -154,7 +154,7 @@ msgstr "Megosztás"
 #: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "A kiválaszott média megosztása"
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
@@ -543,6 +543,8 @@ msgstr "Bejelentkezés"
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
 msgstr ""
+"Íratkozzon fel csatornákra, kövesse nyomon a megnézett videókat, és még sok "
+"minden mást."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
@@ -551,10 +553,9 @@ msgid "Edit Source"
 msgstr "Forrás szerkesztése"
 
 #: ui/settings/BaseSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Forrás eltávolítása"
+msgstr "Forrás eltávolítása…"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
@@ -576,18 +577,20 @@ msgstr "Biztosan el szeretné távolítani ezt a forrást?"
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Általános"
 
 #: ui/settings/GeneralPage.qml:21
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Shorts elrejtése"
 
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
+"A mobileszközökön való megtekintésre tervezett rövid formátumú videók "
+"elrejtése."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -597,11 +600,10 @@ msgstr "Fiók"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Beállítások"
 
 #: ui/settings/InvidiousSourcePage.qml:42
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
 msgstr "Automatikus lejátszás"
 
@@ -611,6 +613,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Azonnal elkezdődjön-e a videók lejátszása, vagy várjon a lejátszás gomb "
+"lenyomásáig."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
@@ -620,7 +624,7 @@ msgstr "Alapértelmezett honlap"
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Az alapértelmezett oldal, amely betöltődik, ha erre a forrásra vált."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -679,117 +683,108 @@ msgid "About KDE"
 msgstr "A KDE névjegye"
 
 #: ui/settings/SourcesPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Forrás hozzáadása"
+msgstr "Forrás hozzáadása…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Feliratkozás (%1)"
+msgstr "Feliratkozott csatornák"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Importálás befejezve."
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Exportálás befejezve."
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 új feliratkozás importálva."
+msgstr[1] "%1 új feliratkozás importálva."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Már feliratkozott az összes importált csatornára."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 feliratkozás exportálva."
+msgstr[1] "%1 feliratkozás exportálva."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Hiba"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Importálás…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Feliratkozások"
+msgstr "OPML feliratkozások importálása"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Importálás"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Exportálás…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Feliratkozások"
+msgstr "OPML feliratkozások exportálása"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Exportálás"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Betöltés…"
+msgstr "Importálás…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Betöltés…"
+msgstr "Exportálás…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Nincsenek csatornák"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Feliratkozás (%1)"
+msgstr "Feliratkozott csatornák"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -803,22 +798,19 @@ msgid "Picture in Picture"
 msgstr "Kép a képben"
 
 #: ui/videoplayer/VideoControls.qml:103
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Proxybeállítások"
+msgstr "Videóbeállítások"
 
 #: ui/videoplayer/VideoControls.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Visszatekerés"
 
 #: ui/videoplayer/VideoControls.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Lejátszás"
@@ -827,18 +819,16 @@ msgstr "Lejátszás"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Előre tekerés"
 
 #: ui/videoplayer/VideoControls.qml:262
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Teljes képernyő"
 
 #: ui/videoplayer/VideoControls.qml:285
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Kép a képben"
@@ -847,11 +837,10 @@ msgstr "Kép a képben"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Lejátszó elrejtése"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Hozzáadás a lejátszólistához…"
@@ -859,13 +848,12 @@ msgstr "Hozzáadás a lejátszólistához…"
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Videó címének másolása"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Proxybeállítások"
+msgstr "Videóstatisztikák"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
@@ -894,9 +882,7 @@ msgid "Clear"
 msgstr "Törlés"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Betöltés…"
 
