@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-05-16 21:16\n"
+"PO-Revision-Date: 2024-06-05 07:06\n"
 "Last-Translator: Zmicier <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian\n"
 "Language: be\n"
@@ -83,7 +83,7 @@ msgstr ""
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Суправаджальнік"
 
 #: main.cpp:65
 #, kde-format
@@ -166,15 +166,13 @@ msgid "Proxy Settings"
 msgstr "Налады проксі"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
-msgstr "Відэа"
+msgstr "Відэазапісы"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Спісы прайгравання"
@@ -202,11 +200,10 @@ msgid "Settings"
 msgstr "Налады"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Налады"
+msgstr "Настаўленні"
 
 #: ui/components/Comments.qml:97
 #, kde-format
@@ -281,20 +278,18 @@ msgid "Add a new video source"
 msgstr "Дадаць новую крыніцу відэа"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Адпісацца ад (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Падпісацца на (%1)"
+msgstr ""
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -305,19 +300,18 @@ msgstr "Кап падпісвацца на каналы, увайдзіце."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Жывы"
 
 #: ui/components/VideoGridItem.qml:74
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Кароткі"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Няма відэа"
+msgstr ""
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -341,9 +335,7 @@ msgid "Play Now"
 msgstr "Прайграць зараз"
 
 #: ui/components/VideoMenu.qml:31
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Прайграць"
 
@@ -358,16 +350,14 @@ msgid "Play in Picture-in-Picture"
 msgstr "Прайграць у плывучым акне"
 
 #: ui/components/VideoMenu.qml:64
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
-msgstr "Пазначыць як непрагледжанае"
+msgstr ""
 
 #: ui/components/VideoMenu.qml:64
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
-msgstr "Пазначыць як прагледжанае"
+msgstr ""
 
 #: ui/components/VideoMenu.qml:78
 #, kde-format
@@ -468,8 +458,7 @@ msgid "Add Piped Source"
 msgstr "Дадаць крыніцу Piped"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Увайсці"
@@ -500,8 +489,7 @@ msgid "Password must not be empty!"
 msgstr "Пароль не можа быць пустым!"
 
 #: ui/Main.qml:215
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "Дадаць у спіс прайгравання"
@@ -543,15 +531,13 @@ msgid "Currently logged in as %1."
 msgstr "Вы ўвайшлі як %1."
 
 #: ui/settings/AccountCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Выйсці"
 
 #: ui/settings/AccountCard.qml:41
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Увайсці"
@@ -568,10 +554,9 @@ msgid "Edit Source"
 msgstr "Рэдагаваць крыніцу"
 
 #: ui/settings/BaseSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Выдаліць крыніцу"
+msgstr ""
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
@@ -593,7 +578,7 @@ msgstr "Сапраўды хочаце выдаліць гэтую крыніцу
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Асноўныя налады"
 
 #: ui/settings/GeneralPage.qml:21
 #, kde-format
@@ -614,13 +599,12 @@ msgstr "Акаўнт"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Налады"
 
 #: ui/settings/InvidiousSourcePage.qml:42
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Аўтапрайграванне"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
@@ -696,18 +680,16 @@ msgid "About KDE"
 msgstr "Пра KDE"
 
 #: ui/settings/SourcesPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Дадаць крыніцу"
+msgstr "Дадаць крыніцу…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Падпісацца на (%1)"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
@@ -746,59 +728,53 @@ msgstr[3] ""
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Памылка"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Імпартаванне…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Падпіскі"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Імпарт"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Экспартаванне…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Падпіскі"
+msgstr ""
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Экспарт"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Загрузка…"
+msgstr "Імпарт…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Загрузка…"
+msgstr "Экспарт…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
@@ -806,11 +782,10 @@ msgid "No channels"
 msgstr ""
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Падпісацца на (%1)"
+msgstr ""
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -824,11 +799,10 @@ msgid "Picture in Picture"
 msgstr "Прайграванне ў плывучым акне"
 
 #: ui/videoplayer/VideoControls.qml:103
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Налады проксі"
+msgstr "Налады відэа"
 
 #: ui/videoplayer/VideoControls.qml:132
 #, kde-format
@@ -837,9 +811,7 @@ msgid "Seek backward"
 msgstr ""
 
 #: ui/videoplayer/VideoControls.qml:173
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Прайграць"
@@ -854,14 +826,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr ""
+msgstr "На ўвесь экран"
 
 #: ui/videoplayer/VideoControls.qml:285
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Прайграванне ў плывучым акне"
+msgstr "Плавальныя вокны"
 
 #: ui/videoplayer/VideoPlayer.qml:111
 #, kde-format
@@ -870,8 +841,7 @@ msgid "Hide player"
 msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Дадаць у спіс прайгравання…"
@@ -913,9 +883,7 @@ msgid "Clear"
 msgstr "Ачысціць"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Загрузка…"
 
