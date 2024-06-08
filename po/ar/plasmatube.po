@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2024-06-06 08:54+0400\n"
+"PO-Revision-Date: 2024-04-09 12:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
+"Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
 
 #: api/invidious/invidiousapi.cpp:110 api/piped/pipedapi.cpp:84
 #: controllers/logincontroller.cpp:37
@@ -703,7 +702,9 @@ msgid "Exporting Completed"
 msgstr "اكتمل التصدير"
 
 #: ui/SubscriptionListPage.qml:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Imported %1 new subscription."
+#| msgid_plural "Imported %1 new subscriptions."
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
 msgstr[0] "اكتمل استيراد %1 اشتراك جديد."
@@ -719,7 +720,9 @@ msgid "All imported channels were already subscribed to."
 msgstr "أنت مشترك في جميع القنوات المستوردة من قبل."
 
 #: ui/SubscriptionListPage.qml:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Exported %1 subscription."
+#| msgid_plural "Exported %1 subscriptions."
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
 msgstr[0] "لم يصُدر أي اشتراك."
