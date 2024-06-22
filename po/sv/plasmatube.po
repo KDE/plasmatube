@@ -1,13 +1,13 @@
 # Copyright (C) 2021 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-14 00:38+0000\n"
-"PO-Revision-Date: 2023-09-16 21:00+0200\n"
+"PO-Revision-Date: 2024-06-21 08:20+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: api/invidious/invidiousapi.cpp:110 api/piped/pipedapi.cpp:84
 #: controllers/logincontroller.cpp:37
@@ -58,7 +58,7 @@ msgstr "YouTube-klient"
 #: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-gemenskapen"
 
 #: main.cpp:59
 #, kde-format
@@ -73,12 +73,12 @@ msgstr "Skapare"
 #: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Underhåll"
 
 #: main.cpp:65
 #, kde-format
@@ -106,37 +106,37 @@ msgstr "Populära"
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "Alla"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "Spel"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "Filmer"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "Musik"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "Nyheter"
 
 #: models/videolistmodel.cpp:32
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "Historik"
 
 #: models/videolistmodel.cpp:160
 #, kde-format
@@ -147,23 +147,21 @@ msgstr "Sökresultat för \"%1\""
 #: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Dela"
 
 #: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Dela de markerade medierna"
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Proxy Settings"
-msgstr "Inställningar"
+msgstr "Proxyinställningar"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videor"
@@ -172,7 +170,7 @@ msgstr "Videor"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
-msgstr ""
+msgstr "Spellistor"
 
 #: ui/components/BaseGridView.qml:157
 #, kde-format
@@ -197,8 +195,7 @@ msgid "Settings"
 msgstr "Inställningar"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Inställningar"
@@ -207,20 +204,19 @@ msgstr "Inställningar"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Läs in fler"
 
 #: ui/components/PlaylistGridItem.qml:53
-#, fuzzy, kde-format
-#| msgid "%1 views"
+#, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] "%1 visningar"
-msgstr[1] "%1 visningar"
+msgstr[0] "%1 video"
+msgstr[1] "%1 videor"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Delning misslyckades"
 
 #: ui/components/Sidebar.qml:85
 #, kde-format
@@ -230,16 +226,15 @@ msgstr "Trender"
 #: ui/components/Sidebar.qml:118 ui/PlaylistsPage.qml:13
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "Spellistor"
 
 #: ui/components/Sidebar.qml:135
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Historik"
 
 #: ui/components/Sidebar.qml:152
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Inställningar"
@@ -252,44 +247,42 @@ msgstr "Stötande"
 #: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:66
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:68
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:64
 #: ui/components/SourceSwitcherDialog.qml:28
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "Byt källa"
 
 #: ui/components/SourceSwitcherDialog.qml:55
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "Lägg till källa"
 
 #: ui/components/SourceSwitcherDialog.qml:59
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Lägg till en ny videokälla"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Säg upp prenumeration (%1)"
+msgstr "Säg upp prenumeration %1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Prenumerera (%1)"
+msgstr "Prenumerera %1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -300,19 +293,18 @@ msgstr "Logga in för att prenumerera på kanaler."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Live"
 
 #: ui/components/VideoGridItem.qml:74
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Kort"
 
 #: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Inga videor"
+msgstr "Inga visningar"
 
 #: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
 #: ui/videoplayer/VideoPlayer.qml:378
@@ -323,7 +315,7 @@ msgstr "%1 visningar"
 #: ui/components/VideoGridItem.qml:157
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>live nu</i>"
 
 #: ui/components/VideoListItem.qml:156
 #, kde-format
@@ -333,140 +325,133 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:31
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "Spela nu"
 
 #: ui/components/VideoMenu.qml:31
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "Spela"
 
 #: ui/components/VideoMenu.qml:41
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "Spela nästa"
 
 #: ui/components/VideoMenu.qml:50
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Spela med bild-i-bild"
 
 #: ui/components/VideoMenu.qml:64
 #, kde-format
 msgid "Mark as Unwatched"
-msgstr ""
+msgstr "Markera som inte visad"
 
 #: ui/components/VideoMenu.qml:64
 #, kde-format
 msgid "Mark as Watched"
-msgstr ""
+msgstr "Markera som visad"
 
 #: ui/components/VideoMenu.qml:78
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Lägg till i spellista…"
 
 #: ui/components/VideoMenu.qml:85
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "Ta bort från spellista"
 
 #: ui/FeedPage.qml:35
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr ""
+msgstr "Misslyckades kontakta server: %1. Kontrollera proxyinställningarna."
 
 #: ui/loginflow/AddInvidiousPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr "Toppresultat för Invidious"
+msgstr "Lägg till Invidious-källa"
 
 #: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "Välj en instans"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "invidious.io"
-msgstr "Stötande"
+msgstr "invidious.io"
 
 #: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
 #: ui/loginflow/AddPipedPage.qml:69
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "Inga öppna instanser hittades."
 
 #: ui/loginflow/AddPeerTubePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Lägg till PeerTube-källa"
 
 #: ui/loginflow/AddPeerTubePage.qml:34
 #, kde-format
 msgid "joinpeertube.org"
-msgstr ""
+msgstr "joinpeertube.org"
 
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Toppresultat för Invidious"
+msgstr "Lägg till Piped-källa"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
 msgid "pipedapi.kavin.rocks"
-msgstr ""
+msgstr "pipedapi.kavin.rocks"
 
 #: ui/loginflow/AddPipedPage.qml:76
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "Lägg till %1"
 
 #: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "Välkommen"
 
 #: ui/loginflow/WelcomePage.qml:25
-#, fuzzy, kde-format
-#| msgid "About PlasmaTube"
+#, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr "Om PlasmaTube"
+msgstr "Välkommen till PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:31
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube kräver minst en videokälla."
 
 #: ui/loginflow/WelcomePage.qml:41
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Invidious Source"
-msgstr "Toppresultat för Invidious"
+msgstr "Lägg till Invidious-källa"
 
 #: ui/loginflow/WelcomePage.qml:53
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "Lägg till PeerTube-källa"
 
 #: ui/loginflow/WelcomePage.qml:65
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Toppresultat för Invidious"
+msgstr "Lägg till Piped-källa"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Logga in"
@@ -500,13 +485,13 @@ msgstr "Lösenordet får inte vara tomt."
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr ""
+msgstr "Lägg till i spellista"
 
 #: ui/PlaylistPage.qml:42
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "Spela"
 
 #: ui/SearchPage.qml:89
 #, kde-format
@@ -539,15 +524,13 @@ msgid "Currently logged in as %1."
 msgstr "För närvarande inloggad som %1."
 
 #: ui/settings/AccountCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Logga ut"
 
 #: ui/settings/AccountCard.qml:41
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Logga in"
@@ -555,51 +538,51 @@ msgstr "Logga in"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Prenumerera på kanaler, håll reda på sedda videor med mera."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "Redigera källa"
 
 #: ui/settings/BaseSourcePage.qml:20
 #, kde-format
 msgid "Remove Source…"
-msgstr ""
+msgstr "Ta bort källa…"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Kan inte ta bort den enda källan."
 
 #: ui/settings/BaseSourcePage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "Ta bort källa"
 
 #: ui/settings/BaseSourcePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort källan?"
 
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: ui/settings/GeneralPage.qml:21
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Dölj kortvideor"
 
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "Dölj korta videor utformade för visning på en mobil."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -609,13 +592,12 @@ msgstr "Konto"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Inställningar"
 
 #: ui/settings/InvidiousSourcePage.qml:42
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Inga videor"
+msgstr "Spela videor automatiskt"
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
@@ -623,63 +605,64 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Om videor ska börja spelas upp omedelbart eller vänta tills "
+"uppspelningsknappen används."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "Förvald hemsida"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Den förvalda sidan att ladda vid byte till den här källan."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "Nätverksproxy"
 
 #: ui/settings/NetworkProxyPage.qml:27
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "Systemstandard"
 
 #: ui/settings/NetworkProxyPage.qml:37
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:53
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "Värddator"
 
 #: ui/settings/NetworkProxyPage.qml:64
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ui/settings/NetworkProxyPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Username"
+#, kde-format
 msgid "User"
-msgstr "Användarnamn"
+msgstr "Användare"
 
 #: ui/settings/NetworkProxyPage.qml:107
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "Verkställ"
 
 #: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:18
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "Källor"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "Nätverksproxy"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
@@ -692,158 +675,146 @@ msgid "About KDE"
 msgstr "Om KDE"
 
 #: ui/settings/SourcesPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Invidious Top"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Toppresultat för Invidious"
+msgstr "Lägg till källa…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Prenumerera (%1)"
+msgstr "Prenumererade kanaler"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Import färdig"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Export färdig"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Importerade %1 ny prenumeration."
+msgstr[1] "Importerade %1 nya prenumerationer."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Alla importerade kanaler har redan prenumerationer."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Exporterade %1 prenumeration."
+msgstr[1] "Exporterade %1 prenumerationer."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Fel"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Importera…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Prenumerationer"
+msgstr "Importera OPML-prenumerationer"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Importera"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Exportera..."
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Prenumerationer"
+msgstr "Exportera OPML-prenumerationer"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Exportera"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Läser in…"
+msgstr "Importerar…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Läser in…"
+msgstr "Exporterar…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Inga kanaler"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Prenumerera (%1)"
+msgstr "Kanaler med prenumeration"
 
 #: ui/TrendingPage.qml:15
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@title Trending videos"
 msgid "Trending"
-msgstr "Trender"
+msgstr "Populära"
 
 #: ui/videoplayer/PictureInPictureVideo.qml:14
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "Bild-i-bild"
 
 #: ui/videoplayer/VideoControls.qml:103
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Inställningar"
+msgstr "Videoinställningar"
 
 #: ui/videoplayer/VideoControls.qml:132
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Sök bakåt"
 
 #: ui/videoplayer/VideoControls.qml:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
-msgstr ""
+msgstr "Spela"
 
 #: ui/videoplayer/VideoControls.qml:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Sök framåt"
 
 #: ui/videoplayer/VideoControls.qml:262
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Fullskärm"
@@ -852,30 +823,29 @@ msgstr "Fullskärm"
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr ""
+msgstr "Bild-i-bild"
 
 #: ui/videoplayer/VideoPlayer.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Dölj spelare"
 
 #: ui/videoplayer/VideoPlayer.qml:133
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "Lägg till i spellista…"
 
 #: ui/videoplayer/VideoPlayer.qml:287
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Kopiera videowebbadress"
 
 #: ui/videoplayer/VideoPlayer.qml:295
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Inställningar"
+msgstr "Videostatistik"
 
 #: ui/videoplayer/VideoPlayer.qml:386
 #, kde-format
@@ -885,28 +855,26 @@ msgstr "%1 gillade"
 #: ui/videoplayer/VideoPlayer.qml:435
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Kommentarer"
 
 #: ui/videoplayer/VideoPlayer.qml:465
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Rekommenderade"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "Köa"
 
 #: ui/videoplayer/VideoQueueView.qml:44
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "Rensa"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Läser in…"
 
