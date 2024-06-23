@@ -8,6 +8,9 @@ SPDX-License-Identifier: CC0-1.0
   <id>org.kde.plasmatube</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>PlasmaTube</name>
   <name xml:lang="ar">بلازما تيوب</name>
   <name xml:lang="ast">PlasmaTube</name>
