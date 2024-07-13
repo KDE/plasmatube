@@ -36,6 +36,7 @@ public:
     static MediaFormatBase fromJson(const QJsonObject &obj, MediaFormatBase &);
 
     QUrl url() const;
+    void setUrl(QUrl url);
 
     uint16_t formatId() const;
 
@@ -45,12 +46,16 @@ public:
 
     Container container() const;
 
+    QString qualityLabel() const;
+    void setQualityLabel(const QString &label);
+
 private:
     QUrl m_url;
     uint16_t m_formatId = 0;
     uint8_t m_fps = 0;
     uint16_t m_resolution = 0;
     Container m_container = InvalidContainer;
+    QString m_qualityLabel;
 };
 
 class MediaFormat : public MediaFormatBase

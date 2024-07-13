@@ -54,6 +54,23 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
 
         video.m_dislikeCount = obj.value("dislikes"_L1).toInt();
         video.m_likeCount = obj.value("likes"_L1).toInt();
+
+        // TODO: fling this into mediaformat maybe
+        auto streamingPlaylists = obj.value(u"streamingPlaylists").toArray();
+
+        // FIXME: always picks the first one
+        auto firstPlaylist = streamingPlaylists.first().toObject();
+
+        auto files = firstPlaylist.value(u"files").toArray();
+        for (const auto &file : files) {
+            MediaFormatCombined combined;
+
+            auto resolutionObj = file.toObject().value(u"resolution").toObject();
+            combined.setQualityLabel(resolutionObj.value(u"label").toString());
+            combined.setUrl(QUrl(file.toObject().value(u"fileUrl").toString()));
+
+            video.m_combinedFormats.append(combined);
+        }
     } else {
         video.m_author = obj.value("uploader"_L1).toString();
         parseArray(obj.value("tags"_L1), video.m_keywords);

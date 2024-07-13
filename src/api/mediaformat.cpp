@@ -51,12 +51,18 @@ MediaFormatBase MediaFormatBase::fromJson(const QJsonObject &obj, MediaFormatBas
         format.m_resolution = resolution.chopped(1).toUInt();
     }
     format.m_container = containerFromString(obj.value(u"container").toString());
+    format.m_qualityLabel = obj.value(u"qualityLabel").toString();
     return format;
 }
 
 QUrl MediaFormatBase::url() const
 {
     return m_url;
+}
+
+void MediaFormatBase::setUrl(QUrl url)
+{
+    m_url = url;
 }
 
 uint16_t MediaFormatBase::formatId() const
@@ -77,6 +83,16 @@ uint16_t MediaFormatBase::resolution() const
 auto MediaFormatBase::container() const -> Container
 {
     return m_container;
+}
+
+QString MediaFormatBase::qualityLabel() const
+{
+    return m_qualityLabel;
+}
+
+void MediaFormatBase::setQualityLabel(const QString &label)
+{
+    m_qualityLabel = label;
 }
 
 MediaFormat MediaFormat::fromJson(const QJsonObject &obj, MediaFormat &format)

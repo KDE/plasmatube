@@ -121,11 +121,6 @@ QFuture<VideoResult> InvidiousApi::requestVideo(const QString &videoId)
     });
 }
 
-QString InvidiousApi::resolveVideoUrl(const QString &videoId)
-{
-    return QStringLiteral("ytdl://%1").arg(videoId);
-}
-
 QFuture<SearchListResult> InvidiousApi::requestSearchResults(const SearchParameters &parameters, Paginator *paginator)
 {
     QHash<QString, QString> searchParameters = parameters.toQueryParameters();

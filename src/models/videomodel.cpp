@@ -43,12 +43,35 @@ void VideoModel::fetch(const QString &videoId)
 
     m_watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
     connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
-        auto result = m_watcher->result();
+        const auto result = m_watcher->result();
 
         if (const auto video = std::get_if<QInvidious::Video>(&result)) {
             m_video->deleteLater();
             m_video = new VideoItem(*video, this);
+
+            // Formats that are separate video/audio streams
+            for (const auto &value : m_video->adaptiveFormats()) {
+                if (value.mediaType() == QInvidious::MediaFormat::Audio) {
+                    m_audioUrl = value.url().toString();
+                    Q_EMIT audioUrlChanged();
+                } else {
+                    m_formatUrl[value.qualityLabel()] = value.url().toString();
+                }
+            }
+
+            // Formats that are combined video/audio streams
+            for (const auto &value : m_video->combinedFormats()) {
+                // Intentional, we only want to use combined formats as a last resort
+                if (!m_formatUrl.contains(value.qualityLabel())) {
+                    m_formatUrl[value.qualityLabel()] = value.url().toString();
+                }
+            }
+
+            m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+
             Q_EMIT videoChanged();
+            Q_EMIT formatListChanged();
+            Q_EMIT remoteUrlChanged();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
             qDebug() << "VideoModel::fetch(): Error:" << error->second << error->first;
             Q_EMIT errorOccurred(error->second);
@@ -60,43 +83,6 @@ void VideoModel::fetch(const QString &videoId)
     });
     m_watcher->setFuture(future);
     Q_EMIT isLoadingChanged();
-
-    // load format list
-    QString youtubeDl = QStringLiteral("yt-dlp");
-    QStringList arguments;
-    arguments << QLatin1String("--dump-json") << m_videoId;
-    auto process = new QProcess();
-    process->setReadChannel(QProcess::StandardOutput);
-    process->start(youtubeDl, arguments);
-
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, [=](int, QProcess::ExitStatus) {
-        m_formatUrl.clear();
-
-        const auto doc = QJsonDocument::fromJson(process->readAllStandardOutput());
-        const auto formatsArray = doc.object()[QLatin1String("formats")].toArray();
-        for (const auto &value : formatsArray) {
-            const auto format = value.toObject();
-            const auto formatNote = format["format_note"_L1].toString();
-
-            if (format["vcodec"_L1].toString() == "none"_L1) {
-                // TODO: implement some more smarts about which audio URL to pick
-                if (!format["acodec"_L1].toString().isEmpty()) {
-                    m_audioUrl = format["url"_L1].toString();
-                    Q_EMIT audioUrlChanged();
-                }
-                continue;
-            }
-
-            if (formatNote.isEmpty()) {
-                continue;
-            }
-
-            m_formatUrl[formatNote] = format["url"_L1].toString();
-        }
-        Q_EMIT remoteUrlChanged();
-        Q_EMIT formatListChanged();
-        process->deleteLater();
-    });
 }
 
 bool VideoModel::isLoading() const
@@ -156,7 +142,7 @@ QString VideoModel::remoteUrl()
     if (!m_formatUrl.isEmpty() && m_formatUrl.contains(m_selectedFormat)) {
         return m_formatUrl[m_selectedFormat];
     }
-    return PlasmaTube::instance().selectedSource()->api()->resolveVideoUrl(m_videoId);
+    return {};
 }
 
 QString VideoModel::audioUrl() const

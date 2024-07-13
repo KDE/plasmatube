@@ -92,7 +92,6 @@ public:
     }
     virtual QFuture<LogInResult> logIn(const QString &username, const QString &password) = 0;
     virtual QFuture<VideoResult> requestVideo(const QString &videoId) = 0;
-    virtual QString resolveVideoUrl(const QString &videoId) = 0;
     virtual QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters, Paginator *) = 0;
     /**
      * @brief Request the subscription feed, only works if logged in.
