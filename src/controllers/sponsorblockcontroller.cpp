@@ -19,7 +19,9 @@ void SponsorBlockController::requestSponsors(const QString &videoId)
         return;
     }
 
-    qInfo() << "Requesting sponsors for" << videoId;
+    if (!PlasmaTube::instance().settings()->useSponsorBlock()) {
+        return;
+    }
 
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("videoID"), videoId);

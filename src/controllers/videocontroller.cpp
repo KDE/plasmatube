@@ -87,9 +87,11 @@ VideoController::VideoController(QObject *parent)
     connect(this, &VideoController::positionChanged, this, [this] {
         auto currentPosition = position();
         if (m_sponsorBlockController->isSponsor(currentPosition)) {
-            auto freePosition = m_sponsorBlockController->findFreePosition(currentPosition);
-            if (freePosition.has_value()) {
-                m_currentPlayer->seek(*freePosition);
+            if (PlasmaTube::instance().settings()->skipSponsorBlock()) {
+                auto freePosition = m_sponsorBlockController->findFreePosition(currentPosition);
+                if (freePosition.has_value()) {
+                    m_currentPlayer->seek(*freePosition);
+                }
             }
         }
     });
