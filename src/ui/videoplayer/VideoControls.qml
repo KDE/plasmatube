@@ -285,7 +285,7 @@ QQC2.Control {
                     text: i18nc("@action:button", "Picture-in-picture")
                     display: QQC2.AbstractButton.IconOnly
 
-                    visible: root.showPresentationControls
+                    visible: root.showPresentationControls && !Kirigami.Settings.isMobile
 
                     onClicked: PlasmaTube.videoController.videoMode = VideoController.PictureInPicture
 

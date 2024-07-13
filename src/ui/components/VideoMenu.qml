@@ -49,6 +49,7 @@ QQC2.Menu {
     QQC2.MenuItem {
         text: i18n("Play in Picture-in-Picture")
         icon.name: "window-duplicate-symbolic"
+        visible: !Kirigami.Settings.isMobile
         onTriggered: {
             root.markWatched();
             PlasmaTube.videoController.videoMode = VideoController.PictureInPicture;
