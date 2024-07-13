@@ -76,4 +76,28 @@ void PlaylistsModel::loadChannelPlaylists(const QString &channelId)
     fill(PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannelPlaylists(channelId));
 }
 
+void PlaylistsModel::refresh()
+{
+    // TODO: implement
+}
+
+void PlaylistsModel::markAsWatched(int index)
+{
+    // intentional, this function is only relevant for videos
+    Q_UNUSED(index)
+}
+
+void PlaylistsModel::markAsUnwatched(int index)
+{
+    // intentional, this function is only relevant for videos
+    Q_UNUSED(index)
+}
+
+void PlaylistsModel::removeFromPlaylist(const QString &plid, int index)
+{
+    // intentional, this function is only relevant for videos
+    Q_UNUSED(plid)
+    Q_UNUSED(index)
+}
+
 #include "moc_playlistsmodel.cpp"

@@ -28,6 +28,12 @@ public:
     Q_INVOKABLE void loadUserPlaylists();
     Q_INVOKABLE void loadChannelPlaylists(const QString &channelId);
 
+public Q_SLOTS:
+    void refresh() override;
+    void markAsWatched(int index) override;
+    void markAsUnwatched(int index) override;
+    void removeFromPlaylist(const QString &plid, int index) override;
+
 private:
     void fill(const QFuture<QInvidious::PlaylistsResult> &future);
 
