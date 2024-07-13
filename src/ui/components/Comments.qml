@@ -17,8 +17,8 @@ ColumnLayout {
 
     spacing: Kirigami.Units.mediumSpacing
 
-    function loadComments(vid) {
-        commentsModel.fillComments(vid)
+    function loadComments(vid: string): void {
+        commentsModel.fillComments(vid);
     }
 
     Repeater {
@@ -96,5 +96,16 @@ ColumnLayout {
     QQC2.Button {
         text: i18nc("@action:button Load more comments", "Load more")
         onClicked: commentsModel.loadMore()
+
+        visible: !commentsModel.loading && commentsRepeater.count > 0
+    }
+
+    QQC2.Label {
+        text: i18nc("@info", "No comments")
+        visible: !commentsModel.loading && commentsRepeater.count === 0
+    }
+
+    QQC2.BusyIndicator {
+        visible: commentsModel.loading
     }
 }
