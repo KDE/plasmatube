@@ -265,12 +265,11 @@ else()
             "media-playback-start"
             "media-playback-stop"
             "media-playlist-append"
+            "media-playlist-repeat"
             "media-skip-forward"
+            "media-seek-backward"
+            "media-seek-forward"
             "network-connect"
-            "org.kde.plasmatube"
-            "plasmatube-invidious"
-            "plasmatube-peertube"
-            "plasmatube-piped"
             "remove"
             "rss-symbolic"
             "search"
@@ -283,6 +282,12 @@ else()
             "view-media-playlist"
             "window-close-symbolic"
             "window-duplicate-symbolic"
+            "feed-subscribe"
+            "arrow-up-double"
+            "folder-games-symbolic"
+            "folder-videos-symbolic"
+            "folder-music-symbolic"
+            "news-subscribe"
     )
 
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/)
