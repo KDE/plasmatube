@@ -71,7 +71,7 @@ private:
 
     QFuture<VideoListResult>
     requestVideoList(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}, Paginator *paginator = nullptr);
-    QNetworkRequest authenticatedNetworkRequest(QUrl &&url);
+    QNetworkRequest authenticatedNetworkRequest(QUrl url);
     QUrlQuery genericUrlQuery() const;
     QUrl videoUrl(const QString &videoId) const;
     QUrl videoListUrl(VideoListType queryType, const QString &urlExtension = {}, const QHash<QString, QString> &parameters = {}) const;

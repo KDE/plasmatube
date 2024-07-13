@@ -21,6 +21,7 @@ const QString API_OAUTH_TOKEN = QStringLiteral("/api/v1/oauth-clients/local");
 const QString API_LOGIN_TOKEN = QStringLiteral("/api/v1/users/token");
 const QString API_SUBSCRIPTION_VIDEOS = QStringLiteral("/api/v1/users/me/subscriptions/videos");
 const QString API_SUBSCRIPTIONS = QStringLiteral("/api/v1/users/me/subscriptions");
+const QString API_HISTORY = QStringLiteral("/api/v1/users/me/history/videos");
 
 const QString CLIENT_ID_KEY = QStringLiteral("client-id");
 const QString CLIENT_SECRET_KEY = QStringLiteral("client-secret");
@@ -275,8 +276,36 @@ QFuture<Result> PeerTubeApi::unsubscribeFromChannel(const QString &channel)
 
 QFuture<HistoryResult> PeerTubeApi::requestHistory(Paginator *paginator)
 {
-    Q_UNUSED(paginator)
-    return {};
+    QUrlQuery query;
+
+    if (paginator != nullptr) {
+        paginator->setType(Paginator::Type::StartIndex);
+        query.addQueryItem(u"start"_s, QString::number(paginator->m_startIndex));
+    }
+
+    auto url = apiUrl(API_HISTORY);
+    url.setQuery(query);
+
+    return get<SubscriptionsResult>(authenticatedNetworkRequest(url), [this, paginator](QNetworkReply *reply) -> HistoryResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            auto array = doc.object().value("data"_L1).toArray();
+
+            if (paginator != nullptr && doc.object().contains("total"_L1)) {
+                paginator->m_total = doc.object()["total"_L1].toInt();
+            }
+
+            if (paginator != nullptr && doc.object().contains("data"_L1) && doc.object()["data"_L1].isArray()) {
+                paginator->m_count = doc.object()["data"_L1].toArray().size();
+            }
+
+            QList<QString> history;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(history), [](const QJsonValue &val) {
+                return val.toObject().value(QStringLiteral("uuid")).toString();
+            });
+            return history;
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<Result> PeerTubeApi::markWatched(const QString &videoId)
@@ -438,7 +467,7 @@ PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtensi
     });
 }
 
-QNetworkRequest PeerTubeApi::authenticatedNetworkRequest(QUrl &&url)
+QNetworkRequest PeerTubeApi::authenticatedNetworkRequest(QUrl url)
 {
     QNetworkRequest request(url);
     if (isLoggedIn()) {
