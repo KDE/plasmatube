@@ -282,6 +282,8 @@ else()
             "user"
             "view-fullscreen"
             "view-history"
+            "view-hidden"
+            "view-visible"
             "view-media-playlist"
             "window-close-symbolic"
             "window-duplicate-symbolic"
