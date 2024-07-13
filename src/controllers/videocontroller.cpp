@@ -10,9 +10,12 @@
 #ifdef HAS_DBUS
 #include <KLocalizedString>
 #include <QDBusConnection>
-#include <QDBusMessage>
 #include <QDBusReply>
 #include <QGuiApplication>
+#endif
+
+#ifdef Q_OS_ANDROID
+#include <QJniObject>
 #endif
 
 VideoController::VideoController(QObject *parent)
@@ -82,6 +85,24 @@ VideoController::VideoController(QObject *parent)
                 QDBusConnection::sessionBus().send(message);
             }
         }
+#endif
+
+#ifdef Q_OS_ANDROID
+        QNativeInterface::QAndroidApplication::runOnAndroidMainThread([shouldInhibit] {
+            QJniObject activity = QNativeInterface::QAndroidApplication::context();
+            if (activity.isValid()) {
+                QJniObject window = activity.callObjectMethod("getWindow", "()Landroid/view/Window;");
+
+                if (window.isValid()) {
+                    const int FLAG_KEEP_SCREEN_ON = 128;
+                    if (shouldInhibit) {
+                        window.callMethod<void>("addFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+                    } else {
+                        window.callMethod<void>("clearFlags", "(I)V", FLAG_KEEP_SCREEN_ON);
+                    }
+                }
+            }
+        });
 #endif
     });
     connect(this, &VideoController::positionChanged, this, [this] {
