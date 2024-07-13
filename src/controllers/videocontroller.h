@@ -5,6 +5,7 @@
 
 #include "mpris2.h"
 #include "mpvobject.h"
+#include "sponsorblockcontroller.h"
 #include "videomodel.h"
 #include "videoqueue.h"
 
@@ -81,4 +82,5 @@ private:
     VideoQueue *m_videoQueue = nullptr;
     Mpris2 *m_mpris = nullptr;
     unsigned int screenSaverDbusCookie = 0;
+    SponsorBlockController *m_sponsorBlockController = nullptr;
 };

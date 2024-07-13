@@ -9,6 +9,11 @@
       <default>true</default>
     </entry>
   </group>
+  <group name="Developer">
+    <entry name="SponsorBlockServer" type="String">
+      <default>sponsor.ajay.app</default>
+    </entry>
+  </group>
   <group name="NetworkProxy">
     <entry name="ProxyType" type="Enum">
       <label>The type of proxy used by the application.</label>

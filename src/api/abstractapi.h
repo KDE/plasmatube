@@ -51,7 +51,7 @@ class AbstractApi : public QObject
 public:
     explicit AbstractApi(QNetworkAccessManager *netManager, QObject *parent = nullptr);
 
-    enum SupportedFeature { PopularPage, TrendingCategories };
+    enum SupportedFeature { PopularPage, TrendingCategories, SponsorBlock };
     Q_ENUM(SupportedFeature);
 
     virtual bool supportsFeature(SupportedFeature feature) = 0;

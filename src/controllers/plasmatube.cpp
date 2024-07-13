@@ -13,6 +13,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
     : QObject(parent)
     , m_controller(new VideoController(this))
     , m_sourceManager(new SourceManager(this))
+    , m_networkAccessManager(new QNetworkAccessManager(this))
     , m_settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation))
 {
     setApplicationProxy();
@@ -36,9 +37,14 @@ SourceManager *PlasmaTube::sourceManager() const
     return m_sourceManager;
 }
 
-VideoSource *PlasmaTube::selectedSource()
+VideoSource *PlasmaTube::selectedSource() const
 {
     return m_sourceManager->selectedSource();
+}
+
+QNetworkAccessManager *PlasmaTube::networkAccessManager() const
+{
+    return m_networkAccessManager;
 }
 
 void PlasmaTube::setApplicationProxy()

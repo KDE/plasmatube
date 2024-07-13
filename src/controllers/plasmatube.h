@@ -35,8 +35,8 @@ public:
 
     VideoController *videoController() const;
     SourceManager *sourceManager() const;
-
-    VideoSource *selectedSource();
+    VideoSource *selectedSource() const;
+    QNetworkAccessManager *networkAccessManager() const;
 
     Q_INVOKABLE void setApplicationProxy();
     Q_INVOKABLE void saveCurrentSource();
@@ -54,6 +54,7 @@ private:
 
     VideoController *m_controller = nullptr;
     SourceManager *m_sourceManager = nullptr;
+    QNetworkAccessManager *m_networkAccessManager = nullptr;
 
     PlasmaTubeSettings m_settings;
 };

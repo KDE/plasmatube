@@ -89,6 +89,8 @@ target_sources(plasmatube PRIVATE
 
         controllers/sourcemanager.cpp
         controllers/sourcemanager.h
+        controllers/sponsorblockcontroller.cpp
+        controllers/sponsorblockcontroller.h
         controllers/subscriptioncontroller.cpp
         controllers/subscriptioncontroller.h
         controllers/subscriptionwatcher.cpp

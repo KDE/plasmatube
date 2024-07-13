@@ -76,6 +76,7 @@ bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
     switch (feature) {
     case PopularPage:
     case TrendingCategories:
+    case SponsorBlock:
         return true;
     }
 

@@ -20,6 +20,7 @@ VideoController::VideoController(QObject *parent)
     , m_videoModel(new VideoModel(this))
     , m_videoQueue(new VideoQueue(this))
     , m_mpris(new Mpris2(this))
+    , m_sponsorBlockController(new SponsorBlockController(this))
 {
     connect(m_videoModel, &VideoModel::audioUrlChanged, this, [this] {
         m_currentPlayer->setAudioUrl(m_videoModel->audioUrl());
@@ -38,6 +39,7 @@ VideoController::VideoController(QObject *parent)
         }
 
         m_videoModel->fetch(m_videoQueue->getCurrentVideoId());
+        m_sponsorBlockController->requestSponsors(m_videoQueue->getCurrentVideoId());
 
         openPlayer();
     });
@@ -81,6 +83,15 @@ VideoController::VideoController(QObject *parent)
             }
         }
 #endif
+    });
+    connect(this, &VideoController::positionChanged, this, [this] {
+        auto currentPosition = position();
+        if (m_sponsorBlockController->isSponsor(currentPosition)) {
+            auto freePosition = m_sponsorBlockController->findFreePosition(currentPosition);
+            if (freePosition.has_value()) {
+                m_currentPlayer->seek(*freePosition);
+            }
+        }
     });
 }
 

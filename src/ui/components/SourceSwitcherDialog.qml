@@ -111,6 +111,17 @@ Kirigami.Dialog {
             text: source.url
             width: ListView.view.width
 
+            icon.name: {
+                switch (source.type) {
+                    case VideoSource.Invidious:
+                        return "plasmatube-invidious";
+                    case VideoSource.PeerTube:
+                        return "plasmatube-peertube";
+                    case VideoSource.Piped:
+                        return "plasmatube-piped";
+                }
+            }
+
             onClicked: {
                 if (PlasmaTube.sourceManager.selectedSource !== sourceDelegate.source) {
                     PlasmaTube.sourceManager.selectedSource = sourceDelegate.source;

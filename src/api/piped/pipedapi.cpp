@@ -58,6 +58,8 @@ void PipedApi::wipeCredentials(const QString &prefix)
 bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
+    case SponsorBlock:
+        return true;
     case PopularPage:
     case TrendingCategories:
         return false;
