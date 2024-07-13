@@ -5,9 +5,6 @@
 
 #include "config.h"
 
-#include <KLocalizedString>
-
-#include <QGuiApplication>
 #include <QNetworkProxy>
 #include <QSettings>
 #include <QStringBuilder>
@@ -57,7 +54,6 @@ void PlasmaTube::setApplicationProxy()
         proxy.setPort(settings.proxyPort());
         proxy.setUser(settings.proxyUser());
         proxy.setPassword(settings.proxyPassword());
-        break;
         break;
     case 0: // System Default
     default:

@@ -7,7 +7,6 @@
 
 #include <KLocalizedString>
 
-#include <QFutureWatcher>
 #include <QtConcurrent>
 
 AbstractListModel::AbstractListModel(QObject *parent)

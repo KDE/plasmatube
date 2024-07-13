@@ -392,7 +392,7 @@ QFuture<Result> InvidiousApi::removeVideoFromPlaylist(const QString &plid, const
 
 Error InvidiousApi::invalidJsonError()
 {
-    return std::pair(QNetworkReply::InternalServerError, i18n("Server returned no valid JSON."));
+    return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};
 }
 
 Result InvidiousApi::checkIsReplyOk(QNetworkReply *reply)

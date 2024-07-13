@@ -22,7 +22,6 @@ bool SubscriptionController::canToggleSubscription() const
 {
     // subscriptions need to be loaded and no other task needs to run
     return PlasmaTube::instance().selectedSource()->loggedIn() && PlasmaTube::instance().selectedSource()->subscriptions().has_value() && !m_watcher;
-    return false;
 }
 
 void SubscriptionController::toggleSubscription()

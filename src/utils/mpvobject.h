@@ -20,7 +20,7 @@ class MpvObject : public MpvAbstractItem
 
 public:
     explicit MpvObject(QQuickItem *parent = nullptr);
-    ~MpvObject() = default;
+    ~MpvObject() override = default;
 
     void setAudioUrl(const QString &audioUrl);
 

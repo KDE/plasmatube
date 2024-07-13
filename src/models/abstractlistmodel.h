@@ -58,25 +58,10 @@ public:
     bool isLoading() const;
 
 public Q_SLOTS:
-    virtual void refresh()
-    {
-    }
-
-    virtual void markAsWatched(int index)
-    {
-        Q_UNUSED(index)
-    }
-
-    virtual void markAsUnwatched(int index)
-    {
-        Q_UNUSED(index)
-    }
-
-    virtual void removeFromPlaylist(const QString &plid, int index)
-    {
-        Q_UNUSED(plid)
-        Q_UNUSED(index)
-    }
+    virtual void refresh() = 0;
+    virtual void markAsWatched(int index) = 0;
+    virtual void markAsUnwatched(int index) = 0;
+    virtual void removeFromPlaylist(const QString &plid, int index) = 0;
 
 Q_SIGNALS:
     void isLoadingChanged();

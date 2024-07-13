@@ -171,7 +171,7 @@ MediaFormatCombined MediaFormatCombined::fromJson(const QJsonObject &obj, MediaF
     const auto codecsStart = codecs.indexOf(u'"');
     const auto codecsLength = codecsStart - codecs.indexOf(u'"', codecsStart);
     const auto codecList = codecs.mid(codecsStart, codecsLength).split(QLatin1String(", "));
-    if (codecList.size() >= 1) {
+    if (!codecList.empty()) {
         format.m_videoCodec = codecFromString(codecList[0]);
         if (codecList.size() >= 2) {
             format.m_audioCodec = codecFromString(codecList[1]);

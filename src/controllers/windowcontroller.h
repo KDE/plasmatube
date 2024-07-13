@@ -7,9 +7,6 @@
 #include <QQuickWindow>
 #include <QtQml>
 
-class Identity;
-class Post;
-
 class WindowController : public QObject
 {
     Q_OBJECT

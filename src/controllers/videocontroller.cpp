@@ -42,6 +42,10 @@ VideoController::VideoController(QObject *parent)
         openPlayer();
     });
     connect(this, &VideoController::playbackStateChanged, this, [this] {
+        if (!m_currentPlayer) {
+            return;
+        }
+
         const bool paused = m_currentPlayer->paused();
         const bool durationMatchesPosition = abs(m_currentPlayer->duration() - m_currentPlayer->position()) < 0.1;
         const bool notAtBeginning = m_currentPlayer->position() > 1;

@@ -8,7 +8,6 @@
 
 #include <QFutureWatcher>
 #include <QJsonArray>
-#include <QJsonDocument>
 #include <QProcess>
 
 using namespace Qt::StringLiterals;
