@@ -470,7 +470,18 @@ Kirigami.ScrollablePage {
                 text: i18n("Recommended")
             }
 
+            QQC2.Label {
+                visible: !recommendedVideosRepeater.model.isLoading && recommendedVideosRepeater.count === 0
+                text: i18nc("@info", "No recommended videos")
+            }
+
+            QQC2.BusyIndicator {
+                visible: recommendedVideosRepeater.model.isLoading
+            }
+
             Repeater {
+                id: recommendedVideosRepeater
+
                 model: root.video.recommendedVideosModel()
                 delegate: VideoListItem {
                     id: videoDelegate
