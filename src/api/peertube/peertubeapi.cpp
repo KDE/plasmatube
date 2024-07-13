@@ -311,13 +311,14 @@ QFuture<HistoryResult> PeerTubeApi::requestHistory(Paginator *paginator)
 QFuture<Result> PeerTubeApi::markWatched(const QString &videoId)
 {
     Q_UNUSED(videoId)
+    // NOTE: can't be implemented on PeerTube
     return {};
 }
 
 QFuture<Result> PeerTubeApi::markUnwatched(const QString &videoId)
 {
-    Q_UNUSED(videoId)
-    return {};
+    // TODO: needs id, NOT uuid. meh
+    return deleteResource<Result>(authenticatedNetworkRequest(apiUrl(API_HISTORY % u'/' % videoId)), checkIsReplyOk);
 }
 
 QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, Paginator *paginator)
