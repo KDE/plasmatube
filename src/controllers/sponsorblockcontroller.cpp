@@ -78,7 +78,7 @@ std::optional<SponsorBlockController::Segment> SponsorBlockController::findSegme
     }
 
     for (const auto &segment : m_sponsors->segments) {
-        if (position >= segment.start && position <= segment.end) {
+        if (position >= segment.start && position < segment.end) {
             return segment;
         }
     }

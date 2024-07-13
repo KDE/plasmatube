@@ -30,7 +30,8 @@ QQC2.Control {
     property bool inFullScreen: false
     property bool showPresentationControls: true
 
-    signal requestFullScreen()
+    signal requestFullScreen
+    signal sliderMoved
 
     Rectangle {
         height: parent.children[1].height * 3
@@ -75,7 +76,8 @@ QQC2.Control {
                 value: root.currentPlayer ? root.currentPlayer.position : 0
 
                 onMoved: {
-                    root.currentPlayer.setPosition(value)
+                    root.currentPlayer.position = value;
+                    root.sliderMoved();
                 }
             }
 

@@ -73,6 +73,9 @@ Q_SIGNALS:
     void durationChanged();
     void playbackStateChanged();
 
+    void skippedSponsorSegment();
+    void enteredSponsorSegment(qreal position);
+
 private:
     void openPlayer();
 

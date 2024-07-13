@@ -87,10 +87,16 @@ VideoController::VideoController(QObject *parent)
     connect(this, &VideoController::positionChanged, this, [this] {
         auto currentPosition = position();
         if (m_sponsorBlockController->isSponsor(currentPosition)) {
-            if (PlasmaTube::instance().settings()->skipSponsorBlock()) {
-                auto freePosition = m_sponsorBlockController->findFreePosition(currentPosition);
-                if (freePosition.has_value()) {
-                    m_currentPlayer->seek(*freePosition);
+            auto freePosition = m_sponsorBlockController->findFreePosition(currentPosition);
+            if (freePosition.has_value()) {
+                if (PlasmaTube::instance().settings()->skipSponsorBlock()) {
+                    {
+                        QSignalBlocker blocker(this); // ensure we don't enter a super loop
+                        m_currentPlayer->setPosition(freePosition.value());
+                    }
+                    Q_EMIT skippedSponsorSegment();
+                } else {
+                    Q_EMIT enteredSponsorSegment(freePosition.value());
                 }
             }
         }

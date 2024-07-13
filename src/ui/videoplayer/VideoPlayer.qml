@@ -212,6 +212,26 @@ Kirigami.ScrollablePage {
                         visible: !stopped
                     }
 
+                    Kirigami.InlineMessage {
+                        id: sponsorSkipMessage
+
+                        anchors {
+                            top: parent.top
+                            topMargin: Kirigami.Units.smallSpacing
+
+                            left: parent.left
+                            leftMargin: Kirigami.Units.smallSpacing
+
+                            right: parent.right
+                            rightMargin: Kirigami.Units.smallSpacing
+                        }
+
+                        visible: sponsorMessageTimer.running
+
+                        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+                        Kirigami.Theme.inherit: false
+                    }
+
                     Rectangle {
                         anchors.fill: renderer
 
@@ -235,6 +255,7 @@ Kirigami.ScrollablePage {
                         anchors.fill: parent
 
                         onRequestFullScreen: root.toggleFullscreen()
+                        onSliderMoved: sponsorMessageTimer.stop()
 
                         visible: opacity > 0
                         opacity: videoPlayer.showControls ? 1 : 0
@@ -538,13 +559,50 @@ Kirigami.ScrollablePage {
         onAddToPlaylist: applicationWindow().openAddToPlaylistMenu(root.currentVideoId)
     }
 
+    Timer {
+        id: sponsorMessageTimer
+
+        interval: 3000
+        repeat: false
+    }
+
     Connections {
         target: PlasmaTube.videoController
 
-        function onCurrentVideoChanged() {
+        function onCurrentVideoChanged(): void {
             if (PlasmaTube.videoController.currentVideo !== null) {
                 comments.loadComments(PlasmaTube.videoController.currentVideo.videoId);
             }
+        }
+
+        function onSkippedSponsorSegment(): void {
+            if (!sponsorMessageTimer.running) {
+                sponsorSkipMessage.text = i18n("The sponsored portion of the video has been skipped");
+                sponsorSkipMessage.actions = [];
+                sponsorMessageTimer.restart();
+            }
+        }
+
+        function onEnteredSponsorSegment(position: double): void {
+            if (!sponsorMessageTimer.running) {
+                sponsorSkipMessage.text = i18n("This portion of the video is sponsored");
+                sponsorSkipMessage.actions = [sponsorSkipAction];
+                sponsorSkipAction.position = position;
+                sponsorMessageTimer.restart();
+            }
+        }
+    }
+
+    Kirigami.Action {
+        id: sponsorSkipAction
+
+        property double position
+
+        text: i18nc("@action:button", "Skip")
+
+        onTriggered: {
+            PlasmaTube.videoController.currentPlayer.position = position;
+            sponsorMessageTimer.stop();
         }
     }
 }
