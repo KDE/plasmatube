@@ -246,6 +246,45 @@ endif()
 if (NOT ANDROID)
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/actions)
 else()
+    kirigami_package_breeze_icons(ICONS
+            "arrow-down-symbolic"
+            "cloudstatus"
+            "configure"
+            "delete"
+            "dialog-ok-apply-symbolic"
+            "document-import-symbolic"
+            "drag-surface"
+            "edit-clear-all"
+            "edit-copy-symbolic"
+            "emblem-shared-symbolic"
+            "favorite"
+            "help-about"
+            "im-user"
+            "kde"
+            "list-add"
+            "media-playback-start"
+            "media-playback-stop"
+            "media-playlist-append"
+            "media-skip-forward"
+            "network-connect"
+            "org.kde.plasmatube"
+            "plasmatube-invidious"
+            "plasmatube-peertube"
+            "plasmatube-piped"
+            "remove"
+            "rss-symbolic"
+            "search"
+            "settings-configure"
+            "showinfo"
+            "system-switch-user"
+            "user"
+            "view-fullscreen"
+            "view-history"
+            "view-media-playlist"
+            "window-close-symbolic"
+            "window-duplicate-symbolic"
+    )
+
     install(DIRECTORY icons/ DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/)
 endif()
 
