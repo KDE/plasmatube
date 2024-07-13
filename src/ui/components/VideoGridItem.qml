@@ -44,6 +44,11 @@ BaseGridItem {
             onTapped: root.contextMenuRequested()
         }
 
+        TapHandler {
+            acceptedDevices: PointerDevice.TouchScreen
+            onLongPressed: root.contextMenuRequested()
+        }
+
         Image {
             id: thumb
             Layout.alignment: Qt.AlignTop

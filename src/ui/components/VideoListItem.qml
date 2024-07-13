@@ -31,7 +31,6 @@ QQC2.ItemDelegate {
     signal contextMenuRequested
 
     hoverEnabled: !Kirigami.Settings.hasTransientTouchInput
-    onPressAndHold: contextMenuRequested()
 
     contentItem: RowLayout {
         id: gridLayout
@@ -48,6 +47,11 @@ QQC2.ItemDelegate {
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
             acceptedButtons: Qt.RightButton
             onTapped: root.contextMenuRequested()
+        }
+
+        TapHandler {
+            acceptedDevices: PointerDevice.TouchScreen
+            onLongPressed: root.contextMenuRequested()
         }
 
         Image {

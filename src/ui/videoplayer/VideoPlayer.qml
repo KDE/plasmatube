@@ -277,6 +277,11 @@ Kirigami.ScrollablePage {
                         }
                     }
 
+                    TapHandler {
+                        acceptedDevices: PointerDevice.TouchScreen
+                        onLongPressed: root.contextMenuRequested()
+                    }
+
                     QQC2.Menu {
                         id: videoControlsMenu
 
