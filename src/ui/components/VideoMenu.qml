@@ -99,9 +99,12 @@ QQC2.Menu {
         onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "ChannelPage"), {author: root.channelName, authorId: root.channelId});
     }
 
-    QQC2.MenuSeparator {}
+    QQC2.MenuSeparator {
+        visible: shareMenu.visible // make sure to hide this on Android when needed
+    }
 
     ShareMenu {
+        id: shareMenu
         url: root.videoUrl
         shareTitle: root.videoTitle
     }

@@ -14,4 +14,5 @@ QQC2.Menu {
 
     title: i18n("Share")
     enabled: false
+    visible: false
 }
