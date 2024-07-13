@@ -300,7 +300,7 @@ Kirigami.ScrollablePage {
 
                     TapHandler {
                         acceptedDevices: PointerDevice.TouchScreen
-                        onLongPressed: root.contextMenuRequested()
+                        onLongPressed: videoControlsMenu.popup()
                     }
 
                     QQC2.Menu {
@@ -508,6 +508,7 @@ Kirigami.ScrollablePage {
                     id: videoDelegate
 
                     required property var model
+                    required property int index
 
                     Layout.fillWidth: true
                     Layout.maximumWidth: parentColumn.width
