@@ -48,25 +48,27 @@ void VideoModel::fetch(const QString &videoId)
             m_video->deleteLater();
             m_video = new VideoItem(*video, this);
 
-            // Formats that are separate video/audio streams
-            for (const auto &value : m_video->adaptiveFormats()) {
-                if (value.mediaType() == QInvidious::MediaFormat::Audio) {
-                    m_audioUrl = value.url().toString();
-                    Q_EMIT audioUrlChanged();
-                } else {
-                    m_formatUrl[value.qualityLabel()] = value.url().toString();
+            if (!m_video->liveNow()) {
+                // Formats that are separate video/audio streams
+                for (const auto &value : m_video->adaptiveFormats()) {
+                    if (value.mediaType() == QInvidious::MediaFormat::Audio) {
+                        m_audioUrl = value.url().toString();
+                        Q_EMIT audioUrlChanged();
+                    } else {
+                        m_formatUrl[value.qualityLabel()] = value.url().toString();
+                    }
                 }
-            }
 
-            // Formats that are combined video/audio streams
-            for (const auto &value : m_video->combinedFormats()) {
-                // Intentional, we only want to use combined formats as a last resort
-                if (!m_formatUrl.contains(value.qualityLabel())) {
-                    m_formatUrl[value.qualityLabel()] = value.url().toString();
+                // Formats that are combined video/audio streams
+                for (const auto &value : m_video->combinedFormats()) {
+                    // Intentional, we only want to use combined formats as a last resort
+                    if (!m_formatUrl.contains(value.qualityLabel())) {
+                        m_formatUrl[value.qualityLabel()] = value.url().toString();
+                    }
                 }
-            }
 
-            m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+                m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+            }
 
             Q_EMIT videoChanged();
             Q_EMIT formatListChanged();
@@ -138,6 +140,9 @@ VideoListModel *VideoItem::recommendedVideosModel()
 
 QString VideoModel::remoteUrl()
 {
+    if (m_video->liveNow()) {
+        return m_video->hlsUrl().toString();
+    }
     if (!m_formatUrl.isEmpty() && m_formatUrl.contains(m_selectedFormat)) {
         return m_formatUrl[m_selectedFormat];
     }
