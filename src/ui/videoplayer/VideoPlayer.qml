@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrolsaddons as KQuickControlsAddons
 import org.kde.kirigamiaddons.components as KirigamiComponents
+import org.kde.purpose as Purpose
 
 import org.kde.plasmatube
 import "../components/utils.js" as Utils
@@ -136,13 +137,14 @@ Kirigami.ScrollablePage {
 
                         onTriggered: applicationWindow().openAddToPlaylistMenu(root.video.videoId)
                     },
-                    ShareAction {
+                    Purpose.ShareAction {
                         id: shareAction
 
                         inputData: {
                             'urls': [root.video.url],
                             'title': video.title
                         }
+                        pluginType: "ShareUrl"
                     }
                 ]
             }

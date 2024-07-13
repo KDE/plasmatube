@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.purpose as Purpose
 
 import org.kde.plasmatube
 
@@ -103,9 +104,13 @@ QQC2.Menu {
         visible: shareMenu.visible // make sure to hide this on Android when needed
     }
 
-    ShareMenu {
+    Purpose.ShareMenu {
         id: shareMenu
-        url: root.videoUrl
-        shareTitle: root.videoTitle
+
+        inputData: {
+            'urls': [root.videoUrl],
+            'title': root.videoTitle
+        }
+        pluginType: "ShareUrl"
     }
 }

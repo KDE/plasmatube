@@ -125,7 +125,6 @@ qt_target_qml_sources(plasmatube
         ui/components/PlaceholderItem.qml
         ui/components/PlaylistGridItem.qml
         ui/components/RoundedEffect.qml
-        ui/components/ShareDialog.qml
         ui/components/Sidebar.qml
         ui/components/SourceSwitcher.qml
         ui/components/SourceSwitcherDialog.qml
@@ -183,26 +182,6 @@ qt_target_qml_sources(plasmatube
         RESOURCES
         ../org.kde.plasmatube.svg
 )
-
-if(ANDROID)
-    qt_target_qml_sources(plasmatube
-            QML_FILES
-            ui/android/ShareAction.qml
-            ui/android/ShareMenu.qml
-    )
-    set_source_files_properties(ui/android/ShareAction.qml PROPERTIES
-            QT_RESOURCE_ALIAS ui/components/ShareAction.qml
-    )
-    set_source_files_properties(ui/android/ShareMenu.qml PROPERTIES
-            QT_RESOURCE_ALIAS ui/components/ShareMenu.qml
-    )
-else()
-    qt_target_qml_sources(plasmatube
-            QML_FILES
-            ui/components/ShareAction.qml
-            ui/components/ShareMenu.qml
-    )
-endif()
 
 kconfig_add_kcfg_files(plasmatube config.kcfgc sourceconfig.kcfgc GENERATE_MOC)
 
