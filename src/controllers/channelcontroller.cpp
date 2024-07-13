@@ -25,7 +25,7 @@ void ChannelController::loadChannel(const QString &channelId)
             m_channel = *channel;
             Q_EMIT channelLoaded();
         } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            // TODO: Log error
+            qWarning() << "Failed to fetch channel:" << error->second;
         }
 
         m_watcher->deleteLater();

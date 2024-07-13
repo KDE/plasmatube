@@ -42,14 +42,17 @@ bool PipedApi::canLogIn() const
 
 void PipedApi::loadCredentials(const QString &prefix)
 {
+    Q_UNUSED(prefix)
 }
 
 void PipedApi::saveCredentials(const QString &prefix)
 {
+    Q_UNUSED(prefix)
 }
 
 void PipedApi::wipeCredentials(const QString &prefix)
 {
+    Q_UNUSED(prefix)
 }
 
 bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
@@ -80,7 +83,7 @@ QFuture<LogInResult> PipedApi::logIn(const QString &username, const QString &pas
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
-    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
+    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *) -> LogInResult {
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
     });
 }
@@ -99,6 +102,8 @@ QFuture<VideoResult> PipedApi::requestVideo(const QString &videoId)
 
 QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters &parameters, Paginator *paginator)
 {
+    Q_UNUSED(paginator)
+
     auto url = videoListUrl(Search, QStringLiteral(""), parameters.toPipedQueryParameters());
     auto request = QNetworkRequest(url);
 
@@ -122,6 +127,7 @@ QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters 
 QFuture<VideoListResult> PipedApi::requestFeed(Paginator *paginator)
 {
     // TODO: piped stub
+    Q_UNUSED(paginator)
     return {};
 }
 
@@ -132,6 +138,8 @@ QFuture<VideoListResult> PipedApi::requestTop()
 
 QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
+    Q_UNUSED(paginator)
+
     QHash<QString, QString> parameters;
     switch (topic) {
     case Music:
@@ -154,6 +162,7 @@ QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginato
 
 QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, Paginator *paginator)
 {
+    Q_UNUSED(paginator)
     return requestVideoList(Channel, query, {});
 }
 
@@ -180,6 +189,7 @@ QFuture<Result> PipedApi::unsubscribeFromChannel(const QString &channel)
 QFuture<HistoryResult> PipedApi::requestHistory(Paginator *paginator)
 {
     // TODO: piped stub
+    Q_UNUSED(paginator)
     return {};
 }
 
@@ -289,6 +299,7 @@ QFuture<ChannelResult> PipedApi::requestChannelInfo(const QString &queryd)
 QFuture<PlaylistsResult> PipedApi::requestChannelPlaylists(const QString &channelId)
 {
     // TODO: piped stub
+    Q_UNUSED(channelId)
     return {};
 }
 

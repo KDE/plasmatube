@@ -29,7 +29,7 @@ void LogInController::logIn(const QString &username, const QString &password)
     auto future = m_source->api()->logIn(username, password);
 
     m_watcher = new QFutureWatcher<QInvidious::LogInResult>(this);
-    connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
+    connect(m_watcher, &QFutureWatcherBase::finished, this, [this, username] {
         auto result = m_watcher->result();
         if (result.has_value()) {
             switch (result.value().first) {

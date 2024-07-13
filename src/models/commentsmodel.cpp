@@ -102,7 +102,7 @@ void CommentsModel::fill()
                 m_comments << *comments;
                 endInsertRows();
             } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-                // TODO: Log error
+                qWarning() << "Failed to fetch comments:" << error->second;
             }
         }
 

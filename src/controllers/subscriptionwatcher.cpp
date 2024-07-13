@@ -8,7 +8,7 @@
 SubscriptionWatcher::SubscriptionWatcher(QObject *parent)
     : QObject(parent)
 {
-    connect(PlasmaTube::instance().selectedSource(), &VideoSource::subscriptionsChanged, this, [=] {
+    connect(PlasmaTube::instance().selectedSource(), &VideoSource::subscriptionsChanged, this, [this] {
         if (m_channelId.isEmpty()) {
             return;
         }

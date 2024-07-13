@@ -136,7 +136,7 @@ QFuture<LogInResult> PeerTubeApi::logIn(const QString &username, const QString &
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
-    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
+    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [this](QNetworkReply *reply) -> LogInResult {
         if (reply->error() == QNetworkReply::NoError) {
             const QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
             auto obj = doc.object();
@@ -155,7 +155,7 @@ QFuture<LogInResult> PeerTubeApi::logIn(const QString &username, const QString &
 QFuture<VideoResult> PeerTubeApi::requestVideo(const QString &videoId)
 {
     // This needs to be authenticated depending on where the video id is from (like subscriptions)
-    return get<VideoResult>(authenticatedNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
+    return get<VideoResult>(authenticatedNetworkRequest(videoUrl(videoId)), [this](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto video = Video::fromJson(doc);
             fixupVideo(video);
@@ -181,7 +181,7 @@ QFuture<SearchListResult> PeerTubeApi::requestSearchResults(const SearchParamete
 
     auto request = QNetworkRequest(url);
 
-    return get<SearchListResult>(std::move(request), [=](QNetworkReply *reply) -> SearchListResult {
+    return get<SearchListResult>(std::move(request), [this, paginator](QNetworkReply *reply) -> SearchListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             const auto obj = doc.object();
 
@@ -296,7 +296,7 @@ QFuture<CommentsResult> PeerTubeApi::requestComments(const QString &videoId, Pag
 
     QUrl url = apiUrl(API_VIDEOS % u'/' % videoId % u"/comment-threads");
 
-    return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> CommentsResult {
+    return get<CommentsResult>(authenticatedNetworkRequest(std::move(url)), [this](QNetworkReply *reply) -> CommentsResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             const auto array = doc[u"data"].toArray();
 
@@ -339,7 +339,7 @@ QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(const QString &queryd)
 {
     QUrl url = apiUrl(API_CHANNEL % u'/' % queryd);
 
-    return get<ChannelResult>(authenticatedNetworkRequest(std::move(url)), [=](QNetworkReply *reply) -> ChannelResult {
+    return get<ChannelResult>(authenticatedNetworkRequest(std::move(url)), [this](QNetworkReply *reply) -> ChannelResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             QInvidious::Channel channel;
             Channel::fromJson(doc.object(), channel);
@@ -353,6 +353,7 @@ QFuture<ChannelResult> PeerTubeApi::requestChannelInfo(const QString &queryd)
 QFuture<PlaylistsResult> PeerTubeApi::requestChannelPlaylists(const QString &channelId)
 {
     // TODO: peertube stub
+    Q_UNUSED(channelId)
     return {};
 }
 
@@ -401,7 +402,7 @@ PeerTubeApi::requestVideoList(VideoListType queryType, const QString &urlExtensi
     // PeerTube requests should always be authenticated
     auto request = authenticatedNetworkRequest(std::move(url));
 
-    return get<VideoListResult>(std::move(request), [=](QNetworkReply *reply) -> VideoListResult {
+    return get<VideoListResult>(std::move(request), [this, paginator, queryType](QNetworkReply *reply) -> VideoListResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto obj = doc.object();
             if (paginator != nullptr && obj.contains("total"_L1)) {

@@ -57,7 +57,7 @@ void PlaylistsModel::fill(const QFuture<QInvidious::PlaylistsResult> &future)
             m_playlists << *playlists;
             endInsertRows();
         } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            // TODO: Log error
+            qWarning() << "Failed to fetch playlists:" << error->second;
         }
 
         m_futureWatcher->deleteLater();

@@ -66,7 +66,7 @@ void InvidiousInstancesModel::fill()
         if (!instances.isEmpty()) {
             QList<InvidiousInstance> fetchedInstances;
 
-            std::transform(instances.cbegin(), instances.cend(), std::back_inserter(fetchedInstances), [=](const QVariant &value) -> auto {
+            std::transform(instances.cbegin(), instances.cend(), std::back_inserter(fetchedInstances), [this](const QVariant &value) -> auto {
                 return fromSourceData(value.toJsonArray());
             });
             beginInsertRows({}, m_instances.size(), m_instances.size() + fetchedInstances.size() - 1);

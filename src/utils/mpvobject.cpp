@@ -29,7 +29,7 @@ MpvObject::MpvObject(QQuickItem *parent)
     observeProperty(QStringLiteral("pause"), MPV_FORMAT_FLAG);
 
     connect(mpvController(), &MpvController::propertyChanged, this, &MpvObject::onPropertyChanged, Qt::QueuedConnection);
-    connect(mpvController(), &MpvController::fileLoaded, this, [=]() {
+    connect(mpvController(), &MpvController::fileLoaded, this, [this]() {
         if (!m_audioUrl.isEmpty()) {
             // Note that audio-add only works in a specific time, the best is right after the file is loaded.
             // For more details on this issue, see https://github.com/flaviotordini/minitube/issues/155.

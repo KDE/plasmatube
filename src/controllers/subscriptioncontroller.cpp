@@ -37,7 +37,7 @@ void SubscriptionController::toggleSubscription()
                                  : PlasmaTube::instance().sourceManager()->selectedSource()->api()->subscribeToChannel(channelId());
 
     m_watcher = new QFutureWatcher<QInvidious::Result>(this);
-    connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
+    connect(m_watcher, &QFutureWatcherBase::finished, this, [this] {
         auto result = m_watcher->result();
         if (std::holds_alternative<QInvidious::Success>(result)) {
             auto &subs = PlasmaTube::instance().selectedSource()->subscriptions();

@@ -99,7 +99,7 @@ QFuture<LogInResult> InvidiousApi::logIn(const QString &username, const QString 
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
-    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *reply) -> LogInResult {
+    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [this](QNetworkReply *reply) -> LogInResult {
         const auto cookies = reply->header(QNetworkRequest::SetCookieHeader).value<QList<QNetworkCookie>>();
 
         if (!cookies.isEmpty()) {

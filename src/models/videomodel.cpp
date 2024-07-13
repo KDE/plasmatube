@@ -42,7 +42,7 @@ void VideoModel::fetch(const QString &videoId)
     auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestVideo(m_videoId);
 
     m_watcher = new QFutureWatcher<QInvidious::VideoResult>(this);
-    connect(m_watcher, &QFutureWatcherBase::finished, this, [=] {
+    connect(m_watcher, &QFutureWatcherBase::finished, this, [this] {
         const auto result = m_watcher->result();
 
         if (const auto video = std::get_if<QInvidious::Video>(&result)) {
