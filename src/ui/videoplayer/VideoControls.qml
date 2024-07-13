@@ -100,20 +100,24 @@ QQC2.Control {
                 spacing: Kirigami.Units.largeSpacing
 
                 QQC2.ToolButton {
-                    width: Kirigami.Units.gridUnit * 3
+                    width: 40
                     height: width
                     text: i18nc("@action:button", "Video settings")
-                    icon.name: "configure"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
+
                     display: QQC2.AbstractButton.IconOnly
 
-                    onClicked: {
-                        configureDialog.open()
+                    contentItem: Item {
+                        Kirigami.Icon {
+                            anchors.centerIn: parent
+                            source: "configure"
+                            color: "white"
+                            isMask: true
+                            width: Kirigami.Units.iconSizes.smallMedium
+                            height: Kirigami.Units.iconSizes.smallMedium
+                        }
                     }
 
-                    TabIndicator {}
+                    onClicked: configureDialog.open()
 
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered
@@ -137,13 +141,14 @@ QQC2.Control {
                         Kirigami.Theme.inherit: false
 
                         onClicked: root.currentPlayer.seek(-5)
-                        contentItem: Item{
+                        contentItem: Item {
                             Kirigami.Icon {
-                                anchors.centerIn:parent
-                                source:"media-seek-backward"
+                                anchors.centerIn: parent
+                                source: "media-seek-backward"
                                 color: "white"
-                                width: Kirigami.Units.gridUnit
-                                height: Kirigami.Units.gridUnit
+                                isMask: true
+                                width: Kirigami.Units.iconSizes.small
+                                height: Kirigami.Units.iconSizes.small
                             }
                         }
                         background: Kirigami.ShadowedRectangle{
@@ -175,7 +180,7 @@ QQC2.Control {
                         text: i18nc("@action:button", "Play")
                         contentItem: Item {
                             Kirigami.Icon {
-                                anchors.centerIn:parent
+                                anchors.centerIn: parent
                                 source: {
                                     if (root.currentPlayer?.paused) {
                                         if (root.atEnd) {
@@ -188,8 +193,9 @@ QQC2.Control {
                                     }
                                 }
                                 color: "white"
-                                width: Kirigami.Units.gridUnit
-                                height: Kirigami.Units.gridUnit
+                                isMask: true
+                                width: Kirigami.Units.iconSizes.small
+                                height: Kirigami.Units.iconSizes.small
                             }
                         }
                         background: Kirigami.ShadowedRectangle{
@@ -225,11 +231,12 @@ QQC2.Control {
 
                         contentItem: Item {
                             Kirigami.Icon {
-                                anchors.centerIn:parent
-                                source:"media-seek-forward"
+                                anchors.centerIn: parent
+                                source: "media-seek-forward"
                                 color: "white"
-                                width: Kirigami.Units.gridUnit
-                                height: Kirigami.Units.gridUnit
+                                isMask: true
+                                width: Kirigami.Units.iconSizes.small
+                                height: Kirigami.Units.iconSizes.small
                             }
                         }
 
@@ -257,20 +264,24 @@ QQC2.Control {
                 QQC2.ToolButton {
                     implicitWidth: 40
                     implicitHeight: implicitWidth
-                    icon.name: "view-fullscreen"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
+
                     text: i18nc("@action:button", "Fullscreen")
                     display: QQC2.AbstractButton.IconOnly
 
                     visible: root.showPresentationControls
 
-                    onClicked: {
-                        root.requestFullScreen();
+                    contentItem: Item {
+                        Kirigami.Icon {
+                            anchors.centerIn: parent
+                            source: "view-fullscreen"
+                            color: "white"
+                            isMask: true
+                            width: Kirigami.Units.iconSizes.smallMedium
+                            height: Kirigami.Units.iconSizes.smallMedium
+                        }
                     }
 
-                    TabIndicator {}
+                    onClicked: root.requestFullScreen()
 
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered
@@ -280,18 +291,24 @@ QQC2.Control {
                 QQC2.ToolButton {
                     implicitWidth: 40
                     implicitHeight: implicitWidth
-                    icon.name: "window-duplicate-symbolic"
-                    icon.color: "white"
-                    icon.width: Kirigami.Units.iconSizes.smallMedium
-                    icon.height: Kirigami.Units.iconSizes.smallMedium
+
                     text: i18nc("@action:button", "Picture-in-picture")
                     display: QQC2.AbstractButton.IconOnly
 
                     visible: root.showPresentationControls && !Kirigami.Settings.isMobile
 
-                    onClicked: PlasmaTube.videoController.videoMode = VideoController.PictureInPicture
+                    contentItem: Item {
+                        Kirigami.Icon {
+                            anchors.centerIn: parent
+                            source: "window-duplicate-symbolic"
+                            color: "white"
+                            isMask: true
+                            width: Kirigami.Units.iconSizes.smallMedium
+                            height: Kirigami.Units.iconSizes.smallMedium
+                        }
+                    }
 
-                    TabIndicator {}
+                    onClicked: PlasmaTube.videoController.videoMode = VideoController.PictureInPicture
 
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered

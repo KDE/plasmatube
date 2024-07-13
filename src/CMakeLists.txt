@@ -266,6 +266,7 @@ else()
             "list-add"
             "media-playback-start"
             "media-playback-stop"
+            "media-playback-pause"
             "media-playlist-append"
             "media-playlist-repeat"
             "media-skip-forward"
