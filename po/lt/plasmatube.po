@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-14 00:38+0000\n"
 "PO-Revision-Date: 2024-04-08 20:09+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,20 +19,20 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: api/invidious/invidiousapi.cpp:110 api/piped/pipedapi.cpp:84
+#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Neteisingas naudotojo vardas ar slaptažodis."
 
-#: api/invidious/invidiousapi.cpp:400 api/peertube/peertubeapi.cpp:380
-#: api/piped/pipedapi.cpp:318
+#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
+#: api/piped/pipedapi.cpp:326
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Serveris negrąžino jokio tinkamo JSON."
 
-#: api/invidious/invidiousapi.cpp:409 api/peertube/peertubeapi.cpp:389
-#: api/piped/pipedapi.cpp:327
+#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
+#: api/piped/pipedapi.cpp:335
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Serveris grąžino būsenos kodą %1"
@@ -42,7 +42,7 @@ msgstr "Serveris grąžino būsenos kodą %1"
 msgid "This instance has disabled the registration."
 msgstr "Šiame egzemplioriuje yra išjungta registracija."
 
-#: controllers/videocontroller.cpp:62
+#: controllers/videocontroller.cpp:68
 #, kde-format
 msgid "Playing video"
 msgstr "Atkuriamas vaizdo įrašas"
@@ -191,7 +191,7 @@ msgstr "Vaizdo įrašai"
 msgid "Search"
 msgstr "Paieška"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:306
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
 #, kde-format
 msgid "Settings"
 msgstr "Nuostatos"
@@ -207,6 +207,13 @@ msgstr "Nuostatos"
 msgctxt "@action:button Load more comments"
 msgid "Load more"
 msgstr "Įkelti daugiau"
+
+#: ui/components/Comments.qml:104
+#, fuzzy, kde-format
+#| msgid "Comments"
+msgctxt "@info"
+msgid "No comments"
+msgstr "Komentarai"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -293,75 +300,75 @@ msgstr "Prenumeruoti %1"
 msgid "Please log in to subscribe to channels."
 msgstr "Prisijunkite norėdami prenumeruoti kanalus."
 
-#: ui/components/VideoGridItem.qml:67
+#: ui/components/VideoGridItem.qml:72
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
 msgstr "Tiesiogiai"
 
-#: ui/components/VideoGridItem.qml:74
+#: ui/components/VideoGridItem.qml:79
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
 msgstr "Trumpas"
 
-#: ui/components/VideoGridItem.qml:152 ui/components/VideoListItem.qml:144
+#: ui/components/VideoGridItem.qml:157 ui/components/VideoListItem.qml:148
 #, kde-format
 msgid "No views"
 msgstr "Nėra peržiūrų"
 
-#: ui/components/VideoGridItem.qml:154 ui/components/VideoListItem.qml:146
-#: ui/videoplayer/VideoPlayer.qml:378
+#: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
+#: ui/videoplayer/VideoPlayer.qml:404
 #, kde-format
 msgid "%1 views"
 msgstr "Peržiūrų: %1"
 
-#: ui/components/VideoGridItem.qml:157
+#: ui/components/VideoGridItem.qml:162
 #, kde-format
 msgid "<i>live now</i>"
 msgstr "<i>dabar tiesiogiai</i>"
 
-#: ui/components/VideoListItem.qml:156
+#: ui/components/VideoListItem.qml:160
 #, kde-format
 msgid " • %1"
 msgstr " • %1"
 
-#: ui/components/VideoMenu.qml:31
+#: ui/components/VideoMenu.qml:33
 #, kde-format
 msgid "Play Now"
 msgstr "Atkurti dabar"
 
-#: ui/components/VideoMenu.qml:31
+#: ui/components/VideoMenu.qml:33
 #, kde-format
 msgid "Play"
 msgstr "Atkurti"
 
-#: ui/components/VideoMenu.qml:41
+#: ui/components/VideoMenu.qml:43
 #, kde-format
 msgid "Play Next"
 msgstr "Atkurti kitą"
 
-#: ui/components/VideoMenu.qml:50
+#: ui/components/VideoMenu.qml:52
 #, kde-format
 msgid "Play in Picture-in-Picture"
 msgstr "Atkurti vaizdą vaizde"
 
-#: ui/components/VideoMenu.qml:64
+#: ui/components/VideoMenu.qml:67
 #, kde-format
 msgid "Mark as Unwatched"
 msgstr "Žymėti kaip nežiūrėtą"
 
-#: ui/components/VideoMenu.qml:64
+#: ui/components/VideoMenu.qml:67
 #, kde-format
 msgid "Mark as Watched"
 msgstr "Žymėti kaip žiūrėtą"
 
-#: ui/components/VideoMenu.qml:78
+#: ui/components/VideoMenu.qml:81
 #, kde-format
 msgid "Add to Playlist…"
 msgstr "Pridėti į grojaraštį…"
 
-#: ui/components/VideoMenu.qml:85
+#: ui/components/VideoMenu.qml:88
 #, kde-format
 msgid "Remove from Playlist"
 msgstr "Šalinti iš grojaraščio"
@@ -579,18 +586,42 @@ msgstr "Ar tikrai norite pašalinti šį šaltinį?"
 msgid "General"
 msgstr "Bendra"
 
-#: ui/settings/GeneralPage.qml:21
+#: ui/settings/GeneralPage.qml:23
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr "Slėpti „Shorts“"
 
-#: ui/settings/GeneralPage.qml:22
+#: ui/settings/GeneralPage.qml:24
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
 "Slėpti trumpos formos vaizdo įrašus, sukurtus peržiūrai mobiliuosiuose "
 "įrenginiuose."
+
+#: ui/settings/GeneralPage.qml:41
+#, kde-format
+msgctxt "@option:check"
+msgid "Check for sponsored segments"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:42
+#, kde-format
+msgid ""
+"Inform you when a community-submitted segment (typically a sponsorship) is "
+"in the video. This feature requires contacting a 3rd-party service."
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:59
+#, kde-format
+msgctxt "@option:check"
+msgid "Skip sponsored segments"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:60
+#, kde-format
+msgid "Automatically skips over sponsored segments in the video."
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -801,37 +832,37 @@ msgstr "Populiarėjantys"
 msgid "Picture in Picture"
 msgstr "Vaizdas vaizde"
 
-#: ui/videoplayer/VideoControls.qml:103
+#: ui/videoplayer/VideoControls.qml:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Vaizdo įrašo nuostatos"
 
-#: ui/videoplayer/VideoControls.qml:132
+#: ui/videoplayer/VideoControls.qml:138
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "Atsukti atgal"
 
-#: ui/videoplayer/VideoControls.qml:173
+#: ui/videoplayer/VideoControls.qml:180
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Atkurti"
 
-#: ui/videoplayer/VideoControls.qml:217
+#: ui/videoplayer/VideoControls.qml:225
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "Persukti pirmyn"
 
-#: ui/videoplayer/VideoControls.qml:262
+#: ui/videoplayer/VideoControls.qml:268
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Visas ekranas"
 
-#: ui/videoplayer/VideoControls.qml:285
+#: ui/videoplayer/VideoControls.qml:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
@@ -849,30 +880,53 @@ msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Pridėti į grojaraštį…"
 
-#: ui/videoplayer/VideoPlayer.qml:287
+#: ui/videoplayer/VideoPlayer.qml:313
 #, kde-format
 msgid "Copy Video URL"
 msgstr "Kopijuoti vaizdo įrašo URL"
 
-#: ui/videoplayer/VideoPlayer.qml:295
+#: ui/videoplayer/VideoPlayer.qml:321
 #, kde-format
 msgid "Video Statistics"
 msgstr "Vaizdo įrašo statistika"
 
-#: ui/videoplayer/VideoPlayer.qml:386
+#: ui/videoplayer/VideoPlayer.qml:412
 #, kde-format
 msgid "%1 Likes"
 msgstr "Patinka: %1"
 
-#: ui/videoplayer/VideoPlayer.qml:435
+#: ui/videoplayer/VideoPlayer.qml:461
 #, kde-format
 msgid "Comments"
 msgstr "Komentarai"
 
-#: ui/videoplayer/VideoPlayer.qml:465
+#: ui/videoplayer/VideoPlayer.qml:491
 #, kde-format
 msgid "Recommended"
 msgstr "Rekomenduojama"
+
+#: ui/videoplayer/VideoPlayer.qml:496
+#, fuzzy, kde-format
+#| msgid "Recommended"
+msgctxt "@info"
+msgid "No recommended videos"
+msgstr "Rekomenduojama"
+
+#: ui/videoplayer/VideoPlayer.qml:581
+#, kde-format
+msgid "The sponsored portion of the video has been skipped"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:589
+#, kde-format
+msgid "This portion of the video is sponsored"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:602
+#, kde-format
+msgctxt "@action:button"
+msgid "Skip"
+msgstr ""
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
