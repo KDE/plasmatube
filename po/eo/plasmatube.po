@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-13 11:51+0100\n"
+"PO-Revision-Date: 2024-07-14 22:18+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -207,11 +207,10 @@ msgid "Load more"
 msgstr "Ŝargi pliajn"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "Komentoj"
+msgstr "Neniuj komentoj"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -597,7 +596,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Kontroli pri sponsoritaj segmentoj"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -605,17 +604,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Informi vin kiam komunum-donita segmento (tipe sponsorado) estas en la "
+"filmeto. Ĉi tiu funkcio postulas kontakti trian servon."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Salti sponsoritajn segmentojn"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Aŭtomate preterpasas sponsoritajn segmentojn en la filmeto."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -895,27 +896,26 @@ msgid "Recommended"
 msgstr "Rekomendita"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Rekomendita"
+msgstr "Neniuj rekomenditaj filmetoj"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "La sponsorita parto de la filmeto estas preterlasita"
 
 #: ui/videoplayer/VideoPlayer.qml:589
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Ĉi tiu parto de la filmeto estas sponsorita"
 
 #: ui/videoplayer/VideoPlayer.qml:602
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Preterlasi"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format

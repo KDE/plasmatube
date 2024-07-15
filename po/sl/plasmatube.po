@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-08 07:19+0200\n"
+"PO-Revision-Date: 2024-07-14 08:04+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
@@ -208,11 +208,10 @@ msgid "Load more"
 msgstr "Naloži več"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "Komentarji"
+msgstr "Ni komentarjev"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -600,7 +599,7 @@ msgstr "Skrij kratke videoposnetke prilagojene ogledu na mobilni napravi."
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Preveri za sponzoriranimi segmenti"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -608,17 +607,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Obvesti, kadar je v videoposnetku segment, ki ga je predložila skupnost "
+"(običajno sponzorstvo). Ta funkcija zahteva stik s storitvijo tretje osebe."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Preskoči sponzorirane segmente"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Samodejno preskoči sponzorirane segmente v videu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -903,27 +904,26 @@ msgid "Recommended"
 msgstr "Priporočeno"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Priporočeno"
+msgstr "Ni priporočenih video posnetkov"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "Sponzorirani del videa je bil preskočen"
 
 #: ui/videoplayer/VideoPlayer.qml:589
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Ta del videa je sponzoriran"
 
 #: ui/videoplayer/VideoPlayer.qml:602
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Preskoči"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format

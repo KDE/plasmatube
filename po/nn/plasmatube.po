@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-07-13 21:58+0200\n"
+"PO-Revision-Date: 2024-07-14 11:55+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -137,7 +137,7 @@ msgstr "Nyheiter"
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr "Historie"
+msgstr "Logg"
 
 #: models/videolistmodel.cpp:160
 #, kde-format
@@ -239,7 +239,7 @@ msgstr "Spelelister"
 #: ui/components/Sidebar.qml:135
 #, kde-format
 msgid "History"
-msgstr "Historie"
+msgstr "Logg"
 
 #: ui/components/Sidebar.qml:152
 #, kde-format
@@ -444,7 +444,7 @@ msgstr "Velkommen til PlasmaTube"
 #: ui/loginflow/WelcomePage.qml:31
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr "PlasmaTube krev minst éi videokjelde."
+msgstr "PlasmaTube treng minst éi videokjelde."
 
 #: ui/loginflow/WelcomePage.qml:41
 #, kde-format
@@ -549,7 +549,7 @@ msgstr "Logg inn"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Abonner på kanalar, hald oversikt over sette videoar m.m."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
@@ -565,7 +565,7 @@ msgstr "Fjern kjelde …"
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Klarte ikkje fjerna den einaste kjelda."
 
 #: ui/settings/BaseSourcePage.qml:32
 #, kde-format
@@ -593,7 +593,7 @@ msgstr "Gøym kortvideoar"
 #: ui/settings/GeneralPage.qml:24
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "Gøym korte videoar utforma for vising på mobiltelefon."
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
@@ -632,7 +632,7 @@ msgstr "Innstillingar"
 #: ui/settings/InvidiousSourcePage.qml:42
 #, kde-format
 msgid "Autoplay videos"
-msgstr ""
+msgstr "Spel av automatisk"
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
@@ -640,6 +640,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Om videoar skal starta avspeling automatisk eller venta til du trykkjer på "
+"«spel av»-knappen."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
@@ -649,7 +651,7 @@ msgstr "Standard heimeside"
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "Standard nettside å lasta når du byter til denne kjelda."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -677,10 +679,11 @@ msgstr "Vert"
 msgid "Port"
 msgstr "Port"
 
+# Er snakk om brukarnamn til mellomtenarinnstillingar, derfor «Brukarnamn» og ikkje berre «Brukar».
 #: ui/settings/NetworkProxyPage.qml:83
 #, kde-format
 msgid "User"
-msgstr "Brukar"
+msgstr "Brukarnamn"
 
 #: ui/settings/NetworkProxyPage.qml:107
 #, kde-format
@@ -893,7 +896,7 @@ msgstr "Kommentarar"
 #: ui/videoplayer/VideoPlayer.qml:491
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "Tilrådde"
 
 #: ui/videoplayer/VideoPlayer.qml:496
 #, fuzzy, kde-format
