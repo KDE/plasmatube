@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-08 04:40+0200\n"
+"PO-Revision-Date: 2024-07-15 05:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -208,11 +208,10 @@ msgid "Load more"
 msgstr "მეტის ჩატვირთვა"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "კომენტარები"
+msgstr "კომენტარების გარეშე"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -597,7 +596,7 @@ msgstr "მობილური მოწყობილობისთვი�
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "დასპონსორებული სეგმენტების შემოწმება"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -605,17 +604,20 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"გაფრთხილება, როცა ვიდეოში საზოგადოების მიერ შემოწირული სეგმენტი (ჩვეულებრივ, "
+"დასპონსორება) არსებობს. ამ ფუნქციას მესამე პირების მიერ მოწოდებულ სერვისთან "
+"დაკავშირება სჭირდება."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "დასპონსორებული სეგმენტების გამოტოვება"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "ავტომატურად გამოტოვებს დასპონსორებულ სეგმენტებს ვიდეოში."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -895,27 +897,26 @@ msgid "Recommended"
 msgstr "რეკომენდებულია"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "რეკომენდებულია"
+msgstr "რეკომენდებული ვიდეოების გარეშე"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "ვიდეოს დასპონსორებული ნაწილი გამოტოვებულია"
 
 #: ui/videoplayer/VideoPlayer.qml:589
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "ვიდეო ეს ნაწილი დასპონსორებულია"
 
 #: ui/videoplayer/VideoPlayer.qml:602
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "გამოტოვება"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format

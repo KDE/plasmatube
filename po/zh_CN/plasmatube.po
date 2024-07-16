@@ -888,11 +888,10 @@ msgid "Recommended"
 msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "没有视频"
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
