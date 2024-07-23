@@ -944,19 +944,3 @@ msgstr "Neteja"
 #, kde-format
 msgid "Loading…"
 msgstr "S'està carregant…"
-
-#~ msgid "%1 views • %2"
-#~ msgstr "%1 visualitzacions • %2"
-
-#~ msgid "© Linus Jahn"
-#~ msgstr "© Linus Jahn"
-
-#~ msgid "Sign in"
-#~ msgstr "Inicia la sessió"
-
-#~ msgid "Successfully logged in!"
-#~ msgstr "La sessió s'ha iniciat correctament!"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Source"
-#~ msgstr "Afegeix una font"
