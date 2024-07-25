@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-04-09 09:38+0200\n"
+"PO-Revision-Date: 2024-07-15 10:07+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -205,11 +205,10 @@ msgid "Load more"
 msgstr "En charger plus"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "Commentaires"
+msgstr "Aucun commentaire"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -597,7 +596,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Vérifier les segments parrainés"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -605,17 +604,20 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Vous informer lorsqu'un segment soumis par la communauté (Généralement un "
+"parrainage) figure dans la vidéo. Cette fonctionnalité nécessite de "
+"contacter un service tiers."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Ignorer les segments parrainés"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Ignore automatiquement les segments parrainés dans la vidéo."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -896,27 +898,26 @@ msgid "Recommended"
 msgstr "Recommandé"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Recommandé"
+msgstr "Aucune vidéo recommandée"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "La partie parrainée de la vidéo a été ignorée."
 
 #: ui/videoplayer/VideoPlayer.qml:589
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Cette partie de la vidéo est parrainée"
 
 #: ui/videoplayer/VideoPlayer.qml:602
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Ignorer"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
