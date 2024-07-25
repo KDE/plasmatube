@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2019 Linus Jahn <lnj@kaidan.im>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include <QLocale>
+
 #include "videobasicinfo.h"
 
 using namespace QInvidious;
@@ -165,7 +167,7 @@ QDateTime VideoBasicInfo::published() const
 
 QString VideoBasicInfo::publishedText() const
 {
-    return m_published.date().toString();
+    return QLocale().toString(m_published.date(), QLocale::LongFormat);
 }
 
 QString VideoBasicInfo::description() const
