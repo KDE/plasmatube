@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-06-03 17:13+0400\n"
 "Last-Translator: Xəyyam Qocayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Server %1 status kodu ilə cavab verdi"
 msgid "This instance has disabled the registration."
 msgstr "Bu nümunədə qeydiyyat söndürülüb."
 
-#: controllers/videocontroller.cpp:68
+#: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
 msgstr "Videonun oynadılması"

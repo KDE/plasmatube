@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-02-06 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "서버에서 상태 코드 %1을(를) 반환함"
 msgid "This instance has disabled the registration."
 msgstr "이 인스턴스에서 등록을 비활성화했습니다."
 
-#: controllers/videocontroller.cpp:68
+#: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
 msgstr "동영상 재생"

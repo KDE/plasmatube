@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-07-15 22:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -40,7 +40,7 @@ msgstr "O servidor devolveu o código de estado %1."
 msgid "This instance has disabled the registration."
 msgstr "Esta instancia desactivou o rexistro."
 
-#: controllers/videocontroller.cpp:68
+#: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
 msgstr "Reproducindo un vídeo"

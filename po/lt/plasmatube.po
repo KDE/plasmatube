@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-04-08 20:09+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,7 +42,7 @@ msgstr "Serveris grąžino būsenos kodą %1"
 msgid "This instance has disabled the registration."
 msgstr "Šiame egzemplioriuje yra išjungta registracija."
 
-#: controllers/videocontroller.cpp:68
+#: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
 msgstr "Atkuriamas vaizdo įrašas"

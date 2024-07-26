@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-07-26 00:39+0000\n"
 "PO-Revision-Date: 2024-07-17 17:40+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -41,7 +41,7 @@ msgstr "Tenaren returnerte statuskoden %1"
 msgid "This instance has disabled the registration."
 msgstr "Denne instansen har slått av registrering."
 
-#: controllers/videocontroller.cpp:68
+#: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
 msgstr "Spelar av video"
