@@ -88,6 +88,10 @@ public:
     QString videoId() const;
     void clearVideo();
 
+    /// Gets the video URL from the current video ID.
+    /// @note Only call this when you dont have access to VideoItem, as this guesses based on API backend. This is used during an error state.
+    Q_INVOKABLE QString getVideoUrl() const;
+
 Q_SIGNALS:
     void isLoadingChanged();
     void videoIdChanged();
@@ -105,5 +109,6 @@ private:
     QString m_selectedFormat = QStringLiteral("720p");
     QString m_audioUrl;
     VideoItem *m_video = nullptr;
+    QString m_errorString;
     QFutureWatcher<QInvidious::VideoResult> *m_watcher = nullptr;
 };

@@ -3,6 +3,7 @@
 
 #include "videomodel.h"
 
+#include "general_logging.h"
 #include "plasmatube.h"
 #include "videolistmodel.h"
 
@@ -44,6 +45,8 @@ void VideoModel::fetch(const QString &videoId)
     connect(m_watcher, &QFutureWatcherBase::finished, this, [this] {
         const auto result = m_watcher->result();
 
+        m_errorString.clear();
+
         if (const auto video = std::get_if<QInvidious::Video>(&result)) {
             m_video->deleteLater();
             m_video = new VideoItem(*video, this);
@@ -74,7 +77,7 @@ void VideoModel::fetch(const QString &videoId)
             Q_EMIT formatListChanged();
             Q_EMIT remoteUrlChanged();
         } else if (const auto error = std::get_if<QInvidious::Error>(&result)) {
-            qDebug() << "VideoModel::fetch(): Error:" << error->second << error->first;
+            qWarning(PLASMATUBE_GENERAL) << "VideoModel::fetch(): Error:" << error->second << error->first;
             Q_EMIT errorOccurred(error->second);
         }
 
@@ -217,6 +220,11 @@ void VideoModel::clearVideo()
 
     m_video = new VideoItem(this);
     Q_EMIT videoChanged();
+}
+
+QString VideoModel::getVideoUrl() const
+{
+    return PlasmaTube::instance().sourceManager()->selectedSource()->api()->getVideoUrl(m_videoId);
 }
 
 #include "moc_videomodel.cpp"

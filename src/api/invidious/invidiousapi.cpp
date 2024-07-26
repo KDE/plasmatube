@@ -391,6 +391,11 @@ QFuture<Result> InvidiousApi::removeVideoFromPlaylist(const QString &plid, const
     return deleteResource<Result>(authenticatedNetworkRequest(std::move(url)), checkIsReplyOk);
 }
 
+QString InvidiousApi::getVideoUrl(const QString &videoId)
+{
+    return QStringLiteral("https://youtube.com/watch?v=%1").arg(videoId);
+}
+
 Error InvidiousApi::invalidJsonError()
 {
     return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};

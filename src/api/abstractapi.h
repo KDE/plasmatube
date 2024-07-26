@@ -121,6 +121,7 @@ public:
     virtual QFuture<PlaylistsResult> requestChannelPlaylists(const QString &channelId) = 0;
     virtual QFuture<Result> addVideoToPlaylist(const QString &plid, const QString &videoId) = 0;
     virtual QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) = 0;
+    virtual QString getVideoUrl(const QString &videoId) = 0;
 
 Q_SIGNALS:
     void credentialsChanged();
@@ -143,8 +144,16 @@ protected:
             reply->deleteLater();
         });
         connect(reply, &QNetworkReply::errorOccurred, this, [=](QNetworkReply::NetworkError error) {
-            qWarning() << "Error for" << error << reply->url() << reply->errorString();
-            interface->reportResult(std::pair(error, reply->errorString()));
+            QString errorString = reply->errorString();
+            // Prefer a JSON error string if provided
+            // FIXME: this invidious-specific
+            if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+                if (doc.object().contains(QStringLiteral("error"))) {
+                    errorString = doc.object()[QStringLiteral("error")].toString();
+                }
+            }
+            qWarning() << "Error for" << error << reply->url() << errorString;
+            interface->reportResult(std::pair(error, errorString));
             interface->reportFinished();
             reply->deleteLater();
         });

@@ -402,6 +402,11 @@ QFuture<Result> PeerTubeApi::removeVideoFromPlaylist(const QString &plid, const 
     return {};
 }
 
+QString PeerTubeApi::getVideoUrl(const QString &videoId)
+{
+    return apiUrl(QStringLiteral("/w/%1").arg(videoId)).toString();
+}
+
 Error PeerTubeApi::invalidJsonError()
 {
     return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};

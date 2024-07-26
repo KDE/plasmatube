@@ -321,6 +321,11 @@ QFuture<Result> PipedApi::removeVideoFromPlaylist(const QString &plid, const QSt
     return {};
 }
 
+QString PipedApi::getVideoUrl(const QString &videoId)
+{
+    return QStringLiteral("https://youtube.com/watch?v=%1").arg(videoId);
+}
+
 Error PipedApi::invalidJsonError()
 {
     return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};

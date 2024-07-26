@@ -42,6 +42,7 @@ Kirigami.ScrollablePage {
     property string currentVideoUrl
     property string currentChannelName
     property string currentChannelId
+    property string currentVideoError
 
     readonly property string videoName: video.title
     readonly property string channelName: video.author
@@ -125,6 +126,7 @@ Kirigami.ScrollablePage {
             Kirigami.ActionToolBar {
                 Layout.alignment: Qt.AlignRight
                 alignment: Qt.AlignRight
+                enabled: currentVideoError.length === 0
 
                 actions: [
                     Kirigami.Action {
@@ -165,10 +167,34 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Rectangle {
+        anchors.fill: parent
+        visible: currentVideoError.length > 0
+
+        color: Kirigami.Theme.backgroundColor
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18nc("@info", "Error Loading Video")
+            explanation: currentVideoError
+
+            helpfulAction: Kirigami.Action {
+                icon.name: "internet-services-symbolic"
+                text: i18nc("@action:button", "Open in Browser")
+                // We have to use getVideoUrl() here since VideoItem is unavailable
+                onTriggered: Qt.openUrlExternally(PlasmaTube.videoController.videoModel.getVideoUrl())
+            }
+        }
+    }
+
     GridLayout {
         columns: root.widescreen ? 2 : 1
         rowSpacing: 0
         columnSpacing: 0
+        visible: currentVideoError.length === 0
 
         ColumnLayout {
             id: parentColumn
@@ -571,6 +597,7 @@ Kirigami.ScrollablePage {
         target: PlasmaTube.videoController
 
         function onCurrentVideoChanged(): void {
+            currentVideoError = "";
             if (PlasmaTube.videoController.currentVideo !== null) {
                 comments.loadComments(PlasmaTube.videoController.currentVideo.videoId);
             }
@@ -591,6 +618,14 @@ Kirigami.ScrollablePage {
                 sponsorSkipAction.position = position;
                 sponsorMessageTimer.restart();
             }
+        }
+    }
+
+    Connections {
+        target: PlasmaTube.videoController.videoModel
+
+        function onErrorOccurred(error: string): void {
+            currentVideoError = error;
         }
     }
 
