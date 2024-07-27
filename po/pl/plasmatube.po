@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-27 00:40+0000\n"
 "PO-Revision-Date: 2024-07-20 10:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -24,14 +24,14 @@ msgstr ""
 msgid "Username or password is wrong."
 msgstr "Nazwa użytkownika lub hasło jest niepoprawne."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:401 api/peertube/peertubeapi.cpp:412
+#: api/piped/pipedapi.cpp:331
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Serwer nie zwrócił prawidłowego pliku JSON."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:410 api/peertube/peertubeapi.cpp:421
+#: api/piped/pipedapi.cpp:340
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Serwer nie zwrócił kod błędu %1"
@@ -315,7 +315,7 @@ msgid "No views"
 msgstr "Bez odwiedzin"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:404
+#: ui/videoplayer/VideoPlayer.qml:430
 #, kde-format
 msgid "%1 views"
 msgstr "%1 odwiedziny"
@@ -864,60 +864,72 @@ msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "Obraz-w-obrazie"
 
-#: ui/videoplayer/VideoPlayer.qml:111
+#: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
 msgstr "Ukryj odtwarzacz"
 
-#: ui/videoplayer/VideoPlayer.qml:133
+#: ui/videoplayer/VideoPlayer.qml:135
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Dodaj do listy odtwarzania…"
 
-#: ui/videoplayer/VideoPlayer.qml:313
+#: ui/videoplayer/VideoPlayer.qml:181
+#, kde-format
+msgctxt "@info"
+msgid "Error Loading Video"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:186
+#, kde-format
+msgctxt "@action:button"
+msgid "Open in Browser"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "Copy Video URL"
 msgstr "Skopiuj adres URL filmu"
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "Video Statistics"
 msgstr "Statystyki obrazu"
 
-#: ui/videoplayer/VideoPlayer.qml:412
+#: ui/videoplayer/VideoPlayer.qml:438
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 polubienia"
 
-#: ui/videoplayer/VideoPlayer.qml:461
+#: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
 msgid "Comments"
 msgstr "Komentarze"
 
-#: ui/videoplayer/VideoPlayer.qml:491
+#: ui/videoplayer/VideoPlayer.qml:517
 #, kde-format
 msgid "Recommended"
 msgstr "Zalecane"
 
-#: ui/videoplayer/VideoPlayer.qml:496
+#: ui/videoplayer/VideoPlayer.qml:522
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Bez polecanych filmów"
 
-#: ui/videoplayer/VideoPlayer.qml:581
+#: ui/videoplayer/VideoPlayer.qml:608
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "Pominięto sponsorowany odcinek filmu"
 
-#: ui/videoplayer/VideoPlayer.qml:589
+#: ui/videoplayer/VideoPlayer.qml:616
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "Ten odcinek filmu jest sponsorowany"
 
-#: ui/videoplayer/VideoPlayer.qml:602
+#: ui/videoplayer/VideoPlayer.qml:637
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

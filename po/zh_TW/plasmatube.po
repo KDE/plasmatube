@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-26 00:39+0000\n"
+"POT-Creation-Date: 2024-07-27 00:40+0000\n"
 "PO-Revision-Date: 2024-07-14 17:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -26,14 +26,14 @@ msgstr ""
 msgid "Username or password is wrong."
 msgstr "使用者名稱或密碼錯誤。"
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:401 api/peertube/peertubeapi.cpp:412
+#: api/piped/pipedapi.cpp:331
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "伺服器沒有回傳有效的 JSON。"
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:410 api/peertube/peertubeapi.cpp:421
+#: api/piped/pipedapi.cpp:340
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "伺服器回傳狀態碼 %1"
@@ -315,7 +315,7 @@ msgid "No views"
 msgstr "無觀看次數"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:404
+#: ui/videoplayer/VideoPlayer.qml:430
 #, kde-format
 msgid "%1 views"
 msgstr "觀看次數：%1"
@@ -854,60 +854,72 @@ msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "子母畫面"
 
-#: ui/videoplayer/VideoPlayer.qml:111
+#: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
 msgstr "隱藏播放器"
 
-#: ui/videoplayer/VideoPlayer.qml:133
+#: ui/videoplayer/VideoPlayer.qml:135
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "新增至播放清單…"
 
-#: ui/videoplayer/VideoPlayer.qml:313
+#: ui/videoplayer/VideoPlayer.qml:181
+#, kde-format
+msgctxt "@info"
+msgid "Error Loading Video"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:186
+#, kde-format
+msgctxt "@action:button"
+msgid "Open in Browser"
+msgstr ""
+
+#: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "Copy Video URL"
 msgstr "複製影片網址"
 
-#: ui/videoplayer/VideoPlayer.qml:321
+#: ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "Video Statistics"
 msgstr "影片統計資料"
 
-#: ui/videoplayer/VideoPlayer.qml:412
+#: ui/videoplayer/VideoPlayer.qml:438
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 個喜歡"
 
-#: ui/videoplayer/VideoPlayer.qml:461
+#: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
 msgid "Comments"
 msgstr "評論"
 
-#: ui/videoplayer/VideoPlayer.qml:491
+#: ui/videoplayer/VideoPlayer.qml:517
 #, kde-format
 msgid "Recommended"
 msgstr "建議"
 
-#: ui/videoplayer/VideoPlayer.qml:496
+#: ui/videoplayer/VideoPlayer.qml:522
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "沒有推薦影片"
 
-#: ui/videoplayer/VideoPlayer.qml:581
+#: ui/videoplayer/VideoPlayer.qml:608
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "已跳過影片的業配片段"
 
-#: ui/videoplayer/VideoPlayer.qml:589
+#: ui/videoplayer/VideoPlayer.qml:616
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "影片的這個部分是業配"
 
-#: ui/videoplayer/VideoPlayer.qml:602
+#: ui/videoplayer/VideoPlayer.qml:637
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
