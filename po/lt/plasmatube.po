@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-27 00:40+0000\n"
-"PO-Revision-Date: 2024-04-08 20:09+0300\n"
+"PO-Revision-Date: 2024-07-27 19:34+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -209,11 +209,10 @@ msgid "Load more"
 msgstr "Įkelti daugiau"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "Komentarai"
+msgstr "Nėra komentarų"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -603,7 +602,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Tikrinti, ar yra finansuojamų segmentų"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -611,17 +610,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Informuoti, kai vaizdo įraše yra bendruomenės pateikto segmento (įprastai, "
+"finansavimas). Ši ypatybė reikalauja trečiųjų šalių paslaugos."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Praleisti finansuojamus segmentus"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Automatiškai vaizdo įraše praleidžia finansuojamus segmentus."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -884,13 +885,13 @@ msgstr "Pridėti į grojaraštį…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Klaida įkeliant vaizdo įrašą"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Atverti naršyklėje"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
@@ -918,27 +919,26 @@ msgid "Recommended"
 msgstr "Rekomenduojama"
 
 #: ui/videoplayer/VideoPlayer.qml:522
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Rekomenduojama"
+msgstr "Nėra rekomenduojamų vaizdo įrašų"
 
 #: ui/videoplayer/VideoPlayer.qml:608
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "Finansuojama vaizdo įrašo dalis buvo praleista"
 
 #: ui/videoplayer/VideoPlayer.qml:616
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Ši vaizdo įrašo dalis yra finansuojama"
 
 #: ui/videoplayer/VideoPlayer.qml:637
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Praleisti"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format

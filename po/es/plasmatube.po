@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-27 00:40+0000\n"
-"PO-Revision-Date: 2024-07-16 16:46+0200\n"
+"PO-Revision-Date: 2024-07-27 11:07+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -880,13 +880,13 @@ msgstr "Añadir a la lista de reproducción..."
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Ha ocurrido un error al cargar el vídeo"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Abrir en el navegador"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
