@@ -236,7 +236,7 @@ else()
     target_link_libraries(plasmatube PRIVATE Qt::Svg)
 endif()
 
-if (TARGET KF6::DBusAddons)
+if (TARGET KF6::DBusAddons AND NOT HAIKU)
     target_link_libraries(plasmatube PRIVATE KF6::DBusAddons KF6::WindowSystem)
     target_compile_definitions(plasmatube PRIVATE -DHAVE_KDBUSADDONS)
 endif ()
