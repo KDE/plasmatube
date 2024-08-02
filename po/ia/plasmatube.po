@@ -488,7 +488,7 @@ msgstr "Nomine de usator non debe esser vacue!"
 #: ui/LoginPage.qml:110
 #, kde-format
 msgid "Password must not be empty!"
-msgstr "Contrasigno nonpote esser vacue!"
+msgstr "Contrasigno non pote esser vacue!"
 
 #: ui/Main.qml:215
 #, kde-format
