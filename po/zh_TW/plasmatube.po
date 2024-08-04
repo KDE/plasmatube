@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-27 00:40+0000\n"
-"PO-Revision-Date: 2024-07-14 17:29+0900\n"
+"PO-Revision-Date: 2024-08-03 14:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -870,13 +870,13 @@ msgstr "新增至播放清單…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "載入影片時出錯"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "在瀏覽器開啟"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format

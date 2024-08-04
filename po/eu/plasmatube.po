@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-27 00:40+0000\n"
-"PO-Revision-Date: 2024-07-17 06:54+0200\n"
+"PO-Revision-Date: 2024-08-03 11:31+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -881,13 +881,13 @@ msgstr "Gehitu jotze-zerrendara…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Errorea bideoa zamatzean"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Ireki arakatzailean"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
