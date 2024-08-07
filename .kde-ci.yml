@@ -4,6 +4,7 @@
 Dependencies:
 - 'on': ['Linux', 'FreeBSD']
   'require':
+    'frameworks/kcrash': '@latest-kf6'
     'frameworks/purpose': '@latest-kf6'
     'frameworks/qqc2-desktop-style': '@latest-kf6'
 

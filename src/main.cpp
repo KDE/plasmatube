@@ -28,6 +28,10 @@
 #include <KWindowSystem>
 #endif
 
+#if __has_include("KCrash")
+#include <KCrash>
+#endif
+
 #include "controllers/windowcontroller.h"
 #include "plasmatube-version.h"
 
@@ -68,6 +72,10 @@ int main(int argc, char **argv)
 
     KAboutData::setApplicationData(about);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.plasmatube")));
+
+#if __has_include("KCrash")
+    KCrash::initialize();
+#endif
 
     QQmlApplicationEngine engine;
 
