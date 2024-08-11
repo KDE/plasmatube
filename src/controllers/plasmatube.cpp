@@ -16,6 +16,7 @@ PlasmaTube::PlasmaTube(QObject *parent)
     , m_networkAccessManager(new QNetworkAccessManager(this))
     , m_settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation))
 {
+    QObject::connect(qApp, &QCoreApplication::aboutToQuit, &m_settings, &Settings::save);
     setApplicationProxy();
     m_sourceManager->load();
     connect(m_sourceManager, &SourceManager::sourceSelected, this, &PlasmaTube::sourceSelected);
@@ -49,7 +50,7 @@ QNetworkAccessManager *PlasmaTube::networkAccessManager() const
 
 void PlasmaTube::setApplicationProxy()
 {
-    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
+    Settings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
     QNetworkProxy proxy;
 
     // type match to ProxyType from config.kcfg
@@ -70,7 +71,7 @@ void PlasmaTube::setApplicationProxy()
     QNetworkProxy::setApplicationProxy(proxy);
 }
 
-PlasmaTubeSettings *PlasmaTube::settings()
+Settings *PlasmaTube::settings()
 {
     return &m_settings;
 }

@@ -8,10 +8,7 @@
 #include "videocontroller.h"
 
 #include <QObject>
-#include <QQmlEngine>
 #include <QtQml>
-
-#include <optional>
 
 class PlasmaTube : public QObject
 {
@@ -22,6 +19,7 @@ class PlasmaTube : public QObject
     Q_PROPERTY(VideoController *videoController READ videoController CONSTANT)
     Q_PROPERTY(SourceManager *sourceManager READ sourceManager CONSTANT)
     Q_PROPERTY(VideoSource *selectedSource READ selectedSource NOTIFY sourceSelected)
+    Q_PROPERTY(Settings *settings READ settings CONSTANT)
 
 public:
     static PlasmaTube &instance();
@@ -41,7 +39,7 @@ public:
     Q_INVOKABLE void setApplicationProxy();
     Q_INVOKABLE void saveCurrentSource();
 
-    PlasmaTubeSettings *settings();
+    Settings *settings();
 
 Q_SIGNALS:
     void openVideo(const QString &id);
@@ -56,5 +54,5 @@ private:
     SourceManager *m_sourceManager = nullptr;
     QNetworkAccessManager *m_networkAccessManager = nullptr;
 
-    PlasmaTubeSettings m_settings;
+    Settings m_settings;
 };

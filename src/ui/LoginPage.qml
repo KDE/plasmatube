@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
-import org.kde.plasmatube.private
 
 FormCard.FormCardPage {
     id: root

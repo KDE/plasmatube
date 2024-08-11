@@ -1,7 +1,9 @@
 File=config.kcfg
-ClassName=PlasmaTubeSettings
+ClassName=Settings
 Mutators=true
 DefaultValueGetters=true
 GenerateProperties=true
 ParentInConstructor=true
 Singleton=false
+QmlRegistration=true
+GlobalEnums=true

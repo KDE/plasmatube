@@ -9,7 +9,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.plasmatube
-import org.kde.plasmatube.private
 
 FormCard.FormCardPage {
     id: root
@@ -26,7 +25,7 @@ FormCard.FormCardPage {
             id: systemDefault
             text: i18n("System Default")
             checked: root.currentType === 0
-            enabled: !Settings.isProxyTypeImmutable
+            enabled: !PlasmaTube.settings.isProxyTypeImmutable
             onToggled: root.currentType = 0
         }
 
@@ -36,7 +35,7 @@ FormCard.FormCardPage {
             id: http
             text: i18n("HTTP")
             checked: root.currentType === 1
-            enabled: !Settings.isProxyTypeImmutable
+            enabled: !PlasmaTube.settings.isProxyTypeImmutable
             onToggled: root.currentType = 1
         }
     }
@@ -51,7 +50,7 @@ FormCard.FormCardPage {
         FormCard.FormTextFieldDelegate {
             id: hostField
             label: i18n("Host")
-            text: Settings.proxyHost
+            text: PlasmaTube.settings.proxyHost
             inputMethodHints: Qt.ImhUrlCharactersOnly
             onEditingFinished: root.proxyConfigChanged = true
         }
@@ -66,7 +65,7 @@ FormCard.FormCardPage {
                 }
                 QQC2.SpinBox {
                     id: portField
-                    value: Settings.proxyPort
+                    value: PlasmaTube.settings.proxyPort
                     from: 0
                     to: 65536
                     validator: IntValidator {bottom: portField.from; top: portField.to}
@@ -81,7 +80,7 @@ FormCard.FormCardPage {
         FormCard.FormTextFieldDelegate {
             id: userField
             label: i18n("User")
-            text: Settings.proxyUser
+            text: PlasmaTube.settings.proxyUser
             inputMethodHints: Qt.ImhUrlCharactersOnly
             onEditingFinished: root.proxySettingsChanged = true
         }
@@ -89,7 +88,7 @@ FormCard.FormCardPage {
         FormCard.FormTextFieldDelegate {
             id: passwordField
             label: i18n("Password")
-            text: Settings.proxyPassword
+            text: PlasmaTube.settings.proxyPassword
             echoMode: TextInput.Password
             inputMethodHints: Qt.ImhUrlCharactersOnly
             onEditingFinished: root.proxyConfigChanged = true
@@ -106,14 +105,14 @@ FormCard.FormCardPage {
             QQC2.Button  {
                 text: i18n("Apply")
                 icon.name: "dialog-ok-apply-symbolic"
-                enabled: root.currentType !== Settings.proxyType || proxyConfigChanged
+                enabled: root.currentType !== PlasmaTube.settings.proxyType || proxyConfigChanged
                 onClicked: {
-                    Settings.proxyType = currentType;
-                    Settings.proxyHost = hostField.text;
-                    Settings.proxyPort = portField.value;
-                    Settings.proxyUser = userField.text;
-                    Settings.proxyPassword = passwordField.text;
-                    Settings.save();
+                    PlasmaTube.settings.proxyType = currentType;
+                    PlasmaTube.settings.proxyHost = hostField.text;
+                    PlasmaTube.settings.proxyPort = portField.value;
+                    PlasmaTube.settings.proxyUser = userField.text;
+                    PlasmaTube.settings.proxyPassword = passwordField.text;
+                    PlasmaTube.settings.save();
                     proxyConfigChanged = false;
                     PlasmaTube.setApplicationProxy();
                 }
@@ -123,6 +122,6 @@ FormCard.FormCardPage {
 
     Component.onCompleted: {
         proxyConfigChanged = false; // Make doubly sure that stupid bindings haven't turned this on
-        currentType = Settings.proxyType;
+        currentType = PlasmaTube.settings.proxyType;
     }
 }

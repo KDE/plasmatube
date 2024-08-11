@@ -228,7 +228,7 @@ void VideoController::setCurrentPlayer(MpvObject *mpvObject)
         m_currentPlayer->setProperty(QStringLiteral("stream-lavf-o"), QStringLiteral(""));
     }
 
-    PlasmaTubeSettings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
+    Settings settings(KSharedConfig::openConfig(QStringLiteral("plasmatuberc"), KConfig::SimpleConfig, QStandardPaths::AppConfigLocation));
     if (settings.proxyType() == 1) {
         QString proxyString = QStringLiteral("http://%1:%2@%3:%4")
                                   .arg(settings.proxyUser(), settings.proxyPassword(), settings.proxyHost(), QString::number(settings.proxyPort()));

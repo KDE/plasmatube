@@ -101,10 +101,6 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    auto &plasmatubeInstance = PlasmaTube::instance();
-    qmlRegisterSingletonInstance<PlasmaTubeSettings>("org.kde.plasmatube.private", 1, 0, "Settings", plasmatubeInstance.settings());
-    QObject::connect(&app, &QCoreApplication::aboutToQuit, plasmatubeInstance.settings(), &PlasmaTubeSettings::save);
-
     QCommandLineParser parser;
     parser.addPositionalArgument(QStringLiteral("video-url"), QStringLiteral("YouTube video URL to play"));
 

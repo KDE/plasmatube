@@ -14,7 +14,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as KirigamiComponents
 
 import org.kde.plasmatube
-import org.kde.plasmatube.private
 
 Kirigami.ScrollablePage {
     id: root

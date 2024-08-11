@@ -6,7 +6,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
-import org.kde.plasmatube.private
+import org.kde.plasmatube
 
 FormCard.FormCardPage {
     id: root
@@ -22,11 +22,11 @@ FormCard.FormCardPage {
 
             text: i18nc("@option:check Hide short-form videos", "Hide Shorts")
             description: i18n("Hide short-form videos designed for viewing on a mobile device.")
-            checked: Settings.hideShorts
-            enabled: !Settings.hideShortsImmutable
+            checked: PlasmaTube.settings.hideShorts
+            enabled: !PlasmaTube.settings.hideShortsImmutable
             onToggled: {
-                Settings.hideShorts = checked;
-                Settings.save();
+                PlasmaTube.settings.hideShorts = checked;
+                PlasmaTube.settings.save();
             }
         }
 
@@ -40,11 +40,11 @@ FormCard.FormCardPage {
 
             text: i18nc("@option:check", "Check for sponsored segments")
             description: i18n("Inform you when a community-submitted segment (typically a sponsorship) is in the video. This feature requires contacting a 3rd-party service.")
-            checked: Settings.useSponsorBlock
-            enabled: !Settings.useSponsorBlockImmutable
+            checked: PlasmaTube.settings.useSponsorBlock
+            enabled: !PlasmaTube.settings.useSponsorBlockImmutable
             onToggled: {
-                Settings.useSponsorBlock = checked;
-                Settings.save();
+                PlasmaTube.settings.useSponsorBlock = checked;
+                PlasmaTube.settings.save();
             }
         }
 
@@ -58,11 +58,11 @@ FormCard.FormCardPage {
 
             text: i18nc("@option:check", "Skip sponsored segments")
             description: i18n("Automatically skips over sponsored segments in the video.")
-            checked: Settings.skipSponsorBlock
-            enabled: !Settings.skipSponsorBlockImmutable && Settings.useSponsorBlock
+            checked: PlasmaTube.settings.skipSponsorBlock
+            enabled: !PlasmaTube.settings.skipSponsorBlockImmutable && PlasmaTube.settings.useSponsorBlock
             onToggled: {
-                Settings.skipSponsorBlock = checked;
-                Settings.save();
+                PlasmaTube.settings.skipSponsorBlock = checked;
+                PlasmaTube.settings.save();
             }
         }
     }
