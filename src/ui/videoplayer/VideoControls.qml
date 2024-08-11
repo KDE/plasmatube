@@ -74,6 +74,7 @@ QQC2.Control {
                 from: 0
                 to: root.currentPlayer ? root.currentPlayer.duration : 0
                 value: root.currentPlayer ? root.currentPlayer.position : 0
+                enabled: root.currentPlayer ? root.currentPlayer.duration > 0 : 0
 
                 onMoved: {
                     root.currentPlayer.position = value;
