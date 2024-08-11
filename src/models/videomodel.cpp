@@ -67,7 +67,11 @@ void VideoModel::fetch(const QString &videoId)
                     }
                 }
 
-                m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+                if (m_formatUrl.size() == 1) {
+                    m_selectedFormat = m_formatUrl.keys().first();
+                } else {
+                    m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+                }
             }
 
             Q_EMIT videoChanged();
