@@ -6,7 +6,7 @@
 #include "plasmatube.h"
 
 VideoQueue::VideoQueue(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractListModel(parent)
 {
 }
 
@@ -152,7 +152,7 @@ QVariant VideoQueue::data(const QModelIndex &index, int role) const
     const int row = index.row();
     if (role == IdRole) {
         return m_videoIds[row];
-    } else if (role == PlayingRole) {
+    } else if (role == Roles::PlayingRole) {
         return row == m_currentIndex;
     }
 
@@ -204,23 +204,29 @@ QVariant VideoQueue::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> VideoQueue::roleNames() const
 {
-    return {{IdRole, "id"},
-            {TitleRole, "title"},
-            {ThumbnailRole, "thumbnail"},
-            {LengthRole, "length"},
-            {ViewCountRole, "viewCount"},
-            {AuthorRole, "author"},
-            {AuthorIdRole, "authorId"},
-            {AuthorUrlRole, "authorUrl"},
-            {PublishedRole, "published"},
-            {PublishedTextRole, "publishedText"},
-            {DescriptionRole, "description"},
-            {DescriptionHtmlRole, "descriptionHtml"},
-            {LiveNowRole, "liveNow"},
-            {PaidRole, "paid"},
-            {PremiumRole, "premium"},
-            {WatchedRole, "watched"},
-            {PlayingRole, "playing"}};
+    auto baseRoles = AbstractListModel::roleNames();
+    baseRoles[PlayingRole] = QByteArrayLiteral("playing");
+    return baseRoles;
+}
+
+void VideoQueue::refresh()
+{
+    // TODO: stub
+}
+
+void VideoQueue::markAsWatched(int index)
+{
+    // TODO: stub
+}
+
+void VideoQueue::markAsUnwatched(int index)
+{
+    // TODO: stub
+}
+
+void VideoQueue::removeFromPlaylist(const QString &plid, int index)
+{
+    // TODO: stub
 }
 
 void VideoQueue::setCurrentIndex(const int newIndex)

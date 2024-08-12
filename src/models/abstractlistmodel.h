@@ -48,7 +48,10 @@ public:
 
         // Channel roles
         ChannelNameRole,
-        ChannelAvatarRole
+        ChannelAvatarRole,
+
+        // Base role for sub-class roles.
+        ExtraRole,
     };
 
     explicit AbstractListModel(QObject *parent = nullptr);

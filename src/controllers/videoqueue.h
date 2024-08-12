@@ -3,15 +3,14 @@
 
 #pragma once
 
+#include "abstractlistmodel.h"
 #include "videobasicinfo.h"
 
-#include <QAbstractListModel>
-#include <QFutureWatcher>
 #include <QtQml>
 
 #include <abstractapi.h>
 
-class VideoQueue : public QAbstractListModel
+class VideoQueue : public AbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -51,32 +50,19 @@ public:
 
     QString getCurrentVideoId() const;
 
-    // TODO: we should have an AbstractVideoListModel, and combine these roles with VideoLisTModel
-    enum Roles : int {
-        IdRole = Qt::UserRole + 1,
-        TitleRole,
-        ThumbnailRole,
-        LengthRole,
-        ViewCountRole,
-        AuthorRole,
-        AuthorIdRole,
-        AuthorUrlRole,
-        PublishedRole,
-        PublishedTextRole,
-        DescriptionRole,
-        DescriptionHtmlRole,
-        LiveNowRole,
-        PaidRole,
-        PremiumRole,
-        WatchedRole,
-        PlayingRole
-    };
+    enum Roles : int { PlayingRole = ExtraRole };
 
     [[nodiscard]] int rowCount(const QModelIndex &index) const override;
 
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     [[nodiscard]] QHash<int, QByteArray> roleNames() const override;
+
+public Q_SLOTS:
+    void refresh() override;
+    void markAsWatched(int index) override;
+    void markAsUnwatched(int index) override;
+    void removeFromPlaylist(const QString &plid, int index) override;
 
 Q_SIGNALS:
     void currentVideoChanged();
