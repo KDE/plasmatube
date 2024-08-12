@@ -54,53 +54,39 @@ BaseSourcePage {
 
                 FormCard.FormComboBoxDelegate {
                     id: defaultHomepageDelegate
-                    Layout.fillWidth: true
-                    text: i18n("Default homepage")
-                    description: i18n("The default page to load when switching to this source.")
+
+                    text: i18n("Default Page")
+                    description: i18n("The first page to load when switching to this source.")
                     textRole: "display"
-                    valueRole: "display"
-                    // TODO: these need to be localized, but ListElement makes this difficult...
-                    model: ListModel {
-                        ListElement {
-                            display: "Search"
-                        }
-                        ListElement {
-                            display: "Trending"
-                        }
-                        ListElement {
-                            display: "Subscriptions"
-                        }
-                        ListElement {
-                            display: "Playlists"
-                        }
-                    }
+                    valueRole: "value"
+                    model: [
+                        {
+                            display: i18nc("@info Search page", "Search"),
+                            value: "Search"
+                        },
+                        {
+                            display: i18nc("@info Trending page", "Trending"),
+                            value: "Trending"
+                        },
+                        {
+                            display: i18nc("@info Subscriptions page", "Subscriptions"),
+                            value: "Subscriptions"
+                        },
+                        {
+                            display: i18nc("@info Playlists page", "Playlists"),
+                            value: "Playlists"
+                        },
+                    ]
 
-                    function calculateIndex() {
-                        let defaultHome = root.selectedSource.preferences.defaultHome;
-                        switch (defaultHome) {
-                            case "Search":
-                                currentIndex = 0;
-                            case "Trending":
-                                currentIndex = 1;
-                                break;
-                            case "Subscriptions":
-                                currentIndex = 2;
-                                break;
-                            case "Playlists":
-                                currentIndex = 3;
-                                break;
-                        }
-                    }
-
-                    onCurrentValueChanged: {
+                    onActivated: {
                         let preferences = root.selectedSource.preferences;
-                        preferences.defaultHome = currentText;
+                        preferences.defaultHome = currentValue;
                         PlasmaTube.preferences = preferences;
                     }
                 }
             }
 
-            onSelectedSourceChanged: defaultHomepageDelegate.calculateIndex()
+            onSelectedSourceChanged: defaultHomepageDelegate.currentIndex = defaultHomepageDelegate.indexOfValue(root.selectedSource.preferences.defaultHome)
         }
 
         onLoaded: item.selectedSource = page.source
