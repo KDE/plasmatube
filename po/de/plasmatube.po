@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2023-12-21 18:59+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -158,7 +158,7 @@ msgid "Share the selected media"
 msgstr ""
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
-#: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
+#: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Proxy-Einstellungen"
@@ -194,7 +194,7 @@ msgstr "Videos"
 msgid "Search"
 msgstr "Suchen"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Einstellungen"
@@ -251,17 +251,17 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:64
+#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:63
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:66
+#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:68
+#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
 msgstr ""
@@ -439,7 +439,7 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr "%1 hinzufügen"
 
-#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:24
+#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -471,34 +471,34 @@ msgstr "PeerTube-Quelle hinzufügen"
 msgid "Add Piped Source"
 msgstr "Invidious"
 
-#: ui/LoginPage.qml:23
+#: ui/LoginPage.qml:22
 #, fuzzy, kde-format
 #| msgid "Log in"
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ui/LoginPage.qml:68
+#: ui/LoginPage.qml:67
 #, kde-format
 msgid "Username"
 msgstr "Benutzername"
 
-#: ui/LoginPage.qml:82 ui/settings/NetworkProxyPage.qml:91
+#: ui/LoginPage.qml:81 ui/settings/NetworkProxyPage.qml:90
 #, kde-format
 msgid "Password"
 msgstr "Passwort"
 
-#: ui/LoginPage.qml:97
+#: ui/LoginPage.qml:96
 #, kde-format
 msgid "Log in"
 msgstr "Anmelden"
 
-#: ui/LoginPage.qml:105
+#: ui/LoginPage.qml:104
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "Der Benutzername darf nicht leer sein."
 
-#: ui/LoginPage.qml:110
+#: ui/LoginPage.qml:109
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Das Passwort darf nicht leer sein."
@@ -601,37 +601,97 @@ msgstr "Möchten Sie diese Quelle wirklich entfernen?"
 msgid "General"
 msgstr ""
 
+#: ui/settings/GeneralPage.qml:22
+#, kde-format
+msgid "Preferred Video Quality"
+msgstr ""
+
 #: ui/settings/GeneralPage.qml:23
+#, kde-format
+msgid ""
+"This selected quality will be used if available, otherwise the next highest "
+"one is used."
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:29
+#, kde-format
+msgctxt "@info video resolution"
+msgid "2160p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:33
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1440p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:37
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1080p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:41
+#, kde-format
+msgctxt "@info video resolution"
+msgid "720p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:45
+#, kde-format
+msgctxt "@info video resolution"
+msgid "480p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:49
+#, kde-format
+msgctxt "@info video resolution"
+msgid "360p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:53
+#, kde-format
+msgctxt "@info video resolution"
+msgid "240p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:57
+#, kde-format
+msgctxt "@info video resolution"
+msgid "144p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:75
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr ""
 
-#: ui/settings/GeneralPage.qml:24
+#: ui/settings/GeneralPage.qml:76
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr ""
 
-#: ui/settings/GeneralPage.qml:41
+#: ui/settings/GeneralPage.qml:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
 msgstr ""
 
-#: ui/settings/GeneralPage.qml:42
+#: ui/settings/GeneralPage.qml:94
 #, kde-format
 msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
 
-#: ui/settings/GeneralPage.qml:59
+#: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
 msgstr ""
 
-#: ui/settings/GeneralPage.qml:60
+#: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
 msgstr ""
@@ -669,43 +729,43 @@ msgstr ""
 msgid "The default page to load when switching to this source."
 msgstr ""
 
-#: ui/settings/NetworkProxyPage.qml:17
+#: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
 msgstr "Netzwerk-Proxy"
 
-#: ui/settings/NetworkProxyPage.qml:27
+#: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
 msgstr "Systemvorgabe"
 
-#: ui/settings/NetworkProxyPage.qml:37
+#: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: ui/settings/NetworkProxyPage.qml:53
+#: ui/settings/NetworkProxyPage.qml:52
 #, kde-format
 msgid "Host"
 msgstr "Rechner"
 
-#: ui/settings/NetworkProxyPage.qml:64
+#: ui/settings/NetworkProxyPage.qml:63
 #, kde-format
 msgid "Port"
 msgstr "Port"
 
-#: ui/settings/NetworkProxyPage.qml:83
+#: ui/settings/NetworkProxyPage.qml:82
 #, kde-format
 msgid "User"
 msgstr "Benutzer"
 
-#: ui/settings/NetworkProxyPage.qml:107
+#: ui/settings/NetworkProxyPage.qml:106
 #, kde-format
 msgid "Apply"
 msgstr "Anwenden"
 
-#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:18
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:17
 #, kde-format
 msgid "Sources"
 msgstr "Quellen"
@@ -725,108 +785,108 @@ msgstr "Über PlasmaTube"
 msgid "About KDE"
 msgstr "Über KDE"
 
-#: ui/settings/SourcesPage.qml:22
+#: ui/settings/SourcesPage.qml:21
 #, fuzzy, kde-format
 #| msgid "Add Source"
 msgctxt "@action:button"
 msgid "Add Source…"
 msgstr "Quelle hinzufügen"
 
-#: ui/SubscriptionListPage.qml:25
+#: ui/SubscriptionListPage.qml:24
 #, fuzzy, kde-format
 #| msgid "Subscribe (%1)"
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
 msgstr "Abonnieren (%1)"
 
-#: ui/SubscriptionListPage.qml:34
+#: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Importing Completed"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:34
+#: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Exporting Completed"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:37
+#: ui/SubscriptionListPage.qml:36
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ui/SubscriptionListPage.qml:39
+#: ui/SubscriptionListPage.qml:38
 #, kde-format
 msgid "All imported channels were already subscribed to."
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:42
+#: ui/SubscriptionListPage.qml:41
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ui/SubscriptionListPage.qml:51
+#: ui/SubscriptionListPage.qml:50
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:59
+#: ui/SubscriptionListPage.qml:58
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:64
+#: ui/SubscriptionListPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Subscriptions"
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
 msgstr "Abonnements"
 
-#: ui/SubscriptionListPage.qml:65
+#: ui/SubscriptionListPage.qml:64
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:70
+#: ui/SubscriptionListPage.qml:69
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:75
+#: ui/SubscriptionListPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Subscriptions"
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
 msgstr "Abonnements"
 
-#: ui/SubscriptionListPage.qml:76
+#: ui/SubscriptionListPage.qml:75
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
 msgstr ""
 
-#: ui/SubscriptionListPage.qml:103
+#: ui/SubscriptionListPage.qml:102
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Loading…"
 msgid "Importing…"
 msgstr "Wird geladen ..."
 
-#: ui/SubscriptionListPage.qml:103
+#: ui/SubscriptionListPage.qml:102
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Loading…"
 msgid "Exporting…"
 msgstr "Wird geladen ..."
 
-#: ui/SubscriptionListPage.qml:179
+#: ui/SubscriptionListPage.qml:178
 #, kde-format
 msgid "No channels"
 msgstr ""
@@ -849,20 +909,20 @@ msgstr "Angesagt"
 msgid "Picture in Picture"
 msgstr "Bild-in-Bild"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, fuzzy, kde-format
 #| msgid "Proxy Settings"
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Proxy-Einstellungen"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, fuzzy, kde-format
 #| msgctxt "@action:button Play the playlist"
 #| msgid "Play"
@@ -870,20 +930,20 @@ msgctxt "@action:button"
 msgid "Play"
 msgstr "Wiedergeben"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, fuzzy, kde-format
 #| msgid "Fullscreen"
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, fuzzy, kde-format
 #| msgid "Picture in Picture"
 msgctxt "@action:button"

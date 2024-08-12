@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-27 00:40+0000\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
 "PO-Revision-Date: 2024-07-27 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -156,7 +156,7 @@ msgid "Share the selected media"
 msgstr "Delite si izbrane medije"
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
-#: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
+#: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Nastavitve poslednika"
@@ -190,7 +190,7 @@ msgstr "Video posnetki"
 msgid "Search"
 msgstr "Išči"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
@@ -248,17 +248,17 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:64
+#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:63
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:66
+#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:68
+#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
 msgstr "Pretočeno"
@@ -430,7 +430,7 @@ msgctxt "Add instance"
 msgid "Add %1"
 msgstr "Dodaj %1"
 
-#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:24
+#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -461,33 +461,33 @@ msgstr "Dodaj vir PeerTube"
 msgid "Add Piped Source"
 msgstr "Dodaj pretočen vir"
 
-#: ui/LoginPage.qml:23
+#: ui/LoginPage.qml:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Prijavi se"
 
-#: ui/LoginPage.qml:68
+#: ui/LoginPage.qml:67
 #, kde-format
 msgid "Username"
 msgstr "Uporabniško ime"
 
-#: ui/LoginPage.qml:82 ui/settings/NetworkProxyPage.qml:91
+#: ui/LoginPage.qml:81 ui/settings/NetworkProxyPage.qml:90
 #, kde-format
 msgid "Password"
 msgstr "Geslo"
 
-#: ui/LoginPage.qml:97
+#: ui/LoginPage.qml:96
 #, kde-format
 msgid "Log in"
 msgstr "Prijavi se"
 
-#: ui/LoginPage.qml:105
+#: ui/LoginPage.qml:104
 #, kde-format
 msgid "Username must not be empty!"
 msgstr "Uporabniško ime ne sme biti prazno!"
 
-#: ui/LoginPage.qml:110
+#: ui/LoginPage.qml:109
 #, kde-format
 msgid "Password must not be empty!"
 msgstr "Geslo ne sme biti prazno!"
@@ -584,24 +584,84 @@ msgstr "Ali ste prepričani, da želite odstraniti ta vir?"
 msgid "General"
 msgstr "Splošno"
 
+#: ui/settings/GeneralPage.qml:22
+#, kde-format
+msgid "Preferred Video Quality"
+msgstr ""
+
 #: ui/settings/GeneralPage.qml:23
+#, kde-format
+msgid ""
+"This selected quality will be used if available, otherwise the next highest "
+"one is used."
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:29
+#, kde-format
+msgctxt "@info video resolution"
+msgid "2160p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:33
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1440p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:37
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1080p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:41
+#, kde-format
+msgctxt "@info video resolution"
+msgid "720p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:45
+#, kde-format
+msgctxt "@info video resolution"
+msgid "480p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:49
+#, kde-format
+msgctxt "@info video resolution"
+msgid "360p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:53
+#, kde-format
+msgctxt "@info video resolution"
+msgid "240p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:57
+#, kde-format
+msgctxt "@info video resolution"
+msgid "144p"
+msgstr ""
+
+#: ui/settings/GeneralPage.qml:75
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
 msgstr "Skrij kratke"
 
-#: ui/settings/GeneralPage.qml:24
+#: ui/settings/GeneralPage.qml:76
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
 msgstr "Skrij kratke videoposnetke prilagojene ogledu na mobilni napravi."
 
-#: ui/settings/GeneralPage.qml:41
+#: ui/settings/GeneralPage.qml:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
 msgstr "Preveri za sponzoriranimi segmenti"
 
-#: ui/settings/GeneralPage.qml:42
+#: ui/settings/GeneralPage.qml:94
 #, kde-format
 msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
@@ -610,13 +670,13 @@ msgstr ""
 "Obvesti, kadar je v videoposnetku segment, ki ga je predložila skupnost "
 "(običajno sponzorstvo). Ta funkcija zahteva stik s storitvijo tretje osebe."
 
-#: ui/settings/GeneralPage.qml:59
+#: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
 msgstr "Preskoči sponzorirane segmente"
 
-#: ui/settings/GeneralPage.qml:60
+#: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
 msgstr "Samodejno preskoči sponzorirane segmente v videu."
@@ -655,43 +715,43 @@ msgstr "Privzeta domača stran"
 msgid "The default page to load when switching to this source."
 msgstr "Privzeta stran, ki se naloži ob preklopu na ta vir."
 
-#: ui/settings/NetworkProxyPage.qml:17
+#: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
 msgstr "Mrežni poslednik"
 
-#: ui/settings/NetworkProxyPage.qml:27
+#: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
 msgstr "Sistemsko privzeto"
 
-#: ui/settings/NetworkProxyPage.qml:37
+#: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
 msgstr "HTTP"
 
-#: ui/settings/NetworkProxyPage.qml:53
+#: ui/settings/NetworkProxyPage.qml:52
 #, kde-format
 msgid "Host"
 msgstr "Gostitelj"
 
-#: ui/settings/NetworkProxyPage.qml:64
+#: ui/settings/NetworkProxyPage.qml:63
 #, kde-format
 msgid "Port"
 msgstr "Vrata"
 
-#: ui/settings/NetworkProxyPage.qml:83
+#: ui/settings/NetworkProxyPage.qml:82
 #, kde-format
 msgid "User"
 msgstr "Uporabnik"
 
-#: ui/settings/NetworkProxyPage.qml:107
+#: ui/settings/NetworkProxyPage.qml:106
 #, kde-format
 msgid "Apply"
 msgstr "Uveljavi"
 
-#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:18
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:17
 #, kde-format
 msgid "Sources"
 msgstr "Viri"
@@ -711,29 +771,29 @@ msgstr "O PlasmaTube"
 msgid "About KDE"
 msgstr "O KDE"
 
-#: ui/settings/SourcesPage.qml:22
+#: ui/settings/SourcesPage.qml:21
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
 msgstr "Dodaj vir…"
 
-#: ui/SubscriptionListPage.qml:25
+#: ui/SubscriptionListPage.qml:24
 #, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
 msgstr "Naročeni kanali"
 
-#: ui/SubscriptionListPage.qml:34
+#: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Importing Completed"
 msgstr "Uvoz dokončan"
 
-#: ui/SubscriptionListPage.qml:34
+#: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Exporting Completed"
 msgstr "Izvoz dokončan"
 
-#: ui/SubscriptionListPage.qml:37
+#: ui/SubscriptionListPage.qml:36
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
@@ -742,12 +802,12 @@ msgstr[1] "Uvožena %1 nova naročnina."
 msgstr[2] "Uvoženi %1 novi naročnini."
 msgstr[3] "Uvožene %1 nove naročnine."
 
-#: ui/SubscriptionListPage.qml:39
+#: ui/SubscriptionListPage.qml:38
 #, kde-format
 msgid "All imported channels were already subscribed to."
 msgstr "Vsi uvoženi kanali so že bili naročeni."
 
-#: ui/SubscriptionListPage.qml:42
+#: ui/SubscriptionListPage.qml:41
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
@@ -756,59 +816,59 @@ msgstr[1] "Izvožena %1 nova naročnina."
 msgstr[2] "Izvoženi %1 novi naročnini."
 msgstr[3] "Izvožene %1 nove naročnine."
 
-#: ui/SubscriptionListPage.qml:51
+#: ui/SubscriptionListPage.qml:50
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
 msgstr "Napaka"
 
-#: ui/SubscriptionListPage.qml:59
+#: ui/SubscriptionListPage.qml:58
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
 msgstr "Uvoz…"
 
-#: ui/SubscriptionListPage.qml:64
+#: ui/SubscriptionListPage.qml:63
 #, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
 msgstr "Uvoz naročnine OPML"
 
-#: ui/SubscriptionListPage.qml:65
+#: ui/SubscriptionListPage.qml:64
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
 msgstr "Uvoz"
 
-#: ui/SubscriptionListPage.qml:70
+#: ui/SubscriptionListPage.qml:69
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
 msgstr "Izvoz…"
 
-#: ui/SubscriptionListPage.qml:75
+#: ui/SubscriptionListPage.qml:74
 #, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
 msgstr "Izvoz naročnin OPLM"
 
-#: ui/SubscriptionListPage.qml:76
+#: ui/SubscriptionListPage.qml:75
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
 msgstr "Izvoz"
 
-#: ui/SubscriptionListPage.qml:103
+#: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Importing…"
 msgstr "Uvažanje…"
 
-#: ui/SubscriptionListPage.qml:103
+#: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Exporting…"
 msgstr "Izvažanje…"
 
-#: ui/SubscriptionListPage.qml:179
+#: ui/SubscriptionListPage.qml:178
 #, kde-format
 msgid "No channels"
 msgstr "Ni kanalov"
@@ -830,37 +890,37 @@ msgstr "V trendu"
 msgid "Picture in Picture"
 msgstr "Slika v sliki"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Nastavitve videov"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "Poišči nazaj"
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "Poišči naprej"
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Celotni zaslon"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
