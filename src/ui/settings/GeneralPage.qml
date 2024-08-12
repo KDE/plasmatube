@@ -17,6 +17,58 @@ FormCard.FormCardPage {
         Layout.fillWidth: true
         Layout.topMargin: Kirigami.Units.largeSpacing
 
+        FormCard.FormComboBoxDelegate {
+            id: preferredVideoQualityDelegate
+            text: i18n("Preferred Video Quality")
+            description: i18n("This selected quality will be used if available, otherwise the next highest one is used.")
+            textRole: "display"
+            valueRole: "value"
+            currentIndex: PlasmaTube.settings.preferredVideoQuality
+            model: [
+                {
+                    display: i18nc("@info video resolution", "2160p"),
+                    value: Settings.Q2160
+                },
+                {
+                    display: i18nc("@info video resolution", "1440p"),
+                    value: Settings.Q1440
+                },
+                {
+                    display: i18nc("@info video resolution", "1080p"),
+                    value: Settings.Q1080
+                },
+                {
+                    display: i18nc("@info video resolution", "720p"),
+                    value: Settings.Q720
+                },
+                {
+                    display: i18nc("@info video resolution", "480p"),
+                    value: Settings.Q480
+                },
+                {
+                    display: i18nc("@info video resolution", "360p"),
+                    value: Settings.Q360
+                },
+                {
+                    display: i18nc("@info video resolution", "240p"),
+                    value: Settings.Q240
+                },
+                {
+                    display: i18nc("@info video resolution", "144p"),
+                    value: Settings.Q144
+                }
+            ]
+            onActivated: {
+                PlasmaTube.settings.preferredVideoQuality = currentValue;
+                PlasmaTube.settings.save();
+            }
+        }
+
+        FormCard.FormDelegateSeparator {
+            above: preferredVideoQualityDelegate
+            below: hideShortsDelegater
+        }
+
         FormCard.FormCheckDelegate {
             id: hideShortsDelegater
 

@@ -73,7 +73,14 @@ void VideoModel::fetch(const QString &videoId)
                 if (m_formatUrl.size() == 1) {
                     m_selectedFormat = m_formatUrl.keys().first();
                 } else {
-                    m_selectedFormat = QStringLiteral("360p"); // TODO: hardcoded but this should be user configurable
+                    const auto preferredName =
+                        videoQualityName(static_cast<Settings::EnumPreferredVideoQuality>(PlasmaTube::instance().settings()->preferredVideoQuality()));
+                    if (m_formatUrl.contains(preferredName)) {
+                        m_selectedFormat = preferredName;
+                    } else {
+                        // TODO: make sure it's lower resolution than the preferred one
+                        m_selectedFormat = m_formatUrl.keys().last();
+                    }
                 }
             }
 
@@ -229,6 +236,30 @@ void VideoModel::clearVideo()
 QString VideoModel::getVideoUrl() const
 {
     return PlasmaTube::instance().sourceManager()->selectedSource()->api()->getVideoUrl(m_videoId);
+}
+
+QString VideoModel::videoQualityName(const Settings::EnumPreferredVideoQuality videoQuality)
+{
+    switch (videoQuality) {
+    case Settings::Q2160:
+        return QStringLiteral("2160p");
+    case Settings::Q1440:
+        return QStringLiteral("1440p");
+    case Settings::Q1080:
+        return QStringLiteral("1080p");
+    case Settings::Q720:
+        return QStringLiteral("720p");
+    case Settings::Q480:
+        return QStringLiteral("480p");
+    case Settings::Q360:
+        return QStringLiteral("360p");
+    case Settings::Q240:
+        return QStringLiteral("240p");
+    case Settings::Q144:
+        return QStringLiteral("144p");
+    }
+
+    return QString{};
 }
 
 #include "moc_videomodel.cpp"

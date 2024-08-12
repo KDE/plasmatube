@@ -4,6 +4,7 @@
 #pragma once
 
 #include "abstractapi.h"
+#include "config.h"
 
 #include <video.h>
 
@@ -103,6 +104,8 @@ Q_SIGNALS:
     void errorOccurred(const QString &errorText);
 
 private:
+    static QString videoQualityName(Settings::EnumPreferredVideoQuality videoQuality);
+
     QString m_videoId;
     QString m_remoteUrl;
     QHash<QString, QString> m_formatUrl;
