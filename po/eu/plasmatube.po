@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-08-12 02:27+0000\n"
 "PO-Revision-Date: 2024-07-17 06:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -192,7 +192,7 @@ msgstr "Bideoak"
 msgid "Search"
 msgstr "Bilatu"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -829,37 +829,37 @@ msgstr "Joera"
 msgid "Picture in Picture"
 msgstr "Irudiz-irudi"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Bideo ezarpenak"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "Bilatu atzerantz"
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Jo"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "Bilatu aurrerantz"
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Pantaila-betea"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"

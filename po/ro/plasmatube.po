@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-08-12 02:27+0000\n"
 "PO-Revision-Date: 2024-02-25 19:08+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -192,7 +192,7 @@ msgstr "Videoclipuri"
 msgid "Search"
 msgstr "Caută"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Configurări"
@@ -847,20 +847,20 @@ msgstr "În vogă"
 msgid "Picture in Picture"
 msgstr "Imagine-în-imagine"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, fuzzy, kde-format
 #| msgid "Proxy Settings"
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Configurări proxy"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, fuzzy, kde-format
 #| msgctxt "@action:button Play the playlist"
 #| msgid "Play"
@@ -868,19 +868,19 @@ msgctxt "@action:button"
 msgid "Play"
 msgstr "Redă"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, fuzzy, kde-format
 #| msgid "Picture in Picture"
 msgctxt "@action:button"

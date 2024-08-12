@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-08-12 02:27+0000\n"
 "PO-Revision-Date: 2024-07-14 09:21+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -190,7 +190,7 @@ msgstr "סרטונים"
 msgid "Search"
 msgstr "חיפוש"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "הגדרות"
@@ -826,37 +826,37 @@ msgstr "מובילים"
 msgid "Picture in Picture"
 msgstr "חלונית צפה"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "הגדרות סרטון"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "חתירה אחורה"
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "נגינה"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "חתירה קדימה"
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "מסך מלא"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"

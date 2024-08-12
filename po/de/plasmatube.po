@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
+"POT-Creation-Date: 2024-08-12 02:27+0000\n"
 "PO-Revision-Date: 2023-12-21 18:59+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -194,7 +194,7 @@ msgstr "Videos"
 msgid "Search"
 msgstr "Suchen"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Einstellungen"
@@ -849,20 +849,20 @@ msgstr "Angesagt"
 msgid "Picture in Picture"
 msgstr "Bild-in-Bild"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, fuzzy, kde-format
 #| msgid "Proxy Settings"
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Proxy-Einstellungen"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, fuzzy, kde-format
 #| msgctxt "@action:button Play the playlist"
 #| msgid "Play"
@@ -870,20 +870,20 @@ msgctxt "@action:button"
 msgid "Play"
 msgstr "Wiedergeben"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr ""
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, fuzzy, kde-format
 #| msgid "Fullscreen"
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, fuzzy, kde-format
 #| msgid "Picture in Picture"
 msgctxt "@action:button"

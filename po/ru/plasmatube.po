@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-14 00:38+0000\n"
-"PO-Revision-Date: 2024-06-27 20:30+0300\n"
+"POT-Creation-Date: 2024-08-12 02:27+0000\n"
+"PO-Revision-Date: 2024-08-11 07:36+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -192,7 +192,7 @@ msgstr "Видеозаписи"
 msgid "Search"
 msgstr "Поиск"
 
-#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:325
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
 #, kde-format
 msgid "Settings"
 msgstr "Параметры"
@@ -747,16 +747,16 @@ msgstr[3] "Импортирована %1 новая подписка."
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Вы уже подписаны на все импортированные каналы."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Экспортирована %1 подписка."
+msgstr[1] "Экспортированы %1 подписки."
+msgstr[2] "Экспортированы %1 подписок."
+msgstr[3] "Экспортирована одна подписка."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
@@ -771,11 +771,10 @@ msgid "Import…"
 msgstr "Импорт…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Подписки"
+msgstr "Импорт подписок в формате OPML"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
@@ -790,11 +789,10 @@ msgid "Export…"
 msgstr "Экспорт…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Подписки"
+msgstr "Экспорт подписок в файл OPML"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
@@ -834,37 +832,37 @@ msgstr "Тренды"
 msgid "Picture in Picture"
 msgstr "Картинка-в-картинке"
 
-#: ui/videoplayer/VideoControls.qml:105
+#: ui/videoplayer/VideoControls.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
 msgstr "Параметры видео"
 
-#: ui/videoplayer/VideoControls.qml:138
+#: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
 msgstr "Перемотать назад"
 
-#: ui/videoplayer/VideoControls.qml:180
+#: ui/videoplayer/VideoControls.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Воспроизвести"
 
-#: ui/videoplayer/VideoControls.qml:225
+#: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
 msgstr "Перемотать вперёд"
 
-#: ui/videoplayer/VideoControls.qml:268
+#: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Во весь экран"
 
-#: ui/videoplayer/VideoControls.qml:295
+#: ui/videoplayer/VideoControls.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
@@ -908,11 +906,10 @@ msgid "Recommended"
 msgstr "Рекомендации"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Рекомендации"
+msgstr "Нет ни одного рекомендованного видео"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
@@ -928,7 +925,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Пропустить"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
