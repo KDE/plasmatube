@@ -28,7 +28,6 @@ public:
         NoQuery,
         Feed,
         Search,
-        Top,
         Trending,
         TrendingGaming,
         TrendingMovies,

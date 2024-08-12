@@ -42,7 +42,6 @@ public:
     QFuture<VideoResult> requestVideo(const QString &videoId) override;
     QFuture<SearchListResult> requestSearchResults(const SearchParameters &parameters, Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestFeed(Paginator *paginator = nullptr) override;
-    QFuture<VideoListResult> requestTop() override;
     QFuture<VideoListResult> requestTrending(TrendingTopic = Main, Paginator *paginator = nullptr) override;
     QFuture<VideoListResult> requestChannel(const QString &query, Paginator *paginator = nullptr) override;
     QFuture<SubscriptionsResult> requestSubscriptions() override;

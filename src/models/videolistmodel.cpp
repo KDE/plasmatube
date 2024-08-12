@@ -16,8 +16,6 @@ QString VideoListModel::queryTypeString(QueryType type)
     switch (type) {
     case Feed:
         return i18n("Subscriptions");
-    case Top:
-        return i18n("Popular");
     case Trending:
         return i18nc("@action:button All trending videos", "All");
     case TrendingGaming:
@@ -40,8 +38,6 @@ QString VideoListModel::queryTypeIcon(QueryType type)
     switch (type) {
     case Feed:
         return QStringLiteral("feed-subscribe");
-    case Top:
-        return QStringLiteral("arrow-up-double");
     case Trending:
         // should actually be "user-trash-full-symbolic"
         return QStringLiteral("favorite");
@@ -188,10 +184,6 @@ void VideoListModel::requestQuery(QueryType type, bool reset)
     switch (type) {
     case Feed:
         handleQuery(selectedSource->api()->requestFeed(&m_paginator), type, reset);
-        break;
-    case Top:
-        // TODO: remove?
-        handleQuery(selectedSource->api()->requestTop(), type, reset);
         break;
     case Trending:
         handleQuery(selectedSource->api()->requestTrending(QInvidious::Main, &m_paginator), type, reset);

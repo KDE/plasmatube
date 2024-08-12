@@ -158,11 +158,6 @@ QFuture<VideoListResult> InvidiousApi::requestFeed(Paginator *paginator)
     return requestVideoList(Feed, QStringLiteral(""), {}, paginator);
 }
 
-QFuture<VideoListResult> InvidiousApi::requestTop()
-{
-    return requestVideoList(Top);
-}
-
 QFuture<VideoListResult> InvidiousApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     QHash<QString, QString> parameters;

@@ -213,11 +213,6 @@ QFuture<VideoListResult> PeerTubeApi::requestFeed(Paginator *paginator)
     return requestVideoList(Feed, QStringLiteral(""), {}, paginator);
 }
 
-QFuture<VideoListResult> PeerTubeApi::requestTop()
-{
-    return requestVideoList(Top);
-}
-
 QFuture<VideoListResult> PeerTubeApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     QHash<QString, QString> parameters;

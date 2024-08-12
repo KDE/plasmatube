@@ -98,7 +98,6 @@ public:
      * @return Use a @c Paginator if you wish to paginate through the results, otherwise returns the first page of results.
      */
     virtual QFuture<VideoListResult> requestFeed(Paginator * = nullptr) = 0;
-    virtual QFuture<VideoListResult> requestTop() = 0;
     /**
      * @brief Request the trending videos on this server, if available.
      * @note The trending topic may be ignored if this API does not support it. Check this feature by calling supportsFeature().

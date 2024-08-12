@@ -133,11 +133,6 @@ QFuture<VideoListResult> PipedApi::requestFeed(Paginator *paginator)
     return {};
 }
 
-QFuture<VideoListResult> PipedApi::requestTop()
-{
-    return {};
-}
-
 QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginator *paginator)
 {
     Q_UNUSED(paginator)
