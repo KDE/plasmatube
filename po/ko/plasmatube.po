@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-12 02:27+0000\n"
-"PO-Revision-Date: 2024-02-06 00:38+0100\n"
+"PO-Revision-Date: 2024-08-20 23:52+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
@@ -58,7 +58,7 @@ msgstr "YouTube 클라이언트"
 #: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
 #: main.cpp:59
 #, kde-format
@@ -73,12 +73,12 @@ msgstr "개발자"
 #: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "관리자"
 
 #: main.cpp:65
 #, kde-format
@@ -152,7 +152,7 @@ msgstr "공유"
 #: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "선택한 미디어 공유"
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:45
@@ -161,15 +161,13 @@ msgid "Proxy Settings"
 msgstr "프록시 설정"
 
 #: ui/ChannelPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
-msgstr "비디오"
+msgstr "동영상"
 
 #: ui/ChannelPage.qml:148
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "재생 목록"
@@ -197,8 +195,7 @@ msgid "Settings"
 msgstr "설정"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "설정"
@@ -210,11 +207,10 @@ msgid "Load more"
 msgstr "더 불러오기"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "댓글"
+msgstr "설명 없음"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -280,20 +276,18 @@ msgid "Add a new video source"
 msgstr "새 동영상 소스 추가"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "구독 해제(%1)"
+msgstr "구독 해제%1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "구독(%1)"
+msgstr "구독%1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -304,19 +298,18 @@ msgstr "채널을 구독하려면 로그인하십시오."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "라이브"
 
 #: ui/components/VideoGridItem.qml:79
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Shorts"
 
 #: ui/components/VideoGridItem.qml:157 ui/components/VideoListItem.qml:148
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "동영상 없음"
+msgstr "조회 없음"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
 #: ui/videoplayer/VideoPlayer.qml:404
@@ -327,7 +320,7 @@ msgstr "조회수 %1회"
 #: ui/components/VideoGridItem.qml:162
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>실시간</i>"
 
 #: ui/components/VideoListItem.qml:160
 #, kde-format
@@ -340,9 +333,7 @@ msgid "Play Now"
 msgstr "지금 재생"
 
 #: ui/components/VideoMenu.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "재생"
 
@@ -357,14 +348,12 @@ msgid "Play in Picture-in-Picture"
 msgstr "PIP에서 재생"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "보지 않은 것으로 표시"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "본 것으로 표시"
 
@@ -467,8 +456,7 @@ msgid "Add Piped Source"
 msgstr "Piped 소스 추가"
 
 #: ui/LoginPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "로그인"
@@ -499,8 +487,7 @@ msgid "Password must not be empty!"
 msgstr "암호를 입력해야 합니다!"
 
 #: ui/Main.qml:215
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "재생 목록에 추가"
@@ -542,15 +529,13 @@ msgid "Currently logged in as %1."
 msgstr "현재 %1(으)로 로그인했습니다."
 
 #: ui/settings/AccountCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "로그아웃"
 
 #: ui/settings/AccountCard.qml:41
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "로그인"
@@ -558,7 +543,7 @@ msgstr "로그인"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "채널 구독, 본 동영상 기록 저장 등 기능."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
@@ -567,10 +552,9 @@ msgid "Edit Source"
 msgstr "소스 편집"
 
 #: ui/settings/BaseSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "소스 삭제"
+msgstr "소스 삭제…"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
@@ -592,24 +576,24 @@ msgstr "이 소스를 삭제하시겠습니까?"
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "일반"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Shorts 숨기기"
 
 #: ui/settings/GeneralPage.qml:24
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "모바일 장치에서 볼 것으로 제작된 숏폼 동영상을 숨깁니다."
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "스폰서된 부분 검사"
 
 #: ui/settings/GeneralPage.qml:42
 #, kde-format
@@ -617,17 +601,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"동영상에 커뮤니티에서 제출한 부분(대개의 경우 스폰서)이 있는지 검사합니다. "
+"이 기능을 사용하려면 제3자 서비스에 접근해야 합니다."
 
 #: ui/settings/GeneralPage.qml:59
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "스폰서된 부분 건너뛰기"
 
 #: ui/settings/GeneralPage.qml:60
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "자동으로 동영상의 스폰서 부분을 건너뜁니다."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -637,20 +623,19 @@ msgstr "계정"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "설정"
 
 #: ui/settings/InvidiousSourcePage.qml:42
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "자동 재생"
+msgstr "동영상 자동 재생"
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
 msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
-msgstr ""
+msgstr "동영상을 즉시 재생할지, 재생 단추 클릭을 기다릴지 여부입니다."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
@@ -660,7 +645,7 @@ msgstr "기본 홈페이지"
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "이 소스로 전환할 때 불러올 기본 페이지입니다."
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
@@ -719,115 +704,106 @@ msgid "About KDE"
 msgstr "KDE 정보"
 
 #: ui/settings/SourcesPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "소스 추가"
+msgstr "원본 추가…"
 
 #: ui/SubscriptionListPage.qml:25
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "구독(%1)"
+msgstr "구독 중인 채널"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "가져오기 완료됨"
 
 #: ui/SubscriptionListPage.qml:34
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "내보내기 완료됨"
 
 #: ui/SubscriptionListPage.qml:37
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
+msgstr[0] "새 구독 %1개를 가져왔습니다."
 
 #: ui/SubscriptionListPage.qml:39
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "모든 가져온 채널에 이미 구독되어 있습니다."
 
 #: ui/SubscriptionListPage.qml:42
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
+msgstr[0] "구독 %1개를 내보냈습니다."
 
 #: ui/SubscriptionListPage.qml:51
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "오류"
 
 #: ui/SubscriptionListPage.qml:59
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "가져오기…"
 
 #: ui/SubscriptionListPage.qml:64
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "구독"
+msgstr "OPML 구독 가져오기"
 
 #: ui/SubscriptionListPage.qml:65
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "가져오기"
 
 #: ui/SubscriptionListPage.qml:70
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "내보내기…"
 
 #: ui/SubscriptionListPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "구독"
+msgstr "OPML 구독 내보내기"
 
 #: ui/SubscriptionListPage.qml:76
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "내보내기"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "불러오는 중…"
+msgstr "가져오는 중…"
 
 #: ui/SubscriptionListPage.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "불러오는 중…"
+msgstr "내보내는 중…"
 
 #: ui/SubscriptionListPage.qml:179
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "채널 없음"
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "구독(%1)"
+msgstr "구독 중인 채널"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -841,22 +817,19 @@ msgid "Picture in Picture"
 msgstr "PIP"
 
 #: ui/videoplayer/VideoControls.qml:106
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "프록시 설정"
+msgstr "동영상 설정"
 
 #: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "되감기"
 
 #: ui/videoplayer/VideoControls.qml:181
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "재생"
@@ -865,18 +838,16 @@ msgstr "재생"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "빨리 감기"
 
 #: ui/videoplayer/VideoControls.qml:269
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "전체 화면"
 
 #: ui/videoplayer/VideoControls.qml:296
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
 msgstr "PIP"
@@ -885,11 +856,10 @@ msgstr "PIP"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "재생기 숨기기"
 
 #: ui/videoplayer/VideoPlayer.qml:133
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "재생 목록에 추가…"
@@ -897,13 +867,12 @@ msgstr "재생 목록에 추가…"
 #: ui/videoplayer/VideoPlayer.qml:313
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "동영상 URL 복사"
 
 #: ui/videoplayer/VideoPlayer.qml:321
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "프록시 설정"
+msgstr "동영상 통계"
 
 #: ui/videoplayer/VideoPlayer.qml:412
 #, kde-format
@@ -921,27 +890,26 @@ msgid "Recommended"
 msgstr "추천"
 
 #: ui/videoplayer/VideoPlayer.qml:496
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "추천"
+msgstr "추천 동영상 없음"
 
 #: ui/videoplayer/VideoPlayer.qml:581
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "동영상의 스폰서된 부분을 건너뜀"
 
 #: ui/videoplayer/VideoPlayer.qml:589
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "동영상의 현재 부분은 스폰서된 내용임"
 
 #: ui/videoplayer/VideoPlayer.qml:602
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "건너뛰기"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
@@ -955,9 +923,7 @@ msgid "Clear"
 msgstr "지우기"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "불러오는 중…"
 
