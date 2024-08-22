@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-12 00:39+0000\n"
-"PO-Revision-Date: 2024-07-15 10:07+0200\n"
+"PO-Revision-Date: 2024-08-13 16:00+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -256,7 +256,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
-msgstr "Piped"
+msgstr "Dirigé"
 
 #: ui/components/SourceSwitcher.qml:64
 #: ui/components/SourceSwitcherDialog.qml:28
@@ -412,7 +412,7 @@ msgstr "joinpeertube.org"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Ajouter une source « Piped »"
+msgstr "Ajouter une source dirigée"
 
 #: ui/loginflow/AddPipedPage.qml:35
 #, kde-format
@@ -454,7 +454,7 @@ msgstr "Ajouter une source « PeerTube »"
 #: ui/loginflow/WelcomePage.qml:65
 #, kde-format
 msgid "Add Piped Source"
-msgstr "Ajouter une source « Piped »"
+msgstr "Ajouter une source dirigée"
 
 #: ui/LoginPage.qml:22
 #, kde-format
@@ -582,7 +582,7 @@ msgstr "Général"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "Qualité vidéo préférée"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -590,54 +590,56 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"Cette qualité sélectionnée sera utilisée si elle est disponible, sinon la "
+"qualité la plus élevée suivante est utilisée."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -936,13 +938,13 @@ msgstr "Ajouter à la liste de lecture…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Erreur lors du chargement de la vidéo"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Ouvrir dans le navigateur"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
