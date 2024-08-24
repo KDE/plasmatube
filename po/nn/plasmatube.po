@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-12 00:39+0000\n"
-"PO-Revision-Date: 2024-07-28 00:18+0200\n"
+"PO-Revision-Date: 2024-08-19 20:54+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -586,7 +586,7 @@ msgstr "Generelt"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "Føretrekt videokvalitet"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -594,54 +594,56 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"Den føretrekte kvaliteten vert brukt viss han finst; elles vert den nest "
+"høgaste brukt."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
