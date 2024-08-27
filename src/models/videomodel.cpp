@@ -70,6 +70,12 @@ void VideoModel::fetch(const QString &videoId)
                     }
                 }
 
+                if (m_formatUrl.isEmpty() && !m_video->hlsUrl().isEmpty()) {
+                    const auto preferredName =
+                        videoQualityName(static_cast<Settings::EnumPreferredVideoQuality>(PlasmaTube::instance().settings()->preferredVideoQuality()));
+                    m_formatUrl[preferredName] = m_video->hlsUrl().toString();
+                }
+
                 if (m_formatUrl.size() == 1) {
                     m_selectedFormat = m_formatUrl.keys().first();
                 } else {
