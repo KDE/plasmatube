@@ -72,6 +72,7 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
             video.m_combinedFormats.append(combined);
         }
     } else {
+        // isPiped
         video.m_author = obj.value("uploader"_L1).toString();
         parseArray(obj.value("tags"_L1), video.m_keywords);
         video.m_likeCount = obj.value("likes"_L1).toInt();
@@ -84,6 +85,8 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         video.m_subCount = obj.value("uploaderSubscriberCount"_L1).toInt();
         parseArray(obj.value("relatedStreams"_L1), video.m_recommendedVideos);
         video.m_hlsUrl = QUrl(obj.value(u"hls").toString());
+
+        parseArray(obj.value(u"videoStreams"), video.m_adaptiveFormats);
     }
 
     return video;
