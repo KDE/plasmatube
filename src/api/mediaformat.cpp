@@ -15,6 +15,10 @@ MediaFormatBase::Container containerFromString(const QString &container)
     if (container == u"mp4") {
         return MediaFormatBase::Mp4;
     }
+    if (container == u"mpeg_4") {
+        // Piped
+        return MediaFormatBase::Mp4;
+    }
     if (container == u"m4a") {
         return MediaFormatBase::M4a;
     }
@@ -46,12 +50,27 @@ MediaFormatBase MediaFormatBase::fromJson(const QJsonObject &obj, MediaFormatBas
     format.m_url = QUrl(obj.value(u"url").toString());
     format.m_formatId = obj.value(u"itag").toInt();
     format.m_fps = obj.value(u"fps").toInt();
+    QString resolutionValue = obj.value(u"resolution").toString();
+    if (resolutionValue.isEmpty()) {
+        // Piped:
+        resolutionValue = obj.value(u"quality").toString();
+    }
     // remove 'p' from "2160p", resolution doesn't contain something like "720p60"
-    if (const auto resolution = obj.value(u"resolution").toString(); resolution.size() > 1) {
+    if (const auto resolution = resolutionValue; resolution.size() > 1) {
         format.m_resolution = resolution.chopped(1).toUInt();
     }
-    format.m_container = containerFromString(obj.value(u"container").toString());
-    format.m_qualityLabel = obj.value(u"qualityLabel").toString();
+    QString containerValue = obj.value(u"container").toString();
+    if (containerValue.isEmpty()) {
+        // Piped:
+        containerValue = obj.value(u"format").toString().toLower();
+    }
+    format.m_container = containerFromString(containerValue);
+    QString qualityLabelValue = obj.value(u"qualityLabel").toString();
+    if (qualityLabelValue.isEmpty()) {
+        // Piped:
+        qualityLabelValue = obj.value(u"quality").toString();
+    }
+    format.m_qualityLabel = qualityLabelValue;
     return format;
 }
 
@@ -99,8 +118,18 @@ MediaFormat MediaFormat::fromJson(const QJsonObject &obj, MediaFormat &format)
 {
     MediaFormatBase::fromJson(obj, format);
     format.m_bitrate = obj.value(u"bitrate").toInt();
-    format.m_size = obj.value(u"clen").toInt();
-    format.m_codec = codecFromString(obj.value(u"encoding").toString());
+    int sizeValue = obj.value(u"clen").toInt();
+    if (sizeValue == 0) {
+        // Piped:
+        sizeValue = obj.value(u"contentLength").toInt();
+    }
+    format.m_size = sizeValue;
+    QString codecValue = obj.value(u"encoding").toString();
+    if (codecValue.isEmpty()) {
+        // Piped:
+        codecValue = obj.value(u"codec").toString();
+    }
+    format.m_codec = codecFromString(codecValue);
     // the value is provided as a string and in nanoseconds
     format.m_createdTimestamp = QDateTime::fromMSecsSinceEpoch(QString(obj.value(u"lmt").toString()).toULongLong() / 1000);
     return format;
