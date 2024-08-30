@@ -1,0 +1,1011 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasmatube package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmatube\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"PO-Revision-Date: 2024-08-27 18:11+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.08.0\n"
+
+#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: controllers/logincontroller.cpp:37
+#, kde-format
+msgid "Username or password is wrong."
+msgstr "Nepareizs lietotājvārds vai parole"
+
+#: api/invidious/invidiousapi.cpp:401 api/peertube/peertubeapi.cpp:412
+#: api/piped/pipedapi.cpp:331
+#, kde-format
+msgid "Server returned no valid JSON."
+msgstr "Serveris atgrieza nederīgu JSON"
+
+#: api/invidious/invidiousapi.cpp:410 api/peertube/peertubeapi.cpp:421
+#: api/piped/pipedapi.cpp:340
+#, kde-format
+msgid "Server returned the status code %1"
+msgstr "Serveris atgrieza statusa kodu %1"
+
+#: controllers/logincontroller.cpp:40
+#, kde-format
+msgid "This instance has disabled the registration."
+msgstr "Šī instance ir izslēgusi reģistrāciju."
+
+#: controllers/videocontroller.cpp:71
+#, kde-format
+msgid "Playing video"
+msgstr "Atskaņo video"
+
+#: main.cpp:54
+#, kde-format
+msgid "PlasmaTube"
+msgstr "PlasmaTube"
+
+#: main.cpp:56
+#, kde-format
+msgid "YouTube client"
+msgstr "„YouTube“ klients"
+
+#: main.cpp:58
+#, kde-format
+msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr "© 2019—2024 Linus Jahn, 2019—2024 KDE kopiena"
+
+#: main.cpp:59
+#, kde-format
+msgid "Linus Jahn"
+msgstr "Linus Jahn"
+
+#: main.cpp:59
+#, kde-format
+msgid "Creator"
+msgstr "Izveidotājs"
+
+#: main.cpp:60
+#, kde-format
+msgid "Joshua Goins"
+msgstr "Joshua Goins"
+
+#: main.cpp:61
+#, kde-format
+msgid "Maintainer"
+msgstr "Uzturētājs"
+
+#: main.cpp:65
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#: main.cpp:65
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
+#, kde-format
+msgid "Subscriptions"
+msgstr "Abonementi"
+
+#: models/videolistmodel.cpp:20
+#, kde-format
+msgid "Popular"
+msgstr "Populāri"
+
+#: models/videolistmodel.cpp:22
+#, kde-format
+msgctxt "@action:button All trending videos"
+msgid "All"
+msgstr "Visi"
+
+#: models/videolistmodel.cpp:24
+#, kde-format
+msgctxt "@action:button Trending gaming videos"
+msgid "Gaming"
+msgstr "Spēles"
+
+#: models/videolistmodel.cpp:26
+#, kde-format
+msgctxt "@action:button Trending movie videos"
+msgid "Movies"
+msgstr "Filmas"
+
+#: models/videolistmodel.cpp:28
+#, kde-format
+msgctxt "@action:button Trending music videos"
+msgid "Music"
+msgstr "Mūzika"
+
+#: models/videolistmodel.cpp:30
+#, kde-format
+msgctxt "@action:button Trending news videos"
+msgid "News"
+msgstr "Ziņas"
+
+#: models/videolistmodel.cpp:32
+#, kde-format
+msgctxt "@action:button Video watch history"
+msgid "History"
+msgstr "Vēsture"
+
+#: models/videolistmodel.cpp:160
+#, kde-format
+msgid "Search results for \"%1\""
+msgstr "Meklēšanas rezultāti vaicājumam „%1“"
+
+#: ui/android/ShareAction.qml:15 ui/android/ShareMenu.qml:15
+#: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
+#, kde-format
+msgid "Share"
+msgstr "Kopīgot"
+
+#: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
+#, kde-format
+msgid "Share the selected media"
+msgstr "Kopīgot atlasīto multividi"
+
+#: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
+#: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
+#, kde-format
+msgid "Proxy Settings"
+msgstr "Starpniekservera iestatījumi"
+
+#: ui/ChannelPage.qml:142
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Videos"
+msgstr "Video"
+
+#: ui/ChannelPage.qml:148
+#, kde-format
+msgctxt "@item:inmenu"
+msgid "Playlists"
+msgstr "Repertuāri"
+
+#: ui/components/BaseGridView.qml:157
+#, kde-format
+msgid "No videos"
+msgstr "Nav neviena video"
+
+#: ui/components/BottomNavBar.qml:70
+#, kde-format
+msgid "Videos"
+msgstr "Video"
+
+#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
+#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
+#: ui/SearchPage.qml:17
+#, kde-format
+msgid "Search"
+msgstr "Meklēt"
+
+#: ui/components/BottomNavBar.qml:93 ui/videoplayer/VideoControls.qml:326
+#, kde-format
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: ui/components/Comments.qml:97
+#, kde-format
+msgctxt "@action:button Load more comments"
+msgid "Load more"
+msgstr "Ielādēt vairāk"
+
+#: ui/components/Comments.qml:104
+#, kde-format
+msgctxt "@info"
+msgid "No comments"
+msgstr "Komentāru nav"
+
+#: ui/components/PlaylistGridItem.qml:53
+#, kde-format
+msgid "%1 video"
+msgid_plural "%1 videos"
+msgstr[0] "%1 video"
+msgstr[1] "%1 video"
+msgstr[2] "%1 video"
+
+#: ui/components/ShareDialog.qml:33
+#, kde-format
+msgid "Sharing failed"
+msgstr "Kopīgošana neizdevās"
+
+#: ui/components/Sidebar.qml:85
+#, kde-format
+msgid "Trending"
+msgstr "Iegūst popularitāti"
+
+#: ui/components/Sidebar.qml:118 ui/PlaylistsPage.qml:13
+#, kde-format
+msgid "Playlists"
+msgstr "Repertuāri"
+
+#: ui/components/Sidebar.qml:135
+#, kde-format
+msgid "History"
+msgstr "Vēsture"
+
+#: ui/components/Sidebar.qml:152
+#, kde-format
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:63
+#, kde-format
+msgid "Invidious"
+msgstr "Invidious"
+
+#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:65
+#, kde-format
+msgid "PeerTube"
+msgstr "PeerTube"
+
+#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
+#, kde-format
+msgid "Piped"
+msgstr "Piped"
+
+#: ui/components/SourceSwitcher.qml:64
+#: ui/components/SourceSwitcherDialog.qml:28
+#, kde-format
+msgid "Switch Source"
+msgstr "Pārslēgt avotu"
+
+#: ui/components/SourceSwitcherDialog.qml:55
+#, kde-format
+msgid "Add Source"
+msgstr "Pievienot avotu"
+
+#: ui/components/SourceSwitcherDialog.qml:59
+#, kde-format
+msgid "Add a new video source"
+msgstr "Pievienot jaunu video avotu"
+
+#: ui/components/SubscriptionButton.qml:61
+#, kde-format
+msgctxt ""
+"@action:button Unsubscribe to this channel, %1 is the sub count if provided"
+msgid "Unsubscribe%1"
+msgstr "Beigt abonēt%1"
+
+#: ui/components/SubscriptionButton.qml:63
+#, kde-format
+msgctxt ""
+"@action:button Subscribe to this channel, %1 is the sub count if provided"
+msgid "Subscribe%1"
+msgstr "Abonēt%1"
+
+#: ui/components/SubscriptionButton.qml:73
+#, kde-format
+msgid "Please log in to subscribe to channels."
+msgstr "Lai abonētu kanālus, ierakstieties."
+
+#: ui/components/VideoGridItem.qml:72
+#, kde-format
+msgctxt "Short label for a livestream that's live"
+msgid "Live"
+msgstr "Tiešraide"
+
+#: ui/components/VideoGridItem.qml:79
+#, kde-format
+msgctxt "Short label for a short video"
+msgid "Short"
+msgstr "Īss"
+
+#: ui/components/VideoGridItem.qml:157 ui/components/VideoListItem.qml:148
+#, kde-format
+msgid "No views"
+msgstr "Nav skatījumu"
+
+#: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
+#: ui/videoplayer/VideoPlayer.qml:430
+#, kde-format
+msgid "%1 views"
+msgstr "%1 skatījumi"
+
+#: ui/components/VideoGridItem.qml:162
+#, kde-format
+msgid "<i>live now</i>"
+msgstr "<i>tiešraidē tagad</i>"
+
+#: ui/components/VideoListItem.qml:160
+#, kde-format
+msgid " • %1"
+msgstr " • %1"
+
+#: ui/components/VideoMenu.qml:33
+#, kde-format
+msgid "Play Now"
+msgstr "Atskaņot tagad"
+
+#: ui/components/VideoMenu.qml:33
+#, kde-format
+msgid "Play"
+msgstr "Atskaņot"
+
+#: ui/components/VideoMenu.qml:43
+#, kde-format
+msgid "Play Next"
+msgstr "Atskaņot nākamo"
+
+#: ui/components/VideoMenu.qml:52
+#, kde-format
+msgid "Play in Picture-in-Picture"
+msgstr "Atskaņot „attēls attēlā“"
+
+#: ui/components/VideoMenu.qml:67
+#, kde-format
+msgid "Mark as Unwatched"
+msgstr "Atzīmēt kā neskatītu"
+
+#: ui/components/VideoMenu.qml:67
+#, kde-format
+msgid "Mark as Watched"
+msgstr "Atzīmēt kā skatītu"
+
+#: ui/components/VideoMenu.qml:81
+#, kde-format
+msgid "Add to Playlist…"
+msgstr "Pievienot repertuāram…"
+
+#: ui/components/VideoMenu.qml:88
+#, kde-format
+msgid "Remove from Playlist"
+msgstr "Noņemt no repertuāra"
+
+#: ui/FeedPage.qml:35
+#, kde-format
+msgctxt "@info:status Network status"
+msgid "Failed to contact server: %1. Please check your proxy settings."
+msgstr ""
+"Neizdevās sazināties ar serveri: %1. Pārbaudiet starpniekservera "
+"iestatījumus."
+
+#: ui/loginflow/AddInvidiousPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Invidious Source"
+msgstr "Pievienot „Invidious“ avotu"
+
+#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
+#: ui/loginflow/AddPipedPage.qml:28
+#, kde-format
+msgid "Select a instance"
+msgstr "Atlasīt instanci"
+
+#: ui/loginflow/AddInvidiousPage.qml:35
+#, kde-format
+msgid "invidious.io"
+msgstr "invidious.io"
+
+#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
+#: ui/loginflow/AddPipedPage.qml:69
+#, kde-format
+msgid "No public instances found."
+msgstr "Nav atrastas publiskas instances"
+
+#: ui/loginflow/AddPeerTubePage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Add PeerTube Source"
+msgstr "Pievienot „PeerTube“ avotu"
+
+#: ui/loginflow/AddPeerTubePage.qml:34
+#, kde-format
+msgid "joinpeertube.org"
+msgstr "joinpeertube.org"
+
+#: ui/loginflow/AddPipedPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Add Piped Source"
+msgstr "Pievienot „Piped“ avotu"
+
+#: ui/loginflow/AddPipedPage.qml:35
+#, kde-format
+msgid "pipedapi.kavin.rocks"
+msgstr "pipedapi.kavin.rocks"
+
+#: ui/loginflow/AddPipedPage.qml:76
+#, kde-format
+msgctxt "Add instance"
+msgid "Add %1"
+msgstr "Pievienot „%1“"
+
+#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Welcome"
+msgstr "Laipni lūgti!"
+
+#: ui/loginflow/WelcomePage.qml:25
+#, kde-format
+msgid "Welcome to PlasmaTube"
+msgstr "Laipni lūgti „PlasmaTube“ programmā!"
+
+#: ui/loginflow/WelcomePage.qml:31
+#, kde-format
+msgid "PlasmaTube requires at least one video source."
+msgstr "„PlasmaTube“ ir nepieciešams vismaz viens video avots"
+
+#: ui/loginflow/WelcomePage.qml:41
+#, kde-format
+msgid "Add Invidious Source"
+msgstr "Pievienot „Invidious“ avotu"
+
+#: ui/loginflow/WelcomePage.qml:53
+#, kde-format
+msgid "Add PeerTube Source"
+msgstr "Pievienot „PeerTube“ avotu"
+
+#: ui/loginflow/WelcomePage.qml:65
+#, kde-format
+msgid "Add Piped Source"
+msgstr "Pievienot „Piped“ avotu"
+
+#: ui/LoginPage.qml:22
+#, kde-format
+msgctxt "@title:window"
+msgid "Log in"
+msgstr "Ierakstīties"
+
+#: ui/LoginPage.qml:67
+#, kde-format
+msgid "Username"
+msgstr "Lietotājvārds"
+
+#: ui/LoginPage.qml:81 ui/settings/NetworkProxyPage.qml:90
+#, kde-format
+msgid "Password"
+msgstr "Parole"
+
+#: ui/LoginPage.qml:96
+#, kde-format
+msgid "Log in"
+msgstr "Ierakstīties"
+
+#: ui/LoginPage.qml:104
+#, kde-format
+msgid "Username must not be empty!"
+msgstr "Lietotājvārds nevar būt tukšs!"
+
+#: ui/LoginPage.qml:109
+#, kde-format
+msgid "Password must not be empty!"
+msgstr "Parole nevar būt tukša!"
+
+#: ui/Main.qml:215
+#, kde-format
+msgctxt "@title"
+msgid "Add to Playlist"
+msgstr "Pievienot repertuāram"
+
+#: ui/PlaylistPage.qml:42
+#, kde-format
+msgctxt "@action:button Play the playlist"
+msgid "Play"
+msgstr "Atskaņot"
+
+#: ui/SearchPage.qml:89
+#, kde-format
+msgid "Sort By:"
+msgstr "Kārtot pēc:"
+
+#: ui/SearchPage.qml:93
+#, kde-format
+msgid "Rating"
+msgstr "Reitinga"
+
+#: ui/SearchPage.qml:105
+#, kde-format
+msgid "Relevance"
+msgstr "Atbilstības"
+
+#: ui/SearchPage.qml:118
+#, kde-format
+msgid "Upload Date"
+msgstr "Augšupielādes datuma"
+
+#: ui/SearchPage.qml:130
+#, kde-format
+msgid "View Count"
+msgstr "Skatījumu skaita"
+
+#: ui/settings/AccountCard.qml:22
+#, kde-format
+msgid "Currently logged in as %1."
+msgstr "Šobrīd ierakstījāties kā %1."
+
+#: ui/settings/AccountCard.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Log out"
+msgstr "Izrakstīties"
+
+#: ui/settings/AccountCard.qml:41
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr "Ierakstīties"
+
+#: ui/settings/AccountCard.qml:45
+#, kde-format
+msgid "Subscribe to channels, keep track of watched videos and more."
+msgstr "Abonējiet kanālus, sekojiet skatītajiem video un daudz vairāk."
+
+#: ui/settings/BaseSourcePage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Source"
+msgstr "Rediģēt avotu"
+
+#: ui/settings/BaseSourcePage.qml:20
+#, kde-format
+msgid "Remove Source…"
+msgstr "Noņemt avotu…"
+
+#: ui/settings/BaseSourcePage.qml:21
+#, kde-format
+msgid "Cannot remove the only source."
+msgstr "Nevar noņemt vienīgo avotu."
+
+#: ui/settings/BaseSourcePage.qml:32
+#, kde-format
+msgctxt "@title"
+msgid "Remove Source"
+msgstr "Noņemt avotu"
+
+#: ui/settings/BaseSourcePage.qml:33
+#, kde-format
+msgctxt "@label"
+msgid "Are you sure you want to remove this source?"
+msgstr "Vai tiešām vēlaties noņemt šo avotu?"
+
+#: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
+#, kde-format
+msgid "General"
+msgstr "Pamata"
+
+#: ui/settings/GeneralPage.qml:22
+#, kde-format
+msgid "Preferred Video Quality"
+msgstr "Ieteicamā video kvalitāte"
+
+#: ui/settings/GeneralPage.qml:23
+#, kde-format
+msgid ""
+"This selected quality will be used if available, otherwise the next highest "
+"one is used."
+msgstr ""
+"Programma izmantos šo vai, ja nebūs pieejama, nākamo augstāko kvalitāti"
+
+#: ui/settings/GeneralPage.qml:29
+#, kde-format
+msgctxt "@info video resolution"
+msgid "2160p"
+msgstr "2160p"
+
+#: ui/settings/GeneralPage.qml:33
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1440p"
+msgstr "1440p"
+
+#: ui/settings/GeneralPage.qml:37
+#, kde-format
+msgctxt "@info video resolution"
+msgid "1080p"
+msgstr "1080p"
+
+#: ui/settings/GeneralPage.qml:41
+#, kde-format
+msgctxt "@info video resolution"
+msgid "720p"
+msgstr "720p"
+
+#: ui/settings/GeneralPage.qml:45
+#, kde-format
+msgctxt "@info video resolution"
+msgid "480p"
+msgstr "480p"
+
+#: ui/settings/GeneralPage.qml:49
+#, kde-format
+msgctxt "@info video resolution"
+msgid "360p"
+msgstr "360p"
+
+#: ui/settings/GeneralPage.qml:53
+#, kde-format
+msgctxt "@info video resolution"
+msgid "240p"
+msgstr "240p"
+
+#: ui/settings/GeneralPage.qml:57
+#, kde-format
+msgctxt "@info video resolution"
+msgid "144p"
+msgstr "144p"
+
+#: ui/settings/GeneralPage.qml:75
+#, kde-format
+msgctxt "@option:check Hide short-form videos"
+msgid "Hide Shorts"
+msgstr "Slēpt īsos video"
+
+#: ui/settings/GeneralPage.qml:76
+#, kde-format
+msgid "Hide short-form videos designed for viewing on a mobile device."
+msgstr "Slēpt īsas formas video, kas paredzēti mobilajām ierīcēm."
+
+#: ui/settings/GeneralPage.qml:93
+#, kde-format
+msgctxt "@option:check"
+msgid "Check for sponsored segments"
+msgstr "Pārbaudīt sponsoru daļas"
+
+#: ui/settings/GeneralPage.qml:94
+#, kde-format
+msgid ""
+"Inform you when a community-submitted segment (typically a sponsorship) is "
+"in the video. This feature requires contacting a 3rd-party service."
+msgstr ""
+"Informēt, ja video satur kopienas norādītu sadaļu (parasti sponsoru). Šai "
+"iespējai nepieciešama trešā puse."
+
+#: ui/settings/GeneralPage.qml:111
+#, kde-format
+msgctxt "@option:check"
+msgid "Skip sponsored segments"
+msgstr "Izlaist sponsoru daļas"
+
+#: ui/settings/GeneralPage.qml:112
+#, kde-format
+msgid "Automatically skips over sponsored segments in the video."
+msgstr "Automātiski izlaiž video sponsoru daļas"
+
+#: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#, kde-format
+msgid "Account"
+msgstr "Konts"
+
+#: ui/settings/InvidiousSourcePage.qml:37
+#, kde-format
+msgid "Preferences"
+msgstr "Iestatījumi"
+
+#: ui/settings/InvidiousSourcePage.qml:42
+#, kde-format
+msgid "Autoplay videos"
+msgstr "Video automātiska atskaņošana"
+
+#: ui/settings/InvidiousSourcePage.qml:43
+#, kde-format
+msgid ""
+"Whether to start playing videos immediately, or wait until the play button "
+"is pressed."
+msgstr ""
+"Vai video sākt atskaņot uzreiz, vai arī gaidīt atskaņošanas pogas nospiešanu."
+
+#: ui/settings/InvidiousSourcePage.qml:58
+#, kde-format
+msgid "Default homepage"
+msgstr "Noklusējuma mājaslapa"
+
+#: ui/settings/InvidiousSourcePage.qml:59
+#, kde-format
+msgid "The default page to load when switching to this source."
+msgstr "Ielādējamā mājaslapa, pārslēdzoties uz šo avotu."
+
+#: ui/settings/NetworkProxyPage.qml:16
+#, kde-format
+msgctxt "@title:window"
+msgid "Network Proxy"
+msgstr "Tīkla starpniekserveris"
+
+#: ui/settings/NetworkProxyPage.qml:26
+#, kde-format
+msgid "System Default"
+msgstr "Sistēmas noklusējums"
+
+#: ui/settings/NetworkProxyPage.qml:36
+#, kde-format
+msgid "HTTP"
+msgstr "HTTP"
+
+#: ui/settings/NetworkProxyPage.qml:52
+#, kde-format
+msgid "Host"
+msgstr "Resursdators"
+
+#: ui/settings/NetworkProxyPage.qml:63
+#, kde-format
+msgid "Port"
+msgstr "Ports"
+
+#: ui/settings/NetworkProxyPage.qml:82
+#, kde-format
+msgid "User"
+msgstr "Lietotājs"
+
+#: ui/settings/NetworkProxyPage.qml:106
+#, kde-format
+msgid "Apply"
+msgstr "Pielietot"
+
+#: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:17
+#, kde-format
+msgid "Sources"
+msgstr "Avoti"
+
+#: ui/settings/SettingsPage.qml:27
+#, kde-format
+msgid "Network Proxy"
+msgstr "Tīkla starpniekserveris"
+
+#: ui/settings/SettingsPage.qml:33
+#, kde-format
+msgid "About PlasmaTube"
+msgstr "Par „PlasmaTube“"
+
+#: ui/settings/SettingsPage.qml:39
+#, kde-format
+msgid "About KDE"
+msgstr "Par KDE"
+
+#: ui/settings/SourcesPage.qml:21
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Source…"
+msgstr "Pievienot avotu…"
+
+#: ui/SubscriptionListPage.qml:24
+#, kde-format
+msgctxt "@title:window List of subscribed channels"
+msgid "Subscribed Channels"
+msgstr "Abonēt kanālus"
+
+#: ui/SubscriptionListPage.qml:33
+#, kde-format
+msgid "Importing Completed"
+msgstr "Importēšana ir pabeigta"
+
+#: ui/SubscriptionListPage.qml:33
+#, kde-format
+msgid "Exporting Completed"
+msgstr "Eksportēšanas ir pabeigta"
+
+#: ui/SubscriptionListPage.qml:36
+#, kde-format
+msgid "Imported %1 new subscription."
+msgid_plural "Imported %1 new subscriptions."
+msgstr[0] "Importēts %1 jauns abonements."
+msgstr[1] "Importēti %1 jauni abonementi."
+msgstr[2] "Importēts %1 jaunu abonementu."
+
+#: ui/SubscriptionListPage.qml:38
+#, kde-format
+msgid "All imported channels were already subscribed to."
+msgstr "Jau abonējat visus importētos kanālus."
+
+#: ui/SubscriptionListPage.qml:41
+#, kde-format
+msgid "Exported %1 subscription."
+msgid_plural "Exported %1 subscriptions."
+msgstr[0] "Eksportēt %1 abonementu."
+msgstr[1] "Eksportēt %1 abonementus."
+msgstr[2] "Eksportēt %1 abonementu."
+
+#: ui/SubscriptionListPage.qml:50
+#, kde-format
+msgctxt "@title:window Error while import/export"
+msgid "Error"
+msgstr "Kļūda"
+
+#: ui/SubscriptionListPage.qml:58
+#, kde-format
+msgctxt "@action:button Import subscriptions"
+msgid "Import…"
+msgstr "Importēt…"
+
+#: ui/SubscriptionListPage.qml:63
+#, kde-format
+msgctxt "@title:window Import the OPML file"
+msgid "Import OPML Subscriptions"
+msgstr "Importēt OPML abonementus"
+
+#: ui/SubscriptionListPage.qml:64
+#, kde-format
+msgctxt "@action:button Import the OPML file"
+msgid "Import"
+msgstr "Importēt"
+
+#: ui/SubscriptionListPage.qml:69
+#, kde-format
+msgctxt "@action:button Export subscriptions"
+msgid "Export…"
+msgstr "Eksportēt…"
+
+#: ui/SubscriptionListPage.qml:74
+#, kde-format
+msgctxt "@title:window Export the OPML file"
+msgid "Export OPML Subscriptions"
+msgstr "Eksportēt OPML abonementus"
+
+#: ui/SubscriptionListPage.qml:75
+#, kde-format
+msgctxt "@action:button Export the OPML file"
+msgid "Export"
+msgstr "Eksportēt"
+
+#: ui/SubscriptionListPage.qml:102
+#, kde-format
+msgid "Importing…"
+msgstr "Importē…"
+
+#: ui/SubscriptionListPage.qml:102
+#, kde-format
+msgid "Exporting…"
+msgstr "Eksportē…"
+
+#: ui/SubscriptionListPage.qml:178
+#, kde-format
+msgid "No channels"
+msgstr "Nav kanālu"
+
+#: ui/SubscriptionsPage.qml:12
+#, kde-format
+msgctxt "@action:button View subscribed channels"
+msgid "Subscribed Channels"
+msgstr "Abonētie kanāli"
+
+#: ui/TrendingPage.qml:15
+#, kde-format
+msgctxt "@title Trending videos"
+msgid "Trending"
+msgstr "Iegūst popularitāti"
+
+#: ui/videoplayer/PictureInPictureVideo.qml:14
+#, kde-format
+msgid "Picture in Picture"
+msgstr "Attēls attēlā"
+
+#: ui/videoplayer/VideoControls.qml:106
+#, kde-format
+msgctxt "@action:button"
+msgid "Video settings"
+msgstr "Video iestatījumi"
+
+#: ui/videoplayer/VideoControls.qml:139
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek backward"
+msgstr "Iet atpakaļ"
+
+#: ui/videoplayer/VideoControls.qml:181
+#, kde-format
+msgctxt "@action:button"
+msgid "Play"
+msgstr "Atskaņot"
+
+#: ui/videoplayer/VideoControls.qml:226
+#, kde-format
+msgctxt "@action:button"
+msgid "Seek forward"
+msgstr "Iet uz priekšu"
+
+#: ui/videoplayer/VideoControls.qml:269
+#, kde-format
+msgctxt "@action:button"
+msgid "Fullscreen"
+msgstr "Pilnekrāns"
+
+#: ui/videoplayer/VideoControls.qml:296
+#, kde-format
+msgctxt "@action:button"
+msgid "Picture-in-picture"
+msgstr "Attēls attēlā"
+
+#: ui/videoplayer/VideoPlayer.qml:112
+#, kde-format
+msgctxt "@action:button"
+msgid "Hide player"
+msgstr "Slēpt atskaņotāju"
+
+#: ui/videoplayer/VideoPlayer.qml:135
+#, kde-format
+msgctxt "@action:button"
+msgid "Add to Playlist…"
+msgstr "Pievienot repertuāram…"
+
+#: ui/videoplayer/VideoPlayer.qml:181
+#, kde-format
+msgctxt "@info"
+msgid "Error Loading Video"
+msgstr "Kļūda, ielādējot video"
+
+#: ui/videoplayer/VideoPlayer.qml:186
+#, kde-format
+msgctxt "@action:button"
+msgid "Open in Browser"
+msgstr "Atvērt pārlūkā"
+
+#: ui/videoplayer/VideoPlayer.qml:339
+#, kde-format
+msgid "Copy Video URL"
+msgstr "Kopēt video URL"
+
+#: ui/videoplayer/VideoPlayer.qml:347
+#, kde-format
+msgid "Video Statistics"
+msgstr "Video statistika"
+
+#: ui/videoplayer/VideoPlayer.qml:438
+#, kde-format
+msgid "%1 Likes"
+msgstr "%1 patīk"
+
+#: ui/videoplayer/VideoPlayer.qml:487
+#, kde-format
+msgid "Comments"
+msgstr "Komentāri"
+
+#: ui/videoplayer/VideoPlayer.qml:517
+#, kde-format
+msgid "Recommended"
+msgstr "Ieteicamie"
+
+#: ui/videoplayer/VideoPlayer.qml:522
+#, kde-format
+msgctxt "@info"
+msgid "No recommended videos"
+msgstr "Nav ieteicamo video"
+
+#: ui/videoplayer/VideoPlayer.qml:608
+#, kde-format
+msgid "The sponsored portion of the video has been skipped"
+msgstr "Programma izlaida sponsorētu video sadaļu"
+
+#: ui/videoplayer/VideoPlayer.qml:616
+#, kde-format
+msgid "This portion of the video is sponsored"
+msgstr "Šī video sadaļa ir sponsorēta"
+
+#: ui/videoplayer/VideoPlayer.qml:637
+#, kde-format
+msgctxt "@action:button"
+msgid "Skip"
+msgstr "Izlaist"
+
+#: ui/videoplayer/VideoQueueView.qml:35
+#, kde-format
+msgid "Queue"
+msgstr "Ierindot"
+
+#: ui/videoplayer/VideoQueueView.qml:44
+#, kde-format
+msgctxt "@action:button Clear playlist"
+msgid "Clear"
+msgstr "Notīrīt"
+
+#: ui/videoplayer/VideoQueueView.qml:81
+#, kde-format
+msgid "Loading…"
+msgstr "Ielādē…"
