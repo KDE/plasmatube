@@ -21,6 +21,7 @@ class SearchParameters : public QObject
     Q_PROPERTY(Duration duration READ duration WRITE setDuration)
     Q_PROPERTY(Type type READ type WRITE setType)
     Q_PROPERTY(QVector<Feature> features READ features WRITE setFeatures)
+    Q_PROPERTY(PipedFilter pipedFilter READ pipedFilter WRITE setPipedFilter)
 
 public:
     enum class SortBy { Default, Relevance, Rating, UploadDate, ViewCount };
@@ -37,6 +38,9 @@ public:
 
     enum class Feature { Hd, Subtitles, CreativeCommons, ThreeD, Live, Purchased, FourK, ThreeSixty, Location, Hdr };
     Q_ENUM(Feature)
+
+    enum class PipedFilter { All, Videos, Channels, Playlists, MusicSongs, MusicVideos, MusicAlbums, MusicPlaylists, MusicArtists };
+    Q_ENUM(PipedFilter)
 
     SearchParameters() = default;
     explicit SearchParameters(const QString &query)
@@ -68,6 +72,9 @@ public:
     const QVector<Feature> &features();
     void setFeatures(const QVector<Feature> &features);
 
+    PipedFilter pipedFilter() const;
+    void setPipedFilter(PipedFilter pipedFilter);
+
 private:
     QString m_query;
     SortBy m_sortBy = SortBy::Default;
@@ -75,4 +82,5 @@ private:
     Duration m_duration = Duration::Default;
     Type m_type = Type::Default;
     QVector<Feature> m_features;
+    PipedFilter m_pipedFilter = PipedFilter::All;
 };

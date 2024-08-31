@@ -141,7 +141,35 @@ QHash<QString, QString> SearchParameters::toPipedQueryParameters() const
 {
     QHash<QString, QString> parameters;
     parameters.insert(QStringLiteral("q"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
-    parameters.insert(QStringLiteral("filter"), QString::fromUtf8(QUrl::toPercentEncoding(m_query)));
+    switch (m_pipedFilter) {
+    case PipedFilter::All:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("all"));
+        break;
+    case PipedFilter::Videos:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("videos"));
+        break;
+    case PipedFilter::Channels:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("channels"));
+        break;
+    case PipedFilter::Playlists:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("playlists"));
+        break;
+    case PipedFilter::MusicSongs:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("music_songs"));
+        break;
+    case PipedFilter::MusicVideos:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("music_videos"));
+        break;
+    case PipedFilter::MusicAlbums:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("music_albums"));
+        break;
+    case PipedFilter::MusicPlaylists:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("music_playlists"));
+        break;
+    case PipedFilter::MusicArtists:
+        parameters.insert(QStringLiteral("filter"), QStringLiteral("music_artists"));
+        break;
+    }
     return parameters;
 }
 
@@ -197,4 +225,14 @@ const QVector<SearchParameters::Feature> &SearchParameters::features()
 void SearchParameters::setFeatures(const QVector<SearchParameters::Feature> &features)
 {
     m_features = features;
+}
+
+SearchParameters::PipedFilter SearchParameters::pipedFilter() const
+{
+    return m_pipedFilter;
+}
+
+void SearchParameters::setPipedFilter(PipedFilter pipedFilter)
+{
+    m_pipedFilter = pipedFilter;
 }
