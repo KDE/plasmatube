@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.config as KConfig
 
 import org.kde.plasmatube
 import "videoplayer"
@@ -15,6 +16,10 @@ import "components"
 
 Kirigami.ApplicationWindow {
     id: root
+
+    KConfig.WindowStateSaver {
+        configGroupName: "Window"
+    }
 
     property Item hoverLinkIndicator: QQC2.Control {
         id: linkIndicator
@@ -167,7 +172,6 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         loadDefaultPage();
-        saveWindowGeometryConnections.enabled = true;
     }
 
     function loadDefaultPage() {
@@ -248,27 +252,5 @@ Kirigami.ApplicationWindow {
         addToPlaylistLoader.active = true;
         addToPlaylistLoader.item.currentVideoId = videoId;
         addToPlaylistLoader.item.open();
-    }
-
-    // This timer allows to batch update the window size change to reduce
-    // the io load and also work around the fact that x/y/width/height are
-    // changed when loading the page and overwrite the saved geometry from
-    // the previous session.
-    Timer {
-        id: saveWindowGeometryTimer
-        interval: 1000
-        onTriggered: WindowController.saveGeometry()
-    }
-
-    Connections {
-        id: saveWindowGeometryConnections
-        enabled: false // Disable on startup to avoid writing wrong values if the window is hidden
-        target: root
-
-        function onClosing() { WindowController.saveGeometry(); }
-        function onWidthChanged() { saveWindowGeometryTimer.restart(); }
-        function onHeightChanged() { saveWindowGeometryTimer.restart(); }
-        function onXChanged() { saveWindowGeometryTimer.restart(); }
-        function onYChanged() { saveWindowGeometryTimer.restart(); }
     }
 }

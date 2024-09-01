@@ -16,9 +16,6 @@ class WindowController : public QObject
 public:
     void setWindow(QQuickWindow *window);
 
-    void restoreGeometry();
-    Q_INVOKABLE void saveGeometry();
-
 private:
     QQuickWindow *m_window = nullptr;
 };

@@ -133,7 +133,6 @@ int main(int argc, char **argv)
     if (window != nullptr) {
         auto controller = engine.singletonInstance<WindowController *>(QStringLiteral("org.kde.plasmatube"), QStringLiteral("WindowController"));
         controller->setWindow(window);
-        controller->restoreGeometry();
     }
 #endif
 

@@ -13,26 +13,4 @@ void WindowController::setWindow(QQuickWindow *window)
     m_window = window;
 }
 
-void WindowController::restoreGeometry()
-{
-    auto stateConfig = KSharedConfig::openStateConfig();
-    auto windowGroup = stateConfig->group(QStringLiteral("Window"));
-
-    KWindowConfig::restoreWindowPosition(m_window, windowGroup);
-    KWindowConfig::restoreWindowSize(m_window, windowGroup);
-
-    stateConfig->sync();
-}
-
-void WindowController::saveGeometry()
-{
-    auto stateConfig = KSharedConfig::openStateConfig();
-    auto windowGroup = stateConfig->group(QStringLiteral("Window"));
-
-    KWindowConfig::saveWindowPosition(m_window, windowGroup);
-    KWindowConfig::saveWindowSize(m_window, windowGroup);
-
-    stateConfig->sync();
-}
-
 #include "moc_windowcontroller.cpp"
