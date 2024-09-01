@@ -1,70 +1,90 @@
-// SPDX-FileCopyrightText: 2023 Joshua Goins <josh@redstrate.com>
-// SPDX-License-Identifier: GPL-3.0-or-later
+// SPDX-FileCopyrightText: 2024 Joshua Goins <josh@redstrate.com>
+// SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import QtQuick.Effects
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
-FormCard.FormCardPage {
+import org.kde.plasmatube
+
+Kirigami.Page {
     id: root
 
     title: i18nc("@title:window", "Welcome")
+    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
-    Kirigami.Icon {
-        source: "org.kde.plasmatube"
+    contentItem: Item {
+        ColumnLayout {
+            anchors {
+                left: parent.left
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
 
-        Layout.alignment: Qt.AlignHCenter
-        Layout.topMargin: Kirigami.Units.largeSpacing
-        implicitWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
-        implicitHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
-    }
+            spacing: Kirigami.Units.largeSpacing
 
-    FormCard.FormHeader {
-        title: i18n("Welcome to PlasmaTube")
-    }
+            Image {
+                source: "qrc:/org.kde.plasmatube.svg"
 
-    FormCard.FormCard {
-        FormCard.FormTextDelegate {
-            id: learnMoreDelegate
-            text: i18n("PlasmaTube requires at least one video source.")
+                fillMode: Image.PreserveAspectFit
+
+                Layout.fillWidth: true
+            }
+
+            Kirigami.Heading {
+                text: i18nc("@info", "PlasmaTube")
+                level: 1
+                horizontalAlignment: Text.AlignHCenter
+                font.bold: true
+
+                Layout.fillWidth: true
+            }
+
+            QQC2.Label {
+                text: i18nc("@info", "Watch YouTube and PeerTube videos.")
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+
+                Layout.fillWidth: true
+            }
+
+            FormCard.FormCard {
+                Layout.topMargin: Kirigami.Units.largeSpacing
+
+                maximumWidth: Kirigami.Units.gridUnit * 16
+
+                Kirigami.Theme.colorSet: Kirigami.Theme.Selection
+                Kirigami.Theme.inherit: false
+
+                FormCard.FormButtonDelegate {
+                    id: registerButton
+                    text: i18nc("@action:button", "Add a Video Source")
+                    icon.name: "network-server-symbolic"
+                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.plasmatube", "SelectSourcePage"))
+                    focus: true
+                }
+            }
         }
 
-        FormCard.FormDelegateSeparator {
-            above: learnMoreDelegate
-            below: invidiousButton
-        }
+        FormCard.FormCard {
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
 
-        FormCard.FormButtonDelegate {
-            id: invidiousButton
-            text: i18n("Add Invidious Source")
-            icon.name: "plasmatube-invidious"
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddInvidiousPage"))
-        }
+            maximumWidth: Kirigami.Units.gridUnit * 16
 
-        FormCard.FormDelegateSeparator {
-            above: invidiousButton
-            below: peerTubeButton
-        }
-
-        FormCard.FormButtonDelegate {
-            id: peerTubeButton
-            text: i18n("Add PeerTube Source")
-            icon.name: "plasmatube-peertube"
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPeerTubePage"))
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: peerTubeButton
-            below: pipedButton
-        }
-
-        FormCard.FormButtonDelegate {
-            id: pipedButton
-            text: i18n("Add Piped Source")
-            icon.name: "plasmatube-piped"
-            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPipedPage"))
+            FormCard.FormButtonDelegate {
+                id: settingsButton
+                text: i18nc("@action:button Application settings", "Settings")
+                icon.name: "settings-configure"
+                onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
+            }
         }
     }
 }
