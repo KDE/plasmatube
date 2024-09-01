@@ -3,18 +3,16 @@
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QDateTime>
+#include "abstractinstancesmodel.h"
+
 #include <QNetworkAccessManager>
-#include <QUrl>
 #include <QtQml>
 
-class PeerTubeInstancesModel : public QAbstractListModel
+class PeerTubeInstancesModel : public AbstractInstancesModel
 {
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
     Q_PROPERTY(QString filterString READ filterString WRITE setFilterString NOTIFY filterStringChanged)
 
 public:
@@ -22,18 +20,13 @@ public:
 
     explicit PeerTubeInstancesModel(QObject *parent = nullptr);
 
-    bool loading() const;
-    void setLoading(bool loading);
-
     QVariant data(const QModelIndex &index, int role) const override;
     int rowCount(const QModelIndex &parent) const override;
-    QHash<int, QByteArray> roleNames() const override;
 
     void setFilterString(const QString &filterString);
     QString filterString() const;
 
 Q_SIGNALS:
-    void loadingChanged();
     void filterStringChanged();
 
 private:
@@ -47,7 +40,6 @@ private:
     };
 
     QList<PeerTubeInstance> m_instances;
-    bool m_loading = false;
     QString m_filterString;
     PeerTubeInstance fromSourceData(const QJsonObject &object) const;
     QNetworkAccessManager m_netManager;

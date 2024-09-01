@@ -63,6 +63,8 @@ target_sources(plasmatube PRIVATE
         controllers/windowcontroller.cpp
         controllers/windowcontroller.h
 
+        models/abstractinstancesmodel.cpp
+        models/abstractinstancesmodel.h
         models/abstractlistmodel.cpp
         models/abstractlistmodel.h
         models/commentsmodel.cpp

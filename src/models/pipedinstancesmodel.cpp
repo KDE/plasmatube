@@ -5,12 +5,10 @@
 
 #include "plasmatube.h"
 
-#include <QUrlQuery>
-
 using namespace Qt::Literals::StringLiterals;
 
 PipedInstancesModel::PipedInstancesModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractInstancesModel(parent)
 {
     fill();
 }
@@ -37,33 +35,14 @@ QVariant PipedInstancesModel::data(const QModelIndex &index, int role) const
     }
 }
 
-bool PipedInstancesModel::loading() const
-{
-    return m_loading;
-}
-
-void PipedInstancesModel::setLoading(bool loading)
-{
-    if (m_loading == loading) {
-        return;
-    }
-    m_loading = loading;
-    Q_EMIT loadingChanged();
-}
-
 int PipedInstancesModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : static_cast<int>(m_instances.size());
 }
 
-QHash<int, QByteArray> PipedInstancesModel::roleNames() const
-{
-    return {{NameRole, "name"}, {URLRole, "url"}, {DescriptionRole, "description"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
-}
-
 void PipedInstancesModel::fill()
 {
-    if (m_loading) {
+    if (loading()) {
         return;
     }
     setLoading(true);

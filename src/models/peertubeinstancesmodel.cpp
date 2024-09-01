@@ -11,7 +11,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 PeerTubeInstancesModel::PeerTubeInstancesModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractInstancesModel(parent)
 {
     fill();
 }
@@ -46,28 +46,9 @@ QVariant PeerTubeInstancesModel::data(const QModelIndex &index, int role) const
     }
 }
 
-bool PeerTubeInstancesModel::loading() const
-{
-    return m_loading;
-}
-
-void PeerTubeInstancesModel::setLoading(bool loading)
-{
-    if (m_loading == loading) {
-        return;
-    }
-    m_loading = loading;
-    Q_EMIT loadingChanged();
-}
-
 int PeerTubeInstancesModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : static_cast<int>(m_instances.size());
-}
-
-QHash<int, QByteArray> PeerTubeInstancesModel::roleNames() const
-{
-    return {{URLRole, "url"}, {DescriptionRole, "description"}, {NameRole, "name"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
 }
 
 void PeerTubeInstancesModel::setFilterString(const QString &filterString)
@@ -91,7 +72,7 @@ QString PeerTubeInstancesModel::filterString() const
 
 void PeerTubeInstancesModel::fill()
 {
-    if (m_loading) {
+    if (loading()) {
         return;
     }
     setLoading(true);

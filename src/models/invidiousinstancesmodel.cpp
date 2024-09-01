@@ -10,7 +10,7 @@
 using namespace Qt::Literals::StringLiterals;
 
 InvidiousInstancesModel::InvidiousInstancesModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractInstancesModel(parent)
 {
     fill();
 }
@@ -37,33 +37,14 @@ QVariant InvidiousInstancesModel::data(const QModelIndex &index, int role) const
     }
 }
 
-bool InvidiousInstancesModel::loading() const
-{
-    return m_loading;
-}
-
-void InvidiousInstancesModel::setLoading(bool loading)
-{
-    if (m_loading == loading) {
-        return;
-    }
-    m_loading = loading;
-    Q_EMIT loadingChanged();
-}
-
 int InvidiousInstancesModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : m_instances.size();
 }
 
-QHash<int, QByteArray> InvidiousInstancesModel::roleNames() const
-{
-    return {{NameRole, "name"}, {URLRole, "url"}, {DescriptionRole, "description"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
-}
-
 void InvidiousInstancesModel::fill()
 {
-    if (m_loading) {
+    if (loading()) {
         return;
     }
     setLoading(true);
