@@ -18,7 +18,7 @@ class PeerTubeInstancesModel : public QAbstractListModel
     Q_PROPERTY(QString filterString READ filterString WRITE setFilterString NOTIFY filterStringChanged)
 
 public:
-    enum CustomRoles { URLRole = Qt::UserRole };
+    enum CustomRoles { NameRole = Qt::UserRole, URLRole, DescriptionRole, IconRole, IsPublicRole };
 
     explicit PeerTubeInstancesModel(QObject *parent = nullptr);
 
@@ -40,7 +40,10 @@ private:
     void fill();
 
     struct PeerTubeInstance {
+        QString name;
         QString url;
+        QString shortDescription;
+        QString avatarUrl;
     };
 
     QList<PeerTubeInstance> m_instances;

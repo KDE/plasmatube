@@ -17,7 +17,7 @@ class InvidiousInstancesModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
-    enum CustomRoles { URLRole = Qt::UserRole };
+    enum CustomRoles { NameRole = Qt::UserRole, URLRole, DescriptionRole, IconRole, IsPublicRole };
 
     explicit InvidiousInstancesModel(QObject *parent = nullptr);
 
@@ -35,7 +35,9 @@ private:
     void fill();
 
     struct InvidiousInstance {
+        QString name;
         QString url;
+        QString region;
     };
 
     QList<InvidiousInstance> m_instances;

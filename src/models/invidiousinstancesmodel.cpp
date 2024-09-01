@@ -3,6 +3,8 @@
 
 #include "invidiousinstancesmodel.h"
 
+#include <KLocalizedString>
+
 #include "plasmatube.h"
 
 using namespace Qt::Literals::StringLiterals;
@@ -20,8 +22,16 @@ QVariant InvidiousInstancesModel::data(const QModelIndex &index, int role) const
     const auto &instance = m_instances[index.row()];
 
     switch (role) {
+    case NameRole:
+        return instance.name;
     case URLRole:
         return instance.url;
+    case DescriptionRole:
+        return instance.region;
+    case IconRole:
+        return QStringLiteral("plasmatube-invidious");
+    case IsPublicRole:
+        return true;
     default:
         return {};
     }
@@ -48,7 +58,7 @@ int InvidiousInstancesModel::rowCount(const QModelIndex &parent) const
 
 QHash<int, QByteArray> InvidiousInstancesModel::roleNames() const
 {
-    return {{URLRole, "url"}};
+    return {{NameRole, "name"}, {URLRole, "url"}, {DescriptionRole, "description"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
 }
 
 void InvidiousInstancesModel::fill()
@@ -81,7 +91,9 @@ void InvidiousInstancesModel::fill()
 InvidiousInstancesModel::InvidiousInstance InvidiousInstancesModel::fromSourceData(const QJsonArray &array) const
 {
     InvidiousInstance instance;
-    instance.url = array[0].toString();
+    instance.name = array[0].toString();
+    instance.url = array[1].toObject()[QStringLiteral("uri")].toString();
+    instance.region = array[1].toObject()[QStringLiteral("region")].toString();
 
     return instance;
 }

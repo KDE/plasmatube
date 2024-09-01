@@ -5,6 +5,7 @@
 
 #include "plasmatube.h"
 
+#include <KLocalizedString>
 #include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
@@ -22,8 +23,24 @@ QVariant PeerTubeInstancesModel::data(const QModelIndex &index, int role) const
     const auto &instance = m_instances[index.row()];
 
     switch (role) {
+    case NameRole:
+        return instance.name;
     case URLRole:
         return instance.url;
+    case DescriptionRole: {
+        if (instance.shortDescription.isEmpty()) {
+            return i18n("No server description provided.");
+        }
+        return instance.shortDescription;
+    }
+    case IconRole: {
+        if (instance.avatarUrl.isEmpty()) {
+            return QStringLiteral("plasmatube-peertube");
+        }
+        return instance.avatarUrl;
+    }
+    case IsPublicRole:
+        return true;
     default:
         return {};
     }
@@ -50,7 +67,7 @@ int PeerTubeInstancesModel::rowCount(const QModelIndex &parent) const
 
 QHash<int, QByteArray> PeerTubeInstancesModel::roleNames() const
 {
-    return {{URLRole, "url"}};
+    return {{URLRole, "url"}, {DescriptionRole, "description"}, {NameRole, "name"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
 }
 
 void PeerTubeInstancesModel::setFilterString(const QString &filterString)
@@ -111,7 +128,10 @@ void PeerTubeInstancesModel::fill()
 PeerTubeInstancesModel::PeerTubeInstance PeerTubeInstancesModel::fromSourceData(const QJsonObject &obj) const
 {
     PeerTubeInstance instance;
+    instance.name = obj["name"_L1].toString();
     instance.url = obj["host"_L1].toString();
+    instance.shortDescription = obj["shortDescription"_L1].toString();
+    instance.avatarUrl = obj["avatars"_L1].toArray().first().toObject()["url"_L1].toString();
 
     return instance;
 }

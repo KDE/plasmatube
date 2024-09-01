@@ -17,7 +17,7 @@ class PipedInstancesModel : public QAbstractListModel
     Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 
 public:
-    enum CustomRoles { NameRole = Qt::UserRole, URLRole };
+    enum CustomRoles { NameRole = Qt::UserRole, URLRole, DescriptionRole, IconRole, IsPublicRole };
 
     explicit PipedInstancesModel(QObject *parent = nullptr);
 
@@ -36,7 +36,7 @@ private:
     void fill();
 
     struct PipedInstance {
-        QString name, url;
+        QString name, url, regions;
     };
 
     QList<PipedInstance> m_instances;

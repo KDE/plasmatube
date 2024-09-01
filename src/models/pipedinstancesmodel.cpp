@@ -26,6 +26,12 @@ QVariant PipedInstancesModel::data(const QModelIndex &index, int role) const
         return instance.name;
     case URLRole:
         return instance.url;
+    case DescriptionRole:
+        return instance.regions;
+    case IconRole:
+        return QStringLiteral("plasmatube-piped");
+    case IsPublicRole:
+        return true;
     default:
         return {};
     }
@@ -52,7 +58,7 @@ int PipedInstancesModel::rowCount(const QModelIndex &parent) const
 
 QHash<int, QByteArray> PipedInstancesModel::roleNames() const
 {
-    return {{NameRole, "name"}, {URLRole, "url"}};
+    return {{NameRole, "name"}, {URLRole, "url"}, {DescriptionRole, "description"}, {IconRole, "iconSource"}, {IsPublicRole, "isPublic"}};
 }
 
 void PipedInstancesModel::fill()
@@ -78,9 +84,10 @@ void PipedInstancesModel::fill()
                 const QStringList parts = line.split("|"_L1);
                 const QString name = parts[0].trimmed();
                 const QString url = parts[1].trimmed();
+                const QString regions = parts[2].trimmed();
 
                 beginInsertRows({}, m_instances.size(), m_instances.size());
-                m_instances.push_back({name, url});
+                m_instances.push_back({name, url, regions});
                 endInsertRows();
             }
         }
