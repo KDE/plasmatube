@@ -60,8 +60,6 @@ target_sources(plasmatube PRIVATE
         controllers/logincontroller.h
         controllers/videosource.cpp
         controllers/videosource.h
-        controllers/windowcontroller.cpp
-        controllers/windowcontroller.h
 
         models/abstractinstancesmodel.cpp
         models/abstractinstancesmodel.h
