@@ -36,6 +36,8 @@ Kirigami.Page {
 
                 fillMode: Image.PreserveAspectFit
 
+                Layout.preferredWidth: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
+                Layout.preferredHeight: Math.round(Kirigami.Units.iconSizes.huge * 1.5)
                 Layout.fillWidth: true
             }
 
@@ -59,7 +61,7 @@ Kirigami.Page {
             FormCard.FormCard {
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
-                maximumWidth: Kirigami.Units.gridUnit * 16
+                maximumWidth: Kirigami.Units.gridUnit * 20
 
                 FormCard.FormButtonDelegate {
                     id: registerButton
@@ -73,7 +75,7 @@ Kirigami.Page {
             FormCard.FormCard {
                 Layout.topMargin: Kirigami.Units.largeSpacing
 
-                maximumWidth: Kirigami.Units.gridUnit * 16
+                maximumWidth: Kirigami.Units.gridUnit * 20
 
                 FormCard.FormButtonDelegate {
                     id: settingsButton
