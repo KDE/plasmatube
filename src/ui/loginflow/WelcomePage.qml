@@ -17,6 +17,10 @@ Kirigami.Page {
     title: i18nc("@title:window", "Welcome")
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
 
+    header: Kirigami.Separator {
+        width: root.width
+    }
+
     contentItem: Item {
         ColumnLayout {
             anchors {
@@ -57,9 +61,6 @@ Kirigami.Page {
 
                 maximumWidth: Kirigami.Units.gridUnit * 16
 
-                Kirigami.Theme.colorSet: Kirigami.Theme.Selection
-                Kirigami.Theme.inherit: false
-
                 FormCard.FormButtonDelegate {
                     id: registerButton
                     text: i18nc("@action:button", "Add a Video Source")
@@ -68,22 +69,18 @@ Kirigami.Page {
                     focus: true
                 }
             }
-        }
 
-        FormCard.FormCard {
-            anchors {
-                bottom: parent.bottom
-                left: parent.left
-                right: parent.right
-            }
+            FormCard.FormCard {
+                Layout.topMargin: Kirigami.Units.largeSpacing
 
-            maximumWidth: Kirigami.Units.gridUnit * 16
+                maximumWidth: Kirigami.Units.gridUnit * 16
 
-            FormCard.FormButtonDelegate {
-                id: settingsButton
-                text: i18nc("@action:button Application settings", "Settings")
-                icon.name: "settings-configure"
-                onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
+                FormCard.FormButtonDelegate {
+                    id: settingsButton
+                    text: i18nc("@action:button Application settings", "Settings")
+                    icon.name: "settings-configure"
+                    onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
+                }
             }
         }
     }
