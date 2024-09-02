@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:38+0000\n"
 "PO-Revision-Date: 2024-08-24 11:53+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -23,14 +23,14 @@ msgstr ""
 msgid "Username or password is wrong."
 msgstr "Username or password is wrong."
 
-#: api/invidious/invidiousapi.cpp:401 api/peertube/peertubeapi.cpp:412
-#: api/piped/pipedapi.cpp:331
+#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
+#: api/piped/pipedapi.cpp:326
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Server returned no valid JSON."
 
-#: api/invidious/invidiousapi.cpp:410 api/peertube/peertubeapi.cpp:421
-#: api/piped/pipedapi.cpp:340
+#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
+#: api/piped/pipedapi.cpp:335
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Server returned the status code %1"
@@ -45,52 +45,57 @@ msgstr "This instance has disabled the registration."
 msgid "Playing video"
 msgstr "Playing video"
 
-#: main.cpp:54
+#: main.cpp:53
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:56
+#: main.cpp:55
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube client"
 
-#: main.cpp:58
+#: main.cpp:57
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Creator"
 msgstr "Creator"
 
-#: main.cpp:60
+#: main.cpp:59
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:61
+#: main.cpp:60
 #, kde-format
 msgid "Maintainer"
 msgstr "Maintainer"
 
-#: main.cpp:65
+#: main.cpp:64
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Steve Allewell"
 
-#: main.cpp:65
+#: main.cpp:64
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
+
+#: models/peertubeinstancesmodel.cpp:32
+#, kde-format
+msgid "No server description provided."
+msgstr ""
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -99,46 +104,41 @@ msgstr "Subscriptions"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
-msgid "Popular"
-msgstr "Popular"
-
-#: models/videolistmodel.cpp:22
-#, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
 msgstr "All"
 
-#: models/videolistmodel.cpp:24
+#: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
 msgstr "Gaming"
 
-#: models/videolistmodel.cpp:26
+#: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
 msgstr "Movies"
 
-#: models/videolistmodel.cpp:28
+#: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
 msgstr "Music"
 
-#: models/videolistmodel.cpp:30
+#: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
 msgstr "News"
 
-#: models/videolistmodel.cpp:32
+#: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "History"
 
-#: models/videolistmodel.cpp:160
+#: models/videolistmodel.cpp:156
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Search results for \"%1\""
@@ -182,9 +182,7 @@ msgstr "No videos"
 msgid "Videos"
 msgstr "Videos"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
-#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
-#: ui/SearchPage.qml:17
+#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:17
 #, kde-format
 msgid "Search"
 msgstr "Search"
@@ -195,6 +193,7 @@ msgid "Settings"
 msgstr "Settings"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
+#: ui/loginflow/WelcomePage.qml:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
@@ -374,28 +373,11 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr "Failed to contact server: %1. Please check your proxy settings."
 
-#: ui/loginflow/AddInvidiousPage.qml:18
+#: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
 msgstr "Add Invidious Source"
-
-#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
-#: ui/loginflow/AddPipedPage.qml:28
-#, kde-format
-msgid "Select a instance"
-msgstr "Select a instance"
-
-#: ui/loginflow/AddInvidiousPage.qml:35
-#, kde-format
-msgid "invidious.io"
-msgstr "invidious.io"
-
-#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
-#: ui/loginflow/AddPipedPage.qml:69
-#, kde-format
-msgid "No public instances found."
-msgstr "No public instances found."
 
 #: ui/loginflow/AddPeerTubePage.qml:17
 #, kde-format
@@ -403,58 +385,106 @@ msgctxt "@title:window"
 msgid "Add PeerTube Source"
 msgstr "Add PeerTube Source"
 
-#: ui/loginflow/AddPeerTubePage.qml:34
-#, kde-format
-msgid "joinpeertube.org"
-msgstr "joinpeertube.org"
-
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
 msgstr "Add Piped Source"
 
-#: ui/loginflow/AddPipedPage.qml:35
+#: ui/loginflow/InstancesPage.qml:42
 #, kde-format
-msgid "pipedapi.kavin.rocks"
-msgstr "pipedapi.kavin.rocks"
+msgid "Search or enter URL…"
+msgstr ""
 
-#: ui/loginflow/AddPipedPage.qml:76
+#: ui/loginflow/InstancesPage.qml:57
 #, kde-format
-msgctxt "Add instance"
-msgid "Add %1"
-msgstr "Add %1"
+msgid "Custom Server"
+msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/InstancesPage.qml:67
+#, kde-format
+msgid "Public Servers"
+msgstr ""
+
+#: ui/loginflow/InstancesPage.qml:98
+#, kde-format
+msgid "No Public Servers"
+msgstr ""
+
+#: ui/loginflow/InstancesPage.qml:99
+#, kde-format
+msgid "Enter a server URL manually in the search field."
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:20
+#, fuzzy, kde-format
+#| msgid "Add a new video source"
+msgctxt "@title:window"
+msgid "Add a Video Source"
+msgstr "Add a new video source"
+
+#: ui/loginflow/SelectSourcePage.qml:39
+#, kde-format
+msgid "Visit Website"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:62
+#, kde-format
+msgid "Add Invidious Source"
+msgstr "Add Invidious Source"
+
+#: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
+#, kde-format
+msgid "Watch YouTube videos"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:78
+#, kde-format
+msgid "Add PeerTube Source"
+msgstr "Add PeerTube Source"
+
+#: ui/loginflow/SelectSourcePage.qml:79
+#, kde-format
+msgid "Watch PeerTube videos"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:94
+#, kde-format
+msgid "Add Piped Source"
+msgstr "Add Piped Source"
+
+#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "Welcome"
 
-#: ui/loginflow/WelcomePage.qml:25
-#, kde-format
-msgid "Welcome to PlasmaTube"
-msgstr "Welcome to PlasmaTube"
+#: ui/loginflow/WelcomePage.qml:45
+#, fuzzy, kde-format
+#| msgid "PlasmaTube"
+msgctxt "@info"
+msgid "PlasmaTube"
+msgstr "PlasmaTube"
 
-#: ui/loginflow/WelcomePage.qml:31
+#: ui/loginflow/WelcomePage.qml:54
 #, kde-format
-msgid "PlasmaTube requires at least one video source."
-msgstr "PlasmaTube requires at least one video source."
+msgctxt "@info"
+msgid "Watch YouTube and PeerTube videos."
+msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:41
-#, kde-format
-msgid "Add Invidious Source"
-msgstr "Add Invidious Source"
+#: ui/loginflow/WelcomePage.qml:68
+#, fuzzy, kde-format
+#| msgid "Add a new video source"
+msgctxt "@action:button"
+msgid "Add a Video Source"
+msgstr "Add a new video source"
 
-#: ui/loginflow/WelcomePage.qml:53
-#, kde-format
-msgid "Add PeerTube Source"
-msgstr "Add PeerTube Source"
-
-#: ui/loginflow/WelcomePage.qml:65
-#, kde-format
-msgid "Add Piped Source"
-msgstr "Add Piped Source"
+#: ui/loginflow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "Settings"
 
 #: ui/LoginPage.qml:22
 #, kde-format
@@ -487,7 +517,7 @@ msgstr "Username must not be empty!"
 msgid "Password must not be empty!"
 msgstr "Password must not be empty!"
 
-#: ui/Main.qml:215
+#: ui/Main.qml:219
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
@@ -703,14 +733,44 @@ msgstr ""
 "is pressed."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, kde-format
-msgid "Default homepage"
+#, fuzzy, kde-format
+#| msgid "Default homepage"
+msgid "Default Page"
 msgstr "Default homepage"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, kde-format
-msgid "The default page to load when switching to this source."
+#, fuzzy, kde-format
+#| msgid "The default page to load when switching to this source."
+msgid "The first page to load when switching to this source."
 msgstr "The default page to load when switching to this source."
+
+#: ui/settings/InvidiousSourcePage.qml:64
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@info Search page"
+msgid "Search"
+msgstr "Search"
+
+#: ui/settings/InvidiousSourcePage.qml:68
+#, fuzzy, kde-format
+#| msgid "Trending"
+msgctxt "@info Trending page"
+msgid "Trending"
+msgstr "Trending"
+
+#: ui/settings/InvidiousSourcePage.qml:72
+#, fuzzy, kde-format
+#| msgid "Subscriptions"
+msgctxt "@info Subscriptions page"
+msgid "Subscriptions"
+msgstr "Subscriptions"
+
+#: ui/settings/InvidiousSourcePage.qml:76
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info Playlists page"
+msgid "Playlists"
+msgstr "Playlists"
 
 #: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
@@ -861,7 +921,7 @@ msgstr "Importing…"
 msgid "Exporting…"
 msgstr "Exporting…"
 
-#: ui/SubscriptionListPage.qml:178
+#: ui/SubscriptionListPage.qml:177
 #, kde-format
 msgid "No channels"
 msgstr "No channels"
@@ -1005,6 +1065,34 @@ msgstr "Clear"
 #, kde-format
 msgid "Loading…"
 msgstr "Loading…"
+
+#~ msgid "Popular"
+#~ msgstr "Popular"
+
+#~ msgid "Select a instance"
+#~ msgstr "Select a instance"
+
+#~ msgid "invidious.io"
+#~ msgstr "invidious.io"
+
+#~ msgid "No public instances found."
+#~ msgstr "No public instances found."
+
+#~ msgid "joinpeertube.org"
+#~ msgstr "joinpeertube.org"
+
+#~ msgid "pipedapi.kavin.rocks"
+#~ msgstr "pipedapi.kavin.rocks"
+
+#~ msgctxt "Add instance"
+#~ msgid "Add %1"
+#~ msgstr "Add %1"
+
+#~ msgid "Welcome to PlasmaTube"
+#~ msgstr "Welcome to PlasmaTube"
+
+#~ msgid "PlasmaTube requires at least one video source."
+#~ msgstr "PlasmaTube requires at least one video source."
 
 #, fuzzy
 #~| msgid "• %1 views • %2"

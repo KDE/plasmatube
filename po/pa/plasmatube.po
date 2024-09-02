@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:39+0000\n"
+"POT-Creation-Date: 2024-09-02 00:38+0000\n"
 "PO-Revision-Date: 2024-02-05 07:54-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -23,14 +23,14 @@ msgstr ""
 msgid "Username or password is wrong."
 msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ ਜਾਂ ਪਾਸਵਰਡ ਗਲਤ ਹੈ।"
 
-#: api/invidious/invidiousapi.cpp:401 api/peertube/peertubeapi.cpp:412
-#: api/piped/pipedapi.cpp:331
+#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
+#: api/piped/pipedapi.cpp:326
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr ""
 
-#: api/invidious/invidiousapi.cpp:410 api/peertube/peertubeapi.cpp:421
-#: api/piped/pipedapi.cpp:340
+#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
+#: api/piped/pipedapi.cpp:335
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr ""
@@ -45,52 +45,57 @@ msgstr ""
 msgid "Playing video"
 msgstr "ਵੀਡੀਓ ਚਲਾਈ ਜਾ ਰਹੀ ਹੈ"
 
-#: main.cpp:54
+#: main.cpp:53
 #, kde-format
 msgid "PlasmaTube"
 msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ"
 
-#: main.cpp:56
+#: main.cpp:55
 #, kde-format
 msgid "YouTube client"
 msgstr "ਯੂਟਿਊਬ ਕਲਾਈਂਟ"
 
-#: main.cpp:58
+#: main.cpp:57
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr ""
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Linus Jahn"
 msgstr "ਲੀਨਕਸ ਜਾਨ"
 
-#: main.cpp:59
+#: main.cpp:58
 #, kde-format
 msgid "Creator"
 msgstr "ਨਿਰਮਾਤਾ"
 
-#: main.cpp:60
+#: main.cpp:59
 #, kde-format
 msgid "Joshua Goins"
 msgstr ""
 
-#: main.cpp:61
+#: main.cpp:60
 #, kde-format
 msgid "Maintainer"
 msgstr ""
 
-#: main.cpp:65
+#: main.cpp:64
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ ੨੦੨੪"
 
-#: main.cpp:65
+#: main.cpp:64
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aalam@punlinux.org"
+
+#: models/peertubeinstancesmodel.cpp:32
+#, kde-format
+msgid "No server description provided."
+msgstr ""
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -99,46 +104,41 @@ msgstr "ਮੈਂਬਰੀ"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
-msgid "Popular"
-msgstr "ਹਰਮਨਪਿਆਰੇ"
-
-#: models/videolistmodel.cpp:22
-#, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
 msgstr "ਸਭ"
 
-#: models/videolistmodel.cpp:24
+#: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
 msgstr "ਖੇਡਾਂ"
 
-#: models/videolistmodel.cpp:26
+#: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
 msgstr "ਫਿਲਮਾਂ"
 
-#: models/videolistmodel.cpp:28
+#: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
 msgstr "ਸੰਗੀਤ"
 
-#: models/videolistmodel.cpp:30
+#: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
 msgstr "ਖ਼ਬਰਾਂ"
 
-#: models/videolistmodel.cpp:32
+#: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: models/videolistmodel.cpp:160
+#: models/videolistmodel.cpp:156
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "\"%1\" ਲਈ ਖੋਜ ਨਤੀਜੇ"
@@ -184,9 +184,7 @@ msgstr "ਕੋਈ ਵੀਡੀਓ ਨਹੀਂ"
 msgid "Videos"
 msgstr "ਵੀਡੀਓ"
 
-#: ui/components/BottomNavBar.qml:82 ui/loginflow/AddInvidiousPage.qml:34
-#: ui/loginflow/AddPeerTubePage.qml:33 ui/loginflow/AddPipedPage.qml:34
-#: ui/SearchPage.qml:17
+#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:17
 #, kde-format
 msgid "Search"
 msgstr "ਖੋਜੋ"
@@ -197,6 +195,7 @@ msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
+#: ui/loginflow/WelcomePage.qml:84
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:window"
@@ -384,27 +383,10 @@ msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
 
-#: ui/loginflow/AddInvidiousPage.qml:18
+#: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr ""
-
-#: ui/loginflow/AddInvidiousPage.qml:28 ui/loginflow/AddPeerTubePage.qml:27
-#: ui/loginflow/AddPipedPage.qml:28
-#, kde-format
-msgid "Select a instance"
-msgstr ""
-
-#: ui/loginflow/AddInvidiousPage.qml:35
-#, kde-format
-msgid "invidious.io"
-msgstr "invidious.io"
-
-#: ui/loginflow/AddInvidiousPage.qml:68 ui/loginflow/AddPeerTubePage.qml:64
-#: ui/loginflow/AddPipedPage.qml:69
-#, kde-format
-msgid "No public instances found."
 msgstr ""
 
 #: ui/loginflow/AddPeerTubePage.qml:17
@@ -413,58 +395,106 @@ msgctxt "@title:window"
 msgid "Add PeerTube Source"
 msgstr ""
 
-#: ui/loginflow/AddPeerTubePage.qml:34
-#, kde-format
-msgid "joinpeertube.org"
-msgstr "joinpeertube.org"
-
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
 msgstr ""
 
-#: ui/loginflow/AddPipedPage.qml:35
+#: ui/loginflow/InstancesPage.qml:42
 #, kde-format
-msgid "pipedapi.kavin.rocks"
+msgid "Search or enter URL…"
 msgstr ""
 
-#: ui/loginflow/AddPipedPage.qml:76
+#: ui/loginflow/InstancesPage.qml:57
 #, kde-format
-msgctxt "Add instance"
-msgid "Add %1"
-msgstr "%1 ਨੂੰ ਜੋੜੋ"
+msgid "Custom Server"
+msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/InstancesPage.qml:67
+#, kde-format
+msgid "Public Servers"
+msgstr ""
+
+#: ui/loginflow/InstancesPage.qml:98
+#, kde-format
+msgid "No Public Servers"
+msgstr ""
+
+#: ui/loginflow/InstancesPage.qml:99
+#, kde-format
+msgid "Enter a server URL manually in the search field."
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:20
+#, fuzzy, kde-format
+#| msgid "Add a new video source"
+msgctxt "@title:window"
+msgid "Add a Video Source"
+msgstr "ਨਵਾਂ ਵੀਡੀਓ ਸਰੋਤ ਜੋੜੋ"
+
+#: ui/loginflow/SelectSourcePage.qml:39
+#, kde-format
+msgid "Visit Website"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:62
+#, kde-format
+msgid "Add Invidious Source"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
+#, kde-format
+msgid "Watch YouTube videos"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:78
+#, kde-format
+msgid "Add PeerTube Source"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:79
+#, kde-format
+msgid "Watch PeerTube videos"
+msgstr ""
+
+#: ui/loginflow/SelectSourcePage.qml:94
+#, kde-format
+msgid "Add Piped Source"
+msgstr ""
+
+#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
 msgstr "ਜੀ ਆਇਆਂ ਨੂੰ"
 
-#: ui/loginflow/WelcomePage.qml:25
-#, kde-format
-msgid "Welcome to PlasmaTube"
-msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
+#: ui/loginflow/WelcomePage.qml:45
+#, fuzzy, kde-format
+#| msgid "PlasmaTube"
+msgctxt "@info"
+msgid "PlasmaTube"
+msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ"
 
-#: ui/loginflow/WelcomePage.qml:31
+#: ui/loginflow/WelcomePage.qml:54
 #, kde-format
-msgid "PlasmaTube requires at least one video source."
-msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵੀਡੀਓ ਸਰੋਤ ਚਾਹੀਦਾ ਹੈ।"
-
-#: ui/loginflow/WelcomePage.qml:41
-#, kde-format
-msgid "Add Invidious Source"
+msgctxt "@info"
+msgid "Watch YouTube and PeerTube videos."
 msgstr ""
 
-#: ui/loginflow/WelcomePage.qml:53
-#, kde-format
-msgid "Add PeerTube Source"
-msgstr ""
+#: ui/loginflow/WelcomePage.qml:68
+#, fuzzy, kde-format
+#| msgid "Add a new video source"
+msgctxt "@action:button"
+msgid "Add a Video Source"
+msgstr "ਨਵਾਂ ਵੀਡੀਓ ਸਰੋਤ ਜੋੜੋ"
 
-#: ui/loginflow/WelcomePage.qml:65
-#, kde-format
-msgid "Add Piped Source"
-msgstr ""
+#: ui/loginflow/WelcomePage.qml:82
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Application settings"
+msgid "Settings"
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: ui/LoginPage.qml:22
 #, fuzzy, kde-format
@@ -498,7 +528,7 @@ msgstr "ਵਰਤੋਂਕਾਰ-ਨਾਂ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸ�
 msgid "Password must not be empty!"
 msgstr "ਪਾਸਵਰਡ ਖਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ ਹੈ!"
 
-#: ui/Main.qml:215
+#: ui/Main.qml:219
 #, fuzzy, kde-format
 #| msgid "Add to playlist"
 msgctxt "@title"
@@ -713,14 +743,44 @@ msgid ""
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, kde-format
-msgid "Default homepage"
+#, fuzzy, kde-format
+#| msgid "Default homepage"
+msgid "Default Page"
 msgstr "ਮੂਲ ਮੁੱਖ-ਸਫ਼ਾ"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
-msgid "The default page to load when switching to this source."
+msgid "The first page to load when switching to this source."
 msgstr ""
+
+#: ui/settings/InvidiousSourcePage.qml:64
+#, fuzzy, kde-format
+#| msgid "Search"
+msgctxt "@info Search page"
+msgid "Search"
+msgstr "ਖੋਜੋ"
+
+#: ui/settings/InvidiousSourcePage.qml:68
+#, fuzzy, kde-format
+#| msgctxt "@title Trending videos"
+#| msgid "Trending"
+msgctxt "@info Trending page"
+msgid "Trending"
+msgstr "ਰੁਝਾਨ"
+
+#: ui/settings/InvidiousSourcePage.qml:72
+#, fuzzy, kde-format
+#| msgid "Subscriptions"
+msgctxt "@info Subscriptions page"
+msgid "Subscriptions"
+msgstr "ਮੈਂਬਰੀ"
+
+#: ui/settings/InvidiousSourcePage.qml:76
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info Playlists page"
+msgid "Playlists"
+msgstr "ਪਲੇਅਲਿਸਟਾਂ"
 
 #: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
@@ -879,7 +939,7 @@ msgstr "…ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 msgid "Exporting…"
 msgstr "…ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ui/SubscriptionListPage.qml:178
+#: ui/SubscriptionListPage.qml:177
 #, kde-format
 msgid "No channels"
 msgstr ""
@@ -1034,6 +1094,25 @@ msgstr "ਮਿਟਾਓ"
 #| msgid "Loading…"
 msgid "Loading…"
 msgstr "…ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#~ msgid "Popular"
+#~ msgstr "ਹਰਮਨਪਿਆਰੇ"
+
+#~ msgid "invidious.io"
+#~ msgstr "invidious.io"
+
+#~ msgid "joinpeertube.org"
+#~ msgstr "joinpeertube.org"
+
+#~ msgctxt "Add instance"
+#~ msgid "Add %1"
+#~ msgstr "%1 ਨੂੰ ਜੋੜੋ"
+
+#~ msgid "Welcome to PlasmaTube"
+#~ msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
+
+#~ msgid "PlasmaTube requires at least one video source."
+#~ msgstr "ਪਲਾਜ਼ਮਾ-ਟਿਊਬ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵੀਡੀਓ ਸਰੋਤ ਚਾਹੀਦਾ ਹੈ।"
 
 #~ msgid "%1 views • %2"
 #~ msgstr "%1 ਝਲਕਾਂ • %2"
