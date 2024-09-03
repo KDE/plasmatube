@@ -458,8 +458,7 @@ msgid "Welcome"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -477,8 +476,7 @@ msgid "Add a Video Source"
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "设置"
@@ -734,22 +732,19 @@ msgid "The first page to load when switching to this source."
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "搜索"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "当下流行"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "订阅"
@@ -1051,6 +1046,3 @@ msgstr ""
 #, kde-format
 msgid "Loading…"
 msgstr "正在加载…"
-
-#~ msgid "Popular"
-#~ msgstr "热门"
