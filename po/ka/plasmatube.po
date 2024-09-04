@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-08-12 05:10+0200\n"
+"PO-Revision-Date: 2024-09-03 04:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -96,7 +96,7 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "სერვერის აღწერა მითითებული არაა."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -396,31 +396,30 @@ msgstr "გადმოგზავნის წყაროს დამატ�
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "მოძებნეთ ან შეიყვანეთ URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "ხელით მითითებული სერვერი"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "საჯარო სერვერები"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "საჯარო სერვერების გარეშე"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "შეიყვანეთ სერვერის URL ხელით ძებნის ველში"
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
 msgstr "ახალი ვიდეოწყაროს დამატება"
@@ -428,7 +427,7 @@ msgstr "ახალი ვიდეოწყაროს დამატებ�
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "საიტზე გადასვლა"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -438,7 +437,7 @@ msgstr "Invidious-ის წყაროს დამატება"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "უყურეთ ვიდეოებს YouTube-დან"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -448,7 +447,7 @@ msgstr "PeerTube-ის წყაროს დამატება"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "უყურეთ ვიდეოებს PeerTube-დან"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -462,8 +461,7 @@ msgid "Welcome"
 msgstr "კეთილი იყოს თქვენი მობრძანება"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -472,21 +470,19 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "უყურეთ ვიდეოებს YouTube-დან და PeerTube-დან."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
 msgstr "ახალი ვიდეოწყაროს დამატება"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
-msgstr "პარამეტრები"
+msgstr "მორგება"
 
 #: ui/LoginPage.qml:22
 #, kde-format
@@ -735,41 +731,35 @@ msgstr ""
 "დაიწყება ვიდეოების ავტომატური დაკვრა თუ დაველოდებით დაკვრის ღილაკზე დაჭერას."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "ნაგულისხმევი საწყისი გვერდი"
+msgstr "ნაგულისხმევი გვერდი"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "ნაგულისხმევი გვერდი ჩასატვირთად ამ წყაროზე გადართვისას."
+msgstr "პირველი გვერდი ჩასატვირთად ამ წყაროზე გადართვისას."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "ძებნა"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "ტრენდები"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "გამოწერები"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "დასაკრავი სიები"
