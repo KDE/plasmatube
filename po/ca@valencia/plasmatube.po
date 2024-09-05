@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-08-12 12:33+0200\n"
+"PO-Revision-Date: 2024-09-02 12:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
@@ -98,7 +98,7 @@ msgstr "txemaq@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "No s'ha proporcionat cap descripció."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -401,39 +401,38 @@ msgstr "Afig una font de Piped"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Busca o introduïu un URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Servidor personalitzat"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Servidors públics"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "Sense servidors públics"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Introduïu manualment un URL de servidor en el camp de busca."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Afig una font nova de vídeos"
+msgstr "Afig una font de vídeos"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Visiteu el lloc web"
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/SelectSourcePage.qml:62
@@ -444,7 +443,7 @@ msgstr "Afig una font d'Invidious"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Veure vídeos de YouTube"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -454,7 +453,7 @@ msgstr "Afig una font de PeerTube"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Veure vídeos de PeerTube"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -468,8 +467,7 @@ msgid "Welcome"
 msgstr "Us donem la benvinguda"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -478,18 +476,16 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Veure vídeos de YouTube i PeerTube."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Afig una font nova de vídeos"
+msgstr "Afig una font de vídeos"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Configuració"
@@ -745,41 +741,35 @@ msgstr ""
 "quan es prema el botó de reproducció."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Pàgina inicial predeterminada"
+msgstr "Pàgina predeterminada"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "La pàgina predeterminada a carregar en canviar a esta font."
+msgstr "La primera pàgina a carregar en canviar a esta font."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Busca"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Tendències"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Subscripcions"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Llistes de reproducció"
@@ -1077,32 +1067,3 @@ msgstr "Neteja"
 #, kde-format
 msgid "Loading…"
 msgstr "S'està carregant…"
-
-#~ msgid "Popular"
-#~ msgstr "Populars"
-
-#~ msgid "Select a instance"
-#~ msgstr "Seleccioneu una instància"
-
-# És un nom propi: https://github.com/iv-org/invidious
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "No s'ha trobat cap instància pública."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgid "pipedapi.kavin.rocks"
-#~ msgstr "pipedapi.kavin.rocks"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Afig %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Us donem la benvinguda a PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "PlasmaTube necessita com a mínim una font de vídeo."
