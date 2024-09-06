@@ -383,7 +383,7 @@ msgstr ""
 #: ui/loginflow/AddPipedPage.qml:28
 #, kde-format
 msgid "Select a instance"
-msgstr ""
+msgstr "选择一个实例"
 
 #: ui/loginflow/AddInvidiousPage.qml:35
 #, kde-format
@@ -394,7 +394,7 @@ msgstr ""
 #: ui/loginflow/AddPipedPage.qml:69
 #, kde-format
 msgid "No public instances found."
-msgstr ""
+msgstr "未找到公开实例。"
 
 #: ui/loginflow/AddPeerTubePage.qml:17
 #, kde-format
@@ -422,7 +422,7 @@ msgstr ""
 #, kde-format
 msgctxt "Add instance"
 msgid "Add %1"
-msgstr ""
+msgstr "添加 %1"
 
 #: ui/loginflow/WelcomePage.qml:13 ui/settings/SourcesPage.qml:24
 #, kde-format
@@ -433,12 +433,12 @@ msgstr ""
 #: ui/loginflow/WelcomePage.qml:25
 #, kde-format
 msgid "Welcome to PlasmaTube"
-msgstr ""
+msgstr "欢迎使用 PlasmaTube"
 
 #: ui/loginflow/WelcomePage.qml:31
 #, kde-format
 msgid "PlasmaTube requires at least one video source."
-msgstr ""
+msgstr "PlasmaTube 至少需要一个视频源。"
 
 #: ui/loginflow/WelcomePage.qml:41
 #, kde-format
@@ -638,12 +638,12 @@ msgstr ""
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
 msgid "Default homepage"
-msgstr ""
+msgstr "默认首页"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The default page to load when switching to this source."
-msgstr ""
+msgstr "切换到此源时要加载的默认页面。"
 
 #: ui/settings/NetworkProxyPage.qml:17
 #, kde-format
