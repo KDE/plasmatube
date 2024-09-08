@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-08-24 11:53+0100\n"
+"PO-Revision-Date: 2024-09-07 12:16+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -95,7 +95,7 @@ msgstr "steve.allewell@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "No server description provided."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -394,39 +394,38 @@ msgstr "Add Piped Source"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Search or enter URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Custom Server"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Public Servers"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "No Public Servers"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Enter a server URL manually in the search field."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Add a new video source"
+msgstr "Add a Video Source"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Visit Website"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -436,7 +435,7 @@ msgstr "Add Invidious Source"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Watch YouTube videos"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -446,7 +445,7 @@ msgstr "Add PeerTube Source"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Watch PeerTube videos"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -460,8 +459,7 @@ msgid "Welcome"
 msgstr "Welcome"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -470,18 +468,16 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Watch YouTube and PeerTube videos."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Add a new video source"
+msgstr "Add a Video Source"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Settings"
@@ -733,41 +729,35 @@ msgstr ""
 "is pressed."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Default homepage"
+msgstr "Default Page"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "The default page to load when switching to this source."
+msgstr "The first page to load when switching to this source."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Search"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Trending"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Subscriptions"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Playlists"

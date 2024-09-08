@@ -1069,32 +1069,3 @@ msgstr "Tøm"
 #, kde-format
 msgid "Loading…"
 msgstr "Lastar …"
-
-#~ msgid "Popular"
-#~ msgstr "Mest populære"
-
-#~ msgid "Select a instance"
-#~ msgstr "Vel instans"
-
-# https://api.invidious.io/
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "Fann ingen offentlege instansar."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgid "pipedapi.kavin.rocks"
-#~ msgstr "pipedapi.kavin.rocks"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Legg til %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Velkommen til PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "PlasmaTube treng minst éi videokjelde."
