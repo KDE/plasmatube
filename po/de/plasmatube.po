@@ -4,14 +4,15 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2022, 2023.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2024 Alois Spitzbart <spitz234@hotmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2023-12-21 18:59+0100\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2024-08-26 19:44+0200\n"
+"Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +42,7 @@ msgstr "Der Server meldet den Statuscode %1"
 #: controllers/logincontroller.cpp:40
 #, kde-format
 msgid "This instance has disabled the registration."
-msgstr ""
+msgstr "Diese Instanz hat die Registrierung deaktiviert."
 
 #: controllers/videocontroller.cpp:71
 #, kde-format
@@ -61,7 +62,7 @@ msgstr "YouTube-Anwendung"
 #: main.cpp:57
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "Copyright 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
 #: main.cpp:58
 #, kde-format
@@ -76,12 +77,12 @@ msgstr "Ersteller"
 #: main.cpp:59
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:60
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "Betreuer"
 
 #: main.cpp:64
 #, kde-format
@@ -139,12 +140,12 @@ msgstr "Nachrichten"
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr "Geschichte"
+msgstr "Verlauf"
 
 #: models/videolistmodel.cpp:156
 #, kde-format
 msgid "Search results for \"%1\""
-msgstr "Suchergebnisse für „\"%1“"
+msgstr "Suchergebnisse für „%1“"
 
 #: ui/android/ShareAction.qml:15 ui/android/ShareMenu.qml:15
 #: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
@@ -155,7 +156,7 @@ msgstr "Teilen"
 #: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Ausgewählte Medien teilen"
 
 #: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
@@ -209,13 +210,13 @@ msgstr "Einstellungen"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "Mehr laden"
 
 #: ui/components/Comments.qml:104
 #, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr ""
+msgstr "Keine Kommentare"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -227,7 +228,7 @@ msgstr[1] "%1 Videos"
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Teilen fehlgeschlagen"
 
 #: ui/components/Sidebar.qml:85
 #, kde-format
@@ -279,7 +280,7 @@ msgstr "Quelle hinzufügen"
 #: ui/components/SourceSwitcherDialog.qml:59
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "Eine neue Videoquelle hinzufügen"
 
 #: ui/components/SubscriptionButton.qml:61
 #, fuzzy, kde-format
@@ -306,7 +307,7 @@ msgstr ""
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Live"
 
 #: ui/components/VideoGridItem.qml:79
 #, kde-format
@@ -365,8 +366,7 @@ msgid "Mark as Unwatched"
 msgstr "Als ungesehen markieren"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Mark as watched"
+#, kde-format
 msgid "Mark as Watched"
 msgstr "Als gesehen markieren"
 
@@ -502,8 +502,7 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: ui/LoginPage.qml:22
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@title:window"
 msgid "Log in"
 msgstr "Anmelden"
@@ -534,8 +533,7 @@ msgid "Password must not be empty!"
 msgstr "Das Passwort darf nicht leer sein."
 
 #: ui/Main.qml:219
-#, fuzzy, kde-format
-#| msgid "Add to playlist"
+#, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
 msgstr "Zur Wiedergabeliste hinzufügen"
@@ -577,15 +575,13 @@ msgid "Currently logged in as %1."
 msgstr "Aktuell angemeldet als %1."
 
 #: ui/settings/AccountCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Log out"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log out"
 msgstr "Abmelden"
 
 #: ui/settings/AccountCard.qml:41
-#, fuzzy, kde-format
-#| msgid "Log in"
+#, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Anmelden"
@@ -610,15 +606,13 @@ msgstr "Quelle entfernen"
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "Die einzige Datenquelle kann nicht entfernt werden."
 
 #: ui/settings/BaseSourcePage.qml:32
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Source"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr "Quelle entfernen"
+msgstr "Datenquelle entfernen"
 
 #: ui/settings/BaseSourcePage.qml:33
 #, kde-format
@@ -629,12 +623,12 @@ msgstr "Möchten Sie diese Quelle wirklich entfernen?"
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "Bevorzugte Video-Qualität"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -647,49 +641,49 @@ msgstr ""
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -844,8 +838,7 @@ msgid "About KDE"
 msgstr "Über KDE"
 
 #: ui/settings/SourcesPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Add Source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
 msgstr "Quelle hinzufügen"
@@ -860,12 +853,12 @@ msgstr "Abonnieren (%1)"
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "Importieren abgeschlossen"
 
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "Exportieren abgeschlossen"
 
 #: ui/SubscriptionListPage.qml:36
 #, kde-format
@@ -890,13 +883,13 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #: ui/SubscriptionListPage.qml:58
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "Importieren ..."
 
 #: ui/SubscriptionListPage.qml:63
 #, fuzzy, kde-format
@@ -909,13 +902,13 @@ msgstr "Abonnements"
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "Importieren"
 
 #: ui/SubscriptionListPage.qml:69
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "Exportieren ..."
 
 #: ui/SubscriptionListPage.qml:74
 #, fuzzy, kde-format
@@ -978,12 +971,10 @@ msgstr "Proxy-Einstellungen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "Rückwärts spulen"
 
 #: ui/videoplayer/VideoControls.qml:181
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgctxt "@action:button"
 msgid "Play"
 msgstr "Wiedergeben"
@@ -992,21 +983,19 @@ msgstr "Wiedergeben"
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "Vorwärts spulen"
 
 #: ui/videoplayer/VideoControls.qml:269
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
 msgstr "Vollbild"
 
 #: ui/videoplayer/VideoControls.qml:296
-#, fuzzy, kde-format
-#| msgid "Picture in Picture"
+#, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Bild-in-Bild"
+msgstr "Bild in Bild"
 
 #: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
@@ -1015,8 +1004,7 @@ msgid "Hide player"
 msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:135
-#, fuzzy, kde-format
-#| msgid "Add to Playlist…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
 msgstr "Zur Wiedergabeliste hinzufügen …"
@@ -1031,12 +1019,12 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Im Webbrowser öffnen"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "Videoadresse kopieren"
 
 #: ui/videoplayer/VideoPlayer.qml:347
 #, fuzzy, kde-format
@@ -1047,12 +1035,12 @@ msgstr "Proxy-Einstellungen"
 #: ui/videoplayer/VideoPlayer.qml:438
 #, kde-format
 msgid "%1 Likes"
-msgstr ""
+msgstr "%1 Likes"
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: ui/videoplayer/VideoPlayer.qml:517
 #, kde-format
@@ -1094,9 +1082,7 @@ msgid "Clear"
 msgstr "Leeren"
 
 #: ui/videoplayer/VideoQueueView.qml:81
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Loading…"
 msgstr "Wird geladen ..."
 
