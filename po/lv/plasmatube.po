@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-08-27 18:11+0300\n"
+"PO-Revision-Date: 2024-09-12 15:43+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -96,7 +96,7 @@ msgstr "toms.trasuns@posteo.net"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "Nav iesniegts servera apraksts."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -398,39 +398,38 @@ msgstr "Pievienot „Piped“ avotu"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Meklēt vai ievadīt URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Pielāgots serveris"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Publiskie serveri"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "Nav publisko serveru"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Meklēšanas laukā manuāli ievadiet servera URL adresi"
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Pievienot jaunu video avotu"
+msgstr "Pievienot video avotu"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Apmeklēt tīmekļa vietni"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -440,7 +439,7 @@ msgstr "Pievienot „Invidious“ avotu"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Skatīties „YouTube“ videoklipus"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -450,7 +449,7 @@ msgstr "Pievienot „PeerTube“ avotu"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Skatīties „PeerTube“ videoklipus"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -464,8 +463,7 @@ msgid "Welcome"
 msgstr "Laipni lūgti!"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -474,18 +472,16 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Skatieties „YouTube“ un „PeerTube“ videoklipus."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Pievienot jaunu video avotu"
+msgstr "Pievienot video avotu"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Iestatījumi"
@@ -735,41 +731,35 @@ msgstr ""
 "Vai video sākt atskaņot uzreiz, vai arī gaidīt atskaņošanas pogas nospiešanu."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
 msgstr "Noklusējuma mājaslapa"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "Ielādējamā mājaslapa, pārslēdzoties uz šo avotu."
+msgstr "Pirmā ielādējamā mājaslapa, pārslēdzoties uz šo avotu."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Meklēt"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Iegūst popularitāti"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Abonementi"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Repertuāri"
