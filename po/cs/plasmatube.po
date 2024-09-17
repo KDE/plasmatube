@@ -395,7 +395,7 @@ msgstr ""
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Hledat nebo zadat URL..."
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
@@ -418,11 +418,10 @@ msgid "Enter a server URL manually in the search field."
 msgstr ""
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Přidat nový zdroj videa"
+msgstr ""
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
@@ -437,7 +436,7 @@ msgstr "Přidat zdroj Invidious"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Sledujte videa YouTube"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -461,11 +460,10 @@ msgid "Welcome"
 msgstr "Vítejte"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
-msgstr "PlasmaTube"
+msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:54
 #, kde-format
@@ -474,18 +472,16 @@ msgid "Watch YouTube and PeerTube videos."
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Přidat nový zdroj videa"
+msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
-msgstr "Nastavení"
+msgstr ""
 
 #: ui/LoginPage.qml:22
 #, kde-format
@@ -728,10 +724,9 @@ msgid ""
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Výchozí domovská stránka"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
@@ -739,32 +734,28 @@ msgid "The first page to load when switching to this source."
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
-msgstr "Hledat"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
-msgstr "Trendy"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
-msgstr "Přihlášení"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
-msgstr "Seznamy skladeb"
+msgstr ""
 
 #: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
@@ -1061,28 +1052,3 @@ msgstr "Vyprázdnit"
 #, kde-format
 msgid "Loading…"
 msgstr "Probíhá načítání…"
-
-#~ msgid "Popular"
-#~ msgstr "Populární"
-
-#~ msgid "Select a instance"
-#~ msgstr "Vyberte instanci"
-
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "Nenalezeny žádné veřejné instance."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Přidat %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Vítejte v PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "PlasmaTube vyžaduje alespoň jeden zdroj videí."
