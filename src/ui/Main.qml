@@ -18,7 +18,7 @@ Kirigami.ApplicationWindow {
     id: root
 
     KConfig.WindowStateSaver {
-        configGroupName: "Window"
+        configGroupName: "MainWindow"
     }
 
     property Item hoverLinkIndicator: QQC2.Control {
