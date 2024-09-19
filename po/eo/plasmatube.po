@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-07-27 14:20+0200\n"
+"PO-Revision-Date: 2024-09-18 19:03+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -418,16 +418,15 @@ msgid "Enter a server URL manually in the search field."
 msgstr ""
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Aldoni novan filmetofonton"
+msgstr "Aldoni Filmetfonton"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Viziti Retejon"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -437,7 +436,7 @@ msgstr "Aldoni Invidious-fonton"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Rigardi YouTube-filmetojn"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -447,7 +446,7 @@ msgstr "Aldoni PeerTube-fonton"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Rigardi PeerTube-filmetojn"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -461,8 +460,7 @@ msgid "Welcome"
 msgstr "Bonvenon"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -474,15 +472,13 @@ msgid "Watch YouTube and PeerTube videos."
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Aldoni novan filmetofonton"
+msgstr "Aldoni Filmetfonton"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Agordoj"
@@ -732,41 +728,35 @@ msgstr ""
 "Ĉu komenci ludadi filmetojn tuj, aŭ atendi ĝis ludbutono estas premata."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Defaŭlta hejmpaĝo"
+msgstr "Defaŭlta Paĝo"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "La defaŭlta paĝo ŝargenda ŝanĝante al ĉi tiu fonto."
+msgstr "La unua paĝo ŝargenda ŝanĝante al ĉi tiu fonto."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Serĉi"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Tendencaj"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Abonoj"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Ludlistoj"
@@ -1064,31 +1054,3 @@ msgstr "Forviŝi"
 #, kde-format
 msgid "Loading…"
 msgstr "Ŝargante…"
-
-#~ msgid "Popular"
-#~ msgstr "Popularaj"
-
-#~ msgid "Select a instance"
-#~ msgstr "Elekti instancon"
-
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "Trovis neniujn publikajn instancojn."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgid "pipedapi.kavin.rocks"
-#~ msgstr "pipedapi.kavin.rocks"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Aldoni %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Bonvenon al  PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "PlasmaTube postulas almenaŭ unu filmetfonton."
