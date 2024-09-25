@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-02 00:38+0000\n"
-"PO-Revision-Date: 2024-09-22 16:33+0200\n"
+"PO-Revision-Date: 2024-09-24 19:21+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -96,7 +96,7 @@ msgstr "karl@huftis.org"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "Inga tenarskildring er oppgjeven."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -397,7 +397,7 @@ msgstr "Legg til Piped-kjelde"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Søk eller skriv inn adresse …"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
@@ -417,7 +417,7 @@ msgstr "Ingen offentlege tenarar"
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Skriv inn tenaradresse i søkjefeltet."
 
 #: ui/loginflow/SelectSourcePage.qml:20
 #, kde-format
@@ -737,10 +737,9 @@ msgid "Default Page"
 msgstr "Standardside"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "Standard nettside å lasta når du byter til denne kjelda."
+msgstr "Første nettside å lasta når du byter til denne kjelda."
 
 #: ui/settings/InvidiousSourcePage.qml:64
 #, kde-format
