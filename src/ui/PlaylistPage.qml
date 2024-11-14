@@ -4,7 +4,6 @@
 import QtQuick
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 
@@ -24,10 +23,11 @@ Kirigami.ScrollablePage {
         }
     }
 
-    header: Components.Banner {
+    header: Kirigami.InlineMessage {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
+        position: InlineMessage.Position.Inline
 
         showCloseButton: true
 
