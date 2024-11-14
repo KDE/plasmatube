@@ -25,10 +25,11 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    header: KirigamiComponents.Banner {
+    header: Kirigami.InlineMessage {
         id: message
         type: Kirigami.MessageType.Error
         width: parent.width
+        position: Kirigami.InlineMessage.Position.Header
 
         showCloseButton: true
 

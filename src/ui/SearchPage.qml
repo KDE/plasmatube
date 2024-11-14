@@ -7,7 +7,6 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 
 import org.kde.plasmatube
 import org.kde.plasmatube.invidious
@@ -149,10 +148,11 @@ Kirigami.ScrollablePage {
             }
         }
 
-        Components.Banner {
+        Kirigami.InlineMessage {
             id: message
             type: Kirigami.MessageType.Error
             width: parent.width
+            position: Kirigami.InlineMessage.Position.Header
 
             showCloseButton: true
 
