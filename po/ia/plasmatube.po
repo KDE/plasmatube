@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:39+0000\n"
 "PO-Revision-Date: 2024-09-03 14:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -155,19 +155,19 @@ msgstr "Comparti"
 msgid "Share the selected media"
 msgstr "Comparti le media selectionate"
 
-#: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
+#: ui/ChannelPage.qml:37 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Preferentias de proxy"
 
-#: ui/ChannelPage.qml:142
+#: ui/ChannelPage.qml:143
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videos"
 
-#: ui/ChannelPage.qml:148
+#: ui/ChannelPage.qml:149
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
@@ -183,7 +183,7 @@ msgstr "Nulle Videos"
 msgid "Videos"
 msgstr "Videos"
 
-#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:17
+#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:16
 #, kde-format
 msgid "Search"
 msgstr "Cerca"
@@ -368,7 +368,7 @@ msgstr "Adde al lista de reproduction…"
 msgid "Remove from Playlist"
 msgstr "Remove ex lista de reproduction"
 
-#: ui/FeedPage.qml:35
+#: ui/FeedPage.qml:34
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -485,7 +485,7 @@ msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Preferentias"
 
-#: ui/LoginPage.qml:22
+#: ui/LoginPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Log in"
@@ -528,27 +528,27 @@ msgctxt "@action:button Play the playlist"
 msgid "Play"
 msgstr "Reproduce"
 
-#: ui/SearchPage.qml:89
+#: ui/SearchPage.qml:88
 #, kde-format
 msgid "Sort By:"
 msgstr "Ordina per:"
 
-#: ui/SearchPage.qml:93
+#: ui/SearchPage.qml:92
 #, kde-format
 msgid "Rating"
 msgstr "Evalutation"
 
-#: ui/SearchPage.qml:105
+#: ui/SearchPage.qml:104
 #, kde-format
 msgid "Relevance"
 msgstr "Pertinentia"
 
-#: ui/SearchPage.qml:118
+#: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
 msgstr "Incarga data"
 
-#: ui/SearchPage.qml:130
+#: ui/SearchPage.qml:129
 #, kde-format
 msgid "View Count"
 msgstr "Vide computo"

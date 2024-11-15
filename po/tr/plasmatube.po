@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-02 00:38+0000\n"
+"POT-Creation-Date: 2024-11-15 00:39+0000\n"
 "PO-Revision-Date: 2024-09-02 14:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -154,19 +154,19 @@ msgstr "Paylaş"
 msgid "Share the selected media"
 msgstr "Seçili ortamı paylaş"
 
-#: ui/ChannelPage.qml:36 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
+#: ui/ChannelPage.qml:37 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
 msgstr "Vekil Ayarları"
 
-#: ui/ChannelPage.qml:142
+#: ui/ChannelPage.qml:143
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videolar"
 
-#: ui/ChannelPage.qml:148
+#: ui/ChannelPage.qml:149
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
@@ -182,7 +182,7 @@ msgstr "Video yok"
 msgid "Videos"
 msgstr "Videolar"
 
-#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:17
+#: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:16
 #, kde-format
 msgid "Search"
 msgstr "Ara"
@@ -367,7 +367,7 @@ msgstr "Oynatma Listesine Ekle…"
 msgid "Remove from Playlist"
 msgstr "Oynatma Listesinden Kaldır"
 
-#: ui/FeedPage.qml:35
+#: ui/FeedPage.qml:34
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
@@ -482,7 +482,7 @@ msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: ui/LoginPage.qml:22
+#: ui/LoginPage.qml:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Log in"
@@ -525,27 +525,27 @@ msgctxt "@action:button Play the playlist"
 msgid "Play"
 msgstr "Oynat"
 
-#: ui/SearchPage.qml:89
+#: ui/SearchPage.qml:88
 #, kde-format
 msgid "Sort By:"
 msgstr "Şuna Göre Sırala:"
 
-#: ui/SearchPage.qml:93
+#: ui/SearchPage.qml:92
 #, kde-format
 msgid "Rating"
 msgstr "Derecelendirme"
 
-#: ui/SearchPage.qml:105
+#: ui/SearchPage.qml:104
 #, kde-format
 msgid "Relevance"
 msgstr "İlgi"
 
-#: ui/SearchPage.qml:118
+#: ui/SearchPage.qml:117
 #, kde-format
 msgid "Upload Date"
 msgstr "Yüklenme Tarihi"
 
-#: ui/SearchPage.qml:130
+#: ui/SearchPage.qml:129
 #, kde-format
 msgid "View Count"
 msgstr "Görüntülenme Sayısı"
