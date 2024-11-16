@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:39+0000\n"
-"PO-Revision-Date: 2024-09-03 04:37+0200\n"
+"PO-Revision-Date: 2024-11-15 05:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
@@ -416,7 +416,7 @@ msgstr "საჯარო სერვერების გარეშე"
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr "შეიყვანეთ სერვერის URL ხელით ძებნის ველში"
+msgstr "შეიყვანეთ სერვერის URL ხელით ძებნის ველში."
 
 #: ui/loginflow/SelectSourcePage.qml:20
 #, kde-format
