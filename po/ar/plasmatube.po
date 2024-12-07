@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 02:31+0000\n"
-"PO-Revision-Date: 2024-06-08 11:40+0400\n"
+"PO-Revision-Date: 2024-12-06 07:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -97,7 +97,7 @@ msgstr "zayed.alsaidi@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "لم يتوفر وصف للخادم."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -208,11 +208,10 @@ msgid "Load more"
 msgstr "حمّل المزيد"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "تعليقات"
+msgstr "لا تعليقات"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -401,31 +400,30 @@ msgstr "أضف مصدر بايب"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "ابحث أو أدخل عنوان URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "خادم مخصَّص"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "الخوادم العامة"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "لا خوادم عامة"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "أدخل عنوان URL للخادم يدويًا في حقل البحث."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
 msgstr "أضف مصدر فيديو جديداً"
@@ -433,7 +431,7 @@ msgstr "أضف مصدر فيديو جديداً"
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "زر الموقع"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -443,7 +441,7 @@ msgstr "أضف مصدر انفيديوس"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "شاهد مقاطع فيديو على اليوتيوب"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -453,7 +451,7 @@ msgstr "أضف مصدر بيير تيوب"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "شاهد مقاطع فيديو على البيورتيوب"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -467,8 +465,7 @@ msgid "Welcome"
 msgstr "مرحباً"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "بلازما تيوب"
@@ -477,18 +474,16 @@ msgstr "بلازما تيوب"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "شاهد مقاطع فيديو على اليوتيوب والبيورتيوب"
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
 msgstr "أضف مصدر فيديو جديداً"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "الإعدادات"
@@ -619,7 +614,7 @@ msgstr "عام"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "جودة الفيديو المفضلة"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -627,54 +622,55 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"ستُستخدم الجودة المحددة هذه إذا كانت متوفرة، وإلا فالجودة الأعلى التالية."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -691,7 +687,7 @@ msgstr "إخفاء مقاطع الفيديو القصيرة المصممة لل�
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "تحقق من المقاطع المرعية"
 
 #: ui/settings/GeneralPage.qml:94
 #, kde-format
@@ -699,17 +695,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"إعلامك عند ظهور مقطع مقدم من المجتمع (عادةً ما يكون عبارة عن رعاية) في "
+"الفيديو. تتطلب هذه الميزة الاتصال بخدمة تابعة لجهة خارجية."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "تخطَّ المقاطع المرعية"
 
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "تُتخطّى المقاطع الدعائية الموجودة في الفيديو تلقائيًا."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -736,41 +734,35 @@ msgstr ""
 "على زر التشغيل."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "الصّفحة الرّئيسيّة المبدئية"
+msgstr "الصّفحة الرّئيسة المبدئية"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
 msgstr "الصفحة المبدئية التي ستحمل عند التبديل إلى هذا المصدر."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "ابحث"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "الرائج"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "الاشتراكات"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "قوائم التّشغيل"
@@ -1006,13 +998,13 @@ msgstr "أضف إلى قائمة التّشغيل…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "خطأ في تحميل الفيديو"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "افتح في المتصفح"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
@@ -1040,27 +1032,26 @@ msgid "Recommended"
 msgstr "مستحسن"
 
 #: ui/videoplayer/VideoPlayer.qml:522
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "مستحسن"
+msgstr "لا فيديوهات مقترحة"
 
 #: ui/videoplayer/VideoPlayer.qml:608
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "تُخُطّيَ الجزء المدعوم من الفيديو"
 
 #: ui/videoplayer/VideoPlayer.qml:616
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "هذا الجزء من الفيديو برعاية"
 
 #: ui/videoplayer/VideoPlayer.qml:637
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "تخطّ"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
