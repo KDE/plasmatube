@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-15 00:39+0000\n"
-"PO-Revision-Date: 2024-09-02 17:59+0200\n"
+"PO-Revision-Date: 2024-12-08 20:22+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
 #: controllers/logincontroller.cpp:37
@@ -372,7 +372,8 @@ msgstr "Retirar da lista de reprodución"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"Fallou a conexión ao servidor: %1. Comproba a configuración do mandatario."
+"Non foi posíbel contactar co servidor: %1. Comproba a configuración do "
+"mandatario."
 
 #: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
