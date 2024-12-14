@@ -38,7 +38,7 @@ KirigamiSettings.CategorizedSettings {
             actionName: "aboutkde"
             text: i18n("About KDE")
             icon.name: "kde"
-            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDE"))
+            onTriggered: pageStack.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage"))
         }
     ]
 }
