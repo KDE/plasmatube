@@ -46,6 +46,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pt-BR">PlasmaTube</name>
   <name xml:lang="ro">PlasmaTube</name>
   <name xml:lang="ru">PlasmaTube</name>
+  <name xml:lang="sa">प्लाज्माट्यूब</name>
   <name xml:lang="sk">PlasmaTube</name>
   <name xml:lang="sl">PlasmaTube</name>
   <name xml:lang="sv">PlasmaTube</name>
@@ -90,6 +91,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="pt-BR">Assista vídeos do YouTube</summary>
   <summary xml:lang="ro">Vizualizează filmulețe YouTube</summary>
   <summary xml:lang="ru">Просмотр видеороликов с Youtube</summary>
+  <summary xml:lang="sa">यूट्यूब-वीडियो पश्यन्तु</summary>
   <summary xml:lang="sk">Pozeranie YouTube videa</summary>
   <summary xml:lang="sl">Glej YouTube videoposnetke</summary>
   <summary xml:lang="sv">Titta på YouTube-videor</summary>
@@ -134,6 +136,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt-BR">O PlasmaTube permite a você assistir vídeos do YouTube em seu celular ou computador usando uma interface de usuário elegante e integrada com o resto do Plasma.</p>
     <p xml:lang="ro">PlasmaTube permite vizionarea videoclipurilor YouTube de pe telefon sau calculator folosind o interfață elegantă integrată cu restul Plasma.</p>
     <p xml:lang="ru">Приложение PlasmaTube позволяет просматривать видео с YouTube на телефоне или компьютере, предоставляя элегантный пользовательский интерфейс, интегрированный с остальной частью Plasma.</p>
+    <p xml:lang="sa">PlasmaTube इत्यनेन प्लाज्मा इत्यस्य शेषभागेन सह एकीकृतस्य सुरुचिपूर्णस्य उपयोक्तृ-अन्तरफलकस्य उपयोगेन स्वस्य दूरभाषे अथवा डेस्कटॉप् इत्यत्र YouTube-वीडियो द्रष्टुं शक्यते ।</p>
     <p xml:lang="sl">PlasmaTube vam omogoča ogled videoposnetkov v YouTubu na telefonu ali namizju z uporabo elegantnega uporabniškega vmesnika integriranega v Plasmo.</p>
     <p xml:lang="sv">Med PlasmaTube kan du titta på YouTube-videor på din telefon eller skrivbordsdator med ett elegant användargränssnitt integrerat med resten av Plasma.</p>
     <p xml:lang="tr">PlasmaTube, telefonunuzda veya masaüstünüzde Plasma ile bütünleşmiş zarif bir arayüz ile YouTube videolarını izlemenize olanak verir.</p>
