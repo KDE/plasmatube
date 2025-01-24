@@ -24,6 +24,8 @@ GridView {
     property string currentVideoUrl
     property string currentChannelName
     property string currentChannelId
+    property alias placeholderText: placeholderMessage.text
+    property string placeholderIconName
 
     readonly property real effectiveWidth: width - leftMargin - rightMargin
     readonly property real targetDelegateWidth: Kirigami.Units.gridUnit * 14 + Kirigami.Units.largeSpacing * 2
@@ -153,8 +155,9 @@ GridView {
     }
 
     Kirigami.PlaceholderMessage {
+        id: placeholderMessage
         anchors.centerIn: parent
-        text: i18n("No videos")
+        icon.name: gridView.placeholderIconName
         visible: !gridView.model.isLoading && gridView.count === 0
     }
 

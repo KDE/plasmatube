@@ -55,6 +55,8 @@ Kirigami.ScrollablePage {
     BaseGridView {
         id: gridView
 
+        placeholderIconName: "videoclip-amarok"
+        placeholderText: i18nc("@info:placeholder", "No Videos")
         model: VideoListModel {
             id: videoModel
         }

@@ -22,6 +22,8 @@ Kirigami.ScrollablePage {
     BaseGridView {
         id: gridView
 
+        placeholderIconName: "view-media-playlist"
+        placeholderText: i18nc("@info:placeholder", "No Playlists")
         model: PlaylistsModel {
             id: playlistModel
         }

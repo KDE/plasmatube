@@ -176,6 +176,8 @@ Kirigami.Page {
                 BaseGridView {
                     id: videoGridView
 
+                    placeholderIconName: "videoclip-amarok"
+                    placeholderText: i18nc("@info:placeholder", "No Videos")
                     model: VideoListModel {
                         id: videoModel
                     }
@@ -192,6 +194,8 @@ Kirigami.Page {
                 BaseGridView {
                     id: playlistsGridView
 
+                    placeholderIconName: "view-media-playlist"
+                    placeholderText: i18nc("@info:placeholder", "No Playlists")
                     model: PlaylistsModel {
                         id: playlistModel
                     }

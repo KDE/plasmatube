@@ -172,6 +172,7 @@ Kirigami.ScrollablePage {
     BaseGridView {
         id: gridView
 
+        placeholderText: i18nc("@info:placeholder", "No Results")
         model: SearchModel {
             id: videoModel
         }
