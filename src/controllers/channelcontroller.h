@@ -18,6 +18,7 @@ class ChannelController : public QObject
     Q_PROPERTY(QString avatar READ avatar NOTIFY channelLoaded)
     Q_PROPERTY(QString description READ description NOTIFY channelLoaded)
     Q_PROPERTY(int subCount READ subCount NOTIFY channelLoaded)
+    Q_PROPERTY(QString url READ url NOTIFY channelLoaded)
 
 public:
     explicit ChannelController(QObject *parent = nullptr);
@@ -29,6 +30,7 @@ public:
     QString avatar() const;
     QString description() const;
     int subCount() const;
+    QString url() const;
 
 Q_SIGNALS:
     void channelLoaded();

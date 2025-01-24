@@ -58,4 +58,9 @@ int ChannelController::subCount() const
     return m_channel.subCount();
 }
 
+QString ChannelController::url() const
+{
+    return m_channel.url();
+}
+
 #include "moc_channelcontroller.cpp"

@@ -18,6 +18,7 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.m_avatar = obj["avatar"_L1].toObject()["path"_L1].toString();
         const QJsonValue firstBanners = obj["banners"_L1].toArray().first();
         channel.m_banner = firstBanners.toObject()["path"_L1].toString();
+        channel.m_url = obj["url"_L1].toString();
     } else if (isPiped) {
         channel.m_id = obj["url"_L1].toString().remove(QStringLiteral("/channel/"));
         channel.m_name = obj["name"_L1].toString();
@@ -34,6 +35,7 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.m_banner = firstBanners.toObject()["url"_L1].toString();
         channel.m_description = obj["description"_L1].toString();
         channel.m_subCount = obj["subCount"_L1].toInt();
+        channel.m_url = obj["authorUrl"_L1].toString();
     }
 
     return channel;
@@ -77,4 +79,9 @@ QString Channel::description() const
 int Channel::subCount() const
 {
     return m_subCount;
+}
+
+QString Channel::url() const
+{
+    return m_url;
 }

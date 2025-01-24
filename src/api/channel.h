@@ -28,6 +28,8 @@ public:
 
     int subCount() const;
 
+    QString url() const;
+
 private:
     QString m_id;
     QString m_name;
@@ -35,6 +37,7 @@ private:
     QString m_avatar;
     QString m_description;
     int m_subCount;
+    QString m_url;
 };
 
 }

@@ -40,6 +40,14 @@ Kirigami.Page {
         }
     }
 
+    actions: [
+        Kirigami.Action {
+            icon.name: "internet-web-browser-symbolic"
+            text: i18nc("@action:intoolbar", "Open in Browser")
+            onTriggered: Qt.openUrlExternally(channelController.url)
+        }
+    ]
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     ChannelController {
