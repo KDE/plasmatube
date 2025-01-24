@@ -67,7 +67,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18nc("@action:button Export subscriptions", "Export…")
-            icon.name: "document-import-symbolic"
+            icon.name: "document-export-symbolic"
             enabled: listview.count !== 0 && !listview.model.loading
             onTriggered: {
                 fileDialog.fileMode = FileDialog.SaveFile;
