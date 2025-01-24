@@ -23,11 +23,12 @@ YouTube video player based on [mpv](https://mpv.io/), [yt-dlp](https://github.co
 
 PlasmaTube currently supports the following video sources:
 
+* YouTube
+  * [Invidious](https://invidious.io/)
+  * [Piped](https://github.com/TeamPiped/Piped)
 * [PeerTube](https://joinpeertube.org/)
-* [Invidious](https://invidious.io/)
-* [Piped](https://github.com/TeamPiped/Piped)
 
-(Currently Invidious is the most mature source.)
+Currently Invidious is the most mature source for YouTube. Only the latest versions of these sources are supported.
 
 ## Get It
 
