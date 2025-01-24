@@ -169,6 +169,7 @@ void VideoSource::createApi()
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);
     connect(m_api, &QInvidious::AbstractApi::canLogInChanged, this, &VideoSource::canLogInChanged);
     m_api->setApiHost(m_config.url());
+    m_api->setApiProtocol(m_config.protocol());
     m_api->loadCredentials(m_key);
 }
 

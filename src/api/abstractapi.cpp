@@ -37,7 +37,7 @@ void AbstractApi::setLanguage(const QString &language)
 QUrl AbstractApi::apiUrl(const QString &path) const
 {
     QUrl url = QUrl::fromUserInput(m_apiHost);
-    url.setScheme(QStringLiteral("https"));
+    url.setScheme(m_apiProtocol);
     url.setPath(path);
 
     return url;
@@ -52,6 +52,17 @@ void AbstractApi::setApiHost(const QString &host)
 QString AbstractApi::apiHost() const
 {
     return m_apiHost;
+}
+
+void AbstractApi::setApiProtocol(const QString &protocol)
+{
+    m_apiProtocol = protocol;
+    Q_EMIT apiProtocolChanged();
+}
+
+QString AbstractApi::apiProtocol() const
+{
+    return m_apiProtocol;
 }
 
 std::optional<QString> AbstractApi::getKeychainValue(const QString &prefix, const QString &key)

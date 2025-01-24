@@ -84,6 +84,9 @@ public:
     void setApiHost(const QString &host);
     QString apiHost() const;
 
+    void setApiProtocol(const QString &protocol);
+    QString apiProtocol() const;
+
     /**
      * @brief Should be called once the login page is shown. Required by some API backends to prepare.
      */
@@ -126,6 +129,7 @@ Q_SIGNALS:
     void credentialsChanged();
     void apiHostChanged();
     void canLogInChanged();
+    void apiProtocolChanged();
 
 protected:
     QUrl apiUrl(const QString &path) const;
@@ -192,6 +196,7 @@ protected:
     QString m_region;
     QString m_language;
     QString m_apiHost;
+    QString m_apiProtocol;
 };
 
 }
