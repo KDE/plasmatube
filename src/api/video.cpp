@@ -49,7 +49,7 @@ Video Video::fromJson(const QJsonObject &obj, Video &video)
         auto account = obj.value("account"_L1).toObject();
 
         VideoThumbnail thumbnail;
-        thumbnail.setUrl(QUrl(account["avatar"_L1].toObject()["path"_L1].toString()));
+        thumbnail.setUrl(QUrl(account["avatars"_L1].toArray()[0].toObject()["path"_L1].toString()));
         video.m_authorThumbnails.push_back(thumbnail);
 
         video.m_dislikeCount = obj.value("dislikes"_L1).toInt();
