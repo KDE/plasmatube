@@ -77,6 +77,7 @@ bool InvidiousApi::supportsFeature(AbstractApi::SupportedFeature feature)
     case PopularPage:
     case TrendingCategories:
     case SponsorBlock:
+    case RelatedVideos:
         return true;
     }
 

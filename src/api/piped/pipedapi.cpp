@@ -59,6 +59,7 @@ bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
 {
     switch (feature) {
     case SponsorBlock:
+    case RelatedVideos:
         return true;
     case PopularPage:
     case TrendingCategories:

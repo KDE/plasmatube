@@ -305,4 +305,9 @@ void VideoSource::exportSubscriptions(SubscriptionListModel *model, const QStrin
     }
 }
 
+bool VideoSource::showRelatedVideos() const
+{
+    return m_api->supportsFeature(QInvidious::AbstractApi::RelatedVideos);
+}
+
 #include "moc_videosource.cpp"
