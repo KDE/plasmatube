@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:button Import subscriptions", "Import…")
             icon.name: "document-import-symbolic"
-            enabled: listview.count !== 0 && !listview.model.loading
+            enabled: !listview.model.loading
             onTriggered: {
                 fileDialog.fileMode = FileDialog.OpenFile;
                 fileDialog.title = i18nc("@title:window Import the OPML file", "Import OPML Subscriptions");
