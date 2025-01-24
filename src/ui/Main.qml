@@ -217,10 +217,11 @@ Kirigami.ApplicationWindow {
             property string currentVideoId
 
             title: i18nc("@title", "Add to Playlist")
-
             standardButtons: Kirigami.Dialog.NoButton
 
             mainItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 Repeater {
                     id: playlists
 
@@ -242,6 +243,14 @@ Kirigami.ApplicationWindow {
                             addToPlaylistDialog.close();
                         }
                     }
+                }
+
+                Kirigami.PlaceholderMessage {
+                    text: i18nc("@info:placeholder", "No Playlists")
+                    visible: playlists.count === 0
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
                 }
             }
             onClosed: addToPlaylistLoader.active = false
