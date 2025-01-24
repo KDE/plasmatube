@@ -29,6 +29,7 @@ class VideoSource : public QObject
     Q_PROPERTY(bool canLogIn READ canLogIn NOTIFY canLogInChanged)
     Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
+    Q_PROPERTY(bool showRelatedVideos READ showRelatedVideos CONSTANT)
 
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
@@ -83,6 +84,8 @@ public:
      * Exports subscriptions to @p filePath. Requires @p model to reuse the channel data.
      */
     Q_INVOKABLE void exportSubscriptions(SubscriptionListModel *model, const QString &filePath);
+
+    bool showRelatedVideos() const;
 
 Q_SIGNALS:
     void urlChanged();

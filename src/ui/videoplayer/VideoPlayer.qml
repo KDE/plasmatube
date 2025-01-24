@@ -506,6 +506,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: Kirigami.Units.largeSpacing
+            visible: PlasmaTube.sourceManager.selectedSource.showRelatedVideos
 
             VideoQueueView {
                 Layout.fillWidth: true
