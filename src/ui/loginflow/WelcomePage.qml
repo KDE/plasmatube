@@ -67,7 +67,7 @@ Kirigami.Page {
                     id: registerButton
                     text: i18nc("@action:button", "Add a Video Source")
                     icon.name: "network-server-symbolic"
-                    onClicked: Window.window.pageStack.push(Qt.createComponent("org.kde.plasmatube", "SelectSourcePage"))
+                    onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "SelectSourcePage"))
                     focus: true
                 }
             }
