@@ -544,7 +544,7 @@ void PeerTubeApi::fixupVideoThumbnail(VideoBasicInfo &video) const
     for (auto &thumbnail : newThumbnails) {
         // If the URL is relative, attach the server URL
         if (thumbnail.url().isRelative()) {
-            thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
+            thumbnail.setUrl(apiUrl(thumbnail.url().path()));
         }
     }
     video.setVideoThumbnails(newThumbnails);
@@ -553,8 +553,8 @@ void PeerTubeApi::fixupVideoThumbnail(VideoBasicInfo &video) const
 void PeerTubeApi::fixupChannel(QInvidious::Channel &channel)
 {
     // PeerTube gives us relative URLs for avatar/banner
-    channel.setAvatar(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.avatar()));
-    channel.setBanner(QStringLiteral("https://%1/%2").arg(m_apiHost, channel.banner()));
+    channel.setAvatar(apiUrl(channel.avatar()).toString());
+    channel.setBanner(apiUrl(channel.banner()).toString());
 }
 
 void PeerTubeApi::fixupVideo(Video &video)
@@ -563,7 +563,7 @@ void PeerTubeApi::fixupVideo(Video &video)
     for (auto &thumbnail : newThumbnails) {
         // If the URL is relative, attach the server URL
         if (thumbnail.url().isRelative()) {
-            thumbnail.setUrl(QUrl(QStringLiteral("https://%1/%2").arg(m_apiHost, thumbnail.url().path())));
+            thumbnail.setUrl(apiUrl(thumbnail.url().path()));
         }
     }
     video.setAuthorThumbnails(newThumbnails);
@@ -571,5 +571,5 @@ void PeerTubeApi::fixupVideo(Video &video)
 
 void PeerTubeApi::fixupComment(Comment &comment)
 {
-    comment.setAuthorAvatar(QStringLiteral("https://%1/%2").arg(m_apiHost, comment.authorAvatar()));
+    comment.setAuthorAvatar(apiUrl(comment.authorAvatar()).toString());
 }
