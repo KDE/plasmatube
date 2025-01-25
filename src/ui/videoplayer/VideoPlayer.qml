@@ -506,7 +506,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: !root.widescreen
             Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             spacing: Kirigami.Units.largeSpacing
-            visible: PlasmaTube.sourceManager.selectedSource.showRelatedVideos
+            visible: PlasmaTube.sourceManager.selectedSource.showRelatedVideos || PlasmaTube.videoController.videoQueue.shouldBeVisible
 
             VideoQueueView {
                 Layout.fillWidth: true
@@ -516,10 +516,11 @@ Kirigami.ScrollablePage {
 
             Kirigami.Heading {
                 text: i18n("Recommended")
+                visible: PlasmaTube.sourceManager.selectedSource.showRelatedVideos
             }
 
             QQC2.Label {
-                visible: !recommendedVideosRepeater.model.isLoading && recommendedVideosRepeater.count === 0
+                visible: !recommendedVideosRepeater.model.isLoading && recommendedVideosRepeater.count === 0 && PlasmaTube.sourceManager.selectedSource.showRelatedVideos
                 text: i18nc("@info", "No recommended videos")
             }
 
