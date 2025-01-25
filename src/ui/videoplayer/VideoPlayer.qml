@@ -444,20 +444,24 @@ Kirigami.ScrollablePage {
                 QQC2.TextArea {
                     readonly property var linkRegex: /(href=["'])?(\b(https?):\/\/[^\s\<\>\"\'\\\?\:\)\(]+(\(.*?\))*(\?(?=[a-z])[^\s\\\)]+|$)?)/g
 
-                    Layout.preferredHeight: root.video.description.length > 0 ? implicitHeight : 0
+                    text: {
+                        if (root.video.description.length === 0) {
+                            return i18nc("@info", "No description was set for this video.");
+                        }
 
-                    text: root.video.description.replace(linkRegex, function() {
-                        if (arguments[1]) {
-                            return arguments[0];
-                        }
-                        const l = arguments[2];
-                        if ([".", ","].includes(l[l.length-1])) {
-                            const link = l.substring(0, l.length-1);
-                            const leftover = l[l.length-1];
-                            return `<a href="${link}">${link}</a>${leftover}`;
-                        }
-                        return `<a href="${l}">${l}</a>`;
-                    }).replace(/(?:\r\n|\r|\n)/g, '<br>')
+                        return root.video.description.replace(linkRegex, function() {
+                            if (arguments[1]) {
+                                return arguments[0];
+                            }
+                            const l = arguments[2];
+                            if ([".", ","].includes(l[l.length-1])) {
+                                const link = l.substring(0, l.length-1);
+                                const leftover = l[l.length-1];
+                                return `<a href="${link}">${link}</a>${leftover}`;
+                            }
+                            return `<a href="${l}">${l}</a>`;
+                        }).replace(/(?:\r\n|\r|\n)/g, '<br>');
+                    }
                     textFormat: TextEdit.RichText
                     background: null
                     readOnly: true
