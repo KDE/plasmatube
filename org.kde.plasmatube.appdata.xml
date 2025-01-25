@@ -166,6 +166,9 @@ SPDX-License-Identifier: CC0-1.0
     <release version="24.02.0" date="2024-02-28"/>
     <release version="23.08.5" date="2024-02-15"/>
   </releases>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
