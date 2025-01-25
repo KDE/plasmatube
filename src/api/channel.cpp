@@ -15,7 +15,7 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.m_name = obj["displayName"_L1].toString();
         channel.m_description = obj["description"_L1].toString();
         channel.m_subCount = obj["followersCount"_L1].toInt();
-        channel.m_avatar = obj["avatar"_L1].toObject()["path"_L1].toString();
+        channel.m_avatar = obj["avatars"_L1].toArray()[0].toObject()["path"_L1].toString();
         const QJsonValue firstBanners = obj["banners"_L1].toArray().first();
         channel.m_banner = firstBanners.toObject()["path"_L1].toString();
     } else if (isPiped) {
