@@ -70,8 +70,8 @@ QQC2.Button {
             subscriptionController.toggleSubscription()
         } else if (!PlasmaTube.selectedSource.loggedIn) {
             applicationWindow().closePlayer();
-            showPassiveNotificaftion(i18n("Please log in to subscribe to channels."));
-            pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"));
+            applicationWindow().showPassiveNotification(i18n("Please log in to subscribe to channels."));
+            applicationWindow().pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "LoginPage"), { source: PlasmaTube.selectedSource });
         }
     }
 }
