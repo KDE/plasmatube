@@ -28,6 +28,7 @@
 #include <KWindowSystem>
 #endif
 
+#include "networkaccessmanagerfactory.h"
 #include "plasmatube-version.h"
 
 #ifdef Q_OS_ANDROID
@@ -99,6 +100,9 @@ int main(int argc, char **argv)
 #endif
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    NetworkAccessManagerFactory namFactory;
+    engine.setNetworkAccessManagerFactory(&namFactory);
 
     QCommandLineParser parser;
     parser.addPositionalArgument(QStringLiteral("video-url"), QStringLiteral("YouTube video URL to play"));
