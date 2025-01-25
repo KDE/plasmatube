@@ -358,7 +358,7 @@ Kirigami.ScrollablePage {
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
-                spacing: 0
+                spacing: Kirigami.Units.largeSpacing
                 visible: !PlasmaTube.videoController.videoModel.isLoading && root.video.isLoaded
                 enabled: !PlasmaTube.videoController.videoModel.isLoading && root.video.isLoaded
 
@@ -372,7 +372,6 @@ Kirigami.ScrollablePage {
 
                 // author info and like statistics
                 RowLayout {
-                    Layout.topMargin: Kirigami.Units.gridUnit
                     Layout.fillWidth: true
                     spacing: Kirigami.Units.largeSpacing
 
@@ -411,8 +410,7 @@ Kirigami.ScrollablePage {
                 }
 
                 RowLayout {
-                    Layout.topMargin: Kirigami.Units.gridUnit
-                    spacing: Kirigami.Units.largeSpacing
+                    spacing: Kirigami.Units.smallSpacing
 
                     Kirigami.Chip {
                         closable: false
@@ -464,8 +462,6 @@ Kirigami.ScrollablePage {
                     padding: 0
                     wrapMode: Text.WordWrap
 
-                    Layout.topMargin: Kirigami.Units.gridUnit
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
 
                     onHoveredLinkChanged: if (hoveredLink.length > 0 && hoveredLink !== "1") {
