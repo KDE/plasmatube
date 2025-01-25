@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-01-25 00:40+0000\n"
 "PO-Revision-Date: 2023-03-20 11:13+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Invidious PlasmaTube YouTube Linus Jahn JSON Top\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "O utilizador ou a senha são incorrectos."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "O servidor não devolveu qualquer JSON válido."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "O servidor devolveu o código de estado %1"
@@ -58,7 +58,7 @@ msgstr "Cliente do YouTube"
 
 #: main.cpp:57
 #, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr ""
 
 #: main.cpp:58
@@ -162,24 +162,37 @@ msgstr ""
 msgid "Proxy Settings"
 msgstr "Configuração"
 
-#: ui/ChannelPage.qml:143
+#: ui/ChannelPage.qml:46
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Open in Browser"
+msgstr ""
+
+#: ui/ChannelPage.qml:151
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Vídeos"
 
-#: ui/ChannelPage.qml:149
+#: ui/ChannelPage.qml:157
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr ""
 
-#: ui/components/BaseGridView.qml:157
+#: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Videos"
-msgid "No videos"
+msgctxt "@info:placeholder"
+msgid "No Videos"
 msgstr "Vídeos"
+
+#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No Playlists"
+msgstr ""
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -568,6 +581,13 @@ msgstr "Data de Envio"
 #, kde-format
 msgid "View Count"
 msgstr "Número de Visualizações"
+
+#: ui/SearchPage.qml:175
+#, fuzzy, kde-format
+#| msgid "No results"
+msgctxt "@info:placeholder"
+msgid "No Results"
+msgstr "Sem resultados"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1045,29 +1065,29 @@ msgstr "%1 gostos"
 msgid "Comments"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:523
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Vídeos"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:609
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:617
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:638
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1119,9 +1139,6 @@ msgstr "A carregar…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 visualizações"
-
-#~ msgid "No results"
-#~ msgstr "Sem resultados"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "Autenticar com uma Conta do Invidious"

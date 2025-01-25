@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-01-25 00:40+0000\n"
 "PO-Revision-Date: 2024-12-06 07:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -19,20 +19,20 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "اسم المستخدم أو كلمة المرور خاطئة."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "أرجع الخادوم ملف جوسون غير صحيح."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "أرجع الخادوم رمز حالة %1"
@@ -58,8 +58,9 @@ msgid "YouTube client"
 msgstr "عميل يوتيوب"
 
 #: main.cpp:57
-#, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019-2024 لينوس جان، 2019-2024 مجتمع كيدي"
 
 #: main.cpp:58
@@ -162,22 +163,39 @@ msgstr "شارك الوسيط المحدد"
 msgid "Proxy Settings"
 msgstr "إعدادت الوسيط"
 
-#: ui/ChannelPage.qml:143
+#: ui/ChannelPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Open in Browser"
+msgctxt "@action:intoolbar"
+msgid "Open in Browser"
+msgstr "افتح في المتصفح"
+
+#: ui/ChannelPage.qml:151
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: ui/ChannelPage.qml:149
+#: ui/ChannelPage.qml:157
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "قوائم التّشغيل"
 
-#: ui/components/BaseGridView.qml:157
-#, kde-format
-msgid "No videos"
+#: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
+#, fuzzy, kde-format
+#| msgid "No videos"
+msgctxt "@info:placeholder"
+msgid "No Videos"
 msgstr "لا يوجد شيء"
+
+#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info:placeholder"
+msgid "No Playlists"
+msgstr "قوائم التّشغيل"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -555,6 +573,13 @@ msgstr "تاريخ الرفع"
 #, kde-format
 msgid "View Count"
 msgstr "عدد المشاهدات"
+
+#: ui/SearchPage.qml:175
+#, fuzzy, kde-format
+#| msgid "No results"
+msgctxt "@info:placeholder"
+msgid "No Results"
+msgstr "لا نتائج"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1026,28 +1051,28 @@ msgstr "الإعجابات %1"
 msgid "Comments"
 msgstr "تعليقات"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
 msgstr "مستحسن"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:523
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "لا فيديوهات مقترحة"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:609
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "تُخُطّيَ الجزء المدعوم من الفيديو"
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:617
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "هذا الجزء من الفيديو برعاية"
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:638
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1119,9 +1144,6 @@ msgstr "يحمّل..."
 
 #~ msgid " • %1 views"
 #~ msgstr " • المشاهدات %1"
-
-#~ msgid "No results"
-#~ msgstr "لا نتائج"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "لج إلى حساب انفيديوس"

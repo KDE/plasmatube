@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-01-25 00:40+0000\n"
 "PO-Revision-Date: 2024-09-02 23:34+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Il nome utente o la password sono errati."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Il server non ha restituito un JSON valido."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Il server ha restituito il codice di stato %1"
@@ -56,8 +56,9 @@ msgid "YouTube client"
 msgstr "Client YouTube"
 
 #: main.cpp:57
-#, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 Comunità KDE"
 
 #: main.cpp:58
@@ -160,22 +161,39 @@ msgstr "Condividi i file multimediali selezionati"
 msgid "Proxy Settings"
 msgstr "Impostazioni del proxy"
 
-#: ui/ChannelPage.qml:143
+#: ui/ChannelPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Open in Browser"
+msgctxt "@action:intoolbar"
+msgid "Open in Browser"
+msgstr "Apri nel browser"
+
+#: ui/ChannelPage.qml:151
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Video"
 
-#: ui/ChannelPage.qml:149
+#: ui/ChannelPage.qml:157
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Scalette"
 
-#: ui/components/BaseGridView.qml:157
-#, kde-format
-msgid "No videos"
+#: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
+#, fuzzy, kde-format
+#| msgid "No videos"
+msgctxt "@info:placeholder"
+msgid "No Videos"
 msgstr "Nessun video"
+
+#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info:placeholder"
+msgid "No Playlists"
+msgstr "Scalette"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -551,6 +569,13 @@ msgstr "Data di caricamento"
 #, kde-format
 msgid "View Count"
 msgstr "Numero di visualizzazioni"
+
+#: ui/SearchPage.qml:175
+#, fuzzy, kde-format
+#| msgid "No results"
+msgctxt "@info:placeholder"
+msgid "No Results"
+msgstr "Nessun risultato"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1018,28 +1043,28 @@ msgstr "%1 Mi piace"
 msgid "Comments"
 msgstr "Commenti"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
 msgstr "Raccomandato"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:523
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Nessun video consigliato"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:609
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "La parte sponsorizzata del video è stata saltata"
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:617
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "Questa parte del video è sponsorizzata"
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:638
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1107,9 +1132,6 @@ msgstr "Caricamento…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 visualizzazioni"
-
-#~ msgid "No results"
-#~ msgstr "Nessun risultato"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "Accedi a un account Invidious"

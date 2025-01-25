@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-01-25 00:40+0000\n"
 "PO-Revision-Date: 2024-09-10 01:33+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -20,20 +20,20 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "使用者名稱或密碼錯誤。"
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "伺服器沒有回傳有效的 JSON。"
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "伺服器回傳狀態碼 %1"
@@ -59,8 +59,9 @@ msgid "YouTube client"
 msgstr "YouTube 客戶端"
 
 #: main.cpp:57
-#, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE 社群"
 
 #: main.cpp:58
@@ -163,22 +164,39 @@ msgstr "分享選取的媒體"
 msgid "Proxy Settings"
 msgstr "代理伺服器設定"
 
-#: ui/ChannelPage.qml:143
+#: ui/ChannelPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Open in Browser"
+msgctxt "@action:intoolbar"
+msgid "Open in Browser"
+msgstr "在瀏覽器開啟"
+
+#: ui/ChannelPage.qml:151
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "影片"
 
-#: ui/ChannelPage.qml:149
+#: ui/ChannelPage.qml:157
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "播放清單"
 
-#: ui/components/BaseGridView.qml:157
-#, kde-format
-msgid "No videos"
+#: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
+#, fuzzy, kde-format
+#| msgid "No videos"
+msgctxt "@info:placeholder"
+msgid "No Videos"
 msgstr "沒有影片"
+
+#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info:placeholder"
+msgid "No Playlists"
+msgstr "播放清單"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -551,6 +569,13 @@ msgstr "上傳日期"
 #, kde-format
 msgid "View Count"
 msgstr "觀看次數"
+
+#: ui/SearchPage.qml:175
+#, fuzzy, kde-format
+#| msgid "No results"
+msgctxt "@info:placeholder"
+msgid "No Results"
+msgstr "沒有結果"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1008,28 +1033,28 @@ msgstr "%1 個喜歡"
 msgid "Comments"
 msgstr "評論"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
 msgstr "建議"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:523
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "沒有推薦影片"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:609
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "已跳過影片的業配片段"
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:617
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "影片的這個部分是業配"
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:638
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1100,9 +1125,6 @@ msgstr "載入中…"
 
 #~ msgid " • %1 views"
 #~ msgstr " • 觀看次數：%1"
-
-#~ msgid "No results"
-#~ msgstr "沒有結果"
 
 #~ msgid "Log in to an Invidious Account"
 #~ msgstr "登入 Invidious 帳號"

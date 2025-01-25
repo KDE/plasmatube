@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:39+0000\n"
+"POT-Creation-Date: 2025-01-25 00:40+0000\n"
 "PO-Revision-Date: 2024-08-26 19:44+0200\n"
 "Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -21,20 +21,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.4\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Der Benutzername oder das Passwort ist falsch."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Der Server meldet ungültiges JSON."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Der Server meldet den Statuscode %1"
@@ -60,8 +60,9 @@ msgid "YouTube client"
 msgstr "YouTube-Anwendung"
 
 #: main.cpp:57
-#, kde-format
-msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "Copyright 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
 #: main.cpp:58
@@ -164,24 +165,41 @@ msgstr "Ausgewählte Medien teilen"
 msgid "Proxy Settings"
 msgstr "Proxy-Einstellungen"
 
-#: ui/ChannelPage.qml:143
+#: ui/ChannelPage.qml:46
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Open in Browser"
+msgctxt "@action:intoolbar"
+msgid "Open in Browser"
+msgstr "Im Webbrowser öffnen"
+
+#: ui/ChannelPage.qml:151
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videos"
 
-#: ui/ChannelPage.qml:149
+#: ui/ChannelPage.qml:157
 #, fuzzy, kde-format
 #| msgid "Playlists"
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Wiedergabelisten"
 
-#: ui/components/BaseGridView.qml:157
-#, kde-format
-msgid "No videos"
+#: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
+#, fuzzy, kde-format
+#| msgid "No videos"
+msgctxt "@info:placeholder"
+msgid "No Videos"
 msgstr "Keine Videos"
+
+#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Playlists"
+msgctxt "@info:placeholder"
+msgid "No Playlists"
+msgstr "Wiedergabelisten"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -568,6 +586,13 @@ msgstr "Hochladedatum"
 #, kde-format
 msgid "View Count"
 msgstr "Anzahl Angesehen"
+
+#: ui/SearchPage.qml:175
+#, fuzzy, kde-format
+#| msgid "No results"
+msgctxt "@info:placeholder"
+msgid "No Results"
+msgstr "Keine Ergebnisse"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1042,29 +1067,29 @@ msgstr "%1 Likes"
 msgid "Comments"
 msgstr "Kommentare"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
 msgstr "Empfohlen"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:523
 #, fuzzy, kde-format
 #| msgid "Recommended"
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Empfohlen"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:609
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:617
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:638
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1130,9 +1155,6 @@ msgstr "Wird geladen ..."
 
 #~ msgid " • %1 views"
 #~ msgstr " • %1 Ansichten"
-
-#~ msgid "No results"
-#~ msgstr "Keine Ergebnisse"
 
 #, fuzzy
 #~| msgid "Instance"
