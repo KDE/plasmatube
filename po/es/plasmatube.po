@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the plasmatube package.
 #
 # Automatically generated, 2021.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:40+0000\n"
-"PO-Revision-Date: 2024-09-02 11:43+0200\n"
+"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"PO-Revision-Date: 2025-01-25 11:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -47,49 +47,48 @@ msgstr "Esta instancia ha desactivado el registro."
 msgid "Playing video"
 msgstr "Reproduciendo vídeo"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "Cliente de YouTube"
 
-#: main.cpp:57
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 La comunidad KDE"
-
 #: main.cpp:58
+#, kde-format
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 La comunidad KDE"
+
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Creador"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Responsable"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Eloy Cuadra"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -164,9 +163,7 @@ msgid "Proxy Settings"
 msgstr "Preferencias del proxy"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Abrir en el navegador"
@@ -184,18 +181,16 @@ msgid "Playlists"
 msgstr "Listas de reproducción"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "No hay vídeos"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Listas de reproducción"
+msgstr "No hay listas de reproducción"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -332,7 +327,7 @@ msgid "No views"
 msgstr "Sin visualizaciones"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualizaciones"
@@ -573,11 +568,10 @@ msgid "View Count"
 msgstr "Contador de visualizaciones"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr "Sin resultado"
+msgstr "Sin resultados"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1034,10 +1028,17 @@ msgstr "Copiar URL del vídeo"
 msgid "Video Statistics"
 msgstr "Estadísticas del vídeo"
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 me gusta"
+
+#: ui/videoplayer/VideoPlayer.qml:447
+#, fuzzy, kde-format
+#| msgid "No server description provided."
+msgctxt "@info"
+msgid "No description was set for this video."
+msgstr "No se ha proporcionado ninguna descripción del servidor."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1049,23 +1050,23 @@ msgstr "Comentarios"
 msgid "Recommended"
 msgstr "Recomendado"
 
-#: ui/videoplayer/VideoPlayer.qml:523
+#: ui/videoplayer/VideoPlayer.qml:524
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "No hay vídeos recomendados"
 
-#: ui/videoplayer/VideoPlayer.qml:609
+#: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "Se ha omitido la porción patrocinada del vídeo"
 
-#: ui/videoplayer/VideoPlayer.qml:617
+#: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "Esta porción del vídeo está patrocinada"
 
-#: ui/videoplayer/VideoPlayer.qml:638
+#: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

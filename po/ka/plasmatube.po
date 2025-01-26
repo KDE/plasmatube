@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:40+0000\n"
-"PO-Revision-Date: 2024-11-15 05:44+0100\n"
+"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"PO-Revision-Date: 2025-01-25 02:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -46,49 +46,48 @@ msgstr "გაშვებულმა ასლმა რეგისტრა�
 msgid "Playing video"
 msgstr "მიმდინარეობს ვიდეოს დაკვრა"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-ის კლიენტი"
 
-#: main.cpp:57
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-ის საზოგადოება"
-
 #: main.cpp:58
+#, kde-format
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 KDE-ის საზოგადოება"
+
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "ლინუს იანი"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "ჯოშუა გოინსი"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -163,9 +162,7 @@ msgid "Proxy Settings"
 msgstr "პროქსის მორგება"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "ბრაუზერში გახსნა"
@@ -183,18 +180,16 @@ msgid "Playlists"
 msgstr "დასაკრავი სიები"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "ვიდეოების გარეშე"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "დასაკრავი სიები"
+msgstr "დასაკრავი სიების გარეშე"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -331,7 +326,7 @@ msgid "No views"
 msgstr "ნახვების გარეშე"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ნახვა"
@@ -571,8 +566,7 @@ msgid "View Count"
 msgstr "ნახვების რაოდენობა"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "შედეგების გარეშე"
@@ -1030,10 +1024,17 @@ msgstr "ვიდეოს URL-ის დაკოპირება"
 msgid "Video Statistics"
 msgstr "ვიდეოს სტატისტიკა"
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
+
+#: ui/videoplayer/VideoPlayer.qml:447
+#, fuzzy, kde-format
+#| msgid "No server description provided."
+msgctxt "@info"
+msgid "No description was set for this video."
+msgstr "სერვერის აღწერა მითითებული არაა."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1045,23 +1046,23 @@ msgstr "კომენტარები"
 msgid "Recommended"
 msgstr "რეკომენდებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:523
+#: ui/videoplayer/VideoPlayer.qml:524
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "რეკომენდებული ვიდეოების გარეშე"
 
-#: ui/videoplayer/VideoPlayer.qml:609
+#: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "ვიდეოს დასპონსორებული ნაწილი გამოტოვებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:617
+#: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "ვიდეო ეს ნაწილი დასპონსორებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:638
+#: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

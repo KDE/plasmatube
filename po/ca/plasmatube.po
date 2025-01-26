@@ -1,15 +1,15 @@
 # Translation of plasmatube.po to Catalan
-# Copyright (C) 2021-2024 This_file_is_part_of_KDE
+# Copyright (C) 2021-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:40+0000\n"
-"PO-Revision-Date: 2024-09-02 12:33+0200\n"
+"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"PO-Revision-Date: 2025-01-25 12:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -48,49 +48,48 @@ msgstr "Aquesta instància ha desactivat el registre."
 msgid "Playing video"
 msgstr "S'està reproduint un vídeo"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "Client de YouTube"
 
-#: main.cpp:57
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-
 #: main.cpp:58
+#, kde-format
+msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
+
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Creador"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenidor"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -165,9 +164,7 @@ msgid "Proxy Settings"
 msgstr "Configuració del servidor intermediari"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Obre en el navegador"
@@ -185,18 +182,16 @@ msgid "Playlists"
 msgstr "Llistes de reproducció"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Sense vídeos"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Llistes de reproducció"
+msgstr "Sense llistes de reproducció"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -334,7 +329,7 @@ msgid "No views"
 msgstr "Sense visualitzacions"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 visualitzacions"
@@ -580,7 +575,7 @@ msgstr "Comptador de visualitzacions"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr ""
+msgstr "Sense resultats"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1039,10 +1034,17 @@ msgstr "Copia l'URL del vídeo"
 msgid "Video Statistics"
 msgstr "Estadístiques del vídeo"
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 m'agrades"
+
+#: ui/videoplayer/VideoPlayer.qml:447
+#, fuzzy, kde-format
+#| msgid "No server description provided."
+msgctxt "@info"
+msgid "No description was set for this video."
+msgstr "No s'ha proporcionat cap descripció."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1054,23 +1056,23 @@ msgstr "Comentaris"
 msgid "Recommended"
 msgstr "Recomanats"
 
-#: ui/videoplayer/VideoPlayer.qml:523
+#: ui/videoplayer/VideoPlayer.qml:524
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Sense vídeos recomanats"
 
-#: ui/videoplayer/VideoPlayer.qml:609
+#: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "La part patrocinada del vídeo s'ha omès"
 
-#: ui/videoplayer/VideoPlayer.qml:617
+#: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "Aquesta part del vídeo és patrocinada"
 
-#: ui/videoplayer/VideoPlayer.qml:638
+#: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
@@ -1091,48 +1093,3 @@ msgstr "Neteja"
 #, kde-format
 msgid "Loading…"
 msgstr "S'està carregant…"
-
-#~ msgid "Popular"
-#~ msgstr "Populars"
-
-#~ msgid "Select a instance"
-#~ msgstr "Seleccioneu una instància"
-
-# És un nom propi: https://github.com/iv-org/invidious
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "No s'ha trobat cap instància pública."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgid "pipedapi.kavin.rocks"
-#~ msgstr "pipedapi.kavin.rocks"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Afegeix %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Us donem la benvinguda al PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "El PlasmaTube necessita com a mínim una font de vídeo."
-
-#~ msgid "%1 views • %2"
-#~ msgstr "%1 visualitzacions • %2"
-
-#~ msgid "© Linus Jahn"
-#~ msgstr "© Linus Jahn"
-
-#~ msgid "Sign in"
-#~ msgstr "Inicia la sessió"
-
-#~ msgid "Successfully logged in!"
-#~ msgstr "La sessió s'ha iniciat correctament!"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Source"
-#~ msgstr "Afegeix una font"

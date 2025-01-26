@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:40+0000\n"
+"POT-Creation-Date: 2025-01-26 00:41+0000\n"
 "PO-Revision-Date: 2024-09-19 07:49+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -45,49 +45,49 @@ msgstr "Tato instance má vypnutou registraci."
 msgid "Playing video"
 msgstr "Přehrává video"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "Klient YouTube"
 
-#: main.cpp:57
+#: main.cpp:58
 #, fuzzy, kde-format
 #| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 Komunita KDE"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Vytvořil"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Správce"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Vít Pelčák"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -331,7 +331,7 @@ msgid "No views"
 msgstr "Žádné pohledy"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 zobrazení"
@@ -1024,10 +1024,17 @@ msgstr "Kopírovat URL videa"
 msgid "Video Statistics"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 se líbí"
+
+#: ui/videoplayer/VideoPlayer.qml:447
+#, fuzzy, kde-format
+#| msgid "No server description provided."
+msgctxt "@info"
+msgid "No description was set for this video."
+msgstr "Popis serveru není dostupný."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1039,23 +1046,23 @@ msgstr "Komentáře"
 msgid "Recommended"
 msgstr "Doporučeno"
 
-#: ui/videoplayer/VideoPlayer.qml:523
+#: ui/videoplayer/VideoPlayer.qml:524
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Žádná doporučená videa"
 
-#: ui/videoplayer/VideoPlayer.qml:609
+#: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:617
+#: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr ""
 
-#: ui/videoplayer/VideoPlayer.qml:638
+#: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
