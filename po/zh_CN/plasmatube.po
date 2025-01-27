@@ -58,7 +58,7 @@ msgstr "YouTube 客户端"
 #: main.cpp:57
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
-msgstr ""
+msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
 #: main.cpp:58
 #, kde-format
