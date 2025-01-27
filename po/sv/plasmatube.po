@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2025-01-25 08:22+0100\n"
+"PO-Revision-Date: 2025-01-26 07:45+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1028,11 +1028,10 @@ msgid "%1 Likes"
 msgstr "%1 gillade"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Ingen serverbeskrivning angiven."
+msgstr "Ingen beskrivning angiven för videon."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format

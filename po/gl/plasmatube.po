@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2024-12-08 20:22+0100\n"
+"PO-Revision-Date: 2025-01-26 17:28+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -56,10 +56,9 @@ msgid "YouTube client"
 msgstr "Cliente de YouTube"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 Comunidade KDE"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 Comunidade KDE"
 
 #: main.cpp:59
 #, kde-format
@@ -162,9 +161,7 @@ msgid "Proxy Settings"
 msgstr "Configuración do mandatario"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Abrir no navegador"
@@ -182,18 +179,16 @@ msgid "Playlists"
 msgstr "Listas de reprodución"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Non hai vídeos."
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Listas de reprodución"
+msgstr "Non hai listas de reprodución."
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -571,8 +566,7 @@ msgid "View Count"
 msgstr "Visualizacións"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "Non hai resultados."
@@ -1037,11 +1031,10 @@ msgid "%1 Likes"
 msgstr "%1 gústames"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Non se forneceu unha descrición do servidor."
+msgstr "Non se definiu unha descrición para o vídeo."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
