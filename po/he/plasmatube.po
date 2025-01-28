@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2025-01-25 12:59+0200\n"
+"PO-Revision-Date: 2025-01-27 08:24+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1032,11 +1032,10 @@ msgid "%1 Likes"
 msgstr "%1 לייקים"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "לא סופק תיאור לשרת."
+msgstr "לא סופק תיאור לסרטון הזה."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format

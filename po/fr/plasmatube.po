@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2024-09-03 07:30+0200\n"
+"PO-Revision-Date: 2025-01-26 10:12+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -54,10 +54,9 @@ msgid "YouTube client"
 msgstr "Client pour YouTube"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019 - 2024 Linus Jahn, 2019 - 2024 Communauté de KDE"
+msgstr "© 2019 - 2025 Linus Jahn, 2019 - 2025 Communauté de KDE"
 
 #: main.cpp:59
 #, kde-format
@@ -160,12 +159,10 @@ msgid "Proxy Settings"
 msgstr "Configuration du serveur mandataire"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
-msgstr "Ouvrir dans le navigateur"
+msgstr "Ouvrir dans un navigateur"
 
 #: ui/ChannelPage.qml:151
 #, kde-format
@@ -180,18 +177,16 @@ msgid "Playlists"
 msgstr "Listes de lecture"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Aucune vidéo"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Listes de lecture"
+msgstr "Aucune liste de lecture"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -569,8 +564,7 @@ msgid "View Count"
 msgstr "Nombre de vues"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "Aucun résultat"
