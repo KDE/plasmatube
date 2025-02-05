@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2024-11-16 20:47+0100\n"
+"PO-Revision-Date: 2025-02-04 21:40+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -56,12 +56,11 @@ msgid "YouTube client"
 msgstr "YouTube kliens"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr ""
-"© Linus Jahn, 2019-2024.\n"
-"© A KDE közösség, 2019-2024."
+"© Linus Jahn, 2019-2025.\n"
+"© A KDE közösség, 2019-2025."
 
 #: main.cpp:59
 #, kde-format
@@ -164,9 +163,7 @@ msgid "Proxy Settings"
 msgstr "Proxybeállítások"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Megnyitás böngészőben"
@@ -184,18 +181,16 @@ msgid "Playlists"
 msgstr "Lejátszólisták"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Nincsenek videók"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Lejátszólisták"
+msgstr "Nincsenek lejátszólisták"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -573,8 +568,7 @@ msgid "View Count"
 msgstr "Megtekintésszám"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "Nincs találat"
@@ -1043,11 +1037,10 @@ msgid "%1 Likes"
 msgstr "%1 kedvelés"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Nincs megadva kiszolgálóleírás."
+msgstr "Nincs leírás ehhez a videóhoz."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
