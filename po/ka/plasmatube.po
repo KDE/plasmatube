@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 02:31+0000\n"
+"POT-Creation-Date: 2025-02-06 02:32+0000\n"
 "PO-Revision-Date: 2024-09-03 04:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,20 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "მომხმარებლის სახელი ან პაროლი არასწორია."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "სერვერის დაბრუნებული JSON სწორი არაა."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "სერვერის დაბრუნებული სტატუსის კოდია %1"
@@ -46,48 +46,48 @@ msgstr "გაშვებულმა ასლმა რეგისტრა�
 msgid "Playing video"
 msgstr "მიმდინარეობს ვიდეოს დაკვრა"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-ის კლიენტი"
 
-#: main.cpp:57
+#: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-ის საზოგადოება"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "ლინუს იანი"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "შემქმნელი"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "ჯოშუა გოინსი"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "წამყვანი პროგრამისტი"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Temuri Doghonadze"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -313,7 +313,7 @@ msgid "No views"
 msgstr "ნახვების გარეშე"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 ნახვა"
@@ -1005,38 +1005,38 @@ msgstr "ვიდეოს URL-ის დაკოპირება"
 msgid "Video Statistics"
 msgstr "ვიდეოს სტატისტიკა"
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 მოწონება"
 
-#: ui/videoplayer/VideoPlayer.qml:487
+#: ui/videoplayer/VideoPlayer.qml:483
 #, kde-format
 msgid "Comments"
 msgstr "კომენტარები"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:514
 #, kde-format
 msgid "Recommended"
 msgstr "რეკომენდებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:520
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "რეკომენდებული ვიდეოების გარეშე"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:606
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "ვიდეოს დასპონსორებული ნაწილი გამოტოვებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:614
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "ვიდეო ეს ნაწილი დასპონსორებულია"
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:635
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"

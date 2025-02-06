@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 02:31+0000\n"
+"POT-Creation-Date: 2025-02-06 02:32+0000\n"
 "PO-Revision-Date: 2024-09-18 19:03+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: api/invidious/invidiousapi.cpp:111 api/piped/pipedapi.cpp:89
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Uzantnomo aŭ pasvorto estas malĝusta."
 
-#: api/invidious/invidiousapi.cpp:396 api/peertube/peertubeapi.cpp:407
-#: api/piped/pipedapi.cpp:326
+#: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
+#: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Servilo ne liveris validan JSON."
 
-#: api/invidious/invidiousapi.cpp:405 api/peertube/peertubeapi.cpp:416
-#: api/piped/pipedapi.cpp:335
+#: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
+#: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Servilo liveris la statuskodon %1"
@@ -45,48 +45,48 @@ msgstr "Ĉi tiu instanco malŝaltis la registradon."
 msgid "Playing video"
 msgstr "Ludado de video"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "YouTube client"
 msgstr "Jutuba kliento"
 
-#: main.cpp:57
+#: main.cpp:58
 #, kde-format
 msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-format
 msgid "Creator"
 msgstr "Kreinto"
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Oliver Kellogg"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -312,7 +312,7 @@ msgid "No views"
 msgstr "Neniuj vidoj"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
-#: ui/videoplayer/VideoPlayer.qml:430
+#: ui/videoplayer/VideoPlayer.qml:428
 #, kde-format
 msgid "%1 views"
 msgstr "%1 vidoj"
@@ -1002,38 +1002,38 @@ msgstr "Kopii Filmet-URL"
 msgid "Video Statistics"
 msgstr "Statistiko pri Filmetoj"
 
-#: ui/videoplayer/VideoPlayer.qml:438
+#: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
 msgid "%1 Likes"
 msgstr "%1 Ŝatoj"
 
-#: ui/videoplayer/VideoPlayer.qml:487
+#: ui/videoplayer/VideoPlayer.qml:483
 #, kde-format
 msgid "Comments"
 msgstr "Komentoj"
 
-#: ui/videoplayer/VideoPlayer.qml:517
+#: ui/videoplayer/VideoPlayer.qml:514
 #, kde-format
 msgid "Recommended"
 msgstr "Rekomendita"
 
-#: ui/videoplayer/VideoPlayer.qml:522
+#: ui/videoplayer/VideoPlayer.qml:520
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
 msgstr "Neniuj rekomenditaj filmetoj"
 
-#: ui/videoplayer/VideoPlayer.qml:608
+#: ui/videoplayer/VideoPlayer.qml:606
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
 msgstr "La sponsorita parto de la filmeto estas preterlasita"
 
-#: ui/videoplayer/VideoPlayer.qml:616
+#: ui/videoplayer/VideoPlayer.qml:614
 #, kde-format
 msgid "This portion of the video is sponsored"
 msgstr "Ĉi tiu parto de la filmeto estas sponsorita"
 
-#: ui/videoplayer/VideoPlayer.qml:637
+#: ui/videoplayer/VideoPlayer.qml:635
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
