@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2024-09-29 09:52+0200\n"
+"PO-Revision-Date: 2025-02-08 18:02+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -57,10 +57,9 @@ msgid "YouTube client"
 msgstr "Program dla YouTube"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 Społeczność KDE"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 Społeczność KDE"
 
 #: main.cpp:59
 #, kde-format
@@ -163,9 +162,7 @@ msgid "Proxy Settings"
 msgstr "Ustawienia pośrednika"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Otwórz w przeglądarce"
@@ -183,18 +180,16 @@ msgid "Playlists"
 msgstr "Listy odtwarzania"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Brak filmów"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Listy odtwarzania"
+msgstr "Nie ma żadnej listy odtwarzania"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -573,11 +568,10 @@ msgid "View Count"
 msgstr "Licznik odwiedzin"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr "Nie ma żadnych wyników"
+msgstr "Brak wyników"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1041,11 +1035,10 @@ msgid "%1 Likes"
 msgstr "%1 polubienia"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Nie zawiera opisu serwera."
+msgstr "Nie ustawiono opisu dla tego nagrania."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
