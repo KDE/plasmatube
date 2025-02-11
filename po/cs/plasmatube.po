@@ -56,10 +56,9 @@ msgid "YouTube client"
 msgstr "Klient YouTube"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 Komunita KDE"
+msgstr ""
 
 #: main.cpp:59
 #, kde-format
@@ -162,12 +161,10 @@ msgid "Proxy Settings"
 msgstr "Nastavení proxy"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
-msgstr "Otevřít v prohlížeči"
+msgstr ""
 
 #: ui/ChannelPage.qml:151
 #, kde-format
@@ -182,18 +179,16 @@ msgid "Playlists"
 msgstr "Seznamy skladeb"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
-msgstr "Žádná videa"
+msgstr ""
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Seznamy skladeb"
+msgstr ""
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -1030,11 +1025,10 @@ msgid "%1 Likes"
 msgstr "%1 se líbí"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Popis serveru není dostupný."
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
