@@ -73,12 +73,12 @@ msgstr "创建者"
 #: main.cpp:60
 #, kde-format
 msgid "Joshua Goins"
-msgstr ""
+msgstr "Joshua Goins"
 
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr ""
+msgstr "维护人员"
 
 #: main.cpp:65
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "kde-china@kde.org, i@guoyunhe.me"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "未提供服务器说明。"
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -106,37 +106,37 @@ msgstr "订阅"
 #, kde-format
 msgctxt "@action:button All trending videos"
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: models/videolistmodel.cpp:22
 #, kde-format
 msgctxt "@action:button Trending gaming videos"
 msgid "Gaming"
-msgstr ""
+msgstr "游戏"
 
 #: models/videolistmodel.cpp:24
 #, kde-format
 msgctxt "@action:button Trending movie videos"
 msgid "Movies"
-msgstr ""
+msgstr "电影"
 
 #: models/videolistmodel.cpp:26
 #, kde-format
 msgctxt "@action:button Trending music videos"
 msgid "Music"
-msgstr ""
+msgstr "音乐"
 
 #: models/videolistmodel.cpp:28
 #, kde-format
 msgctxt "@action:button Trending news videos"
 msgid "News"
-msgstr ""
+msgstr "新闻"
 
 #: models/videolistmodel.cpp:30
 #, kde-format
 msgctxt "@action:button Video watch history"
 msgid "History"
-msgstr ""
+msgstr "历史"
 
 #: models/videolistmodel.cpp:156
 #, kde-format
@@ -147,18 +147,18 @@ msgstr "“%1” 的搜索结果："
 #: ui/components/ShareAction.qml:17 ui/components/ShareMenu.qml:15
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: ui/android/ShareAction.qml:16 ui/components/ShareAction.qml:18
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "分享所选的媒体文件"
 
 #: ui/ChannelPage.qml:37 ui/FeedPage.qml:47 ui/PlaylistPage.qml:35
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
-msgstr ""
+msgstr "代理服务器设置"
 
 #: ui/ChannelPage.qml:143
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "视频"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
-msgstr ""
+msgstr "播放列表"
 
 #: ui/components/BaseGridView.qml:157
 #, kde-format
@@ -203,24 +203,24 @@ msgstr "设置"
 #, kde-format
 msgctxt "@action:button Load more comments"
 msgid "Load more"
-msgstr ""
+msgstr "加载更多"
 
 #: ui/components/Comments.qml:104
 #, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr ""
+msgstr "无评论"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
 msgid "%1 video"
 msgid_plural "%1 videos"
-msgstr[0] ""
+msgstr[0] "%1 个视频"
 
 #: ui/components/ShareDialog.qml:33
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "分享失败"
 
 #: ui/components/Sidebar.qml:85
 #, kde-format
@@ -230,12 +230,12 @@ msgstr "当下流行"
 #: ui/components/Sidebar.qml:118 ui/PlaylistsPage.qml:13
 #, kde-format
 msgid "Playlists"
-msgstr ""
+msgstr "播放列表"
 
 #: ui/components/Sidebar.qml:135
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "历史"
 
 #: ui/components/Sidebar.qml:152
 #, kde-format
@@ -251,42 +251,42 @@ msgstr "偏好"
 #: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "PeerTube"
-msgstr ""
+msgstr "PeerTube"
 
 #: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:64
 #: ui/components/SourceSwitcherDialog.qml:28
 #, kde-format
 msgid "Switch Source"
-msgstr ""
+msgstr "切换源"
 
 #: ui/components/SourceSwitcherDialog.qml:55
 #, kde-format
 msgid "Add Source"
-msgstr ""
+msgstr "添加源"
 
 #: ui/components/SourceSwitcherDialog.qml:59
 #, kde-format
 msgid "Add a new video source"
-msgstr ""
+msgstr "添加新的视频源"
 
 #: ui/components/SubscriptionButton.qml:61
 #, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr ""
+msgstr "取消订阅 %1"
 
 #: ui/components/SubscriptionButton.qml:63
 #, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr ""
+msgstr "订阅 %1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -297,18 +297,18 @@ msgstr "请登录以订阅频道。"
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "直播"
 
 #: ui/components/VideoGridItem.qml:79
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "短视频"
 
 #: ui/components/VideoGridItem.qml:157 ui/components/VideoListItem.qml:148
 #, kde-format
 msgid "No views"
-msgstr ""
+msgstr "无视图"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
 #: ui/videoplayer/VideoPlayer.qml:428
@@ -319,7 +319,7 @@ msgstr "%1 次观看"
 #: ui/components/VideoGridItem.qml:162
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>正在直播</i>"
 
 #: ui/components/VideoListItem.qml:160
 #, kde-format
@@ -329,117 +329,117 @@ msgstr " • %1"
 #: ui/components/VideoMenu.qml:33
 #, kde-format
 msgid "Play Now"
-msgstr ""
+msgstr "立即播放"
 
 #: ui/components/VideoMenu.qml:33
 #, kde-format
 msgid "Play"
-msgstr ""
+msgstr "播放"
 
 #: ui/components/VideoMenu.qml:43
 #, kde-format
 msgid "Play Next"
-msgstr ""
+msgstr "播放下一个"
 
 #: ui/components/VideoMenu.qml:52
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "以画中画模式播放"
 
 #: ui/components/VideoMenu.qml:67
 #, kde-format
 msgid "Mark as Unwatched"
-msgstr ""
+msgstr "标记为未观看"
 
 #: ui/components/VideoMenu.qml:67
 #, kde-format
 msgid "Mark as Watched"
-msgstr ""
+msgstr "标记为已观看"
 
 #: ui/components/VideoMenu.qml:81
 #, kde-format
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "添加至播放列表..."
 
 #: ui/components/VideoMenu.qml:88
 #, kde-format
 msgid "Remove from Playlist"
-msgstr ""
+msgstr "从播放列表中移除"
 
 #: ui/FeedPage.qml:34
 #, kde-format
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
-msgstr ""
+msgstr "无法连接到服务器：%1。请检查您的代理设置。"
 
 #: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "添加 Invidious 源"
 
 #: ui/loginflow/AddPeerTubePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "添加 PeerTube 源"
 
 #: ui/loginflow/AddPipedPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr ""
+msgstr "添加 Piped 源"
 
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "搜索或输入 URL..."
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "自定义服务器"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "公共服务器"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "无公共服务器"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "在搜索字段中手动输入服务器 URL。"
 
 #: ui/loginflow/SelectSourcePage.qml:20
 #, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr ""
+msgstr "添加视频源"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "访问网站"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
 msgid "Add Invidious Source"
-msgstr ""
+msgstr "添加 Invidious 源"
 
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "观看 YouTube 视频"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
 msgid "Add PeerTube Source"
-msgstr ""
+msgstr "添加 PeerTube 源"
 
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
