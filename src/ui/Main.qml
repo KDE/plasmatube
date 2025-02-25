@@ -135,7 +135,9 @@ Kirigami.ApplicationWindow {
         target: PlasmaTube
 
         function onOpenVideo(videoId: string) {
-            PlasmaTube.videoController.play(videoId);
+            if (PlasmaTube.selectedSource !== null) {
+                PlasmaTube.videoController.play(videoId);
+            }
         }
     }
 
