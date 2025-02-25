@@ -87,7 +87,7 @@ int main(int argc, char **argv)
                 auto args = arguments;
                 args.removeFirst();
 
-                if (!arguments.empty()) {
+                if (!args.empty()) {
                     if (const auto videoUrl = LinkParser::parseVideoString(args[0])) {
                         PlasmaTube::instance().openVideo(*videoUrl);
                     }
