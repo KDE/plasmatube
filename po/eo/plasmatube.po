@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-06 02:32+0000\n"
-"PO-Revision-Date: 2024-09-18 19:03+0200\n"
+"PO-Revision-Date: 2025-02-13 22:57+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -180,7 +180,7 @@ msgstr "Neniuj filmetoj"
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
 msgid "Videos"
-msgstr "Videoj"
+msgstr "Filmetoj"
 
 #: ui/components/BottomNavBar.qml:82 ui/SearchPage.qml:16
 #, kde-format
