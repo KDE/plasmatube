@@ -4,20 +4,21 @@
 # Kali <EMAIL@ADDRESS>, 2024.
 #
 # SPDX-FileCopyrightText: 2024 kali <shreekantkalwar@gmail.com>
+# SPDX-FileCopyrightText: 2025 Shreekant Kalwar <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 00:41+0000\n"
-"PO-Revision-Date: 2024-12-24 20:39+0530\n"
-"Last-Translator: kali <shreekantkalwar@gmail.com>\n"
+"PO-Revision-Date: 2025-03-02 14:45+0530\n"
+"Last-Translator: Shreekant Kalwar <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -585,7 +586,7 @@ msgstr "सम्प्रति %1 इति रूपेण प्रवेश
 #, kde-format
 msgctxt "@action:button"
 msgid "Log out"
-msgstr "लॉग आउट् कुर्वन्तु"
+msgstr "निर्गच्छन्तु"
 
 #: ui/settings/AccountCard.qml:41
 #, kde-format
