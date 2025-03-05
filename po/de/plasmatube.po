@@ -88,13 +88,13 @@ msgstr "Betreuer"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Johannes Obermayr"
+msgstr "Deutsches KDE-Übersetzungsteam"
 
 #: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "johannesobermayr@gmx.de"
+msgstr "kde-i18n-de@kde.org"
 
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
