@@ -5,25 +5,25 @@
         "/lib/pkgconfig",
         "/share/man"
     ],
-    "buildsystem": "simple",
-    "build-commands": [
-        "python3 waf configure --prefix=/app --enable-libmpv-shared --disable-cplayer --disable-build-date --disable-alsa",
-        "python3 waf build",
-        "python3 waf install"
+    "buildsystem": "meson",
+    "config-opts": [
+        "-Dbuild-date=false",
+        "-Dlibmpv=true"
     ],
     "sources": [
         {
             "type": "archive",
-            "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.35.0.tar.gz",
-            "sha256": "dc411c899a64548250c142bf1fa1aa7528f1b4398a24c86b816093999049ec00"
-        },
-        {
-            "type": "file",
-            "url": "https://waf.io/waf-2.0.24",
-            "sha256": "93909bca823a675f9f40af7c65b24887c3a3c0efdf411ff1978ba827194bdeb0",
-            "dest-filename": "waf"
+            "url": "https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz",
+            "sha256": "2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683"
         }
     ],
+    "add-extensions": {
+        "org.freedesktop.Platform.ffmpeg-full": {
+            "directory": "lib/ffmpeg",
+            "version": "24.08",
+            "add-ld-path": "."
+        }
+    },
     "modules": [
         {
             "name": "luajit",
@@ -37,9 +37,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/LuaJIT/LuaJIT/archive/ae4735f621d89d84758769b76432d2319dda9827.tar.gz",
-                    "sha256": "4e444dd48dc4bf7196ca718f287a513f0e51f8608c03c1dccd25488871e5f823"
+                    "type": "git",
+                    "url": "https://github.com/LuaJIT/LuaJIT.git",
+                    "commit": "f73e649a954b599fc184726c376476e7a5c439ca"
                 },
                 {
                     "type": "shell",
@@ -92,41 +92,6 @@
             ]
         },
         {
-            "name": "ffmpeg",
-            "cleanup": [
-                "/include",
-                "/lib/pkgconfig",
-                "/share/ffmpeg/examples"
-            ],
-            "config-opts": [
-                "--enable-shared",
-                "--disable-static",
-                "--enable-gnutls",
-                "--enable-gpl",
-                "--disable-doc",
-                "--disable-programs",
-                "--disable-encoders",
-                "--disable-muxers",
-                "--enable-encoder=png,libwebp",
-                "--enable-libv4l2",
-                "--enable-libdav1d",
-                "--enable-libfontconfig",
-                "--enable-libfreetype",
-                "--enable-libopus",
-                "--enable-librsvg",
-                "--enable-libvpx",
-                "--enable-libmp3lame",
-                "--enable-libwebp"
-            ],
-            "sources": [
-                {
-                "type": "archive",
-                "url": "https://ffmpeg.org/releases/ffmpeg-6.1.tar.gz",
-                "sha256": "938dd778baa04d353163ca5cb06c909c918850055f549205b29b1224e45a5316"
-                }
-            ]
-        },
-        {
             "name": "libass",
             "cleanup": [
                 "/include",
@@ -162,6 +127,22 @@
                     "type": "archive",
                     "url": "https://gitlab.freedesktop.org/uchardet/uchardet/-/archive/v0.0.7/uchardet-v0.0.7.tar.gz",
                     "sha256": "f3635d1d10e1470452bc42c1bf509451a9926b399a11740a9949e86069d69f58"
+                }
+            ]
+        },
+        {
+            "name": "libplacebo",
+            "buildsystem": "meson",
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/haasn/libplacebo.git",
+                    "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
+                    "tag": "v7.349.0"
                 }
             ]
         }
