@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-26 10:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -186,7 +186,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "No hay vídeos"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
@@ -530,7 +530,7 @@ msgstr "El nombre de usuario no puede estar vacío."
 msgid "Password must not be empty!"
 msgstr "La contraseña no puede estar vacía."
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

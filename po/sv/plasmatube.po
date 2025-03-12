@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-26 07:45+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -184,7 +184,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Inga videor"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
@@ -526,7 +526,7 @@ msgstr "Användarnamnet får inte vara tomt."
 msgid "Password must not be empty!"
 msgstr "Lösenordet får inte vara tomt."
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

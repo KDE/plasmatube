@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-26 17:28+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -184,7 +184,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Non hai vídeos."
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
@@ -528,7 +528,7 @@ msgstr "O nome de usuaria non pode estar baleiro."
 msgid "Password must not be empty!"
 msgstr "O contrasinal non pode estar baleiro."
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

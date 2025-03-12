@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-26 19:44+0200\n"
 "Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -194,7 +194,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Keine Videos"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, fuzzy, kde-format
 #| msgid "Playlists"
 msgctxt "@info:placeholder"
@@ -550,7 +550,7 @@ msgstr "Der Benutzername darf nicht leer sein."
 msgid "Password must not be empty!"
 msgstr "Das Passwort darf nicht leer sein."
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

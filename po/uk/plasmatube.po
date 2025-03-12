@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2025-01-26 21:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -185,7 +185,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Немає відео"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
@@ -531,7 +531,7 @@ msgstr "Ім'я користувача має бути непорожнім!"
 msgid "Password must not be empty!"
 msgstr "Пароль має бути непорожнім!"
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

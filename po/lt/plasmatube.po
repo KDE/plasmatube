@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2024-07-27 19:34+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -190,7 +190,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Nėra vaizdo įrašų"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, fuzzy, kde-format
 #| msgid "Playlists"
 msgctxt "@info:placeholder"
@@ -541,7 +541,7 @@ msgstr "Naudotojo vardas negali būti tuščias!"
 msgid "Password must not be empty!"
 msgstr "Slaptažodis negali būti tuščias!"
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"

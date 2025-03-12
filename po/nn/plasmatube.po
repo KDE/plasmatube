@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:41+0000\n"
+"POT-Creation-Date: 2025-03-12 00:41+0000\n"
 "PO-Revision-Date: 2024-09-24 19:21+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -189,7 +189,7 @@ msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Ingen videoar"
 
-#: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
+#: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, fuzzy, kde-format
 #| msgid "Playlists"
 msgctxt "@info:placeholder"
@@ -534,7 +534,7 @@ msgstr "Brukarnamnet kan ikkje vera tomt."
 msgid "Password must not be empty!"
 msgstr "Passordet kan ikkje vera tomt."
 
-#: ui/Main.qml:219
+#: ui/Main.qml:221
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
