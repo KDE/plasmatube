@@ -457,18 +457,18 @@ msgstr "添加 PeerTube 源"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "观看 PeerTube 视频"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
 msgid "Add Piped Source"
-msgstr ""
+msgstr "添加 Piped 源"
 
 #: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr ""
+msgstr "欢迎"
 
 #: ui/loginflow/WelcomePage.qml:45
 #, kde-format
@@ -480,13 +480,13 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "观看 YouTube 和 PeerTube 视频。"
 
 #: ui/loginflow/WelcomePage.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr ""
+msgstr "添加视频源"
 
 #: ui/loginflow/WelcomePage.qml:82
 #, kde-format
@@ -529,13 +529,13 @@ msgstr "密码不能为空！"
 #, kde-format
 msgctxt "@title"
 msgid "Add to Playlist"
-msgstr ""
+msgstr "添加至播放列表"
 
 #: ui/PlaylistPage.qml:42
 #, kde-format
 msgctxt "@action:button Play the playlist"
 msgid "Play"
-msgstr ""
+msgstr "播放"
 
 #: ui/SearchPage.qml:88
 #, kde-format
@@ -566,7 +566,7 @@ msgstr "观看次数"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr ""
+msgstr "无结果"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -588,45 +588,45 @@ msgstr "登录"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "订阅频道，记录观看过的视频等。"
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Source"
-msgstr ""
+msgstr "编辑源"
 
 #: ui/settings/BaseSourcePage.qml:20
 #, kde-format
 msgid "Remove Source…"
-msgstr ""
+msgstr "删除源…"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr ""
+msgstr "无法删除唯一的源。"
 
 #: ui/settings/BaseSourcePage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr ""
+msgstr "删除源"
 
 #: ui/settings/BaseSourcePage.qml:33
 #, kde-format
 msgctxt "@label"
 msgid "Are you sure you want to remove this source?"
-msgstr ""
+msgstr "您确定要移除此源吗？"
 
 #: ui/settings/GeneralPage.qml:14 ui/settings/SettingsPage.qml:15
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "通用"
 
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "首选视频质量"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -634,71 +634,73 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"若可用，将会优先使用该清晰度播放视频，若不存在该清晰度，将会使用次高的清晰度"
+"播放。"
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "隐藏短视频"
 
 #: ui/settings/GeneralPage.qml:76
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "隐藏设计用于在移动设备上观看的短视频。"
 
 #: ui/settings/GeneralPage.qml:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "检查赞助信息"
 
 #: ui/settings/GeneralPage.qml:94
 #, kde-format
@@ -706,17 +708,19 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"当视频中出现社区提交的片段（通常为赞助内容）时向您发出通知。该功能需要调用第"
+"三方服务接口。"
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "跳过赞助信息"
 
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "在视频中自动跳过赞助的片段。"
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -726,29 +730,29 @@ msgstr "账户"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "偏好设置"
 
 #: ui/settings/InvidiousSourcePage.qml:42
 #, kde-format
 msgid "Autoplay videos"
-msgstr ""
+msgstr "自动播放"
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
 msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
-msgstr ""
+msgstr "选择立即开始播放还是等到播放按钮按下。"
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
 msgid "Default Page"
-msgstr ""
+msgstr "默认页面"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The first page to load when switching to this source."
-msgstr ""
+msgstr "切换到此源时要加载的第一个页面。"
 
 #: ui/settings/InvidiousSourcePage.qml:64
 #, kde-format
@@ -772,53 +776,53 @@ msgstr "订阅"
 #, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
-msgstr ""
+msgstr "播放列表"
 
 #: ui/settings/NetworkProxyPage.qml:16
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr ""
+msgstr "网络代理"
 
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "跟随系统"
 
 #: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ui/settings/NetworkProxyPage.qml:52
 #, kde-format
 msgid "Host"
-msgstr ""
+msgstr "主机"
 
 #: ui/settings/NetworkProxyPage.qml:63
 #, kde-format
 msgid "Port"
-msgstr ""
+msgstr "端口"
 
 #: ui/settings/NetworkProxyPage.qml:82
 #, kde-format
 msgid "User"
-msgstr ""
+msgstr "用户名"
 
 #: ui/settings/NetworkProxyPage.qml:106
 #, kde-format
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #: ui/settings/SettingsPage.qml:21 ui/settings/SourcesPage.qml:17
 #, kde-format
 msgid "Sources"
-msgstr ""
+msgstr "来源"
 
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
-msgstr ""
+msgstr "网络代理"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
@@ -834,23 +838,23 @@ msgstr "关于 KDE"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr ""
+msgstr "添加源…"
 
 #: ui/SubscriptionListPage.qml:24
 #, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr ""
+msgstr "订阅的频道"
 
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Importing Completed"
-msgstr ""
+msgstr "导入完成"
 
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Exporting Completed"
-msgstr ""
+msgstr "导出完成"
 
 #: ui/SubscriptionListPage.qml:36
 #, kde-format
