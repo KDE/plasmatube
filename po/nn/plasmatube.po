@@ -58,7 +58,6 @@ msgstr "YouTube-klient"
 
 #: main.cpp:58
 #, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019–2024 Linus Jahn, 2019–2024 KDE-fellesskapet"
 
@@ -164,8 +163,6 @@ msgstr "Mellomtenar-innstillingar"
 
 #: ui/ChannelPage.qml:46
 #, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Opna i nettlesar"
@@ -184,14 +181,12 @@ msgstr "Spelelister"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
 #, fuzzy, kde-format
-#| msgid "No videos"
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Ingen videoar"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:249 ui/PlaylistsPage.qml:26
 #, fuzzy, kde-format
-#| msgid "Playlists"
 msgctxt "@info:placeholder"
 msgid "No Playlists"
 msgstr "Spelelister"
@@ -1038,7 +1033,6 @@ msgstr "%1 likarlikk"
 
 #: ui/videoplayer/VideoPlayer.qml:447
 #, fuzzy, kde-format
-#| msgid "No server description provided."
 msgctxt "@info"
 msgid "No description was set for this video."
 msgstr "Inga tenarskildring er oppgjeven."
