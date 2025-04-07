@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-12 00:41+0000\n"
-"PO-Revision-Date: 2024-11-28 23:23+0100\n"
+"PO-Revision-Date: 2025-04-07 00:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -56,10 +56,9 @@ msgid "YouTube client"
 msgstr "YouTube 클라이언트"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 
 #: main.cpp:59
 #, kde-format
@@ -162,9 +161,7 @@ msgid "Proxy Settings"
 msgstr "프록시 설정"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "브라우저로 열기"
@@ -182,18 +179,16 @@ msgid "Playlists"
 msgstr "재생 목록"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "동영상 없음"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "재생 목록"
+msgstr "재생 목록 없음"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -568,8 +563,7 @@ msgid "View Count"
 msgstr "조회 수"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "결과 없음"
@@ -1029,11 +1023,10 @@ msgid "%1 Likes"
 msgstr "좋아요 %1개"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
-#| msgid "No server description provided."
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "서버 설명이 제공되지 않았습니다."
+msgstr "동영상 설명이 제공되지 않았습니다."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
