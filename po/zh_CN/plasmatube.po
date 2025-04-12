@@ -860,81 +860,81 @@ msgstr "导出完成"
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
+msgstr[0] "导入了 %1 条新订阅。"
 
 #: ui/SubscriptionListPage.qml:38
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "已订阅所有导入的频道。"
 
 #: ui/SubscriptionListPage.qml:41
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
+msgstr[0] "导出了 %1 条新订阅。"
 
 #: ui/SubscriptionListPage.qml:50
 #, kde-format
 msgctxt "@title:window Error while import/export"
 msgid "Error"
-msgstr ""
+msgstr "错误"
 
 #: ui/SubscriptionListPage.qml:58
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr ""
+msgstr "导入…"
 
 #: ui/SubscriptionListPage.qml:63
 #, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr ""
+msgstr "导入 OPML 订阅"
 
 #: ui/SubscriptionListPage.qml:64
 #, kde-format
 msgctxt "@action:button Import the OPML file"
 msgid "Import"
-msgstr ""
+msgstr "导入"
 
 #: ui/SubscriptionListPage.qml:69
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr ""
+msgstr "导出…"
 
 #: ui/SubscriptionListPage.qml:74
 #, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr ""
+msgstr "导出 OPML 订阅"
 
 #: ui/SubscriptionListPage.qml:75
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "导出"
 
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Importing…"
-msgstr ""
+msgstr "正在导入…"
 
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Exporting…"
-msgstr ""
+msgstr "正在导出…"
 
 #: ui/SubscriptionListPage.qml:177
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "无频道"
 
 #: ui/SubscriptionsPage.qml:12
 #, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr ""
+msgstr "订阅的频道"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -945,77 +945,77 @@ msgstr "当下流行"
 #: ui/videoplayer/PictureInPictureVideo.qml:14
 #, kde-format
 msgid "Picture in Picture"
-msgstr ""
+msgstr "画中画"
 
 #: ui/videoplayer/VideoControls.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr ""
+msgstr "视频设置"
 
 #: ui/videoplayer/VideoControls.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek backward"
-msgstr ""
+msgstr "向后查找"
 
 #: ui/videoplayer/VideoControls.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Play"
-msgstr ""
+msgstr "播放"
 
 #: ui/videoplayer/VideoControls.qml:226
 #, kde-format
 msgctxt "@action:button"
 msgid "Seek forward"
-msgstr ""
+msgstr "快进"
 
 #: ui/videoplayer/VideoControls.qml:269
 #, kde-format
 msgctxt "@action:button"
 msgid "Fullscreen"
-msgstr ""
+msgstr "全屏"
 
 #: ui/videoplayer/VideoControls.qml:296
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr ""
+msgstr "画中画"
 
 #: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "隐藏播放器"
 
 #: ui/videoplayer/VideoPlayer.qml:135
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr ""
+msgstr "添加至播放列表..."
 
 #: ui/videoplayer/VideoPlayer.qml:181
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "加载视频失败"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "在浏览器中打开"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
 msgid "Copy Video URL"
-msgstr ""
+msgstr "复制视频 URL"
 
 #: ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "Video Statistics"
-msgstr ""
+msgstr "视频统计"
 
 #: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
@@ -1026,50 +1026,50 @@ msgstr "%1 个点赞"
 #, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr ""
+msgstr "此视频没有设置描述。"
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
 msgid "Comments"
-msgstr ""
+msgstr "评论"
 
 #: ui/videoplayer/VideoPlayer.qml:518
 #, kde-format
 msgid "Recommended"
-msgstr ""
+msgstr "推荐"
 
 #: ui/videoplayer/VideoPlayer.qml:524
 #, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr ""
+msgstr "没有推荐视频"
 
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "视频的赞助部分已跳过"
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "该部分的视频是赞助视频"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "跳过"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
 msgid "Queue"
-msgstr ""
+msgstr "队列"
 
 #: ui/videoplayer/VideoQueueView.qml:44
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: ui/videoplayer/VideoQueueView.qml:81
 #, kde-format
