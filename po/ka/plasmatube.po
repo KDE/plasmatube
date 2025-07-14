@@ -792,7 +792,7 @@ msgstr "ქსელის პროქსი"
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
-msgstr "სისტემის ნაგულისხმები"
+msgstr "სისტემის ნაგულისხმევი"
 
 #: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
