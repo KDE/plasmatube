@@ -10,6 +10,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Addons
 import org.kde.coreaddons as KCoreAddons
 import org.kde.plasmatube
 
@@ -118,7 +119,7 @@ QQC2.Control {
                         }
                     }
 
-                    onClicked: configureDialog.open()
+                    onClicked: configureDialog.popup()
 
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered
@@ -321,35 +322,39 @@ QQC2.Control {
         }
     }
 
-    Kirigami.Dialog {
+    Addons.ConvergentContextMenu {
         id: configureDialog
-        title: i18n("Settings")
-        padding: 0
-        preferredHeight: Kirigami.Units.gridUnit * 20
-        preferredWidth: Kirigami.Units.gridUnit * 15
 
-        ColumnLayout {
-            spacing: 0
-            QQC2.ButtonGroup {
-                id: radioGroup
-            }
-            Repeater {
-                model: PlasmaTube.videoController.videoModel.formatList
-                delegate: QQC2.RadioDelegate {
-                    id: delegate
+        parent: root.QQC2.Overlay.overlay
 
-                    required property var modelData
+        headerContentItem: Kirigami.Heading {
+            text: i18n("Settings")
+        }
 
-                    Layout.fillWidth: true
-                    checked: PlasmaTube.videoController.videoModel.selectedFormat === modelData
-                    text: modelData
-                    QQC2.ButtonGroup.group: radioGroup
-                    onCheckedChanged: {
-                        if (checked) {
-                            PlasmaTube.videoController.videoModel.selectedFormat = delegate.modelData;
-                        }
+        readonly property Instantiator rep: Instantiator {
+            model: PlasmaTube.videoController.videoModel.formatList
+            delegate: Kirigami.Action {
+                id: delegate
+
+                required property var modelData
+
+                checked: PlasmaTube.videoController.videoModel.selectedFormat === modelData
+                text: modelData
+                autoExclusive: true
+                checkable: true
+                onCheckedChanged: (checked) => {
+                    if (checked) {
+                        PlasmaTube.videoController.videoModel.selectedFormat = delegate.modelData;
                     }
                 }
+            }
+
+            onObjectAdded: (index, object) => {
+                configureDialog.actions.push(object);
+            }
+
+            onObjectRemoved: (index, object) => {
+                configureDialog.actions.removeAll(object);
             }
         }
     }
