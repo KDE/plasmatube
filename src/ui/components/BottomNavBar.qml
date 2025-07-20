@@ -95,7 +95,9 @@ Kirigami.NavigationTabBar {
                 while (applicationWindow().pageStack.depth > 0) {
                     applicationWindow().pageStack.pop();
                 }
-                applicationWindow().pageStack.push(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
+                const component = Qt.createComponent("org.kde.plasmatube", "SettingsView");
+                const view = component.createObject(QQC2.Overlay.overlay);
+                view.open();
                 applicationWindow().closePlayer();
             }
         }

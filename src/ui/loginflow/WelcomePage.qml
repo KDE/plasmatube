@@ -81,7 +81,11 @@ Kirigami.Page {
                     id: settingsButton
                     text: i18nc("@action:button Application settings", "Settings")
                     icon.name: "settings-configure"
-                    onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SettingsPage"), {}, {title: i18nc("@title:window", "Settings")});
+                    onClicked: {
+                        const component = Qt.createComponent("org.kde.plasmatube", "SettingsView");
+                        const view = component.createObject(QQC2.Overlay.overlay);
+                        view.open();
+                    }
                 }
             }
         }

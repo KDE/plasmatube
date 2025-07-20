@@ -153,7 +153,7 @@ qt_target_qml_sources(plasmatube
         ui/settings/NetworkProxyPage.qml
         ui/settings/PeerTubeSourcePage.qml
         ui/settings/PipedSourcePage.qml
-        ui/settings/SettingsPage.qml
+        ui/settings/SettingsView.qml
         ui/settings/SourcesPage.qml
 
         ui/videoplayer/MinimizedVideoPlayer.qml
