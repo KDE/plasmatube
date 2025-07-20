@@ -31,12 +31,17 @@ QQC2.Pane {
                 ColumnLayout {
                     spacing: 0
 
+                    Layout.fillWidth: true
+
                     QQC2.Label {
                         id: labelItem
 
                         text: root.selectedSource?.url
                         horizontalAlignment: Text.AlignLeft
+                        elide: Text.ElideRight
                         textFormat: Text.PlainText
+
+                        Layout.fillWidth: true
                     }
 
                     QQC2.Label {
@@ -54,9 +59,12 @@ QQC2.Pane {
                         }
                         font: Kirigami.Theme.smallFont
                         color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.textColor, Kirigami.Theme.backgroundColor, 0.3)
+                        elide: Text.ElideRight
                         visible: text.length > 0
                         horizontalAlignment: Text.AlignLeft
                         textFormat: Text.PlainText
+
+                        Layout.fillWidth: true
                     }
                 }
 
