@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-12 00:41+0000\n"
+"POT-Creation-Date: 2025-07-21 00:42+0000\n"
 "PO-Revision-Date: 2025-01-26 21:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -260,22 +260,22 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметри"
 
-#: ui/components/SourceSwitcher.qml:48 ui/settings/SourcesPage.qml:63
+#: ui/components/SourceSwitcher.qml:53 ui/settings/SourcesPage.qml:63
 #, kde-format
 msgid "Invidious"
 msgstr "Invidious"
 
-#: ui/components/SourceSwitcher.qml:50 ui/settings/SourcesPage.qml:65
+#: ui/components/SourceSwitcher.qml:55 ui/settings/SourcesPage.qml:65
 #, kde-format
 msgid "PeerTube"
 msgstr "PeerTube"
 
-#: ui/components/SourceSwitcher.qml:52 ui/settings/SourcesPage.qml:67
+#: ui/components/SourceSwitcher.qml:57 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
 msgstr "Piped"
 
-#: ui/components/SourceSwitcher.qml:64
+#: ui/components/SourceSwitcher.qml:72
 #: ui/components/SourceSwitcherDialog.qml:28
 #, kde-format
 msgid "Switch Source"
