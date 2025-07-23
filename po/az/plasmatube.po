@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:42+0000\n"
+"POT-Creation-Date: 2025-07-23 00:42+0000\n"
 "PO-Revision-Date: 2024-06-03 17:13+0400\n"
 "Last-Translator: Xəyyam Qocayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -98,7 +98,7 @@ msgstr "xxmn77@gmail.com"
 msgid "No server description provided."
 msgstr ""
 
-#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
+#: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
 msgid "Subscriptions"
 msgstr "Abunəliklər"
@@ -208,7 +208,7 @@ msgstr "Axtarış"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
+#: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:192
 #: ui/loginflow/WelcomePage.qml:84
 #, kde-format
 msgctxt "@title:window"
@@ -240,22 +240,22 @@ msgstr[1] "%1 video"
 msgid "Sharing failed"
 msgstr "Paylaşmaq mümkün olmadı"
 
-#: ui/components/Sidebar.qml:85
+#: ui/components/Sidebar.qml:127
 #, kde-format
 msgid "Trending"
 msgstr "Trenddə olanlar"
 
-#: ui/components/Sidebar.qml:118 ui/PlaylistsPage.qml:13
+#: ui/components/Sidebar.qml:157 ui/PlaylistsPage.qml:13
 #, kde-format
 msgid "Playlists"
 msgstr "Oynatma siyahısı"
 
-#: ui/components/Sidebar.qml:135
+#: ui/components/Sidebar.qml:172
 #, kde-format
 msgid "History"
 msgstr "Tarixçə"
 
-#: ui/components/Sidebar.qml:152
+#: ui/components/Sidebar.qml:189
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
