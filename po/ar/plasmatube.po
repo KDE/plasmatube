@@ -23,7 +23,7 @@ msgstr ""
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
-msgstr "اسم المستخدم أو كلمة المرور خاطئة."
+msgstr "اسم المستخدم أو كلمة السر خاطئة."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
 #: api/piped/pipedapi.cpp:327
