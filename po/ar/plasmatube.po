@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 02:36+0000\n"
-"PO-Revision-Date: 2025-01-28 19:09+0400\n"
+"PO-Revision-Date: 2025-08-04 14:45+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -80,7 +80,7 @@ msgstr "جوشوا جوينز"
 #: main.cpp:61
 #, kde-format
 msgid "Maintainer"
-msgstr "المصين"
+msgstr "الصائن"
 
 #: main.cpp:65
 #, kde-format
@@ -726,7 +726,7 @@ msgstr "تخطَّ المقاطع المرعية"
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr "تُتخطّى المقاطع الدعائية الموجودة في الفيديو تلقائيًا."
+msgstr "تُتخطّى المقاطع الدعائية الموجودة في الفيديو آليًّا."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -795,7 +795,7 @@ msgstr "وسيط الشّبكة"
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
-msgstr "افتراضيات النظام"
+msgstr "مبدئيات النظام"
 
 #: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
@@ -1087,7 +1087,7 @@ msgstr "الصفّ"
 #, kde-format
 msgctxt "@action:button Clear playlist"
 msgid "Clear"
-msgstr "امسح"
+msgstr "امحُ"
 
 #: ui/videoplayer/VideoQueueView.qml:81
 #, kde-format
