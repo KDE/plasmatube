@@ -515,7 +515,7 @@ msgstr "اسم المستخدم"
 #: ui/LoginPage.qml:81 ui/settings/NetworkProxyPage.qml:90
 #, kde-format
 msgid "Password"
-msgstr "كلمة السّرّ"
+msgstr "كلمة السر"
 
 #: ui/LoginPage.qml:96
 #, kde-format
