@@ -29,13 +29,13 @@ msgstr "اسم المستخدم أو كلمة السر خاطئة."
 #: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "أرجع الخادوم ملف جوسون غير صحيح."
+msgstr "أرجع الخادم ملف جوسون غير صحيح."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
 #: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr "أرجع الخادوم رمز حالة %1"
+msgstr "أرجع الخادم رمز حالة %1"
 
 #: controllers/logincontroller.cpp:40
 #, kde-format
