@@ -52,7 +52,6 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="sv">PlasmaTube</name>
   <name xml:lang="tr">PlasmaTube</name>
   <name xml:lang="uk">PlasmaTube</name>
-  <name xml:lang="x-test">xxPlasmaTubexx</name>
   <name xml:lang="zh-CN">PlasmaTube</name>
   <name xml:lang="zh-TW">PlasmaTube</name>
   <summary>Watch YouTube videos</summary>
@@ -97,7 +96,6 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="sv">Titta på YouTube-videor</summary>
   <summary xml:lang="tr">YouTube Videolarını İzleyin</summary>
   <summary xml:lang="uk">Перегляд відео з YouTube</summary>
-  <summary xml:lang="x-test">xxWatch YouTube videosxx</summary>
   <summary xml:lang="zh-CN">观看 YouTube 视频</summary>
   <summary xml:lang="zh-TW">觀看 YouTube 影片</summary>
   <description>
@@ -141,7 +139,6 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sv">Med PlasmaTube kan du titta på YouTube-videor på din telefon eller skrivbordsdator med ett elegant användargränssnitt integrerat med resten av Plasma.</p>
     <p xml:lang="tr">PlasmaTube, telefonunuzda veya masaüstünüzde Plasma ile bütünleşmiş zarif bir arayüz ile YouTube videolarını izlemenize olanak verir.</p>
     <p xml:lang="uk">За допомогою PlasmaTube ви зможете переглядати відео з YouTube на вашому телефоні або комп'ютері, користуючись елегантним інтерфейсом користувача, який інтегровано з рештою Плазми.</p>
-    <p xml:lang="x-test">xxPlasmaTube allows you to watch YouTube videos on your phone or desktop using a elegant user interface integrated with the rest of Plasma.xx</p>
     <p xml:lang="zh-CN">你可以使用 PlasmaTube 在手机上观看 YouTube 视频。它具有与 Plasma 全体软件保持一致的简洁界面。</p>
     <p xml:lang="zh-TW">PlasmaTube 讓您在手機或電腦上利用一個與 Plasma 整合的簡潔使用者介面觀看 YouTube 影片。</p>
   </description>
