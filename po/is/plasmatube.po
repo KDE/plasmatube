@@ -1,22 +1,22 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Guðmundur Erlingsson <gudmundure@gmail.com>
 # Sveinn í Felli <sv1@fellsnet.is>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-23 00:42+0000\n"
-"PO-Revision-Date: 2024-04-16 14:02+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2025-09-17 17:30+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -57,10 +57,9 @@ msgid "YouTube client"
 msgstr "YouTube-forrit"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2024 Linus Jahn, 2019-2024 KDE-samfélagið"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 KDE-samfélagið"
 
 #: main.cpp:59
 #, kde-format
@@ -97,7 +96,7 @@ msgstr "gudmundure@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "Engin lýsing á þjóni gefin upp."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
@@ -166,7 +165,7 @@ msgstr "Stillingar milliþjóns"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Opna í vafra"
 
 #: ui/ChannelPage.qml:151
 #, kde-format
@@ -181,18 +180,16 @@ msgid "Playlists"
 msgstr "Spilunarlistar"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Engin myndskeið"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Spilunarlistar"
+msgstr "Engir spilunarlistar"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -223,11 +220,10 @@ msgid "Load more"
 msgstr "Hlaða meiru"
 
 #: ui/components/Comments.qml:104
-#, fuzzy, kde-format
-#| msgid "Comments"
+#, kde-format
 msgctxt "@info"
 msgid "No comments"
-msgstr "Athugasemdir"
+msgstr "Engar athugasemdir"
 
 #: ui/components/PlaylistGridItem.qml:53
 #, kde-format
@@ -413,39 +409,38 @@ msgstr "Bæta við Piped-veitu"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Leitaðu eða sláðu inn slóð..."
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Sérsniðinn þjónn"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Opinberir þjónar"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "Engir opinberir þjónar"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Sláðu inn slóð á þjón handvirkt í leitargluggann."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Bæta við nýrri myndskeiðaveitu"
+msgstr "Bæta við vídeóveitu"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Fara á heimasíðu"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -455,7 +450,7 @@ msgstr "Bæta við Invidious-veitu"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Horfa á YouTube-myndskeið"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -465,7 +460,7 @@ msgstr "Bæta við PeerTube-veitu"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Horfa á PeerTube-myndskeið"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -479,8 +474,7 @@ msgid "Welcome"
 msgstr "Velkomin"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -489,18 +483,16 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Horfa á YouTube- og PeerTube-myndskeið."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Bæta við nýrri myndskeiðaveitu"
+msgstr "Bæta við myndskeiðaveitu"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Stillingar"
@@ -574,8 +566,7 @@ msgid "View Count"
 msgstr "Fjölda áhorfa"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "Engar niðurstöður"
@@ -638,7 +629,7 @@ msgstr "Almennt"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "Ákjósanleg myndgæði"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -646,54 +637,56 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"Gæðastigið sem er valið verður notað ef það er í boði, annars verður næsta "
+"hæsta gæðastigið notað."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -710,7 +703,7 @@ msgstr "Fela stutt myndskeið sem hönnuð eru fyrir skoðun á snjalltækjum."
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Leita að kostuðu efni"
 
 #: ui/settings/GeneralPage.qml:94
 #, kde-format
@@ -718,17 +711,20 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Láta þig vita þegar utanaðkomandi efni (venjulega kostað efni) er í "
+"myndskeiðinu. Þessi eiginleiki krefst samskipta við þjónustu frá þriðja "
+"aðila."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Sleppa kostuðu efni"
 
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Hoppar sjálfkrafa yfir kostaða efniskafla í myndskeiðinu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -755,41 +751,35 @@ msgstr ""
 "afspilunarhnapp."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Sjálfgefin heimasíða"
+msgstr "Sjálfgefin síða"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "Sjálfgefin síða sem á að hlaða inn þegar skipt er yfir á þessa veitu."
+msgstr "Fyrsta síðan sem á að hlaða þegar skipt er yfir á þessa veitu."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Leita"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Á uppleið"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Áskriftir"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Spilunarlistar"
@@ -1017,13 +1007,13 @@ msgstr "Bæta við spilunarlista…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Villa við að hlaða myndskeið"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Opna í vafra"
 
 #: ui/videoplayer/VideoPlayer.qml:339
 #, kde-format
@@ -1044,7 +1034,7 @@ msgstr "%1 líkar þetta"
 #, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr ""
+msgstr "Engin lýsing gefin fyrir þetta myndskeið."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1057,27 +1047,26 @@ msgid "Recommended"
 msgstr "Mælt með"
 
 #: ui/videoplayer/VideoPlayer.qml:524
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Mælt með"
+msgstr "Engin myndskeið sem mælt er með"
 
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "Hoppað hefur verið yfir kostaða efniskafla í myndskeiðinu"
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Þessi kafli í myndskeiðinu er kostaður"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Sleppa"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
