@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-23 00:42+0000\n"
-"PO-Revision-Date: 2024-07-27 19:34+0300\n"
+"PO-Revision-Date: 2025-09-30 13:54+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -58,10 +58,9 @@ msgid "YouTube client"
 msgstr "„YouTube“ kliento programa"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019–2024 Linus Jahn, 2019–2024 KDE bendruomenė"
+msgstr "© 2019–2025 Linus Jahn, 2019–2025 KDE bendruomenė"
 
 #: main.cpp:59
 #, kde-format
@@ -98,7 +97,7 @@ msgstr "<>"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "Nepateikta jokio serverio aprašo."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
@@ -164,9 +163,7 @@ msgid "Proxy Settings"
 msgstr "Įgaliotojo serverio nuostatos"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Atverti naršyklėje"
@@ -184,18 +181,16 @@ msgid "Playlists"
 msgstr "Grojaraščiai"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Nėra vaizdo įrašų"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Grojaraščiai"
+msgstr "Nėra grojaraščių"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -418,39 +413,38 @@ msgstr "Pridėti „Piped“ šaltinį"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Atlikite paiešką arba įveskite URL adresą…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Tinkintas serveris"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Viešieji serveriai"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "Nėra viešųjų serverių"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Rankiniu būdu įveskite serverio URL į paieškos lauką."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Pridėti naują vaizdo įrašų šaltinį"
+msgstr "Pridėti vaizdo įrašų šaltinį"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Apsilankyti internetinėje svetainėje"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -460,7 +454,7 @@ msgstr "Pridėti „Invidious“ šaltinį"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "Žiūrėkite „YouTube“ vaizdo įrašus"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -470,7 +464,7 @@ msgstr "Pridėti „PeerTube“ šaltinį"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Žiūrėkite „PeerTube“ vaizdo įrašus"
 
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
@@ -484,8 +478,7 @@ msgid "Welcome"
 msgstr "Sveiki"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -494,18 +487,16 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Žiūrėkite „YouTube“ ir „PeerTube“ vaizdo įrašus."
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Add a new video source"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Pridėti naują vaizdo įrašų šaltinį"
+msgstr "Pridėti vaizdo įrašų šaltinį"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Nuostatos"
@@ -582,7 +573,7 @@ msgstr "Peržiūrų skaičius"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr ""
+msgstr "Nėra rezultatų"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -642,7 +633,7 @@ msgstr "Bendra"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr ""
+msgstr "Pageidaujama vaizdo įrašų kokybė"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -650,54 +641,56 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"Jei prieinama, bus naudojama ši pasirinkta kokybė. Priešingu atveju bus "
+"naudojama kita aukščiausia įmanoma kokybė."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
 msgctxt "@info video resolution"
 msgid "2160p"
-msgstr ""
+msgstr "2160p"
 
 #: ui/settings/GeneralPage.qml:33
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1440p"
-msgstr ""
+msgstr "1440p"
 
 #: ui/settings/GeneralPage.qml:37
 #, kde-format
 msgctxt "@info video resolution"
 msgid "1080p"
-msgstr ""
+msgstr "1080p"
 
 #: ui/settings/GeneralPage.qml:41
 #, kde-format
 msgctxt "@info video resolution"
 msgid "720p"
-msgstr ""
+msgstr "720p"
 
 #: ui/settings/GeneralPage.qml:45
 #, kde-format
 msgctxt "@info video resolution"
 msgid "480p"
-msgstr ""
+msgstr "480p"
 
 #: ui/settings/GeneralPage.qml:49
 #, kde-format
 msgctxt "@info video resolution"
 msgid "360p"
-msgstr ""
+msgstr "360p"
 
 #: ui/settings/GeneralPage.qml:53
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -763,41 +756,35 @@ msgstr ""
 "atkūrimo mygtukas."
 
 #: ui/settings/InvidiousSourcePage.qml:58
-#, fuzzy, kde-format
-#| msgid "Default homepage"
+#, kde-format
 msgid "Default Page"
-msgstr "Numatytasis pradžios puslapis"
+msgstr "Numatytasis puslapis"
 
 #: ui/settings/InvidiousSourcePage.qml:59
-#, fuzzy, kde-format
-#| msgid "The default page to load when switching to this source."
+#, kde-format
 msgid "The first page to load when switching to this source."
-msgstr "Numatytasis puslapis, kurį įkelti, kai perjungiama į šį šaltinį."
+msgstr "Pirmasis puslapis, kurį įkelti, kai perjungiama į šį šaltinį."
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Paieška"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Populiarėjantys"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Prenumeratos"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Grojaraščiai"
@@ -1056,7 +1043,7 @@ msgstr "Patinka: %1"
 #, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr ""
+msgstr "Šiam vaizdo įrašui nepateiktas joks aprašas."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
