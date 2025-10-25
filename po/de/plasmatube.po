@@ -59,10 +59,9 @@ msgid "YouTube client"
 msgstr "YouTube-Anwendung"
 
 #: main.cpp:58
-#, fuzzy, kde-format
-#| msgid "© 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "Copyright 2019-2024 Linus Jahn, 2019-2024 KDE Community"
+msgstr "© 2019–2025 Linus Jahn, 2019–2025 KDE-Gemeinschaft"
 
 #: main.cpp:59
 #, kde-format
