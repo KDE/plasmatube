@@ -4,21 +4,21 @@
 # SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
-# SPDX-FileCopyrightText: 2024 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-21 02:36+0000\n"
-"PO-Revision-Date: 2024-08-26 19:44+0200\n"
-"Last-Translator: Alois.spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2025-10-23 21:50+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -98,7 +98,7 @@ msgstr "kde-i18n-de@kde.org"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr ""
+msgstr "Serverbeschreibung wurde nicht angegeben."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:101
 #, kde-format
@@ -164,40 +164,34 @@ msgid "Proxy Settings"
 msgstr "Proxy-Einstellungen"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Open in Browser"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Im Webbrowser öffnen"
 
 #: ui/ChannelPage.qml:151
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Videos"
 msgstr "Videos"
 
 #: ui/ChannelPage.qml:157
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@item:inmenu"
 msgid "Playlists"
 msgstr "Wiedergabelisten"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Keine Videos"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Wiedergabelisten"
+msgstr "Keine Wiedergabelisten"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -216,8 +210,7 @@ msgstr "Einstellungen"
 
 #: ui/components/BottomNavBar.qml:98 ui/components/Sidebar.qml:156
 #: ui/loginflow/WelcomePage.qml:84
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Einstellungen"
@@ -299,20 +292,18 @@ msgid "Add a new video source"
 msgstr "Eine neue Videoquelle hinzufügen"
 
 #: ui/components/SubscriptionButton.qml:61
-#, fuzzy, kde-format
-#| msgid "Unsubscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Kündigen (%1)"
+msgstr "Abo beenden%1"
 
 #: ui/components/SubscriptionButton.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Abonnieren (%1)"
+msgstr "Abonnieren%1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -359,9 +350,7 @@ msgid "Play Now"
 msgstr "Jetzt wiedergeben"
 
 #: ui/components/VideoMenu.qml:33
-#, fuzzy, kde-format
-#| msgctxt "@action:button Play the playlist"
-#| msgid "Play"
+#, kde-format
 msgid "Play"
 msgstr "Wiedergeben"
 
@@ -376,8 +365,7 @@ msgid "Play in Picture-in-Picture"
 msgstr "Bild-in-Bild-Wiedergabe"
 
 #: ui/components/VideoMenu.qml:67
-#, fuzzy, kde-format
-#| msgid "Mark as unwatched"
+#, kde-format
 msgid "Mark as Unwatched"
 msgstr "Als ungesehen markieren"
 
@@ -401,6 +389,8 @@ msgstr "Aus Wiedergabeliste entfernen"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Server konnte nicht kontaktiert werden: %1. Bitte überprüfen Sie Ihre Proxy-"
+"Einstellungen."
 
 #: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
@@ -424,39 +414,38 @@ msgstr "Invidious"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Suchen oder eine URL eingeben …"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
 msgid "Custom Server"
-msgstr ""
+msgstr "Benutzerdefinierter Server"
 
 #: ui/loginflow/InstancesPage.qml:67
 #, kde-format
 msgid "Public Servers"
-msgstr ""
+msgstr "Öffentliche Server"
 
 #: ui/loginflow/InstancesPage.qml:98
 #, kde-format
 msgid "No Public Servers"
-msgstr ""
+msgstr "Keine öffentlichen Server"
 
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Geben Sie eine Serveradresse manuell in das Suchfeld ein."
 
 #: ui/loginflow/SelectSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Invidious"
+msgstr "Videoquelle hinzufügen"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
 msgid "Visit Website"
-msgstr ""
+msgstr "Website besuchen"
 
 #: ui/loginflow/SelectSourcePage.qml:62
 #, kde-format
@@ -466,7 +455,7 @@ msgstr "Invidious-Quelle hinzufügen"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr ""
+msgstr "YouTube-Videos ansehen"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -491,8 +480,7 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: ui/loginflow/WelcomePage.qml:45
-#, fuzzy, kde-format
-#| msgid "PlasmaTube"
+#, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
@@ -504,15 +492,13 @@ msgid "Watch YouTube and PeerTube videos."
 msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Invidious"
+msgstr "Videoquelle hinzufügen"
 
 #: ui/loginflow/WelcomePage.qml:82
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Application settings"
 msgid "Settings"
 msgstr "Einstellungen"
@@ -586,8 +572,7 @@ msgid "View Count"
 msgstr "Anzahl Angesehen"
 
 #: ui/SearchPage.qml:175
-#, fuzzy, kde-format
-#| msgid "No results"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
 msgstr "Keine Ergebnisse"
@@ -621,10 +606,9 @@ msgid "Edit Source"
 msgstr "Quelle ändern"
 
 #: ui/settings/BaseSourcePage.qml:20
-#, fuzzy, kde-format
-#| msgid "Remove Source"
+#, kde-format
 msgid "Remove Source…"
-msgstr "Quelle entfernen"
+msgstr "Quelle entfernen …"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
@@ -777,29 +761,25 @@ msgid "The first page to load when switching to this source."
 msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:64
-#, fuzzy, kde-format
-#| msgid "Search"
+#, kde-format
 msgctxt "@info Search page"
 msgid "Search"
 msgstr "Suchen"
 
 #: ui/settings/InvidiousSourcePage.qml:68
-#, fuzzy, kde-format
-#| msgid "Trending"
+#, kde-format
 msgctxt "@info Trending page"
 msgid "Trending"
 msgstr "Aktuelle Trends"
 
 #: ui/settings/InvidiousSourcePage.qml:72
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
 msgstr "Abonnements"
 
 #: ui/settings/InvidiousSourcePage.qml:76
-#, fuzzy, kde-format
-#| msgid "Playlists"
+#, kde-format
 msgctxt "@info Playlists page"
 msgid "Playlists"
 msgstr "Wiedergabelisten"
@@ -867,11 +847,10 @@ msgid "Add Source…"
 msgstr "Quelle hinzufügen"
 
 #: ui/SubscriptionListPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@title:window List of subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Abonnieren (%1)"
+msgstr "Abonnierte Kanäle"
 
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
@@ -947,18 +926,14 @@ msgid "Export"
 msgstr ""
 
 #: ui/SubscriptionListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Importing…"
-msgstr "Wird geladen ..."
+msgstr "Wird importiert …"
 
 #: ui/SubscriptionListPage.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Loading…"
+#, kde-format
 msgid "Exporting…"
-msgstr "Wird geladen ..."
+msgstr "Wird exportiert …"
 
 #: ui/SubscriptionListPage.qml:177
 #, kde-format
@@ -966,11 +941,10 @@ msgid "No channels"
 msgstr ""
 
 #: ui/SubscriptionsPage.qml:12
-#, fuzzy, kde-format
-#| msgid "Subscribe (%1)"
+#, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Abonnieren (%1)"
+msgstr "Abonnierte Kanäle"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
