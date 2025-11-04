@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasmatube",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
     "command": "plasmatube",
     "tags": ["nightly"],
@@ -40,31 +40,14 @@
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://invent.kde.org/libraries/mpvqt",
-                    "branch": "master"
-                }
-            ]
-        },
-        {
-            "name": "libsecret",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dmanpage=false",
-                "-Dvapi=false",
-                "-Dgtk_doc=false",
-                "-Dintrospection=false",
-                "-Dgcrypt=false"
-            ],
-            "sources": [
-                {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz",
-                    "sha256": "3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d",
+                    "url": "https://download.kde.org/stable/mpvqt/mpvqt-1.1.1.tar.xz",
+                    "sha256": "bdd1ea69338cf3017f628a886218b8c185ca24e8257f03207a3cf1bbb51e3d32",
                     "x-checker-data": {
-                        "type": "gnome",
-                        "name": "libsecret",
-                        "stable-only": true
+                        "type": "anitya",
+                        "project-id": 370634,
+                        "stable-only": true,
+                        "url-template": "https://download.kde.org/stable/mpvqt/mpvqt-$version.tar.xz"
                     }
                 }
             ]
