@@ -1,15 +1,15 @@
-# Translation of plasmatube to Spanish
-# Copyright (C) 2021 This file is copyright:
+# Spanish translations for plasmatube.po package.
+# Copyright (C) 2021-2025 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-#
 # Automatically generated, 2021.
+#
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-01-26 10:58+0100\n"
+"PO-Revision-Date: 2025-12-08 12:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -375,7 +375,7 @@ msgstr "Marcar como visto"
 #: ui/components/VideoMenu.qml:81
 #, kde-format
 msgid "Add to Playlist…"
-msgstr "Añadir a la lista de reproducción..."
+msgstr "Añadir a la lista de reproducción…"
 
 #: ui/components/VideoMenu.qml:88
 #, kde-format
@@ -411,7 +411,7 @@ msgstr "Añadir fuente de Piped"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Buscar o introducir URL..."
+msgstr "Buscar o introducir URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
@@ -605,7 +605,7 @@ msgstr "Editar fuente"
 #: ui/settings/BaseSourcePage.qml:20
 #, kde-format
 msgid "Remove Source…"
-msgstr "Eliminar fuente..."
+msgstr "Eliminar fuente…"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
@@ -847,7 +847,7 @@ msgstr "Acerca de KDE"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Source…"
-msgstr "Añadir fuente..."
+msgstr "Añadir fuente…"
 
 #: ui/SubscriptionListPage.qml:24
 #, kde-format
@@ -894,7 +894,7 @@ msgstr "Error"
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr "Importar..."
+msgstr "Importar…"
 
 #: ui/SubscriptionListPage.qml:63
 #, kde-format
@@ -912,7 +912,7 @@ msgstr "Importar"
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr "Exportar..."
+msgstr "Exportar…"
 
 #: ui/SubscriptionListPage.qml:74
 #, kde-format
@@ -929,12 +929,12 @@ msgstr "Exportar"
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Importing…"
-msgstr "Importando..."
+msgstr "Importando…"
 
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Exporting…"
-msgstr "Exportando..."
+msgstr "Exportando…"
 
 #: ui/SubscriptionListPage.qml:177
 #, kde-format
@@ -1004,7 +1004,7 @@ msgstr "Ocultar el reproductor"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr "Añadir a la lista de reproducción..."
+msgstr "Añadir a la lista de reproducción…"
 
 #: ui/videoplayer/VideoPlayer.qml:181
 #, kde-format
@@ -1085,91 +1085,4 @@ msgstr "Limpiar"
 #: ui/videoplayer/VideoQueueView.qml:81
 #, kde-format
 msgid "Loading…"
-msgstr "Cargando..."
-
-#~ msgid "Popular"
-#~ msgstr "Populares"
-
-#~ msgid "Select a instance"
-#~ msgstr "Seleccionar una instancia"
-
-#~ msgid "invidious.io"
-#~ msgstr "invidious.io"
-
-#~ msgid "No public instances found."
-#~ msgstr "No se han encontrado instancias públicas."
-
-#~ msgid "joinpeertube.org"
-#~ msgstr "joinpeertube.org"
-
-#~ msgid "pipedapi.kavin.rocks"
-#~ msgstr "pipedapi.kavin.rocks"
-
-#~ msgctxt "Add instance"
-#~ msgid "Add %1"
-#~ msgstr "Añadir %1"
-
-#~ msgid "Welcome to PlasmaTube"
-#~ msgstr "Bienvenido a PlasmaTube"
-
-#~ msgid "PlasmaTube requires at least one video source."
-#~ msgstr "PlasmaTube necesita al menos una fuente de vídeo."
-
-#~ msgid "%1 views • %2"
-#~ msgstr "%1 visualizaciones • %2"
-
-#~ msgid "© Linus Jahn"
-#~ msgstr "© Linus Jahn"
-
-#~ msgid "Sign in"
-#~ msgstr "Iniciar sesión"
-
-#~ msgid "Successfully logged in!"
-#~ msgstr "Sesión iniciada correctamente"
-
-#~ msgctxt "@action:button"
-#~ msgid "Add Source"
-#~ msgstr "Añadir fuente"
-
-#~ msgid " • %1 views"
-#~ msgstr " • %1 visualizaciones"
-
-#~ msgid "Log in to an Invidious Account"
-#~ msgstr "Iniciar sesión en una cuenta de Invidious"
-
-#~ msgid "Instance Url"
-#~ msgstr "URL de la instancia"
-
-#~ msgid "Instance URL must not be empty!"
-#~ msgstr "La URL de la instancia no puede estar vacía."
-
-#~ msgid "Instance"
-#~ msgstr "Instancia"
-
-#~ msgid "Trending Gaming"
-#~ msgstr "Juegos del momento"
-
-#~ msgid "Trending Movies"
-#~ msgstr "Películas del momento"
-
-#~ msgid "Trending Music"
-#~ msgstr "Música del momento"
-
-#~ msgid "Trending News"
-#~ msgstr "Noticias del momento"
-
-#~ msgid ""
-#~ "Please visit the website to register with an invidious instance.\n"
-#~ "There is currently no API for registering."
-#~ msgstr ""
-#~ "Visite el sitio web para registrarse con una instancia individual.\n"
-#~ "En la actualidad no hay API para registrar."
-
-#~ msgid "Currently logged in as:"
-#~ msgstr "Sesión iniciada como:"
-
-#~ msgid "Open Account Settings"
-#~ msgstr "Abrir las preferencias de la cuenta"
-
-#~ msgid "Restore"
-#~ msgstr "Restaurar"
+msgstr "Cargando…"
