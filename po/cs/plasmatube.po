@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2024-09-19 07:49+0200\n"
+"PO-Revision-Date: 2025-12-05 10:53+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -58,7 +58,7 @@ msgstr "Klient YouTube"
 #: main.cpp:58
 #, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr ""
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 Komunita KDE"
 
 #: main.cpp:59
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "Nastavení proxy"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
-msgstr ""
+msgstr "Otevřít v prohlížeči"
 
 #: ui/ChannelPage.qml:151
 #, kde-format
@@ -182,13 +182,13 @@ msgstr "Seznamy skladeb"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
-msgstr ""
+msgstr "Žádná videa"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr ""
+msgstr "Žádné seznamy skladeb"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -568,7 +568,7 @@ msgstr "Počet zobrazení"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr ""
+msgstr "Žádné výsledky"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
@@ -1028,7 +1028,7 @@ msgstr "%1 se líbí"
 #, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr ""
+msgstr "Tohle video nemá žádný popis."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
