@@ -20,7 +20,7 @@ FormCard.FormCardPage {
         FormCard.FormComboBoxDelegate {
             id: preferredVideoQualityDelegate
             text: i18n("Preferred Video Quality")
-            description: i18n("This selected quality will be used if available, otherwise the next highest one is used.")
+            description: i18n("This selected quality will be used if available, otherwise the highest available quality is used.")
             textRole: "display"
             valueRole: "value"
             currentIndex: PlasmaTube.settings.preferredVideoQuality
@@ -91,7 +91,7 @@ FormCard.FormCardPage {
             id: checkSponsorsDelegate
 
             text: i18nc("@option:check", "Check for sponsored segments")
-            description: i18n("Inform you when a community-submitted segment (typically a sponsorship) is in the video. This feature requires contacting a 3rd-party service.")
+            description: i18n("Show a notification when a community-submitted segment (typically a sponsorship) is in the video. This feature requires contacting a 3rd-party service.")
             checked: PlasmaTube.settings.useSponsorBlock
             enabled: !PlasmaTube.settings.useSponsorBlockImmutable
             onToggled: {
@@ -109,7 +109,7 @@ FormCard.FormCardPage {
             id: skipSponsorsDelegate
 
             text: i18nc("@option:check", "Skip sponsored segments")
-            description: i18n("Automatically skips over sponsored segments in the video.")
+            description: i18n("Automatically skip sponsored segments in the video.")
             checked: PlasmaTube.settings.skipSponsorBlock
             enabled: !PlasmaTube.settings.skipSponsorBlockImmutable && PlasmaTube.settings.useSponsorBlock
             onToggled: {

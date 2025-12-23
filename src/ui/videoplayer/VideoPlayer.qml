@@ -607,7 +607,7 @@ Kirigami.ScrollablePage {
 
         function onSkippedSponsorSegment(): void {
             if (!sponsorMessageTimer.running) {
-                sponsorSkipMessage.text = i18n("The sponsored portion of the video has been skipped");
+                sponsorSkipMessage.text = i18n("The sponsored segment of the video has been skipped");
                 sponsorSkipMessage.actions = [];
                 sponsorMessageTimer.restart();
             }
@@ -615,7 +615,7 @@ Kirigami.ScrollablePage {
 
         function onEnteredSponsorSegment(position: double): void {
             if (!sponsorMessageTimer.running) {
-                sponsorSkipMessage.text = i18n("This portion of the video is sponsored");
+                sponsorSkipMessage.text = i18n("This segment of the video is sponsored");
                 sponsorSkipMessage.actions = [sponsorSkipAction];
                 sponsorSkipAction.position = position;
                 sponsorMessageTimer.restart();
