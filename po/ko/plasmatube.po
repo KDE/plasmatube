@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-25 00:43+0000\n"
 "PO-Revision-Date: 2025-04-07 00:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -629,10 +629,13 @@ msgid "Preferred Video Quality"
 msgstr "선호하는 동영상 화질"
 
 #: ui/settings/GeneralPage.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This selected quality will be used if available, otherwise the next "
+#| "highest one is used."
 msgid ""
-"This selected quality will be used if available, otherwise the next highest "
-"one is used."
+"This selected quality will be used if available, otherwise the highest "
+"available quality is used."
 msgstr ""
 "사용 가능한 경우 선택한 화질을 사용하며, 사용 불가능한 경우 다음으로 높은 화"
 "질을 사용합니다."
@@ -703,10 +706,14 @@ msgid "Check for sponsored segments"
 msgstr "스폰서된 부분 검사"
 
 #: ui/settings/GeneralPage.qml:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Inform you when a community-submitted segment (typically a sponsorship) "
+#| "is in the video. This feature requires contacting a 3rd-party service."
 msgid ""
-"Inform you when a community-submitted segment (typically a sponsorship) is "
-"in the video. This feature requires contacting a 3rd-party service."
+"Show a notification when a community-submitted segment (typically a "
+"sponsorship) is in the video. This feature requires contacting a 3rd-party "
+"service."
 msgstr ""
 "동영상에 커뮤니티에서 제출한 부분(대개의 경우 스폰서)이 있는지 검사합니다. "
 "이 기능을 사용하려면 제3자 서비스에 접근해야 합니다."
@@ -718,8 +725,9 @@ msgid "Skip sponsored segments"
 msgstr "스폰서된 부분 건너뛰기"
 
 #: ui/settings/GeneralPage.qml:112
-#, kde-format
-msgid "Automatically skips over sponsored segments in the video."
+#, fuzzy, kde-format
+#| msgid "Automatically skips over sponsored segments in the video."
+msgid "Automatically skip sponsored segments in the video."
 msgstr "자동으로 동영상의 스폰서 부분을 건너뜁니다."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
@@ -1045,13 +1053,15 @@ msgid "No recommended videos"
 msgstr "추천 동영상 없음"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, kde-format
-msgid "The sponsored portion of the video has been skipped"
+#, fuzzy, kde-format
+#| msgid "The sponsored portion of the video has been skipped"
+msgid "The sponsored segment of the video has been skipped"
 msgstr "동영상의 스폰서된 부분을 건너뜀"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, kde-format
-msgid "This portion of the video is sponsored"
+#, fuzzy, kde-format
+#| msgid "This portion of the video is sponsored"
+msgid "This segment of the video is sponsored"
 msgstr "동영상의 현재 부분은 스폰서된 내용임"
 
 #: ui/videoplayer/VideoPlayer.qml:639

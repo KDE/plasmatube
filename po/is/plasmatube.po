@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-25 00:43+0000\n"
 "PO-Revision-Date: 2025-09-17 17:30+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -632,10 +632,13 @@ msgid "Preferred Video Quality"
 msgstr "Ákjósanleg myndgæði"
 
 #: ui/settings/GeneralPage.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This selected quality will be used if available, otherwise the next "
+#| "highest one is used."
 msgid ""
-"This selected quality will be used if available, otherwise the next highest "
-"one is used."
+"This selected quality will be used if available, otherwise the highest "
+"available quality is used."
 msgstr ""
 "Gæðastigið sem er valið verður notað ef það er í boði, annars verður næsta "
 "hæsta gæðastigið notað."
@@ -706,10 +709,14 @@ msgid "Check for sponsored segments"
 msgstr "Leita að kostuðu efni"
 
 #: ui/settings/GeneralPage.qml:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Inform you when a community-submitted segment (typically a sponsorship) "
+#| "is in the video. This feature requires contacting a 3rd-party service."
 msgid ""
-"Inform you when a community-submitted segment (typically a sponsorship) is "
-"in the video. This feature requires contacting a 3rd-party service."
+"Show a notification when a community-submitted segment (typically a "
+"sponsorship) is in the video. This feature requires contacting a 3rd-party "
+"service."
 msgstr ""
 "Láta þig vita þegar utanaðkomandi efni (venjulega kostað efni) er í "
 "myndskeiðinu. Þessi eiginleiki krefst samskipta við þjónustu frá þriðja "
@@ -722,8 +729,9 @@ msgid "Skip sponsored segments"
 msgstr "Sleppa kostuðu efni"
 
 #: ui/settings/GeneralPage.qml:112
-#, kde-format
-msgid "Automatically skips over sponsored segments in the video."
+#, fuzzy, kde-format
+#| msgid "Automatically skips over sponsored segments in the video."
+msgid "Automatically skip sponsored segments in the video."
 msgstr "Hoppar sjálfkrafa yfir kostaða efniskafla í myndskeiðinu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
@@ -1053,13 +1061,15 @@ msgid "No recommended videos"
 msgstr "Engin myndskeið sem mælt er með"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, kde-format
-msgid "The sponsored portion of the video has been skipped"
+#, fuzzy, kde-format
+#| msgid "The sponsored portion of the video has been skipped"
+msgid "The sponsored segment of the video has been skipped"
 msgstr "Hoppað hefur verið yfir kostaða efniskafla í myndskeiðinu"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, kde-format
-msgid "This portion of the video is sponsored"
+#, fuzzy, kde-format
+#| msgid "This portion of the video is sponsored"
+msgid "This segment of the video is sponsored"
 msgstr "Þessi kafli í myndskeiðinu er kostaður"
 
 #: ui/videoplayer/VideoPlayer.qml:639

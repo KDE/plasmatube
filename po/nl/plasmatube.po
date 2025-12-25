@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:51+0000\n"
+"POT-Creation-Date: 2025-12-25 00:43+0000\n"
 "PO-Revision-Date: 2025-01-26 23:39+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -631,10 +631,13 @@ msgid "Preferred Video Quality"
 msgstr "Videokwaliteit met voorkeur"
 
 #: ui/settings/GeneralPage.qml:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This selected quality will be used if available, otherwise the next "
+#| "highest one is used."
 msgid ""
-"This selected quality will be used if available, otherwise the next highest "
-"one is used."
+"This selected quality will be used if available, otherwise the highest "
+"available quality is used."
 msgstr ""
 "Deze geselecteerde kwaliteit zal, indien beschikbaar, gebruikt worden, "
 "anders wordt de volgende hoogste gebruikt."
@@ -706,10 +709,14 @@ msgid "Check for sponsored segments"
 msgstr "Controleren op gesponsorde segmenten"
 
 #: ui/settings/GeneralPage.qml:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Inform you when a community-submitted segment (typically a sponsorship) "
+#| "is in the video. This feature requires contacting a 3rd-party service."
 msgid ""
-"Inform you when a community-submitted segment (typically a sponsorship) is "
-"in the video. This feature requires contacting a 3rd-party service."
+"Show a notification when a community-submitted segment (typically a "
+"sponsorship) is in the video. This feature requires contacting a 3rd-party "
+"service."
 msgstr ""
 "Informeert u wanneer een door de gemeenschap ingediend segment (typisch een "
 "sponsorschap) in de video is. Deze functie vereist contact maken met een "
@@ -722,8 +729,9 @@ msgid "Skip sponsored segments"
 msgstr "Gesponsorde segmenten overslaan"
 
 #: ui/settings/GeneralPage.qml:112
-#, kde-format
-msgid "Automatically skips over sponsored segments in the video."
+#, fuzzy, kde-format
+#| msgid "Automatically skips over sponsored segments in the video."
+msgid "Automatically skip sponsored segments in the video."
 msgstr "Automatisch gesponsorde segmenten in de video overslaan."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
@@ -1053,13 +1061,15 @@ msgid "No recommended videos"
 msgstr "Geen aanbevolen video's"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, kde-format
-msgid "The sponsored portion of the video has been skipped"
+#, fuzzy, kde-format
+#| msgid "The sponsored portion of the video has been skipped"
+msgid "The sponsored segment of the video has been skipped"
 msgstr "Het gesponsorde deel van de video is overgeslagen"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, kde-format
-msgid "This portion of the video is sponsored"
+#, fuzzy, kde-format
+#| msgid "This portion of the video is sponsored"
+msgid "This segment of the video is sponsored"
 msgstr "Dit deel van de video is gesponsord"
 
 #: ui/videoplayer/VideoPlayer.qml:639
