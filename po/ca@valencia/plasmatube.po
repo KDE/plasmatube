@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-26 10:38+0100\n"
+"PO-Revision-Date: 2025-12-25 10:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -98,7 +98,7 @@ msgstr "txemaq@gmail.com"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr "No s'ha proporcionat cap descripció."
+msgstr "No s'ha proporcionat cap descripció del servidor."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
@@ -161,7 +161,7 @@ msgstr "Compartix els elements multimèdia seleccionats"
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
-msgstr "Configureu el servidor intermediari"
+msgstr "Configureu l'amfitrió intermediari"
 
 #: ui/ChannelPage.qml:46
 #, kde-format
@@ -389,8 +389,8 @@ msgstr "Elimina de la llista de reproducció"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració del "
-"servidor intermediari."
+"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració de "
+"l'amfitrió intermediari."
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/AddInvidiousPage.qml:20
@@ -639,16 +639,13 @@ msgid "Preferred Video Quality"
 msgstr "Qualitat preferida dels vídeos"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "Esta qualitat seleccionada s'utilitzarà si està disponible, altrament "
-"s'utilitzarà la següent més alta."
+"s'utilitzarà la qualitat més alta disponible."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -718,16 +715,13 @@ msgid "Check for sponsored segments"
 msgstr "Revisa si hi ha segments patrocinats"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Vos informa quan un segment enviat per la comunitat (normalment un "
+"Mostra un notificació quan un segment enviat per la comunitat (normalment un "
 "patrocini) estiga en el vídeo. Esta característica requerix contactar amb un "
 "servei de tercers."
 
@@ -738,8 +732,7 @@ msgid "Skip sponsored segments"
 msgstr "Omet els segments patrocinats"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Omet automàticament els segments patrocinats del vídeo."
 
@@ -805,7 +798,7 @@ msgstr "Llistes de reproducció"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr "Servidor intermediari de la xarxa"
+msgstr "Amfitrió intermediari de la xarxa"
 
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
@@ -820,7 +813,7 @@ msgstr "HTTP"
 #: ui/settings/NetworkProxyPage.qml:52
 #, kde-format
 msgid "Host"
-msgstr "Servidor"
+msgstr "Amfitrió"
 
 #: ui/settings/NetworkProxyPage.qml:63
 #, kde-format
@@ -845,7 +838,7 @@ msgstr "Fonts"
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
-msgstr "Servidor intermediari de la xarxa"
+msgstr "Amfitrió intermediari de la xarxa"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
@@ -1024,7 +1017,7 @@ msgstr "Afig a la llista de reproducció…"
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr "S'ha produït un error en carregar el vídeo"
+msgstr "S'ha produït un error mentre es carregava el vídeo"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
@@ -1070,16 +1063,14 @@ msgid "No recommended videos"
 msgstr "Sense vídeos recomanats"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "La part patrocinada del vídeo s'ha omés"
+msgstr "El segment patrocinat del vídeo s'ha omés"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Esta part del vídeo és patrocinada"
+msgstr "Este segment del vídeo és patrocinat"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format

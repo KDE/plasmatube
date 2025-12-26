@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-26 06:48+0100\n"
+"PO-Revision-Date: 2025-12-25 07:56+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -635,16 +635,13 @@ msgid "Preferred Video Quality"
 msgstr "Želena kakovost videa"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"Uporabljena bo ta izbrana kakovost , če je na voljo, sicer se uporabi "
-"naslednja najvišja."
+"Ta izbrana kakovost bo uporabljena, če bo na voljo, sicer pa bo uporabljena "
+"najvišja razpoložljiva kakovost."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -712,17 +709,15 @@ msgid "Check for sponsored segments"
 msgstr "Preveri za sponzoriranimi segmenti"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Obvesti, kadar je v videoposnetku segment, ki ga je predložila skupnost "
-"(običajno sponzorstvo). Ta funkcija zahteva stik s storitvijo tretje osebe."
+"Prikaži obvestilo, ko je v videoposnetku segment, ki ga je poslala skupnost "
+"(običajno sponzorstvo). Za to zmožnost je treba stopiti v stik s storitvijo "
+"tretje osebe."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -731,8 +726,7 @@ msgid "Skip sponsored segments"
 msgstr "Preskoči sponzorirane segmente"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Samodejno preskoči sponzorirane segmente v videu."
 
@@ -1067,14 +1061,12 @@ msgid "No recommended videos"
 msgstr "Ni priporočenih video posnetkov"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
 msgstr "Sponzorirani del videa je bil preskočen"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
 msgstr "Ta del videa je sponzoriran"
 

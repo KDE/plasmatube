@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-26 21:40+0200\n"
+"PO-Revision-Date: 2025-12-25 15:22+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -635,17 +635,13 @@ msgid "Preferred Video Quality"
 msgstr "Бажана якість відео"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "Цей вибраний рівень якості буде використано, якщо він є доступним. Якщо "
-"рівень виявиться недоступним, буде використано наступний доступний вищий "
-"рівень."
+"рівень виявиться недоступним, буде використано найвищу доступну якість."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -715,16 +711,13 @@ msgid "Check for sponsored segments"
 msgstr "Перевірити на спонсоровані вставки"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Інформувати вас про те, що у відео є вставки, які надіслано спільнотою "
+"Показати сповіщення про те, що у відео є вставки, які надіслано спільнотою "
 "(типово, щодо спонсорства). Для роботи цієї можливості потрібна стороння "
 "служба."
 
@@ -735,8 +728,7 @@ msgid "Skip sponsored segments"
 msgstr "Пропустити спонсоровані вставки"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Автоматично пропускати спонсоровані вставки у відео."
 
@@ -1071,14 +1063,12 @@ msgid "No recommended videos"
 msgstr "Нерекомендовані відео"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
 msgstr "Спонсоровану частину відео було пропущено"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
 msgstr "Цю частину відео спонсоровано"
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-08-09 21:18+0400\n"
+"PO-Revision-Date: 2025-12-25 09:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -636,15 +636,12 @@ msgid "Preferred Video Quality"
 msgstr "جودة الفيديو المفضلة"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"ستُستخدم الجودة المحددة هذه إذا كانت متوفرة، وإلا فالجودة الأعلى التالية."
+"ستُستخدم الجودة المحددة هذه إذا كانت متوفرة، وإلا فستخدم أعلى جودة المتوفرة."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -712,16 +709,13 @@ msgid "Check for sponsored segments"
 msgstr "تحقق من المقاطع المرعية"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"إعلامك عند ظهور مقطع مقدم من المجتمع (عادةً ما يكون عبارة عن رعاية) في "
+"اعرض إشعار عند ظهور مقطع مقدم من المجتمع (عادةً ما يكون عبارة عن رعاية) في "
 "الفيديو. تتطلب هذه الميزة الاتصال بخدمة تابعة لجهة خارجية."
 
 #: ui/settings/GeneralPage.qml:111
@@ -731,8 +725,7 @@ msgid "Skip sponsored segments"
 msgstr "تخطَّ المقاطع المرعية"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "تُتخطّى المقاطع الدعائية الموجودة في الفيديو آليًّا."
 
@@ -1070,14 +1063,12 @@ msgid "No recommended videos"
 msgstr "لا فيديوهات مقترحة"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
 msgstr "تُخُطّيَ الجزء المدعوم من الفيديو"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
 msgstr "هذا الجزء من الفيديو برعاية"
 
