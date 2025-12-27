@@ -629,16 +629,11 @@ msgid "Preferred Video Quality"
 msgstr "首选视频质量"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"若可用，将会优先使用该清晰度播放视频，若不存在该清晰度，将会使用次高的清晰度"
-"播放。"
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -706,17 +701,12 @@ msgid "Check for sponsored segments"
 msgstr "检查赞助信息"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"当视频中出现社区提交的片段（通常为赞助内容）时向您发出通知。该功能需要调用第"
-"三方服务接口。"
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -725,10 +715,9 @@ msgid "Skip sponsored segments"
 msgstr "跳过赞助信息"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "在视频中自动跳过赞助的片段。"
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1053,16 +1042,14 @@ msgid "No recommended videos"
 msgstr "没有推荐视频"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "视频的赞助部分已跳过"
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "该部分的视频是赞助视频"
+msgstr ""
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
