@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-12-08 12:07+0100\n"
+"PO-Revision-Date: 2025-12-27 11:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -635,16 +635,13 @@ msgid "Preferred Video Quality"
 msgstr "Calidad de vídeo preferida"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "La calidad seleccionada se usará si está disponible. En caso contrario, se "
-"usará la siguiente con mayor calidad."
+"usará la mayor calidad disponible."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -712,18 +709,15 @@ msgid "Check for sponsored segments"
 msgstr "Comprobar segmentos patrocinados"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Le informa cuando el vídeo contiene un segmento enviado por la comunidad "
-"(por lo general, un patrocinio). Esta función necesita contactar con un "
-"servicio de una tercera parte."
+"Mostrar una notificación cuando el vídeo contiene un segmento enviado por la "
+"comunidad (por lo general, un patrocinio). Esta función necesita contactar "
+"con un servicio de una tercera parte."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -732,10 +726,9 @@ msgid "Skip sponsored segments"
 msgstr "Omitir segmentos patrocinados"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Omite automáticamente los segmentos patrocinados del vídeo."
+msgstr "Omitir automáticamente los segmentos patrocinados del vídeo."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1064,16 +1057,14 @@ msgid "No recommended videos"
 msgstr "No hay vídeos recomendados"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Se ha omitido la porción patrocinada del vídeo"
+msgstr "Se ha omitido el segmento patrocinado del vídeo"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Esta porción del vídeo está patrocinada"
+msgstr "Este segmento del vídeo está patrocinado"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
