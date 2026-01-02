@@ -1,21 +1,22 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-02-08 18:02+0100\n"
+"PO-Revision-Date: 2026-01-01 12:42+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -633,16 +634,13 @@ msgid "Preferred Video Quality"
 msgstr "Domyślna jakość filmów"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "Zostanie użyta wybrana jakość, jeśli będzie dostępna, w przeciwnym przypadku "
-"zostanie wybrana najwyższa jakość."
+"zostanie wybrana najwyższa dostępna jakość."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -710,17 +708,14 @@ msgid "Check for sponsored segments"
 msgstr "Sprawdź odcinki sponsorowane"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
 "Powiadom, gdy odcinek wysłany przez społeczność (zazwyczaj sponsorowany) "
-"znajduje się na filmie. Aby to zadziałało, należy odpytać usługę strony "
+"znajduje się na nagraniu. Aby to zadziałało, należy odpytać usługę strony "
 "trzeciej."
 
 #: ui/settings/GeneralPage.qml:111
@@ -730,10 +725,9 @@ msgid "Skip sponsored segments"
 msgstr "Pomiń sponsorowane odcinki"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Sam pomija sponsorowane odcinki w filmie."
+msgstr "Samoczynnie pomijaj odcinki sponsorowane w tym nagraniu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1064,16 +1058,14 @@ msgid "No recommended videos"
 msgstr "Bez polecanych filmów"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Pominięto sponsorowany odcinek filmu"
+msgstr "Odcinek sponsorowany w tym nagraniu został pominięty"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Ten odcinek filmu jest sponsorowany"
+msgstr "Ten odcinek nagrania jest sponsorowany"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
