@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-26 11:01+0100\n"
+"PO-Revision-Date: 2025-12-25 09:18+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -632,16 +632,13 @@ msgid "Preferred Video Quality"
 msgstr "Qualità video preferita"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "Se disponibile, sarà utilizzata la qualità selezionata, altrimenti sarà "
-"utilizzata quella immediatamente superiore."
+"utilizzata la massima qualità disponibile."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -711,18 +708,15 @@ msgid "Check for sponsored segments"
 msgstr "Controlla i segmenti sponsorizzati"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Ti informa quando nel video è presente un segmento inviato dalla community "
-"(in genere una sponsorizzazione). Questa funzionalità richiede il contatto "
-"con un servizio di terze parti."
+"Mostra una notifica quando nel video è presente un segmento inviato dalla "
+"comunità (in genere una sponsorizzazione). Questa funzionalità richiede di "
+"contattare un servizio di terze parti."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -731,8 +725,7 @@ msgid "Skip sponsored segments"
 msgstr "Salta i segmenti sponsorizzati"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Salta automaticamente i segmenti sponsorizzati nel video."
 
@@ -1063,16 +1056,14 @@ msgid "No recommended videos"
 msgstr "Nessun video consigliato"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "La parte sponsorizzata del video è stata saltata"
+msgstr "Il segmento sponsorizzato del video è stato saltato"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Questa parte del video è sponsorizzata"
+msgstr "Questo segmento del video è sponsorizzato"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format

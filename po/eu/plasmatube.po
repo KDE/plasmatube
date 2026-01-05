@@ -1,16 +1,16 @@
 # Translation for plasmatube.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2025 This file is copyright:
+# Copyright (C) 2021-2026 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-07-23 14:19+0200\n"
+"PO-Revision-Date: 2026-01-04 12:47+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -636,16 +636,13 @@ msgid "Preferred Video Quality"
 msgstr "Bideo-kalitate hobetsia"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"Hautatutako kalitate hori erabiliko da, erabilgarri badago, bestela hurrengo "
-"handiena erabiliko da."
+"Hautatutako kalitate hau erabiliko da, erabilgarri badago, bestela "
+"erabilgarri dagoen hurrengo kalitate handiena erabiliko da."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -714,18 +711,15 @@ msgid "Check for sponsored segments"
 msgstr "Egiaztatu babesle dun segmenturik dagoen"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Bideoan komunitateak bidalitako segmentu bat (normalean babesleena) "
-"dagoenean informatzen dizu. Funtzio horrek 3.en zerbitzu batekin harremanean "
-"jarri beharra du."
+"Jakinarazpen bat erakutsi bideoan komunitateak bidalitako segmentu bat "
+"(babesletza bat izan ohi da) dagoenean. Ezaugarri honek hirugarrenen "
+"zerbitzu batekin harremanetan jartzea eskatzen du."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -734,10 +728,9 @@ msgid "Skip sponsored segments"
 msgstr "Babesle dun segmentuak saltatu"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Bideoan babesle dun segmentuak automatikoki saltatzen ditu."
+msgstr "Bideoan babesle dun segmentuak automatikoki saihesten ditu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1066,16 +1059,14 @@ msgid "No recommended videos"
 msgstr "Ez dago gomendatutako bideorik"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Babesle dun bideoaren zatia saltatu egin da"
+msgstr "Babesle dun bideoaren segmentua saihestu egin da"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Bideoaren zati hau babesle duna da"
+msgstr "Bideoaren segmentu hau babesle duna da"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
