@@ -1,24 +1,25 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 # SPDX-FileCopyrightText: 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2022 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2025-10-23 21:50+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2026-01-01 22:08+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -30,13 +31,13 @@ msgstr "Der Benutzername oder das Passwort ist falsch."
 #: api/piped/pipedapi.cpp:327
 #, kde-format
 msgid "Server returned no valid JSON."
-msgstr "Der Server meldet ungültiges JSON."
+msgstr "Der Server hat kein gültiges JSON zurückgegeben."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
 #: api/piped/pipedapi.cpp:336
 #, kde-format
 msgid "Server returned the status code %1"
-msgstr "Der Server meldet den Statuscode %1"
+msgstr "Der Server hat den Statuscode %1 zurückgegeben"
 
 #: controllers/logincontroller.cpp:40
 #, kde-format
@@ -98,7 +99,7 @@ msgstr "kde-i18n-de@kde.org"
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
 msgid "No server description provided."
-msgstr "Serverbeschreibung wurde nicht angegeben."
+msgstr "Keine Serverbeschreibung angegeben."
 
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
@@ -270,10 +271,11 @@ msgstr "Invidious"
 msgid "PeerTube"
 msgstr "PeerTube"
 
+# https://github.com/TeamPiped/Piped
 #: ui/components/SourceSwitcher.qml:57 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:72
 #: ui/components/SourceSwitcherDialog.qml:28
@@ -308,7 +310,7 @@ msgstr "Abonnieren%1"
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr ""
+msgstr "Bitte melden Sie sich an, um Kanäle zu abonnieren."
 
 #: ui/components/VideoGridItem.qml:72
 #, kde-format
@@ -320,13 +322,12 @@ msgstr "Live"
 #, kde-format
 msgctxt "Short label for a short video"
 msgid "Short"
-msgstr ""
+msgstr "Short"
 
 #: ui/components/VideoGridItem.qml:157 ui/components/VideoListItem.qml:148
-#, fuzzy, kde-format
-#| msgid "No videos"
+#, kde-format
 msgid "No views"
-msgstr "Keine Videos"
+msgstr "Keine Ansichten"
 
 #: ui/components/VideoGridItem.qml:159 ui/components/VideoListItem.qml:150
 #: ui/videoplayer/VideoPlayer.qml:428
@@ -337,7 +338,7 @@ msgstr "%1 Ansichten"
 #: ui/components/VideoGridItem.qml:162
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>jetzt live</i>"
 
 #: ui/components/VideoListItem.qml:160
 #, kde-format
@@ -377,7 +378,7 @@ msgstr "Als gesehen markieren"
 #: ui/components/VideoMenu.qml:81
 #, kde-format
 msgid "Add to Playlist…"
-msgstr "Zur Wiedergabeliste hinzufügen …"
+msgstr "Zur Wiedergabeliste hinzufügen …"
 
 #: ui/components/VideoMenu.qml:88
 #, kde-format
@@ -404,17 +405,17 @@ msgctxt "@title:window"
 msgid "Add PeerTube Source"
 msgstr "PeerTube-Quelle hinzufügen"
 
+# https://github.com/TeamPiped/Piped
 #: ui/loginflow/AddPipedPage.qml:18
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "Piped-Quelle hinzufügen"
 
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Suchen oder eine URL eingeben …"
+msgstr "Suchen oder eine URL eingeben …"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
@@ -440,7 +441,7 @@ msgstr "Geben Sie eine Serveradresse manuell in das Suchfeld ein."
 #, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "Videoquelle hinzufügen"
+msgstr "Eine Videoquelle hinzufügen"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
@@ -455,7 +456,7 @@ msgstr "Invidious-Quelle hinzufügen"
 #: ui/loginflow/SelectSourcePage.qml:63 ui/loginflow/SelectSourcePage.qml:95
 #, kde-format
 msgid "Watch YouTube videos"
-msgstr "YouTube-Videos ansehen"
+msgstr "Videos von YouTube ansehen"
 
 #: ui/loginflow/SelectSourcePage.qml:78
 #, kde-format
@@ -465,13 +466,13 @@ msgstr "PeerTube-Quelle hinzufügen"
 #: ui/loginflow/SelectSourcePage.qml:79
 #, kde-format
 msgid "Watch PeerTube videos"
-msgstr ""
+msgstr "Videos von PeerTube ansehen"
 
+# https://github.com/TeamPiped/Piped
 #: ui/loginflow/SelectSourcePage.qml:94
-#, fuzzy, kde-format
-#| msgid "Invidious"
+#, kde-format
 msgid "Add Piped Source"
-msgstr "Invidious"
+msgstr "Piped-Quelle hinzufügen"
 
 #: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
 #, kde-format
@@ -489,13 +490,13 @@ msgstr "PlasmaTube"
 #, kde-format
 msgctxt "@info"
 msgid "Watch YouTube and PeerTube videos."
-msgstr ""
+msgstr "Videos von YouTube und PeerTube ansehen."
 
 #: ui/loginflow/WelcomePage.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "Videoquelle hinzufügen"
+msgstr "Eine Videoquelle hinzufügen"
 
 #: ui/loginflow/WelcomePage.qml:82
 #, kde-format
@@ -597,7 +598,7 @@ msgstr "Anmelden"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Kanäle abonnieren, bereits angesehene Videos merken und mehr."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
@@ -608,18 +609,18 @@ msgstr "Quelle ändern"
 #: ui/settings/BaseSourcePage.qml:20
 #, kde-format
 msgid "Remove Source…"
-msgstr "Quelle entfernen …"
+msgstr "Quelle entfernen …"
 
 #: ui/settings/BaseSourcePage.qml:21
 #, kde-format
 msgid "Cannot remove the only source."
-msgstr "Die einzige Datenquelle kann nicht entfernt werden."
+msgstr "Die einzige Quelle kann nicht entfernt werden."
 
 #: ui/settings/BaseSourcePage.qml:32
 #, kde-format
 msgctxt "@title"
 msgid "Remove Source"
-msgstr "Datenquelle entfernen"
+msgstr "Quelle entfernen"
 
 #: ui/settings/BaseSourcePage.qml:33
 #, kde-format
@@ -635,7 +636,7 @@ msgstr "Allgemein"
 #: ui/settings/GeneralPage.qml:22
 #, kde-format
 msgid "Preferred Video Quality"
-msgstr "Bevorzugte Video-Qualität"
+msgstr "Bevorzugte Videoqualität"
 
 #: ui/settings/GeneralPage.qml:23
 #, kde-format
@@ -643,6 +644,8 @@ msgid ""
 "This selected quality will be used if available, otherwise the next highest "
 "one is used."
 msgstr ""
+"Die ausgewählte Qualität wird verwendet, falls verfügbar. Anderenfalls wird "
+"die nächsthöhere Qualität verwendet."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -696,18 +699,18 @@ msgstr "144p"
 #, kde-format
 msgctxt "@option:check Hide short-form videos"
 msgid "Hide Shorts"
-msgstr ""
+msgstr "Shorts ausblenden"
 
 #: ui/settings/GeneralPage.qml:76
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "Kurze, für die Ansicht auf Mobilgeräten optimierte Videos ausblenden."
 
 #: ui/settings/GeneralPage.qml:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr ""
+msgstr "Auf gesponserte Abschnitte überprüfen"
 
 #: ui/settings/GeneralPage.qml:94
 #, kde-format
@@ -715,17 +718,20 @@ msgid ""
 "Inform you when a community-submitted segment (typically a sponsorship) is "
 "in the video. This feature requires contacting a 3rd-party service."
 msgstr ""
+"Eine Benachrichtigung anzeigen, wenn ein Video ein von der Gemeinschaft "
+"eingereichtes Segment (üblicherweise ein Sponsoring) enthält. Diese Funktion "
+"erfordert das Kontaktieren eines Drittanbieter-Dienstes."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr ""
+msgstr "Gesponserte Abschnitte überspringen"
 
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skips over sponsored segments in the video."
-msgstr ""
+msgstr "Gesponserte Abschnitte im Video automatisch überspringen."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -735,13 +741,12 @@ msgstr "Zugang"
 #: ui/settings/InvidiousSourcePage.qml:37
 #, kde-format
 msgid "Preferences"
-msgstr ""
+msgstr "Einstellungen"
 
 #: ui/settings/InvidiousSourcePage.qml:42
-#, fuzzy, kde-format
-#| msgid "Autoplay"
+#, kde-format
 msgid "Autoplay videos"
-msgstr "Automatische Wiedergabe"
+msgstr "Videos automatisch wiedergeben"
 
 #: ui/settings/InvidiousSourcePage.qml:43
 #, kde-format
@@ -749,16 +754,18 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Legt fest, ob Videos sofort wiedergegeben werden sollen, oder ob auf das "
+"Drücken des Wiedergabeknopfes gewartet werden soll."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
 msgid "Default Page"
-msgstr ""
+msgstr "Standardseite"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
 msgid "The first page to load when switching to this source."
-msgstr ""
+msgstr "Die erste anzuzeigende Seite beim Wechsel zu dieser Quelle."
 
 #: ui/settings/InvidiousSourcePage.qml:64
 #, kde-format
@@ -866,20 +873,20 @@ msgstr "Exportieren abgeschlossen"
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 neues Abonnement importiert."
+msgstr[1] "%1 neue Abonnements importiert."
 
 #: ui/SubscriptionListPage.qml:38
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Alle importierten Kanäle sind bereits abonniert."
 
 #: ui/SubscriptionListPage.qml:41
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 Abonnement exportiert."
+msgstr[1] "%1 Abonnements exportiert."
 
 #: ui/SubscriptionListPage.qml:50
 #, kde-format
@@ -891,14 +898,13 @@ msgstr "Fehler"
 #, kde-format
 msgctxt "@action:button Import subscriptions"
 msgid "Import…"
-msgstr "Importieren ..."
+msgstr "Importieren …"
 
 #: ui/SubscriptionListPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr "Abonnements"
+msgstr "OPML-Abonnements importieren"
 
 #: ui/SubscriptionListPage.qml:64
 #, kde-format
@@ -910,35 +916,34 @@ msgstr "Importieren"
 #, kde-format
 msgctxt "@action:button Export subscriptions"
 msgid "Export…"
-msgstr "Exportieren ..."
+msgstr "Exportieren …"
 
 #: ui/SubscriptionListPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Subscriptions"
+#, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr "Abonnements"
+msgstr "OPML-Abonnements exportieren"
 
 #: ui/SubscriptionListPage.qml:75
 #, kde-format
 msgctxt "@action:button Export the OPML file"
 msgid "Export"
-msgstr ""
+msgstr "Exportieren"
 
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Importing…"
-msgstr "Wird importiert …"
+msgstr "Wird importiert …"
 
 #: ui/SubscriptionListPage.qml:102
 #, kde-format
 msgid "Exporting…"
-msgstr "Wird exportiert …"
+msgstr "Wird exportiert …"
 
 #: ui/SubscriptionListPage.qml:177
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Keine Kanäle"
 
 #: ui/SubscriptionsPage.qml:12
 #, kde-format
@@ -958,11 +963,10 @@ msgid "Picture in Picture"
 msgstr "Bild-in-Bild"
 
 #: ui/videoplayer/VideoControls.qml:106
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "Video settings"
-msgstr "Proxy-Einstellungen"
+msgstr "Videoeinstellungen"
 
 #: ui/videoplayer/VideoControls.qml:139
 #, kde-format
@@ -992,25 +996,25 @@ msgstr "Vollbild"
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Bild in Bild"
+msgstr "Bild-in-Bild"
 
 #: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Videospieler ausblenden"
 
 #: ui/videoplayer/VideoPlayer.qml:135
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr "Zur Wiedergabeliste hinzufügen …"
+msgstr "Zur Wiedergabeliste hinzufügen …"
 
 #: ui/videoplayer/VideoPlayer.qml:181
 #, kde-format
 msgctxt "@info"
 msgid "Error Loading Video"
-msgstr ""
+msgstr "Fehler beim Laden des Videos"
 
 #: ui/videoplayer/VideoPlayer.qml:186
 #, kde-format
@@ -1024,10 +1028,9 @@ msgid "Copy Video URL"
 msgstr "Videoadresse kopieren"
 
 #: ui/videoplayer/VideoPlayer.qml:347
-#, fuzzy, kde-format
-#| msgid "Proxy Settings"
+#, kde-format
 msgid "Video Statistics"
-msgstr "Proxy-Einstellungen"
+msgstr "Videostatistiken"
 
 #: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
@@ -1038,7 +1041,7 @@ msgstr "%1 Likes"
 #, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr ""
+msgstr "Für dieses Video wirde keine Beschreibung festgelegt."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1051,27 +1054,26 @@ msgid "Recommended"
 msgstr "Empfohlen"
 
 #: ui/videoplayer/VideoPlayer.qml:524
-#, fuzzy, kde-format
-#| msgid "Recommended"
+#, kde-format
 msgctxt "@info"
 msgid "No recommended videos"
-msgstr "Empfohlen"
+msgstr "Keine empfohlenen Videos"
 
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored portion of the video has been skipped"
-msgstr ""
+msgstr "Der gesponserte Abschnitt des Videos wurde übersprungen"
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This portion of the video is sponsored"
-msgstr ""
+msgstr "Dieser Abschnitt des Videos ist gesponsert"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip"
-msgstr ""
+msgstr "Überspringen"
 
 #: ui/videoplayer/VideoQueueView.qml:35
 #, kde-format
@@ -1087,7 +1089,7 @@ msgstr "Leeren"
 #: ui/videoplayer/VideoQueueView.qml:81
 #, kde-format
 msgid "Loading…"
-msgstr "Wird geladen ..."
+msgstr "Wird geladen …"
 
 #~ msgid "Popular"
 #~ msgstr "Beliebt"
