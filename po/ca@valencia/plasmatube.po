@@ -161,7 +161,7 @@ msgstr "Compartix els elements multimèdia seleccionats"
 #: ui/SearchPage.qml:160 ui/settings/NetworkProxyPage.qml:44
 #, kde-format
 msgid "Proxy Settings"
-msgstr "Configureu l'amfitrió intermediari"
+msgstr "Configureu el servidor intermediari"
 
 #: ui/ChannelPage.qml:46
 #, kde-format
@@ -389,8 +389,8 @@ msgstr "Elimina de la llista de reproducció"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
-"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració de "
-"l'amfitrió intermediari."
+"No s'ha pogut contactar amb el servidor: %1. Reviseu la configuració del "
+"servidor intermediari."
 
 # És un nom propi: https://github.com/iv-org/invidious
 #: ui/loginflow/AddInvidiousPage.qml:20
@@ -798,7 +798,7 @@ msgstr "Llistes de reproducció"
 #, kde-format
 msgctxt "@title:window"
 msgid "Network Proxy"
-msgstr "Amfitrió intermediari de la xarxa"
+msgstr "Servidor intermediari de la xarxa"
 
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
@@ -838,7 +838,7 @@ msgstr "Fonts"
 #: ui/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Network Proxy"
-msgstr "Amfitrió intermediari de la xarxa"
+msgstr "Servidor intermediari de la xarxa"
 
 #: ui/settings/SettingsPage.qml:33
 #, kde-format
