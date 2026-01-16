@@ -717,10 +717,9 @@ msgid "Skip sponsored segments"
 msgstr "Přeskočit sponzorované segmenty"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Ve videu automaticky přeskakovat sponzorované segmenty."
+msgstr ""
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
