@@ -8,5 +8,5 @@ include:
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/linux-qt6-next.yml
       - /gitlab-templates/freebsd-qt6.yml
-      - /gitlab-templates/android-qt6.yml
+      # - /gitlab-templates/android-qt6.yml - Disabled for now until libmpv works on Android CI again
       # - /gitlab-templates/flatpak.yml
