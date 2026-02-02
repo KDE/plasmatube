@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2026-01-01 22:08+0100\n"
+"PO-Revision-Date: 2026-01-27 17:04+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -47,7 +47,7 @@ msgstr "Diese Instanz hat die Registrierung deaktiviert."
 #: controllers/videocontroller.cpp:71
 #, kde-format
 msgid "Playing video"
-msgstr "Video wiedergeben"
+msgstr "Video wird wiedergegeben"
 
 #: main.cpp:54
 #, kde-format
