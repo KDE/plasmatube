@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-27 11:26+0100\n"
+"PO-Revision-Date: 2026-02-05 11:31+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -633,16 +633,13 @@ msgid "Preferred Video Quality"
 msgstr "Qualitate de video preferite"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "Iste qualitate selectionate essera usate si disponibile, alteremente essera "
-"usate le proxime plus alte."
+"usate le qualitate plus alte disponibile."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -712,18 +709,15 @@ msgid "Check for sponsored segments"
 msgstr "Verifica per segmentos patronate"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Te informa quando un segmento submittitre per le communitate (typicamente un "
-"patronage o endorsamento) es in le video. Iste characteristica require "
-"coninger un servicio de 3tie parte."
+"Monstra un notification quando un segmento submittitre per le communitate "
+"(typicamente un patronage o endorsamento) es in  le video. Iste "
+"characteristica require coninger un servicio de 3tie parte."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -732,8 +726,7 @@ msgid "Skip sponsored segments"
 msgstr "Salta segmentos patronate "
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Automaticamente salta segmentos patronate in le video."
 
@@ -1064,16 +1057,14 @@ msgid "No recommended videos"
 msgstr "Nulle Videos Recommendate"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Le portion patronate del videoha essite saltate"
+msgstr "Le segmenmto patronate del video ha essite saltate"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Iste portion del video es patronate"
+msgstr "Iste segmento del video es patronate"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
