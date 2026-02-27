@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:40+0000\n"
-"PO-Revision-Date: 2024-09-24 19:21+0200\n"
+"PO-Revision-Date: 2026-02-26 19:00+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -57,9 +57,9 @@ msgid "YouTube client"
 msgstr "YouTube-klient"
 
 #: main.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019–2024 Linus Jahn, 2019–2024 KDE-fellesskapet"
+msgstr "© 2019–2025 Linus Jahn, 2019–2025 KDE-fellesskapet"
 
 #: main.cpp:59
 #, kde-format
@@ -162,7 +162,7 @@ msgid "Proxy Settings"
 msgstr "Mellomtenar-innstillingar"
 
 #: ui/ChannelPage.qml:46
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Open in Browser"
 msgstr "Opna i nettlesar"
@@ -180,16 +180,16 @@ msgid "Playlists"
 msgstr "Spelelister"
 
 #: ui/ChannelPage.qml:188 ui/FeedPage.qml:59 ui/PlaylistPage.qml:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Videos"
 msgstr "Ingen videoar"
 
 #: ui/ChannelPage.qml:206 ui/Main.qml:251 ui/PlaylistsPage.qml:26
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No Playlists"
-msgstr "Spelelister"
+msgstr "Ingen spelelister"
 
 #: ui/components/BottomNavBar.qml:70
 #, kde-format
@@ -570,7 +570,7 @@ msgstr "Visingar"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No Results"
-msgstr ""
+msgstr "Ingen resultat"
 
 #: ui/settings/AccountCard.qml:22
 #, kde-format
