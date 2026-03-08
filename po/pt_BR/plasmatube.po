@@ -5,13 +5,13 @@
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2022, 2023.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
-# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-12-25 00:55-0300\n"
+"PO-Revision-Date: 2026-03-06 16:12-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -62,7 +62,7 @@ msgstr "Cliente do YouTube"
 #: main.cpp:58
 #, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
-msgstr "© 2019-2025 Linus Jahn, 2019-2025 Comunidade do KDE"
+msgstr "© 2019-2025 Linus Jahn, 2019-2025 Comunidade KDE"
 
 #: main.cpp:59
 #, kde-format
@@ -842,7 +842,7 @@ msgstr "Sobre o PlasmaTube"
 #: ui/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About KDE"
-msgstr "Sobre o KDE"
+msgstr "Sobre a KDE"
 
 #: ui/settings/SourcesPage.qml:21
 #, kde-format
