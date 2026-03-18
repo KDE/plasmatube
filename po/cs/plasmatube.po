@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2026-02-27 21:19+0100\n"
+"PO-Revision-Date: 2026-03-16 15:46+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -84,13 +84,13 @@ msgstr "Správce"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #: main.cpp:65
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "Popis serveru není dostupný."
 #: models/videolistmodel.cpp:18 ui/components/Sidebar.qml:142
 #, kde-format
 msgid "Subscriptions"
-msgstr "Přihlášení"
+msgstr "Odběry"
 
 #: models/videolistmodel.cpp:20
 #, kde-format
@@ -271,7 +271,7 @@ msgstr "PeerTube"
 #: ui/components/SourceSwitcher.qml:57 ui/settings/SourcesPage.qml:67
 #, kde-format
 msgid "Piped"
-msgstr ""
+msgstr "Piped"
 
 #: ui/components/SourceSwitcher.qml:72
 #: ui/components/SourceSwitcherDialog.qml:28
@@ -294,14 +294,14 @@ msgstr "Přidat nový zdroj videa"
 msgctxt ""
 "@action:button Unsubscribe to this channel, %1 is the sub count if provided"
 msgid "Unsubscribe%1"
-msgstr "Odhlásit %1"
+msgstr "Zrušit odběr %1"
 
 #: ui/components/SubscriptionButton.qml:63
 #, kde-format
 msgctxt ""
 "@action:button Subscribe to this channel, %1 is the sub count if provided"
 msgid "Subscribe%1"
-msgstr "Přihlásit %1"
+msgstr "Odebírat %1"
 
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
@@ -312,7 +312,7 @@ msgstr "Prosím přihlaste se pro přihlášení do kanálů."
 #, kde-format
 msgctxt "Short label for a livestream that's live"
 msgid "Live"
-msgstr ""
+msgstr "Živě"
 
 #: ui/components/VideoGridItem.qml:79
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "%1 zobrazení"
 #: ui/components/VideoGridItem.qml:162
 #, kde-format
 msgid "<i>live now</i>"
-msgstr ""
+msgstr "<i>nyní živě</i>"
 
 #: ui/components/VideoListItem.qml:160
 #, kde-format
@@ -359,7 +359,7 @@ msgstr "Přehrát následující"
 #: ui/components/VideoMenu.qml:52
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr ""
+msgstr "Přehrát v režimu obraz v obraze"
 
 #: ui/components/VideoMenu.qml:67
 #, kde-format
@@ -386,6 +386,7 @@ msgstr "Odstranit ze seznamu skladeb"
 msgctxt "@info:status Network status"
 msgid "Failed to contact server: %1. Please check your proxy settings."
 msgstr ""
+"Nepodařilo se navázat spojení se serverem: %1. Zkontrolujte nastavení proxy."
 
 #: ui/loginflow/AddInvidiousPage.qml:20
 #, kde-format
@@ -403,7 +404,7 @@ msgstr "Přidat zdroj PeerTube"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Přidat zdroj Piped"
 
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
@@ -428,7 +429,7 @@ msgstr "Žádné veřejné servery"
 #: ui/loginflow/InstancesPage.qml:99
 #, kde-format
 msgid "Enter a server URL manually in the search field."
-msgstr ""
+msgstr "Zadejte adresu URL serveru ručně do vyhledávacího pole."
 
 #: ui/loginflow/SelectSourcePage.qml:20
 #, kde-format
@@ -464,7 +465,7 @@ msgstr "Sledujte videa PeerTube"
 #: ui/loginflow/SelectSourcePage.qml:94
 #, kde-format
 msgid "Add Piped Source"
-msgstr ""
+msgstr "Přidat zdroj Piped"
 
 #: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
 #, kde-format
@@ -590,7 +591,7 @@ msgstr "Přihlásit"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr ""
+msgstr "Přihlaste se k odběru kanálů, sledujte sledovaná videa a další."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
@@ -636,6 +637,8 @@ msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
+"Tato vybraná kvalita bude použita, pokud je k dispozici, jinak bude použita "
+"nejvyšší dostupná kvalita."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -677,13 +680,13 @@ msgstr "360p"
 #, kde-format
 msgctxt "@info video resolution"
 msgid "240p"
-msgstr ""
+msgstr "240p"
 
 #: ui/settings/GeneralPage.qml:57
 #, kde-format
 msgctxt "@info video resolution"
 msgid "144p"
-msgstr ""
+msgstr "144p"
 
 #: ui/settings/GeneralPage.qml:75
 #, kde-format
@@ -694,7 +697,7 @@ msgstr "Skrýt krátká"
 #: ui/settings/GeneralPage.qml:76
 #, kde-format
 msgid "Hide short-form videos designed for viewing on a mobile device."
-msgstr ""
+msgstr "Skrýt krátká videa určená pro prohlížení na mobilních zařízeních."
 
 #: ui/settings/GeneralPage.qml:93
 #, kde-format
@@ -709,6 +712,8 @@ msgid ""
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
+"Zobrazit oznámení, když je ve videu segment od komunity (obvykle "
+"sponzorství). Tato funkce vyžaduje kontaktování služby třetí strany."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -742,6 +747,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
+"Začít přehrávat videa okamžitě, nebo počkat, až bude stisknuto tlačítko "
+"přehrávání."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
@@ -769,7 +776,7 @@ msgstr "Trendy"
 #, kde-format
 msgctxt "@info Subscriptions page"
 msgid "Subscriptions"
-msgstr "Přihlášení"
+msgstr "Odběry"
 
 #: ui/settings/InvidiousSourcePage.qml:76
 #, kde-format
@@ -859,22 +866,22 @@ msgstr "Export byl dokončen."
 #, kde-format
 msgid "Imported %1 new subscription."
 msgid_plural "Imported %1 new subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Importován %1 nový odběr."
+msgstr[1] "Importovány %1 nové odběry."
+msgstr[2] "Importováno %1 nových odběrů."
 
 #: ui/SubscriptionListPage.qml:38
 #, kde-format
 msgid "All imported channels were already subscribed to."
-msgstr ""
+msgstr "Všechny importované kanály jsou již odebírány."
 
 #: ui/SubscriptionListPage.qml:41
 #, kde-format
 msgid "Exported %1 subscription."
 msgid_plural "Exported %1 subscriptions."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Exportován %1 odběr."
+msgstr[1] "Exportovány %1 odběry."
+msgstr[2] "Exportováno %1 odběrů."
 
 #: ui/SubscriptionListPage.qml:50
 #, kde-format
@@ -892,7 +899,7 @@ msgstr "Importovat…"
 #, kde-format
 msgctxt "@title:window Import the OPML file"
 msgid "Import OPML Subscriptions"
-msgstr ""
+msgstr "Importovat OPML odběry"
 
 #: ui/SubscriptionListPage.qml:64
 #, kde-format
@@ -910,7 +917,7 @@ msgstr "Exportovat…"
 #, kde-format
 msgctxt "@title:window Export the OPML file"
 msgid "Export OPML Subscriptions"
-msgstr ""
+msgstr "Exportovat OPML odběry"
 
 #: ui/SubscriptionListPage.qml:75
 #, kde-format
@@ -931,13 +938,13 @@ msgstr "Probíhá export…"
 #: ui/SubscriptionListPage.qml:177
 #, kde-format
 msgid "No channels"
-msgstr ""
+msgstr "Žádné kanály"
 
 #: ui/SubscriptionsPage.qml:12
 #, kde-format
 msgctxt "@action:button View subscribed channels"
 msgid "Subscribed Channels"
-msgstr "Přihlášené kanály"
+msgstr "Odebírané kanály"
 
 #: ui/TrendingPage.qml:15
 #, kde-format
@@ -990,7 +997,7 @@ msgstr "Obrázek v obrázku"
 #, kde-format
 msgctxt "@action:button"
 msgid "Hide player"
-msgstr ""
+msgstr "Skrýt přehrávač"
 
 #: ui/videoplayer/VideoPlayer.qml:135
 #, kde-format
@@ -1018,7 +1025,7 @@ msgstr "Kopírovat URL videa"
 #: ui/videoplayer/VideoPlayer.qml:347
 #, kde-format
 msgid "Video Statistics"
-msgstr ""
+msgstr "Statistiky videa"
 
 #: ui/videoplayer/VideoPlayer.qml:436
 #, kde-format
@@ -1050,7 +1057,7 @@ msgstr "Žádná doporučená videa"
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr ""
+msgstr "Sponzorovaný segment videa byl přeskočen."
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
