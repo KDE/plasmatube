@@ -475,7 +475,7 @@ msgstr "أضف مصدر بايب"
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
-msgstr "مرحباً"
+msgstr "مرحبًا"
 
 #: ui/loginflow/WelcomePage.qml:45
 #, kde-format
