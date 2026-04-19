@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2026-02-26 19:00+0100\n"
+"PO-Revision-Date: 2026-04-18 16:00+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 25.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -633,16 +633,13 @@ msgid "Preferred Video Quality"
 msgstr "Føretrekt videokvalitet"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"Den føretrekte kvaliteten vert brukt viss han finst; elles vert den nest "
-"høgaste brukt."
+"Den føretrekte kvaliteten vert brukt viss han finst; elles vert den høgaste "
+"kvaliteten brukt."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -710,17 +707,14 @@ msgid "Check for sponsored segments"
 msgstr "Sjekkar etter sponsa innslag"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Informerer deg når eit eksternt innslag (typisk sponsing) er med i videoen. "
-"Ein tredjepart vert kontakta for dette."
+"Varsla når eit eksternt innslag (typisk sponsing) er med i videoen. Ein "
+"tredjepart vert kontakta for dette."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -729,8 +723,7 @@ msgid "Skip sponsored segments"
 msgstr "Hopp over sponsa innslag"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
 msgstr "Hopp automatisk over sponsa innslag i videoar."
 
@@ -1040,10 +1033,10 @@ msgid "%1 Likes"
 msgstr "%1 likarlikk"
 
 #: ui/videoplayer/VideoPlayer.qml:447
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "No description was set for this video."
-msgstr "Inga tenarskildring er oppgjeven."
+msgstr "Videoen manglar skildring."
 
 #: ui/videoplayer/VideoPlayer.qml:487
 #, kde-format
@@ -1062,14 +1055,12 @@ msgid "No recommended videos"
 msgstr "Ingen tilrådde videoar"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
 msgstr "Hoppa over sponsa innslag i videoen"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
 msgstr "Denne delen av videoen er sponsa"
 
