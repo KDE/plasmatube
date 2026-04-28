@@ -709,9 +709,9 @@ msgid ""
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Show a notification when a community-submitted segment (typically a "
-"sponsorship) is in the video. Táto funkcia requires contacting a 3rd-party "
-"service."
+"Zobrazí upozornenie, keď sa vo videu nachádza segment odoslaný komunitou "
+"(zvyčajne sponzorstvo). Táto funkcia vyžaduje kontaktovanie služby tretej "
+"strany."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -745,8 +745,8 @@ msgid ""
 "Whether to start playing videos immediately, or wait until the play button "
 "is pressed."
 msgstr ""
-"Či sa má start playing videos immediately, or wait until the play button is "
-"pressed."
+"Či sa má okamžite začať prehrávanie videí, alebo počkať, kým sa stlačí "
+"tlačidlo prehrávania."
 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
