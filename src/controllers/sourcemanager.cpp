@@ -151,6 +151,15 @@ void SourceManager::createPipedSource(const QString &url)
     insertSource(source);
 }
 
+void SourceManager::createYouTubeSource()
+{
+    auto source = new VideoSource(QUuid::createUuid().toString(), this);
+    source->setType(VideoSource::Type::YouTube);
+    source->setUrl(QStringLiteral("www.youtube.com"));
+
+    insertSource(source);
+}
+
 void SourceManager::insertSource(VideoSource *pSource)
 {
     const int index = m_finishedSources.size();

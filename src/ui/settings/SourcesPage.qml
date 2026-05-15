@@ -54,6 +54,8 @@ FormCard.FormCardPage {
                                 return "plasmatube-peertube";
                             case VideoSource.Piped:
                                 return "plasmatube-piped";
+                            case VideoSource.YouTube:
+                                return "plasmatube-piped";
                         }
                     }
 
@@ -65,6 +67,8 @@ FormCard.FormCardPage {
                                 return i18n("PeerTube");
                             case VideoSource.Piped:
                                 return i18n("Piped");
+                            case VideoSource.YouTube:
+                                return i18n("YouTube");
                         }
                     }
 
@@ -79,6 +83,9 @@ FormCard.FormCardPage {
                                 break;
                             case VideoSource.Piped:
                                 pageName = "PipedSourcePage";
+                                break;
+                            case VideoSource.YouTube:
+                                pageName = "YouTubeSourcePage";
                                 break;
                         }
 

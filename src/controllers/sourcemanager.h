@@ -47,6 +47,7 @@ public:
     Q_INVOKABLE void createInvidiousSource(const QString &url);
     Q_INVOKABLE void createPeerTubeSource(const QString &url);
     Q_INVOKABLE void createPipedSource(const QString &url);
+    Q_INVOKABLE void createYouTubeSource();
 
 Q_SIGNALS:
     void sourcesChanged();

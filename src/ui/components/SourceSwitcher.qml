@@ -55,6 +55,8 @@ QQC2.Pane {
                                     return i18n("PeerTube");
                                 case VideoSource.Piped:
                                     return i18n("Piped");
+                                case VideoSource.YouTube:
+                                    return i18n("YouTube");
                             }
                         }
                         font: Kirigami.Theme.smallFont

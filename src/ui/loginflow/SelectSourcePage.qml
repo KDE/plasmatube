@@ -98,5 +98,21 @@ FormCard.FormCardPage {
 
             onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddPipedPage"))
         }
+
+        FormCard.FormDelegateSeparator {
+            above: pipedButton
+            below: youTubeButton
+        }
+
+        SourceDelegate {
+            id: youTubeButton
+
+            text: i18n("Add YouTube Source")
+            description: i18n("Watch YouTube videos directly")
+            icon.name: "plasmatube-piped"
+            websiteUrl: "https://www.youtube.com/"
+
+            onClicked: Window.window.pageStack.layers.push(Qt.createComponent("org.kde.plasmatube", "AddYouTubePage"))
+        }
     }
 }

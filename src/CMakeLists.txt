@@ -142,6 +142,7 @@ qt_target_qml_sources(plasmatube
         ui/loginflow/AddInvidiousPage.qml
         ui/loginflow/AddPeerTubePage.qml
         ui/loginflow/AddPipedPage.qml
+        ui/loginflow/AddYouTubePage.qml
         ui/loginflow/InstancesPage.qml
         ui/loginflow/SelectSourcePage.qml
         ui/loginflow/WelcomePage.qml
@@ -155,6 +156,7 @@ qt_target_qml_sources(plasmatube
         ui/settings/PipedSourcePage.qml
         ui/settings/SettingsPage.qml
         ui/settings/SourcesPage.qml
+        ui/settings/YouTubeSourcePage.qml
 
         ui/videoplayer/MinimizedVideoPlayer.qml
         ui/videoplayer/PictureInPictureVideo.qml

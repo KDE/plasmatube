@@ -25,6 +25,8 @@ SPDX-License-Identifier: CC0-1.0
           </choice>
           <choice name="Piped">
           </choice>
+          <choice name="YouTube">
+          </choice>
         </choices>
       </entry>
       <entry name="username" type="string">

@@ -165,6 +165,10 @@ void VideoSource::createApi()
     case Type::Piped:
         m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
         break;
+    case Type::YouTube:
+        // TODO: stub, replace with YouTubeApi
+        m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
+        break;
     }
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);
     connect(m_api, &QInvidious::AbstractApi::canLogInChanged, this, &VideoSource::canLogInChanged);
