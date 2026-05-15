@@ -54,6 +54,9 @@ private:
 
     QJsonObject baseContext() const;
 
+    static QJsonObject videoRendererToInvidious(const QJsonObject &renderer);
+    static QString flattenRuns(const QJsonValue &value);
+
     static Error invalidJsonError();
 };
 
