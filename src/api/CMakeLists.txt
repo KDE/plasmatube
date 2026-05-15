@@ -19,6 +19,9 @@ target_sources(qinvidious PRIVATE
         piped/pipedapi.cpp
         piped/pipedapi.h
 
+        youtube/youtubeapi.cpp
+        youtube/youtubeapi.h
+
         abstractapi.h
         abstractapi.cpp
         caption.cpp

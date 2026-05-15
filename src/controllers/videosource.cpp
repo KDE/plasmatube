@@ -10,6 +10,7 @@
 #include <peertube/peertubeapi.h>
 #include <piped/pipedapi.h>
 #include <qt6keychain/keychain.h>
+#include <youtube/youtubeapi.h>
 
 VideoSource::VideoSource(const QString &key, QObject *parent)
     : QObject(parent)
@@ -166,8 +167,7 @@ void VideoSource::createApi()
         m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
         break;
     case Type::YouTube:
-        // TODO: stub, replace with YouTubeApi
-        m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
+        m_api = new QInvidious::YouTubeApi(new QNetworkAccessManager(this), this);
         break;
     }
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);
