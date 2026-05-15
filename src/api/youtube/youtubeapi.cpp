@@ -5,6 +5,7 @@
 
 #include "searchparameters.h"
 #include "searchresult.h"
+#include "video.h"
 
 #include <KLocalizedString>
 
@@ -14,6 +15,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QRegularExpression>
 #include <QStringBuilder>
 #include <QUrlQuery>
 
@@ -81,8 +83,47 @@ QFuture<LogInResult> YouTubeApi::logIn(const QString &username, const QString &p
 
 QFuture<VideoResult> YouTubeApi::requestVideo(const QString &videoId)
 {
-    Q_UNUSED(videoId)
-    return {};
+    QJsonObject payload{{u"videoId"_s, videoId}};
+    return innertubePost<VideoResult>(u"next"_s, payload, [videoId](QNetworkReply *reply) -> VideoResult {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.isNull()) {
+            return invalidJsonError();
+        }
+
+        const auto contents = doc.object()
+                                  .value(u"contents"_s)
+                                  .toObject()
+                                  .value(u"singleColumnWatchNextResults"_s)
+                                  .toObject()
+                                  .value(u"results"_s)
+                                  .toObject()
+                                  .value(u"results"_s)
+                                  .toObject()
+                                  .value(u"contents"_s)
+                                  .toArray();
+
+        QJsonObject synthesized;
+        synthesized.insert(u"videoId"_s, videoId);
+        for (const auto &c : contents) {
+            const auto obj = c.toObject();
+            if (obj.contains(u"itemSectionRenderer"_s)) {
+                for (const auto &it : obj.value(u"itemSectionRenderer"_s).toObject().value(u"contents"_s).toArray()) {
+                    const auto info = it.toObject().value(u"videoMetadataRenderer"_s).toObject();
+                    if (!info.isEmpty()) {
+                        synthesized.insert(u"title"_s, flattenRuns(info.value(u"title"_s)));
+                        synthesized.insert(u"description"_s, flattenRuns(info.value(u"description"_s)));
+                        synthesized.insert(u"viewCount"_s, flattenRuns(info.value(u"viewCount"_s)).remove(QRegularExpression(u"\\D"_s)).toLongLong());
+                        const auto owner = info.value(u"owner"_s).toObject().value(u"videoOwnerRenderer"_s).toObject();
+                        synthesized.insert(u"author"_s, flattenRuns(owner.value(u"title"_s)));
+                        synthesized.insert(
+                            u"authorId"_s,
+                            owner.value(u"navigationEndpoint"_s).toObject().value(u"browseEndpoint"_s).toObject().value(u"browseId"_s).toString());
+                    }
+                }
+            }
+        }
+        return Video::fromJson(synthesized);
+    });
 }
 
 QFuture<SearchListResult> YouTubeApi::requestSearchResults(const SearchParameters &parameters, Paginator *paginator)
@@ -122,14 +163,29 @@ QFuture<VideoListResult> YouTubeApi::requestTrending(TrendingTopic topic, Pagina
 {
     Q_UNUSED(topic)
     Q_UNUSED(paginator)
-    return {};
+
+    QJsonObject payload{{u"browseId"_s, u"FEwhat_to_watch"_s}};
+    return innertubePost<VideoListResult>(u"browse"_s, payload, [](QNetworkReply *reply) -> VideoListResult {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.isNull()) {
+            return invalidJsonError();
+        }
+        return parseVideoRenderers(doc.object());
+    });
 }
 
 QFuture<VideoListResult> YouTubeApi::requestChannel(const QString &query, Paginator *paginator)
 {
-    Q_UNUSED(query)
     Q_UNUSED(paginator)
-    return {};
+
+    QJsonObject payload{{u"browseId"_s, query}, {u"params"_s, u"EgZ2aWRlb3PyBgQKAjoA"_s}};
+    return innertubePost<VideoListResult>(u"browse"_s, payload, [](QNetworkReply *reply) -> VideoListResult {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.isNull()) {
+            return invalidJsonError();
+        }
+        return parseVideoRenderers(doc.object());
+    });
 }
 
 QFuture<SubscriptionsResult> YouTubeApi::requestSubscriptions()
@@ -241,6 +297,34 @@ QJsonObject YouTubeApi::baseContext() const
         {u"gl"_s, m_region.isEmpty() ? u"US"_s : m_region},
     };
     return QJsonObject{{u"client"_s, client}};
+}
+
+QList<VideoBasicInfo> YouTubeApi::parseVideoRenderers(const QJsonObject &root)
+{
+    QList<VideoBasicInfo> videos;
+    QList<QJsonValue> stack{root};
+    while (!stack.isEmpty()) {
+        const auto v = stack.takeFirst();
+        if (v.isObject()) {
+            const auto obj = v.toObject();
+            const auto rendererName = obj.contains(u"videoRenderer"_s) ? u"videoRenderer"_s
+                : obj.contains(u"gridVideoRenderer"_s)                 ? u"gridVideoRenderer"_s
+                : obj.contains(u"compactVideoRenderer"_s)              ? u"compactVideoRenderer"_s
+                                                                       : QString();
+            if (!rendererName.isEmpty()) {
+                videos << VideoBasicInfo::fromJson(videoRendererToInvidious(obj.value(rendererName).toObject()));
+                continue;
+            }
+            for (auto it = obj.begin(); it != obj.end(); ++it) {
+                stack.append(it.value());
+            }
+        } else if (v.isArray()) {
+            for (const auto &x : v.toArray()) {
+                stack.append(x);
+            }
+        }
+    }
+    return videos;
 }
 
 QString YouTubeApi::flattenRuns(const QJsonValue &value)

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "abstractapi.h"
+#include "videobasicinfo.h"
 
 #include <QJsonObject>
 
@@ -56,6 +57,7 @@ private:
 
     static QJsonObject videoRendererToInvidious(const QJsonObject &renderer);
     static QString flattenRuns(const QJsonValue &value);
+    static QList<VideoBasicInfo> parseVideoRenderers(const QJsonObject &root);
 
     static Error invalidJsonError();
 };
