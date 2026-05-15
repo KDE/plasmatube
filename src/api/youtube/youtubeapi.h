@@ -5,6 +5,8 @@
 
 #include "abstractapi.h"
 
+#include <QJsonObject>
+
 namespace QInvidious
 {
 
@@ -46,6 +48,11 @@ public:
 
 private:
     bool supportsFeature(SupportedFeature feature) override;
+
+    template<typename T>
+    QFuture<T> innertubePost(const QString &endpoint, const QJsonObject &payload, std::function<T(QNetworkReply *)> process);
+
+    QJsonObject baseContext() const;
 
     static Error invalidJsonError();
 };

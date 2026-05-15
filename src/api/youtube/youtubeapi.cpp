@@ -5,9 +5,25 @@
 
 #include <KLocalizedString>
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QStringBuilder>
+#include <QUrlQuery>
 
 using namespace QInvidious;
+using namespace Qt::StringLiterals;
+
+namespace
+{
+constexpr auto INNERTUBE_HOST = "https://www.youtube.com";
+constexpr auto INNERTUBE_API_KEY = "AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8";
+constexpr auto CLIENT_NAME = "TVHTML5";
+constexpr auto CLIENT_VERSION = "7.20260311.12.00";
+constexpr auto USER_AGENT = "Mozilla/5.0 (ChromiumStylePlatform) Cobalt/Version";
+}
 
 YouTubeApi::YouTubeApi(QNetworkAccessManager *netManager, QObject *parent)
     : AbstractApi(netManager, parent)
@@ -190,4 +206,37 @@ QString YouTubeApi::getVideoUrl(const QString &videoId)
 Error YouTubeApi::invalidJsonError()
 {
     return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};
+}
+
+QJsonObject YouTubeApi::baseContext() const
+{
+    QJsonObject client{
+        {u"clientName"_s, QString::fromLatin1(CLIENT_NAME)},
+        {u"clientVersion"_s, QString::fromLatin1(CLIENT_VERSION)},
+        {u"hl"_s, m_language.isEmpty() ? u"en"_s : m_language},
+        {u"gl"_s, m_region.isEmpty() ? u"US"_s : m_region},
+    };
+    return QJsonObject{{u"client"_s, client}};
+}
+
+template<typename T>
+QFuture<T> YouTubeApi::innertubePost(const QString &endpoint, const QJsonObject &payload, std::function<T(QNetworkReply *)> process)
+{
+    QJsonObject body = payload;
+    body.insert(u"context"_s, baseContext());
+
+    QUrl url(QString::fromLatin1(INNERTUBE_HOST) % u"/youtubei/v1/" % endpoint);
+    QUrlQuery query;
+    query.addQueryItem(u"key"_s, QString::fromLatin1(INNERTUBE_API_KEY));
+    query.addQueryItem(u"prettyPrint"_s, u"false"_s);
+    url.setQuery(query);
+
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/json"));
+    request.setHeader(QNetworkRequest::UserAgentHeader, QString::fromLatin1(USER_AGENT));
+    request.setRawHeader("Origin", "https://www.youtube.com");
+    request.setRawHeader("X-YouTube-Client-Name", QByteArray(CLIENT_NAME));
+    request.setRawHeader("X-YouTube-Client-Version", QByteArray(CLIENT_VERSION));
+
+    return post<T>(std::move(request), QJsonDocument(body).toJson(QJsonDocument::Compact), std::move(process));
 }
