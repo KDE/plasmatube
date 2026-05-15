@@ -63,7 +63,12 @@ private:
     static QList<QJsonObject> walkVideoItems(const QJsonObject &root);
     static QList<VideoBasicInfo> parseVideoRenderers(const QJsonObject &root);
 
+    QJsonObject dumpVideoInfo(const QString &videoId);
+    static void splitFormats(const QJsonArray &ytdlpFormats, QJsonArray &adaptive, QJsonArray &combined);
+
     static Error invalidJsonError();
+
+    QHash<QString, QJsonObject> m_videoInfoCache;
 };
 
 }

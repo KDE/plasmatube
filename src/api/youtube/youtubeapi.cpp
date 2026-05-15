@@ -15,6 +15,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QProcess>
 #include <QRegularExpression>
 #include <QStringBuilder>
 #include <QUrlQuery>
@@ -84,7 +85,7 @@ QFuture<LogInResult> YouTubeApi::logIn(const QString &username, const QString &p
 QFuture<VideoResult> YouTubeApi::requestVideo(const QString &videoId)
 {
     QJsonObject payload{{u"videoId"_s, videoId}};
-    return innertubePost<VideoResult>(u"next"_s, payload, [videoId](QNetworkReply *reply) -> VideoResult {
+    return innertubePost<VideoResult>(u"next"_s, payload, [this, videoId](QNetworkReply *reply) -> VideoResult {
         const auto doc = QJsonDocument::fromJson(reply->readAll());
         if (doc.isNull()) {
             return invalidJsonError();
@@ -132,6 +133,19 @@ QFuture<VideoResult> YouTubeApi::requestVideo(const QString &videoId)
         const auto descText = flattenRuns(description.value(u"descriptionBodyText"_s));
         synthesized.insert(u"description"_s, descText);
         synthesized.insert(u"descriptionHtml"_s, descText);
+
+        const auto info = dumpVideoInfo(videoId);
+        if (info.isEmpty()) {
+            return Error{QNetworkReply::ContentNotFoundError, i18n("yt-dlp could not extract this video. YouTube may be requiring sign-in.")};
+        }
+
+        QJsonArray adaptive, combined;
+        splitFormats(info.value(u"formats"_s).toArray(), adaptive, combined);
+        if (adaptive.isEmpty() && combined.isEmpty()) {
+            return Error{QNetworkReply::ContentNotFoundError, i18n("No playable formats returned.")};
+        }
+        synthesized.insert(u"adaptiveFormats"_s, adaptive);
+        synthesized.insert(u"formatStreams"_s, combined);
 
         return Video::fromJson(synthesized);
     });
@@ -284,6 +298,78 @@ QFuture<Result> YouTubeApi::removeVideoFromPlaylist(const QString &plid, const Q
 QString YouTubeApi::getVideoUrl(const QString &videoId)
 {
     return QStringLiteral("https://youtube.com/watch?v=%1").arg(videoId);
+}
+
+QJsonObject YouTubeApi::dumpVideoInfo(const QString &videoId)
+{
+    if (auto it = m_videoInfoCache.constFind(videoId); it != m_videoInfoCache.cend()) {
+        return *it;
+    }
+
+    QProcess proc;
+    proc.start(QStringLiteral("yt-dlp"),
+               {QStringLiteral("-J"),
+                QStringLiteral("--no-playlist"),
+                QStringLiteral("--no-warnings"),
+                QStringLiteral("https://www.youtube.com/watch?v=%1").arg(videoId)});
+    if (!proc.waitForStarted(2000)) {
+        qWarning() << "yt-dlp not found on PATH";
+        return {};
+    }
+    if (!proc.waitForFinished(60000) || proc.exitCode() != 0) {
+        qWarning() << "yt-dlp failed for" << videoId << proc.readAllStandardError();
+        return {};
+    }
+    const auto doc = QJsonDocument::fromJson(proc.readAllStandardOutput());
+    if (doc.isNull()) {
+        return {};
+    }
+    m_videoInfoCache.insert(videoId, doc.object());
+    return doc.object();
+}
+
+void YouTubeApi::splitFormats(const QJsonArray &ytdlpFormats, QJsonArray &adaptive, QJsonArray &combined)
+{
+    for (const auto &v : ytdlpFormats) {
+        const auto f = v.toObject();
+        const auto url = f.value(u"url"_s).toString();
+        if (url.isEmpty()) {
+            continue;
+        }
+        const auto vcodec = f.value(u"vcodec"_s).toString();
+        const auto acodec = f.value(u"acodec"_s).toString();
+        const bool hasVideo = !vcodec.isEmpty() && vcodec != u"none"_s;
+        const bool hasAudio = !acodec.isEmpty() && acodec != u"none"_s;
+        if (!hasVideo && !hasAudio) {
+            continue;
+        }
+
+        QJsonObject entry{
+            {u"url"_s, url},
+            {u"itag"_s, f.value(u"format_id"_s).toString().toInt()},
+            {u"container"_s, f.value(u"ext"_s).toString()},
+            {u"clen"_s, static_cast<qint64>(f.value(u"filesize"_s).toDouble())},
+        };
+        if (hasVideo && hasAudio) {
+            entry.insert(u"qualityLabel"_s, f.value(u"format_note"_s).toString());
+            const int height = f.value(u"height"_s).toInt();
+            if (height > 0) {
+                entry.insert(u"resolution"_s, QStringLiteral("%1p").arg(height));
+            }
+            combined.append(entry);
+        } else if (hasVideo) {
+            entry.insert(u"encoding"_s, vcodec);
+            entry.insert(u"qualityLabel"_s, f.value(u"format_note"_s).toString());
+            const int height = f.value(u"height"_s).toInt();
+            if (height > 0) {
+                entry.insert(u"resolution"_s, QStringLiteral("%1p").arg(height));
+            }
+            adaptive.append(entry);
+        } else {
+            entry.insert(u"encoding"_s, acodec);
+            adaptive.append(entry);
+        }
+    }
 }
 
 Error YouTubeApi::invalidJsonError()
