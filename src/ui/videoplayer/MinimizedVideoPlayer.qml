@@ -43,11 +43,22 @@ Rectangle {
                 spacing: Kirigami.Units.largeSpacing
                 anchors.fill: parent
 
-                // video preview
-                MultiEffect {
-                    id: blur
+                // video preview, square cell with PreserveAspectCrop semantics
+                Item {
                     Layout.fillHeight: true
-                    implicitWidth: Kirigami.Units.gridUnit * 3
+                    Layout.preferredWidth: height
+                    clip: true
+
+                    readonly property real aspect: blur.source && blur.source.videoWidth > 0 && blur.source.videoHeight > 0
+                        ? blur.source.videoWidth / blur.source.videoHeight
+                        : 16 / 9
+
+                    MultiEffect {
+                        id: blur
+                        anchors.centerIn: parent
+                        height: parent.aspect >= 1 ? parent.height : parent.height / parent.aspect
+                        width: parent.aspect >= 1 ? parent.height * parent.aspect : parent.height
+                    }
                 }
 
                 ColumnLayout {

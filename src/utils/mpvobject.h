@@ -17,6 +17,8 @@ class MpvObject : public MpvAbstractItem
     Q_PROPERTY(qreal duration READ duration NOTIFY durationChanged)
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)
     Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
+    Q_PROPERTY(int videoWidth READ videoWidth NOTIFY videoSizeChanged)
+    Q_PROPERTY(int videoHeight READ videoHeight NOTIFY videoSizeChanged)
 
 public:
     explicit MpvObject(QQuickItem *parent = nullptr);
@@ -28,6 +30,8 @@ public:
     qreal duration() const;
     bool paused() const;
     bool stopped() const;
+    int videoWidth() const;
+    int videoHeight() const;
 
 public Q_SLOTS:
     void play();
@@ -42,6 +46,7 @@ Q_SIGNALS:
     void durationChanged();
     void pausedChanged();
     void stoppedChanged();
+    void videoSizeChanged();
 
 private:
     void onPropertyChanged(const QString &property, const QVariant &value);
@@ -51,4 +56,6 @@ private:
     qreal m_duration = 0;
     bool m_stopped = true;
     QString m_audioUrl;
+    int m_videoWidth = 0;
+    int m_videoHeight = 0;
 };

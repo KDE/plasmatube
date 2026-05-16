@@ -27,6 +27,8 @@ MpvObject::MpvObject(QQuickItem *parent)
     observeProperty(QStringLiteral("duration"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("time-pos"), MPV_FORMAT_DOUBLE);
     observeProperty(QStringLiteral("pause"), MPV_FORMAT_FLAG);
+    observeProperty(QStringLiteral("dwidth"), MPV_FORMAT_INT64);
+    observeProperty(QStringLiteral("dheight"), MPV_FORMAT_INT64);
 
     connect(mpvController(), &MpvController::propertyChanged, this, &MpvObject::onPropertyChanged, Qt::QueuedConnection);
     connect(mpvController(), &MpvController::fileLoaded, this, [this]() {
@@ -106,6 +108,16 @@ bool MpvObject::stopped() const
     return m_stopped;
 }
 
+int MpvObject::videoWidth() const
+{
+    return m_videoWidth;
+}
+
+int MpvObject::videoHeight() const
+{
+    return m_videoHeight;
+}
+
 void MpvObject::onPropertyChanged(const QString &property, const QVariant &value)
 {
     if (property == QStringLiteral("time-pos")) {
@@ -124,6 +136,12 @@ void MpvObject::onPropertyChanged(const QString &property, const QVariant &value
     } else if (property == QStringLiteral("pause")) {
         m_paused = value.toBool();
         Q_EMIT pausedChanged();
+    } else if (property == QStringLiteral("dwidth")) {
+        m_videoWidth = value.toInt();
+        Q_EMIT videoSizeChanged();
+    } else if (property == QStringLiteral("dheight")) {
+        m_videoHeight = value.toInt();
+        Q_EMIT videoSizeChanged();
     }
 }
 
