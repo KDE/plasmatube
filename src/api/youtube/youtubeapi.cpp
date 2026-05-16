@@ -300,18 +300,33 @@ QString YouTubeApi::getVideoUrl(const QString &videoId)
     return QStringLiteral("https://youtube.com/watch?v=%1").arg(videoId);
 }
 
+void YouTubeApi::setCookiesFromBrowser(const QString &browser, const QString &profile)
+{
+    if (m_cookiesFromBrowser != browser || m_cookiesBrowserProfile != profile) {
+        m_cookiesFromBrowser = browser;
+        m_cookiesBrowserProfile = profile;
+        m_videoInfoCache.clear();
+    }
+}
+
 QJsonObject YouTubeApi::dumpVideoInfo(const QString &videoId)
 {
     if (auto it = m_videoInfoCache.constFind(videoId); it != m_videoInfoCache.cend()) {
         return *it;
     }
 
+    QStringList args{QStringLiteral("-J"), QStringLiteral("--no-playlist"), QStringLiteral("--no-warnings")};
+    if (!m_cookiesFromBrowser.isEmpty()) {
+        QString spec = m_cookiesFromBrowser;
+        if (!m_cookiesBrowserProfile.isEmpty()) {
+            spec += u':' + m_cookiesBrowserProfile;
+        }
+        args << QStringLiteral("--cookies-from-browser") << spec;
+    }
+    args << QStringLiteral("https://www.youtube.com/watch?v=%1").arg(videoId);
+
     QProcess proc;
-    proc.start(QStringLiteral("yt-dlp"),
-               {QStringLiteral("-J"),
-                QStringLiteral("--no-playlist"),
-                QStringLiteral("--no-warnings"),
-                QStringLiteral("https://www.youtube.com/watch?v=%1").arg(videoId)});
+    proc.start(QStringLiteral("yt-dlp"), args);
     if (!proc.waitForStarted(2000)) {
         qWarning() << "yt-dlp not found on PATH";
         return {};

@@ -97,6 +97,40 @@ void VideoSource::setUsername(const QString &username)
     }
 }
 
+QString VideoSource::cookiesFromBrowser() const
+{
+    return m_config.cookiesFromBrowser();
+}
+
+void VideoSource::setCookiesFromBrowser(const QString &value)
+{
+    if (m_config.cookiesFromBrowser() != value) {
+        m_config.setCookiesFromBrowser(value);
+        m_config.save();
+        Q_EMIT cookiesFromBrowserChanged();
+        if (auto *yt = qobject_cast<QInvidious::YouTubeApi *>(m_api)) {
+            yt->setCookiesFromBrowser(value, m_config.cookiesBrowserProfile());
+        }
+    }
+}
+
+QString VideoSource::cookiesBrowserProfile() const
+{
+    return m_config.cookiesBrowserProfile();
+}
+
+void VideoSource::setCookiesBrowserProfile(const QString &value)
+{
+    if (m_config.cookiesBrowserProfile() != value) {
+        m_config.setCookiesBrowserProfile(value);
+        m_config.save();
+        Q_EMIT cookiesBrowserProfileChanged();
+        if (auto *yt = qobject_cast<QInvidious::YouTubeApi *>(m_api)) {
+            yt->setCookiesFromBrowser(m_config.cookiesFromBrowser(), value);
+        }
+    }
+}
+
 QInvidious::Preferences VideoSource::preferences()
 {
     return m_preferences;
@@ -166,9 +200,12 @@ void VideoSource::createApi()
     case Type::Piped:
         m_api = new QInvidious::PipedApi(new QNetworkAccessManager(this), this);
         break;
-    case Type::YouTube:
-        m_api = new QInvidious::YouTubeApi(new QNetworkAccessManager(this), this);
+    case Type::YouTube: {
+        auto api = new QInvidious::YouTubeApi(new QNetworkAccessManager(this), this);
+        api->setCookiesFromBrowser(m_config.cookiesFromBrowser(), m_config.cookiesBrowserProfile());
+        m_api = api;
         break;
+    }
     }
     connect(m_api, &QInvidious::AbstractApi::credentialsChanged, this, &VideoSource::credentialsChanged);
     connect(m_api, &QInvidious::AbstractApi::canLogInChanged, this, &VideoSource::canLogInChanged);

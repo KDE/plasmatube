@@ -47,6 +47,8 @@ public:
     QFuture<Result> removeVideoFromPlaylist(const QString &plid, const QString &indexId) override;
     QString getVideoUrl(const QString &videoId) override;
 
+    void setCookiesFromBrowser(const QString &browser, const QString &profile = {});
+
 private:
     bool supportsFeature(SupportedFeature feature) override;
 
@@ -69,6 +71,8 @@ private:
     static Error invalidJsonError();
 
     QHash<QString, QJsonObject> m_videoInfoCache;
+    QString m_cookiesFromBrowser;
+    QString m_cookiesBrowserProfile;
 };
 
 }

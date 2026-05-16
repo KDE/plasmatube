@@ -30,6 +30,8 @@ class VideoSource : public QObject
     Q_PROPERTY(QString username READ username NOTIFY usernameChanged)
     Q_PROPERTY(QInvidious::Preferences preferences READ preferences WRITE setPreferences NOTIFY preferencesChanged)
     Q_PROPERTY(bool showRelatedVideos READ showRelatedVideos CONSTANT)
+    Q_PROPERTY(QString cookiesFromBrowser READ cookiesFromBrowser WRITE setCookiesFromBrowser NOTIFY cookiesFromBrowserChanged)
+    Q_PROPERTY(QString cookiesBrowserProfile READ cookiesBrowserProfile WRITE setCookiesBrowserProfile NOTIFY cookiesBrowserProfileChanged)
 
 public:
     explicit VideoSource(const QString &key, QObject *parent = nullptr);
@@ -52,6 +54,12 @@ public:
 
     void setUsername(const QString &username);
     QString username() const;
+
+    QString cookiesFromBrowser() const;
+    void setCookiesFromBrowser(const QString &value);
+
+    QString cookiesBrowserProfile() const;
+    void setCookiesBrowserProfile(const QString &value);
 
     QInvidious::Preferences preferences();
     void setPreferences(const QInvidious::Preferences &preferences);
@@ -98,6 +106,8 @@ Q_SIGNALS:
     void canLogInChanged();
     void importExportCompleted(int numSubscriptions);
     void importExportError(const QString &reason);
+    void cookiesFromBrowserChanged();
+    void cookiesBrowserProfileChanged();
 
 private:
     friend class SubscriptionController;

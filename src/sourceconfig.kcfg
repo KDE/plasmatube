@@ -31,5 +31,9 @@ SPDX-License-Identifier: CC0-1.0
       </entry>
       <entry name="username" type="string">
       </entry>
+      <entry name="cookiesFromBrowser" type="string">
+      </entry>
+      <entry name="cookiesBrowserProfile" type="string">
+      </entry>
     </group>
 </kcfg>
