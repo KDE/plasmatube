@@ -89,39 +89,50 @@ QFuture<VideoResult> YouTubeApi::requestVideo(const QString &videoId)
         if (doc.isNull()) {
             return invalidJsonError();
         }
-
-        const auto contents = doc.object()
-                                  .value(u"contents"_s)
-                                  .toObject()
-                                  .value(u"singleColumnWatchNextResults"_s)
-                                  .toObject()
-                                  .value(u"results"_s)
-                                  .toObject()
-                                  .value(u"results"_s)
-                                  .toObject()
-                                  .value(u"contents"_s)
-                                  .toArray();
+        const auto root = doc.object();
 
         QJsonObject synthesized;
         synthesized.insert(u"videoId"_s, videoId);
-        for (const auto &c : contents) {
-            const auto obj = c.toObject();
-            if (obj.contains(u"itemSectionRenderer"_s)) {
-                for (const auto &it : obj.value(u"itemSectionRenderer"_s).toObject().value(u"contents"_s).toArray()) {
-                    const auto info = it.toObject().value(u"videoMetadataRenderer"_s).toObject();
-                    if (!info.isEmpty()) {
-                        synthesized.insert(u"title"_s, flattenRuns(info.value(u"title"_s)));
-                        synthesized.insert(u"description"_s, flattenRuns(info.value(u"description"_s)));
-                        synthesized.insert(u"viewCount"_s, flattenRuns(info.value(u"viewCount"_s)).remove(QRegularExpression(u"\\D"_s)).toLongLong());
-                        const auto owner = info.value(u"owner"_s).toObject().value(u"videoOwnerRenderer"_s).toObject();
-                        synthesized.insert(u"author"_s, flattenRuns(owner.value(u"title"_s)));
-                        synthesized.insert(
-                            u"authorId"_s,
-                            owner.value(u"navigationEndpoint"_s).toObject().value(u"browseEndpoint"_s).toObject().value(u"browseId"_s).toString());
+
+        std::function<const QJsonObject(const QJsonValue &, const QString &)> findFirst;
+        findFirst = [&findFirst](const QJsonValue &v, const QString &key) -> const QJsonObject {
+            if (v.isObject()) {
+                const auto obj = v.toObject();
+                if (obj.contains(key)) {
+                    return obj.value(key).toObject();
+                }
+                for (auto it = obj.begin(); it != obj.end(); ++it) {
+                    auto r = findFirst(it.value(), key);
+                    if (!r.isEmpty()) {
+                        return r;
+                    }
+                }
+            } else if (v.isArray()) {
+                for (const auto &x : v.toArray()) {
+                    auto r = findFirst(x, key);
+                    if (!r.isEmpty()) {
+                        return r;
                     }
                 }
             }
-        }
+            return {};
+        };
+
+        const auto meta = findFirst(root, u"videoMetadataRenderer"_s);
+        synthesized.insert(u"title"_s, flattenRuns(meta.value(u"title"_s)));
+        const auto owner = meta.value(u"owner"_s).toObject().value(u"videoOwnerRenderer"_s).toObject();
+        synthesized.insert(u"author"_s, flattenRuns(owner.value(u"title"_s)));
+        synthesized.insert(u"authorId"_s,
+                           owner.value(u"navigationEndpoint"_s).toObject().value(u"browseEndpoint"_s).toObject().value(u"browseId"_s).toString());
+
+        const auto viewCounts = findFirst(root, u"videoViewCountRenderer"_s);
+        synthesized.insert(u"viewCount"_s, parseDigits(flattenRuns(viewCounts.value(u"viewCount"_s))));
+
+        const auto description = findFirst(root, u"expandableVideoDescriptionBodyRenderer"_s);
+        const auto descText = flattenRuns(description.value(u"descriptionBodyText"_s));
+        synthesized.insert(u"description"_s, descText);
+        synthesized.insert(u"descriptionHtml"_s, descText);
+
         return Video::fromJson(synthesized);
     });
 }
@@ -138,16 +149,8 @@ QFuture<SearchListResult> YouTubeApi::requestSearchResults(const SearchParameter
         }
 
         QList<SearchResult> results;
-        const auto sections = doc.object().value(u"contents"_s).toObject().value(u"sectionListRenderer"_s).toObject().value(u"contents"_s).toArray();
-        for (const auto &section : sections) {
-            const auto items = section.toObject().value(u"itemSectionRenderer"_s).toObject().value(u"contents"_s).toArray();
-            for (const auto &item : items) {
-                const auto renderer = item.toObject().value(u"videoRenderer"_s).toObject();
-                if (renderer.isEmpty()) {
-                    continue;
-                }
-                results << SearchResult::fromJson(videoRendererToInvidious(renderer));
-            }
+        for (const auto &item : walkVideoItems(doc.object())) {
+            results << SearchResult::fromJson(item);
         }
         return results;
     });
@@ -299,22 +302,35 @@ QJsonObject YouTubeApi::baseContext() const
     return QJsonObject{{u"client"_s, client}};
 }
 
-QList<VideoBasicInfo> YouTubeApi::parseVideoRenderers(const QJsonObject &root)
+QList<QJsonObject> YouTubeApi::walkVideoItems(const QJsonObject &root)
 {
-    QList<VideoBasicInfo> videos;
+    QList<QJsonObject> items;
     QList<QJsonValue> stack{root};
     while (!stack.isEmpty()) {
         const auto v = stack.takeFirst();
         if (v.isObject()) {
             const auto obj = v.toObject();
-            const auto rendererName = obj.contains(u"videoRenderer"_s) ? u"videoRenderer"_s
-                : obj.contains(u"gridVideoRenderer"_s)                 ? u"gridVideoRenderer"_s
-                : obj.contains(u"compactVideoRenderer"_s)              ? u"compactVideoRenderer"_s
-                                                                       : QString();
-            if (!rendererName.isEmpty()) {
-                videos << VideoBasicInfo::fromJson(videoRendererToInvidious(obj.value(rendererName).toObject()));
+
+            if (obj.contains(u"videoRenderer"_s)) {
+                items << videoRendererToInvidious(obj.value(u"videoRenderer"_s).toObject());
                 continue;
             }
+            if (obj.contains(u"gridVideoRenderer"_s)) {
+                items << videoRendererToInvidious(obj.value(u"gridVideoRenderer"_s).toObject());
+                continue;
+            }
+            if (obj.contains(u"compactVideoRenderer"_s)) {
+                items << videoRendererToInvidious(obj.value(u"compactVideoRenderer"_s).toObject());
+                continue;
+            }
+            if (obj.contains(u"tileRenderer"_s)) {
+                const auto tile = obj.value(u"tileRenderer"_s).toObject();
+                if (tile.value(u"contentType"_s).toString() == u"TILE_CONTENT_TYPE_VIDEO"_s) {
+                    items << tileRendererToInvidious(tile);
+                }
+                continue;
+            }
+
             for (auto it = obj.begin(); it != obj.end(); ++it) {
                 stack.append(it.value());
             }
@@ -323,6 +339,15 @@ QList<VideoBasicInfo> YouTubeApi::parseVideoRenderers(const QJsonObject &root)
                 stack.append(x);
             }
         }
+    }
+    return items;
+}
+
+QList<VideoBasicInfo> YouTubeApi::parseVideoRenderers(const QJsonObject &root)
+{
+    QList<VideoBasicInfo> videos;
+    for (const auto &item : walkVideoItems(root)) {
+        videos << VideoBasicInfo::fromJson(item);
     }
     return videos;
 }
@@ -338,6 +363,26 @@ QString YouTubeApi::flattenRuns(const QJsonValue &value)
         out += run.toObject().value(u"text"_s).toString();
     }
     return out;
+}
+
+qint64 YouTubeApi::parseDigits(const QString &text)
+{
+    QString digits;
+    for (QChar c : text) {
+        if (c.isDigit()) {
+            digits.append(c);
+        }
+    }
+    return digits.toLongLong();
+}
+
+qint64 YouTubeApi::parseDuration(const QString &text)
+{
+    qint64 seconds = 0;
+    for (const auto &part : text.split(u':')) {
+        seconds = seconds * 60 + part.toInt();
+    }
+    return seconds;
 }
 
 QJsonObject YouTubeApi::videoRendererToInvidious(const QJsonObject &renderer)
@@ -361,21 +406,8 @@ QJsonObject YouTubeApi::videoRendererToInvidious(const QJsonObject &renderer)
                    .value(u"browseId"_s)
                    .toString());
 
-    const auto viewText = flattenRuns(renderer.value(u"viewCountText"_s));
-    QString digits;
-    for (QChar c : viewText) {
-        if (c.isDigit()) {
-            digits.append(c);
-        }
-    }
-    out.insert(u"viewCount"_s, digits.toLongLong());
-
-    const auto lengthText = flattenRuns(renderer.value(u"lengthText"_s));
-    qint64 seconds = 0;
-    for (const auto &part : lengthText.split(u':')) {
-        seconds = seconds * 60 + part.toInt();
-    }
-    out.insert(u"lengthSeconds"_s, seconds);
+    out.insert(u"viewCount"_s, parseDigits(flattenRuns(renderer.value(u"viewCountText"_s))));
+    out.insert(u"lengthSeconds"_s, parseDuration(flattenRuns(renderer.value(u"lengthText"_s))));
 
     QJsonArray thumbnails;
     for (const auto &thumb : renderer.value(u"thumbnail"_s).toObject().value(u"thumbnails"_s).toArray()) {
@@ -399,6 +431,69 @@ QJsonObject YouTubeApi::videoRendererToInvidious(const QJsonObject &renderer)
         }
     }
     out.insert(u"liveNow"_s, live);
+    return out;
+}
+
+QJsonObject YouTubeApi::tileRendererToInvidious(const QJsonObject &renderer)
+{
+    QJsonObject out;
+    out.insert(u"type"_s, u"video"_s);
+
+    const auto watchEndpoint = renderer.value(u"onSelectCommand"_s).toObject().value(u"watchEndpoint"_s).toObject();
+    out.insert(u"videoId"_s, watchEndpoint.value(u"videoId"_s).toString());
+
+    const auto metadata = renderer.value(u"metadata"_s).toObject().value(u"tileMetadataRenderer"_s).toObject();
+    out.insert(u"title"_s, flattenRuns(metadata.value(u"title"_s)));
+
+    const auto header = renderer.value(u"header"_s).toObject().value(u"tileHeaderRenderer"_s).toObject();
+
+    QJsonArray thumbnails;
+    for (const auto &thumb : header.value(u"thumbnail"_s).toObject().value(u"thumbnails"_s).toArray()) {
+        const auto t = thumb.toObject();
+        thumbnails.append(QJsonObject{
+            {u"quality"_s, u"default"_s},
+            {u"url"_s, t.value(u"url"_s).toString()},
+            {u"width"_s, t.value(u"width"_s)},
+            {u"height"_s, t.value(u"height"_s)},
+        });
+    }
+    out.insert(u"videoThumbnails"_s, thumbnails);
+
+    qint64 lengthSeconds = 0;
+    bool live = false;
+    for (const auto &overlay : header.value(u"thumbnailOverlays"_s).toArray()) {
+        const auto timeStatus = overlay.toObject().value(u"thumbnailOverlayTimeStatusRenderer"_s).toObject();
+        if (timeStatus.isEmpty()) {
+            continue;
+        }
+        if (timeStatus.value(u"style"_s).toString() == u"LIVE"_s) {
+            live = true;
+        }
+        lengthSeconds = parseDuration(flattenRuns(timeStatus.value(u"text"_s)));
+    }
+    out.insert(u"lengthSeconds"_s, lengthSeconds);
+    out.insert(u"liveNow"_s, live);
+
+    QString author;
+    qint64 viewCount = 0;
+    const auto lines = metadata.value(u"lines"_s).toArray();
+    if (!lines.isEmpty()) {
+        const auto firstLine = lines.first().toObject().value(u"lineRenderer"_s).toObject().value(u"items"_s).toArray();
+        if (!firstLine.isEmpty()) {
+            author = flattenRuns(firstLine.first().toObject().value(u"lineItemRenderer"_s).toObject().value(u"text"_s));
+        }
+    }
+    if (lines.size() > 1) {
+        for (const auto &it : lines.at(1).toObject().value(u"lineRenderer"_s).toObject().value(u"items"_s).toArray()) {
+            const auto text = flattenRuns(it.toObject().value(u"lineItemRenderer"_s).toObject().value(u"text"_s));
+            if (text.contains(u"view"_s, Qt::CaseInsensitive)) {
+                viewCount = parseDigits(text);
+            }
+        }
+    }
+    out.insert(u"author"_s, author);
+    out.insert(u"viewCount"_s, viewCount);
+
     return out;
 }
 

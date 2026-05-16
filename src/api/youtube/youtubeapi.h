@@ -56,7 +56,11 @@ private:
     QJsonObject baseContext() const;
 
     static QJsonObject videoRendererToInvidious(const QJsonObject &renderer);
+    static QJsonObject tileRendererToInvidious(const QJsonObject &renderer);
     static QString flattenRuns(const QJsonValue &value);
+    static qint64 parseDigits(const QString &text);
+    static qint64 parseDuration(const QString &text);
+    static QList<QJsonObject> walkVideoItems(const QJsonObject &root);
     static QList<VideoBasicInfo> parseVideoRenderers(const QJsonObject &root);
 
     static Error invalidJsonError();
