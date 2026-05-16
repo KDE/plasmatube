@@ -69,6 +69,10 @@ private:
     static void splitFormats(const QJsonArray &ytdlpFormats, QJsonArray &adaptive, QJsonArray &combined);
 
     static Error invalidJsonError();
+    static Error notImplementedError();
+
+    template<typename T>
+    static QFuture<T> readyResult(T &&value);
 
     QHash<QString, QJsonObject> m_videoInfoCache;
     QString m_cookiesFromBrowser;

@@ -3,6 +3,7 @@
 
 #include "youtubeapi.h"
 
+#include "channel.h"
 #include "searchparameters.h"
 #include "searchresult.h"
 #include "video.h"
@@ -79,7 +80,7 @@ QFuture<LogInResult> YouTubeApi::logIn(const QString &username, const QString &p
 {
     Q_UNUSED(username)
     Q_UNUSED(password)
-    return {};
+    return readyResult<LogInResult>(notImplementedError());
 }
 
 QFuture<VideoResult> YouTubeApi::requestVideo(const QString &videoId)
@@ -173,7 +174,7 @@ QFuture<SearchListResult> YouTubeApi::requestSearchResults(const SearchParameter
 QFuture<VideoListResult> YouTubeApi::requestFeed(Paginator *paginator)
 {
     Q_UNUSED(paginator)
-    return {};
+    return readyResult<VideoListResult>(notImplementedError());
 }
 
 QFuture<VideoListResult> YouTubeApi::requestTrending(TrendingTopic topic, Paginator *paginator)
@@ -207,92 +208,122 @@ QFuture<VideoListResult> YouTubeApi::requestChannel(const QString &query, Pagina
 
 QFuture<SubscriptionsResult> YouTubeApi::requestSubscriptions()
 {
-    return {};
+    return readyResult<SubscriptionsResult>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::subscribeToChannel(const QString &channel)
 {
     Q_UNUSED(channel)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::unsubscribeFromChannel(const QString &channel)
 {
     Q_UNUSED(channel)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<HistoryResult> YouTubeApi::requestHistory(Paginator *paginator)
 {
     Q_UNUSED(paginator)
-    return {};
+    return readyResult<HistoryResult>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::markWatched(const QString &videoId)
 {
     Q_UNUSED(videoId)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::markUnwatched(const QString &videoId)
 {
     Q_UNUSED(videoId)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<CommentsResult> YouTubeApi::requestComments(const QString &videoId, Paginator *paginator)
 {
     Q_UNUSED(videoId)
     Q_UNUSED(paginator)
-    return {};
+    return readyResult<CommentsResult>(notImplementedError());
 }
 
 QFuture<PlaylistsResult> YouTubeApi::requestPlaylists()
 {
-    return {};
+    return readyResult<PlaylistsResult>(notImplementedError());
 }
 
 QFuture<PreferencesResult> YouTubeApi::requestPreferences()
 {
-    return {};
+    return readyResult<PreferencesResult>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::setPreferences(const QInvidious::Preferences &preferences)
 {
     Q_UNUSED(preferences)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<VideoListResult> YouTubeApi::requestPlaylist(const QString &plid)
 {
     Q_UNUSED(plid)
-    return {};
+    return readyResult<VideoListResult>(notImplementedError());
 }
 
-QFuture<ChannelResult> YouTubeApi::requestChannelInfo(const QString &queryd)
+QFuture<ChannelResult> YouTubeApi::requestChannelInfo(const QString &channelId)
 {
-    Q_UNUSED(queryd)
-    return {};
+    QJsonObject payload{{u"browseId"_s, channelId}};
+    return innertubePost<ChannelResult>(u"browse"_s, payload, [channelId](QNetworkReply *reply) -> ChannelResult {
+        const auto doc = QJsonDocument::fromJson(reply->readAll());
+        if (doc.isNull()) {
+            return invalidJsonError();
+        }
+
+        const auto header = doc.object().value(u"header"_s).toObject();
+        const auto tabbed = !header.value(u"c4TabbedHeaderRenderer"_s).toObject().isEmpty() ? header.value(u"c4TabbedHeaderRenderer"_s).toObject()
+                                                                                            : header.value(u"pageHeaderRenderer"_s).toObject();
+
+        QJsonObject synthesized;
+        synthesized.insert(u"authorId"_s, channelId);
+        synthesized.insert(u"author"_s,
+                           tabbed.value(u"title"_s).toString().isEmpty() ? flattenRuns(tabbed.value(u"title"_s)) : tabbed.value(u"title"_s).toString());
+        synthesized.insert(u"description"_s, flattenRuns(tabbed.value(u"tagline"_s)));
+        synthesized.insert(u"subCountText"_s, flattenRuns(tabbed.value(u"subscriberCountText"_s)));
+
+        QJsonArray avatars;
+        for (const auto &t : tabbed.value(u"avatar"_s).toObject().value(u"thumbnails"_s).toArray()) {
+            avatars.append(t);
+        }
+        synthesized.insert(u"authorThumbnails"_s, avatars);
+
+        QJsonArray banners;
+        for (const auto &t : tabbed.value(u"banner"_s).toObject().value(u"thumbnails"_s).toArray()) {
+            banners.append(t);
+        }
+        synthesized.insert(u"authorBanners"_s, banners);
+
+        return Channel::fromJson(synthesized);
+    });
 }
 
 QFuture<PlaylistsResult> YouTubeApi::requestChannelPlaylists(const QString &channelId)
 {
     Q_UNUSED(channelId)
-    return {};
+    return readyResult<PlaylistsResult>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::addVideoToPlaylist(const QString &plid, const QString &videoId)
 {
     Q_UNUSED(plid)
     Q_UNUSED(videoId)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QFuture<Result> YouTubeApi::removeVideoFromPlaylist(const QString &plid, const QString &indexId)
 {
     Q_UNUSED(plid)
     Q_UNUSED(indexId)
-    return {};
+    return readyResult<Result>(notImplementedError());
 }
 
 QString YouTubeApi::getVideoUrl(const QString &videoId)
@@ -325,6 +356,7 @@ QJsonObject YouTubeApi::dumpVideoInfo(const QString &videoId)
     }
     args << QStringLiteral("https://www.youtube.com/watch?v=%1").arg(videoId);
 
+    qDebug() << "yt-dlp" << args;
     QProcess proc;
     proc.start(QStringLiteral("yt-dlp"), args);
     if (!proc.waitForStarted(2000)) {
@@ -390,6 +422,21 @@ void YouTubeApi::splitFormats(const QJsonArray &ytdlpFormats, QJsonArray &adapti
 Error YouTubeApi::invalidJsonError()
 {
     return {QNetworkReply::InternalServerError, i18n("Server returned no valid JSON.")};
+}
+
+Error YouTubeApi::notImplementedError()
+{
+    return {QNetworkReply::OperationNotImplementedError, i18n("This action is not supported for the YouTube source yet.")};
+}
+
+template<typename T>
+QFuture<T> YouTubeApi::readyResult(T &&value)
+{
+    QFutureInterface<T> i;
+    i.reportStarted();
+    i.reportResult(std::forward<T>(value));
+    i.reportFinished();
+    return i.future();
 }
 
 QJsonObject YouTubeApi::baseContext() const
