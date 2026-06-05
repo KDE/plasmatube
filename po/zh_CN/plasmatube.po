@@ -633,7 +633,7 @@ msgstr "首选视频质量"
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
-msgstr ""
+msgstr "播放器将使用此选定的画质 (如果可用)；否则将使用当前可用的最高画质。"
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -707,6 +707,8 @@ msgid ""
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
+"当视频中出现社区提交的片段（通常为赞助内容）时显示通知。该功能需要调用第三方"
+"服务接口。"
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -717,7 +719,7 @@ msgstr "跳过赞助信息"
 #: ui/settings/GeneralPage.qml:112
 #, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr ""
+msgstr "自动跳过视频中的广告赞助片段。"
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1044,12 +1046,12 @@ msgstr "没有推荐视频"
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr ""
+msgstr "已跳过视频的广告赞助片段"
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
 msgid "This segment of the video is sponsored"
-msgstr ""
+msgstr "此视频片段是广告赞助内容"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
