@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021-2026 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:43+0000\n"
-"PO-Revision-Date: 2025-02-04 21:40+0100\n"
+"PO-Revision-Date: 2026-06-16 22:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -636,16 +636,13 @@ msgid "Preferred Video Quality"
 msgstr "Előnyben részesített videóminőség"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
 "A kiválasztott minőség lesz használva, ha rendelkezésre áll, különben a "
-"következő legmagasabb minőséget használja."
+"legmagasabb minőséget használja."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -712,19 +709,16 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Check for sponsored segments"
-msgstr "Szponzorált szakaszok keresése"
+msgstr "Szponzorált részek keresése"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Értesíti Önt, ha egy közösség által beküldött szakasz (tipikusan "
+"Értesítés megjelenítése, ha egy közösség által beküldött rész (tipikusan "
 "szponzoráció) van a videóban. Ez a funkció egy harmadik fél által "
 "biztosított szolgáltatással való kapcsolatfelvételt igényel."
 
@@ -732,13 +726,12 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Skip sponsored segments"
-msgstr "Szponzorált szakaszok kihagyása"
+msgstr "Szponzorált részek kihagyása"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Automatikusan átugorja a szponzorált szakaszokat a videóban."
+msgstr "Szponzorált részek automatikus kihagyása."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #, kde-format
@@ -1067,16 +1060,14 @@ msgid "No recommended videos"
 msgstr "Nincs ajánlott videó"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
 msgstr "A videó szponzorált része kihagyásra került"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "A videó ezen része szponzorált"
+msgstr "A videó ezen részét szponzorálták"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
