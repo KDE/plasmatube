@@ -19,9 +19,10 @@
 #include <QQuickStyle>
 #include <QQuickWindow>
 
-#include <KLocalizedContext>
 #include <KAboutData>
+#include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 
 #ifdef HAVE_KDBUSADDONS
 #include <KDBusService>
@@ -38,14 +39,11 @@ int main(int argc, char **argv)
 {
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
-
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
-    }
 #endif
+
+    KirigamiAppDefaults::apply(&app);
 
     KLocalizedString::setApplicationDomain("plasmatube");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
