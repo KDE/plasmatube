@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-25 00:43+0000\n"
+"POT-Creation-Date: 2026-07-31 00:44+0000\n"
 "PO-Revision-Date: 2025-12-25 09:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -47,48 +47,48 @@ msgstr "عطلة هذه النسخة التسجيل"
 msgid "Playing video"
 msgstr "يشغل فيديو"
 
-#: main.cpp:54
+#: main.cpp:52
 #, kde-format
 msgid "PlasmaTube"
 msgstr "بلازما تيوب"
 
-#: main.cpp:56
+#: main.cpp:54
 #, kde-format
 msgid "YouTube client"
 msgstr "عميل يوتيوب"
 
-#: main.cpp:58
+#: main.cpp:56
 #, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019-2025 لينوس جان، 2019-2025 مجتمع كيدي"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-format
 msgid "Linus Jahn"
 msgstr "لينوس جان"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-format
 msgid "Creator"
 msgstr "المُنشئ"
 
-#: main.cpp:60
+#: main.cpp:58
 #, kde-format
 msgid "Joshua Goins"
 msgstr "جوشوا جوينز"
 
-#: main.cpp:61
+#: main.cpp:59
 #, kde-format
 msgid "Maintainer"
 msgstr "الصائن"
 
-#: main.cpp:65
+#: main.cpp:63
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "زايد السعيدي"
 
-#: main.cpp:65
+#: main.cpp:63
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"

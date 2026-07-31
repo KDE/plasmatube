@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-25 00:43+0000\n"
+"POT-Creation-Date: 2026-07-31 00:44+0000\n"
 "PO-Revision-Date: 2026-01-27 17:04+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -49,48 +49,48 @@ msgstr "Diese Instanz hat die Registrierung deaktiviert."
 msgid "Playing video"
 msgstr "Video wird wiedergegeben"
 
-#: main.cpp:54
+#: main.cpp:52
 #, kde-format
 msgid "PlasmaTube"
 msgstr "PlasmaTube"
 
-#: main.cpp:56
+#: main.cpp:54
 #, kde-format
 msgid "YouTube client"
 msgstr "YouTube-Anwendung"
 
-#: main.cpp:58
+#: main.cpp:56
 #, kde-format
 msgid "© 2019-2025 Linus Jahn, 2019-2025 KDE Community"
 msgstr "© 2019–2025 Linus Jahn, 2019–2025 KDE-Gemeinschaft"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-format
 msgid "Linus Jahn"
 msgstr "Linus Jahn"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-format
 msgid "Creator"
 msgstr "Ersteller"
 
-#: main.cpp:60
+#: main.cpp:58
 #, kde-format
 msgid "Joshua Goins"
 msgstr "Joshua Goins"
 
-#: main.cpp:61
+#: main.cpp:59
 #, kde-format
 msgid "Maintainer"
 msgstr "Betreuer"
 
-#: main.cpp:65
+#: main.cpp:63
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Deutsches KDE-Übersetzungsteam"
 
-#: main.cpp:65
+#: main.cpp:63
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
