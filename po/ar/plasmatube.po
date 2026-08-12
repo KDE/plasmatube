@@ -292,7 +292,7 @@ msgstr "أضف مصدرًا"
 #: ui/components/SourceSwitcherDialog.qml:59
 #, kde-format
 msgid "Add a new video source"
-msgstr "أضف مصدر فيديو جديداً"
+msgstr "أضف مصدر فيديو جديدًا"
 
 #: ui/components/SubscriptionButton.qml:61
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "أدخل عنوان URL للخادم يدويًا في حقل البحث
 #, kde-format
 msgctxt "@title:window"
 msgid "Add a Video Source"
-msgstr "أضف مصدر فيديو جديداً"
+msgstr "أضف مصدر فيديو جديدًا"
 
 #: ui/loginflow/SelectSourcePage.qml:39
 #, kde-format
@@ -493,7 +493,7 @@ msgstr "شاهد مقاطع فيديو على اليوتيوب والبيورت�
 #, kde-format
 msgctxt "@action:button"
 msgid "Add a Video Source"
-msgstr "أضف مصدر فيديو جديداً"
+msgstr "أضف مصدر فيديو جديدًا"
 
 #: ui/loginflow/WelcomePage.qml:82
 #, kde-format
