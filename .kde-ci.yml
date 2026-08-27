@@ -4,18 +4,18 @@
 Dependencies:
 - 'on': ['Linux', 'FreeBSD']
   'require':
-    'frameworks/purpose': '@latest-kf6'
-    'frameworks/qqc2-desktop-style': '@latest-kf6'
+    'frameworks/purpose': 'Frameworks/6.24'
+    'frameworks/qqc2-desktop-style': 'Frameworks/6.24'
 
 - 'on': ['Linux', 'FreeBSD', 'Android']
   'require':
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kconfig': '@latest-kf6'
-    'frameworks/kcoreaddons': '@latest-kf6'
-    'frameworks/ki18n': '@latest-kf6'
-    'frameworks/kirigami': '@latest-kf6'
-    'frameworks/kitemmodels': '@latest-kf6'
-    'libraries/kirigami-addons': '@latest-kf6'
+    'frameworks/extra-cmake-modules': 'Frameworks/6.24'
+    'frameworks/kconfig': 'Frameworks/6.24'
+    'frameworks/kcoreaddons': 'Frameworks/6.24'
+    'frameworks/ki18n': 'Frameworks/6.24'
+    'frameworks/kirigami': 'Frameworks/6.24'
+    'frameworks/kitemmodels': 'Frameworks/6.24'
+    'libraries/kirigami-addons': 'v1.11.0'
     'libraries/mpvqt': '@latest'
     'third-party/qtkeychain': '@latest'
 
