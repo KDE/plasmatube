@@ -303,7 +303,7 @@ msgstr "S'abonner à %1"
 #: ui/components/SubscriptionButton.qml:73
 #, kde-format
 msgid "Please log in to subscribe to channels."
-msgstr "Veuillez vous connecter pour vous abonner à des chaînes."
+msgstr "Veuillez vous connecter pour vous abonner à des chaines."
 
 #: ui/components/VideoGridItem.qml:72
 #, kde-format
@@ -589,7 +589,7 @@ msgstr "Se connecter"
 #: ui/settings/AccountCard.qml:45
 #, kde-format
 msgid "Subscribe to channels, keep track of watched videos and more."
-msgstr "Abonnez-vous aux chaînes, suivez les vidéos regardées et plus encore."
+msgstr "Abonnez-vous aux chaines, suivez les vidéos regardées et plus encore."
 
 #: ui/settings/BaseSourcePage.qml:16
 #, kde-format
