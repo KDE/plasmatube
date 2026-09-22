@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-31 00:44+0000\n"
-"PO-Revision-Date: 2026-06-01 18:14-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -49,7 +49,7 @@ msgstr ""
 #: main.cpp:52
 #, kde-format
 msgid "PlasmaTube"
-msgstr "PlasmaTube"
+msgstr ""
 
 #: main.cpp:54
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "تۈزگۈچى"
 #: main.cpp:58
 #, kde-format
 msgid "Joshua Goins"
-msgstr "Joshua Goins"
+msgstr ""
 
 #: main.cpp:59
 #, kde-format
@@ -475,7 +475,7 @@ msgstr "مەرھابا"
 #, kde-format
 msgctxt "@info"
 msgid "PlasmaTube"
-msgstr "PlasmaTube"
+msgstr ""
 
 #: ui/loginflow/WelcomePage.qml:54
 #, kde-format
@@ -785,12 +785,12 @@ msgstr ""
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
-msgstr ""
+msgstr "سىستېما كۆڭۈلدىكى"
 
 #: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
 msgid "HTTP"
-msgstr "HTTP"
+msgstr ""
 
 #: ui/settings/NetworkProxyPage.qml:52
 #, kde-format
