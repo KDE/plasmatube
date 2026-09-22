@@ -15,7 +15,7 @@ SPDX-License-Identifier: CC0-1.0
       <entry name="url" type="string">
       </entry>
       <entry name="protocol" type="string">
-        <default>QStringLiteral("https")</default>
+        <default>https</default>
       </entry>
       <entry key="type" type="Enum">
         <choices>
