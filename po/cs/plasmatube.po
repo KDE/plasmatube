@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-31 00:44+0000\n"
-"PO-Revision-Date: 2026-03-16 15:46+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-11-04 00:36+0100\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.10\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
 #: controllers/logincontroller.cpp:37
@@ -359,7 +359,7 @@ msgstr "Přehrát následující"
 #: ui/components/VideoMenu.qml:52
 #, kde-format
 msgid "Play in Picture-in-Picture"
-msgstr "Přehrát v režimu obraz v obraze"
+msgstr "Přehrát v režimu obraz v obrazu"
 
 #: ui/components/VideoMenu.qml:67
 #, kde-format
@@ -374,7 +374,7 @@ msgstr "Označit jako zhlédnuté"
 #: ui/components/VideoMenu.qml:81
 #, kde-format
 msgid "Add to Playlist…"
-msgstr "Přidat do seznamu videí..."
+msgstr "Přidat do seznamu videí…"
 
 #: ui/components/VideoMenu.qml:88
 #, kde-format
@@ -409,7 +409,7 @@ msgstr "Přidat zdroj Piped"
 #: ui/loginflow/InstancesPage.qml:42
 #, kde-format
 msgid "Search or enter URL…"
-msgstr "Hledat nebo zadat URL..."
+msgstr "Hledat nebo zadat URL…"
 
 #: ui/loginflow/InstancesPage.qml:57
 #, kde-format
@@ -521,12 +521,12 @@ msgstr "Přihlásit"
 #: ui/LoginPage.qml:104
 #, kde-format
 msgid "Username must not be empty!"
-msgstr "Uživatelské jméno nesmí zůstat prázdné."
+msgstr "Uživatelské jméno nesmí zůstat prázdné!"
 
 #: ui/LoginPage.qml:109
 #, kde-format
 msgid "Password must not be empty!"
-msgstr "Heslo nesmí být prázdné."
+msgstr "Heslo nesmí být prázdné!"
 
 #: ui/Main.qml:221
 #, kde-format
@@ -860,7 +860,7 @@ msgstr "Import byl dokončen"
 #: ui/SubscriptionListPage.qml:33
 #, kde-format
 msgid "Exporting Completed"
-msgstr "Export byl dokončen."
+msgstr "Export byl dokončen"
 
 #: ui/SubscriptionListPage.qml:36
 #, kde-format
@@ -955,7 +955,7 @@ msgstr "Trendy"
 #: ui/videoplayer/PictureInPictureVideo.qml:14
 #, kde-format
 msgid "Picture in Picture"
-msgstr "Obrázek v obrázku (PiP)"
+msgstr "Obraz v obrazu (PiP)"
 
 #: ui/videoplayer/VideoControls.qml:106
 #, kde-format
@@ -991,7 +991,7 @@ msgstr "Celá obrazovka"
 #, kde-format
 msgctxt "@action:button"
 msgid "Picture-in-picture"
-msgstr "Obrázek v obrázku"
+msgstr "Obraz v obrazu"
 
 #: ui/videoplayer/VideoPlayer.qml:112
 #, kde-format
@@ -1003,7 +1003,7 @@ msgstr "Skrýt přehrávač"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add to Playlist…"
-msgstr "Přidat do seznamu videí..."
+msgstr "Přidat do seznamu videí…"
 
 #: ui/videoplayer/VideoPlayer.qml:181
 #, kde-format
@@ -1057,7 +1057,7 @@ msgstr "Žádná doporučená videa"
 #: ui/videoplayer/VideoPlayer.qml:610
 #, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Sponzorovaný segment videa byl přeskočen."
+msgstr "Sponzorovaný segment videa byl přeskočen"
 
 #: ui/videoplayer/VideoPlayer.qml:618
 #, kde-format
