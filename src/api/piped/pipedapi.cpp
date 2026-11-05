@@ -23,6 +23,7 @@ const QString API_CHANNELS = QStringLiteral("/channel");
 const QString API_COMMENTS = QStringLiteral("/comments");
 const QString API_PLAYLISTS = QStringLiteral("/playlists");
 const QString API_CHANNEL_INFO = QStringLiteral("/channel");
+const QString API_SUBSCRIPTIONS = QStringLiteral("/subscriptions");
 
 const QString TOKEN_KEY = QStringLiteral("token");
 
@@ -143,9 +144,8 @@ QFuture<SearchListResult> PipedApi::requestSearchResults(const SearchParameters 
 
 QFuture<VideoListResult> PipedApi::requestFeed(Paginator *paginator)
 {
-    // TODO: piped stub
-    Q_UNUSED(paginator)
-    return {};
+    Q_UNUSED(paginator);
+    return requestVideoList(Feed, QStringLiteral(""), {});
 }
 
 QFuture<VideoListResult> PipedApi::requestTrending(TrendingTopic topic, Paginator *paginator)
@@ -180,13 +180,15 @@ QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, Paginato
 
 QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
 {
-    return get<SubscriptionsResult>(authenticatedNetworkRequest(QUrl(API_FEED)), [=](QNetworkReply *reply) -> SubscriptionsResult {
+    return get<SubscriptionsResult>(authenticatedNetworkRequest(apiUrl(API_SUBSCRIPTIONS)), [=](QNetworkReply *reply) -> SubscriptionsResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto array = doc.array();
 
+            qWarning() << doc;
+
             QList<QString> subscriptions;
             std::transform(array.cbegin(), array.cend(), std::back_inserter(subscriptions), [](const QJsonValue &val) {
-                return val.toObject().value(QStringLiteral("authorId")).toString();
+                return val.toObject().value(QStringLiteral("url")).toString().remove(QStringLiteral("/channel/"));
             });
             return subscriptions;
         }
@@ -403,6 +405,9 @@ QFuture<VideoListResult> PipedApi::requestVideoList(VideoListType queryType, con
 QNetworkRequest PipedApi::authenticatedNetworkRequest(QUrl &&url)
 {
     QNetworkRequest request(url);
+    if (isLoggedIn()) {
+        request.setRawHeader(QByteArrayLiteral("Authorization"), m_token->toUtf8());
+    }
     return request;
 }
 
@@ -437,6 +442,9 @@ QUrl PipedApi::videoListUrl(VideoListType queryType, const QString &urlExtension
     case Channel:
         urlString.append(API_CHANNELS);
         break;
+    case Feed:
+        urlString.append(API_FEED);
+        break;
     }
 
     if (!urlExtension.isEmpty()) {
@@ -446,6 +454,10 @@ QUrl PipedApi::videoListUrl(VideoListType queryType, const QString &urlExtension
 
     for (QHash<QString, QString>::const_iterator parameter = parameters.begin(); parameter != parameters.end(); ++parameter) {
         query.addQueryItem(parameter.key(), parameter.value());
+    }
+
+    if (const auto token = m_token) {
+        query.addQueryItem(QStringLiteral("authToken"), *token);
     }
 
     QUrl url = apiUrl(urlString);

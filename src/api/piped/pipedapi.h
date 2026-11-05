@@ -61,7 +61,12 @@ public:
     QString getVideoUrl(const QString &videoId) override;
 
 private:
-    enum VideoListType { Search, Trending, Channel };
+    enum VideoListType {
+        Search,
+        Trending,
+        Channel,
+        Feed
+    };
 
     static Error invalidJsonError();
     static Result checkIsReplyOk(QNetworkReply *reply);
