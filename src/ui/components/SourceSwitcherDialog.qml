@@ -60,7 +60,7 @@ Kirigami.Dialog {
             }
 
             onClicked: {
-                pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "WelcomePage"));
+                pageStack.pushDialogLayer(Qt.createComponent("org.kde.plasmatube", "SelectSourcePage"));
                 root.close();
             }
 
