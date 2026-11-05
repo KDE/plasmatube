@@ -1,12 +1,14 @@
 // SPDX-FileCopyrightText: 2021 Linus Jahn <lnj@kaidan.im>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+// While their API is (still) undocumented, the router can be found at
+// https://github.com/TeamPiped/Piped-Backend/blob/6d0ad0698947ad3b4da72ec89d277c2f9a8ec187/src/main/java/me/kavin/piped/server/ServerLauncher.java
+
 #include "pipedapi.h"
 
 #include <KLocalizedString>
 
 #include <QJsonDocument>
-#include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStringBuilder>
 #include <QUrl>
@@ -22,6 +24,8 @@ const QString API_COMMENTS = QStringLiteral("/comments");
 const QString API_PLAYLISTS = QStringLiteral("/playlists");
 const QString API_CHANNEL_INFO = QStringLiteral("/channel");
 
+const QString TOKEN_KEY = QStringLiteral("token");
+
 using namespace QInvidious;
 using namespace Qt::StringLiterals;
 
@@ -32,27 +36,34 @@ PipedApi::PipedApi(QNetworkAccessManager *netManager, QObject *parent)
 
 bool PipedApi::isLoggedIn() const
 {
-    return false;
+    return m_token.has_value();
 }
 
 bool PipedApi::canLogIn() const
 {
-    return false;
+    return true;
 }
 
 void PipedApi::loadCredentials(const QString &prefix)
 {
-    Q_UNUSED(prefix)
+    if (const auto token = getKeychainValue(prefix, TOKEN_KEY)) {
+        m_token = token;
+    }
+    Q_EMIT credentialsChanged();
 }
 
 void PipedApi::saveCredentials(const QString &prefix)
 {
-    Q_UNUSED(prefix)
+    if (const auto token = m_token) {
+        setKeychainValue(prefix, TOKEN_KEY, *token);
+    }
 }
 
 void PipedApi::wipeCredentials(const QString &prefix)
 {
-    Q_UNUSED(prefix)
+    wipeKeychainValue(prefix, TOKEN_KEY);
+    m_token = std::nullopt;
+    Q_EMIT credentialsChanged();
 }
 
 bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
@@ -71,22 +82,25 @@ bool PipedApi::supportsFeature(AbstractApi::SupportedFeature feature)
 
 QFuture<LogInResult> PipedApi::logIn(const QString &username, const QString &password)
 {
-    QUrlQuery params;
-    params.addQueryItem(QStringLiteral("email"), QString::fromUtf8(QUrl::toPercentEncoding(username)));
-    params.addQueryItem(QStringLiteral("password"), QString::fromUtf8(QUrl::toPercentEncoding(password)));
-    params.addQueryItem(QStringLiteral("action"), QStringLiteral("signin"));
+    const QJsonObject object{
+        {"username"_L1, username},
+        {"password"_L1, password},
+    };
 
     QUrl url = apiUrl(API_LOGIN);
-    auto urlQuery = genericUrlQuery();
-    urlQuery.addQueryItem(QStringLiteral("referer"), QString::fromUtf8(QUrl::toPercentEncoding(QStringLiteral("/"))));
-    urlQuery.addQueryItem(QStringLiteral("type"), QStringLiteral("invidious"));
-    url.setQuery(urlQuery);
 
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, QByteArrayLiteral("application/x-www-form-urlencoded"));
     request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::RedirectPolicy::ManualRedirectPolicy);
 
-    return post<LogInResult>(std::move(request), params.toString().toUtf8(), [=](QNetworkReply *) -> LogInResult {
+    return post<LogInResult>(std::move(request), QJsonDocument(object).toJson(), [this](QNetworkReply *reply) -> LogInResult {
+        QJsonDocument document = QJsonDocument::fromJson(reply->readAll());
+        if (document.object().contains("token"_L1)) {
+            m_token = document.object()["token"_L1].toString();
+            Q_EMIT credentialsChanged();
+            return std::nullopt;
+        }
+
         return std::pair(QNetworkReply::ContentAccessDenied, i18n("Username or password is wrong."));
     });
 }
@@ -96,7 +110,7 @@ QFuture<VideoResult> PipedApi::requestVideo(const QString &videoId)
     return get<VideoResult>(QNetworkRequest(videoUrl(videoId)), [=](QNetworkReply *reply) -> VideoResult {
         if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
             auto video = Video::fromJson(doc);
-            video.setVideoId(videoId); // Piped doesn't give us the video id in the respone...
+            video.setVideoId(videoId); // Piped doesn't give us the video id in the response...
             return video;
         }
         return invalidJsonError();
@@ -166,8 +180,18 @@ QFuture<VideoListResult> PipedApi::requestChannel(const QString &query, Paginato
 
 QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
 {
-    // TODO: piped stub
-    return {};
+    return get<SubscriptionsResult>(authenticatedNetworkRequest(QUrl(API_FEED)), [=](QNetworkReply *reply) -> SubscriptionsResult {
+        if (auto doc = QJsonDocument::fromJson(reply->readAll()); !doc.isNull()) {
+            auto array = doc.array();
+
+            QList<QString> subscriptions;
+            std::transform(array.cbegin(), array.cend(), std::back_inserter(subscriptions), [](const QJsonValue &val) {
+                return val.toObject().value(QStringLiteral("authorId")).toString();
+            });
+            return subscriptions;
+        }
+        return invalidJsonError();
+    });
 }
 
 QFuture<Result> PipedApi::subscribeToChannel(const QString &channel)

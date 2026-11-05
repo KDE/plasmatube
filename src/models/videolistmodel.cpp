@@ -72,6 +72,8 @@ VideoListModel::~VideoListModel()
 {
     if (m_futureWatcher != nullptr) {
         m_futureWatcher->cancel();
+        delete m_futureWatcher;
+        m_futureWatcher = nullptr;
     }
 }
 
@@ -232,30 +234,34 @@ void VideoListModel::handleQuery(QFuture<QInvidious::VideoListResult> future, Qu
     if (m_futureWatcher) {
         // TODO: cancelling isn't implemented yet
         m_futureWatcher->cancel();
-        m_futureWatcher->deleteLater();
+        delete m_futureWatcher;
         m_futureWatcher = nullptr;
     }
 
     // set up new task
     m_futureWatcher = new QFutureWatcher<QInvidious::VideoListResult>(this);
-    connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this] {
-        auto result = m_futureWatcher->result();
-        if (auto videos = std::get_if<QInvidious::VideoList>(&result)) {
-            if (PlasmaTube::instance().settings()->hideShorts()) {
-                videos->removeIf([](const QInvidious::VideoBasicInfo &info) -> bool {
-                    return info.length() == 0;
-                });
-            }
+    connect(m_futureWatcher, &QFutureWatcherBase::finished, this, [this, type] {
+        if (m_futureWatcher->future().resultCount() > 0) {
+            auto result = m_futureWatcher->result();
+            if (auto videos = std::get_if<QInvidious::VideoList>(&result)) {
+                if (PlasmaTube::instance().settings()->hideShorts()) {
+                    videos->removeIf([](const QInvidious::VideoBasicInfo &info) -> bool {
+                        return info.length() == 0;
+                    });
+                }
 
-            const auto rows = rowCount();
-            beginInsertRows({}, rows, rows + videos->size() - 1);
-            m_results << *videos;
-            endInsertRows();
-        } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            Q_EMIT errorOccured(error->second);
+                const auto rows = rowCount();
+                beginInsertRows({}, rows, rows + videos->size() - 1);
+                m_results << *videos;
+                endInsertRows();
+            } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
+                Q_EMIT errorOccured(error->second);
+            }
+        } else {
+            qWarning() << "Future from" << type << "does not have any results, this is probably an source implementation bug";
         }
 
-        m_futureWatcher->deleteLater();
+        delete m_futureWatcher;
         m_futureWatcher = nullptr;
         setLoading(false);
     });
@@ -291,11 +297,15 @@ void VideoListModel::requestHistory()
     m_historyPageWatcher->setFuture(pageFuture);
 
     connect(m_historyPageWatcher, &QFutureWatcherBase::finished, this, [this] {
-        auto result = m_historyPageWatcher->future().result();
-        if (auto historyList = std::get_if<QList<QString>>(&result)) {
-            processHistoryResult(*historyList);
-        } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
-            Q_EMIT errorOccured(error->second);
+        if (m_historyPageWatcher->future().resultCount() > 0) {
+            auto result = m_historyPageWatcher->future().result();
+            if (auto historyList = std::get_if<QList<QString>>(&result)) {
+                processHistoryResult(*historyList);
+            } else if (auto error = std::get_if<QInvidious::Error>(&result)) {
+                Q_EMIT errorOccured(error->second);
+            }
+        } else {
+            qWarning() << "No results in the history future, this is a source implementation bug";
         }
 
         m_historyPageWatcher->deleteLater();

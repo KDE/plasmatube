@@ -67,9 +67,11 @@ void SubscriptionListModel::fill(VideoSource *source)
     }
     setLoading(true);
 
-    for (const auto &channelId : *source->subscriptions()) {
-        auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannelInfo(channelId);
-        m_historyFutureSync.addFuture(future);
+    if (const auto subscriptions = source->subscriptions()) {
+        for (const auto &channelId : *subscriptions) {
+            const auto future = PlasmaTube::instance().sourceManager()->selectedSource()->api()->requestChannelInfo(channelId);
+            m_historyFutureSync.addFuture(future);
+        }
     }
 
     m_historyFetchFinishWatcher = new QFutureWatcher<void>();
