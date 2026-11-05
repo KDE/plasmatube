@@ -24,6 +24,8 @@ const QString API_COMMENTS = QStringLiteral("/comments");
 const QString API_PLAYLISTS = QStringLiteral("/playlists");
 const QString API_CHANNEL_INFO = QStringLiteral("/channel");
 const QString API_SUBSCRIPTIONS = QStringLiteral("/subscriptions");
+const QString API_SUBSCRIBE = QStringLiteral("/subscribe");
+const QString API_UNSUBSCRIBE = QStringLiteral("/unsubscribe");
 
 const QString TOKEN_KEY = QStringLiteral("token");
 
@@ -198,16 +200,16 @@ QFuture<SubscriptionsResult> PipedApi::requestSubscriptions()
 
 QFuture<Result> PipedApi::subscribeToChannel(const QString &channel)
 {
-    // TODO: piped stub
-    Q_UNUSED(channel)
-    return {};
+    const QJsonObject obj{{QStringLiteral("channelId"), channel}};
+    const QJsonDocument doc = QJsonDocument(obj);
+    return post<Result>(authenticatedNetworkRequest(apiUrl(API_SUBSCRIBE)), doc.toJson(), checkIsReplyOk);
 }
 
 QFuture<Result> PipedApi::unsubscribeFromChannel(const QString &channel)
 {
-    // TODO: piped stub
-    Q_UNUSED(channel)
-    return {};
+    const QJsonObject obj{{QStringLiteral("channelId"), channel}};
+    const QJsonDocument doc = QJsonDocument(obj);
+    return post<Result>(authenticatedNetworkRequest(apiUrl(API_UNSUBSCRIBE)), doc.toJson(), checkIsReplyOk);
 }
 
 QFuture<HistoryResult> PipedApi::requestHistory(Paginator *paginator)

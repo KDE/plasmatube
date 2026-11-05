@@ -20,7 +20,11 @@ Channel Channel::fromJson(const QJsonObject &obj, Channel &channel)
         channel.m_banner = firstBanners.toObject()["path"_L1].toString();
         channel.m_url = obj["url"_L1].toString();
     } else if (isPiped) {
-        channel.m_id = obj["url"_L1].toString().remove(QStringLiteral("/channel/"));
+        if (obj.contains("id"_L1)) {
+            channel.m_id = obj["id"_L1].toString();
+        } else if (obj.contains("url"_L1)) {
+            channel.m_id = obj["url"_L1].toString().remove(QStringLiteral("/channel/"));
+        }
         channel.m_name = obj["name"_L1].toString();
         channel.m_avatar = obj["avatarUrl"_L1].toString();
         channel.m_banner = obj["bannerUrl"_L1].toString();
