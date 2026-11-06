@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:50+0000\n"
 "PO-Revision-Date: 2026-02-03 22:40+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "사용자 이름이나 암호가 잘못되었습니다."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
-#: api/piped/pipedapi.cpp:327
+#: api/piped/pipedapi.cpp:355
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "서버에서 올바른 JSON을 반환하지 않았습니다."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
-#: api/piped/pipedapi.cpp:336
+#: api/piped/pipedapi.cpp:364
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "서버에서 상태 코드 %1을(를) 반환함"
@@ -138,7 +138,7 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "과거 기록"
 
-#: models/videolistmodel.cpp:156
+#: models/videolistmodel.cpp:158
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "\"%1\" 검색 결과"
@@ -464,7 +464,7 @@ msgstr "PeerTube 동영상 보기"
 msgid "Add Piped Source"
 msgstr "Piped 소스 추가"
 
-#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -724,6 +724,7 @@ msgid "Automatically skip sponsored segments in the video."
 msgstr "자동으로 동영상의 스폰서 부분을 건너뜁니다."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#: ui/settings/PipedSourcePage.qml:11
 #, kde-format
 msgid "Account"
 msgstr "계정"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:50+0000\n"
 "PO-Revision-Date: 2026-02-25 19:04+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Käyttäjätunnus tai salasana on väärin."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
-#: api/piped/pipedapi.cpp:327
+#: api/piped/pipedapi.cpp:355
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Palvelin ei palauttanut kelvollista JSONia."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
-#: api/piped/pipedapi.cpp:336
+#: api/piped/pipedapi.cpp:364
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Palvelin palautti tilakoodin %1"
@@ -140,7 +140,7 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "Historia"
 
-#: models/videolistmodel.cpp:156
+#: models/videolistmodel.cpp:158
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Hakutulokset haulle ”%1”"
@@ -467,7 +467,7 @@ msgstr "Katso PeerTube-videoita"
 msgid "Add Piped Source"
 msgstr "Lisää Piped-lähde"
 
-#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -725,6 +725,7 @@ msgid "Automatically skip sponsored segments in the video."
 msgstr "Ohita automaattisesti videon mainososiot."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#: ui/settings/PipedSourcePage.qml:11
 #, kde-format
 msgid "Account"
 msgstr "Tili"

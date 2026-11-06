@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:50+0000\n"
 "PO-Revision-Date: 2026-02-13 16:27+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -20,20 +20,20 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.2\n"
 
-#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Неверное имя пользователя или пароль."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
-#: api/piped/pipedapi.cpp:327
+#: api/piped/pipedapi.cpp:355
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "От сервера не получен корректный код JSON."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
-#: api/piped/pipedapi.cpp:336
+#: api/piped/pipedapi.cpp:364
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "От сервера получен код состояния %1"
@@ -141,7 +141,7 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "История"
 
-#: models/videolistmodel.cpp:156
+#: models/videolistmodel.cpp:158
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Результаты поиска «%1»"
@@ -471,7 +471,7 @@ msgstr "Посмотреть видеозаписи c PeerTube"
 msgid "Add Piped Source"
 msgstr "Добавить источник Piped"
 
-#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -733,6 +733,7 @@ msgid "Automatically skip sponsored segments in the video."
 msgstr "Автоматически пропускать сегменты с рекламой."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#: ui/settings/PipedSourcePage.qml:11
 #, kde-format
 msgid "Account"
 msgstr "Учётная запись"

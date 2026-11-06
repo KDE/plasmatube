@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:50+0000\n"
 "PO-Revision-Date: 2026-01-04 12:47+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,20 +20,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
 
-#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "Erabiltzaile-izena edo pasahitza gaizki dago."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
-#: api/piped/pipedapi.cpp:327
+#: api/piped/pipedapi.cpp:355
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "Zerbitzariak balio ez duen JSON itzuli du."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
-#: api/piped/pipedapi.cpp:336
+#: api/piped/pipedapi.cpp:364
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "Zerbitzariak %1 egoera kodea itzuli du"
@@ -141,7 +141,7 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "Historia"
 
-#: models/videolistmodel.cpp:156
+#: models/videolistmodel.cpp:158
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "«%1» bilatzearen emaitzak"
@@ -470,7 +470,7 @@ msgstr "Ikusi PeerTube-ko bideoak"
 msgid "Add Piped Source"
 msgstr "Gehitu hodi bidezko sorburua"
 
-#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -733,6 +733,7 @@ msgid "Automatically skip sponsored segments in the video."
 msgstr "Bideoan babesle dun segmentuak automatikoki saihesten ditu."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#: ui/settings/PipedSourcePage.qml:11
 #, kde-format
 msgid "Account"
 msgstr "Kontua"

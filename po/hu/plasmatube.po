@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-31 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:50+0000\n"
 "PO-Revision-Date: 2026-06-16 22:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,20 +17,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:90
+#: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
 #, kde-format
 msgid "Username or password is wrong."
 msgstr "A felhasználónév vagy a jelszó helytelen."
 
 #: api/invidious/invidiousapi.cpp:397 api/peertube/peertubeapi.cpp:408
-#: api/piped/pipedapi.cpp:327
+#: api/piped/pipedapi.cpp:355
 #, kde-format
 msgid "Server returned no valid JSON."
 msgstr "A kiszolgáló nem adott vissza érvényes JSON-t."
 
 #: api/invidious/invidiousapi.cpp:406 api/peertube/peertubeapi.cpp:417
-#: api/piped/pipedapi.cpp:336
+#: api/piped/pipedapi.cpp:364
 #, kde-format
 msgid "Server returned the status code %1"
 msgstr "A kiszolgáló a következő állapotkóddal tért vissza: %1"
@@ -140,7 +140,7 @@ msgctxt "@action:button Video watch history"
 msgid "History"
 msgstr "Előzmények"
 
-#: models/videolistmodel.cpp:156
+#: models/videolistmodel.cpp:158
 #, kde-format
 msgid "Search results for \"%1\""
 msgstr "Keresési eredmények - „%1”"
@@ -469,7 +469,7 @@ msgstr "PeerTube videók megtekintése"
 msgid "Add Piped Source"
 msgstr "Piped forrás hozzáadása"
 
-#: ui/loginflow/WelcomePage.qml:17 ui/settings/SourcesPage.qml:23
+#: ui/loginflow/WelcomePage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome"
@@ -734,6 +734,7 @@ msgid "Automatically skip sponsored segments in the video."
 msgstr "Szponzorált részek automatikus kihagyása."
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
+#: ui/settings/PipedSourcePage.qml:11
 #, kde-format
 msgid "Account"
 msgstr "Fiók"
