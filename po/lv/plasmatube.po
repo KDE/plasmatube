@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024-2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:50+0000\n"
-"PO-Revision-Date: 2025-02-11 09:49+0200\n"
-"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"PO-Revision-Date: 2026-11-11 15:35+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
@@ -634,15 +634,13 @@ msgid "Preferred Video Quality"
 msgstr "Ieteicamā video kvalitāte"
 
 #: ui/settings/GeneralPage.qml:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "This selected quality will be used if available, otherwise the next "
-#| "highest one is used."
+#, kde-format
 msgid ""
 "This selected quality will be used if available, otherwise the highest "
 "available quality is used."
 msgstr ""
-"Programma izmantos šo vai, ja nebūs pieejama, nākamo augstāko kvalitāti"
+"Atlasītā kvalitāte tiks lietota, ja būs pieejama. Pretējā gadījumā tiks "
+"lietota augstākā pieejamā kvalitāte."
 
 #: ui/settings/GeneralPage.qml:29
 #, kde-format
@@ -710,17 +708,14 @@ msgid "Check for sponsored segments"
 msgstr "Pārbaudīt sponsoru daļas"
 
 #: ui/settings/GeneralPage.qml:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Inform you when a community-submitted segment (typically a sponsorship) "
-#| "is in the video. This feature requires contacting a 3rd-party service."
+#, kde-format
 msgid ""
 "Show a notification when a community-submitted segment (typically a "
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Informēt, ja video satur kopienas norādītu sadaļu (parasti sponsoru). Šai "
-"iespējai nepieciešama trešā puse."
+"Parādīt paziņojumu, ja video satur kopienas norādītu sadaļu (parasti "
+"sponsoru). Šai iespējai nepieciešams trešās puses pakalpojums."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
@@ -729,10 +724,9 @@ msgid "Skip sponsored segments"
 msgstr "Izlaist sponsoru daļas"
 
 #: ui/settings/GeneralPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Automatically skips over sponsored segments in the video."
+#, kde-format
 msgid "Automatically skip sponsored segments in the video."
-msgstr "Automātiski izlaiž video sponsoru daļas"
+msgstr "Automātiski izlaist video ietvertās sponsoru daļas"
 
 #: ui/settings/InvidiousSourcePage.qml:15 ui/settings/PeerTubeSourcePage.qml:11
 #: ui/settings/PipedSourcePage.qml:11
@@ -1063,16 +1057,14 @@ msgid "No recommended videos"
 msgstr "Nav ieteicamo video"
 
 #: ui/videoplayer/VideoPlayer.qml:610
-#, fuzzy, kde-format
-#| msgid "The sponsored portion of the video has been skipped"
+#, kde-format
 msgid "The sponsored segment of the video has been skipped"
-msgstr "Programma izlaida sponsorētu video sadaļu"
+msgstr "Ir izlaists video ietverts sponsora segments"
 
 #: ui/videoplayer/VideoPlayer.qml:618
-#, fuzzy, kde-format
-#| msgid "This portion of the video is sponsored"
+#, kde-format
 msgid "This segment of the video is sponsored"
-msgstr "Šī video sadaļa ir sponsorēta"
+msgstr "Šis video segments ir sponsorēts"
 
 #: ui/videoplayer/VideoPlayer.qml:639
 #, kde-format
