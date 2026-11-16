@@ -4,7 +4,7 @@
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2021.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2022, 2023.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@kde.org>
 # SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
@@ -94,7 +94,7 @@ msgstr "Luiz Fernando Ranghetti, Marcus Gama"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "elchevive@opensuse.org, marcus.gama@gmail.com"
+msgstr "elchevive@opensuse.org, marcus.gama@kde.org"
 
 #: models/peertubeinstancesmodel.cpp:32
 #, kde-format
