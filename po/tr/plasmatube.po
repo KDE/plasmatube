@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasmatube package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:50+0000\n"
-"PO-Revision-Date: 2026-05-02 18:53+0300\n"
+"PO-Revision-Date: 2026-11-23 18:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: api/invidious/invidiousapi.cpp:112 api/piped/pipedapi.cpp:107
 #: controllers/logincontroller.cpp:37
@@ -755,7 +755,7 @@ msgstr "Videolar hemen oynatılmalı mı yoksa düğmeye basılması beklenmeli 
 #: ui/settings/InvidiousSourcePage.qml:58
 #, kde-format
 msgid "Default Page"
-msgstr "Öntanımlı Sayfa"
+msgstr "Varsayılan Sayfa"
 
 #: ui/settings/InvidiousSourcePage.qml:59
 #, kde-format
@@ -795,7 +795,7 @@ msgstr "Ağ Vekili"
 #: ui/settings/NetworkProxyPage.qml:26
 #, kde-format
 msgid "System Default"
-msgstr "Sistem öntanımlısı"
+msgstr "Sistem varsayılanı"
 
 #: ui/settings/NetworkProxyPage.qml:36
 #, kde-format
