@@ -1,15 +1,15 @@
 # Translation of plasmatube.po to Catalan (Valencian)
-# Copyright (C) 2021-2025 This_file_is_part_of_KDE
+# Copyright (C) 2021-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2021-2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2021-2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmatube\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:50+0000\n"
-"PO-Revision-Date: 2025-12-25 10:16+0100\n"
+"PO-Revision-Date: 2026-11-24 20:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -721,9 +721,9 @@ msgid ""
 "sponsorship) is in the video. This feature requires contacting a 3rd-party "
 "service."
 msgstr ""
-"Mostra un notificació quan un segment enviat per la comunitat (normalment un "
-"patrocini) estiga en el vídeo. Esta característica requerix contactar amb un "
-"servei de tercers."
+"Mostra una notificació quan un segment enviat per la comunitat (normalment "
+"un patrocini) estiga en el vídeo. Esta característica requerix contactar amb "
+"un servei de tercers."
 
 #: ui/settings/GeneralPage.qml:111
 #, kde-format
